@@ -15,7 +15,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.maxStack = 999;
 			item.useTime = 16;
-			item.shoot = mod.ProjectileType("DeathHooksPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.DeathHooksPro>();
 			item.shootSpeed = 20f;
 			item.useAnimation = 16;
 			item.useStyle = 1;

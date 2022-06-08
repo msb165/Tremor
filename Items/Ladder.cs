@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.maxStack = 999;
 			item.value = 100;
 			item.rare = 1;
-			item.createTile = mod.TileType("Ladder");
+			item.createTile = ModContent.TileType<Tiles.Ladder>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -27,7 +27,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Ladder");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

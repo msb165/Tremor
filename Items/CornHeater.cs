@@ -14,11 +14,11 @@ namespace Tremor.Items
 			item.height = 26;
 			item.useTime = 15;
 			item.useAnimation = 15;
-			item.shoot = mod.ProjectileType("PopcornAmmo");
+			item.shoot = ModContent.ProjectileType<Projectiles.PopcornAmmo>();
 			item.shootSpeed = 8f;
 			item.useStyle = 5;
 			item.knockBack = 4;
-			item.useAmmo = mod.ItemType("PopcornAmmo");
+			item.useAmmo = ModContent.ItemType<PopcornAmmo>();
 			item.value = 60000;
 			item.rare = 9;
 			item.expert = true;

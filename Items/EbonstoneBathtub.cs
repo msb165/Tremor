@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 2000;
-			item.createTile = mod.TileType("EbonstoneBathtub");
+			item.createTile = ModContent.TileType<Tiles.EbonstoneBathtub>();
 		}
 
 		public override void SetStaticDefaults()
@@ -26,7 +26,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Ebonstone Bathtub");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

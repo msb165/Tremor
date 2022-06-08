@@ -24,7 +24,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item43;
 			item.autoReuse = false;
 			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
-			item.shoot = mod.ProjectileType("WraithWrathPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.WraithWrathPro>();
 			item.shootSpeed = 15f;
 		}
 
@@ -33,7 +33,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Wrath of Wraith");
 			Tooltip.SetDefault("");
 		}
-
 
 	}
 }

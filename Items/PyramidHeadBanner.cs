@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Tiles;
 
 namespace Tremor.Items
 {
@@ -19,7 +20,7 @@ namespace Tremor.Items
 			item.consumable = true;
 			item.rare = 1;
 			item.value = Item.buyPrice(0, 0, 10, 0);
-			item.createTile = mod.TileType("PyramidHeadBanner");
+			item.createTile = ModContent.TileType<MonsterBanner>();
 			item.placeStyle = 38;
 		}
 

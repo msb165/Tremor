@@ -7,7 +7,6 @@ namespace Tremor.Items
 	public class ParaxydeGreaves : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
@@ -25,7 +24,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Increases maximum mana by 40");
 		}
 
-
 		public override void UpdateEquip(Player player)
 		{
 			player.statManaMax2 += 40;
@@ -34,9 +32,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "ParaxydeShard", 15);
+			recipe.AddIngredient(ModContent.ItemType<ParaxydeShard>(), 15);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "AlchematorTile");
+			recipe.AddTile(ModContent.TileType<Tiles.AlchematorTile>());
 			recipe.AddRecipe();
 		}
 

@@ -20,7 +20,7 @@ namespace Tremor.Items
 			item.useAnimation = 45;
 			item.useStyle = 1;
 			item.knockBack = 3;
-			item.shoot = mod.ProjectileType("InfernoRift");
+			item.shoot = ModContent.ProjectileType<Projectiles.InfernoRift>();
 			item.shootSpeed = 12f;
 			item.value = 600000;
 			item.rare = 0;
@@ -35,7 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Gehenna Staff");
 			Tooltip.SetDefault("Summons a controllable inferno rift that rapidly shoots molten bolts at nearby enemies");
 		}
-
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

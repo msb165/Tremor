@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Doom;
 
 namespace Tremor.Items
 {
@@ -14,7 +15,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 30;
 			item.useAnimation = 14;
-			item.shoot = mod.ProjectileType("LightningBoltPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.LightningBoltPro>();
 			item.shootSpeed = 7f;
 			item.mana = 6;
 			item.useStyle = 5;
@@ -31,15 +32,14 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "NightmareBar", 10);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 10);
 			recipe.AddIngredient(3467, 10);
-			recipe.AddIngredient(null, "Doomstone", 9);
-			recipe.AddIngredient(null, "Phantaplasm", 12);
-			recipe.AddIngredient(null, "ConcentratedEther", 8);
+			recipe.AddIngredient(ModContent.ItemType<Doomstone>(), 9);
+			recipe.AddIngredient(ModContent.ItemType<Phantaplasm>(), 12);
+			recipe.AddIngredient(ModContent.ItemType<ConcentratedEther>(), 8);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -17,7 +17,7 @@ namespace Tremor.Buffs
 			{
 				player.statLife += 150;
 				player.HealEffect(150);
-				player.AddBuff(mod.BuffType("ExtendedHealthBooster"), 2700);
+				player.AddBuff(ModContent.BuffType<Buffs.ExtendedHealthBooster>(), 2700);
 			}
 		}
 	}

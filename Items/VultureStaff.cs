@@ -8,7 +8,6 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-
 			item.damage = 14;
 			item.summon = true;
 			item.mana = 12;
@@ -23,10 +22,11 @@ namespace Tremor.Items
 			item.value = Item.buyPrice(0, 1, 2, 0);
 			item.rare = 2;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("VultureStaffPro");
-			item.shootSpeed = 1f;
-			item.buffType = mod.BuffType("VultureBuff");
-			item.buffTime = 3600;
+			//TODO: Idk, the projectile code is stolen so if we want to make this item, we need to rewrite it from scratch or get permission.
+			//item.shoot = ModContent.ProjectileType<Projectiles.Minions.VultureStaffPro>();
+			//item.shootSpeed = 1f;
+			//item.buffType = ModContent.BuffType<VultureBuff>();
+			//item.buffTime = 3600;
 		}
 
 		public override void SetStaticDefaults()

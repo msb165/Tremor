@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
@@ -53,7 +54,7 @@ namespace Tremor.Invasion
 		public override void CheckActive()
 		{
 			Player player = Main.player[projectile.owner];
-			TremorPlayer modPlayer = (TremorPlayer)player.GetModPlayer(mod, "TremorPlayer");
+			TremorPlayer modPlayer = player.GetModPlayer<TremorPlayer>();
 			if (player.dead)
 			{
 				modPlayer.miniCyber = false;
@@ -63,7 +64,6 @@ namespace Tremor.Invasion
 				projectile.timeLeft = 2;
 			}
 		}
-
 
 		void Shoot()
 		{
@@ -88,7 +88,7 @@ namespace Tremor.Invasion
 				{
 					Player player = Main.player[Main.myPlayer];
 					Vector2 Velocity = Helper.VelocityToPoint(projectile.Center, Main.npc[NearestNPC].Center, ShootSpeed);
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, Velocity.X, Velocity.Y, mod.ProjectileType("CyberLaser"), ShootDamage, ShootKnockback, projectile.owner);
+					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CyberLaser>(), ShootDamage, ShootKnockback, projectile.owner);
 				}
 		}
 

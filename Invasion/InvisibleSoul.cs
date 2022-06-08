@@ -32,7 +32,7 @@ namespace Tremor.Invasion
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>(mod);
+			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
 			float spawn = 20f;
 			if (InvasionWorld.CyberWrath)
 				return 1000f;
@@ -46,7 +46,7 @@ namespace Tremor.Invasion
 
 		public override void OnHitPlayer(Player player, int damage, bool crit)
 		{
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
 				player.AddBuff(164, 1000, true);
 			}
@@ -58,11 +58,11 @@ namespace Tremor.Invasion
 			{
 				for (int k = 0; k < 10; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType<CyberDust>(), 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
 
-				CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>(mod);
-				if (InvasionWorld.CyberWrath && Main.rand.Next(3) == 1)
+				CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
+				if (InvasionWorld.CyberWrath && Main.rand.NextBool(3))
 				{
 					InvasionWorld.CyberWrathPoints1 += 3;
 					//Main.NewText(("Wave 1: Complete " + TremorWorld.CyberWrathPoints + "%"), 39, 86, 134);
@@ -71,7 +71,7 @@ namespace Tremor.Invasion
 
 			for (int k = 0; k < damage / npc.lifeMax * 50.0; k++)
 			{
-				Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType<CyberDust>(), hitDirection, -1f, 0, default(Color), 0.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), hitDirection, -1f, 0, default(Color), 0.7f);
 			}
 		}
 
@@ -82,9 +82,9 @@ namespace Tremor.Invasion
 				int centerX = (int)(npc.position.X + npc.width / 2) / 16;
 				int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
 				int halfLength = npc.width / 2 / 16 + 1;
-				if (Main.rand.Next(3) == 0)
+				if (Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ParadoxElement"), Main.rand.Next(5, 7));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ParadoxElement>(), Main.rand.Next(5, 7));
 				}
 			}
 		}
@@ -113,9 +113,9 @@ namespace Tremor.Invasion
 				SecondState = true;
 			}
 
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
-				int num706 = Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType<CyberDust>(), 0f, 0f, 200, npc.color, 0.5f);
+				int num706 = Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), 0f, 0f, 200, npc.color, 0.5f);
 				Main.dust[num706].velocity *= 0.6f;
 			}
 			if (FirstState)
@@ -189,7 +189,7 @@ namespace Tremor.Invasion
 
 				if (Main.rand.Next(160) == 0)
 				{
-					NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y, mod.NPCType("MiniSoul"));
+					NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<MiniSoul>());
 				}
 			}
 
@@ -264,13 +264,13 @@ namespace Tremor.Invasion
 
 				if (Main.rand.Next(120) == 0)
 				{
-					NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y, mod.NPCType("MiniSoul"));
+					NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<MiniSoul>());
 				}
 
-				if (Main.rand.Next(200) == 0)
-				{
-					NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y, mod.NPCType("CyberSoul"));
-				}
+				//if (Main.rand.Next(200) == 0)
+				//{
+				//	NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<CyberSoul>());
+				//}
 			}
 		}
 	}

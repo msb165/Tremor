@@ -19,10 +19,10 @@ namespace Tremor.Buffs
 			if (player.buffTime[buffIndex] >= 2)
 			{
 				if (Probe == -1)
-					Probe = Projectile.NewProjectile(player.position.X, player.position.Y, 0, 0, mod.ProjectileType("projSteampunkProbe"), 0, 0, player.whoAmI);
-				if (!Main.projectile[Probe].active || Main.projectile[Probe].type != mod.ProjectileType("projSteampunkProbe"))
+					Probe = Projectile.NewProjectile(player.position.X, player.position.Y, 0, 0, ModContent.ProjectileType<Projectiles.projSteampunkProbe>(), 0, 0, player.whoAmI);
+				if (!Main.projectile[Probe].active || Main.projectile[Probe].type != ModContent.ProjectileType<Projectiles.projSteampunkProbe>())
 				{
-					Probe = Projectile.NewProjectile(player.position.X, player.position.Y, 0, 0, mod.ProjectileType("projSteampunkProbe"), 0, 0, player.whoAmI);
+					Probe = Projectile.NewProjectile(player.position.X, player.position.Y, 0, 0, ModContent.ProjectileType<Projectiles.projSteampunkProbe>(), 0, 0, player.whoAmI);
 				}
 				Main.projectile[Probe].timeLeft = 6;
 			}

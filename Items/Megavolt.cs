@@ -35,8 +35,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Shoots the charged arrows");
 		}
 
-
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			int i = Main.myPlayer;
@@ -69,15 +67,15 @@ namespace Tremor.Items
 			num78 *= num80;
 			num79 *= num80;
 			int num146 = 4;
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
 				num146++;
 			}
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.NextBool(4))
 			{
 				num146++;
 			}
-			if (Main.rand.Next(8) == 0)
+			if (Main.rand.NextBool(8))
 			{
 				num146++;
 			}
@@ -98,7 +96,7 @@ namespace Tremor.Items
 				num149 *= num80;
 				float x4 = vector2.X;
 				float y4 = vector2.Y;
-				Projectile.NewProjectile(x4, y4, num148, num149, mod.ProjectileType("ChargedArrow"), num73, num74, i, 0f, 0f);
+				Projectile.NewProjectile(x4, y4, num148, num149, ModContent.ProjectileType<Projectiles.ChargedArrow>(), num73, num74, i, 0f, 0f);
 			}
 			return false;
 		}
@@ -106,10 +104,10 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "CometiteBar", 12);
+			recipe.AddIngredient(ModContent.ItemType<CometiteBar>(), 12);
 			recipe.AddIngredient(ItemID.MartianConduitPlating, 30);
-			recipe.AddIngredient(null, "LunarRoot", 12);
-			recipe.AddIngredient(null, "NightCore", 5);
+			recipe.AddIngredient(ModContent.ItemType<LunarRoot>(), 12);
+			recipe.AddIngredient(ModContent.ItemType<NightCore>(), 5);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

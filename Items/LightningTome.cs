@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.mana = 7;
 			item.useAnimation = 14;
 			item.useStyle = 5;
-			item.shoot = mod.ProjectileType("LightningTome");
+			item.shoot = ModContent.ProjectileType<Projectiles.LightningTome>();
 			item.shootSpeed = 12f;
 			item.knockBack = 4;
 			item.value = 50000;

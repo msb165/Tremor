@@ -11,7 +11,7 @@ namespace Tremor.Items
 			item.damage = 23;
 			item.width = 30;
 			item.height = 26;
-			item.shoot = mod.ProjectileType("TheSpikePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.TheSpikePro>();
 			item.knockBack = 4;
 			item.value = 30000;
 			item.rare = 3;

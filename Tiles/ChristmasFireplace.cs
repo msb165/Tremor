@@ -23,7 +23,7 @@ namespace Tremor.Tiles
     {
         if(frameX == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, mod.ItemType("ChristmasFireplace"));
+            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<Items.ChristmasFireplace>());
         }
     }
 
@@ -37,5 +37,4 @@ namespace Tremor.Tiles
             player.AddBuff(87, 60, true);
         }
     }
-
 }}

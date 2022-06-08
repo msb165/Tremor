@@ -24,9 +24,9 @@ namespace Tremor.Items
 			item.value = Item.buyPrice(0, 2, 0, 0);
 			item.rare = 3;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("CreeperStaffPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.Minions.CreeperStaffPro>();
 			item.shootSpeed = 1f;
-			item.buffType = mod.BuffType("CreeperBuff");
+			item.buffType = ModContent.BuffType<Buffs.CreeperBuff>();
 			item.buffTime = 3600;
 		}
 
@@ -35,7 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Creeper Staff");
 			Tooltip.SetDefault("Summons a creeper to fight for you.");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{

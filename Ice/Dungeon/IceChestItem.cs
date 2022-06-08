@@ -18,7 +18,7 @@ namespace Tremor.Ice.Dungeon
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 150;
-			item.createTile = mod.TileType("IceChest");
+			item.createTile = ModContent.TileType<IceChest>();
 			ItemID.Sets.ExtractinatorMode[item.type] = item.type;
 		}
 

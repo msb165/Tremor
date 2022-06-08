@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.ZombieEvent.Tiles;
 
 namespace Tremor.Items
 {
@@ -23,9 +24,9 @@ namespace Tremor.Items
 			item.value = 10000;
 			item.rare = 3;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("ZombatStaffPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.Minions.ZombatStaffPro>();
 			item.shootSpeed = 1f;
-			item.buffType = mod.BuffType("ZombatBuff");
+			item.buffType = ModContent.BuffType<Buffs.ZombatBuff>();
 			item.buffTime = 3600;
 		}
 
@@ -34,7 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Zombat Staff");
 			Tooltip.SetDefault("Summons a zombat to fight for you.");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{
@@ -59,10 +59,10 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Diamond, 1);
-			recipe.AddIngredient(null, "RupicideBar", 6);
-			recipe.AddIngredient(null, "TearsofDeath", 6);
+			recipe.AddIngredient(ModContent.ItemType<ZombieEvent.Items.RupicideBar>(), 6);
+			recipe.AddIngredient(ModContent.ItemType<TearsofDeath>(), 6);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "NecromaniacWorkbenchTile");
+			recipe.AddTile(ModContent.TileType<NecromaniacWorkbenchTile>());
 			recipe.AddRecipe();
 		}
 	}

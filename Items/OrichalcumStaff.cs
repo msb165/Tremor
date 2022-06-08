@@ -25,7 +25,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item91;
 			item.autoReuse = true;
 			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
-			item.shoot = mod.ProjectileType("OrichalcumBolt");
+			item.shoot = ModContent.ProjectileType<Projectiles.OrichalcumBolt>();
 			item.shootSpeed = 15f;
 		}
 
@@ -34,7 +34,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Orichalcum Staff");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

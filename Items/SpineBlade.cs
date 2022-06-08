@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Doom;
 
 namespace Tremor.Items
 {
@@ -32,15 +33,14 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Bladetongue, 1);
-			recipe.AddIngredient(null, "NightmareBar", 15);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 15);
 			recipe.AddIngredient(ItemID.CrimtaneBar, 25);
-			recipe.AddIngredient(null, "Doomstone", 6);
-			recipe.AddIngredient(null, "Phantaplasm", 10);
+			recipe.AddIngredient(ModContent.ItemType<Doomstone>(), 6);
+			recipe.AddIngredient(ModContent.ItemType<Phantaplasm>(), 10);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

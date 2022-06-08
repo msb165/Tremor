@@ -22,21 +22,20 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("True Sanctifier");
-			Tooltip.SetDefault("Increases alchemic and throwing damage by 30%");
+			Tooltip.SetDefault("30% increased alchemical and throwing damage");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.GetModPlayer<MPlayer>(mod).alchemistDamage += 0.3f;
+			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.3f;
 			player.thrownDamage += 0.3f;
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "Sanctifier", 1);
-			recipe.AddIngredient(null, "BrokenHeroAmulet", 1);
+			recipe.AddIngredient(ModContent.ItemType<Sanctifier>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<BrokenHeroAmulet>(), 1);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

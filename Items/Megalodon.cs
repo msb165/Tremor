@@ -35,8 +35,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("50% chance not to consume ammo");
 		}
 
-
-
 		public override Vector2? HoldoutOffset()
 		{
 			return new Vector2(-20, 0);
@@ -44,7 +42,7 @@ namespace Tremor.Items
 
 		public override bool ConsumeAmmo(Player p)
 		{
-			return Main.rand.Next(3) == 0;
+			return Main.rand.NextBool(3);
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -58,15 +56,14 @@ namespace Tremor.Items
 			return false;
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "EyeofOblivion", 1);
+			recipe.AddIngredient(ModContent.ItemType<EyeofOblivion>(), 1);
 			recipe.AddIngredient(ItemID.Megashark, 1);
-			recipe.AddIngredient(null, "NightmareBar", 20);
-			recipe.AddIngredient(null, "CarbonSteel", 10);
-			recipe.AddIngredient(null, "DeadTissue", 5);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 20);
+			recipe.AddIngredient(ModContent.ItemType<CarbonSteel>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<DeadTissue>(), 5);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

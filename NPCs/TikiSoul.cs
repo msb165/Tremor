@@ -42,7 +42,7 @@ namespace Tremor.NPCs
 			direction.Normalize();
 			direction *= 9f;
 			Player player = Main.player[npc.target];
-			NPC parent = Main.npc[NPC.FindFirstNPC(mod.NPCType("TikiTotem"))];
+			NPC parent = Main.npc[NPC.FindFirstNPC(ModContent.NPCType<TikiTotem>())];
 			double deg = (double)npc.ai[1] / 2;
 			double rad = deg * (Math.PI / 150);
 			double dist = 240;
@@ -52,16 +52,15 @@ namespace Tremor.NPCs
 			if (--TimeToShoot <= 0)
 			{
 				TimeToShoot = ShootRate;
-				NPC parent2 = Main.npc[NPC.FindFirstNPC(mod.NPCType("TikiTotem"))];
+				NPC parent2 = Main.npc[NPC.FindFirstNPC(ModContent.NPCType<TikiTotem>())];
 				Vector2 Velocity = Helper.VelocityToPoint(npc.Center, parent2.Center, 20);
-				//int k = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, mod.ProjectileType("TikiSoulPro"), 0, 1f);
+				//int k = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<Projectiles.TikiSoulPro>(), 0, 1f);
 				//Main.projectile[k].friendly = false;
 				//Main.projectile[k].tileCollide = false;
 				//Main.projectile[k].hostile = true;
 			}
 			return false;
 		}
-
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{

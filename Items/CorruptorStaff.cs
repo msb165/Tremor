@@ -24,9 +24,9 @@ namespace Tremor.Items
 			item.value = Item.buyPrice(0, 2, 0, 0);
 			item.rare = 3;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("CorruptorStaffPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.Minions.CorruptorStaffPro>();
 			item.shootSpeed = 2f;
-			item.buffType = mod.BuffType("CorruptorBuff");
+			item.buffType = ModContent.BuffType<Buffs.CorruptorBuff>();
 			item.buffTime = 3600;
 		}
 
@@ -35,7 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Corruptor Staff");
 			Tooltip.SetDefault("Summons a corruptor to fight for you.");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{

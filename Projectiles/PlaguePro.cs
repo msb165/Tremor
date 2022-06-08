@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Projectiles.Alchemic.Blasts;
 
 namespace Tremor.Projectiles
 {
@@ -23,16 +24,14 @@ namespace Tremor.Projectiles
 
 		}
 
-
 		public override Color? GetAlpha(Color lightColor)
 		{
 			return Color.White;
 		}
 
-
 		public override void Kill(int timeLeft)
 		{
-			int ses = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("PlagueBlast"), projectile.damage * 2, 0.7f, projectile.owner);
+			int ses = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<PlagueBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
 			Main.projectile[ses].scale = projectile.scale;
 		}
 
@@ -46,7 +45,6 @@ namespace Tremor.Projectiles
 			}
 			if (projectile.frame >= 4)
 			{ projectile.frame = 0; }
-
 
 		}
 	}

@@ -24,7 +24,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item101;
 			item.autoReuse = true;
 			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
-			item.shoot = mod.ProjectileType("PalladiumBolt");
+			item.shoot = ModContent.ProjectileType<Projectiles.PalladiumBolt>();
 			item.shootSpeed = 13f;
 		}
 
@@ -33,7 +33,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Palladium Staff");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

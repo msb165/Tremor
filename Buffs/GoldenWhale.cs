@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Projectiles;
 
 namespace Tremor.Buffs
 {
@@ -18,16 +19,16 @@ namespace Tremor.Buffs
 			player.meleeEnchant = 4;
 
 			player.buffTime[buffIndex] = 18000;
-			TremorPlayer modPlayer = (TremorPlayer)player.GetModPlayer(mod, "TremorPlayer");
+			TremorPlayer modPlayer = player.GetModPlayer<TremorPlayer>();
 			modPlayer.goldenWhale = true;
 			bool petProjectileNotSpawned = true;
-			if (player.ownedProjectileCounts[mod.ProjectileType("GoldenWhalePro")] > 0)
+			if (player.ownedProjectileCounts[ModContent.ProjectileType<GoldenWhalePro>()] > 0)
 			{
 				petProjectileNotSpawned = false;
 			}
 			if (petProjectileNotSpawned && player.whoAmI == Main.myPlayer)
 			{
-				Projectile.NewProjectile(player.position.X + player.width / 2, player.position.Y + player.height / 2, 0f, 0f, mod.ProjectileType("GoldenWhalePro"), 0, 0f, player.whoAmI, 0f, 0f);
+				Projectile.NewProjectile(player.position.X + player.width / 2, player.position.Y + player.height / 2, 0f, 0f, ModContent.ProjectileType<Projectiles.GoldenWhalePro>(), 0, 0f, player.whoAmI, 0f, 0f);
 			}
 		}
 	}

@@ -1,11 +1,11 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
+using Microsoft.Xna.Framework;
+
 namespace Tremor.NPCs
 {
-
 	public class JungleSpirit : ModNPC
 	{
 		public override void SetStaticDefaults()
@@ -30,14 +30,8 @@ namespace Tremor.NPCs
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath58;
 			npc.value = Item.buyPrice(0, 0, 4, 15);
-			banner = npc.type;
-			bannerItem = mod.ItemType("JungleSpiritBanner");
-		}
-
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-		{
-			npc.lifeMax = npc.lifeMax * 1;
-			npc.damage = npc.damage * 1;
+			// banner = npc.type;
+			// Todo: bannerItem = ModContent.ItemType<JungleSpiritBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -45,25 +39,14 @@ namespace Tremor.NPCs
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				}
 				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JungleSpiritGore"), 1f);
 			}
-
 		}
-
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-		{
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
-			return (Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo)) && spawnInfo.player.ZoneJungle && y > Main.rockLayer ? 0.005f : 0f;
-		}
+			=> (Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo)) && spawnInfo.player.ZoneJungle && spawnInfo.spawnTileY > Main.rockLayer ? 0.005f : 0f;
 	}
 }
-
-
 

@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 20;
 			item.useAnimation = 20;
-			item.shoot = mod.ProjectileType("ThrowingCog");
+			item.shoot = ModContent.ProjectileType<Projectiles.ThrowingCog>();
 			item.shootSpeed = 10f;
 			item.useStyle = 1;
 			item.knockBack = 4;

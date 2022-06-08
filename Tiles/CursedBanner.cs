@@ -23,7 +23,7 @@ public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, 
     {
         if(Main.tile[i, j].frameX == 0 && Main.tile[i, j].frameY == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, mod.ItemType("CursedBanner"));
+            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<Items.Cursed.CursedBanner>());
         }
     }
 
@@ -34,7 +34,7 @@ public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, 
             Player player = Main.player[Main.myPlayer];
             int style = Main.tile[i, j].frameX / 15;
             string type;
-            player.AddBuff(mod.BuffType("CursedBannerBuff"), 60, true);
+            player.AddBuff(ModContent.BuffType<Buffs.CursedBannerBuff>(), 60, true);
         }
     }
 }}

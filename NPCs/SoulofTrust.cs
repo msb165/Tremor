@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items;
 
 namespace Tremor.NPCs
 {
@@ -38,8 +39,6 @@ namespace Tremor.NPCs
 		Color TextColor = Color.Orange;
 		bool StateFlag = true;
 
-		Random rnd = new Random();
-
 		public override void SetDefaults()
 		{
 			npc.lifeMax = 100000;
@@ -55,7 +54,7 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath10;
 			//npc.boss = true;
 			npc.value = Item.buyPrice(0, 1, 0, 0);
-			bossBag = mod.ItemType("TrinityBag2");
+			bossBag = ModContent.ItemType<TrinityBag2>();
 		}
 
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
@@ -150,11 +149,11 @@ namespace Tremor.NPCs
 				}
 			}
 
-			if (NPC.AnyNPCs(mod.NPCType("SoulofHope")) || NPC.AnyNPCs(mod.NPCType("SoulofTrust")))
+			if (NPC.AnyNPCs(ModContent.NPCType<SoulofHope>()) || NPC.AnyNPCs(ModContent.NPCType<SoulofTrust>()))
 			{
 				npc.dontTakeDamage = true;
 			}
-			if (NPC.AnyNPCs(mod.NPCType("SoulofHope")) || NPC.AnyNPCs(mod.NPCType("SoulofTrust")))
+			if (NPC.AnyNPCs(ModContent.NPCType<SoulofHope>()) || NPC.AnyNPCs(ModContent.NPCType<SoulofTrust>()))
 			{
 				npc.dontTakeDamage = false;
 			}
@@ -165,12 +164,11 @@ namespace Tremor.NPCs
 				NPC.NewNPC((int)npc.position.X + 100, (int)npc.position.Y - 50, 418);
 			}
 
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
 				int num706 = Dust.NewDust(npc.position, npc.width, npc.height, 6, 0f, 0f, 200, npc.color, 0.5f);
 				Main.dust[num706].velocity *= 0.6f;
 			}
-
 
 			if (npc.target != -1 && !RunAway) //если(пнс.цель не варно -1 И не убегать)
 				if (!Main.player[npc.target].active) //если (не мой.игрок[нпс.цель].активный)
@@ -188,9 +186,9 @@ namespace Tremor.NPCs
 			if (Main.dayTime || RunAway || npc.localAI[3] == 1) //если(Мой.День или Убегать или нпс.местный ИИ 3 к 1)
 			{
 				npc.localAI[3] = 1; //нпс.местный ИИ[3] равен 3
-				if (Main.npc[(int)npc.ai[2]].type == mod.NPCType("SoulofHope") && Main.npc[(int)npc.ai[2]].active) //если(Мой.нпс[(значение)нпс.ИИ[2]].тип равен мод.НПС Тип("МОБ") и Мой.нпс[(значение)нпс.ИИ[2]].активен равен да)
+				if (Main.npc[(int)npc.ai[2]].type == ModContent.NPCType<SoulofHope>() && Main.npc[(int)npc.ai[2]].active) //если(Мой.нпс[(значение)нпс.ИИ[2]].тип равен мод.НПС Тип("МОБ") и Мой.нпс[(значение)нпс.ИИ[2]].активен равен да)
 					Main.npc[(int)npc.ai[2]].localAI[3] = 1; //Мой.нпс[(значение)нпс.ИИ[2]].местный ИИ[3] варно 1
-				if (Main.npc[(int)npc.ai[3]].type == mod.NPCType("SoulofTruth") && Main.npc[(int)npc.ai[3]].active) //если(Мой.нпс[(значение)нпс.ИИ[2]].тип равен мод.НПС Тип("МОБ") и Мой.нпс[(значение)нпс.ИИ[2]].активен равен да)
+				if (Main.npc[(int)npc.ai[3]].type == ModContent.NPCType<SoulofTruth>() && Main.npc[(int)npc.ai[3]].active) //если(Мой.нпс[(значение)нпс.ИИ[2]].тип равен мод.НПС Тип("МОБ") и Мой.нпс[(значение)нпс.ИИ[2]].активен равен да)
 					Main.npc[(int)npc.ai[3]].localAI[3] = 1; //Мой.нпс[(значение)нпс.ИИ[2]].местный ИИ[3] варно 1
 				npc.life += 11; //нпс.жизнь прибавить
 				npc.aiStyle = 0; //нпс.ИИ Стиль - 0
@@ -201,8 +199,8 @@ namespace Tremor.NPCs
 			}
 			if (StateFlag)
 				if (
-					!((Main.npc[(int)npc.ai[2]].type == mod.NPCType("SoulofHope") && Main.npc[(int)npc.ai[2]].active)) ||
-					!((Main.npc[(int)npc.ai[3]].type == mod.NPCType("SoulofTruth") && Main.npc[(int)npc.ai[3]].active))
+					!((Main.npc[(int)npc.ai[2]].type == ModContent.NPCType<SoulofHope>() && Main.npc[(int)npc.ai[2]].active)) ||
+					!((Main.npc[(int)npc.ai[3]].type == ModContent.NPCType<SoulofTruth>() && Main.npc[(int)npc.ai[3]].active))
 				   )
 				{
 					StateFlag = false;
@@ -251,7 +249,7 @@ namespace Tremor.NPCs
 
 		void CreateDust()
 		{
-			if (rnd.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 				Dust.NewDust(npc.position, npc.width, npc.height, 6);
 		}
 
@@ -308,7 +306,7 @@ namespace Tremor.NPCs
 				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TrustGore2"), 1f);
 				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TrustGore3"), 1f);
 
-				if (!NPC.AnyNPCs(mod.NPCType("SoulofTruth")) && !NPC.AnyNPCs(mod.NPCType("SoulofHope")))
+				if (!NPC.AnyNPCs(ModContent.NPCType<SoulofTruth>()) && !NPC.AnyNPCs(ModContent.NPCType<SoulofHope>()))
 				{
 					Main.NewText("The Trinity has been defeated!", 175, 75, 255);
 				}
@@ -318,7 +316,7 @@ namespace Tremor.NPCs
 		public override void NPCLoot()
 		{
 
-			if (Main.expertMode && !NPC.AnyNPCs(mod.NPCType("SoulofTruth")) && !NPC.AnyNPCs(mod.NPCType("SoulofHope")))
+			if (Main.expertMode && !NPC.AnyNPCs(ModContent.NPCType<SoulofTruth>()) && !NPC.AnyNPCs(ModContent.NPCType<SoulofHope>()))
 			{
 				npc.DropBossBags();
 			}
@@ -329,55 +327,51 @@ namespace Tremor.NPCs
 				int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
 				int halfLength = npc.width / 2 / 16 + 1;
 
-
-
-
-				if (!NPC.AnyNPCs(mod.NPCType("SoulofHope")) && !NPC.AnyNPCs(mod.NPCType("SoulofTruth")))
+				if (!NPC.AnyNPCs(ModContent.NPCType<SoulofHope>()) && !NPC.AnyNPCs(ModContent.NPCType<SoulofTruth>()))
 				{
 
 					if (!Main.expertMode && Main.rand.Next(10) == 0)
 					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TrinityTrophy"));
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TrinityTrophy>());
 					}
 
 					if (!Main.expertMode && Main.rand.NextBool())
 					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("OmnikronBar"), Main.rand.Next(9, 15));
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TrueEssense"), Main.rand.Next(10, 25));
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<OmnikronBar>(), Main.rand.Next(9, 15));
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TrueEssense>(), Main.rand.Next(10, 25));
 					}
 
-					if (!TremorWorld.Boss.Trinity.Downed())
+					if (!TremorWorld.Boss.Trinity.IsDowned())
 					{
 						Main.NewText("This world has been enlightened with Angelite!", 0, 191, 255);
 						Main.NewText("This world has been attacked with Collapsium!", 255, 20, 147);
 
 						for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 6E-05); k++)
 						{
-							WorldGen.TileRunner(WorldGen.genRand.Next(0, Main.maxTilesX), WorldGen.genRand.Next((int)(Main.maxTilesY * .3f), (int)(Main.maxTilesY * .65f)), WorldGen.genRand.Next(9, 15), WorldGen.genRand.Next(9, 15), mod.TileType("CollapsiumOreTile"), false, 0f, 0f, false, true);
+							WorldGen.TileRunner(WorldGen.genRand.Next(0, Main.maxTilesX), WorldGen.genRand.Next((int)(Main.maxTilesY * .3f), (int)(Main.maxTilesY * .65f)), WorldGen.genRand.Next(9, 15), WorldGen.genRand.Next(9, 15), ModContent.TileType<Tiles.CollapsiumOreTile>(), false, 0f, 0f, false, true);
 						}
 						for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 6E-05); k++)
 						{
-							WorldGen.TileRunner(WorldGen.genRand.Next(0, Main.maxTilesX), WorldGen.genRand.Next((int)(Main.maxTilesY * .3f), (int)(Main.maxTilesY * .65f)), WorldGen.genRand.Next(9, 15), WorldGen.genRand.Next(9, 15), mod.TileType("AngeliteOreTile"), false, 0f, 0f, false, true);
+							WorldGen.TileRunner(WorldGen.genRand.Next(0, Main.maxTilesX), WorldGen.genRand.Next((int)(Main.maxTilesY * .3f), (int)(Main.maxTilesY * .65f)), WorldGen.genRand.Next(9, 15), WorldGen.genRand.Next(9, 15), ModContent.TileType<Tiles.AngeliteOreTile>(), false, 0f, 0f, false, true);
 						}
-						TremorWorld.downedBoss[TremorWorld.Boss.Trinity] = true;
+						TremorWorld.Boss.Trinity.Downed();
 					}
 
 				}
 
-
-				if (!Main.expertMode && Main.rand.Next(7) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ThrustMask"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TrustMask>());
 				}
 
-				if (!Main.expertMode && Main.rand.Next(3) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Volcannon"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Volcannon>());
 				}
 
-				if (!Main.expertMode && Main.rand.Next(3) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HonestBlade"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<HonestBlade>());
 				}
 
 			}

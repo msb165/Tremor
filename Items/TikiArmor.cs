@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Wood;
 
 namespace Tremor.Items
 {
@@ -25,7 +26,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("15% increased minion damage");
 		}
 
-
 		public override void UpdateEquip(Player player)
 		{
 			player.minionDamage += 0.15f;
@@ -33,8 +33,8 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "JungleAlloy", 1);
-			recipe.AddIngredient(null, "WoodenFrame", 1);
+			recipe.AddIngredient(ModContent.ItemType<JungleAlloy>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<WoodenFrame>(), 1);
 			recipe.AddIngredient(ItemID.Vine, 5);
 			recipe.AddIngredient(ItemID.JungleSpores, 15);
 			recipe.AddTile(114);

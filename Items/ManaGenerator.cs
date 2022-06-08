@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 300000;
-			item.createTile = mod.TileType("ManaGeneratorTile");
+			item.createTile = ModContent.TileType<Tiles.ManaGeneratorTile>();
 		}
 
 		public override void SetStaticDefaults()

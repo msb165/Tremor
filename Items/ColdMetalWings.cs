@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -26,7 +27,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Allows flight and slow fall");
 		}
 
-
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.wingTimeMax = 200;
@@ -49,12 +49,11 @@ namespace Tremor.Items
 			acceleration *= 2.5f;
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "FrostoneBar", 5);
-			recipe.AddIngredient(null, "IceSoul", 5);
+			recipe.AddIngredient(ModContent.ItemType<FrostoneBar>(), 5);
+			recipe.AddIngredient(ModContent.ItemType<IceSoul>(), 5);
 			recipe.AddIngredient(ItemID.SoulofFlight, 20);
 			recipe.SetResult(this);
 			recipe.AddTile(134);

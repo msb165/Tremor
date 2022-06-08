@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.rare = 3;
 			item.useStyle = 1;
 			item.consumable = true;
-			item.createTile = mod.TileType("GloomstoneTile");
+			item.createTile = ModContent.TileType<Tiles.GloomstoneTile>();
 		}
 
 		public override void SetStaticDefaults()
@@ -27,12 +27,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GloomstoneWall", 4);
+			recipe.AddIngredient(ModContent.ItemType<GloomstoneWall>(), 4);
 			recipe.SetResult(this, 1);
 			recipe.AddTile(17);
 			recipe.AddRecipe();

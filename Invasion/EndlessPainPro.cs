@@ -8,14 +8,14 @@ namespace Tremor.Invasion
 	public class EndlessPainPro : ModProjectile
 	{
 
-		const int ShootRate = 20; // ����� ����५� (1 ᥪ㭤� = 60��.)
-		const float ShootDistance = 300f; // ���쭮��� ��५��
-		const float ShootSpeed = 12f; // ������� ᭠�鸞
-		const int ShootDamage = 210; // �஭ ᭠�鸞
-		const float ShootKnockback = 2; // ���� ᭠�鸞
-		int ShootType = 496; // ��� ����५� (�᫨ �� �����쭮� �ન)
+		const int ShootRate = 20; 
+		const float ShootDistance = 300f; 
+		const float ShootSpeed = 12f; 
+		const int ShootDamage = 210; 
+		const float ShootKnockback = 2; 
+		int ShootType = 496; 
 		int TimeToShoot = ShootRate;
-		string ShootTypeMod;
+		int ShootTypeMod = 0;
 
 		public override void SetDefaults()
 		{
@@ -52,7 +52,7 @@ namespace Tremor.Invasion
 			{
 				TimeToShoot = ShootRate;
 				if (ShootType == -1)
-					ShootType = mod.ProjectileType(ShootTypeMod);
+					ShootType = ShootTypeMod;
 
 				float NearestNPCDist = ShootDistance;
 				int NearestNPC = -1;
@@ -98,7 +98,6 @@ namespace Tremor.Invasion
 		{
 			return Color.White;
 		}
-
 
 	}
 }

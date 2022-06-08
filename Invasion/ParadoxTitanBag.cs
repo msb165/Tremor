@@ -1,4 +1,5 @@
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Invasion
@@ -7,7 +8,6 @@ namespace Tremor.Invasion
 	{
 		public override void SetDefaults()
 		{
-
 			item.maxStack = 999;
 			item.consumable = true;
 			item.width = 24;
@@ -15,15 +15,15 @@ namespace Tremor.Invasion
 
 			item.rare = 9;
 			item.expert = true;
-			bossBagNPC = mod.NPCType("Titan");
 		}
+
+		public override int BossBagNPC => ModContent.NPCType<Titan>();
 
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("Right click to open");
+			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
-
 
 		public override bool CanRightClick()
 		{
@@ -32,31 +32,34 @@ namespace Tremor.Invasion
 
 		public override void OpenBossBag(Player player)
 		{
-			player.TryGettingDevArmor();
-			if (Main.rand.Next(7) == 0)
+			if (Main.hardMode)
 			{
-				player.QuickSpawnItem(mod.ItemType("ParadoxTitanMask"));
+				player.TryGettingDevArmor();
+			}
+			if (Main.rand.NextBool(7))
+			{
+				player.QuickSpawnItem(ModContent.ItemType<ParadoxTitanMask>());
 			}
 			if (Main.rand.Next(20) == 0)
 			{
-				player.QuickSpawnItem(mod.ItemType("VioleumWings"));
+				player.QuickSpawnItem(ModContent.ItemType<VioleumWings>());
 			}
 			switch (Main.rand.Next(4))
 			{
 				case 0:
-					player.QuickSpawnItem(mod.ItemType("TheEtherealm"));
+					player.QuickSpawnItem(ModContent.ItemType<TheEtherealm>());
 					break;
 				case 1:
-					player.QuickSpawnItem(mod.ItemType("RocketWand"));
+					player.QuickSpawnItem(ModContent.ItemType<RocketWand>());
 					break;
 				case 2:
-					player.QuickSpawnItem(mod.ItemType("SoulFlames"));
+					player.QuickSpawnItem(ModContent.ItemType<SoulFlames>());
 					break;
 			}
-			player.QuickSpawnItem(mod.ItemType("HealingPotion"), Main.rand.Next(7, 20));
-			player.QuickSpawnItem(mod.ItemType("TimeTissue"), Main.rand.Next(5, 15));
-			player.QuickSpawnItem(mod.ItemType("Relayx"));
-			player.QuickSpawnItem(mod.ItemType("ClockofTime"));
+			player.QuickSpawnItem(ItemID.HealingPotion, Main.rand.Next(7, 20));
+			player.QuickSpawnItem(ModContent.ItemType<TimeTissue>(), Main.rand.Next(5, 15));
+			player.QuickSpawnItem(ModContent.ItemType<Relayx>());
+			player.QuickSpawnItem(ModContent.ItemType<ClockofTime>());
 		}
 	}
 }

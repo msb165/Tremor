@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useAnimation = 25;
 			item.width = 36;
 			item.height = 40;
-			item.shoot = mod.ProjectileType("Igniter");
+			item.shoot = ModContent.ProjectileType<Projectiles.Igniter>();
 			item.shootSpeed = 13f;
 			item.knockBack = 4.4f;
 			Item.staff[item.type] = true;
@@ -34,13 +34,12 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.SoulofLight, 15);
 			recipe.AddIngredient(ItemID.SoulofNight, 15);
-			recipe.AddIngredient(null, "FireFragment", 9);
+			recipe.AddIngredient(ModContent.ItemType<FireFragment>(), 9);
 			recipe.AddIngredient(2701, 25);
 			recipe.SetResult(this);
 			recipe.AddTile(134);

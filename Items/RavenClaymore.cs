@@ -23,7 +23,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.useTurn = true;
-			item.shoot = mod.ProjectileType("RavenFeather");
+			item.shoot = ModContent.ProjectileType<Projectiles.RavenFeather>();
 			item.shootSpeed = 8f;
 		}
 
@@ -32,7 +32,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Raven Claymore");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
@@ -49,7 +48,7 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.FieryGreatsword);
-			recipe.AddIngredient(null, "RavenFeather", 15);
+			recipe.AddIngredient(ModContent.ItemType<RavenFeather>(), 15);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

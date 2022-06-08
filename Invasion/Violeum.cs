@@ -46,23 +46,23 @@ namespace Tremor.Invasion
 				{
 					npc.DropBossBags();
 				}
-				if (!Main.expertMode && Main.rand.Next(7) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("VioleumMask"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<VioleumMask>());
 				}
-				if (!Main.expertMode && Main.rand.Next(5) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(5))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Crystyle"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Crystyle>());
 				}
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HealingPotion"), Main.rand.Next(7, 20));
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TimeTissue"), Main.rand.Next(5, 15));
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.HealingPotion, Main.rand.Next(7, 20));
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TimeTissue>(), Main.rand.Next(5, 15));
 				Main.NewText("Violeum has been defeated!", 39, 86, 134);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>(mod);
+			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
 			int x = spawnInfo.spawnTileX;
 			int y = spawnInfo.spawnTileY;
 			int tile = Main.tile[x, y].type;
@@ -75,10 +75,10 @@ namespace Tremor.Invasion
 			{
 				for (int k = 0; k < 10; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType<CyberDust>(), 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
 
-				CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>(mod);
+				CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
 				if (InvasionWorld.CyberWrath && InvasionWorld.CyberWrathPoints1 < 85)
 				{
 					InvasionWorld.CyberWrathPoints1 += 15;
@@ -88,7 +88,7 @@ namespace Tremor.Invasion
 
 			for (int k = 0; k < damage / npc.lifeMax * 50.0; k++)
 			{
-				Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType<CyberDust>(), hitDirection, -1f, 0, default(Color), 0.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), hitDirection, -1f, 0, default(Color), 0.7f);
 			}
 		}
 
@@ -170,9 +170,9 @@ namespace Tremor.Invasion
 				SecondState = true;
 			}
 
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
-				int num706 = Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType<CyberDust>(), 0f, 0f, 200, npc.color, 0.5f);
+				int num706 = Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), 0f, 0f, 200, npc.color, 0.5f);
 				Main.dust[num706].velocity *= 0.6f;
 			}
 			if (FirstState)
@@ -192,7 +192,7 @@ namespace Tremor.Invasion
 					{
 						Main.PlaySound(27, (int)npc.position.X, (int)npc.position.Y, 12);
 						float Angle = (float)Math.Atan2(NPos.Y - PTC.Y, NPos.X - PTC.X);
-						int SpitShot1 = Projectile.NewProjectile(NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), mod.ProjectileType("CyberLaserBat"), 70, 0f, 0);
+						int SpitShot1 = Projectile.NewProjectile(NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), ModContent.ProjectileType<CyberLaserBat>(), 70, 0f, 0);
 						Main.projectile[SpitShot1].timeLeft = 120;
 						customAi1 = 1f;
 					}
@@ -287,7 +287,7 @@ namespace Tremor.Invasion
 					}
 				}
 
-				if (Main.rand.Next(2) == 0)
+				if (Main.rand.NextBool(2))
 				{
 
 					float j = 0;
@@ -304,7 +304,7 @@ namespace Tremor.Invasion
 								n = (float)Math.Cos(j) * 25f;
 								Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 8);
 								int damage = 70,
-								type = mod.ProjectileType("CyberLaserBat");
+								type = ModContent.ProjectileType<CyberLaserBat>();
 								int num56 = Projectile.NewProjectile(npc.position.X + 20, npc.position.Y + 50, m, n, type, damage, 0f, Main.myPlayer);
 								Main.projectile[num56].timeLeft = 600;
 							}

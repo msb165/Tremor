@@ -14,7 +14,7 @@ namespace Tremor.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.mount.SetMount(mod.MountType("BrutalliskCrystal"), player);
+			player.mount.SetMount(ModContent.MountType<Mounts.BrutalliskCrystal>(), player);
 			player.buffTime[buffIndex] = 10;
 			player.noKnockback = true;
 		}

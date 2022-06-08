@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Angelite;
 
 namespace Tremor.Items
 {
@@ -18,20 +19,19 @@ namespace Tremor.Items
 			item.autoReuse = true;
 			item.useAnimation = 15;
 
-
 			item.useTime = 10;
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 150;
-			item.createTile = mod.TileType("DivineForgeTile");
+			item.createTile = ModContent.TileType<Tiles.DivineForgeTile>();
 		}
 
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Divine Forge");
-			Tooltip.SetDefault("Combines the function of the anvil, furnace and the ancient manipulator\nAllows you to work with heavenly materials");
+			Tooltip.SetDefault("Combines the function of the anvil, furnace and the ancient manipulator\n" +
+"Allows you to work with heavenly materials");
 		}
-
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
@@ -41,50 +41,50 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "CollapsiumOre", 30);
-			recipe.AddIngredient(null, "AngeliteOre", 30);
-			recipe.AddIngredient(null, "OmnikronBar", 5);
+			recipe.AddIngredient(ModContent.ItemType<CollapsiumOre>(), 30);
+			recipe.AddIngredient(ModContent.ItemType<AngeliteOre>(), 30);
+			recipe.AddIngredient(ModContent.ItemType<OmnikronBar>(), 5);
 			recipe.AddIngredient(ItemID.MythrilAnvil, 1);
 			recipe.AddIngredient(ItemID.AdamantiteForge, 1);
-			recipe.AddIngredient(null, "TrueEssense", 10);
+			recipe.AddIngredient(ModContent.ItemType<TrueEssense>(), 10);
 			recipe.AddIngredient(3549, 1);
-			recipe.AddTile(null, "StarvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.StarvilTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "CollapsiumOre", 30);
-			recipe.AddIngredient(null, "AngeliteOre", 30);
-			recipe.AddIngredient(null, "OmnikronBar", 5);
+			recipe.AddIngredient(ModContent.ItemType<CollapsiumOre>(), 30);
+			recipe.AddIngredient(ModContent.ItemType<AngeliteOre>(), 30);
+			recipe.AddIngredient(ModContent.ItemType<OmnikronBar>(), 5);
 			recipe.AddIngredient(ItemID.OrichalcumAnvil, 1);
 			recipe.AddIngredient(ItemID.AdamantiteForge, 1);
-			recipe.AddIngredient(null, "TrueEssense", 10);
+			recipe.AddIngredient(ModContent.ItemType<TrueEssense>(), 10);
 			recipe.AddIngredient(3549, 1);
-			recipe.AddTile(null, "StarvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.StarvilTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "CollapsiumOre", 30);
-			recipe.AddIngredient(null, "AngeliteOre", 30);
-			recipe.AddIngredient(null, "OmnikronBar", 5);
+			recipe.AddIngredient(ModContent.ItemType<CollapsiumOre>(), 30);
+			recipe.AddIngredient(ModContent.ItemType<AngeliteOre>(), 30);
+			recipe.AddIngredient(ModContent.ItemType<OmnikronBar>(), 5);
 			recipe.AddIngredient(ItemID.OrichalcumAnvil, 1);
 			recipe.AddIngredient(ItemID.TitaniumForge, 1);
-			recipe.AddIngredient(null, "TrueEssense", 10);
+			recipe.AddIngredient(ModContent.ItemType<TrueEssense>(), 10);
 			recipe.AddIngredient(3549, 1);
-			recipe.AddTile(null, "StarvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.StarvilTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "CollapsiumOre", 30);
-			recipe.AddIngredient(null, "AngeliteOre", 30);
-			recipe.AddIngredient(null, "OmnikronBar", 5);
+			recipe.AddIngredient(ModContent.ItemType<CollapsiumOre>(), 30);
+			recipe.AddIngredient(ModContent.ItemType<AngeliteOre>(), 30);
+			recipe.AddIngredient(ModContent.ItemType<OmnikronBar>(), 5);
 			recipe.AddIngredient(ItemID.MythrilAnvil, 1);
 			recipe.AddIngredient(ItemID.TitaniumForge, 1);
-			recipe.AddIngredient(null, "TrueEssense", 10);
+			recipe.AddIngredient(ModContent.ItemType<TrueEssense>(), 10);
 			recipe.AddIngredient(3549, 1);
-			recipe.AddTile(null, "StarvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.StarvilTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

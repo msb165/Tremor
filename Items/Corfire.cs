@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.damage = 56;
 			item.width = 30;
 			item.height = 26;
-			item.shoot = mod.ProjectileType("CorfirePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.CorfirePro>();
 			item.knockBack = 4;
 			item.value = 10000;
 			item.rare = 2;
@@ -23,7 +23,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Corfire");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Items.Angelite;
 
 namespace Tremor.Tiles
 {
@@ -18,7 +19,7 @@ dustType = 57;
 mineResist = 15f;
 minPick = 250;
 	AddMapEntry(new Color(0, 191, 255));
-          drop = mod.ItemType("AngeliteOre");
+          drop = ModContent.ItemType<AngeliteOre>();
     }
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
     {
@@ -29,7 +30,7 @@ minPick = 250;
 
   public override bool CanExplode(int i, int j)
   {
-   if (Main.tile[i, j].type == mod.TileType("AngeliteOreTile"))
+   if (Main.tile[i, j].type == ModContent.TileType<Tiles.AngeliteOreTile>())
    {
     return false;
    }

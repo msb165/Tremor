@@ -15,7 +15,7 @@ namespace Tremor.Items
 			item.useTime = 14;
 			item.maxStack = 999;
 			item.useAnimation = 14;
-			item.shoot = mod.ProjectileType("IchorBreathPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.IchorBreathPro>();
 			item.shootSpeed = 8f;
 			item.useStyle = 1;
 			item.knockBack = 3;
@@ -32,11 +32,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "DragonBreath", 25);
+			recipe.AddIngredient(ModContent.ItemType<DragonBreath>(), 25);
 			recipe.AddIngredient(ItemID.Ichor, 3);
 			recipe.SetResult(this, 25);
 			recipe.AddTile(134);

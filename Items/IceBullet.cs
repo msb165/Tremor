@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.knockBack = 1.5f;
 			item.value = 10;
 			item.rare = 2;
-			item.shoot = mod.ProjectileType("IceBullet");
+			item.shoot = ModContent.ProjectileType<Projectiles.IceBullet>();
 			item.shootSpeed = 8f;
 			item.ammo = AmmoID.Bullet;
 		}
@@ -28,7 +28,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Ice Bullet");
 			Tooltip.SetDefault("25% chance to inflict frostburn");
 		}
-
 
 		public override void AddRecipes()
 		{

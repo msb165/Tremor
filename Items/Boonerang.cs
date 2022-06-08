@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -18,7 +19,7 @@ namespace Tremor.Items
 			item.useAnimation = 14;
 			item.useStyle = 1;
 			item.knockBack = 3f;
-			item.shoot = mod.ProjectileType("BoonerangPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.BoonerangPro>();
 			item.value = 27600;
 			item.rare = 4;
 			item.noUseGraphic = true;
@@ -31,7 +32,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Boonerang");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override bool CanUseItem(Player player)
 		{
@@ -49,7 +49,7 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Bone, 45);
-			recipe.AddIngredient(null, "CursedSoul", 1);
+			recipe.AddIngredient(ModContent.ItemType<CursedSoul>(), 1);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.height = 32;
 			item.maxStack = 99;
 			item.rare = 1;
-			item.createTile = mod.TileType("ChristmasFireplace");
+			item.createTile = ModContent.TileType<Tiles.ChristmasFireplace>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -26,7 +26,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Christmas Fireplace");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

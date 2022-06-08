@@ -32,7 +32,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override Vector2? HoldoutOffset()
 		{
 			return new Vector2(-18, -4);
@@ -41,9 +40,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "StarBar", 20);
-			recipe.AddIngredient(null, "Phantaplasm", 6);
-			recipe.AddIngredient(null, "CarbonSteel", 6);
+			recipe.AddIngredient(ModContent.ItemType<StarBar>(), 20);
+			recipe.AddIngredient(ModContent.ItemType<Phantaplasm>(), 6);
+			recipe.AddIngredient(ModContent.ItemType<CarbonSteel>(), 6);
 			recipe.AddIngredient(ItemID.MartianConduitPlating, 50);
 			recipe.SetResult(this);
 			recipe.AddTile(412);

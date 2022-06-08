@@ -38,9 +38,9 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.TheUndertaker, 1);
-			recipe.AddIngredient(null, "WhiteGoldBar", 12);
+			recipe.AddIngredient(ModContent.ItemType<WhiteGoldBar>(), 12);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "DivineForgeTile");
+			recipe.AddTile(ModContent.TileType<Tiles.DivineForgeTile>());
 			recipe.AddRecipe();
 		}
 	}

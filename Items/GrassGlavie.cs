@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.melee = true;
 			item.useTime = 30;
-			item.shoot = mod.ProjectileType("GrassGlaviePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.GrassGlaviePro>();
 			item.shootSpeed = 3f;
 			item.useAnimation = 30;
 			item.useStyle = 5;
@@ -30,7 +30,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Grass Glaive");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

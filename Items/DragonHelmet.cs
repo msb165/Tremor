@@ -7,7 +7,6 @@ namespace Tremor.Items
 	public class DragonHelmet : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
@@ -25,7 +24,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Increases arrow speed and damage");
 		}
 
-
 		public override void UpdateEquip(Player player)
 		{
 			player.archery = true;
@@ -33,7 +31,7 @@ namespace Tremor.Items
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("DragonBreastplate") && legs.type == mod.ItemType("DragonGreaves");
+			return body.type == ModContent.ItemType<DragonBreastplate>() && legs.type == ModContent.ItemType<DragonGreaves>();
 		}
 
 		public override void UpdateArmorSet(Player p)
@@ -51,8 +49,8 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "DragonCapsule", 14);
-			recipe.AddIngredient(null, "EarthFragment", 10);
+			recipe.AddIngredient(ModContent.ItemType<DragonCapsule>(), 14);
+			recipe.AddIngredient(ModContent.ItemType<EarthFragment>(), 10);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

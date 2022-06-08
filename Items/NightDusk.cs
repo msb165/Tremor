@@ -32,22 +32,20 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
-			if (Main.rand.Next(5) == 0)
+			if (Main.rand.NextBool(5))
 			{
 				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 27);
 			}
 		}
-
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.MoltenPickaxe, 1);
 			recipe.AddIngredient(ItemID.BonePickaxe, 1);
-			recipe.AddIngredient(null, "PickaxeofBloom", 1);
+			recipe.AddIngredient(ModContent.ItemType<PickaxeofBloom>(), 1);
 			recipe.AddIngredient(ItemID.NightmarePickaxe, 1);
 			recipe.AddTile(26);
 			recipe.SetResult(this);

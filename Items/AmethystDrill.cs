@@ -26,7 +26,7 @@ namespace Tremor.Items
 			item.rare = 2;
 			item.UseSound = SoundID.Item23;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("AmethystDrillPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.AmethystDrillPro>();
 			item.shootSpeed = 40f;
 		}
 

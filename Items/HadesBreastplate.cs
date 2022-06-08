@@ -3,6 +3,8 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Magmonium;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -24,20 +26,21 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Hades Breastplate");
-			Tooltip.SetDefault("Increases maximum life by 50\nIncreases defense when under 100 health\n45% increased all damage");
+			Tooltip.SetDefault("Increases maximum life by 50\n" +
+"Increases defense when under 100 health\n" +
+"45% increased damage");
 		}
-
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "InfernoSoul", 10);
-			recipe.AddIngredient(null, "MagmoniumBreastplate", 1);
-			recipe.AddIngredient(null, "FireFragment", 19);
-			recipe.AddIngredient(null, "Phantaplasm", 13);
+			recipe.AddIngredient(ModContent.ItemType<InfernoSoul>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<MagmoniumBreastplate>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<FireFragment>(), 19);
+			recipe.AddIngredient(ModContent.ItemType<Phantaplasm>(), 13);
 			recipe.AddIngredient(ItemID.LivingFireBlock, 12);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "StarvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.StarvilTile>());
 			recipe.AddRecipe();
 		}
 
@@ -59,7 +62,7 @@ namespace Tremor.Items
 			player.rangedDamage += 0.45f;
 			player.magicDamage += 0.45f;
 			player.minionDamage += 0.45f;
-			player.GetModPlayer<MPlayer>(mod).alchemistDamage += 0.45f;
+			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.45f;
 		}
 	}
 }

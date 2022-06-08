@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.NPCs;
 
 namespace Tremor.Items
 {
@@ -7,23 +8,19 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-
 			item.maxStack = 999;
 			item.consumable = true;
 			item.width = 24;
 			item.height = 24;
-
 			item.rare = 9;
 			item.expert = true;
-			bossBagNPC = mod.NPCType("StormJellyfish");
 		}
-
+		public override int BossBagNPC => ModContent.NPCType<StormJellyfish>();
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("Right click to open");
+			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
-
 
 		public override bool CanRightClick()
 		{
@@ -32,31 +29,31 @@ namespace Tremor.Items
 
 		public override void OpenBossBag(Player player)
 		{
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.NextBool(7))
 			{
-				player.QuickSpawnItem(mod.ItemType("StormJellyfishMask"));
+				player.QuickSpawnItem(ModContent.ItemType<StormJellyfishMask>());
 			}
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.NextBool(4))
 			{
-				player.QuickSpawnItem(mod.ItemType("StormBlade"));
+				player.QuickSpawnItem(ModContent.ItemType<StormBlade>());
 			}
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(mod.ItemType("Poseidon"));
+				player.QuickSpawnItem(ModContent.ItemType<Poseidon>());
 			}
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(mod.ItemType("JellyfishStaff"));
+				player.QuickSpawnItem(ModContent.ItemType<JellyfishStaff>());
 			}
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(mod.ItemType("BoltTome"));
+				player.QuickSpawnItem(ModContent.ItemType<BoltTome>());
 			}
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(mod.ItemType("StickyFlail"));
+				player.QuickSpawnItem(ModContent.ItemType<StickyFlail>());
 			}
-			player.QuickSpawnItem(mod.ItemType("EnchantedHourglass"));
+			player.QuickSpawnItem(ModContent.ItemType<EnchantedHourglass>());
 		}
 	}
 }

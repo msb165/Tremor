@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 14;
 			item.useAnimation = 14;
-			item.shoot = mod.ProjectileType("GloomSphere");
+			item.shoot = ModContent.ProjectileType<Projectiles.GloomSphere>();
 			item.shootSpeed = 16f;
 			item.mana = 12;
 			item.useStyle = 5;

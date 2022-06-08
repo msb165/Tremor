@@ -6,7 +6,6 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-
 			item.width = 32;
 			item.height = 32;
 			item.maxStack = 99;
@@ -17,7 +16,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 50000;
-			item.createTile = mod.TileType("WallofShadowTrophy");
+			item.createTile = ModContent.TileType<Tiles.WallofShadowTrophy>();
 			item.placeStyle = 0;
 		}
 

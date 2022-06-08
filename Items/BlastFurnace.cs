@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 150;
-			item.createTile = mod.TileType("BlastFurnace");
+			item.createTile = ModContent.TileType<Tiles.BlastFurnace>();
 		}
 
 		public override void SetStaticDefaults()
@@ -27,12 +27,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Used to craft alloys");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.GrayBrick, 25);
-			recipe.AddIngredient(null, "Charcoal", 15);
+			recipe.AddIngredient(ModContent.ItemType<Charcoal>(), 15);
 			recipe.AddIngredient(ItemID.LavaBucket, 1);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

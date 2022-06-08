@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items;
 
 namespace Tremor.NPCs
 {
@@ -14,8 +15,6 @@ namespace Tremor.NPCs
 			DisplayName.SetDefault("Space Whale");
 			Main.npcFrameCount[npc.type] = 8;
 		}
-
-
 
 		public override void SetDefaults()
 		{
@@ -34,9 +33,8 @@ namespace Tremor.NPCs
 			music = 39;
 			npc.aiStyle = -1;
 			animationType = 370;
-			bossBag = mod.ItemType("SpaceWhaleTreasureBag");
+			bossBag = ModContent.ItemType<SpaceWhaleTreasureBag>();
 		}
-
 
 		public override void HitEffect(int hitDirection, double damage)
 		{
@@ -69,11 +67,11 @@ namespace Tremor.NPCs
 		public override void AI()
 		{
 
-			if (NPC.AnyNPCs(mod.NPCType("SpaceWhaleMinion")))
+			if (NPC.AnyNPCs(ModContent.NPCType<SpaceWhaleMinion>()))
 			{
 				npc.dontTakeDamage = true;
 			}
-			if (!NPC.AnyNPCs(mod.NPCType("SpaceWhaleMinion")))
+			if (!NPC.AnyNPCs(ModContent.NPCType<SpaceWhaleMinion>()))
 			{
 				npc.dontTakeDamage = false;
 			}
@@ -507,7 +505,7 @@ namespace Tremor.NPCs
 					if (Main.netMode != 1)
 					{
 						Vector2 vector139 = Vector2.Normalize(player2.Center - vector134) * (npc.width + 20) / 2f + vector134;
-						NPC.NewNPC((int)vector139.X, (int)vector139.Y + 45, mod.NPCType("SpaceWhaleMinion"), 0);
+						NPC.NewNPC((int)vector139.X, (int)vector139.Y + 45, ModContent.NPCType<SpaceWhaleMinion>(), 0);
 					}
 				}
 				int num1099 = Math.Sign(player2.Center.X - vector134.X);
@@ -540,15 +538,11 @@ namespace Tremor.NPCs
 				if (Main.netMode != 1 && npc.ai[2] == num1082 - 30)
 				{
 					Vector2 vector140 = npc.rotation.ToRotationVector2() * (Vector2.UnitX * npc.direction) * (npc.width + 20) / 2f + vector134;
-					Projectile.NewProjectile(vector140.X, vector140.Y, npc.direction * 2, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f); Projectile.NewProjectile(vector140.X, vector140.Y, npc.direction * 3, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f); Projectile.NewProjectile(vector140.X, vector140.Y, npc.direction * 4, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f); Projectile.NewProjectile(vector140.X, vector140.Y, npc.direction * 5, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f); Projectile.NewProjectile(vector140.X, vector140.Y, npc.direction * 6, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f); Projectile.NewProjectile(vector140.X, vector140.Y, npc.direction * 7, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f); Projectile.NewProjectile(vector140.X, vector140.Y, npc.direction * 8, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f); Projectile.NewProjectile(vector140.X, vector140.Y, npc.direction * 9, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f);
-					Projectile.NewProjectile(vector140.X, vector140.Y, -(float)npc.direction * 2, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f);
-					Projectile.NewProjectile(vector140.X, vector140.Y, -(float)npc.direction * 3, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f);
-					Projectile.NewProjectile(vector140.X, vector140.Y, -(float)npc.direction * 4, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f);
-					Projectile.NewProjectile(vector140.X, vector140.Y, -(float)npc.direction * 5, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f);
-					Projectile.NewProjectile(vector140.X, vector140.Y, -(float)npc.direction * 6, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f);
-					Projectile.NewProjectile(vector140.X, vector140.Y, -(float)npc.direction * 7, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f);
-					Projectile.NewProjectile(vector140.X, vector140.Y, -(float)npc.direction * 8, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f);
-					Projectile.NewProjectile(vector140.X, vector140.Y, -(float)npc.direction * 9, 8f, 467, 0, 0f, Main.myPlayer, 0f, 0f);
+					for(int i=2; i<=9; i++)
+					{
+						Projectile.NewProjectile(vector140.X, vector140.Y, +npc.direction * i, 8f, ProjectileID.CultistBossFireBall, 0, 0f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(vector140.X, vector140.Y, -npc.direction * i, 8f, ProjectileID.CultistBossFireBall, 0, 0f, Main.myPlayer, 0f, 0f);
+					}
 				}
 				npc.ai[2] += 1f;
 				if (npc.ai[2] >= num1082)
@@ -733,7 +727,7 @@ namespace Tremor.NPCs
 					if (Main.netMode != 1)
 					{
 						Vector2 vector143 = Vector2.Normalize(npc.velocity) * (npc.width + 20) / 2f + vector134;
-						int num1105 = NPC.NewNPC((int)vector143.X, (int)vector143.Y + 45, mod.NPCType("SpaceWhaleMinion"), 0);
+						int num1105 = NPC.NewNPC((int)vector143.X, (int)vector143.Y + 45, ModContent.NPCType<SpaceWhaleMinion>(), 0);
 						Main.npc[num1105].target = npc.target;
 						Main.npc[num1105].velocity = Vector2.Normalize(npc.velocity).RotatedBy(1.57079637f * npc.direction, default(Vector2)) * scaleFactor4;
 						Main.npc[num1105].netUpdate = true;
@@ -761,7 +755,8 @@ namespace Tremor.NPCs
 				}
 				if (Main.netMode != 1 && npc.ai[2] == num1082 - 30)
 				{
-					Projectile.NewProjectile(vector134.X, vector134.Y, 0f, 0f, mod.ProjectileType("SpaceMeteorPro"), 0, 0f, Main.myPlayer, 1f, npc.target + 1);
+					//MISSING: SpaceMeteorPro
+					//Projectile.NewProjectile(vector134.X, vector134.Y, 0f, 0f, ModContent.ProjectileType<SpaceMeteorPro>(), 0, 0f, Main.myPlayer, 1f, npc.target + 1);
 				}
 				npc.ai[2] += 1f;
 				if (npc.ai[2] >= num1082)
@@ -789,57 +784,56 @@ namespace Tremor.NPCs
 				int CenterY = (int)(npc.Center.Y + npc.height / 2) / 16;
 				int halfLength = npc.width / 2 / 16 + 1;
 
-
-				if (!TremorWorld.Boss.SpaceWhale.Downed())
+				if (!TremorWorld.Boss.SpaceWhale.IsDowned())
 				{
 					Main.NewText("A comet has struck the ground!", 117, 187, 253);
-					TremorWorld.dropComet();
+					TremorWorld.DropComet();
 					//return;
 				}
-				if (TremorWorld.Boss.SpaceWhale.Downed() && Main.rand.Next(3) == 0)
+				if (TremorWorld.Boss.SpaceWhale.IsDowned() && Main.rand.NextBool(3))
 				{
 					Main.NewText("A comet has struck the ground!", 117, 187, 253);
-					TremorWorld.dropComet();
+					TremorWorld.DropComet();
 					//return;
 				}
-				TremorWorld.downedBoss[TremorWorld.Boss.SpaceWhale] = true;
+				TremorWorld.Boss.SpaceWhale.Downed();
 
-				if (!Main.expertMode && Main.rand.Next(7) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, mod.ItemType("SpaceWhaleMask"));
+					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<SpaceWhaleMask>());
 				}
-				if (!Main.expertMode && Main.rand.Next(7) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, mod.ItemType("SpaceWhaleTrophy"));
-				}
-
-				if (!Main.expertMode && Main.rand.Next(3) == 0)
-				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, mod.ItemType("SDL"));
+					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<SpaceWhaleTrophy>());
 				}
 
-				if (!Main.expertMode && Main.rand.Next(3) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, mod.ItemType("BlackHoleCannon"));
+					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<SDL>());
 				}
 
-				if (!Main.expertMode && Main.rand.Next(3) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, mod.ItemType("HornedWarHammer"));
+					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<BlackHoleCannon>());
 				}
 
-				if (!Main.expertMode && Main.rand.Next(5) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, mod.ItemType("StarLantern"));
+					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<HornedWarHammer>());
 				}
 
-				if (!Main.expertMode && Main.rand.Next(8) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(5))
 				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, mod.ItemType("WhaleFlippers"));
+					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<StarLantern>());
+				}
+
+				if (!Main.expertMode && Main.rand.NextBool(8))
+				{
+					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<WhaleFlippers>());
 				}
 				if (Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, mod.ItemType("CosmicFuel"));
+					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<CosmicFuel>());
 				}
 			}
 		}

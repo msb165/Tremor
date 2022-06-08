@@ -24,9 +24,9 @@ namespace Tremor.Items
 			item.value = Item.buyPrice(0, 0, 1, 0);
 			item.rare = 1;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("WhiteSakuraPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.Minions.WhiteSakuraPro>();
 			item.shootSpeed = 1f;
-			item.buffType = mod.BuffType("WhiteSakuraBuff");
+			item.buffType = ModContent.BuffType<Buffs.WhiteSakuraBuff>();
 			item.buffTime = 3600;
 		}
 
@@ -35,7 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("White Sakura");
 			Tooltip.SetDefault("Summons a white wind to fight for you.");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{
@@ -59,10 +58,10 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "BlueSakura", 1);
-			recipe.AddIngredient(null, "WhiteGoldBar", 15);
+			recipe.AddIngredient(ModContent.ItemType<BlueSakura>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<WhiteGoldBar>(), 15);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "DivineForgeTile");
+			recipe.AddTile(ModContent.TileType<Tiles.DivineForgeTile>());
 			recipe.AddRecipe();
 		}
 	}

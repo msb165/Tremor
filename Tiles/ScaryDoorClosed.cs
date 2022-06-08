@@ -5,6 +5,7 @@ using Terraria.Enums;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Tremor.Items;
 
 namespace Tremor.Tiles
 {
@@ -37,12 +38,12 @@ namespace Tremor.Tiles
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
 			AddMapEntry(new Color(200, 200, 200));
 			adjTiles = new int[]{ TileID.ClosedDoor };
-			openDoorID = mod.TileType("ScaryDoorOpen");
+			openDoorID = ModContent.TileType<Tiles.ScaryDoorOpen>();
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 16, 48, mod.ItemType("CreepyDoor"));
+			Item.NewItem(i * 16, j * 16, 16, 48, ModContent.ItemType<CreepyDoor>());
 		}
 	}
 }

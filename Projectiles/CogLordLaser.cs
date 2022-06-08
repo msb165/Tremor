@@ -1,7 +1,8 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
-using Tremor.NovaPillar;
+using Tremor.NPCs.Bosses.CogLord;
+using Tremor.NPCs.Bosses.NovaPillar;
 
 namespace Tremor.Projectiles
 {
@@ -27,7 +28,6 @@ namespace Tremor.Projectiles
 			DisplayName.SetDefault("Cog Lord Laser");
 
 		}
-
 
 		public override void AI()
 		{
@@ -55,7 +55,7 @@ namespace Tremor.Projectiles
 				{
 					if (Main.npc[k].Hitbox.Intersects(projectile.Hitbox))
 					{
-						if (Main.npc[k].type == mod.NPCType("NovaPillar"))
+						if (Main.npc[k].type == ModContent.NPCType<NovaPillar>())
 						{
 							NovaHandler.ShieldStrength--;
 							projectile.Kill();
@@ -64,7 +64,7 @@ namespace Tremor.Projectiles
 				}
 				if (Main.npc[k].Hitbox.Intersects(projectile.Hitbox))
 				{
-					if (Main.npc[k].type == mod.NPCType("CogLord"))
+					if (Main.npc[k].type == ModContent.NPCType<CogLord>())
 					{
 						projectile.Kill();
 					}

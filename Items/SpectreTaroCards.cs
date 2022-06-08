@@ -25,7 +25,7 @@ namespace Tremor.Items
 			item.rare = 6;
 			item.UseSound = SoundID.Item8;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("SpectreTaroCard");
+			item.shoot = ModContent.ProjectileType<Projectiles.SpectreTaroCard>();
 			item.shootSpeed = 8f;
 		}
 
@@ -34,7 +34,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Spectre Taro Cards");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

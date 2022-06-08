@@ -13,8 +13,8 @@ namespace Tremor.Items
 			item.useTime = 25;
 			item.useAnimation = 25;
 
-			item.shoot = mod.ProjectileType("ZootalooPet");
-			item.buffType = mod.BuffType("ZootalooBuff");
+			item.shoot = ModContent.ProjectileType<Projectiles.ZootalooPet>();
+			item.buffType = ModContent.BuffType<Buffs.ZootalooBuff>();
 		}
 
 		public override void SetStaticDefaults()
@@ -22,7 +22,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Zootaloo Egg");
 			Tooltip.SetDefault("Summons an zootaloo junior");
 		}
-
 
 		public override void UseStyle(Player player)
 		{

@@ -23,10 +23,9 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Increases projectile's speed twice");
 		}
 
-
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.AddBuff(mod.BuffType("ShootSpeedBuff2"), 2);
+			player.AddBuff(ModContent.BuffType<Buffs.ShootSpeedBuff2>(), 2);
 		}
 	}
 }

@@ -35,7 +35,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Creates a divine lightning");
 		}
 
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			Vector2 vector82 = -Main.player[Main.myPlayer].Center + Main.MouseWorld;
@@ -49,7 +48,7 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Glass, 30);
-			recipe.AddIngredient(null, "AirFragment", 16);
+			recipe.AddIngredient(ModContent.ItemType<AirFragment>(), 16);
 			recipe.AddIngredient(ItemID.SoulofLight, 12);
 			recipe.AddIngredient(ItemID.SoulofNight, 12);
 			recipe.AddIngredient(ItemID.Diamond, 15);

@@ -19,9 +19,10 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Solar Ring ");
-			Tooltip.SetDefault("20% increased melee damage\nIncreases melee critical strike chance by 15\nCasts a ring of fire");
+			Tooltip.SetDefault("20% increased melee damage\n" +
+"Increases melee critical strike chance by 15\n" +
+"Casts a ring of fire");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
@@ -36,7 +37,7 @@ namespace Tremor.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(3458, 10);
 			recipe.AddIngredient(3467, 15);
-			recipe.AddIngredient(null, "Band");
+			recipe.AddIngredient(ModContent.ItemType<Band>());
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

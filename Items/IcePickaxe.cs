@@ -30,11 +30,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "FrostoneBar", 12);
+			recipe.AddIngredient(ModContent.ItemType<FrostoneBar>(), 12);
 			recipe.AddTile(134);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -7,7 +7,6 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-
 			item.width = 10;
 			item.height = 24;
 			item.maxStack = 99;
@@ -19,7 +18,7 @@ namespace Tremor.Items
 			item.consumable = true;
 			item.rare = 1;
 			item.value = Item.buyPrice(0, 0, 10, 0);
-			item.createTile = mod.TileType("MonsterBanner");
+			item.createTile = ModContent.TileType<Tiles.MonsterBanner>();
 			item.placeStyle = 24;
 		}
 
@@ -28,6 +27,5 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Abomination Banner");
 			Tooltip.SetDefault("");
 		}
-
 	}
 }

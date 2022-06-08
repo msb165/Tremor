@@ -15,7 +15,7 @@ namespace Tremor.Ice.Items
 			item.noUseGraphic = true;
 			item.melee = true;
 			item.useTime = 35;
-			item.shoot = mod.ProjectileType("FrostLancePro");
+			item.shoot = ModContent.ProjectileType<FrostLancePro>();
 			item.shootSpeed = 3f;
 			item.useAnimation = 35;
 			item.useStyle = 5;
@@ -31,7 +31,6 @@ namespace Tremor.Ice.Items
 			DisplayName.SetDefault("Frost Lance");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{

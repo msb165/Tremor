@@ -34,7 +34,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "FrostCore", 9);
+			recipe.AddIngredient(ModContent.ItemType<FrostCore>(), 9);
 			recipe.AddTile(16);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

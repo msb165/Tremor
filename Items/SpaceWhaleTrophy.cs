@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 50000;
-			item.createTile = mod.TileType("SpaceWhaleTrophy");
+			item.createTile = ModContent.TileType<Tiles.SpaceWhaleTrophy>();
 			item.placeStyle = 0;
 		}
 

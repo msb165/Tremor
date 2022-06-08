@@ -28,7 +28,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Summons Blood Moon");
 		}
 
-
 		public override bool CanUseItem(Player player)
 		{
 			if (!Main.dayTime && !Main.bloodMoon)
@@ -48,7 +47,7 @@ namespace Tremor.Items
 			recipe.AddIngredient(ItemID.Bottle, 1);
 			recipe.AddIngredient(520, 1);
 			recipe.AddIngredient(521, 1);
-			recipe.AddIngredient(null, "SkullTeeth", 1);
+			recipe.AddIngredient(ModContent.ItemType<SkullTeeth>(), 1);
 			recipe.AddTile(13);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

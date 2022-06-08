@@ -22,13 +22,12 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.BottledWater, 1);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "AlchematorTile");
+			recipe.AddTile(ModContent.TileType<Tiles.AlchematorTile>());
 			recipe.AddRecipe();
 		}
 	}

@@ -15,7 +15,7 @@ namespace Tremor.Items
 			item.consumable = true;
 			item.height = 30;
 
-			item.shoot = mod.ProjectileType("NightmareArrowPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.NightmareArrowPro>();
 			item.shootSpeed = 22f;
 			item.knockBack = 4;
 			item.value = 10;
@@ -29,11 +29,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("'Enemies die... from fear.'");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "NightmareBar", 1);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 1);
 			recipe.AddIngredient(ItemID.WoodenArrow, 150);
 			recipe.SetResult(this, 150);
 			recipe.AddTile(412);

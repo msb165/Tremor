@@ -24,9 +24,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Deadly Treats");
-			Tooltip.SetDefault("Increases life regeneration\nLowers visibilty");
+			Tooltip.SetDefault("Increases life regeneration\n" +
+"Lowers visibilty");
 		}
-
 
 		public override bool UseItem(Player player)
 		{
@@ -40,7 +40,7 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Bowl, 1);
-			recipe.AddIngredient(null, "SpiderMeat", 1);
+			recipe.AddIngredient(ModContent.ItemType<SpiderMeat>(), 1);
 			recipe.AddIngredient(ItemID.VileMushroom, 2);
 			recipe.SetResult(this);
 			recipe.AddTile(96);
@@ -48,7 +48,7 @@ namespace Tremor.Items
 
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Bowl, 1);
-			recipe.AddIngredient(null, "SpiderMeat", 1);
+			recipe.AddIngredient(ModContent.ItemType<SpiderMeat>(), 1);
 			recipe.AddIngredient(ItemID.ViciousMushroom, 2);
 			recipe.SetResult(this);
 			recipe.AddTile(96);

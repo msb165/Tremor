@@ -13,7 +13,7 @@ namespace Tremor.Ice.Items
 			item.maxStack = 99;
 			item.value = 100;
 			item.rare = 1;
-			item.createTile = mod.TileType("GlacierArmchairTile");
+			item.createTile = ModContent.TileType<GlacierArmchairTile>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -28,11 +28,10 @@ namespace Tremor.Ice.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GlacierWood", 15);
+			recipe.AddIngredient(ModContent.ItemType<GlacierWood>(), 15);
 			recipe.AddIngredient(ItemID.Silk, 6);
 			recipe.SetResult(this);
 			recipe.AddTile(106);

@@ -7,7 +7,7 @@ namespace Tremor.Mounts
 		public override void SetDefaults()
 		{
 			mountData.spawnDust = 5;
-			mountData.buff = mod.BuffType("DripplerBuff");
+			mountData.buff = ModContent.BuffType<Buffs.DripplerBuff>();
 			mountData.heightBoost = 20;
 			mountData.flightTimeMax = 30;
 			mountData.fatigueMax = 10;

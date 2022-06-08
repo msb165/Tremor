@@ -18,7 +18,6 @@ namespace Tremor.Invasion
 			item.useAnimation = 12;
 			item.channel = true;
 
-
 			item.noUseGraphic = true;
 			item.noMelee = true;
 			item.useStyle = 5;
@@ -27,16 +26,16 @@ namespace Tremor.Invasion
 			item.rare = 11;
 			item.UseSound = SoundID.Item23;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("ParadoxDrillPro");
+			item.shoot = ModContent.ProjectileType<ParadoxDrillPro>();
 			item.shootSpeed = 20f;
 		}
 
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Paradox Drill");
-			Tooltip.SetDefault("Press LMB to use drill\nPress RMB to use axe and hammer");
+			Tooltip.SetDefault("Press LMB to use drill\n" +
+"Press RMB to use axe and hammer");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{
@@ -53,7 +52,7 @@ namespace Tremor.Invasion
 				item.axe = 40;
 				item.hammer = 200;
 				item.pick = 0;
-				item.shoot = mod.ProjectileType("ParadoxDrillPro");
+				item.shoot = ModContent.ProjectileType<ParadoxDrillPro>();
 			}
 			else
 			{
@@ -63,7 +62,7 @@ namespace Tremor.Invasion
 				item.axe = 0;
 				item.hammer = 0;
 				item.pick = 265;
-				item.shoot = mod.ProjectileType("ParadoxDrillPro");
+				item.shoot = ModContent.ProjectileType<ParadoxDrillPro>();
 			}
 			return base.CanUseItem(player);
 		}

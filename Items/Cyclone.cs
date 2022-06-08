@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Ancient;
 
 namespace Tremor.Items
 {
@@ -15,7 +16,7 @@ namespace Tremor.Items
 			item.mana = 16;
 			item.useTime = 12;
 			item.useAnimation = 12;
-			item.shoot = mod.ProjectileType("CyclonePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.CyclonePro>();
 			item.shootSpeed = 4f;
 			item.useStyle = 5;
 			item.knockBack = 4;
@@ -31,14 +32,12 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "AncientTechnology", 1);
+			recipe.AddIngredient(ModContent.ItemType<AncientTechnology>(), 1);
 			recipe.AddIngredient(3457, 30);
-			recipe.AddIngredient(null, "SeaFragment", 25);
+			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 25);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

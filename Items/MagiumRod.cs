@@ -26,7 +26,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item43;
 			item.autoReuse = false;
 			Item.staff[item.type] = true;
-			item.shoot = mod.ProjectileType("MagiumRodPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.MagiumRodPro>();
 			item.shootSpeed = 15f;
 		}
 
@@ -35,8 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Magium Rod");
 			Tooltip.SetDefault("");
 		}
-
-
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
@@ -70,15 +68,15 @@ namespace Tremor.Items
 			num78 *= num80;
 			num79 *= num80;
 			int num146 = 4;
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
 				num146++;
 			}
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.NextBool(4))
 			{
 				num146++;
 			}
-			if (Main.rand.Next(8) == 0)
+			if (Main.rand.NextBool(8))
 			{
 				num146++;
 			}
@@ -99,7 +97,7 @@ namespace Tremor.Items
 				num149 *= num80;
 				float x4 = vector2.X;
 				float y4 = vector2.Y;
-				Projectile.NewProjectile(x4, y4, num148, num149, mod.ProjectileType("MagiumRodPro"), num73, num74, i, 0f, 0f);
+				Projectile.NewProjectile(x4, y4, num148, num149, ModContent.ProjectileType<Projectiles.MagiumRodPro>(), num73, num74, i, 0f, 0f);
 			}
 			return false;
 		}
@@ -107,9 +105,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "RuneBar", 12);
-			recipe.AddIngredient(null, "Gloomstone", 15);
-			recipe.AddIngredient(null, "MagiumShard", 8);
+			recipe.AddIngredient(ModContent.ItemType<RuneBar>(), 12);
+			recipe.AddIngredient(ModContent.ItemType<Gloomstone>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<MagiumShard>(), 8);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

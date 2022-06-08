@@ -1,10 +1,10 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Wood;
 
 namespace Tremor.NPCs
 {
-
 	public class Woody : ModNPC
 	{
 		public override void SetStaticDefaults()
@@ -28,13 +28,7 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.value = Item.buyPrice(0, 0, 2, 0);
 			banner = npc.type;
-			bannerItem = mod.ItemType("WoodyBanner");
-		}
-
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-		{
-			npc.lifeMax = npc.lifeMax * 1;
-			npc.damage = npc.damage * 1;
+			bannerItem = ModContent.ItemType<WoodyBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -45,12 +39,8 @@ namespace Tremor.NPCs
 				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/WoodyGore2"), 1f);
 			}
 		}
+
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-		{
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
-			return (Helper.NoZoneAllowWater(spawnInfo)) && spawnInfo.player.ZoneJungle && y > Main.rockLayer ? 0.01f : 0f;
-		}
+			=> Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.player.ZoneJungle && spawnInfo.spawnTileY > Main.rockLayer ? 0.01f : 0f;
 	}
 }

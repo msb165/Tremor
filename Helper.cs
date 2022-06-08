@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Globalization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -10,6 +9,7 @@ namespace Tremor
 {
 	public delegate void ExtraAction();
 
+	// todo: note to self, migrate stuff to utils
 	public static class Helper
 	{
 		#region Spawn helpers
@@ -55,22 +55,9 @@ namespace Tremor
 		}
 		#endregion
 
-		public static bool Downed(this TremorWorld.Boss boss)
-			=> TremorWorld.downedBoss[boss];
-
-		public static Item SpawnItem(this ModNPC npc, short type, int stack = 1)
-			=> SpawnItem(npc.npc, type, stack);
-
-		public static Item SpawnItem(this NPC npc, short type, int stack = 1)
-			=> Main.item[Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, type, stack)];
-
-		public static Item SpawnItem(Vector2 position, Vector2 size, short type, int stack = 1)
-			=> Main.item[Item.NewItem((int)position.X, (int)position.Y, (int)size.X, (int)size.Y, type, stack)];
-
 		public static Vector2 RandomPosition(Vector2 pos1, Vector2 pos2)
 		{
-			Random rnd = new Random();
-			return new Vector2(rnd.Next((int)pos1.X, (int)pos2.X) + 1, rnd.Next((int)pos1.Y, (int)pos2.Y) + 1);
+			return new Vector2(Main.rand.Next((int)pos1.X, (int)pos2.X) + 1, Main.rand.Next((int)pos1.Y, (int)pos2.Y) + 1);
 		}
 
 		public static int GetNearestAlivePlayer(NPC npc)
@@ -106,15 +93,24 @@ namespace Tremor
 		{
 			float NearestNPCDist = -1;
 			int NearestNPC = -1;
-			foreach (NPC npc in Main.npc)
+			foreach(NPC npc in Main.npc)
 			{
-				if (!npc.active)
+				if(!npc.active)
+				{
 					continue;
-				if (NoBoss && npc.boss)
+				}
+
+				if(NoBoss && npc.boss)
+				{
 					continue;
-				if (!Friendly && (npc.friendly || npc.lifeMax <= 5))
+				}
+
+				if(!Friendly && (npc.friendly || npc.lifeMax <= 5))
+				{
 					continue;
-				if (NearestNPCDist == -1 || npc.Distance(Point) < NearestNPCDist)
+				}
+
+				if(NearestNPCDist == -1 || npc.Distance(Point) < NearestNPCDist)
 				{
 					NearestNPCDist = npc.Distance(Point);
 					NearestNPC = npc.whoAmI;
@@ -136,7 +132,10 @@ namespace Tremor
 			foreach (Player player in Main.player)
 			{
 				if (Alive && (!player.active || player.dead))
+				{
 					continue;
+				}
+
 				if (NearestPlayerDist == -1 || player.Distance(Point) < NearestPlayerDist)
 				{
 					NearestPlayerDist = player.Distance(Point);
@@ -160,7 +159,6 @@ namespace Tremor
 			}
 			return NearestPlayer;
 		}
-
 
 		/// <summary>
 		/// *Используется для вычислиения инерции от точки до точки с заданой скоростью*
@@ -237,15 +235,6 @@ namespace Tremor
 			return returnedValue;
 		}
 
-		public static bool Chance(int chance)
-			=> Main.rand.Next(chance) == 0;
-
-		/// <summary>*Вычисления того, произойдёт ли событие с заданым шансом в этот раз, или нет*</summary>
-		/// <param name="chance">Шанс события</param>
-		/// <returns>Произойдёт ли событие с заданым шансом, или нет</returns>
-		public static bool Chance(float chance)
-			=> Main.rand.NextFloat() <= chance;
-
 		/// <summary>
 		/// *Используется для плавного перехода одного вектора в другой*
 		/// Добавляет во входящий вектор From разницу To и From делённую на Smooth
@@ -259,16 +248,17 @@ namespace Tremor
 			return From + ((To - From) / Smooth);
 		}
 
+		// @todo this shit weird af
 		public static float DistortFloat(float Float, float Percent)
 		{
 			float DistortNumber = Float * Percent;
 			int Counter = 0;
-			while (DistortNumber.ToString().Split(',').Length > 1)
+			while (DistortNumber.ToString(CultureInfo.InvariantCulture).Split(',').Length > 1)
 			{
 				DistortNumber *= 10;
 				Counter++;
 			}
-			return Float + ((Main.rand.Next(0, (int)DistortNumber + 1) / (float)(Math.Pow(10, Counter))) * ((Main.rand.Next(2) == 0) ? -1 : 1));
+			return Float + ((Main.rand.Next(0, (int)DistortNumber + 1) / (float)(Math.Pow(10, Counter))) * ((Main.rand.NextBool(2)) ? -1 : 1));
 		}
 
 		public static void Explode(int index, int sizeX, int sizeY, ExtraAction visualAction = null)
@@ -280,33 +270,33 @@ namespace Tremor
 			}
 			projectile.tileCollide = false;
 			projectile.alpha = 255;
-			projectile.position.X = projectile.position.X + projectile.width / 2;
-			projectile.position.Y = projectile.position.Y + projectile.height / 2;
+			projectile.position.X += projectile.width / 2;
+			projectile.position.Y += projectile.height / 2;
 			projectile.width = sizeX;
 			projectile.height = sizeY;
-			projectile.position.X = projectile.position.X - projectile.width / 2;
-			projectile.position.Y = projectile.position.Y - projectile.height / 2;
+			projectile.position.X -= projectile.width / 2;
+			projectile.position.Y -= projectile.height / 2;
 			projectile.Damage();
 			Main.projectileIdentity[projectile.owner, projectile.identity] = -1;
-			projectile.position.X = projectile.position.X + projectile.width / 2;
-			projectile.position.Y = projectile.position.Y + projectile.height / 2;
+			projectile.position.X += projectile.width / 2;
+			projectile.position.Y += projectile.height / 2;
 			projectile.width = (int)(sizeX / 5.8f);
 			projectile.height = (int)(sizeY / 5.8f);
-			projectile.position.X = projectile.position.X - projectile.width / 2;
-			projectile.position.Y = projectile.position.Y - projectile.height / 2;
+			projectile.position.X -= projectile.width / 2;
+			projectile.position.Y -= projectile.height / 2;
 			if (visualAction == null)
 			{
 				for (int i = 0; i < 30; i++)
 				{
-					int num = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 31, 0f, 0f, 100, default(Color), 1.5f);
+					int num = Dust.NewDust(projectile.position, projectile.width, projectile.height, 31, 0f, 0f, 100, default(Color), 1.5f);
 					Main.dust[num].velocity *= 1.4f;
 				}
 				for (int j = 0; j < 20; j++)
 				{
-					int num2 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 6, 0f, 0f, 100, default(Color), 3.5f);
+					int num2 = Dust.NewDust(projectile.position, projectile.width, projectile.height, 6, 0f, 0f, 100, default(Color), 3.5f);
 					Main.dust[num2].noGravity = true;
 					Main.dust[num2].velocity *= 7f;
-					num2 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 6, 0f, 0f, 100, default(Color), 1.5f);
+					num2 = Dust.NewDust(projectile.position, projectile.width, projectile.height, 6, 0f, 0f, 100, default(Color), 1.5f);
 					Main.dust[num2].velocity *= 3f;
 				}
 				for (int k = 0; k < 2; k++)
@@ -316,30 +306,22 @@ namespace Tremor
 					{
 						scaleFactor = 0.8f;
 					}
-					int num3 = Gore.NewGore(new Vector2(projectile.position.X, projectile.position.Y), default(Vector2), Main.rand.Next(61, 64), 1f);
-					Main.gore[num3].velocity *= scaleFactor;
-					Gore gore = Main.gore[num3];
-					gore.velocity.X = gore.velocity.X + 1f;
-					Gore gore2 = Main.gore[num3];
-					gore2.velocity.Y = gore2.velocity.Y + 1f;
-					num3 = Gore.NewGore(new Vector2(projectile.position.X, projectile.position.Y), default(Vector2), Main.rand.Next(61, 64), 1f);
-					Main.gore[num3].velocity *= scaleFactor;
-					Gore gore3 = Main.gore[num3];
-					gore3.velocity.X = gore3.velocity.X - 1f;
-					Gore gore4 = Main.gore[num3];
-					gore4.velocity.Y = gore4.velocity.Y + 1f;
-					num3 = Gore.NewGore(new Vector2(projectile.position.X, projectile.position.Y), default(Vector2), Main.rand.Next(61, 64), 1f);
-					Main.gore[num3].velocity *= scaleFactor;
-					Gore gore5 = Main.gore[num3];
-					gore5.velocity.X = gore5.velocity.X + 1f;
-					Gore gore6 = Main.gore[num3];
-					gore6.velocity.Y = gore6.velocity.Y - 1f;
-					num3 = Gore.NewGore(new Vector2(projectile.position.X, projectile.position.Y), default(Vector2), Main.rand.Next(61, 64), 1f);
-					Main.gore[num3].velocity *= scaleFactor;
-					Gore gore7 = Main.gore[num3];
-					gore7.velocity.X = gore7.velocity.X - 1f;
-					Gore gore8 = Main.gore[num3];
-					gore8.velocity.Y = gore8.velocity.Y - 1f;
+					Gore gore1 = Gore.NewGoreDirect(projectile.position, default(Vector2), Main.rand.Next(61, 64), 1f);
+					gore1.velocity *= scaleFactor;
+					gore1.velocity.X += 1f;
+					gore1.velocity.Y += 1f;
+					Gore gore2 = Gore.NewGoreDirect(projectile.position, default(Vector2), Main.rand.Next(61, 64), 1f);
+					gore2.velocity *= scaleFactor;
+					gore2.velocity.X -= 1f;
+					gore2.velocity.Y += 1f;
+					Gore gore3 = Gore.NewGoreDirect(projectile.position, default(Vector2), Main.rand.Next(61, 64), 1f);
+					gore3.velocity *= scaleFactor;
+					gore3.velocity.X += 1f;
+					gore3.velocity.Y -= 1f;
+					Gore gore4 = Gore.NewGoreDirect(projectile.position, default(Vector2), Main.rand.Next(61, 64), 1f);
+					gore4.velocity *= scaleFactor;
+					gore4.velocity.X -= 1f;
+					gore4.velocity.Y -= 1f;
 				}
 				return;
 			}
@@ -355,28 +337,29 @@ namespace Tremor
 			Main.spriteBatch.Draw(texture2D, projectile.Center - Main.screenPosition, texture2D.Frame(1, Main.projFrames[projectile.type], 0, projectile.frame), lightColor, projectile.rotation, origin, projectile.scale, effects, 0f);
 		}
 
-		public static void DropItem(Rectangle Area, params Drop[] Drops)
+		public static void DropItems(Vector2 position, Vector2 randomBox, params Drop[] drops)
 		{
-			List<Drop> Sh = new List<Drop>();
-			Drops
-			.ToList()
-			.ForEach(drop =>
+			foreach (Drop drop in drops)
 			{
-				for (int index = 0; index < drop.Chance; index++)
-					Sh.Add(drop);
-			});
-			Drop DroppedItem = Sh[Main.rand.Next(Sh.Count)];
-			Item.NewItem(Area.X, Area.Y, Area.Height, Area.Width, DroppedItem.Item, DroppedItem.Count);
+				if (Main.rand.NextBool(drop.DropChance))
+				{
+					Item.NewItem(position, randomBox, drop.ItemType, drop.StackSize);
+				}
+			}
 		}
-
 	}
 
 	public struct Drop
 	{
-		public int Item; public int Count; public int Chance;
-		public Drop(int item, int count, int chance)
+		public readonly int ItemType;
+		public readonly int StackSize;
+		public readonly int DropChance;
+
+		public Drop(int itemType, int stackSize, int dropChance)
 		{
-			Item = item; Count = count; Chance = chance;
+			ItemType = itemType;
+			StackSize = stackSize;
+			DropChance = dropChance;
 		}
 	}
 }

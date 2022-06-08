@@ -21,7 +21,7 @@ namespace Tremor.Items
 			item.damage = 228;
 			item.knockBack = 4;
 			item.mana = 8;
-			item.shoot = mod.ProjectileType("SpearofJusticePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.SpearofJusticePro>();
 			item.shootSpeed = 14f;
 			item.noMelee = true; //So that the swing itself doesn't do damage; this weapon is projectile-only
 			item.noUseGraphic = true; //No swing animation

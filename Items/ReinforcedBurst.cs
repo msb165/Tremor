@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Argite;
 
 namespace Tremor.Items
 {
@@ -10,7 +11,7 @@ namespace Tremor.Items
 		{
 			for (int i = 0; i < player.armor.Length; i++)
 			{
-				MPlayer modPlayer = (MPlayer)player.GetModPlayer(mod, "MPlayer");
+				MPlayer modPlayer = player.GetModPlayer<MPlayer>();
 				if (modPlayer.nitro)
 				{
 					return false;
@@ -36,13 +37,12 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Alchemical flasks leave three death flames");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Obsidian, 10);
-			recipe.AddIngredient(null, "Nitro", 1);
-			recipe.AddIngredient(null, "ArgiteBar", 15);
+			recipe.AddIngredient(ModContent.ItemType<Nitro>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<ArgiteBar>(), 15);
 			recipe.AddIngredient(ItemID.Hellstone);
 			recipe.SetResult(this);
 			recipe.AddTile(114);
@@ -51,8 +51,8 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			MPlayer modPlayer = (MPlayer)player.GetModPlayer(mod, "MPlayer");
-			player.AddBuff(mod.BuffType("ReinforcedBurstBuff"), 2);
+			MPlayer modPlayer = player.GetModPlayer<MPlayer>();
+			player.AddBuff(ModContent.BuffType<Buffs.ReinforcedBurstBuff>(), 2);
 			modPlayer.nitro = true;
 		}
 	}

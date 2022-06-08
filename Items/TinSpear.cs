@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.melee = true;
 			item.useTime = 30;
-			item.shoot = mod.ProjectileType("TinSpearPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.TinSpearPro>();
 			item.shootSpeed = 3f;
 			item.useAnimation = 30;
 			item.useStyle = 5;
@@ -30,7 +30,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Tin Spear");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

@@ -28,13 +28,12 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Wood, 5);
 			recipe.AddIngredient(ItemID.Rope, 5);
-			recipe.AddIngredient(null, "MeatChunk", 15);
+			recipe.AddIngredient(ModContent.ItemType<MeatChunk>(), 15);
 			recipe.SetResult(this);
 			recipe.AddTile(14);
 			recipe.AddRecipe();

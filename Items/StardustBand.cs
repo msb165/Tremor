@@ -15,8 +15,8 @@ namespace Tremor.Items
 			item.useTime = 25;
 			item.useAnimation = 25;
 
-			item.shoot = mod.ProjectileType("StardustSquid");
-			item.buffType = mod.BuffType("StardustSquidBuff");
+			item.shoot = ModContent.ProjectileType<Projectiles.StardustSquid>();
+			item.buffType = ModContent.BuffType<Buffs.StardustSquidBuff>();
 		}
 
 		public override void SetStaticDefaults()
@@ -24,7 +24,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Stardust Band");
 			Tooltip.SetDefault("Summons a stardust squid");
 		}
-
 
 		public override void UseStyle(Player player)
 		{
@@ -37,7 +36,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "UnchargedBand");
+			recipe.AddIngredient(ModContent.ItemType<UnchargedBand>());
 			recipe.AddIngredient(3459, 10);
 			recipe.SetResult(this);
 			recipe.AddTile(412);

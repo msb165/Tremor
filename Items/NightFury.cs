@@ -21,7 +21,7 @@ namespace Tremor.Items
 			item.damage = 36;
 			item.scale = 1.1F;
 			item.noUseGraphic = true;
-			item.shoot = mod.ProjectileType("NightFuryPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.NightFuryPro>();
 			item.shootSpeed = 15.9F;
 			item.UseSound = SoundID.Item1;
 			item.melee = true;
@@ -34,12 +34,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Sunfury, 1);
-			recipe.AddIngredient(null, "LeafBall", 1);
+			recipe.AddIngredient(ModContent.ItemType<LeafBall>(), 1);
 			recipe.AddIngredient(ItemID.BallOHurt, 1);
 			recipe.AddIngredient(ItemID.BlueMoon, 1);
 			recipe.SetResult(this);

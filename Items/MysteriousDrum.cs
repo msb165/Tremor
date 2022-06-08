@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.NPCs;
 
 namespace Tremor.Items
 {
@@ -25,18 +26,18 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Mysterious Drum");
-			Tooltip.SetDefault("Summons Tiki Totem");
+			Tooltip.SetDefault("Summons Tiki Totem\n" +
+"Requires the jungle biome and night time");
 		}
-
 
 		public override bool CanUseItem(Player player)
 		{
-			return !Main.dayTime && player.ZoneJungle && !NPC.AnyNPCs(mod.NPCType("TikiTotem"));
+			return !Main.dayTime && player.ZoneJungle && !NPC.AnyNPCs(ModContent.NPCType<TikiTotem>());
 		}
 
 		public override bool UseItem(Player player)
 		{
-			NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("TikiTotem"));
+			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<TikiTotem>());
 			Main.PlaySound(SoundID.Roar, player.position, 0);
 			return true;
 		}

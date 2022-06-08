@@ -23,10 +23,9 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("NightmareBreastplate") && legs.type == mod.ItemType("NightmarePants");
+			return body.type == ModContent.ItemType<NightmareBreastplate>() && legs.type == ModContent.ItemType<NightmarePants>();
 		}
 
 		public override void UpdateArmorSet(Player player)
@@ -34,7 +33,7 @@ namespace Tremor.Items
 			player.setBonus = "Minor improvements to all stats when health below 50";
 			if (player.statLife < 50)
 			{
-				player.AddBuff(mod.BuffType("ConcentrationofFear"), 2);
+				player.AddBuff(ModContent.BuffType<Buffs.ConcentrationofFear>(), 2);
 			}
 		}
 
@@ -43,12 +42,11 @@ namespace Tremor.Items
 			player.armorEffectDrawShadowLokis = true;
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "NightmareBar", 15);
-			recipe.AddIngredient(null, "PurpleQuartz", 5);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<PurpleQuartz>(), 5);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

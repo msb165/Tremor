@@ -28,7 +28,7 @@ namespace Tremor.Tiles
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 64, 32, mod.ItemType("CrimstoneBed"));
+			Item.NewItem(i * 16, j * 16, 64, 32, ModContent.ItemType<Items.Crimstone.CrimstoneBed>());
 		}
 
 		public override void RightClick(int i, int j)
@@ -60,7 +60,7 @@ namespace Tremor.Tiles
 			Player player = Main.player[Main.myPlayer];
 			player.noThrow = 2;
 			player.showItemIcon = true;
-			player.showItemIcon2 = mod.ItemType("CrimstoneBed");
+			player.showItemIcon2 = ModContent.ItemType<Items.Crimstone.CrimstoneBed>();
 		}
 	}
 }

@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.maxStack = 999;
 			item.value = 100;
 			item.rare = 1;
-			item.createTile = mod.TileType("CreepyThrone");
+			item.createTile = ModContent.TileType<Tiles.CreepyThrone>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -28,12 +28,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.SilverBar, 25);
-			recipe.AddIngredient(null, "MinotaurHorn", 2);
+			recipe.AddIngredient(ModContent.ItemType<MinotaurHorn>(), 2);
 			recipe.AddIngredient(ItemID.Silk, 15);
 			recipe.SetResult(this);
 			recipe.AddTile(106);
@@ -41,7 +40,7 @@ namespace Tremor.Items
 
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.TungstenBar, 25);
-			recipe.AddIngredient(null, "MinotaurHorn", 2);
+			recipe.AddIngredient(ModContent.ItemType<MinotaurHorn>(), 2);
 			recipe.AddIngredient(ItemID.Silk, 15);
 			recipe.SetResult(this);
 			recipe.AddTile(106);

@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.maxStack = 99;
 			item.value = 15000;
 			item.rare = 11;
-			item.createTile = mod.TileType("NightmareBarTile");
+			item.createTile = ModContent.TileType<Tiles.NightmareBarTile>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -30,7 +30,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "NightmareOre", 6);
+			recipe.AddIngredient(ModContent.ItemType<NightmareOre>(), 6);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

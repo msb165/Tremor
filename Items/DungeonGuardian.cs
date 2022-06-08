@@ -16,7 +16,7 @@ namespace Tremor.Items
 			item.CloneDefaults(3279);
 			item.width = 30;
 			item.height = 26;
-			item.shoot = mod.ProjectileType("DungeonGuardianPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.DungeonGuardianPro>();
 			item.knockBack = 4;
 			item.value = 10000;
 			item.rare = 2;

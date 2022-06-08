@@ -7,13 +7,11 @@ namespace Tremor.Items
 	public class MagiumHelmet : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
 			item.width = 38;
 			item.height = 22;
-
 
 			item.value = 18000;
 			item.rare = 5;
@@ -23,9 +21,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Magium Helmet");
-			Tooltip.SetDefault("9% increased magic critical strike chance\nIncreases maximum mana by 40");
+			Tooltip.SetDefault("9% increased magic critical strike chance\n" +
+"Increases maximum mana by 40");
 		}
-
 
 		public override void UpdateEquip(Player player)
 		{
@@ -35,7 +33,7 @@ namespace Tremor.Items
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("MagiumBreastplate") && legs.type == mod.ItemType("MagiumGreaves");
+			return body.type == ModContent.ItemType<MagiumBreastplate>() && legs.type == ModContent.ItemType<MagiumGreaves>();
 		}
 
 		public override void UpdateArmorSet(Player p)
@@ -47,8 +45,8 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "RuneBar", 8);
-			recipe.AddIngredient(null, "MagiumShard", 6);
+			recipe.AddIngredient(ModContent.ItemType<RuneBar>(), 8);
+			recipe.AddIngredient(ModContent.ItemType<MagiumShard>(), 6);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

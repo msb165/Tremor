@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -31,21 +32,20 @@ namespace Tremor.Items
 			Tooltip.SetDefault("'For the glory of Satan of course!'");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.HellstoneBar, 10);
-			recipe.AddIngredient(null, "PhantomSoul", 5);
-			recipe.AddIngredient(null, "DemonBlood", 12);
-			recipe.AddTile(null, "DevilForge");
+			recipe.AddIngredient(ModContent.ItemType<PhantomSoul>(), 5);
+			recipe.AddIngredient(ModContent.ItemType<DemonBlood>(), 12);
+			recipe.AddTile(ModContent.TileType<Tiles.DevilForge>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
 				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 6);
 			}

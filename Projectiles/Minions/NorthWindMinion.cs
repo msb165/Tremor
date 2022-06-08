@@ -7,12 +7,12 @@ namespace Tremor.Projectiles.Minions
 	public class NorthWindMinion : Minion
 	{
 
-        const int ShootRate = 30; // ������� �������� (1 ������� = 60��.)
-        const float ShootDistance = 300f; // ��������� ��������
-        const float ShootSpeed = 12f; // �������� �������
-        const int ShootDamage = 20; // ���� �������
-        const float ShootKnockback = 2; // ������ �������
-        int ShootType = 118; // ��� �������� (���� �� ��������� �����)
+        const int ShootRate = 30; 
+        const float ShootDistance = 300f; 
+        const float ShootSpeed = 12f; 
+        const int ShootDamage = 20; 
+        const float ShootKnockback = 2; 
+        int ShootType = 118; 
         int TimeToShoot = ShootRate;
 
 		public override void SetDefaults()
@@ -39,8 +39,6 @@ namespace Tremor.Projectiles.Minions
       DisplayName.SetDefault("North");
        
     }
-
-
 
         void Shoot()
         {
@@ -69,7 +67,6 @@ namespace Tremor.Projectiles.Minions
             }
         }
 
-
         public override void AI()
         {
             Shoot();
@@ -92,7 +89,7 @@ namespace Tremor.Projectiles.Minions
 		public override void CheckActive()
 		{
 			Player player = Main.player[projectile.owner];
-			TremorPlayer modPlayer = (TremorPlayer)player.GetModPlayer(mod, "TremorPlayer");
+			TremorPlayer modPlayer = player.GetModPlayer<TremorPlayer>();
 			if (player.dead)
 			{
 				modPlayer.northWind = false;

@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -31,8 +32,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
-
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
 			int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 64);
@@ -43,7 +42,7 @@ namespace Tremor.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(3769);
 			recipe.AddIngredient(ItemID.SoulofMight, 8);
-			recipe.AddIngredient(null, "SoulofMind", 8);
+			recipe.AddIngredient(ModContent.ItemType<SoulofMind>(), 8);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

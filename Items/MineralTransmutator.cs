@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 150;
-			item.createTile = mod.TileType("MineralTransmutator");
+			item.createTile = ModContent.TileType<Tiles.MineralTransmutator>();
 		}
 
 		public override void SetStaticDefaults()
@@ -26,7 +26,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Mineral Transmutator");
 			Tooltip.SetDefault("Allows to transform pre-hardmode metals to their alternatives");
 		}
-
 
 		public override void AddRecipes()
 		{

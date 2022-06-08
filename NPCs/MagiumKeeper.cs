@@ -1,10 +1,16 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
+using Microsoft.Xna.Framework;
+
+using Tremor.Items;
+
 namespace Tremor.NPCs
 {
+	/*
+	 * Rework AI into something more comprehensible and functional.
+	 */
 	public class MagiumKeeper : ModNPC
 	{
 		public override void SetStaticDefaults()
@@ -27,15 +33,8 @@ namespace Tremor.NPCs
 			npc.aiStyle = 3;
 			aiType = 482;
 			animationType = 471;
-			banner = npc.type;
-			bannerItem = mod.ItemType("MagiumKeeperBanner");
-		}
-
-
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-		{
-			npc.lifeMax = npc.lifeMax * 1;
-			npc.damage = npc.damage * 1;
+			// banner = npc.type;
+			// Todo: bannerItem = ModContent.ItemType<MagiumKeeperBanner>();
 		}
 
 		public override void AI()
@@ -63,7 +62,7 @@ namespace Tremor.NPCs
 						npc.localAI[3] = 0f;
 						Vector2 value3 = npc.position;
 						value3 += npc.velocity;
-						NPC.NewNPC((int)value3.X, (int)value3.Y, mod.NPCType("MagiumSword"), 0, 0f, 0f, 0f, 0f, 255);
+						NPC.NewNPC((int)value3.X, (int)value3.Y, ModContent.NPCType<MagiumSword>(), 0, 0f, 0f, 0f, 0f, 255);
 					}
 				}
 			}
@@ -196,7 +195,7 @@ namespace Tremor.NPCs
 						{
 							if (Main.netMode != 1)
 							{
-								NPC.NewNPC((int)center3.X, (int)center3.Y + 18, mod.NPCType("MagiumFlyer"), 0, 0f, 0f, 0f, 0f, 255);
+								NPC.NewNPC((int)center3.X, (int)center3.Y + 18, ModContent.NPCType<MagiumFlyer>(), 0, 0f, 0f, 0f, 0f, 255);
 							}
 						}
 						else if (npc.ai[2] >= 90f)
@@ -216,7 +215,7 @@ namespace Tremor.NPCs
 							int num54 = Dust.NewDust(vector11, 1, 1, 59, 0f, 0f, 0, default(Color), 3f);
 							Main.dust[num54].velocity = -value5 * 0.3f;
 							Main.dust[num54].alpha = 100;
-							if (Main.rand.Next(2) == 0)
+							if (Main.rand.NextBool(2))
 							{
 								Main.dust[num54].noGravity = true;
 								Main.dust[num54].scale += 0.3f;
@@ -264,23 +263,12 @@ namespace Tremor.NPCs
 			}
 		}
 
-
 		public override void NPCLoot()
 		{
-			if (Main.netMode != 1)
-			{
-				int centerX = (int)(npc.position.X + npc.width / 2) / 16;
-				int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
-				int halfLength = npc.width / 2 / 16 + 1;
-				if (Main.rand.NextBool())
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MagiumShard"), Main.rand.Next(5, 12));
-				};
-				if (Main.rand.NextBool())
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("RuneBar"), Main.rand.Next(6, 16));
-				};
-			}
+			if (Main.rand.NextBool())
+				this.NewItem(ModContent.ItemType<MagiumShard>(), Main.rand.Next(5, 12));
+			if (Main.rand.NextBool())
+				this.NewItem(ModContent.ItemType<RuneBar>(), Main.rand.Next(6, 16));
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -308,11 +296,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-		{
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
-			return (Helper.NoZoneAllowWater(spawnInfo)) && Main.hardMode && y > Main.rockLayer ? 0.0003f : 0f;
-		}
+			=> Helper.NoZoneAllowWater(spawnInfo) && Main.hardMode && spawnInfo.spawnTileY > Main.rockLayer ? 0.0003f : 0f;
 	}
 }

@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 50000;
-			item.createTile = mod.TileType("PixieQueenTrophy");
+			item.createTile = ModContent.TileType<Tiles.PixieQueenTrophy>();
 			item.placeStyle = 0;
 		}
 

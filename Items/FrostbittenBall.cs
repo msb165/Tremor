@@ -21,7 +21,7 @@ namespace Tremor.Items
 			item.damage = 18;
 			item.scale = 1.1F;
 			item.noUseGraphic = true;
-			item.shoot = mod.ProjectileType("FrostbittenBallPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.FrostbittenBallPro>();
 			item.shootSpeed = 15.9F;
 			item.UseSound = SoundID.Item1;
 			item.melee = true;
@@ -34,11 +34,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "FrostCore", 20);
+			recipe.AddIngredient(ModContent.ItemType<FrostCore>(), 20);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();

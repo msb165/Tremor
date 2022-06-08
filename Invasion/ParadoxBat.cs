@@ -33,7 +33,7 @@ namespace Tremor.Invasion
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>(mod);
+			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
 			float spawn = 20f;
 			if (InvasionWorld.CyberWrath)
 				return 1000f;
@@ -51,11 +51,11 @@ namespace Tremor.Invasion
 			{
 				for (int k = 0; k < 10; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType<CyberDust>(), 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
 
-				CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>(mod);
-				if (InvasionWorld.CyberWrath && Main.rand.Next(2) == 1)
+				CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
+				if (InvasionWorld.CyberWrath && Main.rand.NextBool(2))
 				{
 					InvasionWorld.CyberWrathPoints1 += 1;
 					//Main.NewText(("Wave 1: Complete " + TremorWorld.CyberWrathPoints + "%"), 39, 86, 134);
@@ -64,7 +64,7 @@ namespace Tremor.Invasion
 
 			for (int k = 0; k < damage / npc.lifeMax * 50.0; k++)
 			{
-				Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType<CyberDust>(), hitDirection, -1f, 0, default(Color), 0.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), hitDirection, -1f, 0, default(Color), 0.7f);
 			}
 		}
 
@@ -104,13 +104,13 @@ namespace Tremor.Invasion
 				int centerX = (int)(npc.position.X + npc.width / 2) / 16;
 				int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
 				int halfLength = npc.width / 2 / 16 + 1;
-				if (Main.rand.Next(3) == 0)
+				if (Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ParadoxElement"), Main.rand.Next(3, 5));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ParadoxElement>(), Main.rand.Next(3, 5));
 				}
 				if (Main.rand.Next(50) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SecondHand"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SecondHand>());
 				}
 			}
 		}
@@ -136,7 +136,7 @@ namespace Tremor.Invasion
 			{
 				for (int num36 = 0; num36 < 25; num36++)
 				{
-					int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), npc.width, npc.height, mod.DustType<CyberDust>(), npc.velocity.X + Main.rand.Next(-10, 10), npc.velocity.Y + Main.rand.Next(-10, 10), 1, npc.color, 1f);
+					int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), npc.width, npc.height, ModContent.DustType<CyberDust>(), npc.velocity.X + Main.rand.Next(-10, 10), npc.velocity.Y + Main.rand.Next(-10, 10), 1, npc.color, 1f);
 					Main.dust[dust].noGravity = true;
 				}
 
@@ -163,9 +163,9 @@ namespace Tremor.Invasion
 					npc.position.Y = Main.player[npc.target].position.Y + (float)((250 * Math.Sin(npc.ai[3])) * -1);
 				}
 			}
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
-				int num706 = Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType<CyberDust>(), 0f, 0f, 200, npc.color, 0.5f);
+				int num706 = Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), 0f, 0f, 200, npc.color, 0.5f);
 				Main.dust[num706].velocity *= 0.6f;
 			}
 			if (FirstState)
@@ -212,16 +212,16 @@ namespace Tremor.Invasion
 					{
 						Main.PlaySound(16, (int)npc.position.X, (int)npc.position.Y, 12);
 						float Angle = (float)Math.Atan2(NPos.Y - PTC.Y, NPos.X - PTC.X);
-						int SpitShot1 = Projectile.NewProjectile(NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), mod.ProjectileType("CyberLaserBat"), 30, 0f, 0);
+						int SpitShot1 = Projectile.NewProjectile(NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), ModContent.ProjectileType<CyberLaserBat>(), 30, 0f, 0);
 						//Main.projectile[SpitShot1].friendly = false;
 						Main.projectile[SpitShot1].timeLeft = 500;
 						customAi1 = 1f;
 					}
 				npc.netUpdate = true;
 
-				if (Main.rand.Next(6) == 0)
+				if (Main.rand.NextBool(6))
 				{
-					int dust = Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType<CyberDust>(), 0f, 0f, 200, npc.color, 0.4f);
+					int dust = Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), 0f, 0f, 200, npc.color, 0.4f);
 					Main.dust[dust].velocity *= 0.4f;
 				}
 
@@ -239,13 +239,13 @@ namespace Tremor.Invasion
 				if (npc.life > 500)
 				{
 					Color color = new Color();
-					int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), npc.width, npc.height, mod.DustType<CyberDust>(), npc.velocity.X, npc.velocity.Y, 100, color, 0.6f);
+					int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), npc.width, npc.height, ModContent.DustType<CyberDust>(), npc.velocity.X, npc.velocity.Y, 100, color, 0.6f);
 					Main.dust[dust].noGravity = true;
 				}
 				else if (npc.life <= 200)
 				{
 					Color color = new Color();
-					int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), npc.width, npc.height, mod.DustType<CyberDust>(), npc.velocity.X, npc.velocity.Y, 50, color, 0.8f);
+					int dust = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y), npc.width, npc.height, ModContent.DustType<CyberDust>(), npc.velocity.X, npc.velocity.Y, 50, color, 0.8f);
 					Main.dust[dust].noGravity = true;
 				}
 			}
@@ -258,7 +258,7 @@ namespace Tremor.Invasion
 				{
 					Main.PlaySound(16, (int)npc.position.X, (int)npc.position.Y, 12);
 					float Angle = (float)Math.Atan2(NPos.Y - PTC.Y, NPos.X - PTC.X);
-					int SpitShot1 = Projectile.NewProjectile(NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), mod.ProjectileType("CyberLaserBat"), 30, 0f, 0);
+					int SpitShot1 = Projectile.NewProjectile(NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), ModContent.ProjectileType<CyberLaserBat>(), 30, 0f, 0);
 					//Main.projectile[SpitShot1].friendly = false;
 					Main.projectile[SpitShot1].timeLeft = 500;
 					customAi1 = 1f;

@@ -6,10 +6,8 @@ namespace Tremor.Items
 {
 	public class RoyalEgg : ModItem
 	{
-
 		public override void SetDefaults()
 		{
-
 			item.width = 30;
 			item.height = 34;
 			item.maxStack = 20;
@@ -25,18 +23,18 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Royal Egg");
-			Tooltip.SetDefault("Summons the Brutallisk");
+			Tooltip.SetDefault("Summons the Brutallisk\n" +
+"Requires the desert biome and Tremode");
 		}
-
 
 		public override bool CanUseItem(Player player)
 		{
-			return NPC.downedMoonlord && !NPC.AnyNPCs(mod.NPCType("Brutallisk")) && player.ZoneDesert;
+			return NPC.downedMoonlord && !NPC.AnyNPCs(ModContent.NPCType<NPCs.Brutallisk>()) && player.ZoneDesert;
 		}
 
 		public override bool UseItem(Player player)
 		{
-			NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("Brutallisk"));
+			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<NPCs.Brutallisk>());
 			Main.PlaySound(SoundID.Roar, player.position, 0);
 			return true;
 		}
@@ -51,9 +49,9 @@ namespace Tremor.Items
 			recipe.AddIngredient(ItemID.Diamond, 1);
 			recipe.AddIngredient(ItemID.Sapphire, 1);
 			recipe.AddIngredient(ItemID.Amethyst, 1);
-			recipe.AddIngredient(null, "NightmareBar", 10);
-			recipe.AddIngredient(null, "ClusterShard", 5);
-			recipe.AddIngredient(null, "Phantaplasm", 8);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<ClusterShard>(), 5);
+			recipe.AddIngredient(ModContent.ItemType<Phantaplasm>(), 8);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

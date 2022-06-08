@@ -1,5 +1,7 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Items.Chaos;
+using Tremor.NPCs;
 
 namespace Tremor.Items
 {
@@ -7,23 +9,19 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-
 			item.maxStack = 999;
 			item.consumable = true;
 			item.width = 24;
 			item.height = 24;
-
 			item.rare = 9;
 			item.expert = true;
-			bossBagNPC = mod.NPCType("PixieQueen");
 		}
-
+		public override int BossBagNPC => ModContent.NPCType<PixieQueen>();
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("Right click to open");
+			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
-
 
 		public override bool CanRightClick()
 		{
@@ -32,29 +30,32 @@ namespace Tremor.Items
 
 		public override void OpenBossBag(Player player)
 		{
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.NextBool(7))
 			{
-				player.QuickSpawnItem(mod.ItemType("PixieQueenMask"));
+				player.QuickSpawnItem(ModContent.ItemType<PixieQueenMask>());
 			}
-			if (Main.rand.Next(6) == 0)
+			if (Main.rand.NextBool(6))
 			{
-				player.QuickSpawnItem(mod.ItemType("EtherealFeather"));
+				player.QuickSpawnItem(ModContent.ItemType<EtherealFeather>());
 			}
-			if (Main.rand.Next(6) == 0)
+			if (Main.rand.NextBool(6))
 			{
-				player.QuickSpawnItem(mod.ItemType("PixiePulse"));
+				player.QuickSpawnItem(ModContent.ItemType<PixiePulse>());
 			}
-			if (Main.rand.Next(6) == 0)
+			if (Main.rand.NextBool(6))
 			{
-				player.QuickSpawnItem(mod.ItemType("HeartMagnet"));
+				player.QuickSpawnItem(ModContent.ItemType<HeartMagnet>());
 			}
-			if (Main.rand.Next(6) == 0)
+			if (Main.rand.NextBool(6))
 			{
-				player.QuickSpawnItem(mod.ItemType("DopelgangerCandle"));
+				player.QuickSpawnItem(ModContent.ItemType<DopelgangerCandle>());
 			}
-			player.QuickSpawnItem(mod.ItemType("GlorianaWrath"));
-			player.TryGettingDevArmor();
-			player.QuickSpawnItem(mod.ItemType("ChaosBar"), Main.rand.Next(15, 25));
+			player.QuickSpawnItem(ModContent.ItemType<GlorianaWrath>());
+			if (Main.hardMode)
+			{
+				player.TryGettingDevArmor();
+			}
+			player.QuickSpawnItem(ModContent.ItemType<ChaosBar>(), Main.rand.Next(15, 25));
 		}
 
 	}

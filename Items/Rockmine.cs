@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 25;
 			item.useAnimation = 25;
-			item.shoot = mod.ProjectileType("RockminePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.RockminePro>();
 			item.shootSpeed = 11f;
 			item.useStyle = 1;
 			item.knockBack = 4;
@@ -33,12 +33,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.StoneBlock, 15);
-			recipe.AddIngredient(null, "RockHorn", 3);
+			recipe.AddIngredient(ModContent.ItemType<RockHorn>(), 3);
 			recipe.SetResult(this, 25);
 			recipe.AddTile(14);
 			recipe.AddRecipe();

@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useTime = 10;
 			item.useStyle = 1;
 			item.consumable = true;
-			item.createTile = mod.TileType("FrostoneOreTile");
+			item.createTile = ModContent.TileType<Tiles.FrostoneOreTile>();
 		}
 
 		public override void SetStaticDefaults()
@@ -25,7 +25,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Frostone Ore");
 			Tooltip.SetDefault("");
 		}
-
 
 	}
 }

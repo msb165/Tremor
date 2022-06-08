@@ -18,7 +18,7 @@ namespace Tremor.Buffs
 		public override void Update(Player player, ref int buffIndex)
 		{
 			if (MinionType == -1)
-				MinionType = mod.ProjectileType("NanoDronPro");
+				MinionType = ModContent.ProjectileType<Projectiles.NanoDronPro>();
 			if (MinionID == -1 || Main.projectile[MinionID].type != MinionType || !Main.projectile[MinionID].active || Main.projectile[MinionID].owner != player.whoAmI)
 			{
 				Projectile proj = new Projectile();

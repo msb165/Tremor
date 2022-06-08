@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.maxStack = 999;
 			item.height = 2;
 			item.width = 2;
-			item.createTile = mod.TileType("Corn");
+			item.createTile = ModContent.TileType<Tiles.Corn>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -29,7 +29,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Corn Seeds");
 			Tooltip.SetDefault("");
 		}
-
 
 	}
 }

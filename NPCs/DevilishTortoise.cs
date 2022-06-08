@@ -1,11 +1,12 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
+using Microsoft.Xna.Framework;
+using Tremor.Items;
+
 namespace Tremor.NPCs
 {
-
 	public class DevilishTortoise : ModNPC
 	{
 		public override void SetStaticDefaults()
@@ -13,7 +14,6 @@ namespace Tremor.NPCs
 			DisplayName.SetDefault("Devil Tortoise");
 			Main.npcFrameCount[npc.type] = 8;
 		}
-
 
 		public override void SetDefaults()
 		{
@@ -31,23 +31,9 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 8, 9);
 			banner = npc.type;
-			bannerItem = mod.ItemType("DevilishTortoiseBanner");
+			bannerItem = ModContent.ItemType<DevilishTortoiseBanner>();
 		}
-
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-		{
-			npc.lifeMax = npc.lifeMax * 1;
-			npc.damage = npc.damage * 1;
-		}
-
-
-		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-		{
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
-			return (Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo)) && Main.hardMode && spawnInfo.spawnTileY > Main.maxTilesY - 200 ? 0.02f : 0;
-		}
+		
 		public override void HitEffect(int hitDirection, double damage)
 		{
 			if (npc.life <= 0)
@@ -66,14 +52,15 @@ namespace Tremor.NPCs
 			}
 			else
 			{
-				for (int k = 0; k < damage / npc.lifeMax * 50.0; k++)
+				for (int k = 0; k < damage / npc.lifeMax * 50; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 5, hitDirection, -1f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 5, hitDirection, -1f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 5, hitDirection, -1f, 0, default(Color), 0.7f);
+					for(int i = 0; i < 3; ++i)
+						Dust.NewDust(npc.position, npc.width, npc.height, 5, hitDirection, -1f, 0, default(Color), 0.7f);
 				}
 			}
 		}
 
+		public override float SpawnChance(NPCSpawnInfo spawnInfo)
+			=> (Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo)) && Main.hardMode && spawnInfo.spawnTileY > Main.maxTilesY - 200 ? 0.02f : 0;
 	}
 }

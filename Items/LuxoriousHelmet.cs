@@ -20,9 +20,8 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Luxorious Helmet");
-			Tooltip.SetDefault("Increases mining speed by 12%");
+			Tooltip.SetDefault("12% increased mining speed");
 		}
-
 
 		public override void UpdateEquip(Player player)
 		{
@@ -31,7 +30,7 @@ namespace Tremor.Items
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("LuxoriousBreastplate") && legs.type == mod.ItemType("LuxoriousLeggings");
+			return body.type == ModContent.ItemType<LuxoriousBreastplate>() && legs.type == ModContent.ItemType<LuxoriousLeggings>();
 		}
 
 		public override void UpdateArmorSet(Player player)
@@ -46,11 +45,10 @@ namespace Tremor.Items
 			player.armorEffectDrawOutlines = true;
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "EvershinyBar", 15);
+			recipe.AddIngredient(ModContent.ItemType<EvershinyBar>(), 15);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

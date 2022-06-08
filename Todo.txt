@@ -1,0 +1,10 @@
+﻿[Swap to generics]
+mod.GetGoreSlot()
+mod.GetModPlayer()
+ModContent.NPCType()
+
+[Needs nameof]
+recipe.AddIngredient()//Make generic extension method
+
+[Other Refactoring]
+Add abstract class for furniture pieces

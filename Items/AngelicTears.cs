@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Angelite;
 
 namespace Tremor.Items
 {
@@ -16,7 +17,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 14;
 			item.useAnimation = 14;
-			item.shoot = mod.ProjectileType("AngelTearsPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.AngelTearsPro>();
 			item.shootSpeed = 16f;
 			item.mana = 6;
 			item.useStyle = 5;
@@ -33,7 +34,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
 			tooltips[0].overrideColor = new Color(238, 194, 73);
@@ -42,10 +42,10 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "AngeliteBar", 12);
-			recipe.AddIngredient(null, "LapisLazuli", 7);
+			recipe.AddIngredient(ModContent.ItemType<AngeliteBar>(), 12);
+			recipe.AddIngredient(ModContent.ItemType<LapisLazuli>(), 7);
 			recipe.AddIngredient(ItemID.FallenStar, 10);
-			recipe.AddIngredient(null, "HuskofDusk", 8);
+			recipe.AddIngredient(ModContent.ItemType<HuskofDusk>(), 8);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

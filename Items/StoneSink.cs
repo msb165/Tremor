@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 2000;
-			item.createTile = mod.TileType("StoneSink");
+			item.createTile = ModContent.TileType<Tiles.StoneSink>();
 		}
 
 		public override void SetStaticDefaults()
@@ -26,7 +26,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Stone Sink");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

@@ -52,12 +52,6 @@ namespace Tremor.Invasion
 			return new Rectangle(0, npc.frame.Height * (Number - 1), npc.frame.Width, npc.frame.Height);
 		}
 
-
-
-
-
-
-
 		public override void HitEffect(int hitDirection, double damage)
 		{
 
@@ -76,12 +70,12 @@ namespace Tremor.Invasion
 				player.position = npc.Center;
 			}
 			Animation();
-			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>(mod);
+			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
 			if (InvasionWorld.CyberWrath && InvasionWorld.CyberWrathPoints1 == 97)
 			{
 				npc.dontTakeDamage = false;
 				npc.life = 0;
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("Titan"));
+				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<Titan>());
 				InvasionWorld.CyberWrathPoints1 = 98;
 			}
 
@@ -93,7 +87,6 @@ namespace Tremor.Invasion
 				SetupCrystals(arenaWidth / 2, false);
 				FirstAttack = false;
 			}
-
 
 			if (player.dead)
 			{
@@ -122,11 +115,16 @@ namespace Tremor.Invasion
 				{
 					damage = (int)(100 / Main.expertDamage);
 				}
-				int proj = Projectile.NewProjectile(pos.X, pos.Y, 0f, 0f, mod.ProjectileType("TitanCrystal_"), damage, 0f, Main.myPlayer, npc.whoAmI, angle);
+				int proj = Projectile.NewProjectile(pos.X, pos.Y, 0f, 0f, ModContent.ProjectileType<TitanCrystal_>(), damage, 0f, Main.myPlayer, npc.whoAmI, angle);
 				Main.projectile[proj].localAI[0] = radius;
 				Main.projectile[proj].localAI[1] = clockwise ? 1 : -1;
 				//NetMessage.SendData(27, -1, -1, "", proj);
 			}
+		}
+
+		public override void NPCLoot()
+		{
+			TremorWorld.Boss.ParadoxTitan.Downed();
 		}
 	}
 }

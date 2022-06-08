@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 14;
 			item.useAnimation = 14;
-			item.shoot = mod.ProjectileType("PumpkinPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.PumpkinPro>();
 			item.shootSpeed = 10f;
 			item.noUseGraphic = true;
 			item.mana = 16;

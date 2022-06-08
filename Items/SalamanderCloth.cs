@@ -23,7 +23,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Increases movement speed");
 		}
 
-
 		public override void UpdateEquip(Player player)
 		{
 			player.moveSpeed += 0.2f;
@@ -32,7 +31,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "SalamanderSkin", 10);
+			recipe.AddIngredient(ModContent.ItemType<SalamanderSkin>(), 10);
 			recipe.SetResult(this);
 			recipe.AddTile(18);
 			recipe.AddRecipe();

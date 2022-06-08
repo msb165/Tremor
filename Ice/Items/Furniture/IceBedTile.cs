@@ -28,7 +28,7 @@ namespace Tremor.Ice.Items.Furniture
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 64, 32, mod.ItemType("IceBed"));
+			Item.NewItem(i * 16, j * 16, 64, 32, ModContent.ItemType<IceBed>());
 		}
 
 		public override void RightClick(int i, int j)
@@ -60,7 +60,7 @@ namespace Tremor.Ice.Items.Furniture
 			Player player = Main.player[Main.myPlayer];
 			player.noThrow = 2;
 			player.showItemIcon = true;
-			player.showItemIcon2 = mod.ItemType("IceBed");
+			player.showItemIcon2 = ModContent.ItemType<IceBed>();
 		}
 	}
 }

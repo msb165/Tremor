@@ -31,13 +31,12 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Shoots a beam of light");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.EnchantedSword, 1);
 			recipe.AddIngredient(ItemID.BeamSword, 1);
-			recipe.AddIngredient(null, "MagiumShard", 25);
+			recipe.AddIngredient(ModContent.ItemType<MagiumShard>(), 25);
 			recipe.AddIngredient(ItemID.BrokenHeroSword, 1);
 			recipe.SetResult(this);
 			recipe.AddTile(134);

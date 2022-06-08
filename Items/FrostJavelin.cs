@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.thrown = true;
 			item.useTime = 30;
-			item.shoot = mod.ProjectileType("FrostJavelinPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.FrostJavelinPro>();
 			item.shootSpeed = 15f;
 			item.useAnimation = 30;
 			item.useStyle = 1;
@@ -36,7 +36,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "FrostCore", 1);
+			recipe.AddIngredient(ModContent.ItemType<FrostCore>(), 1);
 			recipe.SetResult(this, 25);
 			recipe.AddTile(16);
 			recipe.AddRecipe();

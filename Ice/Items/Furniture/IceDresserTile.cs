@@ -33,7 +33,7 @@ namespace Tremor.Ice.Items.Furniture
 			disableSmartCursor = true;
 			adjTiles = new int[] { TileID.Dressers };
 			dresser = "Glacier Wood Dresser";
-			dresserDrop = mod.ItemType("IceDresser");
+			dresserDrop = ModContent.ItemType<IceDresser>();
 		}
 
 		public override void RightClick(int i, int j)
@@ -152,7 +152,7 @@ namespace Tremor.Ice.Items.Furniture
 				}
 				if (player.showItemIconText == chest)
 				{
-					player.showItemIcon2 = mod.ItemType("IceDresser");
+					player.showItemIcon2 = ModContent.ItemType<IceDresser>();
 					player.showItemIconText = "";
 				}
 			}
@@ -194,7 +194,7 @@ namespace Tremor.Ice.Items.Furniture
 				}
 				if (player.showItemIconText == chest)
 				{
-					player.showItemIcon2 = mod.ItemType("IceDresser");
+					player.showItemIcon2 = ModContent.ItemType<IceDresser>();
 					player.showItemIconText = "";
 				}
 			}

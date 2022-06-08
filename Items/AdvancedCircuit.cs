@@ -1,6 +1,8 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
+using Tremor.NPCs;
 
 namespace Tremor.Items
 {
@@ -24,18 +26,18 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Advanced Circuit");
-			Tooltip.SetDefault("Summons the Mothership");
+			Tooltip.SetDefault("Summons the Mothership\n" +
+"Requires Plantera to have been slain and night time");
 		}
-
 
 		public override bool CanUseItem(Player player)
 		{
-			return !NPC.AnyNPCs(mod.NPCType("Mothership")) && NPC.downedPlantBoss && !Main.dayTime && Main.netMode != 1;
+			return !NPC.AnyNPCs(ModContent.NPCType<Mothership>()) && NPC.downedPlantBoss && !Main.dayTime;
 		}
 
 		public override bool UseItem(Player player)
 		{
-			NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("Mothership"));
+			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<Mothership>());
 			Main.PlaySound(SoundID.Roar, player.position, 0);
 			return true;
 		}
@@ -43,7 +45,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GolemCore", 1);
+			recipe.AddIngredient(ModContent.ItemType<GolemCore>(), 1);
 			recipe.AddIngredient(ItemID.HallowedBar, 25);
 			recipe.AddIngredient(ItemID.SoulofSight, 12);
 			recipe.AddIngredient(ItemID.SoulofMight, 12);
@@ -54,10 +56,10 @@ namespace Tremor.Items
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GolemCore", 1);
+			recipe.AddIngredient(ModContent.ItemType<GolemCore>(), 1);
 			recipe.AddIngredient(ItemID.HallowedBar, 25);
 			recipe.AddIngredient(ItemID.SoulofSight, 12);
-			recipe.AddIngredient(null, "SoulofMind", 12);
+			recipe.AddIngredient(ModContent.ItemType<SoulofMind>(), 12);
 			recipe.AddIngredient(ItemID.SoulofFright, 12);
 			recipe.AddIngredient(ItemID.Wire, 30);
 			recipe.SetResult(this);

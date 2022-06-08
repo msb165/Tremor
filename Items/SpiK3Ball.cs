@@ -15,7 +15,7 @@ namespace Tremor.Items
 			item.maxStack = 999;
 			item.useTime = 12;
 			item.useAnimation = 12;
-			item.shoot = mod.ProjectileType("SpiK3Ball");
+			item.shoot = ModContent.ProjectileType<Projectiles.SpiK3Ball>();
 			item.shootSpeed = 7f;
 			item.useStyle = 1;
 			item.knockBack = 3;

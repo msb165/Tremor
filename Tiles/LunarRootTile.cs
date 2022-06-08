@@ -4,6 +4,7 @@ using Terraria.DataStructures;
 using Terraria.Enums;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Tremor.Items;
 
 namespace Tremor.Tiles
 {
@@ -30,13 +31,13 @@ namespace Tremor.Tiles
         {
             Item.NewItem(i * 16, j * 16, 16, 16, 3460, Main.rand.Next(1,3));
         }
-        if(Main.rand.Next(2) == 0)
+        if(Main.rand.NextBool(2))
         {
-            Item.NewItem(i * 16, j * 16, 16, 16, mod.ItemType("LunarRoot"), Main.rand.Next(1,5));
+            Item.NewItem(i * 16, j * 16, 16, 16, ModContent.ItemType<LunarRoot>(), Main.rand.Next(1,5));
         }
-        if(Main.rand.Next(4) == 0)
+        if(Main.rand.NextBool(4))
         {
-            Item.NewItem(i * 16, j * 16, 16, 16, mod.ItemType("NightCore"), Main.rand.Next(1,2));
+            Item.NewItem(i * 16, j * 16, 16, 16, ModContent.ItemType<NightCore>(), Main.rand.Next(1,2));
             
         }
     }
@@ -52,5 +53,4 @@ namespace Tremor.Tiles
 			g = 0.0f;
 			b = 0.7f;
 		}
-
 }}

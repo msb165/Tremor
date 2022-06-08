@@ -1,11 +1,14 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
+using Microsoft.Xna.Framework;
+
+using Tremor.Items;
+using Tremor.Items.Souls;
+
 namespace Tremor.NPCs
 {
-
 	public class NorthWind : ModNPC
 	{
 		public override void SetStaticDefaults()
@@ -31,32 +34,16 @@ namespace Tremor.NPCs
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath6;
 			npc.value = Item.buyPrice(0, 0, 7, 15);
-			banner = npc.type;
-			bannerItem = mod.ItemType("NorthWindBanner");
-		}
-
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-		{
-			npc.lifeMax = npc.lifeMax * 1;
-			npc.damage = npc.damage * 1;
+			// banner = npc.type;
+			// Todo: bannerItem = ModContent.ItemType<NorthWindBanner>();
 		}
 
 		public override void NPCLoot()
 		{
-			if (Main.netMode != 1)
-			{
-				int centerX = (int)(npc.position.X + npc.width / 2) / 16;
-				int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
-				int halfLength = npc.width / 2 / 16 + 1;
-				if (Main.rand.Next(2) == 0)
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("FrostCore"));
-				};
-				if (NPC.downedMoonlord && Main.rand.Next(5) == 0)
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("IceSoul"));
-				}
-			}
+			if (Main.rand.NextBool(2))
+				this.NewItem(ModContent.ItemType<FrostCore>());
+			if (NPC.downedMoonlord && Main.rand.NextBool(5))
+				this.NewItem(ModContent.ItemType<IceSoul>());
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -77,13 +64,7 @@ namespace Tremor.NPCs
 			}
 		}
 
-
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-		{
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
-			return (Helper.NoZoneAllowWater(spawnInfo)) && Main.cloudAlpha > 0f && y < Main.worldSurface && spawnInfo.player.ZoneSnow ? 0.06f : 0f;
-		}
+			=> Helper.NoZoneAllowWater(spawnInfo) && Main.cloudAlpha > 0f && spawnInfo.spawnTileY < Main.worldSurface && spawnInfo.player.ZoneSnow ? 0.06f : 0f;
 	}
 }

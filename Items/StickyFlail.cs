@@ -21,7 +21,7 @@ namespace Tremor.Items
 			item.damage = 22;
 			item.scale = 1.1F;
 			item.noUseGraphic = true;
-			item.shoot = mod.ProjectileType("StickyFlailPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.StickyFlailPro>();
 			item.shootSpeed = 15.9F;
 			item.UseSound = SoundID.Item1;
 			item.melee = true;

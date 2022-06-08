@@ -33,19 +33,17 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "JungleAlloy", 1);
+			recipe.AddIngredient(ModContent.ItemType<JungleAlloy>(), 1);
 			recipe.AddIngredient(ItemID.Stinger, 4);
 			recipe.AddIngredient(ItemID.Vine, 3);
 			recipe.AddIngredient(ItemID.JungleSpores, 10);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "GreatAnvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.GreatAnvilTile>());
 			recipe.AddRecipe();
 		}
-
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
@@ -60,7 +58,7 @@ namespace Tremor.Items
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
 				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 61);
 			}

@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.height = 38;
 			item.useTime = 32;
 			item.useAnimation = 32;
-			item.shoot = mod.ProjectileType("PoisonJavelinPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.PoisonJavelinPro>();
 			item.shootSpeed = 16f;
 			item.useStyle = 1;
 			item.knockBack = 4;
@@ -33,15 +33,14 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "JungleAlloy", 1);
+			recipe.AddIngredient(ModContent.ItemType<JungleAlloy>(), 1);
 			recipe.AddIngredient(ItemID.Stinger, 1);
 			recipe.AddIngredient(ItemID.Vine, 1);
 			recipe.SetResult(this, 50);
-			recipe.AddTile(null, "GreatAnvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.GreatAnvilTile>());
 			recipe.AddRecipe();
 		}
 	}

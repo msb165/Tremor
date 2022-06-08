@@ -34,7 +34,6 @@ namespace Tremor.NPCs
 				target.AddBuff(153, 180);
 		}
 
-
 		public override void HitEffect(int hitDirection, double damage)
 		{
 			if (npc.life <= 0)
@@ -46,11 +45,11 @@ namespace Tremor.NPCs
 				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
 				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
 				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y,
-				mod.NPCType("ShadowHandTwo"));
+				ModContent.NPCType<ShadowHandTwo>());
 				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y,
-				mod.NPCType("ShadowHandTwo"));
+				ModContent.NPCType<ShadowHandTwo>());
 				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y,
-				mod.NPCType("ShadowHandTwo"));
+				ModContent.NPCType<ShadowHandTwo>());
 			}
 		}
 

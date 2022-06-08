@@ -16,7 +16,7 @@ namespace Tremor.Items
 			item.useTime = 30;
 			item.useAnimation = 30;
 			item.mana = 8;
-			item.shoot = mod.ProjectileType("BrainiacWavePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.BrainiacWavePro>();
 			item.shootSpeed = 5f;
 			item.useStyle = 5;
 			item.knockBack = 4;
@@ -33,7 +33,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("'Shoots mind waves'");
 		}
 
-
 		public override Vector2? HoldoutOffset()
 		{
 			return new Vector2(-10, 0);
@@ -42,9 +41,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "TheBrain", 1);
-			recipe.AddIngredient(null, "AtisBlood", 15);
-			recipe.AddIngredient(null, "DrippingRoot", 20);
+			recipe.AddIngredient(ModContent.ItemType<TheBrain>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<AtisBlood>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<DrippingRoot>(), 20);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

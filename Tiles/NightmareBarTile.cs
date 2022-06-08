@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Tremor.Items;
 
 namespace Tremor.Tiles
 {
@@ -21,7 +22,7 @@ namespace Tremor.Tiles
         TileObjectData.newTile.StyleHorizontal = true;
         TileObjectData.newTile.StyleWrapLimit = 111;
         TileObjectData.addTile(Type);
-        dustType = mod.DustType<Dusts.NightmareFlame>();
+        dustType = ModContent.DustType<Dusts.NightmareFlame>();
 	AddMapEntry(new Color(90, 0, 150));
         Main.tileShine[Type] = 1100;
         Main.tileSolid[Type] = true;
@@ -29,7 +30,7 @@ namespace Tremor.Tiles
 
         public override bool Drop(int i, int j)
         {
-            Item.NewItem(i * 16, j * 16, 32, 32, mod.ItemType("NightmareBar"));
+            Item.NewItem(i * 16, j * 16, 32, 32, ModContent.ItemType<NightmareBar>());
             return true;
         }
 }}

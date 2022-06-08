@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.melee = true;
 			item.useTime = 30;
-			item.shoot = mod.ProjectileType("SilverSpearPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.SilverSpearPro>();
 			item.shootSpeed = 3f;
 			item.useAnimation = 30;
 			item.useStyle = 5;
@@ -30,7 +30,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Silver Spear");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

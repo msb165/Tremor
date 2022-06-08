@@ -11,7 +11,6 @@ namespace Tremor.Items
 			item.width = 22;
 			item.height = 44;
 
-
 			item.value = 10000;
 			item.rare = 4;
 			item.defense = 6;
@@ -21,9 +20,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("True Bloodshed");
-			Tooltip.SetDefault("12% increased melee, magic, minion, ranged damage and crit\nIncreases maximum mana and health by 80");
+			Tooltip.SetDefault("12% increased melee, magic, minion, ranged damage and crit\n" +
+"Increases maximum mana and health by 80");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
@@ -41,10 +40,10 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "Bloodshed", 1);
-			recipe.AddIngredient(null, "BrokenHeroAmulet", 1);
+			recipe.AddIngredient(ModContent.ItemType<Bloodshed>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<BrokenHeroAmulet>(), 1);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "GreatAnvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.GreatAnvilTile>());
 			recipe.AddRecipe();
 		}
 	}

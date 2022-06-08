@@ -13,8 +13,8 @@ namespace Tremor.Items
 			item.useTime = 25;
 			item.useAnimation = 25;
 
-			item.shoot = mod.ProjectileType("GoldenWhalePro");
-			item.buffType = mod.BuffType("GoldenWhale");
+			item.shoot = ModContent.ProjectileType<Projectiles.GoldenWhalePro>();
+			item.buffType = ModContent.BuffType<Buffs.GoldenWhale>();
 		}
 
 		public override void SetStaticDefaults()
@@ -22,7 +22,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Golden Cube");
 			Tooltip.SetDefault("Summons an golden whale");
 		}
-
 
 		public override void UseStyle(Player player)
 		{

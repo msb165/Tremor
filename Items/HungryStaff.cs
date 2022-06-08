@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Flesh;
 
 namespace Tremor.Items
 {
@@ -25,9 +26,9 @@ namespace Tremor.Items
 			item.value = Item.buyPrice(0, 3, 0, 0);
 			item.rare = 3;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("HungryStaffPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.Minions.HungryStaffPro>();
 			item.shootSpeed = 2f;
-			item.buffType = mod.BuffType("HungryBuff");
+			item.buffType = ModContent.BuffType<Buffs.HungryBuff>();
 			item.buffTime = 3600;
 		}
 
@@ -36,7 +37,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Hungry Staff");
 			Tooltip.SetDefault("Summons a hungry to fight for you.");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{
@@ -60,7 +60,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "PieceofFlesh", 9);
+			recipe.AddIngredient(ModContent.ItemType<PieceofFlesh>(), 9);
 			recipe.AddTile(16);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

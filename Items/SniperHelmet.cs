@@ -7,13 +7,11 @@ namespace Tremor.Items
 	public class SniperHelmet : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
 			item.width = 26;
 			item.height = 26;
-
 
 			item.value = 1000000;
 			item.rare = 1;
@@ -23,19 +21,20 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Sniper Helmet");
-			Tooltip.SetDefault("15% increased ranged damage\n20% decreased movement speed");
+			Tooltip.SetDefault("15% increased ranged damage\n" +
+"20% decreased movement speed");
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("SniperBreastplate") && legs.type == mod.ItemType("SniperBoots");
+			return body.type == ModContent.ItemType<SniperBreastplate>() && legs.type == ModContent.ItemType<SniperBoots>();
 		}
 
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Increases projectile's speed twice";
 			player.moveSpeed += 0.15f;
-			player.AddBuff(mod.BuffType("ShootSpeedBuff"), 2);
+			player.AddBuff(ModContent.BuffType<Buffs.ShootSpeedBuff>(), 2);
 			player.scope = true;
 		}
 
@@ -49,7 +48,6 @@ namespace Tremor.Items
 			player.rangedDamage *= 1.15f;
 			player.moveSpeed -= 0.20f;
 		}
-
 
 	}
 }

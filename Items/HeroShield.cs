@@ -22,7 +22,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Hero Shield");
-			Tooltip.SetDefault("Grants immunity to most debuffs\nGrants immunity to knockback and fire blocks\nProlonged after hit invicibility");
+			Tooltip.SetDefault("Grants immunity to most debuffs\n" +
+"Grants immunity to knockback and fire blocks\n" +
+"Prolonged after hit invicibility");
 		}
 
 		public override void UpdateEquip(Player p)
@@ -51,7 +53,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "HolyShield", 1);
+			recipe.AddIngredient(ModContent.ItemType<HolyShield>(), 1);
 			recipe.AddIngredient(ItemID.AnkhShield, 1);
 			recipe.SetResult(this);
 			recipe.AddTile(114);

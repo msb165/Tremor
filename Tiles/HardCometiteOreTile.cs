@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Items;
 
 namespace Tremor.Tiles
 {
@@ -15,7 +16,7 @@ namespace Tremor.Tiles
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
 			dustType = 27;
-			drop = mod.ItemType("HardCometiteOre");
+			drop = ModContent.ItemType<HardCometiteOre>();
 			AddMapEntry(new Color(255, 20, 147));
 			mineResist = 12f;
 			minPick = 225;
@@ -35,7 +36,7 @@ namespace Tremor.Tiles
 
   public override bool CanExplode(int i, int j)
   {
-   if (Main.tile[i, j].type == mod.TileType("HardCometiteOreTile"))
+   if (Main.tile[i, j].type == ModContent.TileType<Tiles.HardCometiteOreTile>())
    {
     return false;
    }

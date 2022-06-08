@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Dark;
 
 namespace Tremor.Items
 {
@@ -16,7 +17,7 @@ namespace Tremor.Items
 			item.useAnimation = 44;
 			item.useStyle = 1;
 			item.knockBack = 3;
-			item.shoot = mod.ProjectileType("VoidBladePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.VoidBladePro>();
 			item.shootSpeed = 12f;
 			item.value = 12400;
 			item.rare = 11;
@@ -31,18 +32,16 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.BrokenHeroSword, 1);
 			recipe.AddIngredient(ItemID.HallowedBar, 25);
 			recipe.AddIngredient(ItemID.Ectoplasm, 15);
-			recipe.AddIngredient(null, "DarkMatter", 45);
-			recipe.AddIngredient(null, "AirFragment", 10);
-			recipe.AddIngredient(null, "FireFragment", 10);
-			recipe.AddIngredient(null, "MultidimensionalFragment", 8);
+			recipe.AddIngredient(ModContent.ItemType<DarkMatter>(), 45);
+			recipe.AddIngredient(ModContent.ItemType<AirFragment>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<FireFragment>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<MultidimensionalFragment>(), 8);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

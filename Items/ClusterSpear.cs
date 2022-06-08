@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.melee = true;
 			item.useTime = 16;
-			item.shoot = mod.ProjectileType("ClusterSpearPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.ClusterSpearPro>();
 			item.shootSpeed = 5f;
 			item.useAnimation = 30;
 			item.useStyle = 5;
@@ -34,10 +34,10 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "EyeofOblivion", 1);
-			recipe.AddIngredient(null, "CarbonSteel", 12);
-			recipe.AddIngredient(null, "ToothofAbraxas", 15);
-			recipe.AddIngredient(null, "ClusterShard", 25);
+			recipe.AddIngredient(ModContent.ItemType<EyeofOblivion>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<CarbonSteel>(), 12);
+			recipe.AddIngredient(ModContent.ItemType<ToothofAbraxas>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<ClusterShard>(), 25);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

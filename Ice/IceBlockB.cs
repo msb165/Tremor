@@ -1,4 +1,5 @@
 using Terraria.ModLoader;
+using Tremor.Ice.Tree;
 
 namespace Tremor.Ice
 {
@@ -16,7 +17,7 @@ namespace Tremor.Ice
 			item.useTime = 10;
 			item.useStyle = 1;
 			item.consumable = true;
-			item.createTile = mod.TileType("VeryVeryIce");
+			item.createTile = ModContent.TileType<VeryVeryIce>();
 		}
 
 		public override void SetStaticDefaults()

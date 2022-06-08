@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.useAnimation = 20;
 			item.useStyle = 1;
 			item.knockBack = 3f;
-			item.shoot = mod.ProjectileType("MythrilDiscPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.MythrilDiscPro>();
 			item.value = 27600;
 			item.rare = 4;
 			item.noUseGraphic = true;
@@ -31,7 +31,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Mythril Disc");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override bool CanUseItem(Player player)
 		{

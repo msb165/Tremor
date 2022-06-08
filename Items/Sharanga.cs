@@ -31,15 +31,14 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "ShadowBow", 1);
+			recipe.AddIngredient(ModContent.ItemType<ShadowBow>(), 1);
 			recipe.AddIngredient(ItemID.Obsidian, 15);
-			recipe.AddIngredient(null, "DemonBlood", 8);
-			recipe.AddIngredient(null, "MinotaurHorn", 2);
-			recipe.AddTile(null, "DevilForge");
+			recipe.AddIngredient(ModContent.ItemType<DemonBlood>(), 8);
+			recipe.AddIngredient(ModContent.ItemType<MinotaurHorn>(), 2);
+			recipe.AddTile(ModContent.TileType<Tiles.DevilForge>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

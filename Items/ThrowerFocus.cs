@@ -2,6 +2,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Sparks;
 
 namespace Tremor.Items
 {
@@ -14,7 +15,6 @@ namespace Tremor.Items
 			item.width = 22;
 			item.height = 22;
 
-
 			item.rare = 2;
 			item.accessory = true;
 			item.value = 100000;
@@ -23,7 +23,8 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Thrower Focus");
-			Tooltip.SetDefault("6% increased thrown  damage\nIncreases thrown critical strike chance by 12");
+			Tooltip.SetDefault("6% increased thrown  damage\n" +
+"Increases thrown critical strike chance by 12");
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 4));
 		}
 
@@ -36,11 +37,11 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "ThrowerSpark");
+			recipe.AddIngredient(ModContent.ItemType<ThrowerSpark>());
 			recipe.AddIngredient(3380, 15);
 			recipe.AddIngredient(ItemID.Amber, 16);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "AltarofEnchantmentsTile");
+			recipe.AddTile(ModContent.TileType<Tiles.AltarofEnchantmentsTile>());
 			recipe.AddRecipe();
 		}
 	}

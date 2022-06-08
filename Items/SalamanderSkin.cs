@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.consumable = true;
 			item.value = 150;
 			item.rare = 1;
-			item.createTile = mod.TileType("SalamanderSkinTile");
+			item.createTile = ModContent.TileType<Tiles.SalamanderSkinTile>();
 		}
 
 		public override void SetStaticDefaults()

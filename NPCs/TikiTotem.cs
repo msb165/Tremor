@@ -37,7 +37,7 @@ namespace Tremor.NPCs
 			npc.boss = true;
 			npc.dontTakeDamage = true;
 
-			bossBag = mod.ItemType<TikiTotemBag>();
+			bossBag = ModContent.ItemType<TikiTotemBag>();
 			npc.HitSound = SoundID.NPCHit3;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.value = Item.buyPrice(0, 0, 60, 0);
@@ -61,7 +61,7 @@ namespace Tremor.NPCs
 		// todo: rework the fuck out of this, lol
 		public override void AI()
 		{
-			if (NPC.AnyNPCs(mod.NPCType("HappySoul")) || NPC.AnyNPCs(mod.NPCType("AngerSoul")) || NPC.AnyNPCs(mod.NPCType("IndifferenceSoul")))
+			if (NPC.AnyNPCs(ModContent.NPCType<HappySoul>()) || NPC.AnyNPCs(ModContent.NPCType<AngerSoul>()) || NPC.AnyNPCs(ModContent.NPCType<IndifferenceSoul>()))
 			{
 				npc.position += npc.velocity * 1f;
 			}
@@ -76,15 +76,15 @@ namespace Tremor.NPCs
 				npc.position.X = Main.player[npc.target].position.X;
 				npc.position.Y = Main.player[npc.target].position.Y - 300f;
 			}
-			if (NPC.CountNPCS(mod.NPCType("TikiSoul")) <= ((Main.expertMode) ? 6 : 3) && Main.time % 60 == 0 && !_spawnTiki)
+			if (NPC.CountNPCS(ModContent.NPCType<TikiSoul>()) <= ((Main.expertMode) ? 6 : 3) && Main.time % 60 == 0 && !_spawnTiki)
 			{
-				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("TikiSoul"));
+				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<TikiSoul>());
 			}
-			if (NPC.CountNPCS(mod.NPCType("TikiSoul")) >= ((Main.expertMode) ? 6 : 3))
+			if (NPC.CountNPCS(ModContent.NPCType<TikiSoul>()) >= ((Main.expertMode) ? 6 : 3))
 			{
 				_spawnTiki = true;
 			}
-			if (NPC.CountNPCS(mod.NPCType("TikiSoul")) == 0 && _timer >= 200)
+			if (NPC.CountNPCS(ModContent.NPCType<TikiSoul>()) == 0 && _timer >= 200)
 			{
 				_firstState = false;
 			}
@@ -96,14 +96,14 @@ namespace Tremor.NPCs
 			{
 				npc.aiStyle = -1;
 				npc.dontTakeDamage = false;
-				if (Main.rand.Next(280) == 0 && NPC.CountNPCS(mod.NPCType("TikiWarrior")) < 7)
+				if (Main.rand.Next(280) == 0 && NPC.CountNPCS(ModContent.NPCType<TikiWarrior>()) < 7)
 				{
-					NPC.NewNPC((int)npc.Center.X - 70, (int)npc.Center.Y, mod.NPCType("TikiWarrior"));
+					NPC.NewNPC((int)npc.Center.X - 70, (int)npc.Center.Y, ModContent.NPCType<TikiWarrior>());
 				}
 
-				if (Main.rand.Next(180) == 0 && NPC.CountNPCS(mod.NPCType("TikiWarrior")) < 4)
+				if (Main.rand.Next(180) == 0 && NPC.CountNPCS(ModContent.NPCType<TikiWarrior>()) < 4)
 				{
-					NPC.NewNPC((int)npc.Center.X + 30, (int)npc.Center.Y, mod.NPCType("TikiSorcerer"));
+					NPC.NewNPC((int)npc.Center.X + 30, (int)npc.Center.Y, ModContent.NPCType<TikiSorcerer>());
 				}
 				float num1263 = 2f;
 				npc.noGravity = true;
@@ -167,7 +167,7 @@ namespace Tremor.NPCs
 							num1265 *= num1266;
 							num1264 *= 1f + Main.rand.Next(-20, 21) * 0.02f;
 							num1265 *= 1f + Main.rand.Next(-20, 21) * 0.02f;
-							Projectile.NewProjectile(vector146.X, vector146.Y, num1264, num1265, mod.ProjectileType("LizardPro"), 23, 0f, Main.myPlayer, Main.rand.Next(0, 31), 0f);
+							Projectile.NewProjectile(vector146.X, vector146.Y, num1264, num1265, ModContent.ProjectileType<Projectiles.LizardPro>(), 23, 0f, Main.myPlayer, Main.rand.Next(0, 31), 0f);
 						}
 						if (npc.ai[1] >= 180f)
 						{
@@ -191,7 +191,7 @@ namespace Tremor.NPCs
 							num1269 *= num1270;
 							num1268 *= 1f + Main.rand.Next(-20, 21) * 0.01f;
 							num1269 *= 1f + Main.rand.Next(-20, 21) * 0.01f;
-							Projectile.NewProjectile(vector147.X, vector147.Y, num1268, num1269, mod.ProjectileType("LizardPro"), 50, 0f, Main.myPlayer, 0f, 0f);
+							Projectile.NewProjectile(vector147.X, vector147.Y, num1268, num1269, ModContent.ProjectileType<Projectiles.LizardPro>(), 50, 0f, Main.myPlayer, 0f, 0f);
 						}
 						if (npc.ai[1] >= 120f)
 						{
@@ -222,7 +222,7 @@ namespace Tremor.NPCs
 							num1274 *= num1275;
 							num1273 *= 1f + Main.rand.Next(-30, 31) * 0.01f;
 							num1274 *= 1f + Main.rand.Next(-30, 31) * 0.01f;
-							Projectile.NewProjectile(vector148.X, vector148.Y, num1273, num1274, mod.ProjectileType("LizardPro"), 23, 0f, Main.myPlayer, 0f, Main.rand.Next(2));
+							Projectile.NewProjectile(vector148.X, vector148.Y, num1273, num1274, ModContent.ProjectileType<Projectiles.LizardPro>(), 23, 0f, Main.myPlayer, 0f, Main.rand.Next(2));
 						}
 						if (npc.ai[1] >= 300f)
 						{
@@ -279,7 +279,7 @@ namespace Tremor.NPCs
 						num1281 *= num1282;
 						num1280 *= 1f + Main.rand.Next(-20, 21) * 0.001f;
 						num1281 *= 1f + Main.rand.Next(-20, 21) * 0.001f;
-						Projectile.NewProjectile(vector150.X, vector150.Y, num1280, num1281, mod.ProjectileType("LizardPro"), 23, 0f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(vector150.X, vector150.Y, num1280, num1281, ModContent.ProjectileType<Projectiles.LizardPro>(), 23, 0f, Main.myPlayer, 0f, 0f);
 					}
 					if (npc.ai[1] >= 120f)
 					{
@@ -393,17 +393,17 @@ namespace Tremor.NPCs
 				if (npc.life < npc.lifeMax * 0.5f && _flag1)
 				{
 					_flag1 = false;
-					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y + 95, mod.NPCType("HappySoul"));
+					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y + 95, ModContent.NPCType<HappySoul>());
 				}
 				if (npc.life < npc.lifeMax * 0.3f && _flag2)
 				{
 					_flag2 = false;
-					NPC.NewNPC((int)npc.Center.X - 50, (int)npc.Center.Y + 110, mod.NPCType("AngerSoul"));
+					NPC.NewNPC((int)npc.Center.X - 50, (int)npc.Center.Y + 110, ModContent.NPCType<AngerSoul>());
 				}
 				if (npc.life < npc.lifeMax * 0.1f && _flag3)
 				{
 					_flag3 = false;
-					NPC.NewNPC((int)npc.Center.X + 50, (int)npc.Center.Y + 110, mod.NPCType("IndifferenceSoul"));
+					NPC.NewNPC((int)npc.Center.X + 50, (int)npc.Center.Y + 110, ModContent.NPCType<IndifferenceSoul>());
 				}
 			}
 		}
@@ -441,41 +441,37 @@ namespace Tremor.NPCs
 				npc.DropBossBags();
 			}
 
-			object[,] drops = new object[,]
+			(int type,int chance,int quantity)[] drops = new[]
 			{
 				// item, chance, stack
-				{"ToxicBlade", 3, 1},
-				{"JungleAlloy", 1, 1},
-				{"PickaxeofBloom", 3, 1},
-				{"ToxicHilt", 4, 1},
-				{"AngryTotemMask", 7, 1},
-				{"HappyTotemMask", 7, 1},
-				{"IndifferentTotemMask", 7, 1},
-				{ItemID.HealingPotion, 1, Main.rand.Next(5, 16)},
-				{ItemID.ManaPotion, 1, Main.rand.Next(5, 16)},
+				(ModContent.ItemType<ToxicBlade>(), 3, 1),
+				(ModContent.ItemType<JungleAlloy>(), 1, 1),
+				(ModContent.ItemType<PickaxeofBloom>(), 3, 1),
+				(ModContent.ItemType<ToxicHilt>(), 4, 1),
+				(ModContent.ItemType<AngryTotemMask>(), 7, 1),
+				(ModContent.ItemType<HappyTotemMask>(), 7, 1),
+				(ModContent.ItemType<IndifferentTotemMask>(), 7, 1),
+				(ItemID.HealingPotion, 1, Main.rand.Next(5, 16)),
+				(ItemID.ManaPotion, 1, Main.rand.Next(5, 16)),
 			};
 
 			if (!Main.expertMode)
 			{
 				for (int i = 0; i < drops.GetUpperBound(0); i++)
 				{
-					if (Main.rand.NextBool((int)drops[i, 1]))
+					if (Main.rand.NextBool(drops[i].chance))
 					{
-						object drop = drops[i, 0];
-						if (drop is string)
-							Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, mod.ItemType((string)drop), (int)drops[i, 2]);
-						else if (drop is int)
-							Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, (int)drop, (int)drops[i, 2]);
+						Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, drops[i].type, drops[i].quantity);
 					}
 				}
 			}
 
 			if (Main.rand.NextBool(10))
 			{
-				Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, mod.ItemType("TikiTotemTrophy"));
+				Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<TikiTotemTrophy>());
 			}
 
-			TremorWorld.downedBoss[TremorWorld.Boss.TikiTotem] = true;
+			TremorWorld.Boss.TikiTotem.Downed();
 
 			string msg = "Ghosts are returning to ruins...";
 			Main.NewText(msg, 193, 139, 77);

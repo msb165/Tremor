@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 2000;
-			item.createTile = mod.TileType("GloomstonePiano");
+			item.createTile = ModContent.TileType<Tiles.GloomstonePiano>();
 		}
 
 		public override void SetStaticDefaults()
@@ -27,12 +27,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(154, 4);
-			recipe.AddIngredient(null, "Gloomstone", 15);
+			recipe.AddIngredient(ModContent.ItemType<Gloomstone>(), 15);
 			recipe.AddIngredient(149);
 			recipe.SetResult(this);
 			recipe.AddTile(17);

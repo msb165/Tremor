@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 17;
 			item.useAnimation = 17;
-			item.shoot = mod.ProjectileType("CornJavelinPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.CornJavelinPro>();
 			item.shootSpeed = 22f;
 			item.useStyle = 1;
 			item.knockBack = 4;
@@ -32,7 +32,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Corn Javelin");
 			Tooltip.SetDefault("");
 		}
-
 
 	}
 }

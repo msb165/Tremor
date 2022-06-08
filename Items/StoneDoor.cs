@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 0;
-			item.createTile = mod.TileType("StoneDoorClosed");
+			item.createTile = ModContent.TileType<Tiles.StoneDoorClosed>();
 		}
 
 		public override void SetStaticDefaults()
@@ -26,7 +26,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Stone Door");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

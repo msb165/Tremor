@@ -11,7 +11,7 @@ namespace Tremor.Items
 			item.height = 26;
 			item.maxStack = 99;
 			item.rare = 1;
-			item.createTile = mod.TileType("GreenChristmasStocking");
+			item.createTile = ModContent.TileType<Tiles.GreenChristmasStocking>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;

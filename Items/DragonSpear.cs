@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.melee = true;
 			item.useTime = 16;
-			item.shoot = mod.ProjectileType("DragonSpearPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.DragonSpearPro>();
 			item.shootSpeed = 3f;
 			item.useAnimation = 30;
 			item.useStyle = 5;
@@ -34,8 +34,8 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "DragonCapsule", 10);
-			recipe.AddIngredient(null, "EarthFragment", 15);
+			recipe.AddIngredient(ModContent.ItemType<DragonCapsule>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<EarthFragment>(), 15);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

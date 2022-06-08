@@ -17,7 +17,6 @@ namespace Tremor.Items
 			item.ranged = true;
 			item.shoot = 27;
 
-
 			item.shootSpeed = 23f;
 			item.useAnimation = 30;
 			item.useStyle = 5;
@@ -32,9 +31,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Water Dead Shot");
-			Tooltip.SetDefault("Shoots water streams\nUses arrows as ammo");
+			Tooltip.SetDefault("Shoots water streams\n" +
+"Uses arrows as ammo");
 		}
-
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
@@ -45,7 +44,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "SeaFragment", 8);
+			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 8);
 			recipe.AddIngredient(ItemID.Sapphire, 10);
 			recipe.AddIngredient(ItemID.GoldBar, 6);
 			recipe.AddTile(16);
@@ -53,7 +52,7 @@ namespace Tremor.Items
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "SeaFragment", 8);
+			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 8);
 			recipe.AddIngredient(ItemID.Sapphire, 10);
 			recipe.AddIngredient(ItemID.PlatinumBar, 6);
 			recipe.AddTile(16);

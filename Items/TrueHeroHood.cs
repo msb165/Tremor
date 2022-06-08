@@ -26,7 +26,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Gives one of three true blades");
 		}
 
-
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
 			tooltips[0].overrideColor = new Color(238, 194, 73);
@@ -34,12 +33,12 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.AddBuff(mod.BuffType("FirstTrueBlade"), 2);
+			player.AddBuff(ModContent.BuffType<Buffs.FirstTrueBlade>(), 2);
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("TrueHeroShirt") && legs.type == mod.ItemType("TrueHeroPants");
+			return body.type == ModContent.ItemType<TrueHeroShirt>() && legs.type == ModContent.ItemType<TrueHeroPants>();
 		}
 
 		public override void UpdateArmorSet(Player player)
@@ -52,9 +51,9 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(247, 1);
-			recipe.AddIngredient(null, "GiantShell", 1);
-			recipe.AddIngredient(null, "BrokenHeroArmorplate", 1);
-			recipe.AddIngredient(null, "TrueEssense", 5);
+			recipe.AddIngredient(ModContent.ItemType<GiantShell>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<BrokenHeroArmorplate>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<TrueEssense>(), 5);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

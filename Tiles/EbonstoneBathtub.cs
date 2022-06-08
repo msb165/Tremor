@@ -20,10 +20,9 @@ namespace Tremor.Tiles
 			bed = true;
 		}
 
-
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 64, 32, mod.ItemType("EbonstoneBathtub"));
+			Item.NewItem(i * 16, j * 16, 64, 32, ModContent.ItemType<Items.EbonstoneBathtub>());
 		}
 
 		public override void MouseOver(int i, int j)
@@ -31,7 +30,7 @@ namespace Tremor.Tiles
 			Player player = Main.player[Main.myPlayer];
 			player.noThrow = 2;
 			player.showItemIcon = true;
-			player.showItemIcon2 = mod.ItemType("EbonstoneBathtub");
+			player.showItemIcon2 = ModContent.ItemType<Items.EbonstoneBathtub>();
 		}
 	}
 }

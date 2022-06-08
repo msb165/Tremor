@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.rare = 11;
 			item.useStyle = 1;
 			item.consumable = true;
-			item.createTile = mod.TileType("CometiteOreTile");
+			item.createTile = ModContent.TileType<Tiles.CometiteOreTile>();
 		}
 
 		public override void SetStaticDefaults()

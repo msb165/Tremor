@@ -15,8 +15,6 @@ namespace Tremor.NPCs
 			Main.npcFrameCount[npc.type] = 14;
 		}
 
-
-
 		public override void SetDefaults()
 		{
 			npc.width = 126;
@@ -42,11 +40,11 @@ namespace Tremor.NPCs
 		{
 			if (Main.rand.Next(500) == 0)
 			{
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("DarkServant"));
+				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
 			}
 			if (Main.rand.Next(150) == 0)
 			{
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("DarkSlime"));
+				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkSlime>());
 			}
 
 		}
@@ -68,12 +66,12 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 191, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
 				Main.PlaySound(15, 0);
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("TheDarkEmperorTwo"));
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("DarkServant"));
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("DarkServant"));
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("DarkServant"));
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("DarkServant"));
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("DarkServant"));
+				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<TheDarkEmperorTwo>());
+				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
+				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
+				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
+				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
+				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
 				Gore.NewGore(npc.position, npc.velocity, 99, 3f);
 				Gore.NewGore(npc.position, npc.velocity, 99, 2f);
 				Gore.NewGore(npc.position, npc.velocity, 99, 3f);

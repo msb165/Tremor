@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.maxStack = 999;
 			item.value = 12500;
 			item.rare = 110;
-			item.createTile = mod.TileType("CollapsiumOreTile");
+			item.createTile = ModContent.TileType<Tiles.CollapsiumOreTile>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -28,7 +28,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Collapsium Ore");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{

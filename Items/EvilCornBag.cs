@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.NPCs;
 
 namespace Tremor.Items
 {
@@ -15,15 +16,13 @@ namespace Tremor.Items
 
 			item.rare = 9;
 			item.expert = true;
-			bossBagNPC = mod.NPCType("EvilCorn");
 		}
-
+		public override int BossBagNPC => ModContent.NPCType<EvilCorn>();
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("Right click to open");
+			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
-
 
 		public override bool CanRightClick()
 		{
@@ -32,40 +31,40 @@ namespace Tremor.Items
 
 		public override void OpenBossBag(Player player)
 		{
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.NextBool(7))
 			{
-				player.QuickSpawnItem(mod.ItemType("EvilCornMask"));
+				player.QuickSpawnItem(ModContent.ItemType<EvilCornMask>());
 			}
 			if (Main.rand.Next(10) == 0)
 			{
-				player.QuickSpawnItem(mod.ItemType("EvilCornTrophy"));
+				player.QuickSpawnItem(ModContent.ItemType<EvilCornTrophy>());
 			}
 			if (Main.rand.NextBool())
 			{
-				player.QuickSpawnItem(mod.ItemType("CornHeater"));
+				player.QuickSpawnItem(ModContent.ItemType<CornHeater>());
 			}
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
-				player.QuickSpawnItem(mod.ItemType("GrayKnightHelmet"));
+				player.QuickSpawnItem(ModContent.ItemType<GrayKnightHelmet>());
 			}
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
-				player.QuickSpawnItem(mod.ItemType("GrayKnightBreastplate"));
+				player.QuickSpawnItem(ModContent.ItemType<GrayKnightBreastplate>());
 			}
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
-				player.QuickSpawnItem(mod.ItemType("KnightGreaves"));
+				player.QuickSpawnItem(ModContent.ItemType<KnightGreaves>());
 			}
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(mod.ItemType("CornSword"));
+				player.QuickSpawnItem(ModContent.ItemType<CornSword>());
 			}
-			if (!Main.player[Main.myPlayer].HasItem(mod.ItemType("FarmerShovel")))
+			if (!Main.player[Main.myPlayer].HasItem(ModContent.ItemType<FarmerShovel>()))
 			{
-				player.QuickSpawnItem(mod.ItemType("FarmerShovel"));
+				player.QuickSpawnItem(ModContent.ItemType<FarmerShovel>());
 			}
-			player.QuickSpawnItem(mod.ItemType("Corn"), Main.rand.Next(25, 48));
-			player.QuickSpawnItem(mod.ItemType("CornJavelin"), Main.rand.Next(15, 45));
+			player.QuickSpawnItem(ModContent.ItemType<Corn>(), Main.rand.Next(25, 48));
+			player.QuickSpawnItem(ModContent.ItemType<CornJavelin>(), Main.rand.Next(15, 45));
 		}
 
 	}

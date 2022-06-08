@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.maxStack = 99;
 			item.value = 17500;
 			item.rare = 0;
-			item.createTile = mod.TileType("CollapsiumBarTile");
+			item.createTile = ModContent.TileType<Tiles.CollapsiumBarTile>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -28,7 +28,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
 			tooltips[0].overrideColor = new Color(238, 194, 73);
@@ -37,7 +36,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "CollapsiumOre", 6);
+			recipe.AddIngredient(ModContent.ItemType<CollapsiumOre>(), 6);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

@@ -1,11 +1,11 @@
 using Terraria.ModLoader;
+using Tremor.Items.Ancient;
 
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Legs)]
 	public class GuardianGreaves : ModItem
 	{
-
 
 		public override void SetDefaults()
 		{
@@ -23,12 +23,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "AncientArmorPlate", 16);
-			recipe.AddIngredient(null, "Squorb", 1);
+			recipe.AddIngredient(ModContent.ItemType<AncientArmorPlate>(), 16);
+			recipe.AddIngredient(ModContent.ItemType<Squorb>(), 1);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

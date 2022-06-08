@@ -12,6 +12,7 @@ namespace Tremor.NPCs
 		{
 			DisplayName.SetDefault("Ancient Dragon");
 			Main.npcFrameCount[npc.type] = 2;
+			NPCID.Sets.TechnicallyABoss[npc.type] = true;
 		}
 
 		public override void SetDefaults()
@@ -25,10 +26,11 @@ namespace Tremor.NPCs
 			npc.aiStyle = 6;
 			aiType = -1;
 			animationType = 10;
-			npc.knockBackResist = 0f;
-			npc.boss = true;
+			npc.knockBackResist = 1f;
+
 			npc.value = Item.buyPrice(0, 25, 0, 0);
 			npc.alpha = 255;
+
 			npc.behindTiles = true;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
@@ -63,7 +65,7 @@ namespace Tremor.NPCs
 			if (npc.life < npc.lifeMax / 2 && Main.netMode != 1 && time == 0 && Main.rand.Next(9000) == 0)
 			{
 				time = 1;
-				int i = NPC.NewNPC((int)(npc.position.X + npc.width / 2), (int)(npc.position.Y + npc.height), mod.NPCType("DragonMini"), 0, 0f, 0f, 0f, 0f, 255);
+				int i = NPC.NewNPC((int)(npc.position.X + npc.width / 2), (int)(npc.position.Y + npc.height), ModContent.NPCType<DragonMini>(), 0, 0f, 0f, 0f, 0f, 255);
 				npc.frame = GetFrame(2);
 				if (Main.netMode == 2 && i < 200)
 				{

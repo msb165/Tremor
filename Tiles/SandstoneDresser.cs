@@ -33,7 +33,7 @@ namespace Tremor.Tiles
 			disableSmartCursor = true;
 			adjTiles = new int[] { TileID.Dressers };
 			dresser = "Sandstone Dresser";
-			dresserDrop = mod.ItemType("SandstoneDresser");
+			dresserDrop = ModContent.ItemType<Items.Sandstone.SandstoneDresser>();
 		}
 
 		public override void RightClick(int i, int j)
@@ -154,7 +154,7 @@ namespace Tremor.Tiles
 				}
 				if (player.showItemIconText == chest)
 				{
-					player.showItemIcon2 = mod.ItemType("SandstoneDresser");
+					player.showItemIcon2 = ModContent.ItemType<Items.Sandstone.SandstoneDresser>();
 					player.showItemIconText = "";
 				}
 			}
@@ -196,7 +196,7 @@ namespace Tremor.Tiles
 				}
 				if (player.showItemIconText == chest)
 				{
-					player.showItemIcon2 = mod.ItemType("SandstoneDresser");
+					player.showItemIcon2 = ModContent.ItemType<Items.Sandstone.SandstoneDresser>();
 					player.showItemIconText = "";
 				}
 			}

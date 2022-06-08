@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Ancient;
 
 namespace Tremor.Items
 {
@@ -14,7 +15,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.melee = true;
 			item.useTime = 30;
-			item.shoot = mod.ProjectileType("ScorcherPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.ScorcherPro>();
 			item.shootSpeed = 4f;
 			item.useAnimation = 30;
 			item.useStyle = 5;
@@ -31,13 +32,12 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "AncientTechnology", 1);
+			recipe.AddIngredient(ModContent.ItemType<AncientTechnology>(), 1);
 			recipe.AddIngredient(3458, 30);
-			recipe.AddIngredient(null, "FireFragment", 25);
+			recipe.AddIngredient(ModContent.ItemType<FireFragment>(), 25);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

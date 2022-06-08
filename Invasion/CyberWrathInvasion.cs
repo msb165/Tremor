@@ -3,11 +3,10 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
-using Tremor.Invasion;
 
 //using Terraria.Content.Fonts;
 
-namespace Tremor
+namespace Tremor.Invasion
 {
 	public class CyberWrathInvasion : ModPlayer
 	{
@@ -20,7 +19,7 @@ namespace Tremor
 		{
 			Player drawPlayer = drawInfo.drawPlayer;
 			Mod mod = Tremor.instance;
-			CyberWrathInvasion modPlayer = drawPlayer.GetModPlayer<CyberWrathInvasion>(mod);
+			CyberWrathInvasion modPlayer = drawPlayer.GetModPlayer<CyberWrathInvasion>();
 
 			Texture2D CyberWrathI = mod.GetTexture("Invasion/System/System1");
 			Texture2D CyberWrathI1 = mod.GetTexture("Invasion/System/System2");
@@ -72,7 +71,7 @@ namespace Tremor
 			const int XOffset = 400;
 			const int YOffset = 400;
 
-			CyberWrathInvasion modPlayer = player.GetModPlayer<CyberWrathInvasion>(mod);
+			CyberWrathInvasion modPlayer = player.GetModPlayer<CyberWrathInvasion>();
 			if (!InvasionWorld.CyberWrath)
 			{
 				InvasionWorld.CyberWrathPoints1 = 0;
@@ -82,109 +81,107 @@ namespace Tremor
 			{
 				//Main.spriteBatch.Draw(Main.blackTileTexture, new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), new Color(200, 200, 200) * 0.5f);
 				if (Main.rand.Next(700) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, mod.NPCType("InvisibleSoul"));
+					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<InvisibleSoul>());
 				if (Main.rand.Next(700) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, mod.NPCType("InvisibleSoul"));
+					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<InvisibleSoul>());
 
 				if (Main.rand.Next(150) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, mod.NPCType("CyberBat"));
+					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<ParadoxBat>());
 				if (Main.rand.Next(150) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y - YOffset, mod.NPCType("CyberBat"));
+					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y - YOffset, ModContent.NPCType<ParadoxBat>());
 
 				if (Main.rand.Next(500) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, mod.NPCType("ParadoxSun"));
+					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<ParadoxSun>());
 				if (Main.rand.Next(500) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y - YOffset, mod.NPCType("ParadoxSun"));
+					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y - YOffset, ModContent.NPCType<ParadoxSun>());
 			}
 
 			InvasionWorld.CyberWrathPoints = InvasionWorld.CyberWrathPoints1;
 
-
 			if (InvasionWorld.CyberWrathPoints1 == 15)
 			{
-				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - YOffset, mod.NPCType("Violeum"));
+				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - YOffset, ModContent.NPCType<Violeum>());
 				InvasionWorld.CyberWrathPoints1 = 16;
 			}
 
 			if (InvasionWorld.CyberWrathPoints1 == 35)
 			{
-				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - YOffset, mod.NPCType("Violeum"));
+				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - YOffset, ModContent.NPCType<Violeum>());
 				InvasionWorld.CyberWrathPoints1 = 36;
 			}
 
 			if (InvasionWorld.CyberWrathPoints1 == 50)
 			{
-				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - YOffset, mod.NPCType("Violeum"));
+				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - YOffset, ModContent.NPCType<Violeum>());
 				InvasionWorld.CyberWrathPoints1 = 51;
 			}
 
 			if (InvasionWorld.CyberWrathPoints1 == 85)
 			{
-				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - YOffset, mod.NPCType("Violeum"));
+				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - YOffset, ModContent.NPCType<Violeum>());
 				InvasionWorld.CyberWrathPoints1 = 86;
 			}
 
-			if (InvasionWorld.CyberWrathPoints1 >= 100 && !NPC.AnyNPCs(mod.NPCType("Titan")))
+			if (InvasionWorld.CyberWrathPoints1 >= 100 && !NPC.AnyNPCs(ModContent.NPCType<Titan>()))
 			{
 				//Main.NewText("Wave 1: Complete!", 255, 255, 0);
 				//Main.NewText("Wave 2: Complete 0%", 0, 255, 255);
 				InvasionWorld.CyberWrath = false;
 			}
 
-			if (InvasionWorld.CyberWrathPoints1 > 100 && !NPC.AnyNPCs(mod.NPCType("Titan")))
+			if (InvasionWorld.CyberWrathPoints1 > 100 && !NPC.AnyNPCs(ModContent.NPCType<Titan>()))
 			{
 				InvasionWorld.CyberWrathPoints1 = 100;
 			}
 
-			if (InvasionWorld.CyberWrathPoints1 > 98 && NPC.AnyNPCs(mod.NPCType("Titan")))
+			if (InvasionWorld.CyberWrathPoints1 > 98 && NPC.AnyNPCs(ModContent.NPCType<Titan>()))
 			{
 				InvasionWorld.CyberWrathPoints1 = 98;
 			}
 
-			if (NPC.AnyNPCs(mod.NPCType("Titan_")) && InvasionWorld.CyberWrathPoints1 == 98)
+			if (NPC.AnyNPCs(ModContent.NPCType<Titan_>()) && InvasionWorld.CyberWrathPoints1 == 98)
 			{
 				InvasionWorld.CyberWrathPoints1 = 98;
 			}
 
-			if (NPC.AnyNPCs(mod.NPCType("Titan")) && InvasionWorld.CyberWrathPoints1 == 98)
+			if (NPC.AnyNPCs(ModContent.NPCType<Titan>()) && InvasionWorld.CyberWrathPoints1 == 98)
 			{
 				InvasionWorld.CyberWrathPoints1 = 98;
 			}
 
-			if (!NPC.AnyNPCs(mod.NPCType("Titan_")) && InvasionWorld.CyberWrath && InvasionWorld.CyberWrathPoints1 < 98)
+			if (!NPC.AnyNPCs(ModContent.NPCType<Titan_>()) && InvasionWorld.CyberWrath && InvasionWorld.CyberWrathPoints1 < 98)
 			{
-				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - 200, mod.NPCType("Titan_"));
+				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - 200, ModContent.NPCType<Titan_>());
 			}
 
 			/*if (modPlayer.CyberWrathPoints1 == 94)
 			{
-				NPC.NewNPC((int)player.position.X, (int)player.position.Y - 200, mod.NPCType("Titan"));
+				NPC.NewNPC((int)player.position.X, (int)player.position.Y - 200, ModContent.NPCType<Titan>());
 				Main.NewText("Your life happens?", Color.Red.R, Color.Orange.G, Color.Red.B);
 				modPlayer.CyberWrathPoints1 = 95;
 			} */
 
-			if (NPC.AnyNPCs(mod.NPCType("Titan")) && InvasionWorld.CyberWrathPoints1 > 98)
+			if (NPC.AnyNPCs(ModContent.NPCType<Titan>()) && InvasionWorld.CyberWrathPoints1 > 98)
 			{
 				InvasionWorld.CyberWrathPoints1 = 98;
 			}
 
-			if (NPC.AnyNPCs(mod.NPCType("Zerokk")) && InvasionWorld.CyberWrathPoints1 == 98)
+			//if (NPC.AnyNPCs(ModContent.NPCType<Zerokk>()) && InvasionWorld.CyberWrathPoints1 == 98)
+			//{
+			//	InvasionWorld.CyberWrathPoints1 = 98;
+			//}
+
+			if (NPC.AnyNPCs(ModContent.NPCType<Titan_>()) && InvasionWorld.CyberWrathPoints1 > 98)
 			{
 				InvasionWorld.CyberWrathPoints1 = 98;
 			}
 
-			if (NPC.AnyNPCs(mod.NPCType("Titan_")) && InvasionWorld.CyberWrathPoints1 > 98)
-			{
-				InvasionWorld.CyberWrathPoints1 = 98;
-			}
+			//if (NPC.AnyNPCs(ModContent.NPCType<Zerokk>()) && InvasionWorld.CyberWrathPoints1 > 98)
+			//{
+			//	InvasionWorld.CyberWrathPoints1 = 98;
+			//}
 
-			if (NPC.AnyNPCs(mod.NPCType("Zerokk")) && InvasionWorld.CyberWrathPoints1 > 98)
-			{
-				InvasionWorld.CyberWrathPoints1 = 98;
-			}
-
-
-			if (InvasionWorld.CyberWrathPoints1 == 100 && !NPC.AnyNPCs(mod.NPCType("Titan_")) && !NPC.AnyNPCs(mod.NPCType("Titan")))
+			if (InvasionWorld.CyberWrathPoints1 == 100 && !NPC.AnyNPCs(ModContent.NPCType<Titan_>()) && !NPC.AnyNPCs(ModContent.NPCType<Titan>()))
 			{
 				Main.NewText("Paradox Cohort has been defeated!", 39, 86, 134);
 				InvasionWorld.CyberWrathPoints1 = 0;

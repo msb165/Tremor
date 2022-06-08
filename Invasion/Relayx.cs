@@ -18,7 +18,7 @@ namespace Tremor.Invasion
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.useStyle = 1;
-			item.shoot = mod.ProjectileType("RelayxProj");
+			item.shoot = ModContent.ProjectileType<RelayxProj>();
 			item.shootSpeed = 6f;
 			item.knockBack = 6;
 			item.value = 1000000;
@@ -36,10 +36,9 @@ namespace Tremor.Invasion
 			Tooltip.SetDefault("Feel the power of the Titan");
 		}
 
-
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
 				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 59);
 			}
@@ -47,15 +46,15 @@ namespace Tremor.Invasion
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			if (Main.rand.Next(8) == 0)
+			if (Main.rand.NextBool(8))
 			{
-				if (Main.rand.Next(3) == 0)
+				if (Main.rand.NextBool(3))
 				{
-					Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("RelayxDragonBig"), item.damage + 200, 10, Main.myPlayer);
+					Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ModContent.ProjectileType<RelayxDragonBig>(), item.damage + 200, 10, Main.myPlayer);
 				}
 				else
 				{
-					Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("RelayxDragon"), item.damage + 100, 10, Main.myPlayer);
+					Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ModContent.ProjectileType<RelayxDragon>(), item.damage + 100, 10, Main.myPlayer);
 				}
 			}
 			else

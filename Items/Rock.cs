@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.rare = 0;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = false;
-			item.shoot = mod.ProjectileType("Rock");
+			item.shoot = ModContent.ProjectileType<Projectiles.Rock>();
 			item.shootSpeed = 10f;
 			item.maxStack = 999;
 			item.consumable = true;
@@ -30,7 +30,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Rock");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

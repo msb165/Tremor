@@ -28,10 +28,9 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Greatly reduces mana cost");
 		}
 
-
 		public override bool UseItem(Player player)
 		{
-			player.AddBuff(mod.BuffType("ManaSaving"), 14400);
+			player.AddBuff(ModContent.BuffType<Buffs.ManaSaving>(), 14400);
 			return true;
 		}
 
@@ -40,9 +39,9 @@ namespace Tremor.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.BottledWater, 1);
 			recipe.AddIngredient(314, 2);
-			recipe.AddIngredient(null, "ClusterShard", 1);
-			recipe.AddIngredient(null, "ManaFruit", 5);
-			recipe.AddTile(null, "AlchemyStationTile");
+			recipe.AddIngredient(ModContent.ItemType<ClusterShard>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<ManaFruit>(), 5);
+			recipe.AddTile(ModContent.TileType<Tiles.AlchemyStationTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

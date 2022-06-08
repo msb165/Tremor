@@ -24,9 +24,9 @@ namespace Tremor.Items
 			item.value = Item.buyPrice(0, 3, 0, 0);
 			item.rare = 3;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("NecronomiconPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.Minions.NecronomiconPro>();
 			item.shootSpeed = 2f;
-			item.buffType = mod.BuffType("NecronomiconBuff");
+			item.buffType = ModContent.BuffType<Buffs.NecronomiconBuff>();
 			item.buffTime = 3600;
 		}
 
@@ -35,7 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Necronomicon");
 			Tooltip.SetDefault("Summons a skeleton to fight for you.");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{

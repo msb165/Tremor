@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Items;
 
 namespace Tremor.Tiles
 {
@@ -12,7 +13,7 @@ namespace Tremor.Tiles
 			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
-			drop = mod.ItemType("GloomstoneBrick");
+			drop = ModContent.ItemType<GloomstoneBrick>();
                                    soundType = 21;
                                    soundStyle = 2;
 			AddMapEntry(new Color(36, 118, 174));

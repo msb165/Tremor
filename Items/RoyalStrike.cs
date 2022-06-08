@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Steel;
 
 namespace Tremor.Items
 {
@@ -30,14 +31,13 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Sapphire, 8);
 			recipe.AddIngredient(ItemID.GoldBar, 15);
-			recipe.AddIngredient(null, "SteelBar", 6);
-			recipe.AddIngredient(null, "EvershinyBar", 12);
+			recipe.AddIngredient(ModContent.ItemType<SteelBar>(), 6);
+			recipe.AddIngredient(ModContent.ItemType<EvershinyBar>(), 12);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

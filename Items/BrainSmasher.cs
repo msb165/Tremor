@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Items.Chain;
 
 namespace Tremor.Items
 {
@@ -23,17 +24,16 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Grants a spinning ball around the player");
 		}
 
-
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.AddBuff(mod.BuffType("BrainSmasherBuff"), 2);
+			player.AddBuff(ModContent.BuffType<Buffs.BrainSmasherBuff>(), 2);
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "BallnChain", 1);
-			recipe.AddIngredient(null, "GolemCore", 1);
+			recipe.AddIngredient(ModContent.ItemType<BallnChain>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<GolemCore>(), 1);
 			recipe.AddIngredient(2766, 25);
 			recipe.SetResult(this);
 			recipe.AddTile(134);

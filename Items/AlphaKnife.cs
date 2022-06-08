@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 20;
 			item.useAnimation = 20;
-			item.shoot = mod.ProjectileType("AlphaKnifePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.AlphaKnifePro>();
 			item.shootSpeed = 22f;
 			item.useStyle = 1;
 			item.knockBack = 4;
@@ -33,11 +33,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "AlphaClaw", 1);
+			recipe.AddIngredient(ModContent.ItemType<AlphaClaw>(), 1);
 			recipe.SetResult(this, 75);
 			recipe.AddTile(14);
 			recipe.AddRecipe();

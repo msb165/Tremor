@@ -40,6 +40,7 @@ namespace Tremor.NPCs
 			npc.defense = 40;
 			npc.aiStyle = 6;
 			npc.npcSlots = 5f;
+			npc.knockBackResist = 0f;
 			music = 17;
 
 			npc.noTileCollide = true;
@@ -64,8 +65,7 @@ namespace Tremor.NPCs
 
 		public override void OnHitPlayer(Player player, int damage, bool crit)
 		{
-			if (Main.expertMode 
-				|| Main.rand.NextBool())
+			if (Main.expertMode || Main.rand.NextBool())
 			{
 				player.AddBuff(BuffID.OnFire, 180);
 			}
@@ -122,7 +122,7 @@ namespace Tremor.NPCs
 
 			npc.boss = true;
 
-			bossBag = mod.ItemType<HeaterOfWorldsBag>();
+			bossBag = ModContent.ItemType<HeaterOfWorldsBag>();
 		}
 
 		public override void AI()
@@ -140,9 +140,9 @@ namespace Tremor.NPCs
 					? 430
 					: 490;
 
-			if (Helper.Chance(odds))
+			if (Main.rand.NextBool(odds))
 			{
-				NPC.NewNPC((int)npc.Center.X - 70, (int)npc.Center.Y, mod.NPCType<MagmaLeechHead>());
+				NPC.NewNPC((int)npc.Center.X - 70, (int)npc.Center.Y, ModContent.NPCType<MagmaLeechHead>());
 			}
 		}
 
@@ -172,8 +172,8 @@ namespace Tremor.NPCs
 				{
 					int type =
 						i < segments - 1
-							? mod.NPCType<HeaterOfWorldsBody>()
-							: mod.NPCType<HeaterOfWorldsTail>();
+							? ModContent.NPCType<HeaterOfWorldsBody>()
+							: ModContent.NPCType<HeaterOfWorldsTail>();
 
 					// whoAmI is only set in NPC.Update...not NewNPC
 					// hence this manual work
@@ -236,22 +236,22 @@ namespace Tremor.NPCs
 			else
 			{
 				if (Main.rand.NextBool())
-					npc.SpawnItem((short)mod.ItemType<MoltenParts>());
+					npc.NewItem((short)ModContent.ItemType<MoltenParts>());
 
 				if (Main.rand.NextBool())
-					npc.SpawnItem(ItemID.HealingPotion, Main.rand.Next(6, 18));
+					npc.NewItem(ItemID.HealingPotion, Main.rand.Next(6, 18));
 
 				if (Main.rand.NextBool())
-					npc.SpawnItem(ItemID.ManaPotion, Main.rand.Next(6, 18));
+					npc.NewItem(ItemID.ManaPotion, Main.rand.Next(6, 18));
 
-				if (Helper.Chance(7))
-					npc.SpawnItem((short)mod.ItemType<HeaterOfWorldsMask>());
+				if (Main.rand.NextBool(7))
+					npc.NewItem((short)ModContent.ItemType<HeaterOfWorldsMask>());
 			}
+			
+			if (Main.rand.NextBool(10))
+				npc.NewItem((short)ModContent.ItemType<HeaterOfWorldsTrophy>());
 
-			TremorWorld.downedBoss[TremorWorld.Boss.HeaterofWorlds] = true;
-      
-			if (Helper.Chance(10))
-				npc.SpawnItem((short)mod.ItemType<HeaterOfWorldsTrophy>());
+			TremorWorld.Boss.HeaterofWorlds.Downed();
 		}
 	}
 }

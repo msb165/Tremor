@@ -4,7 +4,6 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs
 {
-
 	public class InfectedZombie : ModNPC
 	{
 		public override void SetStaticDefaults()
@@ -28,21 +27,10 @@ namespace Tremor.NPCs
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 15, 9);
-			bannerItem = mod.ItemType("InfectedZombieBanner");
-		}
-
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-		{
-			npc.lifeMax = npc.lifeMax * 1;
-			npc.damage = npc.damage * 1;
+			//bannerItem = ModContent.ItemType<InfectedZombieBanner>();
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-		{
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
-			return (Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo)) && !Main.dayTime && NPC.downedBoss2 && spawnInfo.player.ZoneCrimson && y < Main.worldSurface ? 0.02f : 0;
-		}
+			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && !Main.dayTime && NPC.downedBoss2 && spawnInfo.player.ZoneCrimson && spawnInfo.spawnTileY < Main.worldSurface ? 0.02f : 0;
 	}
 }

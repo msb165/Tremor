@@ -28,7 +28,7 @@ namespace Tremor.Tiles
 			TileObjectData.addTile(19);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
 			AddMapEntry(new Color(121, 14, 203)); 
-			drop = mod.ItemType("EbonstonePlatform");
+			drop = ModContent.ItemType<Items.EbonstonePlatform>();
 			adjTiles = new int[]{ TileID.Platforms };
 			TileID.Sets.Platforms[Type] = true;
 		}

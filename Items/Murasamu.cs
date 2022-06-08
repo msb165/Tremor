@@ -30,13 +30,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Muramasa, 1);
-			recipe.AddIngredient(null, "SeaFragment", 16);
+			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 16);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();

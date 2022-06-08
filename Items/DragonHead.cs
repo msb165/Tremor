@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.damage = 19;
 			item.scale = 1.1F;
 			item.noUseGraphic = true;
-			item.shoot = mod.ProjectileType("DragonHead");
+			item.shoot = ModContent.ProjectileType<Projectiles.DragonHead>();
 			item.shootSpeed = 13f;
 			item.UseSound = SoundID.Item1;
 			item.melee = true;

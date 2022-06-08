@@ -26,10 +26,9 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Gives one of three true blades");
 		}
 
-
 		public override void UpdateEquip(Player player)
 		{
-			player.AddBuff(mod.BuffType("SecondTrueBlade"), 2);
+			player.AddBuff(ModContent.BuffType<Buffs.SecondTrueBlade>(), 2);
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -41,9 +40,9 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(248, 1);
-			recipe.AddIngredient(null, "GiantShell", 1);
-			recipe.AddIngredient(null, "BrokenHeroArmorplate", 1);
-			recipe.AddIngredient(null, "TrueEssense", 3);
+			recipe.AddIngredient(ModContent.ItemType<GiantShell>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<BrokenHeroArmorplate>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<TrueEssense>(), 3);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

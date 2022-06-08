@@ -33,7 +33,7 @@ namespace Tremor.Tiles
 			disableSmartCursor = true;
 			adjTiles = new int[] { TileID.Containers };
 			chest = "Gloomstone Chest";
-			chestDrop = mod.ItemType("GloomstoneChest");
+			chestDrop = ModContent.ItemType<Items.GloomstoneChest>();
 		}
 
 				public string MapChestName(string name, int i, int j)
@@ -165,7 +165,7 @@ namespace Tremor.Tiles
 				player.showItemIconText = Main.chest[chest].name.Length > 0 ? Main.chest[chest].name : "Gloomstone Chest";
 				if (player.showItemIconText == "Gloomstone Chest")
 				{
-					player.showItemIcon2 = mod.ItemType("GloomstoneChest");
+					player.showItemIcon2 = ModContent.ItemType<Items.GloomstoneChest>();
 					player.showItemIconText = "";
 				}
 			}

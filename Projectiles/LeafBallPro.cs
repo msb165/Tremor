@@ -26,12 +26,11 @@ namespace Tremor.Projectiles
 
 		}
 
-
 		// Now this is where the chain magic happens. You don't have to try to figure this whole thing out.
 		// Just make sure that you edit the first line (which starts with 'Texture2D texture') correctly.
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D texture = ModLoader.GetTexture("Tremor/Projectiles/LeafBall_Chain");
+			Texture2D texture = ModContent.GetTexture("Tremor/Projectiles/LeafBall_Chain");
 
 			Vector2 position = projectile.Center;
 			Vector2 mountedCenter = Main.player[projectile.owner].MountedCenter;

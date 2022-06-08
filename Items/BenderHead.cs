@@ -7,8 +7,6 @@ namespace Tremor.Items
 	public class BenderHead : ModItem
 	{
 
-
-
 		public override void SetDefaults()
 		{
 
@@ -25,10 +23,9 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("BenderBody") && legs.type == mod.ItemType("BenderLegs");
+			return body.type == ModContent.ItemType<BenderBody>() && legs.type == ModContent.ItemType<BenderLegs>();
 		}
 
 		public override void UpdateArmorSet(Player player)

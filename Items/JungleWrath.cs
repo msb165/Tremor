@@ -23,7 +23,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("6% increased magic and minion damage");
 		}
 
-
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.magicDamage += 0.06f;
@@ -33,11 +32,11 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "JungleAlloy", 1);
+			recipe.AddIngredient(ModContent.ItemType<JungleAlloy>(), 1);
 			recipe.AddIngredient(ItemID.JungleSpores, 16);
 			recipe.AddIngredient(ItemID.Stinger, 6);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "GreatAnvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.GreatAnvilTile>());
 			recipe.AddRecipe();
 		}
 	}

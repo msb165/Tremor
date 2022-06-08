@@ -11,9 +11,10 @@ namespace Tremor.Tiles
     {
         Main.tileFrameImportant[Type] = true;
         Main.tileLavaDeath[Type] = true;
-TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
-TileObjectData.newTile.Height = 1;
-TileObjectData.newTile.Width = 1;
+		TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
+		TileObjectData.newTile.Height = 1;
+		TileObjectData.newTile.Width = 1;
+		TileObjectData.newTile.CoordinateHeights = new[]{16};
         TileObjectData.newTile.StyleHorizontal = true;
         TileObjectData.newTile.StyleWrapLimit = 36;
         TileObjectData.addTile(Type);

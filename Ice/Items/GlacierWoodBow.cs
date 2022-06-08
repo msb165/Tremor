@@ -32,7 +32,6 @@ namespace Tremor.Ice.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override Vector2? HoldoutOffset()
 		{
 			return new Vector2(-1, 0);
@@ -41,7 +40,7 @@ namespace Tremor.Ice.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GlacierWood", 10);
+			recipe.AddIngredient(ModContent.ItemType<GlacierWood>(), 10);
 			recipe.SetResult(this);
 			recipe.AddTile(18);
 			recipe.AddRecipe();

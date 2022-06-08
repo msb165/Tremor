@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 50000;
-			item.createTile = mod.TileType("StormJellyfishTrophyTile");
+			item.createTile = ModContent.TileType<Tiles.StormJellyfishTrophyTile>();
 			item.placeStyle = 0;
 		}
 

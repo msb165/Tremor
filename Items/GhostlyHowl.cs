@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -34,8 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Ghostly Howl");
 			Tooltip.SetDefault("Shoots the ghostly arrows");
 		}
-
-
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
@@ -69,15 +68,15 @@ namespace Tremor.Items
 			num78 *= num80;
 			num79 *= num80;
 			int num146 = 4;
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
 				num146++;
 			}
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.NextBool(4))
 			{
 				num146++;
 			}
-			if (Main.rand.Next(8) == 0)
+			if (Main.rand.NextBool(8))
 			{
 				num146++;
 			}
@@ -98,7 +97,7 @@ namespace Tremor.Items
 				num149 *= num80;
 				float x4 = vector2.X;
 				float y4 = vector2.Y;
-				Projectile.NewProjectile(x4, y4, num148, num149, mod.ProjectileType("GhostlyArrow"), num73, num74, i, 0f, 0f);
+				Projectile.NewProjectile(x4, y4, num148, num149, ModContent.ProjectileType<Projectiles.GhostlyArrow>(), num73, num74, i, 0f, 0f);
 			}
 			return false;
 		}
@@ -107,10 +106,10 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(3467, 10);
-			recipe.AddIngredient(null, "VoidBar", 10);
-			recipe.AddIngredient(null, "Catalyst", 15);
-			recipe.AddIngredient(null, "PhantomSoul", 50);
-			recipe.AddIngredient(null, "TearsofDeath", 8);
+			recipe.AddIngredient(ModContent.ItemType<VoidBar>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<Catalyst>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<PhantomSoul>(), 50);
+			recipe.AddIngredient(ModContent.ItemType<TearsofDeath>(), 8);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

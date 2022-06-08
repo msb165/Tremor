@@ -33,19 +33,18 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "ParaxydeShard", 12);
+			recipe.AddIngredient(ModContent.ItemType<ParaxydeShard>(), 12);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "AlchematorTile");
+			recipe.AddTile(ModContent.TileType<Tiles.AlchematorTile>());
 			recipe.AddRecipe();
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
 				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 27);
 			}

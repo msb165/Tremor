@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.NPCs;
 
 namespace Tremor.Items
 {
@@ -27,13 +28,13 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Molten Heart");
-			Tooltip.SetDefault("Summons Heater of Worlds");
+			Tooltip.SetDefault("Summons Heater of Worlds\n" +
+"Requires the hell biome");
 		}
-
 
 		public override bool CanUseItem(Player player)
 		{
-			return player.position.Y / 16f > Main.maxTilesY - 200 && NPC.downedBoss2 && !NPC.AnyNPCs(mod.NPCType("HeaterOfWorldsHead"));
+			return player.position.Y / 16f > Main.maxTilesY - 200 && NPC.downedBoss2 && !NPC.AnyNPCs(ModContent.NPCType<HeaterOfWorldsHead>());
 		}
 
 		public override void AddRecipes()
@@ -41,7 +42,7 @@ namespace Tremor.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Hellstone, 25);
 			recipe.AddIngredient(ItemID.LifeCrystal, 1);
-			recipe.AddIngredient(null, "FireFragment", 12);
+			recipe.AddIngredient(ModContent.ItemType<FireFragment>(), 12);
 			recipe.SetResult(this);
 			recipe.AddTile(26);
 			recipe.AddRecipe();
@@ -49,7 +50,7 @@ namespace Tremor.Items
 
 		public override bool UseItem(Player player)
 		{
-			NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("HeaterOfWorldsHead"));
+			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<HeaterOfWorldsHead>());
 			Main.PlaySound(SoundID.Roar, player.position, 0);
 			return true;
 		}

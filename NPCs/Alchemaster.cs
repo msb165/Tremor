@@ -4,6 +4,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items;
+using Tremor.Items.Alchemist;
+using Tremor.Items.Alchemist.Flasks;
 
 namespace Tremor.NPCs
 {
@@ -75,8 +78,8 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath42;
 			npc.value = Item.buyPrice(0, 9, 75, 0);
 			npc.boss = true;
-			ShootType = mod.ProjectileType("PlagueFlaskEvil");
-			bossBag = mod.ItemType("AlchemasterTreasureBag");
+			ShootType = ModContent.ProjectileType<Projectiles.PlagueFlaskEvil>();
+			bossBag = ModContent.ItemType<AlchemasterTreasureBag>();
 			npc.noTileCollide = true;
 		}
 
@@ -147,7 +150,7 @@ namespace Tremor.NPCs
 																										  // 1 аргумент - позиция из которой будет вылетать выстрел
 																										  // 2 аргумент - позиция в которую он должен полететь 
 																										  // 3 аргумент - скорость выстрела
-			Projectile.NewProjectile(npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, mod.ProjectileType("SparkingFlaskEvil"), FlameShootDamage, FlameShootKN);
+			Projectile.NewProjectile(npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, ModContent.ProjectileType<Projectiles.SparkingFlaskEvil>(), FlameShootDamage, FlameShootKN);
 		}
 
 		bool CheckRunConditions()
@@ -215,7 +218,7 @@ namespace Tremor.NPCs
 					if (TimeToState % StateTime_Minions / MinionsCount == 0)
 					{
 						Vector2 Position = Helper.RandomPointInArea(npc.Hitbox);
-						int index = NPC.NewNPC((int)Position.X, (int)Position.Y, mod.NPCType("PlagueSoul"));
+						int index = NPC.NewNPC((int)Position.X, (int)Position.Y, ModContent.NPCType<PlagueSoul>());
 						Main.npc[index].Center = Position;
 					}
 					break;
@@ -243,35 +246,35 @@ namespace Tremor.NPCs
 				int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
 				int halfLength = npc.width / 2 / 16 + 1;
 
-				if (!Main.expertMode && Main.rand.Next(7) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AlchemasterMask"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AlchemasterMask>());
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AlchemasterTrophy"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AlchemasterTrophy>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PlagueFlask"), Main.rand.Next(30, 78));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PlagueFlask>(), Main.rand.Next(30, 78));
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PlagueFlask"), Main.rand.Next(30, 78));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PlagueFlask>(), Main.rand.Next(30, 78));
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LongFuse"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<LongFuse>());
 				}
-				if (!Main.expertMode && Main.rand.Next(3) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TheGlorch"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TheGlorch>());
 				}
-				if (!Main.expertMode && Main.rand.Next(3) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BadApple"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BadApple>());
 				}
-				TremorWorld.downedBoss[TremorWorld.Boss.Alchemaster] = true;
+				TremorWorld.Boss.Alchemaster.Downed();
 
 			}
 		}

@@ -34,10 +34,9 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override bool ConsumeAmmo(Player p)
 		{
-			return Main.rand.Next(2) == 0;
+			return Main.rand.NextBool(2);
 		}
 
 		public override Vector2? HoldoutOffset()
@@ -48,9 +47,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "WhiteGoldBar", 15);
+			recipe.AddIngredient(ModContent.ItemType<WhiteGoldBar>(), 15);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "DivineForgeTile");
+			recipe.AddTile(ModContent.TileType<Tiles.DivineForgeTile>());
 			recipe.AddRecipe();
 		}
 	}

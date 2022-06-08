@@ -26,7 +26,6 @@ namespace Tremor.Projectiles
 
 		}
 
-
 		float smooth = 2f;
 
 		public override bool OnTileCollide(Vector2 oldVelocity)
@@ -58,9 +57,9 @@ namespace Tremor.Projectiles
 
 		public void CreateDust()
 		{
-			if (Main.rand.Next(2) == 1)
+			if (Main.rand.NextBool(2))
 			{
-				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, mod.DustType<Dusts.Slime>());
+				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, ModContent.DustType<Dusts.Slime>());
 				Main.dust[dust].scale = 0.9f;
 			}
 		}

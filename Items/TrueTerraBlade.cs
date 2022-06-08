@@ -32,16 +32,15 @@ namespace Tremor.Items
 			Tooltip.SetDefault("'Shining, shimmering, splendid!'");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.TerraBlade, 1);
-			recipe.AddIngredient(null, "NightmareBar", 25);
-			recipe.AddIngredient(null, "SeaFragment", 30);
-			recipe.AddIngredient(null, "EarthFragment", 30);
-			recipe.AddIngredient(null, "FireFragment", 30);
-			recipe.AddIngredient(null, "AirFragment", 30);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 25);
+			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 30);
+			recipe.AddIngredient(ModContent.ItemType<EarthFragment>(), 30);
+			recipe.AddIngredient(ModContent.ItemType<FireFragment>(), 30);
+			recipe.AddIngredient(ModContent.ItemType<AirFragment>(), 30);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

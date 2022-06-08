@@ -20,7 +20,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 20;
 			item.useAnimation = 20;
-			item.shoot = mod.ProjectileType("WhiteGoldDagger");
+			item.shoot = ModContent.ProjectileType<Projectiles.WhiteGoldDagger>();
 			item.shootSpeed = 22f;
 			item.useStyle = 1;
 			item.knockBack = 4;
@@ -35,7 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Royal Daggers");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
@@ -69,15 +68,15 @@ namespace Tremor.Items
 			num78 *= num80;
 			num79 *= num80;
 			int num146 = 4;
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
 				num146++;
 			}
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.NextBool(4))
 			{
 				num146++;
 			}
-			if (Main.rand.Next(8) == 0)
+			if (Main.rand.NextBool(8))
 			{
 				num146++;
 			}
@@ -98,7 +97,7 @@ namespace Tremor.Items
 				num149 *= num80;
 				float x4 = vector2.X;
 				float y4 = vector2.Y;
-				Projectile.NewProjectile(x4, y4, num148, num149, mod.ProjectileType("WhiteGoldKnife"), num73, num74, i, 0f, 0f);
+				Projectile.NewProjectile(x4, y4, num148, num149, ModContent.ProjectileType<Projectiles.WhiteGoldKnife>(), num73, num74, i, 0f, 0f);
 			}
 			return false;
 		}
@@ -106,9 +105,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "WhiteGoldBar", 1);
+			recipe.AddIngredient(ModContent.ItemType<WhiteGoldBar>(), 1);
 			recipe.SetResult(this, 75);
-			recipe.AddTile(null, "DivineForgeTile");
+			recipe.AddTile(ModContent.TileType<Tiles.DivineForgeTile>());
 			recipe.AddRecipe();
 		}
 	}

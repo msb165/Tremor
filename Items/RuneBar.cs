@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.maxStack = 99;
 			item.value = 100;
 			item.rare = 4;
-			item.createTile = mod.TileType("RuneBarTile");
+			item.createTile = ModContent.TileType<Tiles.RuneBarTile>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;

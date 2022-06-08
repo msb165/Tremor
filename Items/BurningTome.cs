@@ -16,7 +16,7 @@ namespace Tremor.Items
 			item.useAnimation = 20;
 			item.mana = 6;
 			item.useStyle = 5;
-			//item.shoot = mod.ProjectileType("BurningTome");
+			//item.shoot = ModContent.ProjectileType<Projectiles.BurningTome>();
 			item.shoot = 376;
 			item.shootSpeed = 26f;
 			item.knockBack = 4;

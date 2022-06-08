@@ -15,7 +15,7 @@ namespace Tremor.Items
 			item.width = 22;
 			item.UseSound = SoundID.Item43;
 			item.height = 18;
-			item.buffType = mod.BuffType("ManaBooster");
+			item.buffType = ModContent.BuffType<Buffs.ManaBooster>();
 			item.value = 5160000;
 			item.rare = 11;
 		}
@@ -25,7 +25,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Mana Booster");
 			Tooltip.SetDefault("Regenerates mana every minute");
 		}
-
 
 		public override void UseStyle(Player player)
 		{

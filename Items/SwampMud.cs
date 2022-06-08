@@ -11,7 +11,8 @@ namespace Tremor.Items
 			item.height = 24;
 			item.maxStack = 999;
 			item.rare = 0;
-			item.createTile = mod.TileType("SwampMud");
+			//TODO: Needs tile
+			//item.createTile = ModContent.TileType<SwampMud>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;

@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 2000;
-			item.createTile = mod.TileType("GloomstoneBookcase");
+			item.createTile = ModContent.TileType<Tiles.GloomstoneBookcase>();
 		}
 
 		public override void SetStaticDefaults()

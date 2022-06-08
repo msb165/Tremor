@@ -20,11 +20,20 @@ namespace Tremor
 			{
 				coins = Utils.CoinsSplit(Utils.CoinsCount(out flag, Main.LocalPlayer.bank2.item, new int[0]));
 			}
-			else { return; }
+			else{return;}
 
-			for (int i = 0; i < 3; i++)
+			List<string> coinTexts = new List<string>(coins.Length);
+			for (int i=0; i<3; i++)
 			{
-				if (coins[i] > 0) { tooltips.Add(new TooltipLine(mod, "", "[i/s1:" + (ItemID.PlatinumCoin - i) + "] x" + coins[i])); }
+				if (coins[i] > 0)
+				{
+					coinTexts.Add($"{coins[i]} [i/s1:{ItemID.PlatinumCoin - i}]");
+				}
+			}
+
+			if(coinTexts.Count>0)
+			{
+				tooltips.Add(new TooltipLine(mod, "", string.Join(" ",coinTexts)));
 			}
 		}
 	}

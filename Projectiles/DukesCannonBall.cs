@@ -31,7 +31,6 @@ namespace Tremor.Projectiles
 
 		}
 
-
 		int time = 45;             //Сам счетчик, впринципе просто целочисленная переменная, 60 = 1 сек, то есть тут 0.75 сек
 
 		/*public override void AI()    Этот ИИ направляет прожектайл к игроку через 0.75 сек после выстрела
@@ -97,7 +96,7 @@ namespace Tremor.Projectiles
 		{
 			for (int k = 0; k < 10; k++)
 			{
-				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, mod.DustType<Dusts.Ball>(), projectile.oldVelocity.X * 0.9f, projectile.oldVelocity.Y * 0.9f);
+				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, ModContent.DustType<Dusts.Ball>(), projectile.oldVelocity.X * 0.9f, projectile.oldVelocity.Y * 0.9f);
 			}
 		}
 

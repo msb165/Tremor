@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.melee = true;
 			item.useTime = 25;
-			item.shoot = mod.ProjectileType("PitchforkPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.PitchforkPro>();
 			item.shootSpeed = 3f;
 			item.useAnimation = 25;
 			item.useStyle = 5;

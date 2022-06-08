@@ -36,7 +36,7 @@ namespace Tremor.Tiles
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
 			AddMapEntry(new Color(200, 200, 200));
 			dustType = 44;
-			drop = mod.ItemType("BulbTorch");
+			drop = ModContent.ItemType<Items.BulbTorch>();
 			disableSmartCursor = true;
 			adjTiles = new int[]{ TileID.Torches };
 			torch = true;

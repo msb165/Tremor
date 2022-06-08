@@ -33,7 +33,7 @@ namespace Tremor.Tiles
 			disableSmartCursor = true;
 			adjTiles = new int[] { TileID.Dressers };
 			dresser = "Crimstone Dresser";
-			dresserDrop = mod.ItemType("CrimstoneDresser");
+			dresserDrop = ModContent.ItemType<Items.Crimstone.CrimstoneDresser>();
 		}
 
 		public override void RightClick(int i, int j)
@@ -154,7 +154,7 @@ namespace Tremor.Tiles
 				}
 				if (player.showItemIconText == chest)
 				{
-					player.showItemIcon2 = mod.ItemType("CrimstoneDresser");
+					player.showItemIcon2 = ModContent.ItemType<Items.Crimstone.CrimstoneDresser>();
 					player.showItemIconText = "";
 				}
 			}
@@ -196,7 +196,7 @@ namespace Tremor.Tiles
 				}
 				if (player.showItemIconText == chest)
 				{
-					player.showItemIcon2 = mod.ItemType("CrimstoneDresser");
+					player.showItemIcon2 = ModContent.ItemType<Items.Crimstone.CrimstoneDresser>();
 					player.showItemIconText = "";
 				}
 			}

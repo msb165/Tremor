@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.NPCs;
 
 namespace Tremor.Items
 {
@@ -24,18 +25,18 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Frost Crown");
-			Tooltip.SetDefault("Summons the Frost King");
+			Tooltip.SetDefault("Summons the Frost King\n" +
+"Requires any mech. boss to have been slan and the snow or glacier biome");
 		}
-
 
 		public override bool CanUseItem(Player player)
 		{
-			return NPC.downedMechBossAny && !NPC.AnyNPCs(mod.NPCType("FrostKing")) && player.ZoneSnow;
+			return NPC.downedMechBossAny && !NPC.AnyNPCs(ModContent.NPCType<FrostKing>()) && player.ZoneSnow;
 		}
 
 		public override bool UseItem(Player player)
 		{
-			NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("FrostKing"));
+			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<FrostKing>());
 			Main.PlaySound(SoundID.Roar, player.position, 0);
 			return true;
 		}
@@ -47,7 +48,7 @@ namespace Tremor.Items
 			recipe.AddIngredient(ItemID.HallowedBar, 15);
 			recipe.AddIngredient(ItemID.SoulofNight, 18);
 			recipe.AddIngredient(ItemID.SoulofLight, 18);
-			recipe.AddIngredient(null, "FrostCore", 25);
+			recipe.AddIngredient(ModContent.ItemType<FrostCore>(), 25);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

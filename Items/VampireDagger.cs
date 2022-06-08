@@ -33,11 +33,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "SkullTeeth");
+			recipe.AddIngredient(ModContent.ItemType<SkullTeeth>());
 			recipe.SetResult(this, 100);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

@@ -26,9 +26,8 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Samurai Helmet");
-			Tooltip.SetDefault("Increases all damage by 9%");
+			Tooltip.SetDefault("9% increased damage");
 		}
-
 
 		public override void UpdateEquip(Player player)
 		{
@@ -41,7 +40,7 @@ namespace Tremor.Items
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("SamuraiChestplate") && legs.type == mod.ItemType("SamuraiGeaves");
+			return body.type == ModContent.ItemType<SamuraiChestplate>() && legs.type == ModContent.ItemType<SamuraiGeaves>();
 		}
 		public override void UpdateArmorSet(Player player)
 		{

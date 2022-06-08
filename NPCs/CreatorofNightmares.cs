@@ -1,11 +1,13 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
+using Microsoft.Xna.Framework;
+
+using Tremor.Items;
+
 namespace Tremor.NPCs
 {
-
 	public class CreatorofNightmares : ModNPC
 	{
 		public override void SetStaticDefaults()
@@ -29,29 +31,14 @@ namespace Tremor.NPCs
 			aiType = 604;
 			npc.DeathSound = SoundID.NPCDeath52;
 			npc.value = Item.buyPrice(0, 3, 1, 0);
-			banner = npc.type;
-			bannerItem = mod.ItemType("CreatorofNightmaresBanner");
+			// banner = npc.type;
+			// Todo: bannerItem = ModContent.ItemType<CreatorofNightmaresBanner>();
 		}
-
 
 		public override void NPCLoot()
 		{
-			if (Main.netMode != 1)
-			{
-				int centerX = (int)(npc.position.X + npc.width / 2) / 16;
-				int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
-				int halfLength = npc.width / 2 / 16 + 1;
-				if (Main.rand.Next(5) == 0)
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BrokenHeroArmorplate"));
-				}
-			}
-		}
-
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-		{
-			npc.lifeMax = npc.lifeMax * 1;
-			npc.damage = npc.damage * 1;
+			if (Main.rand.NextBool(5))
+				npc.NewItem(ModContent.ItemType<BrokenHeroArmorplate>());
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -64,19 +51,13 @@ namespace Tremor.NPCs
 				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
 				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
 				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
+
 				for (int k = 0; k < 20; k++)
-				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
-				}
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-		{
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
-			return Helper.NormalSpawn(spawnInfo) && spawnInfo.spawnTileY < Main.rockLayer && NPC.downedMoonlord && Main.eclipse ? 0.01f : 0f;
-		}
+			=> Helper.NormalSpawn(spawnInfo) && spawnInfo.spawnTileY < Main.rockLayer && NPC.downedMoonlord && Main.eclipse ? 0.01f : 0f;
 	}
 }

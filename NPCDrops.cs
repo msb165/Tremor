@@ -1,6 +1,8 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items;
+using Tremor.Items.Alchemist;
 
 namespace Tremor
 {
@@ -21,8 +23,8 @@ namespace Tremor
 				ItemID.RangerEmblem,
 				ItemID.SorcererEmblem,
 				ItemID.SummonerEmblem,
-				Tremor.instance.ItemType("AlchemistEmblem"),
-				Tremor.instance.ItemType("ThrowerEmblem")
+				ModContent.ItemType<AlchemistEmblem>(),
+				ModContent.ItemType<ThrowerEmblem>()
 			};
 		}
 

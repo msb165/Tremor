@@ -24,12 +24,11 @@ namespace Tremor.Projectiles
 
 		}
 
-
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
-				target.AddBuff(mod.BuffType("DeathFear"), 480, false);
+				target.AddBuff(ModContent.BuffType<Buffs.DeathFear>(), 480, false);
 			}
 		}
 
@@ -37,16 +36,16 @@ namespace Tremor.Projectiles
 		{
 			for (int k = 0; k < 5; k++)
 			{
-				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, mod.DustType<Dusts.NightmareFlame>(), projectile.oldVelocity.X * 0.1f, projectile.oldVelocity.Y * 0.1f);
+				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, ModContent.DustType<Dusts.NightmareFlame>(), projectile.oldVelocity.X * 0.1f, projectile.oldVelocity.Y * 0.1f);
 			}
 			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y, 0);
 		}
 
 		public override void OnHitPvp(Player target, int damage, bool crit)
 		{
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
-				target.AddBuff(mod.BuffType("DeathFear"), 480, false);
+				target.AddBuff(ModContent.BuffType<Buffs.DeathFear>(), 480, false);
 			}
 		}
 	}

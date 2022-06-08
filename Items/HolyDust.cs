@@ -24,7 +24,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			if (Math.Abs(player.velocity.X) + Math.Abs(player.velocity.Y) > 1f && !player.rocketFrame) // Makes sure the player is actually moving
@@ -44,9 +43,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "BagofDust", 1);
+			recipe.AddIngredient(ModContent.ItemType<BagofDust>(), 1);
 			recipe.AddIngredient(ItemID.PixieDust, 5);
-			recipe.AddTile(null, "MagicWorkbenchTile");
+			recipe.AddTile(ModContent.TileType<Tiles.MagicWorkbenchTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

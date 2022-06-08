@@ -16,7 +16,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 25;
 			item.useAnimation = 25;
-			item.shoot = mod.ProjectileType("ShadowR");
+			item.shoot = ModContent.ProjectileType<Projectiles.ShadowR>();
 			item.shootSpeed = 11.5f;
 			item.useStyle = 5;
 			item.knockBack = 4;

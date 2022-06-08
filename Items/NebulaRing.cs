@@ -19,9 +19,10 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Nebula Ring ");
-			Tooltip.SetDefault("20% increased magic damage\nIncreases magic critical strike chance by 15\nIncreases maximum mana by 80");
+			Tooltip.SetDefault("20% increased magic damage\n" +
+"Increases magic critical strike chance by 15\n" +
+"Increases maximum mana by 80");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
@@ -36,7 +37,7 @@ namespace Tremor.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(3457, 10);
 			recipe.AddIngredient(3467, 15);
-			recipe.AddIngredient(null, "Band");
+			recipe.AddIngredient(ModContent.ItemType<Band>());
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

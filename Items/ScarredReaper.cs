@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.useAnimation = 25;
 			item.useStyle = 1;
 			item.knockBack = 3f;
-			item.shoot = mod.ProjectileType("ScarredReaperPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.ScarredReaperPro>();
 			item.value = 200600;
 			item.rare = 5;
 			item.noUseGraphic = true;
@@ -31,7 +31,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Scarred Reaper");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override bool CanUseItem(Player player)
 		{

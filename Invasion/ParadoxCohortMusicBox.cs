@@ -13,7 +13,7 @@ namespace Tremor.Invasion
 			item.useTime = 10;
 			item.autoReuse = true;
 			item.consumable = true;
-			item.createTile = mod.TileType("ParadoxCohortMusicBoxTile");
+			item.createTile = ModContent.TileType<ParadoxCohortMusicBoxTile>();
 			item.width = 24;
 			item.height = 24;
 			item.rare = 4;

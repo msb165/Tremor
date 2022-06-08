@@ -23,13 +23,12 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Sanctifier");
-			Tooltip.SetDefault("Increases alchemic and throwing damage by 15%");
+			Tooltip.SetDefault("15% increased alchemical and throwing damage");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.GetModPlayer<MPlayer>(mod).alchemistDamage += 0.15f;
+			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.15f;
 			player.thrownDamage += 0.15f;
 		}
 
@@ -38,7 +37,7 @@ namespace Tremor.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.HallowedBar, 16);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "GreatAnvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.GreatAnvilTile>());
 			recipe.AddRecipe();
 		}
 	}

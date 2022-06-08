@@ -14,6 +14,6 @@ namespace Tremor.Tiles
         soundType = 4;
         soundStyle = 1;
         AddMapEntry(new Color(75, 192, 126));
-        drop = mod.ItemType("GreenSlimeBlock");
+        //drop = ModContent.ItemType<GreenSlimeBlock>();
     }
 }}

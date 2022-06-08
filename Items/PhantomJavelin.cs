@@ -1,5 +1,6 @@
 ﻿using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -20,7 +21,7 @@ namespace Tremor.Items
 			item.damage = 28;
 			item.knockBack = 4;
 			item.mana = 7;
-			item.shoot = mod.ProjectileType("PhantomSpear");
+			item.shoot = ModContent.ProjectileType<Projectiles.PhantomSpear>();
 			item.shootSpeed = 14f;
 			item.noMelee = true; //So that the swing itself doesn't do damage; this weapon is projectile-only
 			item.noUseGraphic = true; //No swing animation
@@ -37,9 +38,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "PhantomSoul", 25);
+			recipe.AddIngredient(ModContent.ItemType<PhantomSoul>(), 25);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "MagicWorkbenchTile");
+			recipe.AddTile(ModContent.TileType<Tiles.MagicWorkbenchTile>());
 			recipe.AddRecipe();
 		}
 	}

@@ -80,7 +80,7 @@ namespace Tremor.Ice
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 32, mod.ItemType(""));
+			Item.NewItem(i * 16, j * 16, 32, 32, ModContent.ItemType<Items.Furniture.IceChest>());
 			Chest.DestroyChest(i, j);
 		}
 
@@ -90,11 +90,11 @@ namespace Tremor.Ice
 		{
 			//Player player = Main.player[Main.myPlayer];
 			Player player = Main.LocalPlayer;
-			if (player.showItemIcon2 == mod.ItemType("IceKey"))
+			if (player.showItemIcon2 == ModContent.ItemType<IceKey>())
 			{
 				for (int num66 = 0; num66 < 58; num66++)
 				{
-					if (player.inventory[num66].type == mod.ItemType("IceKey") && player.inventory[num66].stack > 0)
+					if (player.inventory[num66].type == ModContent.ItemType<IceKey>() && player.inventory[num66].stack > 0)
 					{
 						player.inventory[num66].stack--;
 						Chest.Unlock(i, j);
@@ -204,12 +204,12 @@ namespace Tremor.Ice
 				{
 					if (tile.frameX == 72 || tile.frameX == 90)
 					{
-						player.showItemIcon2 = mod.ItemType("IceKey");
+						player.showItemIcon2 = ModContent.ItemType<IceKey>();
 						player.showItemIconText = "";
 					}
 					else
 					{
-						player.showItemIcon2 = mod.ItemType("IceChest");
+						player.showItemIcon2 = ModContent.ItemType<Items.Furniture.IceChest>();
 					}
 				}
 			}

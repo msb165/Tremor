@@ -45,7 +45,7 @@ namespace Tremor.Projectiles
 					projectile.localAI[0] = 1f;
 					if (Collision.CanHit(Main.player[projectile.owner].position, Main.player[projectile.owner].width, Main.player[projectile.owner].height, new Vector2(projectile.Center.X + projectile.velocity.X * projectile.ai[0], projectile.Center.Y + projectile.velocity.Y * projectile.ai[0]), projectile.width, projectile.height))
 					{
-						Projectile.NewProjectile(projectile.Center.X + projectile.velocity.X, projectile.Center.Y + projectile.velocity.Y, projectile.velocity.X * 1.5f, projectile.velocity.Y * 1.5f, mod.ProjectileType("ScorcherTwo"), projectile.damage, projectile.knockBack * 0.85f, projectile.owner, 0f, 0f);
+						Projectile.NewProjectile(projectile.Center.X + projectile.velocity.X, projectile.Center.Y + projectile.velocity.Y, projectile.velocity.X * 1.5f, projectile.velocity.Y * 1.5f, ModContent.ProjectileType<Projectiles.ScorcherTwo>(), projectile.damage, projectile.knockBack * 0.85f, projectile.owner, 0f, 0f);
 					}
 				}
 			}
@@ -70,7 +70,7 @@ namespace Tremor.Projectiles
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
 				target.AddBuff(24, 180, false);
 			}

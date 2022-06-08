@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Chlorophyte;
 
 namespace Tremor.Items
 {
@@ -36,7 +37,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
@@ -50,16 +50,16 @@ namespace Tremor.Items
 
 		public override bool ConsumeAmmo(Player p)
 		{
-			return Main.rand.Next(2) == 0;
+			return Main.rand.NextBool(2);
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GolemCore", 1);
+			recipe.AddIngredient(ModContent.ItemType<GolemCore>(), 1);
 			recipe.AddIngredient(ItemID.ClockworkAssaultRifle, 1);
 			recipe.AddIngredient(ItemID.TacticalShotgun, 1);
-			recipe.AddIngredient(null, "ChlorophyteDeadshooter", 1);
+			recipe.AddIngredient(ModContent.ItemType<ChlorophyteDeadshooter>(), 1);
 			recipe.AddIngredient(ItemID.SoulofLight, 25);
 			recipe.AddIngredient(ItemID.SoulofNight, 25);
 			recipe.SetResult(this);

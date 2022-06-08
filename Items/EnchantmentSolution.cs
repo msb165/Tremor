@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Alchemist.Flasks;
 
 namespace Tremor.Items
 {
@@ -10,7 +11,7 @@ namespace Tremor.Items
 		{
 			for (int i = 0; i < player.armor.Length; i++)
 			{
-				MPlayer modPlayer = (MPlayer)player.GetModPlayer(mod, "MPlayer");
+				MPlayer modPlayer = player.GetModPlayer<MPlayer>();
 				if (modPlayer.enchanted)
 				{
 					return false;
@@ -36,7 +37,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("25% chance not to consume flask");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
@@ -45,7 +45,7 @@ namespace Tremor.Items
 			recipe.AddIngredient(ItemID.BottledWater, 1);
 			recipe.AddIngredient(ItemID.ManaCrystal, 1);
 			recipe.AddIngredient(ItemID.LifeCrystal, 1);
-			recipe.AddIngredient(null, "BasicFlask", 15);
+			recipe.AddIngredient(ModContent.ItemType<BasicFlask>(), 15);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();
@@ -53,8 +53,8 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			MPlayer modPlayer = (MPlayer)player.GetModPlayer(mod, "MPlayer");
-			player.AddBuff(mod.BuffType("EnchantmentSolution"), 2);
+			MPlayer modPlayer = player.GetModPlayer<MPlayer>();
+			player.AddBuff(ModContent.BuffType<Buffs.EnchantmentSolution>(), 2);
 			modPlayer.enchanted = true;
 		}
 	}

@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Items.Dark;
 
 namespace Tremor.Items
 {
@@ -36,15 +37,15 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "MeatShield", 1);
-			recipe.AddIngredient(null, "DarkAbsorber", 1);
+			recipe.AddIngredient(ModContent.ItemType<MeatShield>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<DarkAbsorber>(), 1);
 			recipe.SetResult(this);
 			recipe.AddTile(114);
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "MeatShield", 1);
-			recipe.AddIngredient(null, "PatronoftheMind", 1);
+			recipe.AddIngredient(ModContent.ItemType<MeatShield>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<PatronoftheMind>(), 1);
 			recipe.SetResult(this);
 			recipe.AddTile(114);
 			recipe.AddRecipe();

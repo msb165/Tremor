@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useTime = 25;
 			item.useAnimation = 25;
 			item.useStyle = 1;
-			item.shoot = mod.ProjectileType("StormBladePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.StormBladePro>();
 			item.shootSpeed = 10f;
 			item.knockBack = 4;
 			item.value = 30000;
@@ -31,8 +31,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Storm Blade");
 			Tooltip.SetDefault("");
 		}
-
-
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

@@ -30,7 +30,6 @@ namespace Tremor.Projectiles.Minions
 			DisplayName.SetDefault("Crab Staff");
 		}
 
-
 		public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough)
 		{
 			fallThrough = false;
@@ -40,7 +39,7 @@ namespace Tremor.Projectiles.Minions
 		public override void CheckActive()
 		{
 			Player player = Main.player[projectile.owner];
-			TremorPlayer modPlayer = (TremorPlayer)player.GetModPlayer(mod, "TremorPlayer");
+			TremorPlayer modPlayer = player.GetModPlayer<TremorPlayer>();
 			if (player.dead)
 			{
 				modPlayer.crabStaff = false;

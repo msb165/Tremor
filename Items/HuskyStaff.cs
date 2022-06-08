@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Wolf;
 
 namespace Tremor.Items
 {
@@ -24,9 +25,9 @@ namespace Tremor.Items
 			item.value = 8000;
 			item.rare = 2;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("HuskyStaffPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.Minions.HuskyStaffPro>();
 			item.shootSpeed = 1f;
-			item.buffType = mod.BuffType("HuskyBuff");
+			item.buffType = ModContent.BuffType<Buffs.HuskyBuff>();
 			item.buffTime = 3600;
 		}
 
@@ -35,7 +36,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Husky Staff");
 			Tooltip.SetDefault("Summons a husky to fight for you.");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{
@@ -60,8 +60,8 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.BorealWood, 25);
-			recipe.AddIngredient(null, "WolfPelt", 7);
-			recipe.AddIngredient(null, "AlphaClaw", 2);
+			recipe.AddIngredient(ModContent.ItemType<WolfPelt>(), 7);
+			recipe.AddIngredient(ModContent.ItemType<AlphaClaw>(), 2);
 			recipe.SetResult(this);
 			recipe.AddTile(18);
 			recipe.AddRecipe();

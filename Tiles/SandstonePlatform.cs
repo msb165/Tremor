@@ -28,7 +28,7 @@ namespace Tremor.Tiles
 			TileObjectData.addTile(19);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
 			AddMapEntry(new Color(233, 211, 123));
-			drop = mod.ItemType("SandstonePlatform");
+			drop = ModContent.ItemType<Items.Sandstone.SandstonePlatform>();
 			adjTiles = new int[]{ TileID.Platforms };
 			TileID.Sets.Platforms[Type] = true;
 		}

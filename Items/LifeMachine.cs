@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 250000;
-			item.createTile = mod.TileType("LifeMachineTile");
+			item.createTile = ModContent.TileType<Tiles.LifeMachineTile>();
 		}
 
 		public override void SetStaticDefaults()

@@ -23,20 +23,18 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Increases melee and magic criticals strike chance by 15");
 		}
 
-
 		public override void UpdateEquip(Player player)
 		{
 			player.magicCrit += 15;
 			player.meleeCrit += 15;
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "ParaxydeShard", 18);
+			recipe.AddIngredient(ModContent.ItemType<ParaxydeShard>(), 18);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "AlchematorTile");
+			recipe.AddTile(ModContent.TileType<Tiles.AlchematorTile>());
 			recipe.AddRecipe();
 		}
 	}

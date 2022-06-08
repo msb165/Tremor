@@ -10,7 +10,7 @@ namespace Tremor.Items
 		{
 			for (int i = 0; i < player.armor.Length; i++)
 			{
-				MPlayer modPlayer = (MPlayer)player.GetModPlayer(mod, "MPlayer");
+				MPlayer modPlayer = player.GetModPlayer<MPlayer>();
 				if (modPlayer.nitro)
 				{
 					return false;
@@ -36,12 +36,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Achemical flasks leave five death flames");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.ExplosivePowder, 15);
-			recipe.AddIngredient(null, "ReinforcedBurst", 1);
+			recipe.AddIngredient(ModContent.ItemType<ReinforcedBurst>(), 1);
 			recipe.AddIngredient(ItemID.SoulofLight, 10);
 			recipe.AddIngredient(ItemID.SoulofNight, 10);
 			recipe.AddIngredient(ItemID.HallowedBar, 15);
@@ -52,8 +51,8 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			MPlayer modPlayer = (MPlayer)player.GetModPlayer(mod, "MPlayer");
-			player.AddBuff(mod.BuffType("LinearBurstBuff"), 2);
+			MPlayer modPlayer = player.GetModPlayer<MPlayer>();
+			player.AddBuff(ModContent.BuffType<Buffs.LinearBurstBuff>(), 2);
 			modPlayer.nitro = true;
 		}
 	}

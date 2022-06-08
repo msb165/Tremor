@@ -26,7 +26,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Danger Blade");
 		}
 
-
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
 			tooltips[0].overrideColor = new Color(238, 194, 73);
@@ -34,20 +33,20 @@ namespace Tremor.Items
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			type = mod.ProjectileType("DangerBladePro");
+			type = ModContent.ProjectileType<Projectiles.DangerBladePro>();
 			return base.Shoot(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "CollapsiumBar", 16);
-			recipe.AddIngredient(null, "ClusterShard", 16);
-			recipe.AddIngredient(null, "AngryShard", 5);
-			recipe.AddIngredient(null, "TrueEssense", 3);
-			recipe.AddIngredient(null, "GoldenClaw", 3);
+			recipe.AddIngredient(ModContent.ItemType<CollapsiumBar>(), 16);
+			recipe.AddIngredient(ModContent.ItemType<ClusterShard>(), 16);
+			recipe.AddIngredient(ModContent.ItemType<AngryShard>(), 5);
+			recipe.AddIngredient(ModContent.ItemType<TrueEssense>(), 3);
+			recipe.AddIngredient(ModContent.ItemType<GoldenClaw>(), 3);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "DivineForgeTile");
+			recipe.AddTile(ModContent.TileType<Tiles.DivineForgeTile>());
 			recipe.AddRecipe();
 		}
 	}

@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.rare = 3;
 			item.consumable = true;
 			item.value = 2000;
-			item.createTile = mod.TileType("EyeMonolithTile");
+			item.createTile = ModContent.TileType<Tiles.EyeMonolithTile>();
 		}
 
 		public override void SetStaticDefaults()
@@ -27,7 +27,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Eye Monolith");
 			Tooltip.SetDefault("15% increased minion damage if placed");
 		}
-
 
 	}
 }

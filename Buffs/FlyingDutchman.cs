@@ -14,7 +14,7 @@ namespace Tremor.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.mount.SetMount(mod.MountType("FlyingDutchman"), player);
+			player.mount.SetMount(ModContent.MountType<Mounts.FlyingDutchman>(), player);
 			player.buffTime[buffIndex] = 10;
 		}
 	}

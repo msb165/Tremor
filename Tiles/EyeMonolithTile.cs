@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Tremor.Items;
 
 namespace Tremor.Tiles
 {
@@ -24,7 +25,7 @@ public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, 
     {
         if(Main.tile[i, j].frameX == 0 && Main.tile[i, j].frameY == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, mod.ItemType("EyeMonolith") );
+            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<EyeMonolith>() );
         }
     }
     public override void NearbyEffects(int i, int j, bool closer)
@@ -34,7 +35,7 @@ public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, 
             Player player = Main.player[Main.myPlayer];
             int style = Main.tile[i, j].frameX / 15;
             string type;
-            player.AddBuff(mod.BuffType("EyeMonolithBuff"), 60, true);
+            player.AddBuff(ModContent.BuffType<Buffs.EyeMonolithBuff>(), 60, true);
         }
     }
 }}

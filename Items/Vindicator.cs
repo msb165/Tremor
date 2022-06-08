@@ -32,19 +32,19 @@ namespace Tremor.Items
 			item.rare = 11;
 			//item.UseSound = SoundID.Item23;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("VindicatorProj");
+			item.shoot = ModContent.ProjectileType<Projectiles.VindicatorProj>();
 			item.shootSpeed = 45f;
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "CarbonSteel", 15);
-			recipe.AddIngredient(null, "NightmareBar", 18);
+			recipe.AddIngredient(ModContent.ItemType<CarbonSteel>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 18);
 			recipe.AddIngredient(ItemID.IllegalGunParts, 3);
 			recipe.AddIngredient(ItemID.LaserMachinegun, 1);
 			recipe.AddIngredient(ItemID.SoulofNight, 8);
-			recipe.AddIngredient(null, "MultidimensionalFragment", 9);
+			recipe.AddIngredient(ModContent.ItemType<MultidimensionalFragment>(), 9);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

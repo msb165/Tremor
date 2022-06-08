@@ -6,7 +6,6 @@ namespace Tremor.Items
 	public class NightmarePants : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
@@ -23,12 +22,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "NightmareBar", 20);
-			recipe.AddIngredient(null, "PurpleQuartz", 8);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 20);
+			recipe.AddIngredient(ModContent.ItemType<PurpleQuartz>(), 8);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

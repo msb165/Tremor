@@ -24,7 +24,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item82;
 			item.autoReuse = false;
 			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
-			item.shoot = mod.ProjectileType("MythrilBolt");
+			item.shoot = ModContent.ProjectileType<Projectiles.MythrilBolt>();
 			item.shootSpeed = 14f;
 		}
 
@@ -33,7 +33,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Mythril Staff");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

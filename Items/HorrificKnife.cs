@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 20;
 			item.useAnimation = 20;
-			item.shoot = mod.ProjectileType("HorrificKnifePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.HorrificKnifePro>();
 			item.shootSpeed = 22f;
 			item.useStyle = 1;
 			item.knockBack = 4;
@@ -33,13 +33,12 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.ThrowingKnife, 50);
-			recipe.AddIngredient(null, "ConcentratedEther", 1);
-			recipe.AddIngredient(null, "NightmareBar", 1);
+			recipe.AddIngredient(ModContent.ItemType<ConcentratedEther>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 1);
 			recipe.SetResult(this, 50);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

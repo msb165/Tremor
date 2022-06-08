@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useTime = 25;
 			item.useAnimation = 25;
 			item.useStyle = 1;
-			item.shoot = mod.ProjectileType("TrueBloodCarnage");
+			item.shoot = ModContent.ProjectileType<Projectiles.TrueBloodCarnage>();
 			item.shootSpeed = 10f;
 			item.knockBack = 4;
 			item.value = 10000;
@@ -32,8 +32,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
-
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
 			int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 60);
@@ -42,7 +40,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "BloodCarnage", 1);
+			recipe.AddIngredient(ModContent.ItemType<BloodCarnage>(), 1);
 			recipe.AddIngredient(ItemID.BrokenHeroSword, 1);
 			recipe.SetResult(this);
 			recipe.AddTile(134);

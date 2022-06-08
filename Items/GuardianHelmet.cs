@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Items.Ancient;
 
 namespace Tremor.Items
 {
@@ -23,10 +24,9 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("GuardianBreastplate") && legs.type == mod.ItemType("GuardianGreaves");
+			return body.type == ModContent.ItemType<GuardianBreastplate>() && legs.type == ModContent.ItemType<GuardianGreaves>();
 		}
 
 		public override void UpdateArmorSet(Player player)
@@ -40,12 +40,11 @@ namespace Tremor.Items
 			player.armorEffectDrawShadowLokis = true;
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "AncientArmorPlate", 12);
-			recipe.AddIngredient(null, "Squorb", 1);
+			recipe.AddIngredient(ModContent.ItemType<AncientArmorPlate>(), 12);
+			recipe.AddIngredient(ModContent.ItemType<Squorb>(), 1);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

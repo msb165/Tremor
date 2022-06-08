@@ -5,6 +5,7 @@ using Terraria.Enums;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Tremor.Items.Sandstone;
 
 namespace Tremor.Tiles
 {
@@ -40,7 +41,7 @@ namespace Tremor.Tiles
 			AddMapEntry(new Color(233,211,123));
 			disableSmartCursor = true;
 			adjTiles = new int[]{ TileID.ClosedDoor };
-			openDoorID = mod.TileType("SandstoneDoorOpen");
+			openDoorID = ModContent.TileType<Tiles.SandstoneDoorOpen>();
 		}
 
 		public override void NumDust(int i, int j, bool fail, ref int num)
@@ -50,7 +51,7 @@ namespace Tremor.Tiles
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 16, 48, mod.ItemType("SandstoneDoor"));
+			Item.NewItem(i * 16, j * 16, 16, 48, ModContent.ItemType<SandstoneDoor>());
 		}
 	}
 }

@@ -1,5 +1,8 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Items.Alchemist.Flasks;
+using Tremor.Items.Dark;
+using Tremor.NPCs;
 
 namespace Tremor.Items
 {
@@ -7,7 +10,6 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-
 			item.maxStack = 999;
 			item.consumable = true;
 			item.width = 24;
@@ -15,15 +17,13 @@ namespace Tremor.Items
 
 			item.rare = 9;
 			item.expert = true;
-			bossBagNPC = mod.NPCType("WallOfShadow");
 		}
-
+		public override int BossBagNPC => ModContent.NPCType<WallOfShadow>();
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("Right click to open");
+			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
-
 
 		public override bool CanRightClick()
 		{
@@ -35,24 +35,27 @@ namespace Tremor.Items
 			switch (Main.rand.Next(4))
 			{
 				case 0:
-					player.QuickSpawnItem(mod.ItemType("HeavyBeamCannon"));
+					player.QuickSpawnItem(ModContent.ItemType<HeavyBeamCannon>());
 					break;
 				case 1:
-					player.QuickSpawnItem(mod.ItemType("Bolter"));
+					player.QuickSpawnItem(ModContent.ItemType<Bolter>());
 					break;
 				case 2:
-					player.QuickSpawnItem(mod.ItemType("StrikerBlade"));
+					player.QuickSpawnItem(ModContent.ItemType<StrikerBlade>());
 					break;
 			}
 
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.NextBool(7))
 			{
-				player.QuickSpawnItem(mod.ItemType("WallofShadowMask"));
+				player.QuickSpawnItem(ModContent.ItemType<WallofShadowMask>());
 			}
 
-			player.TryGettingDevArmor();
-			player.QuickSpawnItem(mod.ItemType("WallOfShadowsFlask"));
-			player.QuickSpawnItem(mod.ItemType("DarknessCloth"), Main.rand.Next(8, 15));
+			if (Main.hardMode)
+			{
+				player.TryGettingDevArmor();
+			}
+			player.QuickSpawnItem(ModContent.ItemType<WallOfShadowsFlask>());
+			player.QuickSpawnItem(ModContent.ItemType<DarknessCloth>(), Main.rand.Next(8, 15));
 			player.QuickSpawnItem(499, Main.rand.Next(5, 15));
 		}
 

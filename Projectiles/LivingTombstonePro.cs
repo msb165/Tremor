@@ -22,7 +22,6 @@ namespace Tremor.Projectiles
 
 		}
 
-
 		public override bool PreAI()
 		{
 			Player player = Main.player[projectile.owner];
@@ -33,7 +32,7 @@ namespace Tremor.Projectiles
 		public override void AI()
 		{
 			Player player = Main.player[projectile.owner];
-			TremorPlayer modPlayer = (TremorPlayer)player.GetModPlayer(mod, "TremorPlayer");
+			TremorPlayer modPlayer = player.GetModPlayer<TremorPlayer>();
 			if (player.dead)
 			{
 				modPlayer.LivingTombstone = false;

@@ -35,7 +35,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Has 33% chance to shoot paraxyde crystal");
 		}
 
-
 		public override Vector2? HoldoutOffset()
 		{
 			return new Vector2(-8, -2);
@@ -44,9 +43,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "ParaxydeShard", 13);
+			recipe.AddIngredient(ModContent.ItemType<ParaxydeShard>(), 13);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "AlchematorTile");
+			recipe.AddTile(ModContent.TileType<Tiles.AlchematorTile>());
 			recipe.AddRecipe();
 		}
 
@@ -54,7 +53,7 @@ namespace Tremor.Items
 		{
 			//type = 1;
 
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
 				type = 522;
 			}

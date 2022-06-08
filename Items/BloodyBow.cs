@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Steel;
 
 namespace Tremor.Items
 {
@@ -37,14 +38,14 @@ namespace Tremor.Items
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			type = mod.ProjectileType("BloodyArrow");
+			type = ModContent.ProjectileType<Projectiles.BloodyArrow>();
 			return base.Shoot(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 		}
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "SkullTeeth", 4);
-			recipe.AddIngredient(null, "SteelBar", 15);
+			recipe.AddIngredient(ModContent.ItemType<SkullTeeth>(), 4);
+			recipe.AddIngredient(ModContent.ItemType<SteelBar>(), 15);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

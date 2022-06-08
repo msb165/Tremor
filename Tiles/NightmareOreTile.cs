@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Items;
 
 namespace Tremor.Tiles
 {
@@ -14,8 +15,8 @@ namespace Tremor.Tiles
 			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
-			dustType = mod.DustType<Dusts.NightmareFlame>();
-			drop = mod.ItemType("NightmareOre");
+			dustType = ModContent.DustType<Dusts.NightmareFlame>();
+			drop = ModContent.ItemType<NightmareOre>();
 			AddMapEntry(new Color(90, 0, 157));
 mineResist = 12f;
 minPick = 225;
@@ -35,7 +36,7 @@ minPick = 225;
 
   public override bool CanExplode(int i, int j)
   {
-   if (Main.tile[i, j].type == mod.TileType("NightmareOreTile"))
+   if (Main.tile[i, j].type == ModContent.TileType<Tiles.NightmareOreTile>())
    {
     return false;
    }

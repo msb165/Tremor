@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Alchemist.Flasks;
 
 namespace Tremor.Items
 {
@@ -26,23 +27,22 @@ namespace Tremor.Items
 			item.shoot = 10;
 			item.shootSpeed = 6f;
 			item.crit = 4;
-			item.useAmmo = mod.ItemType("BoomFlask");
-
+			item.useAmmo = ModContent.ItemType<BoomFlask>();
 
 		}
 
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Basic Sprayer");
-			Tooltip.SetDefault("Uses flasks as ammo\nSprays alchemical clouds");
+			Tooltip.SetDefault("Uses flasks as ammo\n" +
+"Sprays alchemical clouds");
 		}
-
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Wood, 45);
-			recipe.AddIngredient(null, "BasicFlask", 8);
+			recipe.AddIngredient(ModContent.ItemType<BasicFlask>(), 8);
 			recipe.AddIngredient(ItemID.ShadowScale, 15);
 			recipe.AddIngredient(ItemID.IronBar, 18);
 			recipe.SetResult(this);
@@ -51,7 +51,7 @@ namespace Tremor.Items
 
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Wood, 45);
-			recipe.AddIngredient(null, "BasicFlask", 8);
+			recipe.AddIngredient(ModContent.ItemType<BasicFlask>(), 8);
 			recipe.AddIngredient(ItemID.TissueSample, 15);
 			recipe.AddIngredient(ItemID.IronBar, 18);
 			recipe.SetResult(this);
@@ -60,7 +60,7 @@ namespace Tremor.Items
 
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Wood, 45);
-			recipe.AddIngredient(null, "BasicFlask", 8);
+			recipe.AddIngredient(ModContent.ItemType<BasicFlask>(), 8);
 			recipe.AddIngredient(ItemID.ShadowScale, 15);
 			recipe.AddIngredient(ItemID.LeadBar, 18);
 			recipe.SetResult(this);
@@ -69,7 +69,7 @@ namespace Tremor.Items
 
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Wood, 45);
-			recipe.AddIngredient(null, "BasicFlask", 8);
+			recipe.AddIngredient(ModContent.ItemType<BasicFlask>(), 8);
 			recipe.AddIngredient(ItemID.TissueSample, 15);
 			recipe.AddIngredient(ItemID.LeadBar, 18);
 			recipe.SetResult(this);
@@ -79,12 +79,12 @@ namespace Tremor.Items
 
 		public override bool ConsumeAmmo(Player player)
 		{
-			if (player.FindBuffIndex(mod.BuffType("EnchantmentSolution")) != -1)
+			if (player.FindBuffIndex(ModContent.BuffType<Buffs.EnchantmentSolution>()) != -1)
 			{
 				if (Main.rand.Next(0, 100) <= 50)
 					return false;
 			}
-			if (player.FindBuffIndex(mod.BuffType("AmplifiedEnchantmentSolution")) != -1)
+			if (player.FindBuffIndex(ModContent.BuffType<Buffs.AmplifiedEnchantmentSolution>()) != -1)
 			{
 				if (Main.rand.Next(0, 100) <= 70)
 					return false;
@@ -99,19 +99,20 @@ namespace Tremor.Items
 
 		public override void UpdateInventory(Player player)
 		{
-			if (player.FindBuffIndex(mod.BuffType("FlaskCoreBuff")) != -1)
+			MPlayer modPlayer = MPlayer.GetModPlayer(player);
+			if (modPlayer.core)
 			{
 				item.autoReuse = true;
 			}
-			if (player.FindBuffIndex(mod.BuffType("FlaskCoreBuff")) < 1)
+			if (!modPlayer.core)
 			{
 				item.autoReuse = false;
 			}
-			if (player.FindBuffIndex(mod.BuffType("LongFuseBuff")) != -1)
+			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) != -1)
 			{
 				item.shootSpeed = 14f;
 			}
-			if (player.FindBuffIndex(mod.BuffType("LongFuseBuff")) < 1)
+			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) < 1)
 			{
 				item.shootSpeed = 6f;
 			}
@@ -119,16 +120,16 @@ namespace Tremor.Items
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			MPlayer modPlayer = player.GetModPlayer<MPlayer>(mod);
+			MPlayer modPlayer = MPlayer.GetModPlayer(player);
 			if (modPlayer.glove)
 			{
 				for (int i = 0; i < 1; ++i)
 				{
-					if (player.FindBuffIndex(mod.BuffType("BottledSpirit")) != -1)
+					if (player.FindBuffIndex(ModContent.BuffType<Buffs.BottledSpirit>()) != -1)
 					{
 						Projectile.NewProjectile(position.X, position.Y, speedX + 2, speedY + 2, 297, damage, knockBack, Main.myPlayer);
 					}
-					if (player.FindBuffIndex(mod.BuffType("BigBottledSpirit")) != -1)
+					if (player.FindBuffIndex(ModContent.BuffType<Buffs.BigBottledSpirit>()) != -1)
 					{
 						Projectile.NewProjectile(position.X, position.Y, speedX + 3, speedY + 3, 297, damage, knockBack, Main.myPlayer);
 						Projectile.NewProjectile(position.X, position.Y, speedX + 2, speedY + 2, 297, damage, knockBack, Main.myPlayer);
@@ -140,7 +141,7 @@ namespace Tremor.Items
 				}
 				return false;
 			}
-			if (player.FindBuffIndex(mod.BuffType("BottledSpirit")) != -1 && !modPlayer.glove)
+			if (player.FindBuffIndex(ModContent.BuffType<Buffs.BottledSpirit>()) != -1 && !modPlayer.glove)
 			{
 				for (int i = 0; i < 1; ++i)
 				{
@@ -150,7 +151,7 @@ namespace Tremor.Items
 				}
 				return false;
 			}
-			if (player.FindBuffIndex(mod.BuffType("BigBottledSpirit")) != -1 && !modPlayer.glove)
+			if (player.FindBuffIndex(ModContent.BuffType<Buffs.BigBottledSpirit>()) != -1 && !modPlayer.glove)
 			{
 				for (int i = 0; i < 1; ++i)
 				{

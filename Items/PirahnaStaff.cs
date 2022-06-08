@@ -36,30 +36,29 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Causes pirahnas to fall from the sky");
 		}
 
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			type = mod.ProjectileType("PirahnaPro");
+			type = ModContent.ProjectileType<Projectiles.PirahnaPro>();
 			return base.Shoot(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GoldfishStaff", 1);
-			recipe.AddIngredient(null, "SeaFragment", 10);
+			recipe.AddIngredient(ModContent.ItemType<GoldfishStaff>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 10);
 			recipe.AddIngredient(ItemID.GoldBar, 8);
 			recipe.AddIngredient(ItemID.Ruby, 6);
-			recipe.AddTile(null, "MagicWorkbenchTile");
+			recipe.AddTile(ModContent.TileType<Tiles.MagicWorkbenchTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GoldfishStaff", 1);
-			recipe.AddIngredient(null, "SeaFragment", 10);
+			recipe.AddIngredient(ModContent.ItemType<GoldfishStaff>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 10);
 			recipe.AddIngredient(ItemID.PlatinumBar, 8);
 			recipe.AddIngredient(ItemID.Ruby, 6);
-			recipe.AddTile(null, "MagicWorkbenchTile");
+			recipe.AddTile(ModContent.TileType<Tiles.MagicWorkbenchTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

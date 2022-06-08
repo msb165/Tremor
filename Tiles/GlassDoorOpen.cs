@@ -5,6 +5,7 @@ using Terraria.Enums;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Tremor.Items;
 
 namespace Tremor.Tiles
 {
@@ -59,12 +60,12 @@ namespace Tremor.Tiles
 			TileID.Sets.HousingWalls[Type] = true; //needed for non-solid blocks to count as walls
 			AddMapEntry(new Color(200, 200, 200));
 			adjTiles = new int[]{ TileID.OpenDoor };
-			closeDoorID = mod.TileType("GlassDoorClosed");
+			closeDoorID = ModContent.TileType<Tiles.GlassDoorClosed>();
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 48, mod.ItemType("GlassDoor"));
+			Item.NewItem(i * 16, j * 16, 32, 48, ModContent.ItemType<GlassDoor>());
 		}
 	}
 }

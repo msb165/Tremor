@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 0;
-			item.createTile = mod.TileType("StonePiano");
+			item.createTile = ModContent.TileType<Tiles.StonePiano>();
 		}
 
 		public override void SetStaticDefaults()
@@ -26,7 +26,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Stone Piano");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

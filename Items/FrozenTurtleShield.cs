@@ -16,16 +16,15 @@ namespace Tremor.Items
 			item.value = 123110;
 			item.rare = 8;
 
-
 			item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Frozen Turtle Shield");
-			Tooltip.SetDefault("The less health, the more defense\nGrants 25% damage reduction");
+			Tooltip.SetDefault("The less health, the more defense\n" +
+"Grants 25% damage reduction");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
@@ -55,7 +54,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "TurtleShield", 1);
+			recipe.AddIngredient(ModContent.ItemType<TurtleShield>(), 1);
 			recipe.AddIngredient(ItemID.FrozenTurtleShell, 1);
 			recipe.SetResult(this);
 			recipe.AddTile(134);

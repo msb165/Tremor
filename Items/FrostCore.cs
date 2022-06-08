@@ -1,4 +1,5 @@
 using Terraria.ModLoader;
+using Tremor.Ice.Items;
 
 namespace Tremor.Items
 {
@@ -20,11 +21,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "Icicle", 4);
+			recipe.AddIngredient(ModContent.ItemType<Icicle>(), 4);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

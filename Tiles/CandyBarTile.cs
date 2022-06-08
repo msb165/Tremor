@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Tremor.Items.Candy;
 
 namespace Tremor.Tiles
 {
@@ -24,12 +25,11 @@ namespace Tremor.Tiles
         Main.tileSolid[Type] = true;
     }
 
-
     public override void KillMultiTile(int i, int j, int frameX, int frameY)
     {
         if(frameX == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, mod.ItemType("CandyBar"));
+            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<CandyBar>());
         }
     }
 }}

@@ -27,7 +27,7 @@ namespace Tremor.Items
 			item.rare = 3;
 			item.UseSound = SoundID.Item23;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("ToothpickPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.ToothpickPro>();
 			item.shootSpeed = 26f;
 		}
 
@@ -41,14 +41,14 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.CrimtaneBar, 10);
-			recipe.AddIngredient(null, "SharpenedTooth", 5);
+			recipe.AddIngredient(ModContent.ItemType<SharpenedTooth>(), 5);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.DemoniteBar, 10);
-			recipe.AddIngredient(null, "SharpenedTooth", 5);
+			recipe.AddIngredient(ModContent.ItemType<SharpenedTooth>(), 5);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();

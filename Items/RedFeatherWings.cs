@@ -25,7 +25,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("The wings made of red feathers.");
 		}
 
-
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.wingTimeMax = 140;
@@ -50,7 +49,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "RedFeather", 1);
+			recipe.AddIngredient(ModContent.ItemType<RedFeather>(), 1);
 			recipe.AddIngredient(ItemID.SoulofFlight, 20);
 			recipe.AddTile(134);
 			recipe.SetResult(this);

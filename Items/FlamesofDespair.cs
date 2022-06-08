@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.value = 100000;
 			item.useTime = 38;
 			item.useAnimation = 38;
-			item.shoot = mod.ProjectileType("FlamesofDespairPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.FlamesofDespairPro>();
 			item.shootSpeed = 30f;
 			item.useStyle = 5;
 			item.rare = 11;
@@ -39,12 +39,10 @@ namespace Tremor.Items
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 4));
 		}
 
-
 		public override Color? GetAlpha(Color lightColor)
 		{
 			return Color.Yellow;
 		}
-
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

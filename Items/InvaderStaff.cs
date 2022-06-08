@@ -8,7 +8,6 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-
 			item.damage = 85;
 			item.summon = true;
 			item.mana = 12;
@@ -23,9 +22,10 @@ namespace Tremor.Items
 			item.value = Item.buyPrice(1, 30, 0, 0);
 			item.rare = 11;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("SpaceInvader");
+			//TODO: Missing projectile and buff
+			//item.shoot = ModContent.ProjectileType<SpaceInvader>();
 			item.shootSpeed = 1f;
-			item.buffType = mod.BuffType("SpaceInvaderBuff");
+			//item.buffType = ModContent.BuffType<SpaceInvaderBuff>();
 			item.buffTime = 3600;
 		}
 

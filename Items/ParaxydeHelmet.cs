@@ -7,14 +7,11 @@ namespace Tremor.Items
 	public class ParaxydeHelmet : ModItem
 	{
 
-
-
 		public override void SetDefaults()
 		{
 
 			item.width = 38;
 			item.height = 22;
-
 
 			item.value = 10000;
 			item.rare = 5;
@@ -24,9 +21,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Paraxyde Helmet");
-			Tooltip.SetDefault("Increases magic damage by 12%\nIncreases melee damage by 16%");
+			Tooltip.SetDefault("12% increased magic damage\n" +
+"16% increased melee damage");
 		}
-
 
 		public override void UpdateEquip(Player player)
 		{
@@ -36,13 +33,13 @@ namespace Tremor.Items
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("ParaxydeBreastplate") && legs.type == mod.ItemType("ParaxydeGreaves");
+			return body.type == ModContent.ItemType<ParaxydeBreastplate>() && legs.type == ModContent.ItemType<ParaxydeGreaves>();
 		}
 
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Shadow knives will fall on your target for extra damage";
-			player.GetModPlayer<TremorPlayer>(mod).onHitShadaggers = true;
+			player.GetModPlayer<TremorPlayer>().onHitShadaggers = true;
 		}
 
 		public override void ArmorSetShadows(Player player)
@@ -54,9 +51,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "ParaxydeShard", 12);
+			recipe.AddIngredient(ModContent.ItemType<ParaxydeShard>(), 12);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "AlchematorTile");
+			recipe.AddTile(ModContent.TileType<Tiles.AlchematorTile>());
 			recipe.AddRecipe();
 		}
 	}

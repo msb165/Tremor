@@ -41,7 +41,6 @@ namespace Tremor.NPCs
 			npc.damage = (int)(npc.damage * 0.6f);
 		}
 
-
 		public override bool PreAI()
 		{
 			if (npc.justHit)
@@ -201,10 +200,9 @@ namespace Tremor.NPCs
 				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
 				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
 				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y,
-				mod.NPCType("ShadowHandTwo"));
+				ModContent.NPCType<ShadowHandTwo>());
 			}
 		}
-
 
 		public override void FindFrame(int frameHeight)
 		{

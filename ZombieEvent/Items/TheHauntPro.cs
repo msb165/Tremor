@@ -11,9 +11,9 @@ namespace Tremor.ZombieEvent.Items
 			projectile.CloneDefaults(ProjectileID.ZephyrFish);
 			aiType = ProjectileID.ZephyrFish;
 			Main.projFrames[projectile.type] = 4;
-                        projectile.width = 72;
-                        //projectile.noGravity = true;
-                        projectile.height = 38;
+			projectile.width = 72;
+			//projectile.noGravity = true;
+			projectile.height = 38;
 			Main.projPet[projectile.type] = true;
 		}
 
@@ -27,7 +27,7 @@ namespace Tremor.ZombieEvent.Items
 		public override void AI()
 		{
 			Player player = Main.player[projectile.owner];
-			TremorPlayer modPlayer = (TremorPlayer)player.GetModPlayer(mod, "TremorPlayer");
+			TremorPlayer modPlayer = player.GetModPlayer<TremorPlayer>();
 			if (player.dead)
 			{
 				modPlayer.hauntpet = false;

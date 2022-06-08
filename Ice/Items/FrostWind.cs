@@ -20,7 +20,7 @@ namespace Tremor.Ice.Items
 			item.rare = 2;
 			item.UseSound = SoundID.Item71;
 			item.autoReuse = false;
-			item.shoot = mod.ProjectileType("FrostwindPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.FrostwindPro>();
 			item.shootSpeed = 12f;
 		}
 

@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Crystal;
 
 namespace Tremor.Items
 {
@@ -20,21 +21,20 @@ namespace Tremor.Items
 			item.consumable = true;
 			item.value = 50000;
 			item.rare = 11;
-			item.createTile = mod.TileType("TatteredBanner");
+			item.createTile = ModContent.TileType<Tiles.TatteredBanner>();
 		}
 
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Tattered Banner");
-			Tooltip.SetDefault("25% increased all damage if placed");
+			Tooltip.SetDefault("25% increased damage if placed");
 		}
-
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "Gloomstone", 10);
-			recipe.AddIngredient(null, "UnstableCrystal", 2);
+			recipe.AddIngredient(ModContent.ItemType<Gloomstone>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<UnstableCrystal>(), 2);
 			recipe.AddIngredient(ItemID.TatteredCloth, 25);
 			recipe.SetResult(this);
 			recipe.AddTile(106);

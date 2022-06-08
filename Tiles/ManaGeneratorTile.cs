@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Tremor.Items;
 
 namespace Tremor.Tiles
 {
@@ -39,12 +40,12 @@ public override void AnimateTile(ref int frame, ref int frameCounter)
             Player player = Main.player[Main.myPlayer];
             int style = Main.tile[i, j].frameX / 100;
             string type;
-            player.AddBuff(mod.BuffType("ManaGeneration"), 60, true);
+            player.AddBuff(ModContent.BuffType<Buffs.ManaGeneration>(), 60, true);
         }
     }
 
     public override void KillMultiTile(int i, int j, int frameX, int frameY)
     {
-        Item.NewItem(i * 16, j * 16, 32, 16, mod.ItemType("ManaGenerator"));
+        Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<ManaGenerator>());
     }
 }}

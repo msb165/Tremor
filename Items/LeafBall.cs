@@ -22,7 +22,7 @@ namespace Tremor.Items
 			item.damage = 16;
 			item.scale = 1.1F;
 			item.noUseGraphic = true;
-			item.shoot = mod.ProjectileType("LeafBallPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.LeafBallPro>();
 			item.shootSpeed = 15.9F;
 			item.UseSound = SoundID.Item1;
 			item.melee = true;
@@ -34,7 +34,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Leaf Ball");
 			Tooltip.SetDefault("'Flail from grass and leaves'");
 		}
-
 
 		public override void AddRecipes()
 		{

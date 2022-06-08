@@ -8,13 +8,12 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-
 			item.damage = 240;
 			item.width = 58;
 			item.height = 30;
 			item.ranged = true;
 			item.useTime = 35;
-			item.shoot = mod.ProjectileType("Gurumaster");
+			item.shoot = ModContent.ProjectileType<Projectiles.Gurumaster>();
 			item.shootSpeed = 15f;
 			item.useAnimation = 35;
 			item.useStyle = 5;
@@ -30,7 +29,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Gurumaster");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override Vector2? HoldoutOffset()
 		{

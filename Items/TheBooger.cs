@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -21,7 +22,7 @@ namespace Tremor.Items
 			item.damage = 200;
 			item.scale = 1.1F;
 			item.noUseGraphic = true;
-			item.shoot = mod.ProjectileType("TheBoogerPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.TheBoogerPro>();
 			item.shootSpeed = 15.9F;
 			item.UseSound = SoundID.Item1;
 			item.melee = true;
@@ -34,18 +35,17 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "NightCore", 3);
-			recipe.AddIngredient(null, "CometiteBar", 15);
-			recipe.AddIngredient(null, "Squorb", 3);
-			recipe.AddIngredient(null, "LunarRoot", 18);
-			recipe.AddIngredient(null, "Catalyst", 3);
-			recipe.AddIngredient(null, "SoulofFight", 3);
+			recipe.AddIngredient(ModContent.ItemType<NightCore>(), 3);
+			recipe.AddIngredient(ModContent.ItemType<CometiteBar>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<Squorb>(), 3);
+			recipe.AddIngredient(ModContent.ItemType<LunarRoot>(), 18);
+			recipe.AddIngredient(ModContent.ItemType<Catalyst>(), 3);
+			recipe.AddIngredient(ModContent.ItemType<SoulofFight>(), 3);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "StarvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.StarvilTile>());
 			recipe.AddRecipe();
 		}
 	}

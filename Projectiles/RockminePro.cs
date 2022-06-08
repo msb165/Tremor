@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Projectiles.Alchemic;
 
 namespace Tremor.Projectiles
 {
@@ -25,8 +26,6 @@ namespace Tremor.Projectiles
 			DisplayName.SetDefault("RockminePro");
 
 		}
-
-
 
 		public override bool OnTileCollide(Vector2 oldVelocity)
 		{
@@ -64,7 +63,7 @@ namespace Tremor.Projectiles
 			{
 				int num629 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 31, 0f, 0f, 100, default(Color), 2f);
 				Main.dust[num629].velocity *= 3f;
-				if (Main.rand.Next(2) == 0)
+				if (Main.rand.NextBool(2))
 				{
 					Main.dust[num629].scale = 0.5f;
 					Main.dust[num629].fadeIn = 1f + Main.rand.Next(10) * 0.1f;
@@ -129,11 +128,10 @@ namespace Tremor.Projectiles
 					Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 					value17.Normalize();
 					value17 *= Main.rand.Next(10, 201) * 0.01f;
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, mod.ProjectileType("BoomCloudPro"), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
+					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<BoomCloudPro>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
 				}
 			}
 		}
-
 
 	}
 }

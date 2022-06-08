@@ -2,6 +2,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Sparks;
 
 namespace Tremor.Items
 {
@@ -14,7 +15,6 @@ namespace Tremor.Items
 			item.width = 22;
 			item.height = 22;
 
-
 			item.rare = 2;
 			item.accessory = true;
 			item.value = 50000;
@@ -23,7 +23,8 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Summoner Focus");
-			Tooltip.SetDefault("Increases minion damage by 8%\nIncreases your max number of minions");
+			Tooltip.SetDefault("8% increased minion damage\n" +
+"Increases your max number of minions");
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 4));
 		}
 
@@ -36,11 +37,11 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "SummonerSpark");
-			recipe.AddIngredient(null, "EarthFragment", 1);
+			recipe.AddIngredient(ModContent.ItemType<SummonerSpark>());
+			recipe.AddIngredient(ModContent.ItemType<EarthFragment>(), 1);
 			recipe.AddIngredient(ItemID.Emerald, 16);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "AltarofEnchantmentsTile");
+			recipe.AddTile(ModContent.TileType<Tiles.AltarofEnchantmentsTile>());
 			recipe.AddRecipe();
 		}
 	}

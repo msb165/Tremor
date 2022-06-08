@@ -22,10 +22,9 @@ namespace Tremor.Ice.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("GlacierWoodChestplate") && legs.type == mod.ItemType("GlacierWoodLeggings");
+			return body.type == ModContent.ItemType<GlacierWoodChestplate>() && legs.type == ModContent.ItemType<GlacierWoodLeggings>();
 		}
 
 		public override void UpdateArmorSet(Player player)
@@ -37,7 +36,7 @@ namespace Tremor.Ice.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GlacierWood", 20);
+			recipe.AddIngredient(ModContent.ItemType<GlacierWood>(), 20);
 			recipe.SetResult(this);
 			recipe.AddTile(18);
 			recipe.AddRecipe();

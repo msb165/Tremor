@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.damage = 58;
 			item.width = 30;
 			item.height = 26;
-			item.shoot = mod.ProjectileType("DissolverPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.DissolverPro>();
 			item.knockBack = 4;
 			item.value = 10000;
 			item.rare = 4;
@@ -23,7 +23,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Dissolver");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

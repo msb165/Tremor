@@ -15,8 +15,8 @@ namespace Tremor.Invasion
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			TremorPlayer modPlayer = (TremorPlayer)player.GetModPlayer(mod, "TremorPlayer");
-			if (player.ownedProjectileCounts[mod.ProjectileType("Mini_Cyber")] > 0)
+			TremorPlayer modPlayer = player.GetModPlayer<TremorPlayer>();
+			if (player.ownedProjectileCounts[ModContent.ProjectileType<Mini_Cyber>()] > 0)
 			{
 				modPlayer.miniCyber = true;
 			}

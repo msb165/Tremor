@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.NPCs.Bosses.NovaPillar.Items;
 
 namespace Tremor.Items
 {
@@ -15,8 +16,8 @@ namespace Tremor.Items
 			item.useTime = 25;
 			item.useAnimation = 25;
 
-			item.shoot = mod.ProjectileType("Warkee");
-			item.buffType = mod.BuffType("WarkeeBuff");
+			item.shoot = ModContent.ProjectileType<Projectiles.Warkee>();
+			item.buffType = ModContent.BuffType<Buffs.WarkeeBuff>();
 		}
 
 		public override void SetStaticDefaults()
@@ -24,7 +25,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Nova Band");
 			Tooltip.SetDefault("Summons a warkee");
 		}
-
 
 		public override void UseStyle(Player player)
 		{
@@ -37,8 +37,8 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "UnchargedBand");
-			recipe.AddIngredient(null, "NovaFragment", 10);
+			recipe.AddIngredient(ModContent.ItemType<UnchargedBand>());
+			recipe.AddIngredient(ModContent.ItemType<NovaFragment>(), 10);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

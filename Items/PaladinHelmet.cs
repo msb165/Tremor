@@ -24,7 +24,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("30% increased melee speed");
 		}
 
-
 		public override void UpdateEquip(Player player)
 		{
 			player.meleeSpeed += 0.30f;
@@ -32,13 +31,13 @@ namespace Tremor.Items
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("PaladinBreastplate") && legs.type == mod.ItemType("PaladinGreaves");
+			return body.type == ModContent.ItemType<PaladinBreastplate>() && legs.type == ModContent.ItemType<PaladinGreaves>();
 		}
 
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Summons a paladin hammer to protect you!";
-			player.AddBuff(mod.BuffType("PaladinBuff"), 2);
+			player.AddBuff(ModContent.BuffType<Buffs.PaladinBuff>(), 2);
 		}
 
 		public override void ArmorSetShadows(Player player)

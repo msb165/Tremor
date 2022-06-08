@@ -23,7 +23,7 @@ namespace Tremor.Items
 			item.rare = 3;
 			item.UseSound = SoundID.Item45;
 			item.autoReuse = false;
-			item.shoot = mod.ProjectileType("GarnetGlovePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.GarnetGlovePro>();
 			item.shootSpeed = 9f;
 		}
 
@@ -32,7 +32,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Garnet Glove");
 			Tooltip.SetDefault("'Made of love'");
 		}
-
 
 		public override void AddRecipes()
 		{

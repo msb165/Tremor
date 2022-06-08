@@ -22,7 +22,7 @@ namespace Tremor.Items
 			item.rare = 8;
 			item.UseSound = SoundID.Item23;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("projEyeofInfinity");
+			item.shoot = ModContent.ProjectileType<Projectiles.projEyeofInfinity>();
 			item.shootSpeed = 15f;
 		}
 

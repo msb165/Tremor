@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.useTime = 10;
 			item.autoReuse = true;
 			item.consumable = true;
-			item.createTile = mod.TileType("TikiTotemMusicBox");
+			item.createTile = ModContent.TileType<Tiles.TikiTotemMusicBox>();
 			item.width = 24;
 			item.height = 24;
 			item.rare = 4;

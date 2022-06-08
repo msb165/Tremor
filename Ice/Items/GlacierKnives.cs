@@ -27,7 +27,7 @@ namespace Tremor.Ice.Items
 			item.rare = 5;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("GlacierKnivesProj");
+			item.shoot = ModContent.ProjectileType<GlacierKnivesProj>();
 			item.shootSpeed = 1f;
 		}
 
@@ -58,8 +58,7 @@ namespace Tremor.Ice.Items
 					vector2 = new Vector2(position.X - 75f * (float)Math.Cos(angle), position.Y - 75f * (float)Math.Sin(angle));
 				}
 
-				Projectile.NewProjectile(vector2.X, vector2.Y, vX, vY, mod.ProjectileType("GlacierKnivesProj"), damage, knockBack, Main.myPlayer);
-
+				Projectile.NewProjectile(vector2.X, vector2.Y, vX, vY, ModContent.ProjectileType<GlacierKnivesProj>(), damage, knockBack, Main.myPlayer);
 
 			}
 			return false;

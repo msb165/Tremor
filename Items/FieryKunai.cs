@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.consumable = true;
 			item.useTime = 18;
 			item.useAnimation = 18;
-			item.shoot = mod.ProjectileType("FieryKunai");
+			item.shoot = ModContent.ProjectileType<Projectiles.FieryKunai>();
 			item.shootSpeed = 16f;
 			item.useStyle = 1;
 			item.knockBack = 4;
@@ -34,12 +34,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("50% chance to set enemy on fire");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "Kunai", 50);
-			recipe.AddIngredient(null, "FireFragment");
+			recipe.AddIngredient(ModContent.ItemType<Kunai>(), 50);
+			recipe.AddIngredient(ModContent.ItemType<FireFragment>());
 			recipe.SetResult(this, 50);
 			recipe.AddRecipe();
 		}

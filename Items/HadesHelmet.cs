@@ -4,6 +4,8 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Magmonium;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -23,20 +25,21 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Hades Helmet");
-			Tooltip.SetDefault("Melee attacks inflict fire damage\n30% decreased mana cost\nIncreases maximum life by 150");
+			Tooltip.SetDefault("Melee attacks inflict fire damage\n" +
+"30% decreased mana cost\n" +
+"Increases maximum life by 150");
 		}
-
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "InfernoSoul", 5);
-			recipe.AddIngredient(null, "MagmoniumHelmet", 1);
-			recipe.AddIngredient(null, "FireFragment", 15);
-			recipe.AddIngredient(null, "Phantaplasm", 8);
+			recipe.AddIngredient(ModContent.ItemType<InfernoSoul>(), 5);
+			recipe.AddIngredient(ModContent.ItemType<MagmoniumHelmet>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<FireFragment>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<Phantaplasm>(), 8);
 			recipe.AddIngredient(ItemID.LivingFireBlock, 6);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "StarvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.StarvilTile>());
 			recipe.AddRecipe();
 		}
 
@@ -61,13 +64,13 @@ namespace Tremor.Items
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("HadesBreastplate") && legs.type == mod.ItemType("HadesGreaves");
+			return body.type == ModContent.ItemType<HadesBreastplate>() && legs.type == ModContent.ItemType<HadesGreaves>();
 		}
 
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Summons a molten watcher to protect you";
-			player.AddBuff(mod.BuffType("MoltenWatcherBuff"), 2);
+			player.AddBuff(ModContent.BuffType<Buffs.MoltenWatcherBuff>(), 2);
 
 			if (Math.Abs(player.velocity.X) + Math.Abs(player.velocity.Y) > 1f && !player.rocketFrame) // Makes sure the player is actually moving
 			{

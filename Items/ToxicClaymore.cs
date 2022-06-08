@@ -29,21 +29,20 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "ToxicHilt", 1);
-			recipe.AddIngredient(null, "ToxicBlade", 1);
-			recipe.AddIngredient(null, "BottledGlue", 1);
+			recipe.AddIngredient(ModContent.ItemType<ToxicHilt>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<ToxicBlade>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<BottledGlue>(), 1);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "GreatAnvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.GreatAnvilTile>());
 			recipe.AddRecipe();
 		}
 
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
 				target.AddBuff(70, 1200);
 			}

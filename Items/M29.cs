@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Doom;
 
 namespace Tremor.Items
 {
@@ -33,7 +34,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			type = 242;
@@ -48,10 +48,10 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "EyeofOblivion", 1);
+			recipe.AddIngredient(ModContent.ItemType<EyeofOblivion>(), 1);
 			recipe.AddIngredient(ItemID.ShroomiteBar, 15);
-			recipe.AddIngredient(null, "CarbonSteel", 15);
-			recipe.AddIngredient(null, "Doomstone", 6);
+			recipe.AddIngredient(ModContent.ItemType<CarbonSteel>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<Doomstone>(), 6);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

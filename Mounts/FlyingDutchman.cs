@@ -7,7 +7,7 @@ namespace Tremor.Mounts
 	{
 		public override void SetDefaults()
 		{
-			mountData.buff = mod.BuffType("FlyingDutchman");
+			mountData.buff = ModContent.BuffType<Buffs.FlyingDutchman>();
 			mountData.heightBoost = 10;
 			mountData.fallDamage = 0.5f;
 			mountData.runSpeed = 5f;

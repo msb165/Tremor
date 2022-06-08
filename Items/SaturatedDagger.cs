@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 20;
 			item.useAnimation = 20;
-			item.shoot = mod.ProjectileType("SaturatedDaggerPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.SaturatedDaggerPro>();
 			item.shootSpeed = 22f;
 			item.useStyle = 1;
 			item.knockBack = 4;
@@ -33,13 +33,12 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "ParaxydeShard", 1);
+			recipe.AddIngredient(ModContent.ItemType<ParaxydeShard>(), 1);
 			recipe.SetResult(this, 75);
-			recipe.AddTile(null, "AlchematorTile");
+			recipe.AddTile(ModContent.TileType<Tiles.AlchematorTile>());
 			recipe.AddRecipe();
 		}
 	}

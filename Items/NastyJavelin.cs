@@ -16,7 +16,7 @@ namespace Tremor.Items
 			item.consumable = true;
 			item.maxStack = 999;
 			item.useTime = 22;
-			item.shoot = mod.ProjectileType("NastyJavelinPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.NastyJavelinPro>();
 			item.shootSpeed = 20f;
 			item.useAnimation = 22;
 			item.useStyle = 1;

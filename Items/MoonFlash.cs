@@ -34,7 +34,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
@@ -50,7 +49,7 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.SpellTome, 1);
-			recipe.AddIngredient(null, "LunarRoot", 6);
+			recipe.AddIngredient(ModContent.ItemType<LunarRoot>(), 6);
 			recipe.AddIngredient(3467, 30);
 			recipe.AddTile(412);
 			recipe.SetResult(this);

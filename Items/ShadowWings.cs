@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Dark;
 
 namespace Tremor.Items
 {
@@ -24,7 +25,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Shadow Wings");
 			Tooltip.SetDefault("The wings of shadow.");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
@@ -51,7 +51,7 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.SoulofNight, 11);
-			recipe.AddIngredient(null, "DarknessCloth", 6);
+			recipe.AddIngredient(ModContent.ItemType<DarknessCloth>(), 6);
 			recipe.AddIngredient(ItemID.SoulofFlight, 20);
 			recipe.AddTile(134);
 			recipe.SetResult(this);

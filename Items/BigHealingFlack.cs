@@ -1,6 +1,8 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Alchemist.Flasks;
+using Tremor.Projectiles.Alchemic;
 
 namespace Tremor.Items
 {
@@ -19,7 +21,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 20;
 			item.useAnimation = 20;
-			item.shoot = mod.ProjectileType("BigHealingFlackPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.Alchemic.BigHealingFlackPro>();
 			item.shootSpeed = 8f;
 			item.useStyle = 1;
 			item.knockBack = 1;
@@ -28,25 +30,24 @@ namespace Tremor.Items
 			item.rare = 4;
 			item.autoReuse = false;
 
-
-			item.ammo = mod.ItemType("BoomFlask");
+			item.ammo = ModContent.ItemType<BoomFlask>();
 		}
 
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Big Healing Flask");
-			Tooltip.SetDefault("Throws a flask that explodes into clouds\nClouds deal damage to enemies and heal player if hit enemy");
+			Tooltip.SetDefault("Throws a flask that explodes into clouds\n" +
+"Clouds deal damage to enemies and heal player if hit enemy");
 		}
-
 
 		public override void PickAmmo(Player player, ref int type, ref float speed, ref int damage, ref float knockback)
 		{
-			type = mod.ProjectileType("HealingCloudPro");
+			type = ModContent.ProjectileType<HealingCloudPro>();
 		}
 
 		public override void UpdateInventory(Player player)
 		{
-			MPlayer modPlayer = player.GetModPlayer<MPlayer>(mod);
+			MPlayer modPlayer = MPlayer.GetModPlayer(player);
 			if (modPlayer.novaHelmet)
 			{
 				item.autoReuse = true;
@@ -56,19 +57,19 @@ namespace Tremor.Items
 				item.autoReuse = false;
 			}
 
-			if (player.FindBuffIndex(mod.BuffType("LongFuseBuff")) != -1)
+			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) != -1)
 			{
 				item.shootSpeed = 11f;
 			}
-			if (player.FindBuffIndex(mod.BuffType("LongFuseBuff")) < 1)
+			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) < 1)
 			{
 				item.shootSpeed = 8f;
 			}
-			if (player.FindBuffIndex(mod.BuffType("FlaskCoreBuff")) != -1)
+			if (modPlayer.core)
 			{
 				item.autoReuse = true;
 			}
-			if (player.FindBuffIndex(mod.BuffType("FlaskCoreBuff")) < 1)
+			if (!modPlayer.core)
 			{
 				item.autoReuse = false;
 			}
@@ -76,8 +77,8 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "LesserHealingFlack", 25);
-			recipe.AddIngredient(null, "StoneofLife", 1);
+			recipe.AddIngredient(ModContent.ItemType<LesserHealingFlack>(), 25);
+			recipe.AddIngredient(ModContent.ItemType<StoneofLife>(), 1);
 			recipe.AddIngredient(ItemID.PixieDust, 3);
 			recipe.SetResult(this, 20);
 			recipe.AddRecipe();

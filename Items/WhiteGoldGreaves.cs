@@ -7,7 +7,6 @@ namespace Tremor.Items
 	public class WhiteGoldGreaves : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
@@ -25,7 +24,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("50% increased movement speed");
 		}
 
-
 		public override void UpdateEquip(Player player)
 		{
 			player.moveSpeed += 0.5f;
@@ -34,9 +32,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "WhiteGoldBar", 15);
+			recipe.AddIngredient(ModContent.ItemType<WhiteGoldBar>(), 15);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "DivineForgeTile");
+			recipe.AddTile(ModContent.TileType<Tiles.DivineForgeTile>());
 			recipe.AddRecipe();
 		}
 

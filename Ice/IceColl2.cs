@@ -40,14 +40,14 @@ namespace Tremor.Ice
 			TileObjectData.newTile.CopyFrom(TileObjectData.StyleAlch);
 			TileObjectData.newTile.AnchorValidTiles = new[]
 			{
-				mod.TileType("IceBlock")
+				ModContent.TileType<IceBlock>()
 			};
-			dustType = mod.DustType<IceDust>();
+			dustType = ModContent.DustType<IceDust>();
 			soundType = 21;
 			soundStyle = 2;
 			TileObjectData.newTile.WaterDeath = false;
 			TileObjectData.addTile(Type);
-			//drop = mod.ItemType()
+			//drop = ModContent.ItemType()
 		}
 		public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
 		{

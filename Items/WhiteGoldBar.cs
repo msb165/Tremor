@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.maxStack = 99;
 			item.value = 17500;
 			item.rare = 11;
-			item.createTile = mod.TileType("WhiteGoldBarTile");
+			item.createTile = ModContent.TileType<Tiles.WhiteGoldBarTile>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -31,11 +31,11 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "Catalyst", 1);
+			recipe.AddIngredient(ModContent.ItemType<Catalyst>(), 1);
 			recipe.AddIngredient(ItemID.PlatinumOre, 3);
 			recipe.AddIngredient(ItemID.GoldOre, 3);
 			recipe.SetResult(this, 2);
-			recipe.AddTile(null, "DivineForgeTile");
+			recipe.AddTile(ModContent.TileType<Tiles.DivineForgeTile>());
 			recipe.AddRecipe();
 		}
 	}

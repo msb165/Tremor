@@ -24,21 +24,16 @@ namespace Tremor.Projectiles
 
 		}
 
-
 		public override void Kill(int timeLeft)
 		{
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-			if (projectile.owner == Main.myPlayer)
-			{
-				int num220 = Main.rand.Next(1, 1);
-				for (int num221 = 0; num221 < num220; num221++)
-				{
-					Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
-					value17.Normalize();
-					value17 *= Main.rand.Next(10, 201) * 0.01f;
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, mod.ProjectileType("RedBoomPro"), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
-				}
-			}
+			Main.PlaySound(2, projectile.position, 62);
+			//if (projectile.owner == Main.myPlayer)
+			//{
+			//	Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
+			//	value17.Normalize();
+			//	value17 *= Main.rand.Next(10, 201) * 0.01f;
+			//	Projectile.NewProjectile(projectile.position, value17, ModContent.ProjectileType<RedBoomPro>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
+			//}
 		}
 
 		public override void AI()
@@ -57,13 +52,10 @@ namespace Tremor.Projectiles
 				}
 				for (int num91 = 0; num91 < num90; num91++)
 				{
-					int num92 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y + 2f), projectile.width, projectile.height, 60, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.1f, 100, default(Color), 0.4f);
-					Main.dust[num92].noGravity = true;
-					Dust expr_46AC_cp_0 = Main.dust[num92];
-					expr_46AC_cp_0.velocity.X = expr_46AC_cp_0.velocity.X * 0.3f;
-					Dust expr_46CA_cp_0 = Main.dust[num92];
-					expr_46CA_cp_0.velocity.Y = expr_46CA_cp_0.velocity.Y * 0.3f;
-					Main.dust[num92].noLight = false;
+					Dust dust = Dust.NewDustDirect(new Vector2(projectile.position.X, projectile.position.Y + 2f), projectile.width, projectile.height, 60, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.1f, 100, default(Color), 0.4f);
+					dust.noGravity = true;
+					dust.velocity *= 0.3f;
+					dust.noLight = false;
 				}
 				if (projectile.wet && !projectile.lavaWet)
 				{

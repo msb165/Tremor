@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 0;
-			item.createTile = mod.TileType("StoneDresser");
+			item.createTile = ModContent.TileType<Tiles.StoneDresser>();
 		}
 
 		public override void SetStaticDefaults()
@@ -26,7 +26,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Stone Dresser");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

@@ -1,11 +1,12 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
+using Microsoft.Xna.Framework;
+using Tremor.Items;
+
 namespace Tremor.NPCs
 {
-
 	public class CloudSlime : ModNPC
 	{
 		public override void SetStaticDefaults()
@@ -13,7 +14,6 @@ namespace Tremor.NPCs
 			DisplayName.SetDefault("Cloud Slime");
 			Main.npcFrameCount[npc.type] = 2;
 		}
-
 
 		public override void SetDefaults()
 		{
@@ -31,7 +31,7 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath4;
 			npc.value = Item.buyPrice(0, 0, 8, 9);
 			banner = npc.type;
-			bannerItem = mod.ItemType("CloudSlimeBanner");
+			bannerItem = ModContent.ItemType<CloudSlimeBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -60,18 +60,7 @@ namespace Tremor.NPCs
 			}
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-		{
-			npc.lifeMax = npc.lifeMax * 1;
-			npc.damage = npc.damage * 1;
-		}
-
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-		{
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
-			return Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.sky ? 0.02f : 0;
-		}
+			=> Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.sky ? 0.02f : 0;
 	}
 }

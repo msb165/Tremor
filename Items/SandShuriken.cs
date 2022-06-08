@@ -8,7 +8,6 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-
 			item.damage = 27;
 			item.thrown = true;
 			item.width = 26;
@@ -17,7 +16,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 20;
 			item.useAnimation = 20;
-			item.shoot = mod.ProjectileType("SandShuriken");
+			item.shoot = ModContent.ProjectileType<Projectiles.SandShuriken>();
 			item.shootSpeed = 27f;
 			item.useStyle = 1;
 			item.knockBack = 4;

@@ -28,7 +28,7 @@ namespace Tremor.Tiles
     {
         if(frameX == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, mod.ItemType("ChaosBar"));
+            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<Items.Chaos.ChaosBar>());
         }
     }
 }}

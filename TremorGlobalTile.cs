@@ -12,7 +12,7 @@ namespace Tremor
 			{
 				if (Main.rand.Next(20) == 1)
 				{
-					Item.NewItem(i * 16, j * 16, 48, 32, mod.ItemType("EmeraldStone"));
+					Item.NewItem(i * 16, j * 16, 48, 32, ModContent.ItemType<Items.EmeraldStone>());
 					return false;
 				}
 			}

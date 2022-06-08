@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 50000;
-			item.createTile = mod.TileType("TrinityTrophy");
+			item.createTile = ModContent.TileType<Tiles.TrinityTrophy>();
 			item.placeStyle = 0;
 		}
 

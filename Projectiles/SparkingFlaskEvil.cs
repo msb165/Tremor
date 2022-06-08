@@ -25,7 +25,6 @@ namespace Tremor.Projectiles
 
 		}
 
-
 		public override void Kill(int timeLeft)
 		{
 			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 107);
@@ -39,11 +38,10 @@ namespace Tremor.Projectiles
 				Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 				value17.Normalize();
 				value17 *= Main.rand.Next(10, 201) * 0.01f;
-				Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, mod.ProjectileType("SparkingFlaskEvilTwo"), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
+				Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<Projectiles.SparkingFlaskEvilTwo>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
 			}
 			//}
 		}
-
 
 	}
 }

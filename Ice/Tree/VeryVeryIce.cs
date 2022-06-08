@@ -11,8 +11,8 @@ namespace Tremor.Ice.Tree
 		public override void SetDefaults()
 		{
 			Main.tileSolid[Type] = true;
-			//Main.tileMerge[Type][mod.TileType("TremorTree")] = true;
-			Main.tileMerge[Type][mod.TileType("IceBlock")] = true;
+			//Main.tileMerge[Type][ModContent.TileType<Tiles.TremorTree>()] = true;
+			Main.tileMerge[Type][ModContent.TileType<IceBlock>()] = true;
 			Main.tileMerge[Type][161] = true;
 			Main.tileMerge[Type][162] = true;
 			Main.tileMerge[Type][163] = true;
@@ -27,7 +27,7 @@ namespace Tremor.Ice.Tree
 			Main.tileLighted[Type] = true;
 			AddMapEntry(new Color(104, 155, 195));
 			SetModTree(new TremorTree());
-			drop = mod.ItemType("IceBlockB");
+			drop = ModContent.ItemType<IceBlockB>();
 		}
 
 		public override bool PreDraw(int i, int j, SpriteBatch spriteBatch)
@@ -48,19 +48,19 @@ namespace Tremor.Ice.Tree
 		{
 			if (Main.tile[i - 1, j].type == TileID.SnowBlock && CanGrow(i - 1, j))
 			{
-				Main.tile[i - 1, j].type = (ushort)mod.TileType("IceBlock");
+				Main.tile[i - 1, j].type = (ushort)ModContent.TileType<IceBlock>();
 			}
 			if (Main.tile[i + 1, j].type == TileID.SnowBlock && CanGrow(i + 1, j))
 			{
-				Main.tile[i + 1, j].type = (ushort)mod.TileType("IceBlock");
+				Main.tile[i + 1, j].type = (ushort)ModContent.TileType<IceBlock>();
 			}
 			if (Main.tile[i, j - 1].type == TileID.SnowBlock && CanGrow(i, j - 1))
 			{
-				Main.tile[i, j - 1].type = (ushort)mod.TileType("IceBlock");
+				Main.tile[i, j - 1].type = (ushort)ModContent.TileType<IceBlock>();
 			}
 			if (Main.tile[i, j + 1].type == TileID.SnowBlock && CanGrow(i, j + 1))
 			{
-				Main.tile[i, j + 1].type = (ushort)mod.TileType("IceBlock");
+				Main.tile[i, j + 1].type = (ushort)ModContent.TileType<IceBlock>();
 			}
 		}
 
@@ -79,7 +79,7 @@ namespace Tremor.Ice.Tree
 		public override int SaplingGrowthType(ref int style)
 		{
 			style = 0;
-			return mod.TileType("TremorSapling");
+			return ModContent.TileType<TremorSapling>();
 		}
 	}
 }

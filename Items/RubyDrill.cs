@@ -26,7 +26,7 @@ namespace Tremor.Items
 			item.rare = 2;
 			item.UseSound = SoundID.Item23;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("RubyDrillPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.RubyDrillPro>();
 			item.shootSpeed = 40f;
 		}
 

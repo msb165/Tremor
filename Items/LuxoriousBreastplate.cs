@@ -19,7 +19,7 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Luxorious Breastplate");
-			Tooltip.SetDefault("Increases mining speed by 12%");
+			Tooltip.SetDefault("12% increased mining speed");
 		}
 
 		public override void UpdateEquip(Player player)
@@ -30,7 +30,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "EvershinyBar", 25);
+			recipe.AddIngredient(ModContent.ItemType<EvershinyBar>(), 25);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

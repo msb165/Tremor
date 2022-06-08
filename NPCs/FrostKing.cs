@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items;
 
 namespace Tremor.NPCs
 {
@@ -14,7 +15,6 @@ namespace Tremor.NPCs
 			DisplayName.SetDefault("Frost King");
 			Main.npcFrameCount[npc.type] = 8;
 		}
-
 
 		private float timeToNextFrame;
 		private int frame;
@@ -35,7 +35,7 @@ namespace Tremor.NPCs
 			npc.noGravity = true;
 			npc.noTileCollide = true;
 			npc.HitSound = SoundID.NPCHit41;
-			bossBag = mod.ItemType("FrostKingBag");
+			bossBag = ModContent.ItemType<FrostKingBag>();
 			npc.DeathSound = SoundID.NPCDeath44;
 		}
 
@@ -298,19 +298,19 @@ namespace Tremor.NPCs
 				int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
 				int halfLength = npc.width / 2 / 16 + 1;
 
-				if (!Main.expertMode && Main.rand.Next(7) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("FrostKingMask"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FrostKingMask>());
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("FrostKingTrophy"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FrostKingTrophy>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("FrostoneOre"), Main.rand.Next(24, 42));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FrostoneOre>(), Main.rand.Next(24, 42));
 				}
-				TremorWorld.downedBoss[TremorWorld.Boss.FrostKing] = true;
+				TremorWorld.Boss.FrostKing.Downed();
 			}
 		}
 	}

@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useTime = 25;
 			item.useAnimation = 25;
 			item.useStyle = 1;
-			item.shoot = mod.ProjectileType("BoneSpike");
+			item.shoot = ModContent.ProjectileType<Projectiles.BoneSpike>();
 			item.shootSpeed = 6f;
 			item.knockBack = 4;
 			item.value = 66600;
@@ -31,8 +31,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Necromancer Claymore");
 			Tooltip.SetDefault("");
 		}
-
-
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

@@ -2,6 +2,8 @@ using System;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Items;
+using Tremor.Items.Brutallisk;
 
 namespace Tremor.NPCs
 {
@@ -59,7 +61,7 @@ namespace Tremor.NPCs
 			npc.noTileCollide = true;
 			music = 17;
 			npc.value = Item.buyPrice(3, 50, 0, 0);
-			bossBag = mod.ItemType("BrutalliskBag");
+			bossBag = ModContent.ItemType<BrutalliskBag>();
 		}
 
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
@@ -67,7 +69,6 @@ namespace Tremor.NPCs
 			npc.lifeMax = (int)(npc.lifeMax * 0.625f * bossLifeScale);
 			npc.damage = (int)(npc.damage * 0.6f);
 		}
-
 
 		public override void HitEffect(int hitDirection, double damage)
 		{
@@ -108,6 +109,13 @@ namespace Tremor.NPCs
 				timer3 = 0;
 				timer4 = 0;
 			}
+
+			// Boss Minion spawning.
+			int XOffset = 1200;
+			int YOffset = 1200;
+			if (Main.rand.Next(190) == 0)
+				NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y - YOffset, ModContent.NPCType<Quetzalcoatl>());
+
 			timer++;
 			if (timer <= 1000)
 			{
@@ -486,14 +494,13 @@ namespace Tremor.NPCs
 
 			if (Main.rand.Next(380) == 0)
 			{
-				NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y, mod.NPCType("Naga"));
+				NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<Naga>());
 			}
 
 			if (Main.rand.Next(380) == 0)
 			{
-				NPC.NewNPC((int)npc.position.Y + 100, (int)npc.position.Y, mod.NPCType("Quetzalcoatl"));
+				NPC.NewNPC((int)npc.position.Y + 100, (int)npc.position.Y, ModContent.NPCType<Quetzalcoatl>());
 			}
-
 
 		}
 
@@ -517,47 +524,47 @@ namespace Tremor.NPCs
 				int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
 				int halfLength = npc.width / 2 / 16 + 1;
 
-				if (!Main.expertMode && Main.rand.Next(4) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(4))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SnakeDevourer"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SnakeDevourer>());
 				}
-				if (!Main.expertMode && Main.rand.Next(4) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(4))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Awakening"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Awakening>());
 				}
-				if (!Main.expertMode && Main.rand.Next(4) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(4))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LightningStaff"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<LightningStaff>());
 				}
-				if (!Main.expertMode && Main.rand.Next(4) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(4))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("QuetzalcoatlStave"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<QuetzalcoatlStave>());
 				}
-				if (!Main.expertMode && Main.rand.Next(4) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(4))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TreasureGlaive"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TreasureGlaive>());
 				}
 				if (!Main.expertMode && Main.rand.Next(25) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("FallenSnake"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FallenSnake>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Aquamarine"), Main.rand.Next(10, 18));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Aquamarine>(), Main.rand.Next(10, 18));
 				}
 				if (!Main.expertMode && Main.rand.Next(100) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("StrangeEgg"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<StrangeEgg>());
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BrutalliskTrophy"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrutalliskTrophy>());
 				}
-				if (!Main.expertMode && Main.rand.Next(7) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BrutalliskMask"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrutalliskMask>());
 				}
-				TremorWorld.downedBoss[TremorWorld.Boss.Brutallisk] = true;
+				TremorWorld.Boss.Brutallisk.Downed();
 			}
 		}
 

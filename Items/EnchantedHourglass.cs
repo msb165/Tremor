@@ -30,17 +30,16 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override bool UseItem(Player player)
 		{
-			if (Main.player[Main.myPlayer].active && Main.player[Main.myPlayer].FindBuffIndex(mod.BuffType("HealthRecharging")) != -1)
+			if (Main.player[Main.myPlayer].active && Main.player[Main.myPlayer].FindBuffIndex(ModContent.BuffType<Buffs.HealthRecharging>()) != -1)
 			{
 				item.mana = 0;
 				item.healLife = 0;
 			}
 			else
 			{
-				player.AddBuff(mod.BuffType("HealthRecharging"), 1200, true);
+				player.AddBuff(ModContent.BuffType<Buffs.HealthRecharging>(), 1200, true);
 				//item.mana = 50;
 				item.healLife = 30;
 			}

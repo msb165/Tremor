@@ -26,7 +26,7 @@ namespace Tremor.Tiles
 
         public override bool Drop(int i, int j)
         {
-            Item.NewItem(i * 16, j * 16, 32, 32, mod.ItemType("EveryshinyBar"));
+            Item.NewItem(i * 16, j * 16, 32, 32, ModContent.ItemType<Items.EvershinyBar>());
             return true;
         }
 }}

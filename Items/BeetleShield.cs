@@ -16,16 +16,15 @@ namespace Tremor.Items
 			item.value = 123110;
 			item.rare = 8;
 
-
 			item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Beetle Shield");
-			Tooltip.SetDefault("The less health, the more defense\nMaximum life increased by 50");
+			Tooltip.SetDefault("The less health, the more defense\n" +
+"Maximum life increased by 50");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
@@ -52,8 +51,8 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "TurtleShield", 1);
-			recipe.AddIngredient(null, "LeechingSeed", 1);
+			recipe.AddIngredient(ModContent.ItemType<TurtleShield>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<LeechingSeed>(), 1);
 			recipe.AddIngredient(ItemID.BeetleHusk, 10);
 			recipe.SetResult(this);
 			recipe.AddTile(114);

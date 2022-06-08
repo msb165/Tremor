@@ -24,7 +24,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item43;
 			item.autoReuse = true;
 			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
-			item.shoot = mod.ProjectileType("SwordstormPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.SwordstormPro>();
 			item.shootSpeed = 18f;
 		}
 

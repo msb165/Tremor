@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Tremor.Items;
 
 namespace Tremor.Tiles
 {
@@ -29,7 +30,7 @@ namespace Tremor.Tiles
 
         public override bool Drop(int i, int j)
         {
-            Item.NewItem(i * 16, j * 16, 32, 32, mod.ItemType("FrostoneBar"));
+            Item.NewItem(i * 16, j * 16, 32, 32, ModContent.ItemType<FrostoneBar>());
             return true;
         }
 }}

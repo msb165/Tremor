@@ -24,9 +24,9 @@ namespace Tremor.Invasion
 			item.value = Item.buyPrice(0, 2, 0, 0);
 			item.rare = 11;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("Mini_Cyber");
+			item.shoot = ModContent.ProjectileType<Mini_Cyber>();
 			item.shootSpeed = 1f;
-			item.buffType = mod.BuffType("CyberBuff");
+			item.buffType = ModContent.BuffType<CyberBuff>();
 			item.buffTime = 3600;
 		}
 
@@ -35,7 +35,6 @@ namespace Tremor.Invasion
 			DisplayName.SetDefault("Stray Staff");
 			Tooltip.SetDefault("Summons a cyber stray to fight for you");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{

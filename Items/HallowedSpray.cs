@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 10;
 			item.useAnimation = 30;
-			item.shoot = mod.ProjectileType("HallowedSprayPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.HallowedSprayPro>();
 			item.shootSpeed = 7.5f;
 			item.mana = 6;
 			item.noMelee = true;
@@ -31,7 +31,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Hallowed Spray");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

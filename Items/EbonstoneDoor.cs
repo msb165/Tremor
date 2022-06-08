@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 150;
-			item.createTile = mod.TileType("EbonstoneDoorClosed");
+			item.createTile = ModContent.TileType<Tiles.EbonstoneDoorClosed>();
 		}
 
 		public override void SetStaticDefaults()
@@ -26,7 +26,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Ebonstone Door");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Flesh;
 
 namespace Tremor.Items
 {
@@ -24,7 +25,7 @@ namespace Tremor.Items
 			item.rare = 2;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("DeadFlowerPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.DeadFlowerPro>();
 			item.shootSpeed = 15f;
 		}
 
@@ -34,16 +35,15 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Wood, 12);
-			recipe.AddIngredient(null, "UntreatedFlesh", 5);
+			recipe.AddIngredient(ModContent.ItemType<UntreatedFlesh>(), 5);
 			recipe.AddIngredient(ItemID.Lens, 2);
 			recipe.AddIngredient(ItemID.FallenStar, 1);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "FleshWorkstationTile");
+			recipe.AddTile(ModContent.TileType<Tiles.FleshWorkstationTile>());
 			recipe.AddRecipe();
 		}
 	}

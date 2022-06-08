@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -22,7 +23,7 @@ namespace Tremor.Items
 			item.value = 1253000;
 			item.rare = 11;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("EaterofDreamsPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.EaterofDreamsPro>();
 			item.shootSpeed = 7.5f;
 			item.useAmmo = AmmoID.Gel;
 		}
@@ -33,15 +34,14 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Consumes gel as ammo");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "NightmareBar", 16);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 16);
 			recipe.AddIngredient(ItemID.Flamethrower, 1);
-			recipe.AddIngredient(null, "PhantomSoul", 25);
-			recipe.AddIngredient(null, "PurpleQuartz", 15);
-			recipe.AddIngredient(null, "TearsofDeath", 8);
+			recipe.AddIngredient(ModContent.ItemType<PhantomSoul>(), 25);
+			recipe.AddIngredient(ModContent.ItemType<PurpleQuartz>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<TearsofDeath>(), 8);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

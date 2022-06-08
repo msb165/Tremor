@@ -31,23 +31,21 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
 				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 27);
 			}
 		}
-
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Obsidian, 50);
 			recipe.AddIngredient(ItemID.CrystalShard, 50);
-			recipe.AddIngredient(null, "NightmareBar", 25);
-			recipe.AddIngredient(null, "ToothofAbraxas", 12);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 25);
+			recipe.AddIngredient(ModContent.ItemType<ToothofAbraxas>(), 12);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

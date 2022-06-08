@@ -6,7 +6,6 @@ namespace Tremor.Items
 	public class UnderratedTrinkets : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
@@ -23,7 +22,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Underrated Trinkets");
 			Tooltip.SetDefault("The less health, the more stats bonuses you gain");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
@@ -98,12 +96,11 @@ namespace Tremor.Items
 			}
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "ChaoticCross", 1);
-			recipe.AddIngredient(null, "ShroomiteMagicalBoots", 1);
+			recipe.AddIngredient(ModContent.ItemType<ChaoticCross>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<ShroomiteMagicalBoots>(), 1);
 			recipe.SetResult(this);
 			recipe.AddTile(114);
 			recipe.AddRecipe();

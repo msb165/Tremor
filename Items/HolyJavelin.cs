@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.height = 38;
 			item.useTime = 32;
 			item.useAnimation = 32;
-			item.shoot = mod.ProjectileType("HolyJavelinPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.HolyJavelinPro>();
 			item.shootSpeed = 16f;
 			item.useStyle = 1;
 			item.knockBack = 4;
@@ -32,7 +32,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Holy Javelin");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

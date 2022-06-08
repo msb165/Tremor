@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 42;
 			item.useAnimation = 42;
-			item.shoot = mod.ProjectileType("BurningFist");
+			item.shoot = ModContent.ProjectileType<Projectiles.BurningFist>();
 			item.shootSpeed = 15f;
 			item.mana = 16;
 			item.useStyle = 5;
@@ -32,14 +32,13 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Shoots a burning fist that explodes on contact and erupts burning bolts");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.HellstoneBar, 12);
 			recipe.AddIngredient(ItemID.MeteoriteBar, 12);
-			recipe.AddIngredient(null, "DemonBlood", 10);
-			recipe.AddTile(null, "DevilForge");
+			recipe.AddIngredient(ModContent.ItemType<DemonBlood>(), 10);
+			recipe.AddTile(ModContent.TileType<Tiles.DevilForge>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

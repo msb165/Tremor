@@ -17,7 +17,7 @@ namespace Tremor.Buffs
 			player.statDefense += 500;
 			if (player.buffTime[buffIndex] == 0)
 			{
-				player.AddBuff(mod.BuffType("BarrierRechargeBuff"), 7200);
+				player.AddBuff(ModContent.BuffType<BarrierRechargeBuff>(), 7200);
 			}
 		}
 	}

@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Dark;
 
 namespace Tremor.Items
 {
@@ -27,13 +28,14 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Void Knife");
-			Tooltip.SetDefault("Hitting enemies will spawn an explosion\nIf you are below 50% of life your hits have a chance to heal you");
+			Tooltip.SetDefault("Hitting enemies will spawn an explosion\n" +
+"If you are below 50% of life your hits have a chance to heal you");
 		}
 
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
-			Projectile.NewProjectile(target.Center.X, target.Center.Y, 0f, 0f, mod.ProjectileType("VoidKnifeExplosion"), damage, knockback, Main.myPlayer);
-			if (player.statLife < (player.statLifeMax2 * 0.5f) && Main.rand.Next(4) == 0)
+			Projectile.NewProjectile(target.Center.X, target.Center.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.VoidKnifeExplosion>(), damage, knockback, Main.myPlayer);
+			if (player.statLife < (player.statLifeMax2 * 0.5f) && Main.rand.NextBool(4))
 			{
 				int NewLife = Main.rand.Next(19, 41);
 				player.statLife += NewLife;
@@ -44,9 +46,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "VoidBar", 15);
-			recipe.AddIngredient(null, "DarkMatter", 64);
-			recipe.AddIngredient(null, "AtisBlood", 8);
+			recipe.AddIngredient(ModContent.ItemType<VoidBar>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<DarkMatter>(), 64);
+			recipe.AddIngredient(ModContent.ItemType<AtisBlood>(), 8);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

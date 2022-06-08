@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.rare = 2;
 			item.UseSound = SoundID.Item79;
 			item.noMelee = true;
-			item.mountType = mod.MountType("Spider");
+			item.mountType = ModContent.MountType<Mounts.Spider>();
 		}
 
 		public override void SetStaticDefaults()
@@ -28,12 +28,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Summons a rideable Fat Spider mount");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Bowl, 1);
-			recipe.AddIngredient(null, "SpiderMeat", 15);
+			recipe.AddIngredient(ModContent.ItemType<SpiderMeat>(), 15);
 			recipe.AddIngredient(ItemID.Cobweb, 100);
 			recipe.SetResult(this);
 			recipe.AddTile(17);

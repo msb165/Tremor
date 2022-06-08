@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 2000;
-			item.createTile = mod.TileType("MinersLampTile");
+			item.createTile = ModContent.TileType<Tiles.MinersLampTile>();
 		}
 
 		public override void SetStaticDefaults()
@@ -28,13 +28,12 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Chain, 1);
-			recipe.AddIngredient(null, "SteelBar", 4);
-			recipe.AddIngredient(null, "Charcoal", 4);
+			recipe.AddIngredient(ModContent.ItemType<Steel.SteelBar>(), 4);
+			recipe.AddIngredient(ModContent.ItemType<Charcoal>(), 4);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();

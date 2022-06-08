@@ -2,6 +2,8 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Tremor.Tiles;
+using Tremor.ZombieEvent.Items;
 
 namespace Tremor.ZombieEvent.Tiles
 {
@@ -18,12 +20,12 @@ namespace Tremor.ZombieEvent.Tiles
 		ModTranslation name = CreateMapEntryName();
 		name.SetDefault("Necromaniac Workbench");			
 			AddMapEntry(new Color(0, 77, 255), name);
-                       adjTiles = new[]{mod.TileType("FleshWorkstationTile")};
+                       adjTiles = new[]{ModContent.TileType<FleshWorkstationTile>()};
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 16, mod.ItemType("NecromaniacWorkbench"));
+			Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<NecromaniacWorkbench>());
 		}
 	}
 }

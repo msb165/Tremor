@@ -28,7 +28,6 @@ namespace Tremor.Invasion
 			Tooltip.SetDefault("Restores 300 health");
 		}
 
-
 		public override bool CanUseItem(Player player)
 		{
 			if (player.FindBuffIndex(BuffID.PotionSickness) == -1)
@@ -53,7 +52,7 @@ namespace Tremor.Invasion
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "ParadoxElement", 2);
+			recipe.AddIngredient(ModContent.ItemType<ParadoxElement>(), 2);
 			recipe.AddIngredient(ItemID.BottledWater);
 			recipe.SetResult(this);
 			recipe.AddTile(13);

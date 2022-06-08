@@ -28,10 +28,9 @@ namespace Tremor.Items
 			Tooltip.SetDefault("75% increased movement speed");
 		}
 
-
 		public override bool UseItem(Player player)
 		{
-			player.AddBuff(mod.BuffType("ScamperBuff"), 14400);
+			player.AddBuff(ModContent.BuffType<Buffs.ScamperBuff>(), 14400);
 			return true;
 		}
 
@@ -40,9 +39,9 @@ namespace Tremor.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.BottledWater, 1);
 			recipe.AddIngredient(ItemID.Cactus, 5);
-			recipe.AddIngredient(null, "ConcentratedEther", 2);
+			recipe.AddIngredient(ModContent.ItemType<ConcentratedEther>(), 2);
 			recipe.AddIngredient(ItemID.Blinkroot, 1);
-			recipe.AddTile(null, "AlchemyStationTile");
+			recipe.AddTile(ModContent.TileType<Tiles.AlchemyStationTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

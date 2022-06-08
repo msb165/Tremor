@@ -23,7 +23,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item43;
 			item.autoReuse = true;
 			item.noUseGraphic = true;
-			item.shoot = mod.ProjectileType("TheSnowBall");
+			item.shoot = ModContent.ProjectileType<Projectiles.TheSnowBall>();
 			item.shootSpeed = 8f;
 		}
 

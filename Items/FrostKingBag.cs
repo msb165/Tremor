@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.NPCs;
 
 namespace Tremor.Items
 {
@@ -15,15 +16,13 @@ namespace Tremor.Items
 
 			item.rare = 9;
 			item.expert = true;
-			bossBagNPC = mod.NPCType("FrostKing");
 		}
-
+		public override int BossBagNPC => ModContent.NPCType<FrostKing>();
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("Right click to open");
+			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
-
 
 		public override bool CanRightClick()
 		{
@@ -32,13 +31,16 @@ namespace Tremor.Items
 
 		public override void OpenBossBag(Player player)
 		{
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.NextBool(7))
 			{
-				player.QuickSpawnItem(mod.ItemType("FrostKingMask"));
+				player.QuickSpawnItem(ModContent.ItemType<FrostKingMask>());
 			}
-			player.QuickSpawnItem(mod.ItemType("EdgeofFrostKing"));
-			player.QuickSpawnItem(mod.ItemType("FrostoneOre"), Main.rand.Next(24, 42));
-			player.TryGettingDevArmor();
+			player.QuickSpawnItem(ModContent.ItemType<EdgeofFrostKing>());
+			player.QuickSpawnItem(ModContent.ItemType<FrostoneOre>(), Main.rand.Next(24, 42));
+			if (Main.hardMode)
+			{
+				player.TryGettingDevArmor();
+			}
 		}
 
 	}

@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 20;
 			item.useAnimation = 20;
-			item.shoot = mod.ProjectileType("MonsterToothPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.MonsterToothPro>();
 			item.shootSpeed = 22f;
 			item.useStyle = 1;
 			item.knockBack = 4;
@@ -32,7 +32,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Monster Tooth");
 			Tooltip.SetDefault("");
 		}
-
 
 	}
 }

@@ -17,7 +17,7 @@ namespace Tremor.Buffs
 		public override void Update(Player player, ref int buffIndex)
 		{
 			if (MinionType == -1)
-				MinionType = mod.ProjectileType("SandstormMinion");
+				MinionType = ModContent.ProjectileType<Projectiles.SandstormMinion>();
 			if (MinionID == -1 || Main.projectile[MinionID].type != MinionType || !Main.projectile[MinionID].active || Main.projectile[MinionID].owner != player.whoAmI)
 			{
 				Projectile proj = new Projectile();

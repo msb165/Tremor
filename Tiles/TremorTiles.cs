@@ -1,8 +1,9 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items;
 
-namespace Tremor
+namespace Tremor.Tiles
 {
 	class TremorTiles : GlobalTile
     {
@@ -10,7 +11,7 @@ namespace Tremor
         {
             if (type == TileID.Trees && Main.tile[i, j + 1].type == TileID.Grass && Main.rand.Next(40) == 0)
             {
-                Item.NewItem(i * 16, j * 16, 32, 32, mod.ItemType("BirbStaff"));
+                Item.NewItem(i * 16, j * 16, 32, 32, ModContent.ItemType<BirbStaff>());
             }
             return base.Drop(i, j, type);
         }				

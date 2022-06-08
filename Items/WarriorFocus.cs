@@ -2,6 +2,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Sparks;
 
 namespace Tremor.Items
 {
@@ -14,7 +15,6 @@ namespace Tremor.Items
 			item.width = 22;
 			item.height = 22;
 
-
 			item.accessory = true;
 			item.defense = 3;
 			item.rare = 2;
@@ -24,7 +24,8 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Warrior Focus");
-			Tooltip.SetDefault("6% increased melee damage\nIncreases melee critical strike chance by 11");
+			Tooltip.SetDefault("6% increased melee damage\n" +
+"Increases melee critical strike chance by 11");
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 4));
 		}
 
@@ -37,11 +38,11 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "WarriorSpark");
-			recipe.AddIngredient(null, "AirFragment", 1);
+			recipe.AddIngredient(ModContent.ItemType<WarriorSpark>());
+			recipe.AddIngredient(ModContent.ItemType<AirFragment>(), 1);
 			recipe.AddIngredient(ItemID.Ruby, 16);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "AltarofEnchantmentsTile");
+			recipe.AddTile(ModContent.TileType<Tiles.AltarofEnchantmentsTile>());
 			recipe.AddRecipe();
 		}
 	}

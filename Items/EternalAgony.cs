@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Dark;
 
 namespace Tremor.Items
 {
@@ -22,7 +23,7 @@ namespace Tremor.Items
 			item.damage = 76;
 			item.scale = 1.1F;
 			item.noUseGraphic = true;
-			item.shoot = mod.ProjectileType("EternalAgonyPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.EternalAgonyPro>();
 			item.shootSpeed = 20.9F;
 			item.UseSound = SoundID.Item1;
 			item.melee = true;
@@ -35,11 +36,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Inflicts Shadow Flames on foes");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "DarkMatter", 50);
+			recipe.AddIngredient(ModContent.ItemType<DarkMatter>(), 50);
 			recipe.AddIngredient(ItemID.DarkShard, 1);
 			recipe.AddIngredient(ItemID.LightShard, 1);
 			recipe.SetResult(this);

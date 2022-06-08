@@ -24,12 +24,10 @@ namespace Tremor.Projectiles
 
 		}
 
-
-
 		public override void Kill(int timeLeft)
 		{
 			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 93);
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("ChargedArrowBoom"), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.ChargedArrowBoom>(), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
 		}
 
 	}

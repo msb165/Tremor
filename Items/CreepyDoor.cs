@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 150;
-			item.createTile = mod.TileType("ScaryDoorClosed");
+			item.createTile = ModContent.TileType<Tiles.ScaryDoorClosed>();
 		}
 
 		public override void SetStaticDefaults()
@@ -27,7 +27,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Creepy Door");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

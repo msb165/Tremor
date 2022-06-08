@@ -1,11 +1,11 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
+using Microsoft.Xna.Framework;
+
 namespace Tremor.NPCs
 {
-
 	public class MagiumFlyer : ModNPC
 	{
 		public override void SetStaticDefaults()
@@ -13,8 +13,6 @@ namespace Tremor.NPCs
 			DisplayName.SetDefault("Magium Flyer");
 			Main.npcFrameCount[npc.type] = 4;
 		}
-
-		const int SpeedMulti = 3; // �����⥫� ᪮���
 
 		public override void SetDefaults()
 		{
@@ -32,14 +30,8 @@ namespace Tremor.NPCs
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath4;
 			npc.value = Item.buyPrice(0, 0, 6, 9);
-			banner = npc.type;
-			bannerItem = mod.ItemType("MagiumFlayerBanner");
-		}
-
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-		{
-			npc.lifeMax = npc.lifeMax * 1;
-			npc.damage = npc.damage * 1;
+			// banner = npc.type;
+			// Todo: bannerItem = ModContent.ItemType<MagiumFlayerBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -47,9 +39,7 @@ namespace Tremor.NPCs
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 60; k++)
-				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 59, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-				}
 			}
 			else
 			{
@@ -63,6 +53,5 @@ namespace Tremor.NPCs
 				}
 			}
 		}
-
 	}
 }

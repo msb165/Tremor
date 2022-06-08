@@ -18,14 +18,13 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 150;
-			item.createTile = mod.TileType("GlassDoorClosed");
+			item.createTile = ModContent.TileType<Tiles.GlassDoorClosed>();
 		}
 
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Glass Door");
 		}
-
 
 		public override void AddRecipes()
 		{

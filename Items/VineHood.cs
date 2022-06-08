@@ -8,7 +8,6 @@ namespace Tremor.Items
 	public class VineHood : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
@@ -28,7 +27,7 @@ namespace Tremor.Items
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("VineCape") && legs.type == mod.ItemType("VinePants");
+			return body.type == ModContent.ItemType<VineCape>() && legs.type == ModContent.ItemType<VinePants>();
 		}
 
 		public override void UpdateArmorSet(Player player)

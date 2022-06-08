@@ -7,7 +7,6 @@ namespace Tremor.Items
 	public class SalamanderMask : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
@@ -25,7 +24,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Increases movement speed");
 		}
 
-
 		public override void UpdateEquip(Player player)
 		{
 			player.moveSpeed += 0.1f;
@@ -33,7 +31,7 @@ namespace Tremor.Items
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("SalamanderCloth") && legs.type == mod.ItemType("SalamanderLeggings");
+			return body.type == ModContent.ItemType<SalamanderCloth>() && legs.type == ModContent.ItemType<SalamanderLeggings>();
 		}
 
 		public override void UpdateArmorSet(Player player)
@@ -45,7 +43,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "SalamanderSkin", 6);
+			recipe.AddIngredient(ModContent.ItemType<SalamanderSkin>(), 6);
 			recipe.SetResult(this);
 			recipe.AddTile(18);
 			recipe.AddRecipe();

@@ -1,10 +1,10 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-
 	public class Abomination : ModNPC
 	{
 		public override void SetStaticDefaults()
@@ -29,47 +29,30 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 4, 0);
 			banner = npc.type;
-			bannerItem = mod.ItemType("AbominationBanner");
+			bannerItem = ModContent.ItemType<AbominationBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
 		{
-			if (npc.life <= 0)
-			{
-				NPC.NewNPC((int)npc.position.X - 22, (int)npc.position.Y + 55, 21);
-			}
+			if (Main.netMode != 1 && npc.life <= 0)
+				NPC.NewNPC((int)npc.position.X - 22, (int)npc.position.Y + 55, NPCID.Skeleton);
 		}
 
 		public override void AI()
 		{
-
 			if (Main.rand.Next(1000) == 0)
-			{
 				Main.PlaySound(22, (int)npc.position.X, (int)npc.position.Y, 1);
-			}
 		}
 
 		public override void NPCLoot()
 		{
-			if (Main.netMode != 1)
-			{
-				int centerX = (int)(npc.position.X + npc.width / 2) / 16;
-				int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
-				int halfLength = npc.width / 2 / 16 + 1;
-				if (Main.rand.NextBool())
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 331, Main.rand.Next(1, 3));
-				}
-
-			}
+			if (Main.rand.NextBool())
+				npc.NewItem((short)ItemID.JungleSpores, Main.rand.Next(1, 3));
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
-			return (Helper.NoZoneAllowWater(spawnInfo)) && spawnInfo.player.ZoneJungle && y > Main.rockLayer ? 0.01f : 0f;
+			return (Helper.NoZoneAllowWater(spawnInfo)) && spawnInfo.player.ZoneJungle && spawnInfo.spawnTileY > Main.rockLayer ? 0.01f : 0f;
 		}
 	}
 }

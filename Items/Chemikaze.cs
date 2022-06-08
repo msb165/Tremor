@@ -11,7 +11,7 @@ namespace Tremor.Items
 		{
 			for (int i = 0; i < player.armor.Length; i++)
 			{
-				MPlayer modPlayer = (MPlayer)player.GetModPlayer(mod, "MPlayer");
+				MPlayer modPlayer = player.GetModPlayer<MPlayer>();
 				if (modPlayer.pyro)
 				{
 					return false;
@@ -37,13 +37,12 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Alchemical flasks leave five explosions");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.ExplosivePowder, 25);
-			recipe.AddIngredient(null, "Pyro", 1);
-			recipe.AddIngredient(null, "MoltenParts", 1);
+			recipe.AddIngredient(ModContent.ItemType<Pyro>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<MoltenParts>(), 1);
 			recipe.AddIngredient(ItemID.SoulofLight, 3);
 			recipe.AddIngredient(ItemID.SoulofNight, 3);
 			recipe.SetResult(this);
@@ -53,8 +52,8 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			MPlayer modPlayer = (MPlayer)player.GetModPlayer(mod, "MPlayer");
-			player.AddBuff(mod.BuffType("ChemikazeBuff"), 2);
+			MPlayer modPlayer = player.GetModPlayer<MPlayer>();
+			player.AddBuff(ModContent.BuffType<Buffs.ChemikazeBuff>(), 2);
 			modPlayer.pyro = true;
 		}
 	}

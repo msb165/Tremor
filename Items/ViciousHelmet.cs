@@ -7,13 +7,11 @@ namespace Tremor.Items
 	public class ViciousHelmet : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
 			item.width = 38;
 			item.height = 22;
-
 
 			item.value = 30000;
 			item.rare = 1;
@@ -23,9 +21,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Vicious Helmet");
-			Tooltip.SetDefault("6% increased minion damage\nIncreases your max number of minions");
+			Tooltip.SetDefault("6% increased minion damage\n" +
+"Increases your max number of minions");
 		}
-
 
 		public override void UpdateEquip(Player player)
 		{
@@ -35,7 +33,7 @@ namespace Tremor.Items
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("ViciousChestplate") && legs.type == mod.ItemType("ViciousLeggings");
+			return body.type == ModContent.ItemType<ViciousChestplate>() && legs.type == ModContent.ItemType<ViciousLeggings>();
 		}
 
 		public override void UpdateArmorSet(Player player)

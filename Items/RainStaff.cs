@@ -34,7 +34,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Allows you to call and revoke precipitation");
 		}
 
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			if (Main.raining)
@@ -54,9 +53,9 @@ namespace Tremor.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Wood, 12);
 			recipe.AddIngredient(ItemID.RainCloud, 9);
-			recipe.AddIngredient(null, "SeaFragment", 10);
+			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 10);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "MagicWorkbenchTile");
+			recipe.AddTile(ModContent.TileType<Tiles.MagicWorkbenchTile>());
 			recipe.AddRecipe();
 		}
 	}

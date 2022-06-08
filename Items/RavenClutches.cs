@@ -29,21 +29,20 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.SilverBar, 10);
-			recipe.AddIngredient(null, "Opal", 1);
-			recipe.AddIngredient(null, "RavenFeather", 13);
+			recipe.AddIngredient(ModContent.ItemType<Opal>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<RavenFeather>(), 13);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.TungstenBar, 10);
-			recipe.AddIngredient(null, "Opal", 1);
-			recipe.AddIngredient(null, "RavenFeather", 13);
+			recipe.AddIngredient(ModContent.ItemType<Opal>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<RavenFeather>(), 13);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();

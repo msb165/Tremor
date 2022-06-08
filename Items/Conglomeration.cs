@@ -18,9 +18,10 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Conglomeration");
-			Tooltip.SetDefault("Prolonged after hit invincibility\nGreatly increased life regeneration\nIncreases maximum life by 140");
+			Tooltip.SetDefault("Prolonged after hit invincibility\n" +
+"Greatly increased life regeneration\n" +
+"Increases maximum life by 140");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
@@ -33,9 +34,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "SwampClump");
-			recipe.AddIngredient(null, "ExtraterrestrialRubies");
-			recipe.AddIngredient(null, "DelightfulClump");
+			recipe.AddIngredient(ModContent.ItemType<SwampClump>());
+			recipe.AddIngredient(ModContent.ItemType<ExtraterrestrialRubies>());
+			recipe.AddIngredient(ModContent.ItemType<DelightfulClump>());
 			recipe.SetResult(this);
 			recipe.AddTile(114);
 			recipe.AddRecipe();

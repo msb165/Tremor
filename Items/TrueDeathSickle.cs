@@ -24,7 +24,7 @@ namespace Tremor.Items
 			item.value = Item.sellPrice(0, 10, 0, 0);
 			item.rare = 8;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("TrueDeathSickleProj");
+			item.shoot = ModContent.ProjectileType<Projectiles.TrueDeathSickleProj>();
 			item.shootSpeed = 0f;
 		}
 
@@ -33,7 +33,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("True Death Sickle");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override bool UseItemFrame(Player player)
 		{

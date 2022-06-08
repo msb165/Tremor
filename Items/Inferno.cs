@@ -16,7 +16,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.melee = true;
 			item.useTime = 20;
-			item.shoot = mod.ProjectileType("InfernoPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.InfernoPro>();
 			item.shootSpeed = 12f;
 			item.useAnimation = 20;
 			item.useStyle = 5;
@@ -32,7 +32,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Inferno");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{

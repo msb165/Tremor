@@ -9,7 +9,7 @@ namespace Tremor.Walls
     public override void SetDefaults()
     {
         Main.wallHouse[Type] = true;
-        drop = mod.ItemType("DoombrickWall");
+        drop = ModContent.ItemType<Items.Doom.DoombrickWall>();
 	AddMapEntry(new Color(233, 255, 0));
     }
 }}

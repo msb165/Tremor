@@ -34,14 +34,14 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.FleshKnuckles, 1);
-			recipe.AddIngredient(null, "HardBulwark", 1);
+			recipe.AddIngredient(ModContent.ItemType<HardBulwark>(), 1);
 			recipe.SetResult(this);
 			recipe.AddTile(114);
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.PutridScent, 1);
-			recipe.AddIngredient(null, "HardBulwark", 1);
+			recipe.AddIngredient(ModContent.ItemType<HardBulwark>(), 1);
 			recipe.SetResult(this);
 			recipe.AddTile(114);
 			recipe.AddRecipe();

@@ -28,7 +28,7 @@ namespace Tremor.Items
 			item.rare = 7;
 			item.UseSound = SoundID.Item23;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("IceDrillPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.IceDrillPro>();
 			item.shootSpeed = 40f;
 		}
 
@@ -41,7 +41,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "FrostoneBar", 12);
+			recipe.AddIngredient(ModContent.ItemType<FrostoneBar>(), 12);
 			recipe.AddTile(134);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

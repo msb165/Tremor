@@ -24,9 +24,9 @@ namespace Tremor.Items
 			item.value = Item.buyPrice(0, 0, 1, 0);
 			item.rare = 1;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("BlueSakuraPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.Minions.BlueSakuraPro>();
 			item.shootSpeed = 1f;
-			item.buffType = mod.BuffType("BlueSakuraBuff");
+			item.buffType = ModContent.BuffType<Buffs.BlueSakuraBuff>();
 			item.buffTime = 3600;
 		}
 
@@ -35,7 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Blue Sakura");
 			Tooltip.SetDefault("Summons a blue wind to fight for you.");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{
@@ -60,7 +59,7 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Wood, 15);
-			recipe.AddIngredient(null, "SeaFragment", 5);
+			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 5);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

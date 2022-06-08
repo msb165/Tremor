@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.maxStack = 99;
 			item.value = 2000;
 			item.rare = 7;
-			item.createTile = mod.TileType("FrostoneBarTile");
+			item.createTile = ModContent.TileType<Tiles.FrostoneBarTile>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -28,11 +28,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "FrostoneOre", 2);
+			recipe.AddIngredient(ModContent.ItemType<FrostoneOre>(), 2);
 			recipe.AddIngredient(ItemID.Ectoplasm, 1);
 			recipe.SetResult(this);
 			recipe.AddTile(133);

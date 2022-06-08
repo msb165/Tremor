@@ -1,4 +1,5 @@
 using Terraria.ModLoader;
+using Tremor.Items.Wood;
 
 namespace Tremor.Items
 {
@@ -25,8 +26,8 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "HardBulwark", 1);
-			recipe.AddIngredient(null, "WoodenFrame", 1);
+			recipe.AddIngredient(ModContent.ItemType<HardBulwark>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<WoodenFrame>(), 1);
 			recipe.AddTile(114);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

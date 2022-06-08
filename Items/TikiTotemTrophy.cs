@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 50000;
-			item.createTile = mod.TileType("TikiTotemTrophy");
+			item.createTile = ModContent.TileType<Tiles.TikiTotemTrophy>();
 			item.placeStyle = 0;
 		}
 

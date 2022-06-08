@@ -7,7 +7,6 @@ namespace Tremor.Items
 	public class SalamanderLeggings : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
@@ -25,7 +24,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Increases movement speed");
 		}
 
-
 		public override void UpdateEquip(Player player)
 		{
 			player.moveSpeed += 0.1f;
@@ -34,7 +32,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "SalamanderSkin", 8);
+			recipe.AddIngredient(ModContent.ItemType<SalamanderSkin>(), 8);
 			recipe.SetResult(this);
 			recipe.AddTile(18);
 			recipe.AddRecipe();

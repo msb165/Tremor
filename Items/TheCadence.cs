@@ -24,14 +24,14 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.AddBuff(mod.BuffType("TheCadenceBuff"), 2);
+			player.AddBuff(ModContent.BuffType<Buffs.TheCadenceBuff>(), 2);
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "DragonCapsule", 10);
-			recipe.AddIngredient(null, "EarthFragment", 8);
+			recipe.AddIngredient(ModContent.ItemType<DragonCapsule>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<EarthFragment>(), 8);
 			recipe.AddIngredient(ItemID.Sapphire, 6);
 			recipe.SetResult(this);
 			recipe.AddTile(412);

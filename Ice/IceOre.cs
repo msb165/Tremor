@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Ice.Items;
 
 namespace Tremor.Ice
 {
@@ -21,7 +22,7 @@ namespace Tremor.Ice
 			soundType = 21;
 			soundStyle = 2;
 			Main.tileLighted[Type] = true;
-			drop = mod.ItemType("Icicle");
+			drop = ModContent.ItemType<Icicle>();
 			AddMapEntry(new Color(117, 187, 253));
 		}
 	}

@@ -1,5 +1,8 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Items.Desert;
+using Tremor.Items.Sandstone;
+using Tremor.NPCs;
 
 namespace Tremor.Items
 {
@@ -7,7 +10,6 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-
 			item.maxStack = 999;
 			item.consumable = true;
 			item.width = 24;
@@ -15,15 +17,13 @@ namespace Tremor.Items
 
 			item.rare = 9;
 			item.expert = true;
-			bossBagNPC = mod.NPCType("npcVultureKing");
 		}
-
+		public override int BossBagNPC => ModContent.NPCType<npcVultureKing>();
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("Right click to open");
+			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
-
 
 		public override bool CanRightClick()
 		{
@@ -32,27 +32,27 @@ namespace Tremor.Items
 
 		public override void OpenBossBag(Player player)
 		{
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.NextBool(7))
 			{
-				player.QuickSpawnItem(mod.ItemType("VultureKingMask"));
+				player.QuickSpawnItem(ModContent.ItemType<VultureKingMask>());
 			}
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(mod.ItemType("CactusBow"));
+				player.QuickSpawnItem(ModContent.ItemType<CactusBow>());
 			}
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(mod.ItemType("SandKnife"));
+				player.QuickSpawnItem(ModContent.ItemType<SandKnife>());
 			}
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.NextBool(4))
 			{
-				player.QuickSpawnItem(mod.ItemType("VultureFeather"));
+				player.QuickSpawnItem(ModContent.ItemType<VultureFeather>());
 			}
 			if (Main.rand.NextBool())
 			{
-				player.QuickSpawnItem(mod.ItemType("SandstoneBar"), Main.rand.Next(10, 18));
+				player.QuickSpawnItem(ModContent.ItemType<SandstoneBar>(), Main.rand.Next(10, 18));
 			}
-			player.QuickSpawnItem(mod.ItemType("DesertClaymore"));
+			player.QuickSpawnItem(ModContent.ItemType<DesertClaymore>());
 		}
 	}
 }

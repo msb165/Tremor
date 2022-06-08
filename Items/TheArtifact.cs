@@ -13,8 +13,8 @@ namespace Tremor.Items
 			item.useTime = 25;
 			item.useAnimation = 25;
 
-			item.shoot = mod.ProjectileType("AnnoyingDog");
-			item.buffType = mod.BuffType("AnnoyingDogBuff");
+			item.shoot = ModContent.ProjectileType<Projectiles.AnnoyingDog>();
+			item.buffType = ModContent.BuffType<Buffs.AnnoyingDogBuff>();
 		}
 
 		public override void SetStaticDefaults()
@@ -22,7 +22,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("The Artifact");
 			Tooltip.SetDefault("Summons annoying dog");
 		}
-
 
 		public override void UseStyle(Player player)
 		{

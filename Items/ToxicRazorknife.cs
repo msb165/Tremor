@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.height = 32;
 			item.melee = true;
 			item.useTime = 30;
-			item.shoot = mod.ProjectileType("ToxicRazorknifePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.ToxicRazorknifePro>();
 			item.shootSpeed = 12f;
 			item.useAnimation = 25;
 			item.useStyle = 5;

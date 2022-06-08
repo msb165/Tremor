@@ -23,11 +23,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GrayKnightBreastplate", 3);
+			recipe.AddIngredient(ModContent.ItemType<GrayKnightBreastplate>(), 3);
 			recipe.AddIngredient(ItemID.Amethyst, 1);
 			recipe.SetResult(this);
 			recipe.AddTile(16);

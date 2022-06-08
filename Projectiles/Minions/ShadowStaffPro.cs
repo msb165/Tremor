@@ -34,7 +34,6 @@ namespace Tremor.Projectiles.Minions
        
     }
 
-
 		public override bool OnTileCollide(Vector2 oldVelocity)
 		{
 				if (projectile.velocity.X != oldVelocity.X)
@@ -50,8 +49,8 @@ namespace Tremor.Projectiles.Minions
 		
     public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
     {
-			TremorPlayer modPlayer = Main.player[projectile.owner].GetModPlayer<TremorPlayer>(mod);
-            if(modPlayer.shadowArmSF && Main.rand.Next(3) == 0)
+			TremorPlayer modPlayer = Main.player[projectile.owner].GetModPlayer<TremorPlayer>();
+            if(modPlayer.shadowArmSF && Main.rand.NextBool(3))
 			{
                   target.AddBuff(153, 180, false);
 			}
@@ -59,7 +58,7 @@ namespace Tremor.Projectiles.Minions
 
         public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
         {
-            Texture2D texture = ModLoader.GetTexture("Tremor/Projectiles/ShadowChain");
+            Texture2D texture = ModContent.GetTexture("Tremor/Projectiles/ShadowChain");
 
             Vector2 position = projectile.Center;
             Vector2 mountedCenter = Main.player[projectile.owner].MountedCenter;
@@ -97,7 +96,7 @@ namespace Tremor.Projectiles.Minions
 		public override void CheckActive()
 		{
 			Player player = Main.player[projectile.owner];
-			TremorPlayer modPlayer = (TremorPlayer)player.GetModPlayer(mod, "TremorPlayer");
+			TremorPlayer modPlayer = player.GetModPlayer<TremorPlayer>();
 			if (player.dead)
 			{
 				modPlayer.shadowMinion = false;

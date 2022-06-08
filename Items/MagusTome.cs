@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.mana = 9;
 			item.useAnimation = 25;
 			item.useStyle = 5;
-			item.shoot = mod.ProjectileType("MagusBallF");
+			item.shoot = ModContent.ProjectileType<Projectiles.MagusBallF>();
 			item.shootSpeed = 12f;
 			item.knockBack = 4;
 			item.value = 32000;

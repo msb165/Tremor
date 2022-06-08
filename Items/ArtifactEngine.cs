@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.NPCs.Bosses.CogLord;
 
 namespace Tremor.Items
 {
@@ -27,13 +28,13 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Artifact Engine");
-			Tooltip.SetDefault("Summons Cog Lord");
+			Tooltip.SetDefault("Summons Cog Lord\n" +
+"Requires any mech. boss to have been slain, hardmode and night time");
 		}
-
 
 		public override bool CanUseItem(Player player)
 		{
-			return !Main.dayTime && Main.hardMode && NPC.downedMechBossAny && !NPC.AnyNPCs(mod.NPCType("CogLord"));
+			return !Main.dayTime && Main.hardMode && NPC.downedMechBossAny && !NPC.AnyNPCs(ModContent.NPCType<CogLord>());
 		}
 
 		public override void AddRecipes()
@@ -43,7 +44,7 @@ namespace Tremor.Items
 			recipe.AddIngredient(ItemID.HallowedBar, 6);
 			recipe.AddIngredient(ItemID.Cog, 25);
 			recipe.AddIngredient(ItemID.Wire, 20);
-			recipe.AddIngredient(null, "GolemCore", 1);
+			recipe.AddIngredient(ModContent.ItemType<GolemCore>(), 1);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();
@@ -55,7 +56,7 @@ namespace Tremor.Items
 			Main.PlaySound(15, (int)player.position.X, (int)player.position.Y, 0);
 			if (Main.netMode != 1)
 			{
-				NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, mod.NPCType("CogLord"));
+				NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<CogLord>());
 			}
 			return true;
 		}

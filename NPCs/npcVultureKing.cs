@@ -3,6 +3,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items;
+using Tremor.Items.Sandstone;
 
 namespace Tremor.NPCs
 {
@@ -53,7 +55,6 @@ namespace Tremor.NPCs
 		bool runAway;
 		#endregion
 
-
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Rukh");
@@ -74,9 +75,9 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.value = Item.buyPrice(0, 0, 75, 0);
 			npc.boss = true;
-			ShootType = mod.ProjectileType("projVultureFeather");
+			ShootType = ModContent.ProjectileType<Projectiles.projVultureFeather>();
 			ShootType2 = 657;
-			bossBag = mod.ItemType("VultureKingBag");
+			bossBag = ModContent.ItemType<VultureKingBag>();
 			npc.noTileCollide = true;
 		}
 
@@ -224,32 +225,32 @@ namespace Tremor.NPCs
 				int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
 				int halfLength = npc.width / 2 / 16 + 1;
 
-				if (!Main.expertMode && Main.rand.Next(7) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("VultureKingMask"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<VultureKingMask>());
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("VultureKingTrophy"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<VultureKingTrophy>());
 				}
-				if (!Main.expertMode && Main.rand.Next(3) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CactusBow"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CactusBow>());
 				}
-				if (!Main.expertMode && Main.rand.Next(3) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SandKnife"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SandKnife>());
 				}
-				if (!Main.expertMode && Main.rand.Next(4) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(4))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("VultureFeather"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<VultureFeather>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SandstoneBar"), Main.rand.Next(10, 18));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SandstoneBar>(), Main.rand.Next(10, 18));
 				}
 
-				TremorWorld.downedBoss[TremorWorld.Boss.Rukh] = true;
+				TremorWorld.Boss.Rukh.Downed();
 
 			}
 		}

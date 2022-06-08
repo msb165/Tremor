@@ -14,12 +14,12 @@ namespace Tremor.Waters
 
         public override int ChooseWaterfallStyle()
 		{
-			return mod.GetWaterfallStyleSlot("IceWaterfall");
+			return mod.GetWaterfallStyleSlot<IceWaterfall>();
 		}
 
 		public override int GetSplashDust()
 		{
-			return mod.DustType<Dusts.IceWaterSplash>();
+			return ModContent.DustType<Dusts.IceWaterSplash>();
 		}
 
 		public override int GetDropletGore()

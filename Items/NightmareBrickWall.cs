@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.rare = 11;
 			item.consumable = true;
-			item.createWall = mod.WallType("NightmareBrickWall");
+			item.createWall = ModContent.WallType<Walls.NightmareBrickWall>();
 		}
 
 		public override void SetStaticDefaults()
@@ -26,11 +26,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "NightmareBrick", 1);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBrick>(), 1);
 			recipe.SetResult(this, 4);
 			recipe.AddTile(17);
 			recipe.AddRecipe();

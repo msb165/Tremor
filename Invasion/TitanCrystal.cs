@@ -41,7 +41,7 @@ namespace Tremor.Invasion
 			direction *= 9f;
 			npc.rotation = 0f;
 			Player player = Main.player[npc.target];
-			NPC parent = Main.npc[NPC.FindFirstNPC(mod.NPCType("Titan"))];
+			NPC parent = Main.npc[NPC.FindFirstNPC(ModContent.NPCType<Titan>())];
 			double deg = (double)npc.ai[1] / 2;
 			double rad = deg * (Math.PI / 180);
 			double dist = 250;
@@ -61,7 +61,7 @@ namespace Tremor.Invasion
 		{
 			for (int k = 0; k < 5; k++)
 			{
-				Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType<CyberDust>(), hitDirection, -1f, 0, default(Color), 1f);
+				Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), hitDirection, -1f, 0, default(Color), 1f);
 			}
 		}
 

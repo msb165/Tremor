@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.NPCs;
 
 namespace Tremor.Projectiles
 {
@@ -24,8 +25,6 @@ namespace Tremor.Projectiles
 			DisplayName.SetDefault("LizardPro");
 
 		}
-
-
 
 		public override bool OnTileCollide(Vector2 oldVelocity)
 		{
@@ -50,9 +49,8 @@ namespace Tremor.Projectiles
 
 		public override void Kill(int timeLeft)
 		{
-			NPC.NewNPC((int)projectile.Center.X, (int)projectile.Center.Y, mod.NPCType("Lizard"));
+			NPC.NewNPC((int)projectile.Center.X, (int)projectile.Center.Y, ModContent.NPCType<Lizard>());
 		}
-
 
 	}
 }

@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Projectiles.Minions;
 
 namespace Tremor.Items
 {
@@ -24,7 +25,7 @@ namespace Tremor.Items
 			item.rare = 2;
 			item.UseSound = SoundID.Item44;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("AntiqueStavePro");
+			item.shoot = ModContent.ProjectileType<AntiqueStavePro>();
 			item.summon = true;
 			item.sentry = true;
 		}
@@ -34,7 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Antique Stave");
 			Tooltip.SetDefault("Summons a antique spirit to shoot bolts at your enemies");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{
@@ -49,7 +49,6 @@ namespace Tremor.Items
 			}
 			return base.UseItem(player);
 		}
-
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

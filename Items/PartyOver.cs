@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Candy;
 
 namespace Tremor.Items
 {
@@ -33,8 +34,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
@@ -53,13 +52,12 @@ namespace Tremor.Items
 			return Vector2.Zero;
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.SoulofFlight, 20);
-			recipe.AddIngredient(null, "ConcentratedEther", 8);
-			recipe.AddIngredient(null, "CandyBar", 15);
+			recipe.AddIngredient(ModContent.ItemType<ConcentratedEther>(), 8);
+			recipe.AddIngredient(ModContent.ItemType<CandyBar>(), 15);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

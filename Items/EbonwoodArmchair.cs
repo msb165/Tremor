@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.maxStack = 99;
 			item.value = 100;
 			item.rare = 1;
-			item.createTile = mod.TileType("EbonwoodArmchair");
+			item.createTile = ModContent.TileType<Tiles.EbonwoodArmchair>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -27,7 +27,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Ebonwood Armchair");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

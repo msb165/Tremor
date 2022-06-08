@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.NPCs;
 
 namespace Tremor.Items
 {
@@ -7,23 +8,19 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-
 			item.maxStack = 999;
 			item.consumable = true;
 			item.width = 24;
 			item.height = 24;
-
 			item.rare = 9;
 			item.expert = true;
-			bossBagNPC = mod.NPCType("HeaterOfWorldsHead");
 		}
-
+		public override int BossBagNPC => ModContent.NPCType<HeaterOfWorldsHead>();
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("Right click to open");
+			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
-
 
 		public override bool CanRightClick()
 		{
@@ -32,12 +29,12 @@ namespace Tremor.Items
 
 		public override void OpenBossBag(Player player)
 		{
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.NextBool(7))
 			{
-				player.QuickSpawnItem(mod.ItemType("HeaterOfWorldsMask"));
+				player.QuickSpawnItem(ModContent.ItemType<HeaterOfWorldsMask>());
 			}
-			player.QuickSpawnItem(mod.ItemType("MoltenParts"));
-			player.QuickSpawnItem(mod.ItemType("InfernalShield"));
+			player.QuickSpawnItem(ModContent.ItemType<MoltenParts>());
+			player.QuickSpawnItem(ModContent.ItemType<InfernalShield>());
 		}
 
 	}

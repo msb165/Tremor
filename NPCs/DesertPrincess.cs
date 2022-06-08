@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Desert;
 
 namespace Tremor.NPCs
 {
@@ -19,20 +21,21 @@ namespace Tremor.NPCs
 			npc.npcSlots = 5f;
 			npc.aiStyle = -1;
 			aiType = -1;
-			npc.damage = 110;
+			npc.damage = 65;
 			npc.width = 77;
 			npc.height = 72;
-			npc.defense = 45;
-			npc.lifeMax = 22000;
+			npc.defense = 40;
+			npc.lifeMax = 8000;
 			npc.knockBackResist = 0f;
 			npc.scale = 1f;
-			for (int k = 0; k < npc.buffImmune.Length; k++)
-			{
-				npc.buffImmune[k] = true;
-			}
+
+			npc.buffImmune[BuffID.Poisoned] = true;
+			npc.buffImmune[BuffID.Venom] = true;
+			npc.buffImmune[BuffID.Confused] = true;
+
 			npc.lavaImmune = true;
 			npc.noGravity = true;
-			npc.value = Item.buyPrice(0, 15, 0, 0);
+			npc.value = Item.buyPrice(gold: 15);
 			npc.HitSound = SoundID.NPCHit45;
 			npc.DeathSound = SoundID.NPCDeath47;
 		}
@@ -166,7 +169,7 @@ namespace Tremor.NPCs
 						{
 							npc.ai[0] = 3f;
 						}
-						else if (num1307 == 2 && NPC.CountNPCS(mod.NPCType("DesertPrincess2")) < num1305)
+						else if (num1307 == 2 && NPC.CountNPCS(ModContent.NPCType<DesertPrincess2>()) < num1305)
 						{
 							npc.ai[0] = 4f;
 						}
@@ -471,7 +474,7 @@ namespace Tremor.NPCs
 								npc.ai[3] += 1f;
 								if (npc.ai[3] == num1325)
 								{
-									NPC.NewNPC(num1321 * 16 + 8, num1322 * 16, mod.NPCType("DesertPrincess2"), npc.whoAmI, 0f, 0f, 0f, 0f, 255);
+									NPC.NewNPC(num1321 * 16 + 8, num1322 * 16, ModContent.NPCType<DesertPrincess2>(), npc.whoAmI, 0f, 0f, 0f, 0f, 255);
 								}
 								else if (npc.ai[3] == num1325 * 2)
 								{
@@ -479,7 +482,7 @@ namespace Tremor.NPCs
 									npc.ai[1] = 0f;
 									npc.ai[2] = 0f;
 									npc.ai[3] = 0f;
-									if (NPC.CountNPCS(mod.NPCType("DesertPrincess2")) < num1305 && Main.rand.Next(3) != 0)
+									if (NPC.CountNPCS(ModContent.NPCType<DesertPrincess2>()) < num1305 && Main.rand.Next(3) != 0)
 									{
 										npc.ai[0] = 4f;
 									}
@@ -501,10 +504,9 @@ namespace Tremor.NPCs
 			}
 		}
 
-
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			return spawnInfo.player.ZoneJungle && NPC.downedPlantBoss ? 0.001f : 0f;
+			return spawnInfo.player.ZoneDesert && NPC.downedPlantBoss ? 0.001f : 0f;
 		}
 
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
@@ -515,15 +517,35 @@ namespace Tremor.NPCs
 
 		public override void NPCLoot()
 		{
-			if (Main.netMode != 1)
+			//1.3.1.13
+			//Desert Princess now drops only 1 of 3 Desert Explorer set items
+			int[] items = new[]
 			{
-				int centerX = (int)(npc.position.X + npc.width / 2) / 16;
-				int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
-				int halfLength = npc.width / 2 / 16 + 1;
-				Helper.DropItem(new Rectangle((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height), new Drop(mod.ItemType("DesertExplorerVisage"), 1, 1), new Drop(mod.ItemType("DesertExplorerGreaves"), 1, 2), new Drop(mod.ItemType("DesertExplorerBreastplate"), 1, 2));
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 500, Main.rand.Next(5, 15));
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 499, Main.rand.Next(5, 15));
+				ModContent.ItemType<DesertExplorerVisage>(),
+				ModContent.ItemType<DesertExplorerGreaves>(),
+				ModContent.ItemType<DesertExplorerBreastplate>()
+			};
+
+			// Smart code, so we dont end up always getting the same item
+			int firstItem = Utils.SelectRandom<int>(Main.rand, items);
+			int secondItem = Utils.SelectRandom<int>(Main.rand, items.Where(x => x != firstItem).ToArray());
+			int thirdItem = items.FirstOrDefault(x => x != firstItem && x != secondItem);
+
+			if (Main.rand.NextBool(2))
+			{
+				npc.NewItem(firstItem);
 			}
+			else if (Main.rand.NextBool(2))
+			{
+				npc.NewItem(secondItem);
+			}
+			else if (Main.rand.NextBool(2))
+			{
+				npc.NewItem(thirdItem);
+			}
+
+			npc.NewItem(500, Main.rand.Next(5, 15));
+			npc.NewItem(499, Main.rand.Next(5, 15));
 		}
 	}
 }

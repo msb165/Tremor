@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.useAnimation = 45;
 			item.useStyle = 1;
 			item.knockBack = 3;
-			item.shoot = mod.ProjectileType("VulcanBladePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.VulcanBladePro>();
 			item.shootSpeed = 12f;
 			item.value = 600000;
 			item.rare = 0;
@@ -30,9 +30,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Vulcan Blade");
-			Tooltip.SetDefault("Shoots a molten bolt that leaves molten spheres behind\nSpheres home on enemies, explode on contact and set enemies on fire");
+			Tooltip.SetDefault("Shoots a molten bolt that leaves molten spheres behind\n" +
+"Spheres home on enemies, explode on contact and set enemies on fire");
 		}
-
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{

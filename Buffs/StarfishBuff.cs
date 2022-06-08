@@ -19,7 +19,7 @@ namespace Tremor.Buffs
 		public override void Update(Player player, ref int buffIndex)
 		{
 			if (MinionType == -1)
-				MinionType = mod.ProjectileType("StarfishPro");
+				MinionType = ModContent.ProjectileType<Projectiles.Minions.StarfishPro>();
 			if (MinionID == -1 || Main.projectile[MinionID].type != MinionType || !Main.projectile[MinionID].active || Main.projectile[MinionID].owner != player.whoAmI)
 			{
 				Projectile proj = new Projectile();

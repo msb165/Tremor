@@ -17,7 +17,7 @@ namespace Tremor.Invasion
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 50000;
-			item.createTile = mod.TileType("ParadoxTitanTrophyTile");
+			item.createTile = ModContent.TileType<ParadoxTitanTrophyTile>();
 			item.placeStyle = 0;
 		}
 

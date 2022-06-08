@@ -4,11 +4,19 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Projectiles.Alchemic.Blasts;
+using Tremor.Projectiles.Alchemic.Bursts;
 
 namespace Tremor.Projectiles.Alchemic
 {
-	public class BigHealingFlackPro : ModProjectile
+	public class BigHealingFlackPro : AlchemistProjectile
 	{
+		public override void SetStaticDefaults()
+		{
+			ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;
+			ProjectileID.Sets.TrailingMode[projectile.type] = 2;
+		}
+
 		public override void SetDefaults()
 		{
 			projectile.width = 18;
@@ -17,19 +25,18 @@ namespace Tremor.Projectiles.Alchemic
 			projectile.aiStyle = 2;
 			projectile.timeLeft = 1200;
 			projectile.penetrate = 1;
-			if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("BouncingCasingBuff")))
+			// todo: move
+			if (Main.LocalPlayer.HasBuffSafe(ModContent.BuffType<Buffs.BouncingCasingBuff>()))
 			{
 				projectile.penetrate = 3;
 			}
 			else
 				projectile.penetrate = 1;
-			ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;
-			ProjectileID.Sets.TrailingMode[projectile.type] = 2;
 		}
 
 		public override void AI()
 		{
-			if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("TheCadenceBuff")))
+			if (Main.LocalPlayer.HasBuffSafe(ModContent.BuffType<Buffs.TheCadenceBuff>()))
 			{
 				int[] array = new int[20];
 				int num428 = 0;
@@ -72,27 +79,18 @@ namespace Tremor.Projectiles.Alchemic
 						num440 = num437 / num440;
 						num438 *= num440;
 						num439 *= num440;
-						if (Main.rand.Next(2) == 0)
+						if (Main.rand.NextBool(2))
 						{
-							Projectile.NewProjectile(value10.X, value10.Y, num438, num439, mod.ProjectileType("TheCadenceProj"), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
+							Projectile.NewProjectile(value10.X, value10.Y, num438, num439, ModContent.ProjectileType<TheCadenceProj>(), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
 						}
 					}
 				}
 			}
 		}
 
-		public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
-		{
-			if (Main.rand.Next(1, 101) <= Main.player[projectile.owner].GetModPlayer<MPlayer>(mod).alchemistCrit)
-			{
-				crit = true;
-			}
-		}
-
-
 		public override bool OnTileCollide(Vector2 oldVelocity)
 		{
-			if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("BouncingCasingBuff")))
+			if (Main.LocalPlayer.HasBuffSafe(ModContent.BuffType<Buffs.BouncingCasingBuff>()))
 			{
 				projectile.penetrate--;
 				if (projectile.penetrate <= 0)
@@ -120,21 +118,20 @@ namespace Tremor.Projectiles.Alchemic
 			return false;
 		}
 
-
 		public override void Kill(int timeLeft)
 		{
-			if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("DesertEmperorSetBuff")))
+			if (Main.LocalPlayer.HasBuffSafe(ModContent.BuffType<Buffs.DesertEmperorSetBuff>()))
 			{
-				int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("FlaskWasp"), projectile.damage * 2, 1.5f, projectile.owner);
-				int b = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("FlaskWasp"), projectile.damage * 2, 1.5f, projectile.owner);
+				int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FlaskWasp>(), projectile.damage * 2, 1.5f, projectile.owner);
+				int b = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FlaskWasp>(), projectile.damage * 2, 1.5f, projectile.owner);
 			}
 			Player player = Main.player[projectile.owner];
-			MPlayer modPlayer = (MPlayer)player.GetModPlayer(mod, "MPlayer");
+			MPlayer modPlayer = player.GetModPlayer<MPlayer>();
 			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 107);
 			Gore.NewGore(projectile.position, -projectile.oldVelocity * 0.2f, 704, 1f);
 			Gore.NewGore(projectile.position, -projectile.oldVelocity * 0.2f, 705, 1f);
 
-			if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("BrassChipBuff")))
+			if (player.HasBuffSafe(ModContent.BuffType<Buffs.BrassChipBuff>()))
 			{
 				for (int i = 0; i < 5; i++)
 				{
@@ -144,7 +141,7 @@ namespace Tremor.Projectiles.Alchemic
 					Main.projectile[a].friendly = true;
 				}
 			}
-			if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("ChaosElementBuff")))
+			if (player.HasBuffSafe(ModContent.BuffType<Buffs.ChaosElementBuff>()))
 			{
 				int num220 = Main.rand.Next(3, 6);
 				for (int num221 = 0; num221 < num220; num221++)
@@ -152,7 +149,7 @@ namespace Tremor.Projectiles.Alchemic
 					Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 					value17.Normalize();
 					value17 *= Main.rand.Next(10, 201) * 0.01f;
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, mod.ProjectileType("Shatter1"), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
+					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<Shatter1>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
 				}
 			}
 
@@ -166,339 +163,335 @@ namespace Tremor.Projectiles.Alchemic
 						Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 						value17.Normalize();
 						value17 *= Main.rand.Next(10, 201) * 0.01f;
-						Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, mod.ProjectileType("HealingCloudPro"), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
+						Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<HealingCloudPro>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
 					}
 				}
 
 			}
 			if (projectile.owner == Main.myPlayer)
 			{
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("PyroBuff")) && !modPlayer.nitro)
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.PyroBuff>()) && !modPlayer.nitro)
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1.5f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
 					Main.projectile[a].scale = 1.5f;
 				}
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("ChemikazeBuff")) && !modPlayer.nitro)
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.ChemikazeBuff>()) && !modPlayer.nitro)
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1.25f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1.25f, projectile.owner);
 					Main.projectile[a].scale = 1.25f;
-					int b = Projectile.NewProjectile(projectile.position.X + 32, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X - 32, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 32, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 32, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(projectile.position.X + 32, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(projectile.position.X - 32, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 32, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 32, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
 				}
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("CrossBlastBuff")) && !modPlayer.nitro)
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.CrossBlastBuff>()) && !modPlayer.nitro)
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1.25f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1.25f, projectile.owner);
 					Main.projectile[a].scale = 1.25f;
-					int b = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 30, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 30, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 0.7f, projectile.owner);
+					int b = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 30, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 30, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
 					Main.projectile[f].scale = 0.7f;
-					int g = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 0.7f, projectile.owner);
+					int g = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
 					Main.projectile[g].scale = 0.7f;
-					int h = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 50, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 0.7f, projectile.owner);
+					int h = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 50, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
 					Main.projectile[h].scale = 0.7f;
-					int i = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 50, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 0.7f, projectile.owner);
+					int i = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 50, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
 					Main.projectile[i].scale = 0.7f;
-					int j = Projectile.NewProjectile(projectile.position.X + 70, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 0.5f, projectile.owner);
+					int j = Projectile.NewProjectile(projectile.position.X + 70, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 0.5f, projectile.owner);
 					Main.projectile[j].scale = 0.8f;
-					int k = Projectile.NewProjectile(projectile.position.X - 70, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 0.5f, projectile.owner);
+					int k = Projectile.NewProjectile(projectile.position.X - 70, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 0.5f, projectile.owner);
 					Main.projectile[k].scale = 0.8f;
-					int l = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 70, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 0.5f, projectile.owner);
+					int l = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 70, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 0.5f, projectile.owner);
 					Main.projectile[l].scale = 0.8f;
-					int m = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 70, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 0.5f, projectile.owner);
+					int m = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 70, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 0.5f, projectile.owner);
 					Main.projectile[m].scale = 0.8f;
 				}
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("RoundBlastBuff")) && !modPlayer.nitro)
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.RoundBlastBuff>()) && !modPlayer.nitro)
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 60, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 60, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 40, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y + 40, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int g = Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y - 40, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int h = Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y - 40, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 60, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 60, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 40, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y + 40, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y - 40, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y - 40, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("SquareBlastBuff")) && !modPlayer.nitro)
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.SquareBlastBuff>()) && !modPlayer.nitro)
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X + 70, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X - 70, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 70, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 70, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 70, projectile.position.Y + 70, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X - 70, projectile.position.Y + 70, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int g = Projectile.NewProjectile(projectile.position.X + 70, projectile.position.Y - 70, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
-					int h = Projectile.NewProjectile(projectile.position.X - 70, projectile.position.Y - 70, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X + 70, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(projectile.position.X - 70, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 70, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 70, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X + 70, projectile.position.Y + 70, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(projectile.position.X - 70, projectile.position.Y + 70, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(projectile.position.X + 70, projectile.position.Y - 70, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(projectile.position.X - 70, projectile.position.Y - 70, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("NitroBuff")) && !modPlayer.pyro)
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.NitroBuff>()) && !modPlayer.pyro)
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 100);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("ReinforcedBurstBuff")) && !modPlayer.pyro)
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.ReinforcedBurstBuff>()) && !modPlayer.pyro)
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 100);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("LinearBurstBuff")) && !modPlayer.pyro)
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.LinearBurstBuff>()) && !modPlayer.pyro)
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 100);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X + 100, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X - 100, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X + 100, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X - 100, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("NitroBuff")) && Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("PyroBuff")))
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.NitroBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.PyroBuff>()))
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 42);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1.5f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
 					Main.projectile[a].scale = 1.5f;
-					int b = Projectile.NewProjectile(projectile.position.X + 20, projectile.position.Y, +5, 0, mod.ProjectileType("HealingSkull"), projectile.damage, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X - 20, projectile.position.Y, -5, 0, mod.ProjectileType("HealingSkull"), projectile.damage, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(projectile.position.X + 20, projectile.position.Y, +5, 0, ModContent.ProjectileType<HealingSkull>(), projectile.damage, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(projectile.position.X - 20, projectile.position.Y, -5, 0, ModContent.ProjectileType<HealingSkull>(), projectile.damage, 1f, projectile.owner);
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("ReinforcedBurstBuff")) && Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("PyroBuff")))
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.ReinforcedBurstBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.PyroBuff>()))
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 42);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1.5f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
 					Main.projectile[a].scale = 1.5f;
-					int b = Projectile.NewProjectile(projectile.position.X + 10, projectile.position.Y - 10, +6, 0, mod.ProjectileType("HealingSkull"), projectile.damage, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X - 10, projectile.position.Y - 10, -6, 0, mod.ProjectileType("HealingSkull"), projectile.damage, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 10, +4, 0, mod.ProjectileType("HealingSkull"), projectile.damage, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y + 10, -4, 0, mod.ProjectileType("HealingSkull"), projectile.damage, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(projectile.position.X + 10, projectile.position.Y - 10, +6, 0, ModContent.ProjectileType<HealingSkull>(), projectile.damage, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(projectile.position.X - 10, projectile.position.Y - 10, -6, 0, ModContent.ProjectileType<HealingSkull>(), projectile.damage, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 10, +4, 0, ModContent.ProjectileType<HealingSkull>(), projectile.damage, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y + 10, -4, 0, ModContent.ProjectileType<HealingSkull>(), projectile.damage, 1f, projectile.owner);
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("LinearBurstBuff")) && Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("PyroBuff")))
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.LinearBurstBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.PyroBuff>()))
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 42);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1.5f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
 					Main.projectile[a].scale = 1.5f;
-					int b = Projectile.NewProjectile(projectile.position.X + 10, projectile.position.Y - 15, +6, 0, mod.ProjectileType("HealingSkull"), projectile.damage, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X - 10, projectile.position.Y - 15, -6, 0, mod.ProjectileType("HealingSkull"), projectile.damage, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y, +5, 0, mod.ProjectileType("HealingSkull"), projectile.damage, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y, -5, 0, mod.ProjectileType("HealingSkull"), projectile.damage, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X + 70, projectile.position.Y + 15, +4, 0, mod.ProjectileType("HealingSkull"), projectile.damage, 1f, projectile.owner);
-					int g = Projectile.NewProjectile(projectile.position.X - 70, projectile.position.Y + 15, -4, 0, mod.ProjectileType("HealingSkull"), projectile.damage, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(projectile.position.X + 10, projectile.position.Y - 15, +6, 0, ModContent.ProjectileType<HealingSkull>(), projectile.damage, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(projectile.position.X - 10, projectile.position.Y - 15, -6, 0, ModContent.ProjectileType<HealingSkull>(), projectile.damage, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y, +5, 0, ModContent.ProjectileType<HealingSkull>(), projectile.damage, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y, -5, 0, ModContent.ProjectileType<HealingSkull>(), projectile.damage, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(projectile.position.X + 70, projectile.position.Y + 15, +4, 0, ModContent.ProjectileType<HealingSkull>(), projectile.damage, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(projectile.position.X - 70, projectile.position.Y + 15, -4, 0, ModContent.ProjectileType<HealingSkull>(), projectile.damage, 1f, projectile.owner);
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("RoundBlastBuff")) && Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("NitroBuff")))
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.RoundBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.NitroBuff>()))
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1.5f, projectile.owner);
+					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
 					Main.projectile[z].scale = 1.25f;
-					int a = Projectile.NewProjectile(projectile.position.X + 25, projectile.position.Y, 4, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X - 25, projectile.position.Y, -4, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 25, 0, 4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 25, 0, -4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 20, projectile.position.Y + 20, 4, 4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X + 25, projectile.position.Y, 4, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(projectile.position.X - 25, projectile.position.Y, -4, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 25, 0, 4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 25, 0, -4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X + 20, projectile.position.Y + 20, 4, 4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[e].scale = 0.8f;
-					int f = Projectile.NewProjectile(projectile.position.X - 20, projectile.position.Y + 20, -4, 4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(projectile.position.X - 20, projectile.position.Y + 20, -4, 4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[f].scale = 0.8f;
-					int g = Projectile.NewProjectile(projectile.position.X + 20, projectile.position.Y - 20, 4, -4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(projectile.position.X + 20, projectile.position.Y - 20, 4, -4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[g].scale = 0.8f;
-					int h = Projectile.NewProjectile(projectile.position.X - 20, projectile.position.Y - 20, -4, -4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(projectile.position.X - 20, projectile.position.Y - 20, -4, -4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[h].scale = 0.8f;
 				}
 
-
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("RoundBlastBuff")) && Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("ReinforcedBurstBuff")))
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.RoundBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.ReinforcedBurstBuff>()))
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1.5f, projectile.owner);
+					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
 					Main.projectile[z].scale = 1.25f;
-					int a = Projectile.NewProjectile(projectile.position.X + 65, projectile.position.Y, 3, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X - 65, projectile.position.Y, -3, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 35, 0, 4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 35, 0, -4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y + 20, 0, 4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X + 65, projectile.position.Y, 3, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(projectile.position.X - 65, projectile.position.Y, -3, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 35, 0, 4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 35, 0, -4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[e].scale = 1.2f;
-					int f = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y + 20, 0, 4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[f].scale = 1.2f;
-					int g = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y - 20, 0, -4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[g].scale = 1.2f;
-					int h = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y - 20, 0, -4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[h].scale = 1.2f;
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("RoundBlastBuff")) && Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("LinearBurstBuff")))
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.RoundBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.LinearBurstBuff>()))
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1.5f, projectile.owner);
+					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
 					Main.projectile[z].scale = 1.25f;
-					int a = Projectile.NewProjectile(projectile.position.X + 65, projectile.position.Y, 3, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X - 65, projectile.position.Y, -3, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 35, 0, 4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 35, 0, -4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y + 20, 0, 4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X + 65, projectile.position.Y, 3, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(projectile.position.X - 65, projectile.position.Y, -3, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 35, 0, 4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 35, 0, -4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[e].scale = 0.8f;
-					int f = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y + 20, 0, 4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[f].scale = 0.8f;
-					int g = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y - 20, 0, -4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[g].scale = 0.8f;
-					int h = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y - 20, 0, -4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[h].scale = 0.8f;
-					int i = Projectile.NewProjectile(projectile.position.X + 80, projectile.position.Y + 20, 0, 4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int i = Projectile.NewProjectile(projectile.position.X + 80, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[i].scale = 0.6f;
-					int k = Projectile.NewProjectile(projectile.position.X - 80, projectile.position.Y + 20, 0, 4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int k = Projectile.NewProjectile(projectile.position.X - 80, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[k].scale = 0.6f;
-					int l = Projectile.NewProjectile(projectile.position.X + 80, projectile.position.Y - 20, 0, -4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int l = Projectile.NewProjectile(projectile.position.X + 80, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[l].scale = 0.6f;
-					int m = Projectile.NewProjectile(projectile.position.X - 80, projectile.position.Y - 20, 0, -4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 2, 1f, projectile.owner);
+					int m = Projectile.NewProjectile(projectile.position.X - 80, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[m].scale = 0.6f;
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("SquareBlastBuff")) && Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("NitroBuff")))
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.SquareBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.NitroBuff>()))
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[d].scale = 1.5f;
-					int e = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 3, 3, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -3, 3, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
-					int g = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 3, -3, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
-					int h = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -3, -3, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 3, 3, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -3, 3, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 3, -3, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -3, -3, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 				}
 
-
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("SquareBlastBuff")) && Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("ReinforcedBurstBuff")))
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.SquareBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.ReinforcedBurstBuff>()))
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[d].scale = 1.5f;
-					int e = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 2, 3, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 2, 3, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[e].scale = 0.75f;
-					int f = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -2, 3, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -2, 3, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[f].scale = 0.75f;
-					int g = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 2, -3, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 2, -3, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[g].scale = 0.75f;
-					int h = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -2, -3, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -2, -3, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[h].scale = 0.75f;
-					int i = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 3, 2, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int i = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 3, 2, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[i].scale = 0.75f;
-					int j = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -3, 2, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int j = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -3, 2, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[j].scale = 0.75f;
-					int k = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 3, -2, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int k = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 3, -2, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[k].scale = 0.75f;
-					int l = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -3, -2, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int l = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -3, -2, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[l].scale = 0.75f;
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("SquareBlastBuff")) && Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("LinearBurstBuff")))
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.SquareBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.LinearBurstBuff>()))
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, mod.ProjectileType("HealingBlast"), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<HealingBlast>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[d].scale = 1.5f;
-					int e = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 2, 4, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 2, 4, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[e].scale = 0.65f;
-					int f = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -2, 4, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -2, 4, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[f].scale = 0.65f;
-					int g = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 2, -4, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 2, -4, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[g].scale = 0.65f;
-					int h = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -2, -4, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -2, -4, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[h].scale = 0.65f;
-					int i = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 4, 2, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int i = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 4, 2, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[i].scale = 0.65f;
-					int j = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -4, 2, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int j = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -4, 2, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[j].scale = 0.65f;
-					int k = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 4, -2, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int k = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 4, -2, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[k].scale = 0.65f;
-					int l = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -4, -2, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int l = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -4, -2, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[l].scale = 0.65f;
-					int m = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 3, 3, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int m = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 3, 3, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[m].scale = 0.7f;
-					int n = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -3, 3, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int n = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -3, 3, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[n].scale = 0.7f;
-					int o = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 3, -3, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int o = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 3, -3, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[o].scale = 0.7f;
-					int p = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -3, -3, mod.ProjectileType("HealingSkull"), projectile.damage * 2, 1f, projectile.owner);
+					int p = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -3, -3, ModContent.ProjectileType<HealingSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[p].scale = 0.7f;
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("NitroBuff")) && Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("ChemikazeBuff")))
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.NitroBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.ChemikazeBuff>()))
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 100);
-					Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y, -2, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y, +2, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y, -2, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y, +2, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("ReinforcedBurstBuff")) && Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("ChemikazeBuff")))
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.ReinforcedBurstBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.ChemikazeBuff>()))
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 100);
-					Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y, -2, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y, +2, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, -3, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, +3, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y, -2, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y, +2, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, -3, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, +3, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("LinearBurstBuff")) && Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("ChemikazeBuff")))
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.LinearBurstBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.ChemikazeBuff>()))
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 100);
-					Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y, -2, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y, +2, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, -3, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, +3, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X - 80, projectile.position.Y, -4, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X + 80, projectile.position.Y, +4, 0, mod.ProjectileType("HealingBurst"), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y, -2, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y, +2, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, -3, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, +3, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(projectile.position.X - 80, projectile.position.Y, -4, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(projectile.position.X + 80, projectile.position.Y, +4, 0, ModContent.ProjectileType<HealingBurst>(), projectile.damage, 1f, projectile.owner);
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("CrossBlastBuff")) && Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("NitroBuff")))
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.CrossBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.NitroBuff>()))
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 4, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, -4, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, -4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, -4, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, 4, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int g = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 60, 0, -4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int h = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 60, 0, 4, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 4, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, -4, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, -4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, -4, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, 4, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 60, 0, -4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 60, 0, 4, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("CrossBlastBuff")) && Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("ReinforcedBurstBuff")))
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.CrossBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.ReinforcedBurstBuff>()))
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 6, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, -6, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 6, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, -6, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, -6, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, 6, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int g = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 60, 0, -6, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int h = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 60, 0, 6, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 6, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, -6, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 6, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, -6, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, -6, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, 6, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 60, 0, -6, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 60, 0, 6, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
 				}
 
-				if (Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("CrossBlastBuff")) && Main.player[Main.myPlayer].buffType.Contains(mod.BuffType("LinearBurstBuff")))
+				if (player.HasBuffSafe(ModContent.BuffType<Buffs.CrossBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.LinearBurstBuff>()))
 				{
 					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 8, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, -8, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 8, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, -8, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, -8, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, 8, 0, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int g = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 60, 0, -8, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
-					int h = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 60, 0, 8, mod.ProjectileType("HealingSkullburst"), projectile.damage * 1, 1f, projectile.owner);
+					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 8, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, -8, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 8, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, -8, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, -8, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, 8, 0, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 60, 0, -8, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 60, 0, 8, ModContent.ProjectileType<HealingSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
 				}
 			}
 		}
-
-
 
 	}
 }

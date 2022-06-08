@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 150;
-			item.createTile = mod.TileType("StarvilTile");
+			item.createTile = ModContent.TileType<Tiles.StarvilTile>();
 		}
 
 		public override void SetStaticDefaults()
@@ -27,14 +27,13 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Allows you to treat space materials");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.MeteoriteBar, 15);
 			recipe.AddIngredient(ItemID.GoldBar, 15);
-			recipe.AddIngredient(null, "VoidBar", 15);
-			recipe.AddIngredient(null, "Squorb", 3);
+			recipe.AddIngredient(ModContent.ItemType<VoidBar>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<Squorb>(), 3);
 			recipe.AddIngredient(ItemID.FallenStar, 5);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
@@ -43,8 +42,8 @@ namespace Tremor.Items
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.MeteoriteBar, 15);
 			recipe.AddIngredient(ItemID.PlatinumBar, 15);
-			recipe.AddIngredient(null, "VoidBar", 15);
-			recipe.AddIngredient(null, "Squorb", 3);
+			recipe.AddIngredient(ModContent.ItemType<VoidBar>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<Squorb>(), 3);
 			recipe.AddIngredient(ItemID.FallenStar, 5);
 			recipe.SetResult(this);
 			recipe.AddTile(412);

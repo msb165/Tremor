@@ -35,7 +35,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Erupts three moon flame bolts");
 		}
 
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
@@ -52,9 +51,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "ScourgeofFlames", 1);
+			recipe.AddIngredient(ModContent.ItemType<ScourgeofFlames>(), 1);
 			recipe.AddIngredient(3467, 15);
-			recipe.AddIngredient(null, "NightmareBar", 11);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 11);
 			recipe.AddIngredient(ItemID.PlatinumBar, 9);
 			recipe.AddIngredient(ItemID.GoldBar, 9);
 			recipe.SetResult(this);

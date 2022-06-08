@@ -35,7 +35,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Erupts three fire bolts");
 		}
 
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
@@ -49,7 +48,7 @@ namespace Tremor.Items
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
 				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 6);
 			}
@@ -58,8 +57,8 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "FireFragment", 10);
-			recipe.AddIngredient(null, "Charcoal", 7);
+			recipe.AddIngredient(ModContent.ItemType<FireFragment>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<Charcoal>(), 7);
 			recipe.AddIngredient(ItemID.HellstoneBar, 8);
 			recipe.AddIngredient(ItemID.SoulofNight, 5);
 			recipe.SetResult(this);

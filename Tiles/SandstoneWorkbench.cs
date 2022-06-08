@@ -16,7 +16,7 @@ namespace Tremor.Tiles
 			Main.tileTable[Type] = true;
 			Main.tileLavaDeath[Type] = true;
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style2x1);
-			TileObjectData.newTile.CoordinateHeights = new[]{ 16, 16 };
+			TileObjectData.newTile.CoordinateHeights = new[]{16};
 			TileObjectData.addTile(Type);
 			adjTiles = new int[]{ TileID.WorkBenches };
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
@@ -25,7 +25,7 @@ namespace Tremor.Tiles
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 16, mod.ItemType("SandstoneWorkbench"));
+			Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<Items.Sandstone.SandstoneWorkbench>());
 		}
 	}
 }

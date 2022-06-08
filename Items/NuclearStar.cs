@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -43,7 +44,7 @@ namespace Tremor.Items
 			item.useStyle = 5;
 
 			item.noMelee = true;
-			item.shoot = mod.ProjectileType("NuclearStarPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.NuclearStarPro>();
 			item.shootSpeed = 20f;
 		}
 
@@ -53,18 +54,16 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Creates nuclear beams.");
 		}
 
-
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "StarBar", 25);
-			recipe.AddIngredient(null, "SoulofFight", 25);
+			recipe.AddIngredient(ModContent.ItemType<StarBar>(), 25);
+			recipe.AddIngredient(ModContent.ItemType<SoulofFight>(), 25);
 			recipe.AddIngredient(ItemID.LunarBar, 30);
 			recipe.AddIngredient(ItemID.Amber, 16);
-			recipe.AddIngredient(null, "Blasticyde", 10);
-			recipe.AddIngredient(null, "AngryShard", 15);
-			recipe.AddTile(null, "StarvilTile");
+			recipe.AddIngredient(ModContent.ItemType<Blasticyde>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<AngryShard>(), 15);
+			recipe.AddTile(ModContent.TileType<Tiles.StarvilTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

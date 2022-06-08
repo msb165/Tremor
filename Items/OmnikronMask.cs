@@ -10,7 +10,6 @@ namespace Tremor.Items
 	public class OmnikronMask : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
@@ -25,9 +24,8 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Omnikron Mask");
-			Tooltip.SetDefault("20% increased all damage");
+			Tooltip.SetDefault("20% increased damage");
 		}
-
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
@@ -35,13 +33,13 @@ namespace Tremor.Items
 		}
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("OmnikronBreastplate") && legs.type == mod.ItemType("OmnikronGreaves");
+			return body.type == ModContent.ItemType<OmnikronBreastplate>() && legs.type == ModContent.ItemType<OmnikronGreaves>();
 		}
 
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Calls ancient soul to protect you";
-			player.AddBuff(mod.BuffType("Omnibuff"), 2);
+			player.AddBuff(ModContent.BuffType<Buffs.Omnibuff>(), 2);
 			if (Math.Abs(player.velocity.X) + Math.Abs(player.velocity.Y) > 1f && !player.rocketFrame) // Makes sure the player is actually moving
 			{
 				for (int k = 0; k < 2; k++)
@@ -63,7 +61,7 @@ namespace Tremor.Items
 			player.meleeDamage += 0.2f;
 			player.rangedDamage += 0.2f;
 			player.thrownDamage += 0.2f;
-			player.GetModPlayer<MPlayer>(mod).alchemistDamage += 0.2f;
+			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.2f;
 		}
 
 		public override void ArmorSetShadows(Player player)
@@ -71,12 +69,10 @@ namespace Tremor.Items
 			player.armorEffectDrawOutlines = true;
 		}
 
-
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "OmnikronBar", 15);
+			recipe.AddIngredient(ModContent.ItemType<OmnikronBar>(), 15);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

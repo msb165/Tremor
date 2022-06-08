@@ -21,7 +21,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = false;
 			item.noUseGraphic = true;
-			item.shoot = mod.ProjectileType("PerfectBehemothPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.PerfectBehemothPro>();
 			item.shootSpeed = 8f;
 		}
 

@@ -11,7 +11,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 
 			item.shootSpeed = 8f;
-			item.shoot = mod.ProjectileType("AxeofExecutionerPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.AxeofExecutionerPro>();
 			item.damage = 175;
 			item.width = 18;
 			item.height = 20;
@@ -31,7 +31,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Axe of Executioner");
 			Tooltip.SetDefault("");
 		}
-
 
 	}
 }

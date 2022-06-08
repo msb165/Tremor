@@ -23,13 +23,13 @@ namespace Tremor.Ice.Items.Furniture
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 2000;
-			item.createTile = mod.TileType("IceBedTile");
+			item.createTile = ModContent.TileType<IceBedTile>();
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GlacierWood", 15);
+			recipe.AddIngredient(ModContent.ItemType<GlacierWood>(), 15);
 			recipe.AddIngredient(ItemID.Silk, 5);
 			recipe.SetResult(this);
 			recipe.AddTile(106);

@@ -33,7 +33,6 @@ namespace Tremor.Invasion
 			animationType = 3;
 		}
 
-
 		public override void NPCLoot()
 		{
 
@@ -41,7 +40,7 @@ namespace Tremor.Invasion
 
 		private void SettingNumber()
 		{
-			if (Main.rand.Next(2) == 1)
+			if (Main.rand.NextBool(2))
 			{
 				num++;
 			}
@@ -58,11 +57,11 @@ namespace Tremor.Invasion
 			{
 				for (int k = 0; k < 10; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType<CyberDust>(), 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
 
-				CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>(mod);
-				if (InvasionWorld.CyberWrath && Main.rand.Next(4) == 1)
+				CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
+				if (InvasionWorld.CyberWrath && Main.rand.NextBool(4))
 				{
 					InvasionWorld.CyberWrathPoints1 += 1;
 					//Main.NewText(("Wave 1: Complete " + TremorWorld.CyberWrathPoints + "%"), 39, 86, 134);
@@ -71,7 +70,7 @@ namespace Tremor.Invasion
 
 			for (int k = 0; k < damage / npc.lifeMax * 50.0; k++)
 			{
-				Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType<CyberDust>(), hitDirection, -1f, 0, default(Color), 0.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), hitDirection, -1f, 0, default(Color), 0.7f);
 			}
 		}
 	}

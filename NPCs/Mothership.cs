@@ -15,7 +15,6 @@ namespace Tremor.NPCs
 			Main.npcFrameCount[npc.type] = 8;
 		}
 
-
 		private float timeToNextFrame;
 		public int frame;
 
@@ -44,8 +43,6 @@ namespace Tremor.NPCs
 		private float lifeTime;
 		private bool Rage;
 
-
-
 		public Vector2 bossCenter
 		{
 			get { return npc.Center; }
@@ -68,7 +65,6 @@ namespace Tremor.NPCs
 				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CKMotherGore3"), 1f);
 			}
 		}
-
 
 		public override void AI()
 		{
@@ -137,11 +133,11 @@ namespace Tremor.NPCs
 			{
 				float angle = Main.rand.Next(0, (int)Math.PI * 200) / 100f;
 				Vector2 vel = new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle)) * 3 * Main.rand.Next(5);
-				Projectile.NewProjectile(bossCenter.X, bossCenter.Y + 15, vel.X + 15, vel.Y, mod.ProjectileType("PurplePulsePro"), 30, 5f);
-				Projectile.NewProjectile(bossCenter.X, bossCenter.Y, vel.X, vel.Y, mod.ProjectileType("PurplePulsePro"), 30, 5f);
-				Projectile.NewProjectile(bossCenter.X, bossCenter.Y - 15, vel.X - 15, vel.Y, mod.ProjectileType("PurplePulsePro"), 30, 5f);
-				Projectile.NewProjectile(bossCenter.X, bossCenter.Y + 30, vel.X + 30, vel.Y, mod.ProjectileType("PurplePulsePro"), 30, 5f);
-				Projectile.NewProjectile(bossCenter.X, bossCenter.Y - 30, vel.X - 30, vel.Y, mod.ProjectileType("PurplePulsePro"), 30, 5f);
+				Projectile.NewProjectile(bossCenter.X, bossCenter.Y + 15, vel.X + 15, vel.Y, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 5f);
+				Projectile.NewProjectile(bossCenter.X, bossCenter.Y, vel.X, vel.Y, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 5f);
+				Projectile.NewProjectile(bossCenter.X, bossCenter.Y - 15, vel.X - 15, vel.Y, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 5f);
+				Projectile.NewProjectile(bossCenter.X, bossCenter.Y + 30, vel.X + 30, vel.Y, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 5f);
+				Projectile.NewProjectile(bossCenter.X, bossCenter.Y - 30, vel.X - 30, vel.Y, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 5f);
 				timeToShoot = 1;
 			}
 			else
@@ -156,7 +152,7 @@ namespace Tremor.NPCs
 		public override bool PreNPCLoot()
 		{
 			Player player = Main.player[npc.target];
-			NPC.NewNPC((int)bossCenter.X, (int)bossCenter.Y, mod.NPCType("CyberKing"), 0, 0, 0, 0, 0, npc.target);
+			NPC.NewNPC((int)bossCenter.X, (int)bossCenter.Y, ModContent.NPCType<CyberKing>(), 0, 0, 0, 0, 0, npc.target);
 			Main.PlaySound(15, (int)player.position.X, (int)player.position.Y, 0);
 			return false;
 		}

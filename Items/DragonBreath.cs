@@ -15,7 +15,7 @@ namespace Tremor.Items
 			item.useTime = 14;
 			item.useAnimation = 14;
 			item.maxStack = 999;
-			item.shoot = mod.ProjectileType("DragonBreathPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.DragonBreathPro>();
 			item.shootSpeed = 8f;
 			item.useStyle = 1;
 			item.knockBack = 3;
@@ -31,7 +31,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Dragon Breath");
 			Tooltip.SetDefault("");
 		}
-
 
 	}
 }

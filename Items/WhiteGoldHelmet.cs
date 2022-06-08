@@ -8,25 +8,22 @@ namespace Tremor.Items
 	[AutoloadEquip(EquipType.Head)]
 	public class WhiteGoldHelmet : ModItem
 	{
-		const int ShootType = ProjectileID.HeatRay; // ��� ��������
-		const float ShootRange = 600.0f; // ��������� ��������
-		const float ShootKN = 1.0f; // ������������ 
-		const int ShootRate = 120; // ������� �������� (60 - 1 �������)
-		const int ShootCount = 2; // ������� �� �������
-		const float ShootSpeed = 20f; // �������� �������� (��� ������ - ���������)
-		const int spread = 45; // �������
-		const float spreadMult = 0.045f; // ����������� ��������
+		const int ShootType = ProjectileID.HeatRay; 
+		const float ShootRange = 600.0f; 
+		const float ShootKN = 1.0f; 
+		const int ShootRate = 120; 
+		const int ShootCount = 2; 
+		const float ShootSpeed = 20f; 
+		const int spread = 45; 
+		const float spreadMult = 0.045f; 
 
 		int TimeToShoot = ShootRate;
-
-
 
 		public override void SetDefaults()
 		{
 
 			item.width = 38;
 			item.height = 22;
-
 
 			item.value = 10000;
 			item.rare = 11;
@@ -36,9 +33,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("White Gold Helmet");
-			Tooltip.SetDefault("Increases ranged damage by 20%\nIncreases melee damage by 20%");
+			Tooltip.SetDefault("20% increased ranged damage\n" +
+"20% increased melee damage");
 		}
-
 
 		public override void UpdateEquip(Player player)
 		{
@@ -48,7 +45,7 @@ namespace Tremor.Items
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("WhiteGoldBreastplate") && legs.type == mod.ItemType("WhiteGoldGreaves");
+			return body.type == ModContent.ItemType<WhiteGoldBreastplate>() && legs.type == ModContent.ItemType<WhiteGoldGreaves>();
 		}
 
 		public override void UpdateArmorSet(Player player)
@@ -89,16 +86,16 @@ namespace Tremor.Items
 			{
 				velocity.X = velocity.X + Main.rand.Next(-spread, spread + 1) * spreadMult;
 				velocity.Y = velocity.Y + Main.rand.Next(-spread, spread + 1) * spreadMult;
-				int i = Projectile.NewProjectile(Main.player[item.owner].Center.X, Main.player[item.owner].Center.Y, velocity.X, velocity.Y, mod.ProjectileType("WhiteGoldKnife"), 100, ShootKN, item.owner);
+				int i = Projectile.NewProjectile(Main.player[item.owner].Center.X, Main.player[item.owner].Center.Y, velocity.X, velocity.Y, ModContent.ProjectileType<Projectiles.WhiteGoldKnife>(), 100, ShootKN, item.owner);
 			}
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "WhiteGoldBar", 12);
+			recipe.AddIngredient(ModContent.ItemType<WhiteGoldBar>(), 12);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "DivineForgeTile");
+			recipe.AddTile(ModContent.TileType<Tiles.DivineForgeTile>());
 			recipe.AddRecipe();
 		}
 	}

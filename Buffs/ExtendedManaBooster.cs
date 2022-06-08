@@ -17,7 +17,7 @@ namespace Tremor.Buffs
 			{
 				player.statMana += 200;
 				player.ManaEffect(200);
-				player.AddBuff(mod.BuffType("ExtendedManaBooster"), 2700);
+				player.AddBuff(ModContent.BuffType<Buffs.ExtendedManaBooster>(), 2700);
 			}
 		}
 	}

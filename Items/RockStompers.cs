@@ -24,7 +24,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Increases your knockback effect");
 		}
 
-
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
 		{
@@ -36,7 +35,7 @@ namespace Tremor.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.StoneBlock, 25);
 			recipe.AddIngredient(ItemID.Leather, 10);
-			recipe.AddIngredient(null, "RockHorn", 10);
+			recipe.AddIngredient(ModContent.ItemType<RockHorn>(), 10);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();

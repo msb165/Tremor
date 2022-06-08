@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useTime = 10;
 			item.useStyle = 1;
 			item.consumable = true;
-			item.createTile = mod.TileType("CoalBlock");
+			item.createTile = ModContent.TileType<Tiles.CoalBlock>();
 		}
 
 		public override void SetStaticDefaults()
@@ -25,7 +25,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Charcoal");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

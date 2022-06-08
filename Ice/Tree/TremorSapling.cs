@@ -24,7 +24,7 @@ namespace Tremor.Ice.Tree
 			TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
 			TileObjectData.newTile.CoordinateWidth = 16;
 			TileObjectData.newTile.CoordinatePadding = 2;
-			TileObjectData.newTile.AnchorValidTiles = new[] { mod.TileType("VeryVeryIce") };
+			TileObjectData.newTile.AnchorValidTiles = new[] { ModContent.TileType<VeryVeryIce>() };
 			TileObjectData.newTile.StyleHorizontal = true;
 			TileObjectData.newTile.DrawFlipHorizontal = true;
 			TileObjectData.newTile.WaterPlacement = LiquidPlacement.NotAllowed;
@@ -33,7 +33,7 @@ namespace Tremor.Ice.Tree
 			TileObjectData.addTile(Type);
 			sapling = true;
 			AddMapEntry(new Color(200, 200, 200));
-			// TODO: TreeCrash does not exist dustType = mod.DustType<TreeCrash>();
+			// TODO: TreeCrash does not exist dustType = ModContent.DustType<TreeCrash>();
 			adjTiles = new int[] { TileID.Saplings };
 		}
 

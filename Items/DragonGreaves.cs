@@ -7,7 +7,6 @@ namespace Tremor.Items
 	public class DragonGreaves : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
@@ -25,7 +24,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("95% increased movement speed");
 		}
 
-
 		public override void UpdateEquip(Player player)
 		{
 			player.moveSpeed += 0.95f;
@@ -39,8 +37,8 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "DragonCapsule", 10);
-			recipe.AddIngredient(null, "EarthFragment", 10);
+			recipe.AddIngredient(ModContent.ItemType<DragonCapsule>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<EarthFragment>(), 10);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

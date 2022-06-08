@@ -32,7 +32,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
 			target.AddBuff(24, 60);
@@ -42,14 +41,14 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.GoldBroadsword, 1);
-			recipe.AddIngredient(null, "FireFragment", 8);
+			recipe.AddIngredient(ModContent.ItemType<FireFragment>(), 8);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.PlatinumBroadsword, 1);
-			recipe.AddIngredient(null, "FireFragment", 8);
+			recipe.AddIngredient(ModContent.ItemType<FireFragment>(), 8);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();

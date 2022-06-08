@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Dark;
 
 namespace Tremor.Items
 {
@@ -25,9 +26,9 @@ namespace Tremor.Items
 			item.value = Item.buyPrice(0, 9, 0, 0);
 			item.rare = 7;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("ShadowStaffPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.Minions.ShadowStaffPro>();
 			item.shootSpeed = 2f;
-			item.buffType = mod.BuffType("ShadowArmBuff");
+			item.buffType = ModContent.BuffType<Buffs.ShadowArmBuff>();
 			item.buffTime = 3600;
 		}
 
@@ -36,7 +37,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Shadow Staff");
 			Tooltip.SetDefault("Summons a shadow arm to fight for you.");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{
@@ -62,7 +62,7 @@ namespace Tremor.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.SoulofNight, 8);
 			recipe.AddIngredient(ItemID.SpookyWood, 15);
-			recipe.AddIngredient(null, "DarknessCloth", 9);
+			recipe.AddIngredient(ModContent.ItemType<DarknessCloth>(), 9);
 			recipe.AddTile(134);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

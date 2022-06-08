@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Alien;
 
 namespace Tremor.Items
 {
@@ -28,10 +29,9 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Increases all stats during night time");
 		}
 
-
 		public override bool UseItem(Player player)
 		{
-			player.AddBuff(mod.BuffType("NightHunting"), 14400);
+			player.AddBuff(ModContent.BuffType<Buffs.NightHunting>(), 14400);
 			return true;
 		}
 
@@ -39,10 +39,10 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.BottledWater, 1);
-			recipe.AddIngredient(null, "LapisLazuli", 1);
-			recipe.AddIngredient(null, "AlienTongue", 1);
-			recipe.AddIngredient(null, "PinkGelCube", 1);
-			recipe.AddTile(null, "AlchemyStationTile");
+			recipe.AddIngredient(ModContent.ItemType<LapisLazuli>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<AlienTongue>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<PinkGelCube>(), 1);
+			recipe.AddTile(ModContent.TileType<Tiles.AlchemyStationTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

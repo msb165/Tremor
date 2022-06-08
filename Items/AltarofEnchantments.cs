@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 150;
-			item.createTile = mod.TileType("AltarofEnchantmentsTile");
+			item.createTile = ModContent.TileType<Tiles.AltarofEnchantmentsTile>();
 		}
 
 		public override void SetStaticDefaults()
@@ -28,13 +28,12 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Allows you to improve some items");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.StoneBlock, 30);
-			recipe.AddIngredient(null, "StoneofLife", 2);
-			recipe.AddIngredient(null, "Gloomstone", 30);
+			recipe.AddIngredient(ModContent.ItemType<StoneofLife>(), 2);
+			recipe.AddIngredient(ModContent.ItemType<Gloomstone>(), 30);
 			recipe.AddIngredient(ItemID.Book, 1);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

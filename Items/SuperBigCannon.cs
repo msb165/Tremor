@@ -16,7 +16,7 @@ namespace Tremor.Items
 
 			item.useTime = 35;
 			item.useAnimation = 35;
-			item.shoot = mod.ProjectileType("SuperBigCannonPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.SuperBigCannonPro>();
 			item.shootSpeed = 15f;
 			item.useStyle = 5;
 			item.knockBack = 6;
@@ -25,7 +25,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item11;
 			item.expert = true;
 			item.autoReuse = true;
-			item.useAmmo = mod.ItemType("SBCCannonballAmmo");
+			item.useAmmo = ModContent.ItemType<SBCCannonballAmmo>();
 		}
 
 		public override void SetStaticDefaults()
@@ -33,7 +33,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("SBC");
 			Tooltip.SetDefault("'Seriously big cannon!'");
 		}
-
 
 		public override Vector2? HoldoutOffset()
 		{

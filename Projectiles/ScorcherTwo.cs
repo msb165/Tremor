@@ -22,13 +22,12 @@ namespace Tremor.Projectiles
 
 		}
 
-
 		public override void Kill(int timeLeft)
 		{
 			for (int num158 = 0; num158 < 20; num158++)
 			{
 				int num159 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 6, projectile.velocity.X * 0.1f, projectile.velocity.Y * 0.1f, 0, default(Color), 0.3f);
-				if (Main.rand.Next(3) == 0)
+				if (Main.rand.NextBool(3))
 				{
 					Main.dust[num159].fadeIn = 1.1f + Main.rand.Next(-10, 11) * 0.01f;
 					Main.dust[num159].scale = 0.35f + Main.rand.Next(-10, 11) * 0.01f;
@@ -141,7 +140,7 @@ namespace Tremor.Projectiles
 						}
 						if (num670 > projectile.damage * 0.1f)
 						{
-							Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("ScorcherStar"), projectile.damage, projectile.knockBack * 0.55f, projectile.owner, 0f, Main.rand.Next(2));
+							Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.ScorcherStar>(), projectile.damage, projectile.knockBack * 0.55f, projectile.owner, 0f, Main.rand.Next(2));
 						}
 					}
 				}

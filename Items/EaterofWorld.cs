@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Doom;
 
 namespace Tremor.Items
 {
@@ -35,7 +36,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
@@ -49,11 +49,11 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "NightmareBar", 15);
-			recipe.AddIngredient(null, "PurpleQuartz", 6);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<PurpleQuartz>(), 6);
 			recipe.AddIngredient(ItemID.DemoniteBar, 25);
-			recipe.AddIngredient(null, "Doomstone", 6);
-			recipe.AddIngredient(null, "Phantaplasm", 10);
+			recipe.AddIngredient(ModContent.ItemType<Doomstone>(), 6);
+			recipe.AddIngredient(ModContent.ItemType<Phantaplasm>(), 10);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

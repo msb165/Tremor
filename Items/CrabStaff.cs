@@ -24,9 +24,9 @@ namespace Tremor.Items
 			item.value = 8000;
 			item.rare = 2;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("CrabStaffPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.Minions.CrabStaffPro>();
 			item.shootSpeed = 1f;
-			item.buffType = mod.BuffType("CrabBuff");
+			item.buffType = ModContent.BuffType<Buffs.CrabBuff>();
 			item.buffTime = 3600;
 		}
 
@@ -35,7 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Crab Staff");
 			Tooltip.SetDefault("Summons a little crab to fight for you.");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{
@@ -59,7 +58,7 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Coral, 16);
-			recipe.AddIngredient(null, "SeaFragment", 5);
+			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 5);
 			recipe.AddIngredient(ItemID.Seashell, 2);
 			recipe.AddIngredient(ItemID.Wood, 8);
 			recipe.SetResult(this);

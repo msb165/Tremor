@@ -4,6 +4,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items;
+using Tremor.Items.Chaos;
 
 namespace Tremor.NPCs
 {
@@ -55,13 +57,11 @@ namespace Tremor.NPCs
 		public static bool phase2;
 		public static bool phase3;
 
-
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Pixie Queen");
 			Main.npcFrameCount[npc.type] = 8;
 		}
-
 
 		public override void SetDefaults()
 		{
@@ -83,7 +83,7 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath7;
 			npc.buffImmune[24] = true;
 			music = 12;
-			bossBag = mod.ItemType("PixieQueenBag");
+			bossBag = ModContent.ItemType<PixieQueenBag>();
 		}
 
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
@@ -487,27 +487,27 @@ namespace Tremor.NPCs
 						npc.ai[2] += 1f;
 						flag103 = true;
 					}
-					if (Collision.CanHit(vector119, 1, 1, Main.player[npc.target].position, Main.player[npc.target].width, Main.player[npc.target].height) && flag103)
-					{
-						Main.PlaySound(3, (int)npc.position.X, (int)npc.position.Y, 25);
-						if (Main.netMode != 1)
-						{
-							int num1061;
-							if (Main.rand.Next(4) == 0)
-							{
-								num1061 = mod.NPCType("AquaticAberration"); //Aquatic entity spawns
-							}
-							else
-							{
-								num1061 = mod.NPCType("Parasea");
-							}
-							int num1062 = NPC.NewNPC((int)vector119.X, (int)vector119.Y, num1061, 0, 0f, 0f, 0f, 0f, 255);
-							Main.npc[num1062].velocity.X = Main.rand.Next(-200, 201) * 0.01f;
-							Main.npc[num1062].velocity.Y = Main.rand.Next(-200, 201) * 0.01f;
-							Main.npc[num1062].localAI[0] = 60f;
-							Main.npc[num1062].netUpdate = true;
-						}
-					}
+					//if (Collision.CanHit(vector119, 1, 1, Main.player[npc.target].position, Main.player[npc.target].width, Main.player[npc.target].height) && flag103)
+					//{
+					//	Main.PlaySound(3, (int)npc.position.X, (int)npc.position.Y, 25);
+					//	if (Main.netMode != 1)
+					//	{
+					//		int npcType;
+					//		if (Main.rand.NextBool(4))
+					//		{
+					//			npcType = ModContent.NPCType<AquaticAberration>(); //Aquatic entity spawns
+					//		}
+					//		else
+					//		{
+					//			npcType = ModContent.NPCType<Parasea>();
+					//		}
+					//		NPC npc = Main.npc[NPC.NewNPC((int)vector119.X, (int)vector119.Y, npcType, 0, 0f, 0f, 0f, 0f, 255)];
+					//		npc.velocity.X = Main.rand.Next(-200, 201) * 0.01f;
+					//		npc.velocity.Y = Main.rand.Next(-200, 201) * 0.01f;
+					//		npc.localAI[0] = 60f;
+					//		npc.netUpdate = true;
+					//	}
+					//}
 					if (num1060 > 400f || !Collision.CanHit(new Vector2(vector119.X, vector119.Y - 30f), 1, 1, Main.player[npc.target].position, Main.player[npc.target].width, Main.player[npc.target].height))
 					{
 						float num1063 = 14f; //changed from 14 not a prob
@@ -581,17 +581,15 @@ namespace Tremor.NPCs
 						npc.velocity.X *= 5.00f;
 						npc.velocity.Y *= 5.00f;
 						Vector2 vector8 = new Vector2(npc.position.X + (npc.width * 0.5f), npc.position.Y + (npc.height * 0.5f));
-						{
-							float rotation = (float)Math.Atan2((vector8.Y) - (Main.player[npc.target].position.Y + (Main.player[npc.target].height * 0.5f)), (vector8.X) - (Main.player[npc.target].position.X + (Main.player[npc.target].width * 0.5f)));
-							npc.velocity.X = (float)(Math.Cos(rotation) * 12) * -1;
-							npc.velocity.Y = (float)(Math.Sin(rotation) * 12) * -1;
-						}
+						float rotation = (float)Math.Atan2(vector8.Y - (Main.player[npc.target].position.Y + (Main.player[npc.target].height * 0.5f)), vector8.X - (Main.player[npc.target].position.X + (Main.player[npc.target].width * 0.5f)));
+						npc.velocity.X = (float)(Math.Cos(rotation) * 12) * -1;
+						npc.velocity.Y = (float)(Math.Sin(rotation) * 12) * -1;
 						return;
 					}
 				}
 				if (npc.ai[1] >= 280 && npc.ai[1] < 320)
 				{
-					if (Main.rand.Next(5) == 0)
+					if (Main.rand.NextBool(5))
 					{
 						npc.velocity.X *= 10.00f;
 						npc.velocity.Y *= 10.00f;
@@ -616,7 +614,7 @@ namespace Tremor.NPCs
 				npc.rotation = 0f;
 				if (Main.rand.Next(70) == 0)
 				{
-					NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("PixieQueenGuardian"));
+					NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<PixieQueenGuardian>());
 				}
 			}
 		}
@@ -633,7 +631,7 @@ namespace Tremor.NPCs
 				player.AddBuff(BuffID.Slow, 60, true);
 			}
 
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
 				player.AddBuff(BuffID.Cursed, 60, true);
 			}
@@ -762,35 +760,35 @@ namespace Tremor.NPCs
 				int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
 				int halfLength = npc.width / 2 / 16 + 1;
 
-				if (!Main.expertMode && Main.rand.Next(7) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PixieQueenMask"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PixieQueenMask>());
 				}
-				if (!Main.expertMode && Main.rand.Next(6) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(6))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EtherealFeather"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<EtherealFeather>());
 				}
-				if (!Main.expertMode && Main.rand.Next(6) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(6))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PixiePulse"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PixiePulse>());
 				}
-				if (!Main.expertMode && Main.rand.Next(6) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(6))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HeartMagnet"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<HeartMagnet>());
 				}
-				if (!Main.expertMode && Main.rand.Next(6) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(6))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("DopelgangerCandle"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DopelgangerCandle>());
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PixieQueenTrophy"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PixieQueenTrophy>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ChaosBar"), Main.rand.Next(25, 30));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ChaosBar>(), Main.rand.Next(25, 30));
 				}
-				TremorWorld.downedBoss[TremorWorld.Boss.PixieQueen] = true;
+				TremorWorld.Boss.PixieQueen.Downed();
 			}
 		}
 	}

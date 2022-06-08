@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 0;
-			item.createTile = mod.TileType("StoneChair");
+			item.createTile = ModContent.TileType<Tiles.StoneChair>();
 		}
 
 		public override void SetStaticDefaults()
@@ -26,7 +26,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Stone Chair");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

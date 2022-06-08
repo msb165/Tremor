@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 20;
 			item.useAnimation = 20;
-			item.shoot = mod.ProjectileType("DrippingKnifePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.DrippingKnifePro>();
 			item.shootSpeed = 25f;
 			item.useStyle = 1;
 			item.knockBack = 4;
@@ -33,12 +33,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "AtisBlood", 1);
-			recipe.AddIngredient(null, "DrippingRoot", 1);
+			recipe.AddIngredient(ModContent.ItemType<AtisBlood>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<DrippingRoot>(), 1);
 			recipe.SetResult(this, 75);
 			recipe.AddTile(14);
 			recipe.AddRecipe();

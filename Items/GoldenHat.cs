@@ -13,7 +13,6 @@ namespace Tremor.Items
 			item.width = 26;
 			item.height = 22;
 
-
 			item.value = 30000;
 			item.rare = 2;
 			item.defense = 3;
@@ -22,9 +21,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Golden Hat");
-			Tooltip.SetDefault("5% decreased magic damage\nIncreases magic critical strike chance by 6%");
+			Tooltip.SetDefault("5% decreased magic damage\n" +
+"6% increased magic critical strike chance");
 		}
-
 
 		public override void UpdateEquip(Player player)
 		{
@@ -34,7 +33,7 @@ namespace Tremor.Items
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("GoldenRobe");
+			return body.type == ModContent.ItemType<GoldenRobe>();
 		}
 
 		public override void UpdateArmorSet(Player player)

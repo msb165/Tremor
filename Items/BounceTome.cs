@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 15;
 			item.useAnimation = 15;
-			item.shoot = mod.ProjectileType("Bounce");
+			item.shoot = ModContent.ProjectileType<Projectiles.Bounce>();
 			item.shootSpeed = 19f;
 			item.useStyle = 5;
 			item.knockBack = 4;

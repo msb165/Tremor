@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 150;
-			item.createTile = mod.TileType("MagicWorkbenchTile");
+			item.createTile = ModContent.TileType<Tiles.MagicWorkbenchTile>();
 		}
 
 		public override void SetStaticDefaults()
@@ -27,7 +27,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Magic Workbench");
 			Tooltip.SetDefault("Allows you to create scientific-magical things");
 		}
-
 
 		public override void AddRecipes()
 		{

@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.height = 20;
 			item.maxStack = 99;
 			item.rare = 1;
-			item.createTile = mod.TileType("RedBrickChimney");
+			item.createTile = ModContent.TileType<Tiles.RedBrickChimney>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -26,7 +26,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Red Brick Chimney");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

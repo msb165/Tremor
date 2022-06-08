@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.rare = 2;
 			item.UseSound = SoundID.Item79;
 			item.noMelee = true;
-			item.mountType = mod.MountType("Antlion");
+			item.mountType = ModContent.MountType<Mounts.Antlion>();
 		}
 
 		public override void SetStaticDefaults()

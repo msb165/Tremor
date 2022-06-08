@@ -20,9 +20,10 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Dragon Shield");
-			Tooltip.SetDefault("Allows to dash\nDouble tap a direction\n60% increased movement speed");
+			Tooltip.SetDefault("Allows to dash\n" +
+"Double tap a direction\n" +
+"60% increased movement speed");
 		}
-
 
 		public override void UpdateEquip(Player player)
 		{
@@ -33,8 +34,8 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "DragonCapsule", 14);
-			recipe.AddIngredient(null, "EarthFragment", 8);
+			recipe.AddIngredient(ModContent.ItemType<DragonCapsule>(), 14);
+			recipe.AddIngredient(ModContent.ItemType<EarthFragment>(), 8);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

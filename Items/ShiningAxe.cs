@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 
 			item.shootSpeed = 8f;
-			item.shoot = mod.ProjectileType("ShiningAxePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.ShiningAxePro>();
 			item.damage = 234;
 			item.width = 18;
 			item.height = 20;
@@ -34,7 +34,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Magical throwing axe!");
 		}
 
-
 		public override bool CanUseItem(Player player)
 		{
 			for (int i = 0; i < 1000; ++i)
@@ -47,14 +46,13 @@ namespace Tremor.Items
 			return true;
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.PossessedHatchet, 1);
-			recipe.AddIngredient(null, "WhiteGoldBar", 15);
+			recipe.AddIngredient(ModContent.ItemType<WhiteGoldBar>(), 15);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "DivineForgeTile");
+			recipe.AddTile(ModContent.TileType<Tiles.DivineForgeTile>());
 			recipe.AddRecipe();
 		}
 	}

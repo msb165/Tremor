@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Wolf;
 
 namespace Tremor.Items
 {
@@ -14,7 +15,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.melee = true;
 			item.useTime = 30;
-			item.shoot = mod.ProjectileType("HuntingSpearPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.HuntingSpearPro>();
 			item.shootSpeed = 3f;
 			item.useAnimation = 30;
 			item.useStyle = 5;
@@ -31,13 +32,12 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "WolfPelt", 5);
+			recipe.AddIngredient(ModContent.ItemType<WolfPelt>(), 5);
 			recipe.AddIngredient(ItemID.BorealWood, 20);
-			recipe.AddIngredient(null, "AlphaClaw", 2);
+			recipe.AddIngredient(ModContent.ItemType<AlphaClaw>(), 2);
 			recipe.AddTile(18);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

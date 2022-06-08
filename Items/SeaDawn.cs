@@ -16,7 +16,7 @@ namespace Tremor.Items
 			item.useAnimation = 38;
 			item.useStyle = 1;
 			item.shootSpeed = 12f;
-			item.shoot = mod.ProjectileType("TyphoonPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.TyphoonPro>();
 			item.knockBack = 3;
 			item.value = 33000;
 			item.rare = 10;
@@ -29,7 +29,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Sea Dawn");
 			Tooltip.SetDefault("");
 		}
-
 
 	}
 }

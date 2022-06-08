@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.maxStack = 99;
 			item.value = 17500;
 			item.rare = 11;
-			item.createTile = mod.TileType("CometiteBarTile");
+			item.createTile = ModContent.TileType<Tiles.CometiteBarTile>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -30,7 +30,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "CometiteOre", 5);
+			recipe.AddIngredient(ModContent.ItemType<CometiteOre>(), 5);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

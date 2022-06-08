@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.maxStack = 99;
 			item.value = 100;
 			item.rare = 10;
-			item.createTile = mod.TileType("StarBarTile");
+			item.createTile = ModContent.TileType<Tiles.StarBarTile>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -31,11 +31,11 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "NightmareOre", 1);
+			recipe.AddIngredient(ModContent.ItemType<NightmareOre>(), 1);
 			recipe.AddIngredient(116, 1);
 			recipe.AddIngredient(ItemID.FallenStar, 3);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "StarvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.StarvilTile>());
 			recipe.AddRecipe();
 		}
 	}

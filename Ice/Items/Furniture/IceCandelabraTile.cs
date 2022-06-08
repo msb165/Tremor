@@ -34,7 +34,7 @@ namespace Tremor.Ice.Items.Furniture
 		{
 			if (frameX == 0)
 			{
-				Item.NewItem(i * 16, j * 16, 48, 48, mod.ItemType("IceCandelabra"));
+				Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<IceCandelabra>());
 			}
 		}
 	}

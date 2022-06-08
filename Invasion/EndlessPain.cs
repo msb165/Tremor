@@ -2,6 +2,8 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items;
+using Tremor.Items.Souls;
 
 namespace Tremor.Invasion
 {
@@ -16,7 +18,7 @@ namespace Tremor.Invasion
 			item.useTime = 18;
 			item.magic = true;
 			item.mana = 25;
-			item.shoot = mod.ProjectileType("EndlessPainPro");
+			item.shoot = ModContent.ProjectileType<EndlessPainPro>();
 			item.shootSpeed = 4f;
 			item.useAnimation = 18;
 			item.noMelee = true;
@@ -33,17 +35,18 @@ namespace Tremor.Invasion
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("The Endless Pain");
-			Tooltip.SetDefault("Shoots a shadowflame orb\nOrb shoots shadowflames at nearby enemies");
+			Tooltip.SetDefault("Shoots a shadowflame orb\n" +
+"Orb shoots shadowflames at nearby enemies");
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 4));
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "EyeofOblivion", 1);
-			recipe.AddIngredient(null, "PhantomSoul", 20);
-			recipe.AddIngredient(null, "TimeTissue", 10);
-			recipe.AddIngredient(null, "NightmareBar", 5);
+			recipe.AddIngredient(ModContent.ItemType<EyeofOblivion>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<PhantomSoul>(), 20);
+			recipe.AddIngredient(ModContent.ItemType<TimeTissue>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 5);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

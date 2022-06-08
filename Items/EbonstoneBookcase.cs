@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 2000;
-			item.createTile = mod.TileType("EbonstoneBookcase");
+			item.createTile = ModContent.TileType<Tiles.EbonstoneBookcase>();
 		}
 
 		public override void SetStaticDefaults()
@@ -27,7 +27,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Ebonstone Bookcase");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

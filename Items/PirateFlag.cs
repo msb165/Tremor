@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.rare = 2;
 			item.UseSound = SoundID.Item79;
 			item.noMelee = true;
-			item.mountType = mod.MountType("FlyingDutchman");
+			item.mountType = ModContent.MountType<Mounts.FlyingDutchman>();
 		}
 
 		public override void SetStaticDefaults()

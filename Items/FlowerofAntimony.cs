@@ -24,7 +24,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item43;
 			item.autoReuse = false;
 			Item.staff[item.type] = true;
-			item.shoot = mod.ProjectileType("FlowerofAntimony");
+			item.shoot = ModContent.ProjectileType<Projectiles.FlowerofAntimony>();
 			item.shootSpeed = 15f;
 		}
 
@@ -34,15 +34,14 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "RuneBar", 12);
-			recipe.AddIngredient(null, "Gloomstone", 15);
-			recipe.AddIngredient(null, "Jellyxir", 6);
+			recipe.AddIngredient(ModContent.ItemType<RuneBar>(), 12);
+			recipe.AddIngredient(ModContent.ItemType<Gloomstone>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<Jellyxir>(), 6);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "AlchematorTile");
+			recipe.AddTile(ModContent.TileType<Tiles.AlchematorTile>());
 			recipe.AddRecipe();
 		}
 	}

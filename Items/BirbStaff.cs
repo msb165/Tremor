@@ -24,9 +24,9 @@ namespace Tremor.Items
 			item.value = 8000;
 			item.rare = 2;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("BirbStaffPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.Minions.BirbStaffPro>();
 			item.shootSpeed = 1f;
-			item.buffType = mod.BuffType("BirbStaffBuff");
+			item.buffType = ModContent.BuffType<Buffs.BirbStaffBuff>();
 			item.buffTime = 3600;
 		}
 
@@ -35,7 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Birb Staff");
 			Tooltip.SetDefault("Summons a birb to fight for you.");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{

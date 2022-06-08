@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Projectiles;
 
 namespace Tremor.Buffs
 {
@@ -17,16 +18,16 @@ namespace Tremor.Buffs
 		public override void Update(Player player, ref int buffIndex)
 		{
 			player.buffTime[buffIndex] = 18000;
-			TremorPlayer modPlayer = (TremorPlayer)player.GetModPlayer(mod, "TremorPlayer");
+			TremorPlayer modPlayer = player.GetModPlayer<TremorPlayer>();
 			modPlayer.emeraldy = true;
 			bool petProjectileNotSpawned = true;
-			if (player.ownedProjectileCounts[mod.ProjectileType("Emeraldy")] > 0)
+			if (player.ownedProjectileCounts[ModContent.ProjectileType<Emeraldy>()] > 0)
 			{
 				petProjectileNotSpawned = false;
 			}
 			if (petProjectileNotSpawned && player.whoAmI == Main.myPlayer)
 			{
-				Projectile.NewProjectile(player.position.X + player.width / 2, player.position.Y + player.height / 2, 0f, 0f, mod.ProjectileType("Emeraldy"), 0, 0f, player.whoAmI, 0f, 0f);
+				Projectile.NewProjectile(player.position.X + player.width / 2, player.position.Y + player.height / 2, 0f, 0f, ModContent.ProjectileType<Projectiles.Emeraldy>(), 0, 0f, player.whoAmI, 0f, 0f);
 			}
 			if ((player.controlDown && player.releaseDown))
 			{
@@ -34,7 +35,7 @@ namespace Tremor.Buffs
 				//{
 				for (int j = 0; j < 1000; j++)
 				{
-					if (Main.projectile[j].active && Main.projectile[j].type == mod.ProjectileType("Emeraldy") && Main.projectile[j].owner == player.whoAmI)
+					if (Main.projectile[j].active && Main.projectile[j].type == ModContent.ProjectileType<Projectiles.Emeraldy>() && Main.projectile[j].owner == player.whoAmI)
 					{
 						Projectile lightpet = Main.projectile[j];
 						Vector2 vectorToMouse = player.Center - lightpet.Center;

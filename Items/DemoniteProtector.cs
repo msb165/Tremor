@@ -24,7 +24,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Increases max health by 50");
 		}
 
-
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.statLifeMax2 += 50;
@@ -36,7 +35,7 @@ namespace Tremor.Items
 			recipe.AddIngredient(ItemID.DemoniteBar, 12);
 			recipe.AddIngredient(ItemID.ShadowScale, 25);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "GreatAnvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.GreatAnvilTile>());
 			recipe.AddRecipe();
 		}
 	}

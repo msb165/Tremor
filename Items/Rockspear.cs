@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.melee = true;
 			item.useTime = 35;
-			item.shoot = mod.ProjectileType("RockspearPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.RockspearPro>();
 			item.shootSpeed = 3f;
 			item.useAnimation = 35;
 			item.useStyle = 5;
@@ -31,15 +31,14 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Wood, 20);
 			recipe.AddIngredient(ItemID.Rope, 20);
 			recipe.AddIngredient(ItemID.StoneBlock, 5);
-			recipe.AddIngredient(null, "Gloomstone", 25);
-			recipe.AddIngredient(null, "RockHorn", 3);
+			recipe.AddIngredient(ModContent.ItemType<Gloomstone>(), 25);
+			recipe.AddIngredient(ModContent.ItemType<RockHorn>(), 3);
 			recipe.AddTile(16);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

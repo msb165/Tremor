@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.NPCs;
 
 namespace Tremor.Items
 {
@@ -24,18 +25,18 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Storm Jelly");
-			Tooltip.SetDefault("Summons Storm Jellyfish");
+			Tooltip.SetDefault("Summons Storm Jellyfish\n" +
+"Requires EoC to have been slain");
 		}
-
 
 		public override bool CanUseItem(Player player)
 		{
-			return NPC.downedBoss1 && !NPC.AnyNPCs(mod.NPCType("StormJellyfish"));
+			return NPC.downedBoss1 && !NPC.AnyNPCs(ModContent.NPCType<StormJellyfish>());
 		}
 
 		public override bool UseItem(Player player)
 		{
-			NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("StormJellyfish"));
+			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<StormJellyfish>());
 			Main.PlaySound(SoundID.Roar, player.position, 0);
 			return true;
 		}
@@ -44,7 +45,7 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Gel, 25);
-			recipe.AddIngredient(null, "SeaFragment", 12);
+			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 12);
 			recipe.AddIngredient(ItemID.Glowstick, 15);
 			recipe.AddIngredient(ItemID.Seashell, 3);
 			recipe.AddTile(16);

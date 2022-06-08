@@ -17,7 +17,7 @@ namespace Tremor.Tiles
         soundStyle = 2;
         minPick = 65; 
         AddMapEntry(new Color(95, 201, 64));
-        drop = mod.ItemType("ArgiteOre");
+        drop = ModContent.ItemType<Items.Argite.ArgiteOre>();
     }
 
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
@@ -29,7 +29,7 @@ namespace Tremor.Tiles
 
   public override bool CanExplode(int i, int j)
   {
-   if (Main.tile[i, j].type == mod.TileType("ArgiteOre"))
+   if (Main.tile[i, j].type == ModContent.TileType<Tiles.ArgiteOre>())
    {
     return false;
    }

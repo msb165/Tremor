@@ -22,7 +22,7 @@ namespace Tremor.Items
 			item.rare = 8;
 			item.UseSound = SoundID.Item43;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("SpectreFlower");
+			item.shoot = ModContent.ProjectileType<Projectiles.SpectreFlower>();
 			item.shootSpeed = 6f;
 		}
 
@@ -31,7 +31,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Spectre Flower");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

@@ -31,13 +31,12 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.GoldenShower, 1);
-			recipe.AddIngredient(null, "NightmareBar", 10);
-			recipe.AddIngredient(null, "ConcentratedEther", 8);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<ConcentratedEther>(), 8);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

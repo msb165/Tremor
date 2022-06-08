@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -37,7 +38,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
@@ -51,14 +51,13 @@ namespace Tremor.Items
 
 		public override bool ConsumeAmmo(Player p)
 		{
-			return Main.rand.Next(2) == 0;
+			return Main.rand.NextBool(2);
 		}
-
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GolemCore", 1);
+			recipe.AddIngredient(ModContent.ItemType<GolemCore>(), 1);
 			recipe.AddIngredient(ItemID.HeatRay, 1);
 			recipe.AddIngredient(ItemID.SoulofMight, 16);
 			recipe.AddIngredient(ItemID.SoulofFright, 16);
@@ -68,9 +67,9 @@ namespace Tremor.Items
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GolemCore", 1);
+			recipe.AddIngredient(ModContent.ItemType<GolemCore>(), 1);
 			recipe.AddIngredient(ItemID.HeatRay, 1);
-			recipe.AddIngredient(null, "SoulofMind", 16);
+			recipe.AddIngredient(ModContent.ItemType<SoulofMind>(), 16);
 			recipe.AddIngredient(ItemID.SoulofFright, 16);
 			recipe.AddIngredient(ItemID.SoulofSight, 16);
 			recipe.SetResult(this);

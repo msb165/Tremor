@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 2500;
-			item.createTile = mod.TileType("Scarecrow");
+			item.createTile = ModContent.TileType<Tiles.Scarecrow>();
 		}
 
 		public override void SetStaticDefaults()

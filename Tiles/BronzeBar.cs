@@ -24,12 +24,11 @@ namespace Tremor.Tiles
         Main.tileSolid[Type] = true;
     }
 
-
     public override void KillMultiTile(int i, int j, int frameX, int frameY)
     {
         if(frameX == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, mod.ItemType("BronzeBar"));
+            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<Items.Bronze.BronzeBar>());
         }
     }
 }}

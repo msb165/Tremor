@@ -30,7 +30,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
 			target.AddBuff(39, 120);
@@ -39,10 +38,10 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "NightCore", 1);
+			recipe.AddIngredient(ModContent.ItemType<NightCore>(), 1);
 			recipe.AddIngredient(3467, 6);
-			recipe.AddIngredient(null, "MultidimensionalFragment", 8);
-			recipe.AddIngredient(null, "ConcentratedEther", 20);
+			recipe.AddIngredient(ModContent.ItemType<MultidimensionalFragment>(), 8);
+			recipe.AddIngredient(ModContent.ItemType<ConcentratedEther>(), 20);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

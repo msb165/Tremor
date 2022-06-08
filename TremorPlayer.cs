@@ -8,6 +8,14 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.Graphics.Shaders;
 using Terraria.ModLoader;
+using Terraria.ID;
+using Tremor.Items;
+using Tremor.NPCs;
+using Tremor.NPCs.Bosses.NovaPillar;
+using Tremor.NPCs.Bosses.CogLord;
+using Tremor.Items.Sparks;
+using Tremor.Items.Alien;
+using Tremor.Items.Wood;
 
 namespace Tremor
 {
@@ -70,6 +78,8 @@ namespace Tremor
 		public bool ZoneTowerNova;
 		public bool NovaMonolith = false;
 
+		public int LastChest;
+
 		public override void UpdateDead()
 		{
 			zellariumBody = false;
@@ -79,6 +89,19 @@ namespace Tremor
 		public int zellariumHit;
 		public int zellariumDash;
 		public int zellariumCooldown;
+		public override void PreUpdateBuffs()
+		{
+			if (Main.netMode != 1)
+			{
+				if (player.chest == -1 && LastChest >= 0 && Main.chest[LastChest] != null)
+				{
+					int x2 = Main.chest[LastChest].x;
+					int y2 = Main.chest[LastChest].y;
+					ChestItemSummonCheck(x2, y2, mod);
+				}
+				LastChest = player.chest;
+			}
+		}
 		public override void PostUpdateEquips()
 		{
 			if (zellariumHead)
@@ -99,7 +122,7 @@ namespace Tremor
 							Rectangle rect = npc.getRect();
 							if (rectangle.Intersects(rect) && (npc.noTileCollide || Collision.CanHit(player.position, player.width, player.height, npc.position, npc.width, npc.height)))
 							{
-								float damage = 2f * player.GetModPlayer<MPlayer>(mod).alchemistDamage;
+								float damage = 2f * player.GetModPlayer<MPlayer>().alchemicalDamage;
 								float knockback = 3f;
 								bool crit = false;
 
@@ -321,7 +344,6 @@ namespace Tremor
 			public float Depth;
 		}
 		private LightPillar[] _pillars;
-		private Random _random = new Random();
 
 		public static int[] iceWidth = new int[3];
 		public static int[] iceHeight = new int[3];
@@ -340,7 +362,7 @@ namespace Tremor
 				for (int i = 0; i < Main.maxNPCs; i++)
 				{
 					var npc = Main.npc[i];
-					if (npc != null && npc.active && npc.type == mod.NPCType("NovaPillar") && player.Distance(npc.Center) <= 4000f)
+					if (npc != null && npc.active && npc.type == ModContent.NPCType<NovaPillar>() && player.Distance(npc.Center) <= 4000f)
 					{
 						ZoneTowerNova = true;
 					}
@@ -348,15 +370,12 @@ namespace Tremor
 			}
 		}
 
-		const int XOffset = 400;
-		const int YOffset = 400;
 		public override void PostUpdate()
 		{
-			bool First = true;
 			const int XOffset = 400;
 			const int YOffset = 400;
 
-			//CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>(mod);
+			//CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
 			if (ZoneIce)
 			{
 				player.ZoneSnow = true;
@@ -368,13 +387,13 @@ namespace Tremor
 					switch (Main.rand.Next(0, 4))
 					{
 						case 0:
-							NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, mod.NPCType("CometHead")); break;
+							NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<CometHead>()); break;
 						case 1:
-							NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y - YOffset, mod.NPCType("CometHead")); break;
+							NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y - YOffset, ModContent.NPCType<CometHead>()); break;
 						case 2:
-							NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y + YOffset, mod.NPCType("CometHead")); break;
+							NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<CometHead>()); break;
 						case 3:
-							NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y - YOffset, mod.NPCType("CometHead")); break;
+							NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y - YOffset, ModContent.NPCType<CometHead>()); break;
 					}
 				}
 
@@ -383,13 +402,13 @@ namespace Tremor
 					switch (Main.rand.Next(0, 4))
 					{
 						case 0:
-							NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, mod.NPCType("Galasquid")); break;
+							NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<Galasquid>()); break;
 						case 1:
-							NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y - YOffset, mod.NPCType("Galasquid")); break;
+							NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y - YOffset, ModContent.NPCType<Galasquid>()); break;
 						case 2:
-							NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y + YOffset, mod.NPCType("Galasquid")); break;
+							NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<Galasquid>()); break;
 						case 3:
-							NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y - YOffset, mod.NPCType("Galasquid")); break;
+							NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y - YOffset, ModContent.NPCType<Galasquid>()); break;
 					}
 				}
 
@@ -398,13 +417,13 @@ namespace Tremor
 					switch (Main.rand.Next(0, 4))
 					{
 						case 0:
-							NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, mod.NPCType("Astrofly")); break;
+							NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<Astrofly>()); break;
 						case 1:
-							NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y - YOffset, mod.NPCType("Astrofly")); break;
+							NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y - YOffset, ModContent.NPCType<Astrofly>()); break;
 						case 2:
-							NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y + YOffset, mod.NPCType("Astrofly")); break;
+							NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<Astrofly>()); break;
 						case 3:
-							NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y - YOffset, mod.NPCType("Astrofly")); break;
+							NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y - YOffset, ModContent.NPCType<Astrofly>()); break;
 					}
 				}
 			}
@@ -413,20 +432,20 @@ namespace Tremor
 		public override void SetupStartInventory(IList<Item> items)
 		{
 			Item item = new Item();
-			item.SetDefaults(mod.ItemType("AdventurerSpark"));
+			item.SetDefaults(ModContent.ItemType<AdventurerSpark>());
 			item.stack = 1;
 			items.Add(item);
 		}
 
 		public override bool CustomBiomesMatch(Player other)
 		{
-			var modOther = other.GetModPlayer<TremorPlayer>(mod);
+			var modOther = other.GetModPlayer<TremorPlayer>();
 			return ZoneTowerNova == modOther.ZoneTowerNova;
 		}
 
 		public override void CopyCustomBiomesTo(Player other)
 		{
-			var modOther = other.GetModPlayer<TremorPlayer>(mod);
+			var modOther = other.GetModPlayer<TremorPlayer>();
 			modOther.ZoneTowerNova = ZoneTowerNova;
 		}
 
@@ -453,7 +472,7 @@ namespace Tremor
 
 		public void OnHit(float x, float y, Entity victim)
 		{
-			if (onHitShadaggers && Main.rand.Next(4) == 0)
+			if (onHitShadaggers && Main.rand.NextBool(4))
 			{
 				player.petalTimer = 20;
 				if (x < player.position.X + player.width / 2)
@@ -477,7 +496,7 @@ namespace Tremor
 				num6 = num5 / num6;
 				num3 *= num6;
 				num4 *= num6;
-				Projectile.NewProjectile(num, num2, num3, num4, mod.ProjectileType("ParaxydeKnifePro"), 46, 0f, player.whoAmI, 0f, 0f);
+				Projectile.NewProjectile(num, num2, num3, num4, ModContent.ProjectileType<Projectiles.ParaxydeKnifePro>(), 46, 0f, player.whoAmI, 0f, 0f);
 			}
 		}
 
@@ -504,11 +523,11 @@ namespace Tremor
 
 		public override void UpdateBiomeVisuals()
 		{
-			TremorPlayer modPlayer = Main.player[Main.myPlayer].GetModPlayer<TremorPlayer>(mod);
+			TremorPlayer modPlayer = Main.player[Main.myPlayer].GetModPlayer<TremorPlayer>();
 			bool UseEffects = modPlayer.ZoneIce;
 			player.ManageSpecialBiomeVisuals("Tremor:Ice", UseEffects);
 			//player.ManageSpecialBiomeVisuals("Blizzard", UseEffects);
-			player.ManageSpecialBiomeVisuals("Tremor:CogLord", NPC.AnyNPCs(mod.NPCType("CogLord")));
+			player.ManageSpecialBiomeVisuals("Tremor:CogLord", NPC.AnyNPCs(ModContent.NPCType<CogLord>()));
 			bool useNova = ZoneTowerNova || NovaMonolith;
 			player.ManageSpecialBiomeVisuals("Tremor:Nova", useNova);
 		}
@@ -520,36 +539,33 @@ namespace Tremor
 				return;
 			}
 
-			string[] questFishes =
+			int[] questFishes =
 			{
-				"CornFish",
-				"SunflowerFish",
-				"PumpfishFish",
-				"ParrotFish",
-				"CrateFish",
-				"ForkFish",
-				"GlassFish",
-				"JawFish",
-				"CoalFish",
-				"CultistFish",
-				"AlienFish",
-				"LunarSquid",
+				ModContent.ItemType<CornFish>(),
+				ModContent.ItemType<SunflowerFish>(),
+				ModContent.ItemType<Pumpfish>(),
+				ModContent.ItemType<ParrotFish>(),
+				ModContent.ItemType<CrateFish>(),
+				ModContent.ItemType<ForkFish>(),
+				ModContent.ItemType<GlassFish>(),
+				ModContent.ItemType<JawFish>(),
+				ModContent.ItemType<CoalFish>(),
+				//ModContent.ItemType<CultistFish>(),
+				ModContent.ItemType<AlienFish>(),
+				ModContent.ItemType<LunarSquid>(),
 
 			};
 
-			string qFish = questFishes.FirstOrDefault(fish => mod.ItemType(fish) == questFish);
-
-			if (qFish != null
-			    && Main.rand.NextBool(10))
+			if (questFishes.Contains(questFish) && Main.rand.NextBool(10))
 			{
-				caughtType = mod.ItemType(qFish);
+				caughtType = questFish;
 			}
 			else
 			{
-				string[] zoneFish =
+				int[] zoneFish =
 				{
-					"WoodenPiranha",
-					"KeyFish"
+					ModContent.ItemType<WoodenPiranha>(),
+					ModContent.ItemType<KeyFish>()
 				};
 
 				bool[] zoneCond =
@@ -558,22 +574,156 @@ namespace Tremor
 					player.ZoneDungeon
 				};
 
-				qFish = zoneFish.FirstOrDefault(fish => mod.ItemType(fish) == questFish);
-
-				if (qFish != null
-				    && zoneCond[zoneFish.ToList().IndexOf(qFish)]
-				    && Main.rand.NextBool(10))
+				if (zoneFish.Contains(questFish) && zoneCond[zoneFish.ToList().IndexOf(questFish)] && Main.rand.NextBool(10))
 				{
-					caughtType = mod.ItemType(qFish);
+					caughtType =  questFish;
 				}
 				else
 				{
 					if (Main.hardMode && Main.rand.Next(20) == 0)
 					{
-						caughtType = mod.ItemType("GreenPuzzleFragment");
+						caughtType = ModContent.ItemType<GreenPuzzleFragment>();
 					}
 				}
 			}
+		}
+
+		// Straight up copy from removed `DesertMimicSummon` class.
+		public static bool ChestItemSummonCheck(int x, int y, Mod mod)
+		{
+			if (Main.netMode == 1) return false;
+
+			int num = Chest.FindChest(x, y);
+			if (num < 0) return false;
+
+			int numberDesertKey = 0;
+			int numberJungleKey = 0;
+			int numberOceanKey = 0;
+			int numberOtherItems = 0;
+
+			ushort tileType = Main.tile[Main.chest[num].x, Main.chest[num].y].type;
+			int tileStyle = Main.tile[Main.chest[num].x, Main.chest[num].y].frameX / 36;
+			if (TileID.Sets.BasicChest[tileType] && (tileStyle < 5 || tileStyle > 6))
+			{
+				for (int i = 0; i < 40; i++)
+				{
+					if (Main.chest[num].item[i] != null && Main.chest[num].item[i].type > 0)
+					{
+						if (Main.chest[num].item[i].type == ModContent.ItemType<KeyofSands>())
+							numberDesertKey += Main.chest[num].item[i].stack;
+						else if (Main.chest[num].item[i].type == ModContent.ItemType<KeyofTwilight>())
+							numberJungleKey += Main.chest[num].item[i].stack;
+						else if (Main.chest[num].item[i].type == ModContent.ItemType<KeyofOcean>())
+							numberOceanKey += Main.chest[num].item[i].stack;
+						else
+							numberOtherItems++;
+					}
+				}
+			}
+			if (numberOtherItems == 0 && numberDesertKey == 1)
+			{
+				if (TileID.Sets.BasicChest[Main.tile[x, y].type])
+				{
+					if (Main.tile[x, y].frameX % 36 != 0)
+						x--;
+					if (Main.tile[x, y].frameY % 36 != 0)
+						y--;
+					int number = Chest.FindChest(x, y);
+					for (int j = x; j <= x + 1; j++)
+					{
+						for (int k = y; k <= y + 1; k++)
+						{
+							if (Main.tile[j, k].type == TileID.Containers)
+								Main.tile[j, k].active(false);
+						}
+					}
+					for (int l = 0; l < 40; l++)
+						Main.chest[num].item[l] = new Item();
+					Chest.DestroyChest(x, y);
+					NetMessage.SendData(34, -1, -1, null, 1, x, y, 0f, number, 0, 0);
+					NetMessage.SendTileSquare(-1, x, y, 3);
+				}
+				int npcToSpawn = ModContent.NPCType<DesertMimic>();
+				int npcIndex = NPC.NewNPC(x * 16 + 16, y * 16 + 32, npcToSpawn, 0, 0f, 0f, 0f, 0f, 255);
+				Main.npc[npcIndex].whoAmI = npcIndex;
+				NetMessage.SendData(23, -1, -1, null, npcIndex, 0f, 0f, 0f, 0, 0, 0);
+				Main.npc[npcIndex].BigMimicSpawnSmoke();
+			}
+			else if (numberOtherItems == 0 && numberJungleKey == 1)
+			{
+				if (TileID.Sets.BasicChest[Main.tile[x, y].type])
+				{
+					if (Main.tile[x, y].frameX % 36 != 0)
+					{
+						x--;
+					}
+					if (Main.tile[x, y].frameY % 36 != 0)
+					{
+						y--;
+					}
+					int number = Chest.FindChest(x, y);
+					for (int j = x; j <= x + 1; j++)
+					{
+						for (int k = y; k <= y + 1; k++)
+						{
+							if (Main.tile[j, k].type == 21)
+							{
+								Main.tile[j, k].active(false);
+							}
+						}
+					}
+					for (int l = 0; l < 40; l++)
+					{
+						Main.chest[num].item[l] = new Item();
+					}
+					Chest.DestroyChest(x, y);
+					NetMessage.SendData(34, -1, -1, null, 1, x, y, 0f, number, 0, 0);
+					NetMessage.SendTileSquare(-1, x, y, 3);
+				}
+				int npcToSpawn = ModContent.NPCType<JungleMimic>();
+				int npcIndex = NPC.NewNPC(x * 16 + 16, y * 16 + 32, npcToSpawn, 0, 0f, 0f, 0f, 0f, 255);
+				Main.npc[npcIndex].whoAmI = npcIndex;
+				NetMessage.SendData(23, -1, -1, null, npcIndex, 0f, 0f, 0f, 0, 0, 0);
+				Main.npc[npcIndex].BigMimicSpawnSmoke();
+			}
+			else if (numberOtherItems == 0 && numberOceanKey == 1)
+			{
+				if (TileID.Sets.BasicChest[Main.tile[x, y].type])
+				{
+					if (Main.tile[x, y].frameX % 36 != 0)
+					{
+						x--;
+					}
+					if (Main.tile[x, y].frameY % 36 != 0)
+					{
+						y--;
+					}
+					int number = Chest.FindChest(x, y);
+					for (int j = x; j <= x + 1; j++)
+					{
+						for (int k = y; k <= y + 1; k++)
+						{
+							if (Main.tile[j, k].type == 21)
+							{
+								Main.tile[j, k].active(false);
+							}
+						}
+					}
+					for (int l = 0; l < 40; l++)
+					{
+						Main.chest[num].item[l] = new Item();
+					}
+					Chest.DestroyChest(x, y);
+					NetMessage.SendData(34, -1, -1, null, 1, x, y, 0f, number, 0, 0);
+					NetMessage.SendTileSquare(-1, x, y, 3);
+				}
+				int npcToSpawn = ModContent.NPCType<OceanMimic>();
+				int npcIndex = NPC.NewNPC(x * 16 + 16, y * 16 + 32, npcToSpawn, 0, 0f, 0f, 0f, 0f, 255);
+				Main.npc[npcIndex].whoAmI = npcIndex;
+				NetMessage.SendData(23, -1, -1, null, npcIndex, 0f, 0f, 0f, 0, 0, 0);
+				Main.npc[npcIndex].BigMimicSpawnSmoke();
+			}
+			return false;
 		}
 	}
 }

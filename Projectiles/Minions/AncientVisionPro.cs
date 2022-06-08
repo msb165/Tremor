@@ -7,12 +7,12 @@ namespace Tremor.Projectiles.Minions
 	public class AncientVisionPro : Minion
 	{
 
-        const int ShootRate = 30; // ����� ����५� (1 ᥪ㭤� = 60��.)
-        const float ShootDistance = 300f; // ���쭮��� ��५��
-        const float ShootSpeed = 12f; // ������� ᭠�鸞
-        const int ShootDamage = 80; // �஭ ᭠�鸞
-        const float ShootKnockback = 2; // ���� ᭠�鸞
-        int ShootType = 122; // ��� ����५� (�᫨ �� �����쭮� �ન)
+        const int ShootRate = 30; 
+        const float ShootDistance = 300f; 
+        const float ShootSpeed = 12f; 
+        const int ShootDamage = 80; 
+        const float ShootKnockback = 2; 
+        int ShootType = 122; 
         int TimeToShoot = ShootRate;
 
 		public override void SetDefaults()
@@ -39,8 +39,6 @@ namespace Tremor.Projectiles.Minions
       DisplayName.SetDefault("Ancient Vision");
        
     }
-
-
 
         void Shoot()
         {
@@ -74,7 +72,6 @@ public override Color? GetAlpha(Color lightColor)
 return Color.White; 
 }
 
-
         public override void AI()
         {
             Shoot();
@@ -97,7 +94,7 @@ return Color.White;
 		public override void CheckActive()
 		{
 			Player player = Main.player[projectile.owner];
-			TremorPlayer modPlayer = (TremorPlayer)player.GetModPlayer(mod, "TremorPlayer");
+			TremorPlayer modPlayer = player.GetModPlayer<TremorPlayer>();
 			if (player.dead)
 			{
 				modPlayer.ancientVision = false;

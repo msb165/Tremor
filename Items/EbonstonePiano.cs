@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 2000;
-			item.createTile = mod.TileType("EbonstonePiano");
+			item.createTile = ModContent.TileType<Tiles.EbonstonePiano>();
 		}
 
 		public override void SetStaticDefaults()
@@ -26,7 +26,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Ebonstone Piano");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

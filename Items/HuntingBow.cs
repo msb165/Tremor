@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Wolf;
 
 namespace Tremor.Items
 {
@@ -35,9 +36,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "WolfPelt", 12);
+			recipe.AddIngredient(ModContent.ItemType<WolfPelt>(), 12);
 			recipe.AddIngredient(ItemID.BorealWood, 30);
-			recipe.AddIngredient(null, "AlphaClaw", 1);
+			recipe.AddIngredient(ModContent.ItemType<AlphaClaw>(), 1);
 			recipe.AddTile(18);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

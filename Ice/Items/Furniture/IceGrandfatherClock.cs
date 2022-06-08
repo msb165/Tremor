@@ -23,7 +23,7 @@ namespace Tremor.Ice.Items.Furniture
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 2000;
-			item.createTile = mod.TileType("IceGrandfatherClockTile");
+			item.createTile = ModContent.TileType<IceGrandfatherClockTile>();
 		}
 
 		public override void AddRecipes()
@@ -31,7 +31,7 @@ namespace Tremor.Ice.Items.Furniture
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.IronBar, 3);
 			recipe.AddIngredient(ItemID.Glass, 6);
-			recipe.AddIngredient(null, "GlacierWood", 10);
+			recipe.AddIngredient(ModContent.ItemType<GlacierWood>(), 10);
 			recipe.SetResult(this);
 			recipe.AddTile(106);
 			recipe.AddRecipe();
@@ -39,7 +39,7 @@ namespace Tremor.Ice.Items.Furniture
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.LeadBar, 3);
 			recipe.AddIngredient(ItemID.Glass, 6);
-			recipe.AddIngredient(null, "GlacierWood", 10);
+			recipe.AddIngredient(ModContent.ItemType<GlacierWood>(), 10);
 			recipe.SetResult(this);
 			recipe.AddTile(106);
 			recipe.AddRecipe();

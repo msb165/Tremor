@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.melee = true;
 			item.useTime = 25;
-			item.shoot = mod.ProjectileType("ElectricSpearPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.ElectricSpearPro>();
 			item.shootSpeed = 5f;
 			item.useAnimation = 30;
 
@@ -31,7 +31,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Electric Spear");
 			Tooltip.SetDefault("'Traitor!'");
 		}
-
 
 	}
 }

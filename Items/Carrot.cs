@@ -16,7 +16,7 @@ namespace Tremor.Items
 			item.consumable = true;
 			item.knockBack = 1.5f;
 			item.rare = 0;
-			item.shoot = mod.ProjectileType("Carrot");
+			item.shoot = ModContent.ProjectileType<Projectiles.Carrot>();
 			item.ammo = item.type;
 			item.value = 15;
 		}

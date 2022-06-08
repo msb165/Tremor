@@ -21,9 +21,8 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("White Gold Breastplate");
-			Tooltip.SetDefault("Increases melee and ranged critical strike chances by 25%");
+			Tooltip.SetDefault("25% increased melee and ranged critical strike chance");
 		}
-
 
 		public override void UpdateEquip(Player player)
 		{
@@ -31,13 +30,12 @@ namespace Tremor.Items
 			player.meleeCrit += 25;
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "WhiteGoldBar", 18);
+			recipe.AddIngredient(ModContent.ItemType<WhiteGoldBar>(), 18);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "DivineForgeTile");
+			recipe.AddTile(ModContent.TileType<Tiles.DivineForgeTile>());
 			recipe.AddRecipe();
 		}
 	}

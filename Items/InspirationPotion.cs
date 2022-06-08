@@ -28,10 +28,9 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Increases maximum mana");
 		}
 
-
 		public override bool UseItem(Player player)
 		{
-			player.AddBuff(mod.BuffType("MaximumCharge"), 14400);
+			player.AddBuff(ModContent.BuffType<Buffs.MaximumCharge>(), 14400);
 			return true;
 		}
 
@@ -41,7 +40,7 @@ namespace Tremor.Items
 			recipe.AddIngredient(ItemID.BottledWater, 1);
 			recipe.AddIngredient(314, 1);
 			recipe.AddIngredient(313, 1);
-			recipe.AddIngredient(null, "ManaFruit", 6);
+			recipe.AddIngredient(ModContent.ItemType<ManaFruit>(), 6);
 			recipe.AddTile(13);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

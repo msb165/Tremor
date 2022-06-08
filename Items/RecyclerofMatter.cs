@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 150;
-			item.createTile = mod.TileType("RecyclerofMatterTile");
+			item.createTile = ModContent.TileType<Tiles.RecyclerofMatterTile>();
 		}
 
 		public override void SetStaticDefaults()
@@ -26,7 +26,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Recycler of Matter");
 			Tooltip.SetDefault("Allows to convert hardmode metals to their alternatives");
 		}
-
 
 		public override void AddRecipes()
 		{
@@ -37,7 +36,7 @@ namespace Tremor.Items
 			recipe.AddIngredient(ItemID.Glass, 20);
 			recipe.AddIngredient(ItemID.LavaBucket, 1);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "MagicWorkbenchTile");
+			recipe.AddTile(ModContent.TileType<Tiles.MagicWorkbenchTile>());
 			recipe.AddRecipe();
 		}
 	}

@@ -37,12 +37,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Shoots a cosmic beam");
 		}
 
-
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
 			tooltips[0].overrideColor = new Color(238, 194, 73);
 		}
-
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
@@ -76,15 +74,15 @@ namespace Tremor.Items
 			num78 *= num80;
 			num79 *= num80;
 			int num146 = 4;
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
 				num146++;
 			}
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.NextBool(4))
 			{
 				num146++;
 			}
-			if (Main.rand.Next(8) == 0)
+			if (Main.rand.NextBool(8))
 			{
 				num146++;
 			}
@@ -105,7 +103,7 @@ namespace Tremor.Items
 				num149 *= num80;
 				float x4 = vector2.X;
 				float y4 = vector2.Y;
-				Projectile.NewProjectile(x4, y4, num148, num149, mod.ProjectileType("GalaxonPro"), num73, num74, i, 0f, 0f);
+				Projectile.NewProjectile(x4, y4, num148, num149, ModContent.ProjectileType<Projectiles.GalaxonPro>(), num73, num74, i, 0f, 0f);
 			}
 			return false;
 		}
@@ -115,14 +113,13 @@ namespace Tremor.Items
 			return Vector2.Zero;
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "NightmareBar", 16);
-			recipe.AddIngredient(null, "CollapsiumBar", 16);
-			recipe.AddIngredient(null, "Blasticyde", 16);
-			recipe.AddIngredient(null, "HuskofDusk", 16);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 16);
+			recipe.AddIngredient(ModContent.ItemType<CollapsiumBar>(), 16);
+			recipe.AddIngredient(ModContent.ItemType<Blasticyde>(), 16);
+			recipe.AddIngredient(ModContent.ItemType<HuskofDusk>(), 16);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

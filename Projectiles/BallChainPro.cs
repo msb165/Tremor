@@ -31,7 +31,6 @@ namespace Tremor.Projectiles
 			DisplayName.SetDefault("Ball n Chain");
 		}
 
-
 		public override void AI()
 		{
 			Rotation += RotationSpeed;
@@ -46,7 +45,7 @@ namespace Tremor.Projectiles
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D texture = ModLoader.GetTexture("Tremor/Projectiles/BallChain_Chain");
+			Texture2D texture = ModContent.GetTexture("Tremor/Projectiles/BallChain_Chain");
 
 			Vector2 position = projectile.Center;
 			Vector2 mountedCenter = Main.player[projectile.owner].MountedCenter;

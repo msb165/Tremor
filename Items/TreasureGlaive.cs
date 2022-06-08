@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.thrown = true;
 			item.useTime = 30;
-			item.shoot = mod.ProjectileType("TreasureGlaive");
+			item.shoot = ModContent.ProjectileType<Projectiles.TreasureGlaive>();
 			item.shootSpeed = 15f;
 			item.useAnimation = 30;
 			item.useStyle = 1;

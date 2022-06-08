@@ -19,9 +19,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Stardust Ring ");
-			Tooltip.SetDefault("20% increased minion damage\nIncreases your maximum number of minions");
+			Tooltip.SetDefault("20% increased minion damage\n" +
+"Increases your maximum number of minions");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
@@ -35,7 +35,7 @@ namespace Tremor.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(3459, 10);
 			recipe.AddIngredient(3467, 15);
-			recipe.AddIngredient(null, "Band");
+			recipe.AddIngredient(ModContent.ItemType<Band>());
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

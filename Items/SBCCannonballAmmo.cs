@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.knockBack = 1.5f;
 			item.value = 1000;
 			item.rare = 11;
-			item.shoot = mod.ProjectileType("SuperBigCannonPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.SuperBigCannonPro>();
 			item.ammo = item.type;
 		}
 

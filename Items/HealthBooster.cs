@@ -15,7 +15,7 @@ namespace Tremor.Items
 			item.width = 22;
 			item.UseSound = SoundID.Item43;
 			item.height = 18;
-			item.buffType = mod.BuffType("HealthBooster");
+			item.buffType = ModContent.BuffType<Buffs.HealthBooster>();
 			item.value = 5160000;
 			item.rare = 11;
 		}
@@ -25,7 +25,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Health Booster");
 			Tooltip.SetDefault("Regenerates health every minute");
 		}
-
 
 		public override void UseStyle(Player player)
 		{

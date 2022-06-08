@@ -29,7 +29,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
 			target.AddBuff(31, 60);
@@ -38,7 +37,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "RipperKnife");
+			recipe.AddIngredient(ModContent.ItemType<RipperKnife>());
 			recipe.AddIngredient(ItemID.DarkShard, 1);
 			recipe.AddIngredient(ItemID.LightShard, 1);
 			recipe.SetResult(this);

@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useTime = 25;
 			item.useAnimation = 25;
 			item.useStyle = 1;
-			item.shoot = mod.ProjectileType("GoldenMacePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.GoldenMacePro>();
 			item.shootSpeed = 10f;
 			item.knockBack = 4;
 			item.value = 80000;
@@ -32,13 +32,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
-
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
 			int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 246);
 		}
-
 
 	}
 }

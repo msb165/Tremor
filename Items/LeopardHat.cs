@@ -6,7 +6,6 @@ namespace Tremor.Items
 	public class LeopardHat : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
@@ -23,11 +22,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "FashionableHat");
+			recipe.AddIngredient(ModContent.ItemType<FashionableHat>());
 			recipe.AddIngredient(2282);
 			recipe.SetResult(this);
 			recipe.AddTile(86);

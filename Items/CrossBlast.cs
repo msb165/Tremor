@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -10,7 +11,7 @@ namespace Tremor.Items
 		{
 			for (int i = 0; i < player.armor.Length; i++)
 			{
-				MPlayer modPlayer = (MPlayer)player.GetModPlayer(mod, "MPlayer");
+				MPlayer modPlayer = player.GetModPlayer<MPlayer>();
 				if (modPlayer.pyro)
 				{
 					return false;
@@ -36,12 +37,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Alchemical projectiles leave explosions in the shape of cross");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.ExplosivePowder, 25);
-			recipe.AddIngredient(null, "Chemikaze", 1);
+			recipe.AddIngredient(ModContent.ItemType<Chemikaze>(), 1);
 			recipe.AddIngredient(ItemID.HellstoneBar, 25);
 			recipe.AddIngredient(ItemID.SoulofMight, 3);
 			recipe.SetResult(this);
@@ -50,9 +50,9 @@ namespace Tremor.Items
 
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.ExplosivePowder, 25);
-			recipe.AddIngredient(null, "Chemikaze", 1);
+			recipe.AddIngredient(ModContent.ItemType<Chemikaze>(), 1);
 			recipe.AddIngredient(ItemID.HellstoneBar, 25);
-			recipe.AddIngredient(null, "SoulofMind", 3);
+			recipe.AddIngredient(ModContent.ItemType<SoulofMind>(), 3);
 			recipe.SetResult(this);
 			recipe.AddTile(114);
 			recipe.AddRecipe();
@@ -60,8 +60,8 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			MPlayer modPlayer = (MPlayer)player.GetModPlayer(mod, "MPlayer");
-			player.AddBuff(mod.BuffType("CrossBlastBuff"), 2);
+			MPlayer modPlayer = player.GetModPlayer<MPlayer>();
+			player.AddBuff(ModContent.BuffType<Buffs.CrossBlastBuff>(), 2);
 			modPlayer.pyro = true;
 		}
 	}

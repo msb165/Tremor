@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Doom;
 
 namespace Tremor.Items
 {
@@ -34,7 +35,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Shoots fallen stars");
 		}
 
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
@@ -50,11 +50,11 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.StarCannon, 1);
-			recipe.AddIngredient(null, "Doomstone", 16);
+			recipe.AddIngredient(ModContent.ItemType<Doomstone>(), 16);
 			recipe.AddIngredient(3467, 20);
 			recipe.AddIngredient(ItemID.MeteoriteBar, 20);
 			recipe.AddIngredient(ItemID.FallenStar, 25);
-			recipe.AddIngredient(null, "ConcentratedEther", 28);
+			recipe.AddIngredient(ModContent.ItemType<ConcentratedEther>(), 28);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

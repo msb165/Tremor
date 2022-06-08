@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Tremor.Items.Alchemist;
 
 namespace Tremor.Tiles
 {
@@ -26,9 +27,7 @@ namespace Tremor.Tiles
     {
         if(frameX == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, mod.ItemType("AlchemyStation"));
+            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<AlchemyStation>());
         }
     }
-
-
 }}

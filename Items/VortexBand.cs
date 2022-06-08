@@ -15,8 +15,8 @@ namespace Tremor.Items
 			item.useTime = 25;
 			item.useAnimation = 25;
 
-			item.shoot = mod.ProjectileType("VortexBee");
-			item.buffType = mod.BuffType("VortexBeeBuff");
+			item.shoot = ModContent.ProjectileType<Projectiles.VortexBee>();
+			item.buffType = ModContent.BuffType<Buffs.VortexBeeBuff>();
 		}
 
 		public override void SetStaticDefaults()
@@ -24,7 +24,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Vortex Band");
 			Tooltip.SetDefault("Summons a vortex bee");
 		}
-
 
 		public override void UseStyle(Player player)
 		{
@@ -37,7 +36,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "UnchargedBand");
+			recipe.AddIngredient(ModContent.ItemType<UnchargedBand>());
 			recipe.AddIngredient(3456, 10);
 			recipe.SetResult(this);
 			recipe.AddTile(412);

@@ -19,9 +19,10 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Night's Watch");
-			Tooltip.SetDefault("8% increased magic, melee and minion damage\nIncreases maximum mana and health by 60\nIncreases melee and magic critical strike chance by 10");
+			Tooltip.SetDefault("8% increased magic, melee and minion damage\n" +
+"Increases maximum mana and health by 60\n" +
+"Increases melee and magic critical strike chance by 10");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
@@ -37,12 +38,12 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "JungleWrath", 1);
-			recipe.AddIngredient(null, "DemoniteProtector", 1);
-			recipe.AddIngredient(null, "WaterStorm", 1);
-			recipe.AddIngredient(null, "Candent", 1);
+			recipe.AddIngredient(ModContent.ItemType<JungleWrath>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<DemoniteProtector>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<WaterStorm>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<Candent>(), 1);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "GreatAnvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.GreatAnvilTile>());
 			recipe.AddRecipe();
 		}
 	}

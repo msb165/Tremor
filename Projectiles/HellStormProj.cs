@@ -25,7 +25,6 @@ namespace Tremor.Projectiles
 
 		}
 
-
 		public override Color? GetAlpha(Color lightColor)
 		{
 			return Color.White;
@@ -36,7 +35,7 @@ namespace Tremor.Projectiles
 			Player player = Main.player[projectile.owner];
 			float num = 1.57079637f;
 			Vector2 vector = player.RotatedRelativePoint(player.MountedCenter, true);
-			if (projectile.type == mod.ProjectileType("HellStormProj"))
+			if (projectile.type == ModContent.ProjectileType<Projectiles.HellStormProj>())
 			{
 				projectile.ai[0] += 1f;
 				int num2 = 0;
@@ -102,7 +101,7 @@ namespace Tremor.Projectiles
 							projectile.netUpdate = true;
 						}
 						projectile.velocity = vector3;
-						int num6 = mod.ProjectileType("HellStormArrow");
+						int num6 = ModContent.ProjectileType<Projectiles.HellStormArrow>();
 						float scaleFactor2 = 14f;
 						int num7 = 7;
 						value2 = projectile.Center + new Vector2(Main.rand.Next(-num7, num7 + 1), Main.rand.Next(-num7, num7 + 1));

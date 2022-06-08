@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 150;
-			item.createTile = mod.TileType("DevilForge");
+			item.createTile = ModContent.TileType<Tiles.DevilForge>();
 		}
 
 		public override void SetStaticDefaults()
@@ -27,11 +27,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "DemonBlood", 5);
+			recipe.AddIngredient(ModContent.ItemType<DemonBlood>(), 5);
 			recipe.AddIngredient(ItemID.Hellstone, 25);
 			recipe.AddIngredient(ItemID.Obsidian, 10);
 			recipe.SetResult(this);

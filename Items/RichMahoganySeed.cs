@@ -25,9 +25,9 @@ namespace Tremor.Items
 			item.value = Item.buyPrice(0, 3, 0, 0);
 			item.rare = 3;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("Hunter");
+			item.shoot = ModContent.ProjectileType<Projectiles.Minions.Hunter>();
 			item.shootSpeed = 2f;
-			item.buffType = mod.BuffType("HunterBuff");
+			item.buffType = ModContent.BuffType<Buffs.HunterBuff>();
 			item.buffTime = 3600;
 		}
 
@@ -36,7 +36,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Rich Mahogany Seed");
 			Tooltip.SetDefault("Summons a lil' snatcher to fight for you.");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{

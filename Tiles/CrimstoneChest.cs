@@ -33,7 +33,7 @@ namespace Tremor.Tiles
 			disableSmartCursor = true;
 			adjTiles = new int[] { TileID.Containers };
 			chest = "Crimstone Chest";
-			chestDrop = mod.ItemType("CrimstoneChest");
+			chestDrop = ModContent.ItemType<Items.Crimstone.CrimstoneChest>();
 		}
 
 				public string MapChestName(string name, int i, int j)
@@ -165,7 +165,7 @@ namespace Tremor.Tiles
 				player.showItemIconText = Main.chest[chest].name.Length > 0 ? Main.chest[chest].name : "Crimstone Chest";
 				if (player.showItemIconText == "Crimstone Chest")
 				{
-					player.showItemIcon2 = mod.ItemType("CrimstoneChest");
+					player.showItemIcon2 = ModContent.ItemType<Items.Crimstone.CrimstoneChest>();
 					player.showItemIconText = "";
 				}
 			}

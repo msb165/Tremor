@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Projectiles.Minions;
 
 namespace Tremor.Buffs
 {
@@ -15,8 +16,8 @@ namespace Tremor.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			TremorPlayer modPlayer = (TremorPlayer)player.GetModPlayer(mod, "TremorPlayer");
-			if (player.ownedProjectileCounts[mod.ProjectileType("JellyfishStaffPro")] > 0)
+			TremorPlayer modPlayer = player.GetModPlayer<TremorPlayer>();
+			if (player.ownedProjectileCounts[ModContent.ProjectileType<JellyfishStaffPro>()] > 0)
 			{
 				modPlayer.jellyfishMinion = true;
 			}

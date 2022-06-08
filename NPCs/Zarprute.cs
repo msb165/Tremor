@@ -1,10 +1,10 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-
 	public class Zarprute : ModNPC
 	{
 		public override void SetStaticDefaults()
@@ -29,13 +29,7 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath57;
 			npc.value = Item.buyPrice(0, 0, 20, 80);
 			banner = npc.type;
-			bannerItem = mod.ItemType("ZarpruteBanner");
-		}
-
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-		{
-			npc.lifeMax = npc.lifeMax * 1;
-			npc.damage = npc.damage * 1;
+			bannerItem = ModContent.ItemType<ZarpruteBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -45,17 +39,16 @@ namespace Tremor.NPCs
 				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZarpruteGore1"), 1f);
 				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZarpruteGore2"), 1f);
 				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZarpruteGore2"), 1f);
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y + 15, mod.NPCType("Zarprite"));
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("Zarprite"));
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y - 15, mod.NPCType("Zarprite"));
+
+				if (Main.netMode == 1) return;
+
+				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y + 15, ModContent.NPCType<Zarprite>());
+				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<Zarprite>());
+				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y - 15, ModContent.NPCType<Zarprite>());
 			}
 		}
+
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-		{
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
-			return (Helper.NoZoneAllowWater(spawnInfo)) && Main.hardMode && y > Main.rockLayer ? 0.01f : 0f;
-		}
+			=> (Helper.NoZoneAllowWater(spawnInfo)) && Main.hardMode && spawnInfo.spawnTileY > Main.rockLayer ? 0.01f : 0f;
 	}
 }

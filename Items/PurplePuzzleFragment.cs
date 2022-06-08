@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -21,11 +22,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "PhantomSoul", 4);
+			recipe.AddIngredient(ModContent.ItemType<PhantomSoul>(), 4);
 			recipe.AddIngredient(ItemID.Amethyst, 8);
 			recipe.AddIngredient(ItemID.SoulofNight, 2);
 			recipe.SetResult(this);

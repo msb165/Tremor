@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.NPCs;
 
 namespace Tremor.Projectiles
 {
@@ -25,8 +26,6 @@ namespace Tremor.Projectiles
 
 		}
 
-
-
 		public override void AI()
 		{
 			if (projectile.frameCounter < 5)
@@ -44,7 +43,7 @@ namespace Tremor.Projectiles
 
 		public override void Kill(int timeLeft)
 		{
-			NPC.NewNPC((int)projectile.Center.X, (int)projectile.Center.Y, mod.NPCType("DarkSlime"));
+			NPC.NewNPC((int)projectile.Center.X, (int)projectile.Center.Y, ModContent.NPCType<DarkSlime>());
 		}
 	}
 }

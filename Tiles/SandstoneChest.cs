@@ -33,7 +33,7 @@ namespace Tremor.Tiles
 			disableSmartCursor = true;
 			adjTiles = new int[] { TileID.Containers };
 			chest = "Sandstone Chest";
-			chestDrop = mod.ItemType("SandstoneChest");
+			chestDrop = ModContent.ItemType<Items.Sandstone.SandstoneChest>();
 		}
 
 				public string MapChestName(string name, int i, int j)
@@ -165,7 +165,7 @@ namespace Tremor.Tiles
 				player.showItemIconText = Main.chest[chest].name.Length > 0 ? Main.chest[chest].name : "Sandstone Chest";
 				if (player.showItemIconText == "Sandstone Chest")
 				{
-					player.showItemIcon2 = mod.ItemType("SandstoneChest");
+					player.showItemIcon2 = ModContent.ItemType<Items.Sandstone.SandstoneChest>();
 					player.showItemIconText = "";
 				}
 			}

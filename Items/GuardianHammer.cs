@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 
 			item.shootSpeed = 14f;
-			item.shoot = mod.ProjectileType("GuardianHammerPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.GuardianHammerPro>();
 			item.damage = 125;
 			item.knockBack = 9f;
 			item.width = 14;
@@ -33,7 +33,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
@@ -49,7 +48,7 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.PaladinsHammer, 1);
-			recipe.AddIngredient(null, "NightmareBar", 16);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 16);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

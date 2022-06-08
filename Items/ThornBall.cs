@@ -15,7 +15,7 @@ namespace Tremor.Items
 			item.maxStack = 999;
 			item.useTime = 14;
 			item.useAnimation = 14;
-			item.shoot = mod.ProjectileType("ThornBall");
+			item.shoot = ModContent.ProjectileType<Projectiles.ThornBall>();
 			item.shootSpeed = 8f;
 			item.useStyle = 1;
 			item.knockBack = 3;

@@ -21,9 +21,8 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Candent");
-			Tooltip.SetDefault("Increases melee damage and critical strike chance by 7%");
+			Tooltip.SetDefault("7% increased melee damage and critical strike chance");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
@@ -34,10 +33,10 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "FireFragment", 12);
+			recipe.AddIngredient(ModContent.ItemType<FireFragment>(), 12);
 			recipe.AddIngredient(ItemID.HellstoneBar, 20);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "GreatAnvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.GreatAnvilTile>());
 			recipe.AddRecipe();
 		}
 	}

@@ -21,7 +21,7 @@ namespace Tremor.Items
 			item.useTime = 10;
 			item.useStyle = 1;
 			item.consumable = true;
-			item.createTile = mod.TileType("BulbTorch");
+			item.createTile = ModContent.TileType<Tiles.BulbTorch>();
 			item.flame = true;
 			item.value = 50;
 		}
@@ -31,7 +31,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Bulb Torch");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void HoldItem(Player player)
 		{
@@ -60,7 +59,7 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Torch, 9);
-			recipe.AddIngredient(null, "LightBulb");
+			recipe.AddIngredient(ModContent.ItemType<LightBulb>());
 			recipe.SetResult(this, 9);
 			recipe.AddRecipe();
 		}

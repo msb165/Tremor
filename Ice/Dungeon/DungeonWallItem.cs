@@ -17,7 +17,7 @@ namespace Tremor.Ice.Dungeon
 			item.useTime = 7;
 			item.useStyle = 1;
 			item.consumable = true;
-			item.createWall = mod.WallType("DungeonWall");
+			item.createWall = ModContent.WallType<DungeonWall>();
 			ItemID.Sets.ExtractinatorMode[item.type] = item.type;
 		}
 
@@ -27,11 +27,10 @@ namespace Tremor.Ice.Dungeon
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "DungeonBlockItem");
+			recipe.AddIngredient(null, nameof(DungeonBlockItem));
 			recipe.SetResult(this, 4);
 			recipe.AddTile(18);
 			recipe.AddRecipe();

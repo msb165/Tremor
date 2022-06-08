@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Flesh;
 
 namespace Tremor.Items
 {
@@ -20,9 +21,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Necromancer Belt");
-			Tooltip.SetDefault("Increases minion knockback by 20%\nIncreases your maximum number of minions");
+			Tooltip.SetDefault("Increases minion knockback by 20%\n" +
+"Increases your maximum number of minions");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
@@ -34,9 +35,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "StrongBelt");
+			recipe.AddIngredient(ModContent.ItemType<StrongBelt>());
 			recipe.AddIngredient(1158, 1);
-			recipe.AddIngredient(null, "UntreatedFlesh", 25);
+			recipe.AddIngredient(ModContent.ItemType<UntreatedFlesh>(), 25);
 			recipe.AddIngredient(ItemID.Bone, 25);
 			recipe.SetResult(this);
 			recipe.AddTile(114);

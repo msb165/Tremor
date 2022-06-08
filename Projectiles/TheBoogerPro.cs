@@ -26,7 +26,6 @@ namespace Tremor.Projectiles
 
 		}
 
-
 		public override Color? GetAlpha(Color lightColor)
 		{
 			return Color.White;
@@ -78,13 +77,13 @@ namespace Tremor.Projectiles
 				vector64.Normalize();
 				vector64 *= Main.rand.Next(5, 25) * 0.9f;
 
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector64.X, vector64.Y, mod.ProjectileType("TheBoogerBallPro"), projectile.damage / 4, projectile.knockBack, projectile.owner, -10f, 0f);
+				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector64.X, vector64.Y, ModContent.ProjectileType<Projectiles.TheBoogerBallPro>(), projectile.damage / 4, projectile.knockBack, projectile.owner, -10f, 0f);
 			}
 		}
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D texture = ModLoader.GetTexture("Tremor/Projectiles/TheBooger_Chain");
+			Texture2D texture = ModContent.GetTexture("Tremor/Projectiles/TheBooger_Chain");
 
 			Vector2 position = projectile.Center;
 			Vector2 mountedCenter = Main.player[projectile.owner].MountedCenter;

@@ -23,14 +23,15 @@ namespace Tremor.Items
 			item.rare = 8;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("BrainiacWavePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.BrainiacWavePro>();
 			item.shootSpeed = 9f;
 		}
 
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Transistor");
-			Tooltip.SetDefault("'Crash() everyone!'\nSends energy waves in different directions on swing");
+			Tooltip.SetDefault("'Crash() everyone!'\n" +
+"Sends energy waves in different directions on swing");
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

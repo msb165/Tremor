@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.CloneDefaults(ItemID.WormHook);
 
 			item.shootSpeed = 18f; // how quickly the hook is shot.
-			item.shoot = mod.ProjectileType("SquidTentacleProjectile");
+			item.shoot = ModContent.ProjectileType<SquidTentacleProjectile>();
 		}
 
 		public override void SetStaticDefaults()
@@ -35,7 +35,6 @@ namespace Tremor.Items
 		{
 			projectile.CloneDefaults(ProjectileID.GemHookAmethyst);
 		}
-
 
 		// Use this hook for hooks that can have multiple hooks midflight: Dual Hook, Web Slinger, Fish Hook, Static Hook, Lunar Hook
 		/*

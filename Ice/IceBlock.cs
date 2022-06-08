@@ -1,6 +1,9 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Ice.Dungeon;
+using Tremor.Ice.Tree;
 
 namespace Tremor.Ice
 {
@@ -17,14 +20,14 @@ namespace Tremor.Ice
 			soundType = 21;
 			soundStyle = 2;
 			AddMapEntry(new Color(84, 166, 229));
-			Main.tileMerge[Type][mod.TileType("IceOre")] = true;
-			Main.tileMerge[Type][mod.TileType("VeryVeryIce")] = true;
-			Main.tileMerge[Type][mod.TileType("DungeonBlock")] = true;
-			Main.tileMerge[Type][161] = true;
-			Main.tileMerge[Type][162] = true;
-			Main.tileMerge[Type][163] = true;
-			Main.tileMerge[Type][164] = true;
-			Main.tileMerge[Type][147] = true;
+			Main.tileMerge[Type][ModContent.TileType<IceOre>()] = true;
+			Main.tileMerge[Type][ModContent.TileType<VeryVeryIce>()] = true;
+			Main.tileMerge[Type][ModContent.TileType<DungeonBlock>()] = true;
+			Main.tileMerge[Type][TileID.IceBlock] = true;
+			Main.tileMerge[Type][TileID.BreakableIce] = true;
+			Main.tileMerge[Type][TileID.CorruptIce] = true;
+			Main.tileMerge[Type][TileID.HallowedIce] = true;
+			Main.tileMerge[Type][TileID.SnowBlock] = true;
 		}
 
 		public bool CanGrow(int i, int j)
@@ -46,8 +49,8 @@ namespace Tremor.Ice
                 Player player = Main.player[Main.myPlayer];
                 int style = Main.tile[i, j].frameX / 15;
                 string type;
-                Main.player[Main.myPlayer].GetModPlayer<TremorPlayer>(mod).ZoneIce = true;
-                TremorPlayer modPlayer = Main.player[Main.myPlayer].GetModPlayer<TremorPlayer>(mod);
+                Main.player[Main.myPlayer].GetModPlayer<TremorPlayer>().ZoneIce = true;
+                TremorPlayer modPlayer = Main.player[Main.myPlayer].GetModPlayer<TremorPlayer>();
                 modPlayer.ZoneIce = true;
             } 
         } */
@@ -56,19 +59,19 @@ namespace Tremor.Ice
         {
             if (Main.tile[i - 1, j].type > 0 && CanGrow(i - 1, j))
             {
-                Main.tile[i - 1, j].type = (ushort)mod.TileType("IceBlock");
+                Main.tile[i - 1, j].type = (ushort)ModContent.TileType<Tiles.IceBlock>();
             }
             if (Main.tile[i + 1, j].type > 0 && CanGrow(i + 1, j))
             {
-                Main.tile[i + 1, j].type = (ushort)mod.TileType("IceBlock");
+                Main.tile[i + 1, j].type = (ushort)ModContent.TileType<Tiles.IceBlock>();
             }
             if (Main.tile[i, j - 1].type > 0 && CanGrow(i, j - 1))
             {
-                Main.tile[i, j - 1].type = (ushort)mod.TileType("IceBlock");
+                Main.tile[i, j - 1].type = (ushort)ModContent.TileType<Tiles.IceBlock>();
             }
             if (Main.tile[i, j + 1].type > 0 && CanGrow(i, j + 1))
             {
-                Main.tile[i, j + 1].type = (ushort)mod.TileType("IceBlock");
+                Main.tile[i, j + 1].type = (ushort)ModContent.TileType<Tiles.IceBlock>();
             }
         } */
 	}

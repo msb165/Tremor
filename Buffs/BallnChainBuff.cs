@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Projectiles;
 
 namespace Tremor.Buffs
 {
@@ -20,7 +21,7 @@ namespace Tremor.Buffs
 		public override void Update(Player player, ref int buffIndex)
 		{
 			if (MinionType == -1)
-				MinionType = mod.ProjectileType("BallChainPro");
+				MinionType = ModContent.ProjectileType<BallChainPro>();
 			if (MinionID == -1 || Main.projectile[MinionID].type != MinionType || !Main.projectile[MinionID].active || Main.projectile[MinionID].owner != player.whoAmI)
 				MinionID = Projectile.NewProjectile(player.Center.X, player.Center.Y, 0, 0, MinionType, (int)(Damage * player.meleeDamage), KB, player.whoAmI);
 			else

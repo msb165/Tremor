@@ -28,8 +28,8 @@ namespace Tremor.ZombieEvent.Mobs
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 1);
-			banner = npc.type;
-			bannerItem = mod.ItemType("DiceZombieBanner");
+			// banner = npc.type;
+			// Todo: bannerItem = ModContent.ItemType<DiceZombieBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -51,17 +51,16 @@ namespace Tremor.ZombieEvent.Mobs
 			}
 		}
 
-
 		public override void NPCLoot()
 		{
 			if (Main.rand.NextBool())
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType<Rupicide>(), Main.rand.Next(1, 3));
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Rupicide>(), Main.rand.Next(1, 3));
 			};
 
-			if (Main.rand.Next(5) == 0)
+			if (Main.rand.NextBool(5))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType<StoneDice>());
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<StoneDice>());
 			};
 		}
 	}

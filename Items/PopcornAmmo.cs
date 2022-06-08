@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.knockBack = 1.5f;
 			item.value = 10;
 			item.rare = 2;
-			item.shoot = mod.ProjectileType("PopcornAmmo");
+			item.shoot = ModContent.ProjectileType<Projectiles.PopcornAmmo>();
 			item.ammo = item.type;
 		}
 
@@ -27,11 +27,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "Corn", 1);
+			recipe.AddIngredient(ModContent.ItemType<Corn>(), 1);
 			recipe.SetResult(this, 25);
 			recipe.AddTile(17);
 			recipe.AddRecipe();

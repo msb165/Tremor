@@ -12,8 +12,21 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.UI;
 using Tremor.Invasion;
-using Tremor.NovaPillar;
+using Tremor.Items;
+using Tremor.Items.Ancient;
+using Tremor.Items.Crystal;
+using Tremor.Items.Cursed;
+using Tremor.Items.Cyber;
+using Tremor.Items.Desert;
+using Tremor.Items.Granite;
+using Tremor.NPCs;
+using Tremor.NPCs.Bosses.CogLord;
+using Tremor.NPCs.Bosses.CogLord.Items;
+using Tremor.NPCs.Bosses.Motherboard.Items;
+using Tremor.NPCs.Bosses.NovaPillar;
+using Tremor.NPCs.Bosses.NovaPillar.Items;
 using Tremor.ZombieEvent;
+using Tremor.ZombieEvent.Items;
 
 namespace Tremor
 {
@@ -33,21 +46,21 @@ namespace Tremor
 
 		public static void Log(object message)
 		{
-			ErrorLogger.Log($"[Tremor][{DateTime.Now:yyyy-MM-dd hh:mm:ss}] {message}");
+			instance.Logger.Info($"[Tremor][{DateTime.Now:yyyy-MM-dd hh:mm:ss}] {message}");
 		}
 
 		public static void Log(string format, params object[] args)
 		{
-			ErrorLogger.Log($"[Tremor][{DateTime.Now:yyyy-MM-dd hh:mm:ss}] {string.Format(format, args)}");
+			instance.Logger.Info($"[Tremor][{DateTime.Now:yyyy-MM-dd hh:mm:ss}] {string.Format(format, args)}");
 		}
 
 		public override void AddRecipeGroups()
 		{
-			RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Lang.GetItemNameValue(ItemType("AmethystStaff")), ItemType("AmethystStaff"), ItemType("DiamondStaff"), ItemType("RubyStaff"), ItemType("TopazStaff"), ItemType("SapphireStaff"), ItemType("AmberStaff"), ItemType("EmeraldStaff"));
+			RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Lang.GetItemNameValue(ItemID.AmethystStaff), ItemID.AmethystStaff, ItemID.DiamondStaff, ItemID.RubyStaff, ItemID.TopazStaff, ItemID.SapphireStaff, ItemID.AmberStaff, ItemID.EmeraldStaff);
 			RecipeGroup.RegisterGroup("Tremor:GemStaves", group);
 		}
 
-		public override void UpdateMusic(ref int music)
+		public override void UpdateMusic(ref int music, ref MusicPriority priority)
 		{
 			if (Main.myPlayer != -1 && !Main.gameMenu)
 			{
@@ -74,7 +87,7 @@ namespace Tremor
 
 				Player player = Main.LocalPlayer;
 
-				if (player.active && player.GetModPlayer<TremorPlayer>(this).ZoneGranite && playMusic)
+				if (player.active && player.GetModPlayer<TremorPlayer>().ZoneGranite && playMusic)
 				{
 					music = GetSoundSlot(SoundType.Music, "Sounds/Music/Granite");
 				}
@@ -89,7 +102,7 @@ namespace Tremor
 					music = GetSoundSlot(SoundType.Music, "Sounds/Music/CyberWrath");
 				}
 
-				if (player.active && NPC.AnyNPCs(NPCType("CogLord")))
+				if (player.active && NPC.AnyNPCs(ModContent.NPCType<CogLord>()))
 				{
 					music = GetSoundSlot(SoundType.Music, "Sounds/Music/CogLord");
 				}
@@ -99,12 +112,12 @@ namespace Tremor
 					music = GetSoundSlot(SoundType.Music, "Sounds/Music/Boss6");
 				}
 
-				if (player.active && (NPC.AnyNPCs(NPCType("TikiTotem")) || NPC.AnyNPCs(NPCType("HappySoul")) || NPC.AnyNPCs(NPCType("AngerSoul")) || NPC.AnyNPCs(NPCType("IndifferenceSoul"))))
+				if (player.active && (NPC.AnyNPCs(ModContent.NPCType<TikiTotem>()) || NPC.AnyNPCs(ModContent.NPCType<HappySoul>()) || NPC.AnyNPCs(ModContent.NPCType<AngerSoul>()) || NPC.AnyNPCs(ModContent.NPCType<IndifferenceSoul>())))
 				{
 					music = GetSoundSlot(SoundType.Music, "Sounds/Music/TikiTotem");
 				}
 
-				if (player.active && NPC.AnyNPCs(NPCType("EvilCorn")))
+				if (player.active && NPC.AnyNPCs(ModContent.NPCType<EvilCorn>()))
 				{
 					music = GetSoundSlot(SoundType.Music, "Sounds/Music/EvilCorn");
 				}
@@ -119,23 +132,23 @@ namespace Tremor
 					music = GetSoundSlot(SoundType.Music, "Sounds/Music/SlimeRain");
 				}
 
-				if (player.active && NPC.AnyNPCs(NPCType("SoulofTruth")))
+				if (player.active && NPC.AnyNPCs(ModContent.NPCType<SoulofTruth>()))
 				{
 					music = GetSoundSlot(SoundType.Music, "Sounds/Music/Trinity");
 				}
-				if (player.active && NPC.AnyNPCs(NPCType("SoulofTrust")))
+				if (player.active && NPC.AnyNPCs(ModContent.NPCType<SoulofTrust>()))
 				{
 					music = GetSoundSlot(SoundType.Music, "Sounds/Music/Trinity");
 				}
-				if (player.active && NPC.AnyNPCs(NPCType("SoulofHope")))
+				if (player.active && NPC.AnyNPCs(ModContent.NPCType<SoulofHope>()))
 				{
 					music = GetSoundSlot(SoundType.Music, "Sounds/Music/Trinity");
 				}
-				if (player.active && NPC.AnyNPCs(NPCType("FrostKing")))
+				if (player.active && NPC.AnyNPCs(ModContent.NPCType<FrostKing>()))
 				{
 					music = GetSoundSlot(SoundType.Music, "Sounds/Music/Boss6");
 				}
-				if (player.active && NPC.AnyNPCs(NPCType("CyberKing")))
+				if (player.active && NPC.AnyNPCs(ModContent.NPCType<CyberKing>()))
 				{
 					music = GetSoundSlot(SoundType.Music, "Sounds/Music/CyberKing");
 				}
@@ -147,7 +160,7 @@ namespace Tremor
 					music = GetSoundSlot(SoundType.Music, "Sounds/Music/Snow2");
 				}
 
-				if (player.active && player.GetModPlayer<TremorPlayer>(this).ZoneIce && !Main.gameMenu && playMusic)
+				if (player.active && player.GetModPlayer<TremorPlayer>().ZoneIce && !Main.gameMenu && playMusic)
 				{
 					music = GetSoundSlot(SoundType.Music, "Sounds/Music/Snow2");
 				}
@@ -159,31 +172,46 @@ namespace Tremor
 			Mod bossChecklist = ModLoader.GetMod("BossChecklist");
 			if (bossChecklist != null)
 			{
-				bossChecklist.Call("AddBossWithInfo", "Rukh", 2.7f, (Func<bool>)(() => TremorWorld.Boss.Rukh.Downed()), "Use a [i:" + ItemType("DesertCrown") + "] in Desert");
-				bossChecklist.Call("AddBossWithInfo", "Tiki Totem", 3.3f, (Func<bool>)(() => TremorWorld.Boss.TikiTotem.Downed()), "Use a [i:" + ItemType("MysteriousDrum") + "] in Jungle at night after beating Eye of Cthulhu");
-				bossChecklist.Call("AddBossWithInfo", "Evil Corn", 3.4f, (Func<bool>)(() => TremorWorld.Boss.EvilCorn.Downed()), "Use a [i:" + ItemType("CursedPopcorn") + "] at night");
-				bossChecklist.Call("AddBossWithInfo", "Storm Jellyfish", 3.5f, (Func<bool>)(() => TremorWorld.Boss.StormJellyfish.Downed()), "Use a [i:" + ItemType("StormJelly") + "]");
-				bossChecklist.Call("AddBossWithInfo", "Ancient Dragon", 3.6f, (Func<bool>)(() => TremorWorld.Boss.AncientDragon.Downed()), "Use a [i:" + ItemType("RustyLantern") + "] in Ruins after pressing with RMB on Ruin Altar and getting Ruin Powers buff");
-				bossChecklist.Call("AddBossWithInfo", "Fungus Beetle", 5.5f, (Func<bool>)(() => TremorWorld.Boss.FungusBeetle.Downed()), "Use a [i:" + ItemType("MushroomCrystal") + "]");
-				bossChecklist.Call("AddBossWithInfo", "Heater of Worlds", 5.6f, (Func<bool>)(() => TremorWorld.Boss.HeaterofWorlds.Downed()), "Use a [i:" + ItemType("MoltenHeart") + "] in Underworld");
-				bossChecklist.Call("AddBossWithInfo", "Alchemaster", 6.5f, (Func<bool>)(() => TremorWorld.Boss.Alchemaster.Downed()), "Use a [i:" + ItemType("AncientMosaic") + "] at night");
-				bossChecklist.Call("AddBossWithInfo", "Motherboard (Destroyer alt)", 8.01f, (Func<bool>)(() => TremorWorld.Boss.Motherboard.Downed()), "Use a [i:" + ItemType("MechanicalBrain") + "] at night");
-				bossChecklist.Call("AddBossWithInfo", "Pixie Queen", 9.6f, (Func<bool>)(() => TremorWorld.Boss.PixieQueen.Downed()), "Use a [i:" + ItemType("PixieinaJar") + "] in Hallow at night");
-				bossChecklist.Call("AddBossWithInfo", "Wall of Shadows", 10.7f, (Func<bool>)(() => TremorWorld.Boss.WallOfShadow.Downed()), "Throw a [i:" + ItemType("ShadowRelic") + "] into lava in Underworld after beating Plantera and having the Dryad alive ");
-				bossChecklist.Call("AddBossWithInfo", "Frost King", 10.6f, (Func<bool>)(() => TremorWorld.Boss.FrostKing.Downed()), "Use a [i:" + ItemType("FrostCrown") + "] in Snow");
-				bossChecklist.Call("AddBossWithInfo", "Cog Lord", 11.4f, (Func<bool>)(() => TremorWorld.Boss.CogLord.Downed()), "Use a [i:" + ItemType("ArtifactEngine") + "] at night");
-				bossChecklist.Call("AddBossWithInfo", "Cyber King", 11.5f, (Func<bool>)(() => TremorWorld.Boss.CyberKing.Downed()), "Use a [i:" + ItemType("AdvancedCircuit") + "] at night to summon a Mothership which will spawn Cyber King on death");
-				bossChecklist.Call("AddBossWithInfo", "Nova Pillar", 13.5f, (Func<bool>)(() => TremorWorld.Boss.NovaPillar.Downed()), "Kill the Lunatic Cultist outside the dungeon post-Golem");
-				bossChecklist.Call("AddBossWithInfo", "The Dark Emperor", 14.4f, (Func<bool>)(() => TremorWorld.Boss.DarkEmperor.Downed()), "Use a [i:" + ItemType("EmperorCrown") + "]");
-				bossChecklist.Call("AddBossWithInfo", "Brutallisk", 14.5f, (Func<bool>)(() => TremorWorld.Boss.Brutallisk.Downed()), "Use a [i:" + ItemType("RoyalEgg") + "] in Desert");
-				bossChecklist.Call("AddBossWithInfo", "Space Whale", 14.6f, (Func<bool>)(() => TremorWorld.Boss.SpaceWhale.Downed()), "Use a [i:" + ItemType("CosmicKrill") + "]");
-				bossChecklist.Call("AddBossWithInfo", "The Trinity", 14.7f, (Func<bool>)(() => TremorWorld.Boss.Trinity.Downed()), "Use a [i:" + ItemType("StoneofKnowledge") + "] at night");
-				bossChecklist.Call("AddBossWithInfo", "Andas", 14.8f, (Func<bool>)(() => TremorWorld.Boss.Andas.Downed()), "Use a [i:" + ItemType("InfernoSkull") + "] at Underworld");
+				//SlimeKing = 1f;
+				//EyeOfCthulhu = 2f;
+				//EaterOfWorlds = 3f;
+				//QueenBee = 4f;
+				//Skeletron = 5f;
+				//WallOfFlesh = 6f;
+				//TheTwins = 7f;
+				//TheDestroyer = 8f;
+				//SkeletronPrime = 9f;
+				//Plantera = 10f;
+				//Golem = 11f;
+				//DukeFishron = 12f;
+				//LunaticCultist = 13f;
+				//Moonlord = 14f;
+				bossChecklist.Call("AddBossWithInfo", "Rukh", 2.7f, (Func<bool>)(() => TremorWorld.Boss.Rukh.IsDowned()), "Use a [i:" + ModContent.ItemType<DesertCrown>() + "]");// in Desert
+				bossChecklist.Call("AddBossWithInfo", "Tiki Totem", 3.3f, (Func<bool>)(() => TremorWorld.Boss.TikiTotem.IsDowned()), "Use a [i:" + ModContent.ItemType<MysteriousDrum>() + "]");//in Jungle at night after beating Eye of Cthulhu
+				bossChecklist.Call("AddBossWithInfo", "Evil Corn", 3.4f, (Func<bool>)(() => TremorWorld.Boss.EvilCorn.IsDowned()), "Use a [i:" + ModContent.ItemType<CursedPopcorn>() + "]");// at night
+				bossChecklist.Call("AddBossWithInfo", "Storm Jellyfish", 3.5f, (Func<bool>)(() => TremorWorld.Boss.StormJellyfish.IsDowned()), "Use a [i:" + ModContent.ItemType<StormJelly>() + "]");
+				bossChecklist.Call("AddBossWithInfo", "Ancient Dragon", 3.6f, (Func<bool>)(() => TremorWorld.Boss.AncientDragon.IsDowned()), "Use a [i:" + ModContent.ItemType<RustyLantern>() + "]");//in Ruins after pressing with RMB on Ruin Altar and getting Ruin Powers buff
+				bossChecklist.Call("AddBossWithInfo", "Fungus Beetle", 5.6f, (Func<bool>)(() => TremorWorld.Boss.FungusBeetle.IsDowned()), "Use a [i:" + ModContent.ItemType<MushroomCrystal>() + "]");
+				bossChecklist.Call("AddBossWithInfo", "Heater of Worlds", 5.5f, (Func<bool>)(() => TremorWorld.Boss.HeaterofWorlds.IsDowned()), "Use a [i:" + ModContent.ItemType<MoltenHeart>() + "]");// in Underworld
+				bossChecklist.Call("AddBossWithInfo", "Alchemaster", 6.5f, (Func<bool>)(() => TremorWorld.Boss.Alchemaster.IsDowned()), "Use a [i:" + ModContent.ItemType<AncientMosaic>() + "]");// at night
+				bossChecklist.Call("AddBossWithInfo", "Motherboard (Destroyer alt)", 8.01f, (Func<bool>)(() => TremorWorld.Boss.Motherboard.IsDowned()), "Use a [i:" + ModContent.ItemType<MechanicalBrain>() + "]");//at night
+				bossChecklist.Call("AddBossWithInfo", "Pixie Queen", 9.6f, (Func<bool>)(() => TremorWorld.Boss.PixieQueen.IsDowned()), "Use a [i:" + ModContent.ItemType<PixieinaJar>() + "]");// in Hallow at night
+				bossChecklist.Call("AddBossWithInfo", "Wall of Shadows", 10.7f, (Func<bool>)(() => TremorWorld.Boss.WallOfShadow.IsDowned()), "Use a [i:" + ModContent.ItemType<ShadowRelic>() + "]");//into lava in Underworld after beating Plantera and having the Dryad alive
+				bossChecklist.Call("AddBossWithInfo", "Frost King", 10.6f, (Func<bool>)(() => TremorWorld.Boss.FrostKing.IsDowned()), "Use a [i:" + ModContent.ItemType<FrostCrown>() + "]");//in Snow
+				bossChecklist.Call("AddBossWithInfo", "Cog Lord", 11.4f, (Func<bool>)(() => TremorWorld.Boss.CogLord.IsDowned()), "Use a [i:" + ModContent.ItemType<ArtifactEngine>() + "]");//at night
+				bossChecklist.Call("AddBossWithInfo", "Mothership and Cyber King", 11.5f, (Func<bool>)(() => TremorWorld.Boss.CyberKing.IsDowned()), "Use a [i:" + ModContent.ItemType<AdvancedCircuit>() + "], Cyber King spawns after defeating the Mothership");//Cyber King spawns after defeating the Mothership
+				bossChecklist.Call("AddBossWithInfo", "Nova Pillar", 13.5f, (Func<bool>)(() => TremorWorld.Boss.NovaPillar.IsDowned()), "Kill the Lunatic Cultist outside the dungeon");
+				bossChecklist.Call("AddBossWithInfo", "The Dark Emperor", 14.4f, (Func<bool>)(() => TremorWorld.Boss.DarkEmperor.IsDowned()), "Use a [i:" + ModContent.ItemType<EmperorCrown>() + "]");
+				bossChecklist.Call("AddBossWithInfo", "Brutallisk", 14.5f, (Func<bool>)(() => TremorWorld.Boss.Brutallisk.IsDowned()), "Use a [i:" + ModContent.ItemType<RoyalEgg>() + "]");// in Desert
+				bossChecklist.Call("AddBossWithInfo", "Space Whale", 14.6f, (Func<bool>)(() => TremorWorld.Boss.SpaceWhale.IsDowned()), "Use a [i:" + ModContent.ItemType<CosmicKrill>() + "]");
+				bossChecklist.Call("AddBossWithInfo", "The Trinity", 14.7f, (Func<bool>)(() => TremorWorld.Boss.Trinity.IsDowned()), "Use a [i:" + ModContent.ItemType<StoneofKnowledge>() + "]");//at night
+				bossChecklist.Call("AddBossWithInfo", "Andas", 14.8f, (Func<bool>)(() => TremorWorld.Boss.Andas.IsDowned()), "Use a [i:" + ModContent.ItemType<InfernoSkull>() + "]");//at Underworld
 			}
 		}
 
 		public override void Unload()
 		{
+			instance = null;
 			if (!Main.dedServ)
 			{
 				TremorGlowMask.Unload();
@@ -194,7 +222,6 @@ namespace Tremor
 				}
 			}
 		}
-
 
 		public override void Load()
 		{
@@ -211,36 +238,37 @@ namespace Tremor
 
 			// Init
 			NPCDrops.Init();
+			TremorWorld.Init();
 
 			if (!Main.dedServ)
 			{
-				string[,] musicBoxes =
+				(string file,int itemType,int tileType)[] musicBoxes =
 				{
-					{ "CogLord", "CogLordMusicBox", "CogLordMusicBox" },
-					{ "SlimeRain", "SlimeRainMusicBox", "SlimeRainMusicBox" },
-					{ "Boss6", "Boss6MusicBox", "Boss6MusicBox" },
-					{ "Trinity", "TrinityMusicBox", "TrinityMusicBox" },
-					{ "TikiTotem", "TikiTotemMusicBox", "TikiTotemMusicBox" },
-					{ "EvilCorn", "EvilCornMusicBox", "EvilCornMusicBox" },
-					{ "CyberKing", "CyberKingMusicBox", "CyberKingMusicBox" },
-					{ "Snow2", "BlizzardMusicBox", "BlizzardMusicBox" },
-					{ "CyberWrath", "ParadoxCohortMusicBox", "ParadoxCohortMusicBoxTile" },
-					{ "NightOfUndead", "DeathHordeMusicBox", "DeathHordeMusicBoxTile" },
-					{ "Granite", "GraniteMusicBox", "GraniteMusicBox" },
+					( "CogLord",		ModContent.ItemType<CogLordMusicBox>(),			ModContent.TileType<Tiles.CogLordMusicBox>()),
+					( "SlimeRain",		ModContent.ItemType<SlimeRainMusicBox>(),		ModContent.TileType<Tiles.SlimeRainMusicBox>()),
+					( "Boss6",			ModContent.ItemType<Boss6MusicBox>(),			ModContent.TileType<Tiles.Boss6MusicBox>()),
+					( "Trinity",		ModContent.ItemType<TrinityMusicBox>(),			ModContent.TileType<Tiles.TrinityMusicBox>()),
+					( "TikiTotem",		ModContent.ItemType<TikiTotemMusicBox>(),		ModContent.TileType<Tiles.TikiTotemMusicBox>()),
+					( "EvilCorn",		ModContent.ItemType<EvilCornMusicBox>(),		ModContent.TileType<Tiles.EvilCornMusicBox>()),
+					( "CyberKing",		ModContent.ItemType<CyberKingMusicBox>(),		ModContent.TileType<Tiles.CyberKingMusicBox>()),
+					( "Snow2",			ModContent.ItemType<BlizzardMusicBox>(),		ModContent.TileType<Tiles.BlizzardMusicBox>()),
+					( "CyberWrath",		ModContent.ItemType<ParadoxCohortMusicBox>(),	ModContent.TileType<ParadoxCohortMusicBoxTile>()),
+					( "NightOfUndead",	ModContent.ItemType<DeathHordeMusicBox>(),		ModContent.TileType<DeathHordeMusicBoxTile>()),
+					( "Granite",		ModContent.ItemType<GraniteMusicBox>(),			ModContent.TileType<Tiles.GraniteMusicBox>()),
 				};
 
 				for (int i = 0; i < musicBoxes.GetUpperBound(0) + 1; i++)
 				{
-					AddMusicBox(GetSoundSlot(SoundType.Music, $"Sounds/Music/{musicBoxes[i, 0]}"), ItemType(musicBoxes[i, 1]), TileType(musicBoxes[i, 2]));
+					AddMusicBox(GetSoundSlot(SoundType.Music, $"Sounds/Music/{musicBoxes[i].file}"), musicBoxes[i].itemType, musicBoxes[i].tileType);
 				}
 
-				GameShaders.Armor.BindShader(ItemType("NovaDye"), new ArmorShaderData(Main.PixelShaderRef, "ArmorSolar")).UseColor(0.8f, 0.7f, 0.3f).UseSecondaryColor(0.8f, 0.7f, 0.3f);
-				NovaSky.PlanetTexture = GetTexture("NovaPillar/NovaPlanet");
+				GameShaders.Armor.BindShader(ModContent.ItemType<NovaDye>(), new ArmorShaderData(Main.PixelShaderRef, "ArmorSolar")).UseColor(0.8f, 0.7f, 0.3f).UseSecondaryColor(0.8f, 0.7f, 0.3f);
+				NovaSky.PlanetTexture = GetTexture("NPCs/Bosses/NovaPillar/NovaPlanet");
 				Filters.Scene["Tremor:Nova"] = new Filter(new NovaData("FilterMiniTower").UseColor(0.8f, 0.7f, 0.3f).UseOpacity(0.82f), EffectPriority.VeryHigh);
 				SkyManager.Instance["Tremor:Nova"] = new NovaSky();
 
 				// Replace celestial sigil?
-				Main.itemTexture[3601] = GetTexture($"Resprites/{(ModLoader.GetLoadedMods().Contains("Elerium") ? "CelestialSigil2" : "CelestialSigil")}");
+				Main.itemTexture[3601] = GetTexture($"Resprites/{(ModLoader.Mods.Select(m=>Name).Contains("Elerium") ? "CelestialSigil2" : "CelestialSigil")}");
 
 				// Replace vanilla buff sprites with resprites
 				for (int i = 1; i < 206; i++)
@@ -253,8 +281,8 @@ namespace Tremor
 		public override void AddRecipes()
 		{
 			// Recipe wrapper
-			RecipeWrapper.AddRecipes(this);
-			RecipeWrapper.RemoveRecipes();
+			RecipeUtils.AddRecipes(this);
+			RecipeUtils.AdaptToNovaRecipes(this);
 		}
 
 		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
@@ -314,7 +342,6 @@ namespace Tremor
 					Rectangle waveProgressAmount = new Rectangle(0, 0, (int)(progressColor.Width * 0.01f * MathHelper.Clamp(InvasionWorld.CyberWrathPoints1, 0f, 100f)), progressColor.Height);
 					Vector2 offset = new Vector2((waveProgressBar.Width - (int)(waveProgressBar.Width * scaleMultiplier)) * 0.5f, (waveProgressBar.Height - (int)(waveProgressBar.Height * scaleMultiplier)) * 0.5f);
 
-
 					spriteBatch.Draw(progressBg, waveProgressBar.Location.ToVector2() + offset, null, Color.White * alpha, 0f, new Vector2(0f), scaleMultiplier, SpriteEffects.None, 0f);
 					spriteBatch.Draw(progressBg, waveProgressBar.Location.ToVector2() + offset, waveProgressAmount, waveColor, 0f, new Vector2(0f), scaleMultiplier, SpriteEffects.None, 0f);
 
@@ -338,7 +365,7 @@ namespace Tremor
 				}
 				catch (Exception e)
 				{
-					ErrorLogger.Log(e.ToString());
+					Logger.Error(e.ToString());
 				}
 			}
 		}

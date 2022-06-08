@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.ZombieEvent.Items;
 
 namespace Tremor.ZombieEvent.Buffs
 {
@@ -8,7 +9,7 @@ namespace Tremor.ZombieEvent.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Haunt Pet Buff");
-			Description.SetDefault("Increases summon damage by 10%");
+			Description.SetDefault("10% increased summon damage");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}
@@ -19,16 +20,16 @@ namespace Tremor.ZombieEvent.Buffs
             player.minionDamage += 0.1f;
 
 			player.buffTime[buffIndex] = 18000;
-			TremorPlayer modPlayer = (TremorPlayer)player.GetModPlayer(mod, "TremorPlayer");
+			TremorPlayer modPlayer = player.GetModPlayer<TremorPlayer>();
 			modPlayer.hauntpet = true;
 			bool petProjectileNotSpawned = true;
-			if (player.ownedProjectileCounts[mod.ProjectileType("TheHauntPro")] > 0)
+			if (player.ownedProjectileCounts[ModContent.ProjectileType<TheHauntPro>()] > 0)
 			{
 				petProjectileNotSpawned = false;
 			}
 			if (petProjectileNotSpawned && player.whoAmI == Main.myPlayer)
 			{
-				Projectile.NewProjectile(player.position.X + player.width / 2, player.position.Y + player.height / 2, 0f, 0f, mod.ProjectileType("TheHauntPro"), 0, 0f, player.whoAmI, 0f, 0f);
+				Projectile.NewProjectile(player.position.X + player.width / 2, player.position.Y + player.height / 2, 0f, 0f, ModContent.ProjectileType<TheHauntPro>(), 0, 0f, player.whoAmI, 0f, 0f);
 			}
 		}
 	}

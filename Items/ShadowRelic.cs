@@ -2,6 +2,9 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
+using Tremor.Items.Steel;
+using Tremor.NPCs;
 
 namespace Tremor.Items
 {
@@ -19,16 +22,16 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Shadow Relic");
-			Tooltip.SetDefault("'Can be used in ritual of shadows if thrown into lava in underground and the Dryad is alive...'\nSummons Wall of Shadows");
+			Tooltip.SetDefault("Summons Wall of Shadows\n" +
+"'Can be used in ritual of shadows if thrown into lava in underground and the Dryad is alive...'");
 		}
-
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.SoulofNight, 16);
-			recipe.AddIngredient(null, "PhantomSoul", 5);
-			recipe.AddIngredient(null, "SteelBar", 12);
+			recipe.AddIngredient(ModContent.ItemType<PhantomSoul>(), 5);
+			recipe.AddIngredient(ModContent.ItemType<SteelBar>(), 12);
 			recipe.AddIngredient(ItemID.Amethyst, 7);
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 15);
 			recipe.AddTile(26);
@@ -104,9 +107,8 @@ namespace Tremor.Items
 			}
 			label_21:
 			int Y = num4 * 16;
-			NPC.SpawnOnPlayer(Main.myPlayer, mod.NPCType("WallOfShadow"));
+			NPC.SpawnOnPlayer(Main.myPlayer, ModContent.NPCType<WallOfShadow>());
 		}
-
 
 	}
 }

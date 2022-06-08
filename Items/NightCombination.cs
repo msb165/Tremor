@@ -19,9 +19,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Nightly Combination");
-			Tooltip.SetDefault("Increases life regeneration, melee damage\nMakes you glow during night");
+			Tooltip.SetDefault("Increases life regeneration, melee damage\n" +
+"Makes you glow during night");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
@@ -42,9 +42,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "Bloomstone");
-			recipe.AddIngredient(null, "DragonGem");
-			recipe.AddIngredient(null, "TwilightHorns");
+			recipe.AddIngredient(ModContent.ItemType<Bloomstone>());
+			recipe.AddIngredient(ModContent.ItemType<DragonGem>());
+			recipe.AddIngredient(ModContent.ItemType<TwilightHorns>());
 			recipe.SetResult(this);
 			recipe.AddTile(114);
 			recipe.AddRecipe();

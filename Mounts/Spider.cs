@@ -7,7 +7,7 @@ namespace Tremor.Mounts
 	{
 		public override void SetDefaults()
 		{
-			mountData.buff = mod.BuffType("FatSpider");
+			mountData.buff = ModContent.BuffType<Buffs.FatSpider>();
 			mountData.heightBoost = 15;
 			mountData.fallDamage = 0.5f;
 			mountData.runSpeed = 5f;

@@ -3,6 +3,8 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items;
+using Tremor.Items.Cyber;
 
 namespace Tremor.NPCs
 {
@@ -14,7 +16,6 @@ namespace Tremor.NPCs
 			DisplayName.SetDefault("Cyber King");
 			Main.npcFrameCount[npc.type] = 6;
 		}
-
 
 		public override void HitEffect(int hitDirection, double damage)
 		{
@@ -49,9 +50,8 @@ namespace Tremor.NPCs
 			npc.HitSound = SoundID.NPCHit4;
 			npc.DeathSound = SoundID.NPCDeath6;
 			music = MusicID.Boss2;
-			bossBag = mod.ItemType("CyberKingBag");
+			bossBag = ModContent.ItemType<CyberKingBag>();
 		}
-
 
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
 		{
@@ -66,12 +66,11 @@ namespace Tremor.NPCs
 
 			if (Main.rand.Next(900) == 0)
 			{
-				NPC.NewNPC((int)npc.position.X + 60, (int)npc.position.Y, mod.NPCType("Cybermite"));
-				NPC.NewNPC((int)npc.position.X - 60, (int)npc.position.Y, mod.NPCType("Cybermite"));
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y + 60, mod.NPCType("Cybermite"));
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y - 60, mod.NPCType("Cybermite"));
+				NPC.NewNPC((int)npc.position.X + 60, (int)npc.position.Y, ModContent.NPCType<Cybermite>());
+				NPC.NewNPC((int)npc.position.X - 60, (int)npc.position.Y, ModContent.NPCType<Cybermite>());
+				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y + 60, ModContent.NPCType<Cybermite>());
+				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y - 60, ModContent.NPCType<Cybermite>());
 			}
-
 
 			bool allDead = false;
 			for (int i = 0; i < Main.player.Length; i++)
@@ -205,7 +204,7 @@ namespace Tremor.NPCs
 						num1327 = num1328 / num1327;
 						num1325 *= num1327;
 						num1326 *= num1327;
-						Projectile.NewProjectile(vector159.X, vector159.Y, num1325, num1326, mod.ProjectileType("CyberRingPro"), 42, 0f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(vector159.X, vector159.Y, num1325, num1326, ModContent.ProjectileType<Projectiles.CyberRingPro>(), 42, 0f, Main.myPlayer, 0f, 0f);
 					}
 				}
 				else if (npc.ai[3] < 0f)
@@ -317,7 +316,7 @@ namespace Tremor.NPCs
 							}
 							num1333 += 3f;
 							float speedX2 = npc.velocity.X * 0.25f;
-							Projectile.NewProjectile(vector160.X, vector160.Y, speedX2, num1333, mod.ProjectileType("RedPulsePro"), 42, 0f, Main.myPlayer, Main.rand.Next(5), 0f);
+							Projectile.NewProjectile(vector160.X, vector160.Y, speedX2, num1333, ModContent.ProjectileType<Projectiles.RedPulsePro>(), 42, 0f, Main.myPlayer, Main.rand.Next(5), 0f);
 						}
 					}
 				}
@@ -366,7 +365,7 @@ namespace Tremor.NPCs
 				if (npc.ai[3] > num1338)
 				{
 					npc.ai[3] = 0f;
-					Projectile.NewProjectile(vector161.X, vector161.Y, num1334, num1335, mod.ProjectileType("PurplePulsePro"), 30, 0f, Main.myPlayer, 0f, 0f);
+					Projectile.NewProjectile(vector161.X, vector161.Y, num1334, num1335, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 0f, Main.myPlayer, 0f, 0f);
 				}
 				if (Main.netMode != 1)
 				{
@@ -399,29 +398,23 @@ namespace Tremor.NPCs
 			{
 				npc.DropBossBags();
 			}
-			if (Main.netMode != 1)
+			
+			if (!Main.expertMode && Main.rand.NextBool())
 			{
-				int CenterX = (int)(npc.position.X + npc.width / 2) / 16;
-				int CenterY = (int)(npc.position.Y + npc.height / 2) / 16;
-				int halfLength = npc.width / 2 / 16 + 1;
-
-				if (!Main.expertMode && Main.rand.NextBool())
-				{
-					Helper.DropItem(new Rectangle((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height), new Drop(mod.ItemType("RedStorm"), 1, 1), new Drop(mod.ItemType("ShockwaveClaymore"), 1, 1), new Drop(mod.ItemType("CyberCutter"), 1, 1));
-				}
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 499, Main.rand.Next(6, 25));
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 500, Main.rand.Next(6, 25));
-
-				if (Main.rand.Next(10) == 0)
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CyberKingTrophy"));
-				}
-				if (!Main.expertMode && Main.rand.Next(7) == 0)
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CyberKingMask"));
-				}
-				TremorWorld.downedBoss[TremorWorld.Boss.CyberKing] = true;
+				Helper.DropItems(npc.position, npc.Size, new Drop(ModContent.ItemType<RedStorm>(), 1, 1), new Drop(ModContent.ItemType<ShockwaveClaymore>(), 1, 1), new Drop(ModContent.ItemType<CyberCutter>(), 1, 1));
 			}
-		}
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 499, Main.rand.Next(6, 25));
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 500, Main.rand.Next(6, 25));
+
+			if (Main.rand.Next(10) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CyberKingTrophy>());
+			}
+			if (!Main.expertMode && Main.rand.NextBool(7))
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CyberKingMask>());
+			}
+			TremorWorld.Boss.CyberKing.Downed();
+	}
 	}
 }

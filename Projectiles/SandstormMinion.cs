@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
@@ -18,7 +19,7 @@ namespace Tremor.Projectiles
 		const int DustType = 19; // Тип дастов
 		const float DustChance = 0.09f; // Шанс спавна дастов
 		int ShootType = -1; // Тип выстрела (Если из ванильной терки)
-		string ShootTypeMod = "Sand"; // Тип выстрела из мода (если указывать это, то нужно чтоб ShootType был -1)
+		int ShootTypeMod = ProjectileID.SandBallGun; // Тип выстрела из мода (если указывать это, то нужно чтоб ShootType был -1)
 									  // Напрмер, если:
 									  // ShootType = 1 а ShootTypeMod = "projVultureFeather" - стрелять будет стрелой (id 1)
 									  // Если же:
@@ -49,7 +50,6 @@ namespace Tremor.Projectiles
 
 		}
 
-
 		public override bool OnTileCollide(Vector2 oldVelocity)
 		{
 			return false;
@@ -72,7 +72,7 @@ namespace Tremor.Projectiles
 			{
 				TimeToShoot = ShootRate;
 				if (ShootType == -1)
-					ShootType = mod.ProjectileType(ShootTypeMod);
+					ShootType = ShootTypeMod;
 
 				float NearestNPCDist = ShootDistance;
 				int NearestNPC = -1;
@@ -97,7 +97,7 @@ namespace Tremor.Projectiles
 
 		void Dust()
 		{
-			if (Helper.Chance(DustChance))
+			if (Main.rand.NextBool((int)DustChance))
 				Terraria.Dust.NewDust(projectile.position, projectile.width, projectile.height, DustType);
 			foreach (Dust dust in Main.dust)
 			{

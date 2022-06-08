@@ -27,7 +27,7 @@ namespace Tremor.Items
 
 			item.autoReuse = false;
 			item.shootSpeed = 25f;
-			item.shoot = mod.ProjectileType("ExampleLaser");
+			item.shoot = ModContent.ProjectileType<Projectiles.ExampleLaser>();
 		}
 
 		public override void SetStaticDefaults()
@@ -35,8 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Heavy Beam Cannon");
 			Tooltip.SetDefault("Fires a constant powerful beam");
 		}
-
-
 
 		public override Vector2? HoldoutOffset()
 		{

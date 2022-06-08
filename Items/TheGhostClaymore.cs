@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.rare = 11;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = false;
-			item.shoot = mod.ProjectileType("TheGhostClaymorePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.TheGhostClaymorePro>();
 			item.shootSpeed = 16f;
 			item.melee = true;
 		}

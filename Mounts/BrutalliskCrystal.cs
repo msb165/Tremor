@@ -9,7 +9,7 @@ namespace Tremor.Mounts
 		{
 			mountData.spawnDust = 226;
 			mountData.spawnDustNoGravity = true;
-			mountData.buff = mod.BuffType("BrutalliskCrystal");
+			mountData.buff = ModContent.BuffType<Buffs.BrutalliskCrystal>();
 			mountData.heightBoost = 24;
 			mountData.flightTimeMax = 999999999;
 			mountData.fatigueMax = 999999999;

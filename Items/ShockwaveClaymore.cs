@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useTime = 25;
 			item.useAnimation = 25;
 			item.useStyle = 1;
-			item.shoot = mod.ProjectileType("ShockwavePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.ShockwavePro>();
 			item.shootSpeed = 7f;
 			item.knockBack = 4;
 			item.value = 10000;
@@ -31,8 +31,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Shockwave Claymore");
 			Tooltip.SetDefault("");
 		}
-
-
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{

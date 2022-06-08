@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.knockBack = 1.5f;
 			item.value = 10;
 			item.rare = 11;
-			item.shoot = mod.ProjectileType("NightmareBulletPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.NightmareBulletPro>();
 			item.shootSpeed = 10f;
 			item.ammo = AmmoID.Bullet;
 		}
@@ -29,12 +29,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("'Can bounce off blocks.'");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.EmptyBullet, 50);
-			recipe.AddIngredient(null, "NightmareBar", 1);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 1);
 			recipe.AddTile(412);
 			recipe.SetResult(this, 50);
 			recipe.AddRecipe();

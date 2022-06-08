@@ -41,7 +41,7 @@ namespace Tremor.Invasion
 		public override void AI()
 		{
 			NPC center = Main.npc[(int)projectile.ai[0]];
-			if (!center.active || center.type != mod.NPCType("Titan"))
+			if (!center.active || center.type != ModContent.NPCType<Titan>())
 			{
 				projectile.Kill();
 			}
@@ -64,9 +64,9 @@ namespace Tremor.Invasion
 
 		public override void OnHitPlayer(Player target, int damage, bool crit)
 		{
-			for (int k = 0; k < Player.maxBuffs; k++)
+			for (int k = 0; k < Player.MaxBuffs; k++)
 			{
-				if (target.buffType[k] > 0 && target.buffTime[k] > 0 && BuffLoader.CanBeCleared(target.buffType[k]) && Main.rand.Next(2) == 0)
+				if (target.buffType[k] > 0 && target.buffTime[k] > 0 && BuffLoader.CanBeCleared(target.buffType[k]) && Main.rand.NextBool(2))
 				{
 					target.DelBuff(k);
 					k--;

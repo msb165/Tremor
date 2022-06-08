@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.consumable = true;
 			item.useTime = 19;
 			item.useAnimation = 19;
-			item.shoot = mod.ProjectileType("Kunai");
+			item.shoot = ModContent.ProjectileType<Projectiles.Kunai>();
 			item.shootSpeed = 15f;
 			item.useStyle = 1;
 			item.knockBack = 4;
@@ -32,7 +32,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Kunai");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

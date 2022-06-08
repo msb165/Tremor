@@ -22,12 +22,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("'Charged with the essence of ocean'");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.GoldenKey, 1);
-			recipe.AddIngredient(null, "SeaFragment", 12);
+			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 12);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

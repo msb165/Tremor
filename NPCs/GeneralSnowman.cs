@@ -1,11 +1,12 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
+using Microsoft.Xna.Framework;
+using Tremor.Items;
+
 namespace Tremor.NPCs
 {
-
 	public class GeneralSnowman : ModNPC
 	{
 		public override void SetStaticDefaults()
@@ -30,13 +31,7 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath15;
 			npc.value = Item.buyPrice(0, 0, 8, 7);
 			banner = npc.type;
-			bannerItem = mod.ItemType("GeneralSnowmanBanner");
-		}
-
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-		{
-			npc.lifeMax = npc.lifeMax * 1;
-			npc.damage = npc.damage * 1;
+			bannerItem = ModContent.ItemType<GeneralSnowmanBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -44,9 +39,8 @@ namespace Tremor.NPCs
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 76, 2.5f * hitDirection, -2.5f, 0, default(Color), 1f);
-				}
+
 				Dust.NewDust(npc.position, npc.width, npc.height, 76, 2.5f * hitDirection, -2.5f, 0, default(Color), 3f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 76, 2.5f * hitDirection, -2.5f, 0, default(Color), 2f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 76, 2.5f * hitDirection, -2.5f, 0, default(Color), 3f);
@@ -54,11 +48,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-		{
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
-			return NPC.AnyNPCs(144) && Main.hardMode && y < Main.worldSurface ? 0.01f : 0f;
-		}
+			=> NPC.AnyNPCs(NPCID.MisterStabby) && Main.hardMode && spawnInfo.spawnTileY < Main.worldSurface ? 0.01f : 0f;
 	}
 }

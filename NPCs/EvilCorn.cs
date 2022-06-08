@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items;
 
 /*
 1 состояние - парит на месте - при приближении игрока даёт ему оплеуху. 
@@ -65,7 +66,7 @@ namespace Tremor.NPCs
 			npc.boss = true;
 			npc.value = Item.buyPrice(0, 3, 25, 0);
 			music = 19;
-			bossBag = mod.ItemType("EvilCornBag");
+			bossBag = ModContent.ItemType<EvilCornBag>();
 		}
 		// ТУТ ЕЩЕ НАСТРОЙКИ !!!
 		const int damage0 = 20; // Урон в первом состоянии
@@ -80,8 +81,8 @@ namespace Tremor.NPCs
 		#region "Вылёт попкорна при ударе"
 		public override void OnHitByItem(Player player, Item item, int damage, float knockback, bool crit)
 		{
-			if (Main.rand.Next(2) == 0)
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Popcorn"), 0);
+			if (Main.rand.NextBool(2))
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Popcorn>(), 0);
 			base.OnHitByItem(player, item, damage, knockback, crit);
 		}
 
@@ -93,8 +94,8 @@ namespace Tremor.NPCs
 
 		public override void OnHitByProjectile(Projectile projectile, int damage, float knockback, bool crit)
 		{
-			if (Main.rand.Next(2) == 0)
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Popcorn"), 0);
+			if (Main.rand.NextBool(2))
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Popcorn>(), 0);
 			base.OnHitByProjectile(projectile, damage, knockback, crit);
 		}
 		#endregion
@@ -581,7 +582,7 @@ namespace Tremor.NPCs
 				{
 					if (npc.velocity.Y <= 0)
 					{
-						if (Main.rand.Next(6) == 0)
+						if (Main.rand.NextBool(6))
 							for (int x = (int)npc.position.X; x < (npc.position.X + npc.width); x++)
 								Dust.NewDust(new Vector2(x, npc.position.Y + npc.height), 1, 1, DustID.GoldCoin);
 						npc.frame = getFrame(22);
@@ -605,7 +606,7 @@ namespace Tremor.NPCs
 					}
 					while (!WorldGen.SolidTile((int)npc.Center.X / 16, ((int)npc.position.Y + npc.height) / 16 + 1))
 						npc.position.Y += 8;
-					if (Main.rand.Next(6) == 0)
+					if (Main.rand.NextBool(6))
 						for (int x = (int)npc.position.X; x < (npc.position.X + npc.width); x++)
 							Dust.NewDust(new Vector2(x, npc.position.Y + npc.height), 1, 1, DustID.GoldCoin);
 					npc.frame = getFrame(21);
@@ -640,43 +641,43 @@ namespace Tremor.NPCs
 				int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
 				int halfLength = npc.width / 2 / 16 + 1;
 
-				if (!Main.expertMode && Main.rand.Next(7) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EvilCornMask"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<EvilCornMask>());
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EvilCornTrophy"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<EvilCornTrophy>());
 				}
-				if (!Main.expertMode && Main.rand.Next(5) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(5))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("GrayKnightHelmet"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<GrayKnightHelmet>());
 				}
-				if (!Main.expertMode && Main.rand.Next(5) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(5))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("GrayKnightBreastplate"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<GrayKnightBreastplate>());
 				}
-				if (!Main.expertMode && Main.rand.Next(5) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(5))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("KnightGreaves"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<KnightGreaves>());
 				}
-				if (!Main.expertMode && Main.rand.Next(2) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(2))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CornSword"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CornSword>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Corn"), Main.rand.Next(25, 48));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Corn>(), Main.rand.Next(25, 48));
 				}
-				if (!Main.expertMode && !Main.player[Main.myPlayer].HasItem(mod.ItemType("FarmerShovel")))
+				if (!Main.expertMode && !Main.player[Main.myPlayer].HasItem(ModContent.ItemType<FarmerShovel>()))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("FarmerShovel"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FarmerShovel>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CornJavelin"), Main.rand.Next(15, 45));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CornJavelin>(), Main.rand.Next(15, 45));
 				}
-				TremorWorld.downedBoss[TremorWorld.Boss.EvilCorn] = true;
+				TremorWorld.Boss.EvilCorn.Downed();
 
 			}
 		}

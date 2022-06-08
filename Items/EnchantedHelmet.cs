@@ -7,13 +7,11 @@ namespace Tremor.Items
 	public class EnchantedHelmet : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
 			item.width = 24;
 			item.height = 24;
-
 
 			item.value = 10000;
 			item.rare = 2;
@@ -23,9 +21,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Enchanted Helmet");
-			Tooltip.SetDefault("Increases maximum mana by 20\nIncreases maximum health by 15");
+			Tooltip.SetDefault("Increases maximum mana by 20\n" +
+"Increases maximum health by 15");
 		}
-
 
 		public override void UpdateEquip(Player player)
 		{
@@ -35,15 +33,14 @@ namespace Tremor.Items
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("EnchantedBreastplate") && legs.type == mod.ItemType("EnchantedGreaves");
+			return body.type == ModContent.ItemType<EnchantedBreastplate>() && legs.type == ModContent.ItemType<EnchantedGreaves>();
 		}
-
 
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "8% increased magic damage, increases power of enchanted weapons";
 			player.magicDamage += 0.08f;
-			player.AddBuff(mod.BuffType("EnchantedBuff"), 2);
+			player.AddBuff(ModContent.BuffType<Buffs.EnchantedBuff>(), 2);
 		}
 
 	}

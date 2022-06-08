@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 20;
 			item.useAnimation = 20;
-			item.shoot = mod.ProjectileType("HarpyFeather");
+			item.shoot = ModContent.ProjectileType<Projectiles.HarpyFeather>();
 			item.shootSpeed = 19f;
 			item.useStyle = 1;
 			item.knockBack = 4;
@@ -33,7 +33,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Sharp Feathers");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
@@ -53,7 +52,7 @@ namespace Tremor.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Feather, 15);
 			recipe.AddIngredient(ItemID.Cloud, 5);
-			recipe.AddIngredient(null, "AirFragment", 14);
+			recipe.AddIngredient(ModContent.ItemType<AirFragment>(), 14);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();

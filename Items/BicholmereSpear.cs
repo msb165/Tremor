@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.thrown = true;
 			item.useTime = 30;
-			item.shoot = mod.ProjectileType("BicholmereSpearPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.BicholmereSpearPro>();
 			item.shootSpeed = 15f;
 			item.useAnimation = 30;
 			item.useStyle = 1;

@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 10;
 			item.useAnimation = 15;
-			//item.shoot = mod.ProjectileType("DragonLaser");
+			//item.shoot = ModContent.ProjectileType<Projectiles.DragonLaser>();
 			item.shoot = 20;
 
 			item.useAmmo = AmmoID.Bullet;
@@ -36,7 +36,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Two round burst");
 		}
 
-
 		public override Vector2? HoldoutOffset()
 		{
 			return new Vector2(-10, -4);
@@ -51,8 +50,8 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "DragonCapsule", 9);
-			recipe.AddIngredient(null, "EarthFragment", 14);
+			recipe.AddIngredient(ModContent.ItemType<DragonCapsule>(), 9);
+			recipe.AddIngredient(ModContent.ItemType<EarthFragment>(), 14);
 			recipe.AddIngredient(ItemID.IllegalGunParts, 1);
 			recipe.AddTile(412);
 			recipe.SetResult(this);

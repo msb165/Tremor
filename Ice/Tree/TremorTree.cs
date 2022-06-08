@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.ModLoader;
+using Tremor.Ice.Items;
 
 namespace Tremor.Ice.Tree
 {
@@ -10,7 +11,7 @@ namespace Tremor.Ice.Tree
 		/* TODO: TreeCrash does not exist
 		public override int CreateDust()
 		{
-			return mod.DustType<TreeCrash>();
+			return ModContent.DustType<TreeCrash>();
 		}
 		*/
 
@@ -21,7 +22,7 @@ namespace Tremor.Ice.Tree
 
 		public override int DropWood()
 		{
-			return mod.ItemType("GlacierWood");
+			return ModContent.ItemType<GlacierWood>();
 		}
 
 		public override Texture2D GetTexture()

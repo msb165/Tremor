@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Tremor.Items;
 
 namespace Tremor.Tiles
 {
@@ -34,7 +35,7 @@ namespace Tremor.Tiles
     {
         if(frameX == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, mod.ItemType("MinersLamp"));
+            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<MinersLamp>());
         }
     }
 
@@ -42,10 +43,7 @@ namespace Tremor.Tiles
     {
         if(closer)
         {
-            Player player = Main.player[Main.myPlayer];
-            int style = Main.tile[i, j].frameX / 15;
-            string type;
-            player.AddBuff(12, 60, true);
+            Main.LocalPlayer.AddBuff(BuffID.NightOwl, 60);
         }
     }
 }}

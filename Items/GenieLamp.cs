@@ -9,7 +9,6 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-
 			item.width = 38;
 			item.height = 20;
 			item.useTime = 20;
@@ -27,12 +26,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Summons a Genie");
 		}
 
-
 		public override bool UseItem(Player player)
 		{
-			player.AddBuff(mod.BuffType("petGenie"), 2);
+			player.AddBuff(ModContent.BuffType<Buffs.petGenie>(), 2);
 			for (int i = 0; i < Main.projectile.Length; i++)
-				if (Main.projectile[i].type == mod.ProjectileType("projGenie") && Main.projectile[i].owner == item.owner)
+				if (Main.projectile[i].type == ModContent.ProjectileType<Projectiles.projGenie>() && Main.projectile[i].owner == item.owner)
 					Main.projectile[i].Center = Main.player[item.owner].Center;
 			return true;
 		}

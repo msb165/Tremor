@@ -24,9 +24,9 @@ namespace Tremor.Items
 			item.value = Item.buyPrice(0, 3, 0, 0);
 			item.rare = 3;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("JellyfishStaffPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.Minions.JellyfishStaffPro>();
 			item.shootSpeed = 2f;
-			item.buffType = mod.BuffType("JellyBuff");
+			item.buffType = ModContent.BuffType<Buffs.JellyBuff>();
 			item.buffTime = 3600;
 		}
 
@@ -35,7 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Jellyfish Staff");
 			Tooltip.SetDefault("Summons a jellyfish to fight for you.");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{

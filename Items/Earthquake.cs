@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.shootSpeed = 15f;
 			item.mana = 8;
 			item.useStyle = 5;
-			item.shoot = mod.ProjectileType("EarthquakePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.EarthquakePro>();
 			item.knockBack = 3;
 			item.value = 10000;
 			item.rare = 5;
@@ -36,8 +36,8 @@ namespace Tremor.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.SpellTome, 1);
 			recipe.AddIngredient(ItemID.MudBlock, 25);
-			recipe.AddIngredient(null, "EarthFragment", 14);
-			recipe.AddIngredient(null, "SeaFragment", 10);
+			recipe.AddIngredient(ModContent.ItemType<EarthFragment>(), 14);
+			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 10);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();

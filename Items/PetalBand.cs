@@ -27,7 +27,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Summons the Plantera");
 		}
 
-
 		public override bool CanUseItem(Player player)
 		{
 			return Main.hardMode && NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3 && !NPC.AnyNPCs(NPCID.Plantera);
@@ -43,7 +42,7 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "EssenseofJungle", 1);
+			recipe.AddIngredient(ModContent.ItemType<EssenseofJungle>(), 1);
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 5);
 			recipe.AddIngredient(ItemID.Vine, 5);
 			recipe.AddIngredient(ItemID.Stinger, 5);

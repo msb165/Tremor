@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.rare = 11;
 			item.useStyle = 1;
 			item.consumable = true;
-			item.createTile = mod.TileType("NightmareOreTile");
+			item.createTile = ModContent.TileType<Tiles.NightmareOreTile>();
 		}
 
 		public override void SetStaticDefaults()

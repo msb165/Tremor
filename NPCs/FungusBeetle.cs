@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Fungus;
 
 namespace Tremor.NPCs
 {
@@ -33,7 +34,7 @@ namespace Tremor.NPCs
 			npc.color = Color.White;
 			npc.boss = true;
 			npc.noTileCollide = true;
-			bossBag = mod.ItemType("FungusBeetleBag");
+			bossBag = ModContent.ItemType<FungusBeetleBag>();
 		}
 
 		public override void NPCLoot()
@@ -47,20 +48,20 @@ namespace Tremor.NPCs
 				int centerX = (int)(npc.position.X + npc.width / 2) / 16;
 				int centerY = (int)(npc.position.Y + npc.height / 2) / 16;
 				int halfLength = npc.width / 2 / 16 + 1;
-				if (!Main.expertMode && Main.rand.Next(7) == 0)
+				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("FungusBeetleMask"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FungusBeetleMask>());
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("FungusBeetleTrophy"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FungusBeetleTrophy>());
 				}
 				if (!Main.expertMode)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("FungusElement"), Main.rand.Next(10, 23));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FungusElement>(), Main.rand.Next(10, 23));
 				}
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 28, Main.rand.Next(9, 22));
-				TremorWorld.downedBoss[TremorWorld.Boss.FungusBeetle] = true;
+				TremorWorld.Boss.FungusBeetle.Downed();
 			}
 		}
 
@@ -156,11 +157,11 @@ namespace Tremor.NPCs
 		{
 			npc.position -= npc.velocity * 0.05f;
 
-			if (NPC.AnyNPCs(mod.NPCType("GreatFungusBug")))
+			if (NPC.AnyNPCs(ModContent.NPCType<GreatFungusBug>()))
 			{
 				npc.dontTakeDamage = true;
 			}
-			if (!NPC.AnyNPCs(mod.NPCType("GreatFungusBug")))
+			if (!NPC.AnyNPCs(ModContent.NPCType<GreatFungusBug>()))
 			{
 				npc.dontTakeDamage = false;
 			}
@@ -197,12 +198,12 @@ namespace Tremor.NPCs
 
 			if (Main.rand.Next(200) == 0)
 			{
-				NPC.NewNPC((int)npc.Center.X - 70, (int)npc.Center.Y, mod.NPCType("LittleMushroomBug"));
+				NPC.NewNPC((int)npc.Center.X - 70, (int)npc.Center.Y, ModContent.NPCType<LittleMushroomBug>());
 			}
 
 			if (Main.rand.Next(500) == 0)
 			{
-				NPC.NewNPC((int)npc.Center.X - 70, (int)npc.Center.Y, mod.NPCType("GreatFungusBug"));
+				NPC.NewNPC((int)npc.Center.X - 70, (int)npc.Center.Y, ModContent.NPCType<GreatFungusBug>());
 			}
 
 			if (npc.life > npc.lifeMax / 2)
@@ -215,7 +216,7 @@ namespace Tremor.NPCs
 				SecondState = true;
 			}
 
-			if (Main.rand.Next(2) == 0)
+			if (Main.rand.NextBool(2))
 			{
 				int num706 = Dust.NewDust(npc.position, npc.width, npc.height, 67, 0f, 0f, 200, npc.color, 0.5f);
 				Main.dust[num706].velocity *= 0.6f;

@@ -22,12 +22,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.BottledWater, 1);
-			recipe.AddIngredient(null, "LightBulb", 1);
+			recipe.AddIngredient(ModContent.ItemType<LightBulb>(), 1);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

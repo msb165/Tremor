@@ -24,7 +24,7 @@ namespace Tremor.Items
 			item.rare = 2;
 			item.UseSound = SoundID.Item44;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("Bramble");
+			item.shoot = ModContent.ProjectileType<Projectiles.Minions.Bramble>();
 			item.summon = true;
 			item.sentry = true;
 		}
@@ -34,7 +34,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Bramble Staff");
 			Tooltip.SetDefault("Summons a bramble bush to spit spikes at your enemies");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{

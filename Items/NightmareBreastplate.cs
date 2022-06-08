@@ -22,12 +22,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "NightmareBar", 25);
-			recipe.AddIngredient(null, "Phantaplasm", 10);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 25);
+			recipe.AddIngredient(ModContent.ItemType<Phantaplasm>(), 10);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

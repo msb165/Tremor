@@ -1,6 +1,9 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
+using Tremor.NPCs.Bosses.NovaPillar.Items.Armor;
+using Tremor.Projectiles.Alchemic;
 
 namespace Tremor.Items
 {
@@ -33,13 +36,14 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			//player.GetModPlayer<TremorPlayer>(mod).zellariumHead = true;
+			//player.GetModPlayer<TremorPlayer>().zellariumHead = true;
 			player.dash = 1;
 		}
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "Creates alchemical bubbles to attack enemies\nBubbles heal you";
+			player.setBonus = "Creates alchemical bubbles to attack enemies\n" +
+"Bubbles heal you";
 			if (--TimeToShoot <= 0)
 			{
 				TimeToShoot = ShootRate;
@@ -75,13 +79,13 @@ namespace Tremor.Items
 			{
 				velocity.X = velocity.X + Main.rand.Next(-spread, spread + 1) * spreadMult;
 				velocity.Y = velocity.Y + Main.rand.Next(-spread, spread + 1) * spreadMult;
-				int i = Projectile.NewProjectile(Main.player[item.owner].Center.X, Main.player[item.owner].Center.Y, velocity.X, velocity.Y, mod.ProjectileType("AlchemicBubbleZellarium"), 115, ShootKN, item.owner);
+				int i = Projectile.NewProjectile(Main.player[item.owner].Center.X, Main.player[item.owner].Center.Y, velocity.X, velocity.Y, ModContent.ProjectileType<AlchemicBubbleZellarium>(), 115, ShootKN, item.owner);
 			}
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("WhiteMasterChestplate") && legs.type == mod.ItemType("WhiteMasterGreaves");
+			return body.type == ModContent.ItemType<WhiteMasterChestplate>() && legs.type == ModContent.ItemType<WhiteMasterGreaves>();
 		}
 
 		public override void ArmorSetShadows(Player player)
@@ -93,11 +97,11 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "BrokenHeroArmorplate", 1);
-			recipe.AddIngredient(null, "NovaHelmet", 1);
-			recipe.AddIngredient(null, "Aquamarine", 4);
-			recipe.AddIngredient(null, "SoulofFight", 11);
-			recipe.AddIngredient(null, "Phantaplasm", 5);
+			recipe.AddIngredient(ModContent.ItemType<BrokenHeroArmorplate>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<NovaHelmet>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<Aquamarine>(), 4);
+			recipe.AddIngredient(ModContent.ItemType<SoulofFight>(), 11);
+			recipe.AddIngredient(ModContent.ItemType<Phantaplasm>(), 5);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

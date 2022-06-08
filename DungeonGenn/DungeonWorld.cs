@@ -3,6 +3,8 @@ using Terraria;
 using Terraria.GameContent.Generation;
 using Terraria.ModLoader;
 using Terraria.World.Generation;
+using Tremor.Ice;
+using Tremor.Tiles;
 
 namespace Tremor.DungeonGenn
 {
@@ -1452,7 +1454,7 @@ namespace Tremor.DungeonGenn
 						case 0:
 							break;
 						case 1:
-							if (HitChance(120)) WorldGen.PlaceTile(putX, putY, (ushort)Tremor.instance.TileType("RuinAltar")); break;
+							if (HitChance(120)) WorldGen.PlaceTile(putX, putY, (ushort)ModContent.TileType<RuinAltar>()); break;
 					}
 				}
 			}
@@ -1480,7 +1482,7 @@ namespace Tremor.DungeonGenn
 			if (FirstAI)
 			{
 				FirstAI = false;
-				if (HitChance(40)) WorldGen.PlaceChest(putX, putY, (ushort)Tremor.instance.TileType("RuinChest"), false, 2);
+				if (HitChance(40)) WorldGen.PlaceChest(putX, putY, (ushort)ModContent.TileType<RuinChest>(), false, 2);
 			}
 		}
 	}
@@ -1599,7 +1601,7 @@ namespace Tremor.DungeonGenn
 						break;
 					}
 				}
-				int[] itemsToPlaceInGlassChestsSecondary = { Tremor.instance.ItemType("IceKey"), 73 };
+				int[] itemsToPlaceInGlassChestsSecondary = { ModContent.ItemType<IceKey>(), 73 };
 				int itemsToPlaceInGlassChestsSecondaryChoice = 0;
 				if (isInDungeon)
 				{

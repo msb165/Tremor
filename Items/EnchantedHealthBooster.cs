@@ -15,7 +15,7 @@ namespace Tremor.Items
 			item.width = 22;
 			item.UseSound = SoundID.Item43;
 			item.height = 18;
-			item.buffType = mod.BuffType("ExtendedHealthBooster");
+			item.buffType = ModContent.BuffType<Buffs.ExtendedHealthBooster>();
 			item.value = 5160000;
 			item.rare = 11;
 		}
@@ -25,7 +25,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Enchanted Health Booster");
 			Tooltip.SetDefault("Regenerates heatlh every 45 seconds");
 		}
-
 
 		public override void UseStyle(Player player)
 		{
@@ -38,12 +37,12 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "HealthBooster", 1);
-			recipe.AddIngredient(null, "GoldenClaw", 15);
-			recipe.AddIngredient(null, "StarBar", 1);
-			recipe.AddIngredient(null, "AngryShard", 1);
+			recipe.AddIngredient(ModContent.ItemType<HealthBooster>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<GoldenClaw>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<StarBar>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<AngryShard>(), 1);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "MagicWorkbenchTile");
+			recipe.AddTile(ModContent.TileType<Tiles.MagicWorkbenchTile>());
 			recipe.AddRecipe();
 		}
 	}

@@ -17,7 +17,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 50000;
-			item.createTile = mod.TileType("VultureKingTrophyTile");
+			item.createTile = ModContent.TileType<Tiles.VultureKingTrophyTile>();
 			item.placeStyle = 0;
 		}
 

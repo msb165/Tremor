@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.rare = 1;
 			item.consumable = true;
 			item.value = 0;
-			item.createTile = mod.TileType("StoneBed");
+			item.createTile = ModContent.TileType<Tiles.StoneBed>();
 		}
 
 		public override void SetStaticDefaults()
@@ -27,7 +27,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Stone Bed");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

@@ -24,9 +24,9 @@ namespace Tremor.Items
 			item.value = 1000000;
 			item.rare = 11;
 			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("QuetzalcoatlPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.Minions.QuetzalcoatlPro>();
 			item.shootSpeed = 2f;
-			item.buffType = mod.BuffType("QuetzalcoatlBuff");
+			item.buffType = ModContent.BuffType<Buffs.QuetzalcoatlBuff>();
 			item.buffTime = 3600;
 		}
 
@@ -35,7 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Baby Quetzalcoatl Stave");
 			Tooltip.SetDefault("Summons a baby quetzalcoatl to fight for you.");
 		}
-
 
 		public override bool AltFunctionUse(Player player)
 		{

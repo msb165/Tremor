@@ -10,7 +10,7 @@ namespace Tremor.Items
 		{
 			for (int i = 0; i < player.armor.Length; i++)
 			{
-				MPlayer modPlayer = (MPlayer)player.GetModPlayer(mod, "MPlayer");
+				MPlayer modPlayer = player.GetModPlayer<MPlayer>();
 				if (modPlayer.pyro)
 				{
 					return false;
@@ -36,11 +36,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Alchemical flasks leaves an explosion");
 		}
 
-
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			MPlayer modPlayer = (MPlayer)player.GetModPlayer(mod, "MPlayer");
-			player.AddBuff(mod.BuffType("PyroBuff"), 2);
+			MPlayer modPlayer = player.GetModPlayer<MPlayer>();
+			player.AddBuff(ModContent.BuffType<Buffs.PyroBuff>(), 2);
 			modPlayer.pyro = true;
 		}
 	}

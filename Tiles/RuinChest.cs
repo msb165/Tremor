@@ -5,6 +5,8 @@ using Terraria.Enums;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Tremor.Items;
+using Tremor.NPCs;
 
 namespace Tremor.Tiles
 {
@@ -80,7 +82,7 @@ namespace Tremor.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(i * 16, j * 16, 32, 32, mod.ItemType("RuinChestItem"));
+            Item.NewItem(i * 16, j * 16, 32, 32, ModContent.ItemType<Items.RuinChest>());
             Chest.DestroyChest(i, j);
         }
 
@@ -89,16 +91,16 @@ namespace Tremor.Tiles
         public override void RightClick(int i, int j)
         {
             Player player = Main.player[Main.myPlayer];
-            if (player.showItemIcon2 == mod.ItemType("RuinKey"))
+            if (player.showItemIcon2 == ModContent.ItemType<RuinKey>())
             {
                 for (int num66 = 0; num66 < 58; num66++)
                 {
-                    if (player.inventory[num66].type == mod.ItemType("RuinKey") && player.inventory[num66].stack > 0)
+                    if (player.inventory[num66].type == ModContent.ItemType<RuinKey>() && player.inventory[num66].stack > 0)
                     {
-                        NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, mod.NPCType("RuinGhost1"));
-                        NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y - YOffset, mod.NPCType("RuinGhost1"));
-                        NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y + YOffset, mod.NPCType("RuinGhost1"));
-                        NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y - YOffset, mod.NPCType("RuinGhost1"));
+                        NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<RuinGhost1>());
+                        NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y - YOffset, ModContent.NPCType<RuinGhost1>());
+                        NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<RuinGhost1>());
+                        NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y - YOffset, ModContent.NPCType<RuinGhost1>());
                         player.inventory[num66].stack--;
                         Chest.Unlock(i, j);
                         Chest.Unlock(i - 1, j - 1);
@@ -206,12 +208,12 @@ namespace Tremor.Tiles
                 {
                     if (tile.frameX == 72 || tile.frameX == 90)
                     {
-                        player.showItemIcon2 = mod.ItemType("RuinKey");
+                        player.showItemIcon2 = ModContent.ItemType<RuinKey>();
                         player.showItemIconText = "";
                     }
                     else
                     {
-                        player.showItemIcon2 = mod.ItemType("RuinChest");
+                        player.showItemIcon2 = ModContent.ItemType<Items.RuinChest>();
                     }
                 }
             }

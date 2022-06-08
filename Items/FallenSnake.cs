@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.height = 26;
 
 			item.shootSpeed = 25f;
-			item.shoot = mod.ProjectileType("FallenSnakePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.FallenSnakePro>();
 			item.knockBack = 5;
 			item.value = 1000000;
 			item.rare = 11;

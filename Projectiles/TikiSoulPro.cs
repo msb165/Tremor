@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.NPCs;
 
 namespace Tremor.Projectiles
 {
@@ -27,7 +28,6 @@ namespace Tremor.Projectiles
 
 		}
 
-
 		public override void AI()
 		{
 			projectile.localAI[0] += 1f;
@@ -52,7 +52,7 @@ namespace Tremor.Projectiles
 			{
 				if (Main.npc[k].Hitbox.Intersects(projectile.Hitbox))
 				{
-					if (Main.npc[k].type == mod.NPCType("TikiTotem"))
+					if (Main.npc[k].type == ModContent.NPCType<TikiTotem>())
 					{
 						projectile.Kill();
 					}

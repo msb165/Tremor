@@ -18,12 +18,12 @@ namespace Tremor.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.GetModPlayer<TremorPlayer>(mod).dFear = true;
+			player.GetModPlayer<TremorPlayer>().dFear = true;
 		}
 
 		public override void Update(NPC npc, ref int buffIndex)
 		{
-			npc.GetGlobalNPC<NPCs.TremorGlobalNPC>(mod).dFear = true;
+			npc.GetGlobalNPC<NPCs.TremorGlobalNPC>().dFear = true;
 		}
 
 	}

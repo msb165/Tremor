@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.maxStack = 999;
 			item.value = 10000;
 			item.rare = 8;
-			item.createTile = mod.TileType("EvershinyBar");
+			item.createTile = ModContent.TileType<Tiles.EvershinyBar>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -27,7 +27,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Evershining Bar");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void AddRecipes()
 		{

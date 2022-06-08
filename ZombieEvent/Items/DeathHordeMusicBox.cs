@@ -14,7 +14,7 @@ namespace Tremor.ZombieEvent.Items
 			item.useTime = 10;
 			item.autoReuse = true;
 			item.consumable = true;
-			item.createTile = mod.TileType("DeathHordeMusicBoxTile");
+			item.createTile = ModContent.TileType<DeathHordeMusicBoxTile>();
 			item.width = 24;
 			item.height = 24;
 			item.rare = 4;
@@ -22,11 +22,11 @@ namespace Tremor.ZombieEvent.Items
 			item.accessory = true;
 		}
 
-    public override void SetStaticDefaults()
-    {
-      DisplayName.SetDefault("Music Box (Night of Undead)");
-      Tooltip.SetDefault("");
-    }
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Music Box (Night of Undead)");
+			Tooltip.SetDefault("");
+		}
 
 	}
 }

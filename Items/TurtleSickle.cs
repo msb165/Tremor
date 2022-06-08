@@ -21,7 +21,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.useTurn = true;
-			//item.shoot = mod.ProjectileType("TurtleSicklePro");
+			//item.shoot = ModContent.ProjectileType<Projectiles.TurtleSicklePro>();
 			item.shootSpeed = 6f;
 		}
 

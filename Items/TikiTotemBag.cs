@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.NPCs;
 
 namespace Tremor.Items
 {
@@ -16,15 +17,13 @@ namespace Tremor.Items
 
 			item.rare = 9;
 			item.expert = true;
-			bossBagNPC = mod.NPCType("TikiTotem");
 		}
-
+		public override int BossBagNPC => ModContent.NPCType<TikiTotem>();
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Tiki Totem Treasure Bag");
 			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
-
 
 		public override bool CanRightClick()
 		{
@@ -33,30 +32,26 @@ namespace Tremor.Items
 
 		public override void OpenBossBag(Player player)
 		{
-			object[,] drops = new object[,]
+			(int type,int chance,int quantity)[] drops = new[]
 			{
 				// item, chance, stack
-				{"ToxicBlade", 3, 1},
-				{"JungleAlloy", 1, 1},
-				{"TikiSkull", 1, 1}, // only specific one
-				{"PickaxeofBloom", 3, 1},
-				{"ToxicHilt", 4, 1},
-				{"AngryTotemMask", 7, 1},
-				{"HappyTotemMask", 7, 1},
-				{"IndifferentTotemMask", 7, 1},
-				{ItemID.HealingPotion, 1, Main.rand.Next(5, 16)},
-				{ItemID.ManaPotion, 1, Main.rand.Next(5, 16)},
+				(ModContent.ItemType<ToxicBlade>(), 3, 1),
+				(ModContent.ItemType<JungleAlloy>(), 1, 1),
+				(ModContent.ItemType<TikiSkull>(), 1, 1), // only specific one
+				(ModContent.ItemType<PickaxeofBloom>(), 3, 1),
+				(ModContent.ItemType<ToxicHilt>(), 4, 1),
+				(ModContent.ItemType<AngryTotemMask>(), 7, 1),
+				(ModContent.ItemType<HappyTotemMask>(), 7, 1),
+				(ModContent.ItemType<IndifferentTotemMask>(), 7, 1),
+				(ItemID.HealingPotion, 1, Main.rand.Next(5, 16)),
+				(ItemID.ManaPotion, 1, Main.rand.Next(5, 16)),
 			};
 
 			for (int i = 0; i < drops.GetUpperBound(0); i++)
 			{
-				if (Main.rand.NextBool((int)drops[i, 1]))
+				if (Main.rand.NextBool(drops[i].chance))
 				{
-					object drop = drops[i, 0];
-					if (drop is string)
-						player.QuickSpawnItem(mod.ItemType((string)drop), (int)drops[i, 2]);
-					else if (drop is int)
-						player.QuickSpawnItem((int)drop, (int)drops[i, 2]);
+					player.QuickSpawnItem(drops[i].type, drops[i].quantity);
 				}
 			}
 		}

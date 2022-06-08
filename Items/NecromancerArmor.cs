@@ -21,9 +21,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Necromancer Armor");
-			Tooltip.SetDefault("18% increased minion damage\n20% increased minion knockback");
+			Tooltip.SetDefault("18% increased minion damage\n" +
+"20% increased minion knockback");
 		}
-
 
 		public override void UpdateEquip(Player player)
 		{
@@ -33,9 +33,9 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "HardArmor", 1);
-			recipe.AddIngredient(null, "TikiArmor", 1);
-			recipe.AddIngredient(null, "NecromancerBelt", 1);
+			recipe.AddIngredient(ModContent.ItemType<HardArmor>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<TikiArmor>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<NecromancerBelt>(), 1);
 			recipe.AddIngredient(ItemID.SoulofNight, 25);
 			recipe.AddTile(114);
 			recipe.SetResult(this);

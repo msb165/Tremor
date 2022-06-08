@@ -25,10 +25,11 @@ namespace Tremor.NPCs
 			npc.defense = 45;
 			npc.lifeMax = 2500;
 			npc.knockBackResist = 0f;
-			for (int k = 0; k < npc.buffImmune.Length; k++)
-			{
-				npc.buffImmune[k] = true;
-			}
+
+			npc.buffImmune[BuffID.Poisoned] = true;
+			npc.buffImmune[BuffID.Venom] = true;
+			npc.buffImmune[BuffID.Confused] = true;
+
 			npc.lavaImmune = true;
 			npc.noGravity = true;
 			npc.HitSound = SoundID.NPCHit45;
@@ -164,7 +165,7 @@ namespace Tremor.NPCs
 						{
 							npc.ai[0] = 3f;
 						}
-						else if (num1307 == 2 && NPC.CountNPCS(mod.NPCType("DesertPrincess2")) < num1305)
+						else if (num1307 == 2 && NPC.CountNPCS(ModContent.NPCType<DesertPrincess2>()) < num1305)
 						{
 							npc.ai[0] = 4f;
 						}
@@ -469,7 +470,7 @@ namespace Tremor.NPCs
 								npc.ai[3] += 1f;
 								if (npc.ai[3] == num1325)
 								{
-									NPC.NewNPC(num1321 * 16 + 8, num1322 * 16, mod.NPCType("DesertPrincess2"), npc.whoAmI, 0f, 0f, 0f, 0f, 255);
+									NPC.NewNPC(num1321 * 16 + 8, num1322 * 16, ModContent.NPCType<DesertPrincess2>(), npc.whoAmI, 0f, 0f, 0f, 0f, 255);
 								}
 								else if (npc.ai[3] == num1325 * 2)
 								{
@@ -477,7 +478,7 @@ namespace Tremor.NPCs
 									npc.ai[1] = 0f;
 									npc.ai[2] = 0f;
 									npc.ai[3] = 0f;
-									if (NPC.CountNPCS(mod.NPCType("DesertPrincess2")) < num1305 && Main.rand.Next(3) != 0)
+									if (NPC.CountNPCS(ModContent.NPCType<DesertPrincess2>()) < num1305 && Main.rand.Next(3) != 0)
 									{
 										npc.ai[0] = 4f;
 									}
@@ -503,6 +504,11 @@ namespace Tremor.NPCs
 		{
 			npc.lifeMax = (int)(npc.lifeMax * 0.6f * bossLifeScale);
 			npc.damage = (int)(npc.damage * 0.6f);
+		}
+
+		public override float SpawnChance(NPCSpawnInfo spawnInfo)
+		{
+			return 0f;
 		}
 	}
 }

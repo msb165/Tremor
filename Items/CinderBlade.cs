@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Magmonium;
 
 namespace Tremor.Items
 {
@@ -28,11 +29,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "MagmoniumBar", 12);
+			recipe.AddIngredient(ModContent.ItemType<MagmoniumBar>(), 12);
 			recipe.SetResult(this);
 			recipe.AddTile(134);
 			recipe.AddRecipe();

@@ -37,7 +37,7 @@ namespace Tremor.Tiles
 
         public override void RightClick(int i, int j)
         {
-            Main.player[Main.myPlayer].AddBuff(mod.BuffType("RuinAltarBuff"), 1200);
+            Main.player[Main.myPlayer].AddBuff(ModContent.BuffType<Buffs.RuinAltarBuff>(), 1200);
         }
     }
 }

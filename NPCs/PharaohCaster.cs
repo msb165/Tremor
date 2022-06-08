@@ -1,7 +1,9 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+
+using Microsoft.Xna.Framework;
+using Tremor.Items;
 
 namespace Tremor.NPCs
 {
@@ -28,22 +30,7 @@ namespace Tremor.NPCs
 			aiType = 32;
 			animationType = 32;
 			banner = npc.type;
-			bannerItem = mod.ItemType("PharaohCasterBanner");
-		}
-
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-		{
-			npc.lifeMax = npc.lifeMax * 1;
-			npc.damage = npc.damage * 1;
-		}
-
-
-		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-		{
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
-			return (Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo)) && !Main.dayTime && NPC.downedBoss1 && Main.dayTime && y < Main.worldSurface ? 0.01f : 0f;
+			bannerItem = ModContent.ItemType<PharaohCasterBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -51,9 +38,8 @@ namespace Tremor.NPCs
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-				}
+
 				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/PharaonGore1"), 1f);
 				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/PharaonGore2"), 1f);
 				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/PharaonGore2"), 1f);
@@ -62,5 +48,7 @@ namespace Tremor.NPCs
 			}
 		}
 
+		public override float SpawnChance(NPCSpawnInfo spawnInfo)
+			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && !Main.dayTime && NPC.downedBoss1 && Main.dayTime && spawnInfo.spawnTileY < Main.worldSurface ? 0.01f : 0f;
 	}
 }

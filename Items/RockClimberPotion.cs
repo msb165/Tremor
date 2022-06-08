@@ -28,10 +28,9 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Grants ability to climb walls");
 		}
 
-
 		public override bool UseItem(Player player)
 		{
-			player.AddBuff(mod.BuffType("RockClimberBuff"), 3600);
+			player.AddBuff(ModContent.BuffType<Buffs.RockClimberBuff>(), 3600);
 			return true;
 		}
 

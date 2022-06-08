@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Brass;
 
 namespace Tremor.Items
 {
@@ -23,7 +24,8 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Health Stim Pack");
-			Tooltip.SetDefault("Restores 50 health\nHas no cooldown");
+			Tooltip.SetDefault("Restores 50 health\n" +
+"Has no cooldown");
 		}
 
 		public override bool ConsumeItem(Player player) => true;
@@ -43,10 +45,10 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType<BrassBar>(), 2);
+			recipe.AddIngredient(ModContent.ItemType<BrassBar>(), 2);
 			recipe.AddIngredient(ItemID.SuperHealingPotion);
 			recipe.AddIngredient(ItemID.BottledWater);
-			recipe.AddIngredient(mod.ItemType<NightmareBar>(), 5);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 5);
 			recipe.SetResult(this);
 			recipe.AddTile(13);
 			recipe.AddRecipe();

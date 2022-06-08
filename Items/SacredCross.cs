@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Wood;
 
 namespace Tremor.Items
 {
@@ -25,7 +26,7 @@ namespace Tremor.Items
 			item.rare = 5;
 			item.UseSound = SoundID.Item75;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("SacredCrossPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.SacredCrossPro>();
 			item.shootSpeed = 15f;
 		}
 
@@ -35,12 +36,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Shoots magical crosses that heal you");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "WoodenCross", 1);
-			recipe.AddIngredient(null, "Opal", 3);
+			recipe.AddIngredient(ModContent.ItemType<WoodenCross>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<Opal>(), 3);
 			recipe.AddIngredient(ItemID.HallowedBar, 12);
 			recipe.SetResult(this);
 			recipe.AddTile(134);

@@ -1,7 +1,7 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 
-namespace Tremor.DungeonGenn
+namespace Tremor.Tiles
 {
 	public class RuinBlocks : GlobalTile
 	{
@@ -9,7 +9,7 @@ namespace Tremor.DungeonGenn
         {
 			if(type == 120)
 			{
-                if (Main.tile[i, j - 1].type == mod.TileType("RuinAltar"))
+                if (Main.tile[i, j - 1].type == ModContent.TileType<Tiles.RuinAltar>())
                 {
                     return false;
                 }

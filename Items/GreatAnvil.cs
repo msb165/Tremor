@@ -18,7 +18,7 @@ namespace Tremor.Items
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 150;
-			item.createTile = mod.TileType("GreatAnvilTile");
+			item.createTile = ModContent.TileType<Tiles.GreatAnvilTile>();
 		}
 
 		public override void SetStaticDefaults()
@@ -26,7 +26,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Great Anvil");
 			Tooltip.SetDefault("Allows to produce heavy weapons");
 		}
-
 
 	}
 }

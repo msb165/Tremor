@@ -8,14 +8,12 @@ namespace Tremor.Items
 	public class RavenHeadgear : ModItem
 	{
 
-
 		public override void SetDefaults()
 		{
 
 			item.width = 18;
 			item.height = 18;
 			item.value = 10000;
-
 
 			item.rare = 4;
 			item.defense = 9;
@@ -24,9 +22,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Raven Headgear");
-			Tooltip.SetDefault("5% increased melee damage\nIncreases melee critical strike chance by 5");
+			Tooltip.SetDefault("5% increased melee damage\n" +
+"Increases melee critical strike chance by 5");
 		}
-
 
 		public override void UpdateEquip(Player player)
 		{
@@ -36,7 +34,7 @@ namespace Tremor.Items
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
 		{
-			return body.type == mod.ItemType("RavenBreastplate") && legs.type == mod.ItemType("RavenGreaves");
+			return body.type == ModContent.ItemType<RavenBreastplate>() && legs.type == ModContent.ItemType<RavenGreaves>();
 		}
 
 		public override void UpdateArmorSet(Player p)
@@ -52,7 +50,7 @@ namespace Tremor.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.MoltenHelmet);
 			recipe.AddIngredient(ItemID.IronBar, 8);
-			recipe.AddIngredient(null, "RavenFeather", 11);
+			recipe.AddIngredient(ModContent.ItemType<RavenFeather>(), 11);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();
@@ -60,7 +58,7 @@ namespace Tremor.Items
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.MoltenHelmet);
 			recipe.AddIngredient(ItemID.LeadBar, 8);
-			recipe.AddIngredient(null, "RavenFeather", 11);
+			recipe.AddIngredient(ModContent.ItemType<RavenFeather>(), 11);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();

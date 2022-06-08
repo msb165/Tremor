@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -31,22 +32,21 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
-				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, mod.DustType<Dusts.NightmareFlame>());
+				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, ModContent.DustType<Dusts.NightmareFlame>());
 			}
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "NightmareBar", 30);
-			recipe.AddIngredient(null, "PhantomSoul", 15);
-			recipe.AddIngredient(null, "Phantaplasm", 20);
-			recipe.AddIngredient(null, "ConcentratedEther", 25);
+			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 30);
+			recipe.AddIngredient(ModContent.ItemType<PhantomSoul>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<Phantaplasm>(), 20);
+			recipe.AddIngredient(ModContent.ItemType<ConcentratedEther>(), 25);
 			recipe.AddTile(412);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

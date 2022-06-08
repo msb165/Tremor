@@ -25,13 +25,16 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Hero Potion");
-			Tooltip.SetDefault("Grants 10000 defense\nGrants immunity to all debuffs\nIncreases movement speed\nMakes you priority target for enemies\n'Feel like a real hero! At least for 15 seconds.'");
+			Tooltip.SetDefault("Grants 10000 defense\n" +
+"Grants immunity to all debuffs\n" +
+"Increases movement speed\n" +
+"Makes you priority target for enemies\n" +
+"'Feel like a real hero! At least for 15 seconds.'");
 		}
-
 
 		public override bool UseItem(Player player)
 		{
-			player.AddBuff(mod.BuffType("HeroBuff"), 900);
+			player.AddBuff(ModContent.BuffType<Buffs.HeroBuff>(), 900);
 			return true;
 		}
 
@@ -44,8 +47,8 @@ namespace Tremor.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.BottledWater, 1);
-			recipe.AddIngredient(null, "MultidimensionalFragment", 10);
-			recipe.AddIngredient(null, "NightmareOre", 25);
+			recipe.AddIngredient(ModContent.ItemType<MultidimensionalFragment>(), 10);
+			recipe.AddIngredient(ModContent.ItemType<NightmareOre>(), 25);
 			recipe.AddIngredient(ItemID.RegenerationPotion, 5);
 			recipe.AddIngredient(ItemID.IronskinPotion, 5);
 			recipe.AddIngredient(ItemID.SwiftnessPotion, 5);
@@ -54,8 +57,8 @@ namespace Tremor.Items
 			recipe.AddIngredient(3457, 5);
 			recipe.AddIngredient(3458, 5);
 			recipe.AddIngredient(3459, 5);
-			recipe.AddIngredient(null, "TrueEssense", 1);
-			recipe.AddTile(null, "AlchemyStationTile");
+			recipe.AddIngredient(ModContent.ItemType<TrueEssense>(), 1);
+			recipe.AddTile(ModContent.TileType<Tiles.AlchemyStationTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

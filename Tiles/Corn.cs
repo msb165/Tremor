@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Tremor.Items;
 
 namespace Tremor.Tiles
 {
@@ -32,7 +33,7 @@ namespace Tremor.Tiles
 			int stage = Main.tile[i, j].frameX / 18;
 			if (stage == 2)
 			{
-				Item.NewItem(i * 16, j * 16, 0, 0, mod.ItemType("CornSeeds"));
+				Item.NewItem(i * 16, j * 16, 0, 0, ModContent.ItemType<CornSeed>());
 			}
 			return false;
 		}

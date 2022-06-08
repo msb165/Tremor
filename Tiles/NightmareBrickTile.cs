@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Items;
 
 namespace Tremor.Tiles
 {
@@ -12,8 +13,8 @@ namespace Tremor.Tiles
 			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
-			dustType = mod.DustType<Dusts.NightmareFlame>();
-			drop = mod.ItemType("NightmareBrick");
+			dustType = ModContent.DustType<Dusts.NightmareFlame>();
+			drop = ModContent.ItemType<NightmareBrick>();
                                    soundType = 21;
                                    soundStyle = 2;
 			AddMapEntry(new Color(90, 0, 157));

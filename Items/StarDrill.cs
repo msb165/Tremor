@@ -29,7 +29,7 @@ namespace Tremor.Items
 			item.rare = 0;
 			item.UseSound = SoundID.Item23;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("StarDrillPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.StarDrillPro>();
 			item.shootSpeed = 40f;
 		}
 
@@ -39,7 +39,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
 			tooltips[0].overrideColor = new Color(238, 194, 73);
@@ -48,14 +47,14 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "TrueEssense", 3);
-			recipe.AddIngredient(null, "NightCore", 3);
-			recipe.AddIngredient(null, "CometiteBar", 15);
-			recipe.AddIngredient(null, "HardCometiteBar", 3);
-			recipe.AddIngredient(null, "StarBar", 3);
-			recipe.AddIngredient(null, "LunarRoot", 25);
+			recipe.AddIngredient(ModContent.ItemType<TrueEssense>(), 3);
+			recipe.AddIngredient(ModContent.ItemType<NightCore>(), 3);
+			recipe.AddIngredient(ModContent.ItemType<CometiteBar>(), 15);
+			recipe.AddIngredient(ModContent.ItemType<HardCometiteBar>(), 3);
+			recipe.AddIngredient(ModContent.ItemType<StarBar>(), 3);
+			recipe.AddIngredient(ModContent.ItemType<LunarRoot>(), 25);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "StarvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.StarvilTile>());
 			recipe.AddRecipe();
 		}
 	}

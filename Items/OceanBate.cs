@@ -35,7 +35,6 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			type = 408;
@@ -45,10 +44,10 @@ namespace Tremor.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "SeaFragment", 25);
+			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 25);
 			recipe.AddIngredient(ItemID.Coral, 20);
 			recipe.AddIngredient(ItemID.SharkFin, 8);
-			recipe.AddIngredient(null, "ConcentratedEther", 25);
+			recipe.AddIngredient(ModContent.ItemType<ConcentratedEther>(), 25);
 			recipe.SetResult(this);
 			recipe.AddTile(412);
 			recipe.AddRecipe();

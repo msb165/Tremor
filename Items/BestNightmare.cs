@@ -19,7 +19,7 @@ namespace Tremor.Items
 			item.useAnimation = 50;
 			item.useStyle = 1;
 			item.knockBack = 9f;
-			item.shoot = mod.ProjectileType("BestNightmarePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.BestNightmarePro>();
 			item.value = 27600;
 			item.rare = 0;
 			item.noUseGraphic = true;
@@ -32,7 +32,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Best Nightmare");
 			Tooltip.SetDefault("");
 		}
-
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{

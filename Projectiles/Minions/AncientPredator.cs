@@ -31,7 +31,6 @@ namespace Tremor.Projectiles.Minions
        
     }
 
-
     public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
     {
             target.AddBuff(20, 80, false);
@@ -52,11 +51,10 @@ namespace Tremor.Projectiles.Minions
       return false;
 		}
 
-
 		public override void CheckActive()
 		{
 			Player player = Main.player[projectile.owner];
-			TremorPlayer modPlayer = (TremorPlayer)player.GetModPlayer(mod, "TremorPlayer");
+			TremorPlayer modPlayer = player.GetModPlayer<TremorPlayer>();
 			if (player.dead)
 			{
 				modPlayer.ancientPredator = false;

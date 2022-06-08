@@ -33,7 +33,7 @@ namespace Tremor.Ice.Items.Furniture
 			disableSmartCursor = true;
 			adjTiles = new int[] { TileID.Containers };
 			chest = "Glacier Wood Chest";
-			chestDrop = mod.ItemType("IceChest");
+			chestDrop = ModContent.ItemType<IceChest>();
 			TileID.Sets.BasicChest[Type] = true;
 		}
 
@@ -166,7 +166,7 @@ namespace Tremor.Ice.Items.Furniture
 				player.showItemIconText = Main.chest[chest].name.Length > 0 ? Main.chest[chest].name : "Glacier Wood Chest";
 				if (player.showItemIconText == "Glacier Wood Chest")
 				{
-					player.showItemIcon2 = mod.ItemType("IceChest");
+					player.showItemIcon2 = ModContent.ItemType<IceChest>();
 					player.showItemIconText = "";
 				}
 			}

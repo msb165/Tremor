@@ -29,7 +29,6 @@ namespace Tremor.Projectiles
 
 		}
 
-
 		public override void AI()
 		{
 			Vector2 vector22;
@@ -146,7 +145,7 @@ namespace Tremor.Projectiles
 				for (int i = 0; i < 2; i++)
 				{
 					/* TODO: CryotechDust does not exist
-                    int num5 = Dust.NewDust(value - Vector2.One * 8f, 16, 16, mod.DustType<Dusts.CryotechDust>(), projectile.velocity.X / 2f, projectile.velocity.Y / 2f, 100, default(Color), 1f);
+                    int num5 = Dust.NewDust(value - Vector2.One * 8f, 16, 16, ModContent.DustType<Dusts.CryotechDust>(), projectile.velocity.X / 2f, projectile.velocity.Y / 2f, 100, default(Color), 1f);
                     Main.dust[num5].velocity *= 0.66f;
                     Main.dust[num5].noGravity = true;
                     Main.dust[num5].scale = 1.4f;

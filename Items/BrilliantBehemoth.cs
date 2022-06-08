@@ -21,7 +21,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.noUseGraphic = true;
-			item.shoot = mod.ProjectileType("BrilliantBehemothPro");
+			item.shoot = ModContent.ProjectileType<Projectiles.BrilliantBehemothPro>();
 			item.shootSpeed = 8f;
 		}
 
@@ -31,17 +31,16 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "PerfectBehemoth", 1);
+			recipe.AddIngredient(ModContent.ItemType<PerfectBehemoth>(), 1);
 			recipe.AddIngredient(ItemID.SoulofLight, 7);
 			recipe.AddIngredient(ItemID.SoulofNight, 7);
-			recipe.AddIngredient(null, "Opal", 3);
+			recipe.AddIngredient(ModContent.ItemType<Opal>(), 3);
 			recipe.AddIngredient(ItemID.Amethyst, 25);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "GreatAnvilTile");
+			recipe.AddTile(ModContent.TileType<Tiles.GreatAnvilTile>());
 			recipe.AddRecipe();
 		}
 	}

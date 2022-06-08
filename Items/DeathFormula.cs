@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
@@ -22,22 +23,21 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Death Formula");
-			Tooltip.SetDefault("Increases alchemic critical strike chance by 20%");
+			Tooltip.SetDefault("20% increased alchemical critical strike chance");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.GetModPlayer<MPlayer>(mod).alchemistCrit += 20;
+			player.GetModPlayer<MPlayer>().alchemicalCrit += 20;
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.BottledWater, 1);
-			recipe.AddIngredient(null, "GelCube", 25);
-			recipe.AddIngredient(null, "CursedSoul", 1);
-			recipe.AddIngredient(null, "TearsofDeath", 15);
+			recipe.AddIngredient(ModContent.ItemType<GelCube>(), 25);
+			recipe.AddIngredient(ModContent.ItemType<CursedSoul>(), 1);
+			recipe.AddIngredient(ModContent.ItemType<TearsofDeath>(), 15);
 			recipe.SetResult(this);
 			recipe.AddTile(13);
 			recipe.AddRecipe();

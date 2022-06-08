@@ -21,10 +21,9 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			type = mod.ProjectileType("SharkhalisPro");
+			type = ModContent.ProjectileType<Projectiles.SharkhalisPro>();
 			return base.Shoot(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 		}
 
@@ -33,9 +32,9 @@ namespace Tremor.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Arkhalis, 1);
 			recipe.AddIngredient(ItemID.SharkFin, 3);
-			recipe.AddIngredient(null, "SharpenedTooth", 6);
+			recipe.AddIngredient(ModContent.ItemType<SharpenedTooth>(), 6);
 			recipe.SetResult(this);
-			recipe.AddTile(null, "AltarofEnchantmentsTile");
+			recipe.AddTile(ModContent.TileType<Tiles.AltarofEnchantmentsTile>());
 			recipe.AddRecipe();
 		}
 	}

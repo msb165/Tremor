@@ -13,8 +13,8 @@ namespace Tremor.Items
 			item.useTime = 25;
 			item.useAnimation = 25;
 
-			item.shoot = mod.ProjectileType("LivingTombstonePro");
-			item.buffType = mod.BuffType("LivingTombstoneBuff");
+			item.shoot = ModContent.ProjectileType<Projectiles.LivingTombstonePro>();
+			item.buffType = ModContent.BuffType<Buffs.LivingTombstoneBuff>();
 			item.value = 500000;
 		}
 
@@ -23,7 +23,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Living Tombstone");
 			Tooltip.SetDefault("Summons a living tombstone");
 		}
-
 
 		public override void UseStyle(Player player)
 		{

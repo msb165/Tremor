@@ -19,9 +19,9 @@ namespace Tremor.Items
 			item.height = 30;
 			item.useTime = 20;
 			item.useAnimation = 20;
-			item.shoot = mod.ProjectileType("Carrot");
+			item.shoot = ModContent.ProjectileType<Projectiles.Carrot>();
 			item.shootSpeed = 19f;
-			item.useAmmo = mod.ItemType("Carrot");
+			item.useAmmo = ModContent.ItemType<Carrot>();
 			item.useStyle = 1;
 			item.knockBack = 4;
 			item.value = 70000;
@@ -35,7 +35,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Carrow");
 			Tooltip.SetDefault("Uses carrots as ammo");
 		}
-
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

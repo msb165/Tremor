@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.Items;
 
 namespace Tremor.Tiles
 {
@@ -14,7 +15,7 @@ namespace Tremor.Tiles
         Main.tileLighted[Type] = true;
 dustType = 59;
 	AddMapEntry(new Color(0, 0, 0));			
-          drop = mod.ItemType("FrostoneOre");
+          drop = ModContent.ItemType<FrostoneOre>();
     }
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
     {

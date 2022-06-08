@@ -23,7 +23,7 @@ namespace Tremor.Items
 			item.mana = 5;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("BlackRosePro");
+			item.shoot = ModContent.ProjectileType<Projectiles.BlackRosePro>();
 			item.shootSpeed = 30f;
 		}
 

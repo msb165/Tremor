@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.maxStack = 99;
 			item.value = 100;
 			item.rare = 11;
-			item.createTile = mod.TileType("VoidBarTile");
+			item.createTile = ModContent.TileType<Tiles.VoidBarTile>();
 			item.useTurn = true;
 			item.autoReuse = true;
 			item.useAnimation = 15;
@@ -26,7 +26,6 @@ namespace Tremor.Items
 			DisplayName.SetDefault("Void Bar");
 			Tooltip.SetDefault("");
 		}
-
 
 	}
 }

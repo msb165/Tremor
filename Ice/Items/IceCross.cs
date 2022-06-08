@@ -14,7 +14,7 @@ namespace Tremor.Ice.Items
 			item.magic = true;
 			item.mana = 40;
 			item.useTime = 35;
-			item.shoot = mod.ProjectileType("Icoj");
+			item.shoot = ModContent.ProjectileType<Icoj>();
 			item.shootSpeed = 0f;
 			item.useAnimation = 35;
 			item.useStyle = 1;

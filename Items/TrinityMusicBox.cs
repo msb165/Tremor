@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.useTime = 10;
 			item.autoReuse = true;
 			item.consumable = true;
-			item.createTile = mod.TileType("TrinityMusicBox");
+			item.createTile = ModContent.TileType<Tiles.TrinityMusicBox>();
 			item.width = 24;
 			item.height = 24;
 			item.rare = 4;

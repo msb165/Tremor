@@ -25,9 +25,8 @@ namespace Tremor.Items
 			item.value = 10000000;
 			item.rare = 0;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("HellStormProj");
+			item.shoot = ModContent.ProjectileType<Projectiles.HellStormProj>();
 			item.shootSpeed = 20f;
-
 
 			item.useAmmo = AmmoID.Arrow;
 		}
@@ -35,9 +34,9 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Hell Storm");
-			Tooltip.SetDefault("Shoots out homing hell arrows\nThe amount of arrows shot increases when used for longer time");
+			Tooltip.SetDefault("Shoots out homing hell arrows\n" +
+"The amount of arrows shot increases when used for longer time");
 		}
-
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
@@ -46,14 +45,14 @@ namespace Tremor.Items
 		/*
 				public override bool Shoot(Player player, ref Microsoft.Xna.Framework.Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 				{
-					Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("HellStormProj"), damage, knockBack, player.whoAmI, 0.0f, 0.0f);
+					Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ModContent.ProjectileType<Projectiles.HellStormProj>(), damage, knockBack, player.whoAmI, 0.0f, 0.0f);
 					return false;
 				}
 		*/
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			type = mod.ProjectileType("HellStormProj");
+			type = ModContent.ProjectileType<Projectiles.HellStormProj>();
 			return base.Shoot(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 		}
 

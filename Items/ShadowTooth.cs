@@ -32,22 +32,21 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.SoulofNight, 8);
 			recipe.AddIngredient(ItemID.SoulofSight, 8);
-			recipe.AddIngredient(null, "ColdTooth", 1);
-			recipe.AddTile(null, "GreatAnvilTile");
+			recipe.AddIngredient(ModContent.ItemType<ColdTooth>(), 1);
+			recipe.AddTile(ModContent.TileType<Tiles.GreatAnvilTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.SoulofNight, 8);
 			recipe.AddIngredient(ItemID.SoulofSight, 8);
-			recipe.AddIngredient(null, "FlamingTooth", 1);
-			recipe.AddTile(null, "GreatAnvilTile");
+			recipe.AddIngredient(ModContent.ItemType<FlamingTooth>(), 1);
+			recipe.AddTile(ModContent.TileType<Tiles.GreatAnvilTile>());
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

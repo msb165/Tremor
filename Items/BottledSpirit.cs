@@ -10,7 +10,7 @@ namespace Tremor.Items
 		{
 			for (int i = 0; i < player.armor.Length; i++)
 			{
-				MPlayer modPlayer = (MPlayer)player.GetModPlayer(mod, "MPlayer");
+				MPlayer modPlayer = player.GetModPlayer<MPlayer>();
 				if (modPlayer.spirit)
 				{
 					return false;
@@ -25,7 +25,6 @@ namespace Tremor.Items
 			item.width = 22;
 			item.height = 44;
 
-
 			item.value = 60000;
 			item.rare = 7;
 			item.accessory = true;
@@ -35,14 +34,14 @@ namespace Tremor.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Bottled Spirit");
-			Tooltip.SetDefault("Using flask also spawns two homing souls\nDamage of the souls scales on flask damage");
+			Tooltip.SetDefault("Using flask also spawns two homing souls\n" +
+"Damage of the souls scales on flask damage");
 		}
-
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			MPlayer modPlayer = (MPlayer)player.GetModPlayer(mod, "MPlayer");
-			player.AddBuff(mod.BuffType("BottledSpirit"), 2);
+			MPlayer modPlayer = player.GetModPlayer<MPlayer>();
+			player.AddBuff(ModContent.BuffType<Buffs.BottledSpirit>(), 2);
 			modPlayer.spirit = true;
 		}
 	}

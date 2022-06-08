@@ -29,7 +29,6 @@ namespace Tremor.Projectiles.Minions
        
     }
 
-
 		public override bool OnTileCollide(Vector2 oldVelocity)
 		{
 				if (projectile.velocity.X != oldVelocity.X)
@@ -45,7 +44,7 @@ namespace Tremor.Projectiles.Minions
 		public override void CheckActive()
 		{
 			Player player = Main.player[projectile.owner];
-			TremorPlayer modPlayer = (TremorPlayer)player.GetModPlayer(mod, "TremorPlayer");
+			TremorPlayer modPlayer = player.GetModPlayer<TremorPlayer>();
 			if (player.dead)
 			{
 				modPlayer.goblinMinion = false;

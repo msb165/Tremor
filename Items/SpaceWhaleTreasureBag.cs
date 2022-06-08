@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using Tremor.NPCs;
 
 namespace Tremor.Items
 {
@@ -7,23 +8,19 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-
 			item.maxStack = 999;
 			item.consumable = true;
 			item.width = 24;
 			item.height = 24;
-
 			item.rare = 9;
 			item.expert = true;
-			bossBagNPC = mod.NPCType("SpaceWhale");
 		}
-
+		public override int BossBagNPC => ModContent.NPCType<SpaceWhale>();
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("Right click to open");
+			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
-
 
 		public override bool CanRightClick()
 		{
@@ -32,38 +29,38 @@ namespace Tremor.Items
 
 		public override void OpenBossBag(Player player)
 		{
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.NextBool(7))
 			{
-				player.QuickSpawnItem(mod.ItemType("SpaceWhaleMask"));
+				player.QuickSpawnItem(ModContent.ItemType<SpaceWhaleMask>());
 			}
 
-			if (Main.rand.Next(5) == 0)
+			if (Main.rand.NextBool(5))
 			{
-				player.QuickSpawnItem(mod.ItemType("StarLantern"));
+				player.QuickSpawnItem(ModContent.ItemType<StarLantern>());
 			}
 
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(mod.ItemType("SDL"));
+				player.QuickSpawnItem(ModContent.ItemType<SDL>());
 			}
 
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(mod.ItemType("BlackHoleCannon"));
+				player.QuickSpawnItem(ModContent.ItemType<BlackHoleCannon>());
 			}
 
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(mod.ItemType("HornedWarHammer"));
+				player.QuickSpawnItem(ModContent.ItemType<HornedWarHammer>());
 			}
 
-			if (Main.rand.Next(8) == 0)
+			if (Main.rand.NextBool(8))
 			{
-				player.QuickSpawnItem(mod.ItemType("WhaleFlippers"));
+				player.QuickSpawnItem(ModContent.ItemType<WhaleFlippers>());
 			}
-			player.QuickSpawnItem(mod.ItemType("LasCannon"));
+			player.QuickSpawnItem(ModContent.ItemType<LasCannon>());
 
-			player.QuickSpawnItem(mod.ItemType("CosmicFuel"));
+			player.QuickSpawnItem(ModContent.ItemType<CosmicFuel>());
 		}
 	}
 }

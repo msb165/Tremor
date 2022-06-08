@@ -18,7 +18,7 @@ namespace Tremor.Ice.Items
 			item.rare = 1;
 			item.useStyle = 1;
 			item.consumable = true;
-			item.createTile = mod.TileType("GlacierWoodTile");
+			item.createTile = ModContent.TileType<GlacierWoodTile>();
 		}
 
 		public override void SetStaticDefaults()
@@ -27,17 +27,16 @@ namespace Tremor.Ice.Items
 			Tooltip.SetDefault("");
 		}
 
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GlacierWoodWall", 4);
+			recipe.AddIngredient(ModContent.ItemType<GlacierWoodWall>(), 4);
 			recipe.SetResult(this, 1);
 			recipe.AddTile(18);
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "GlacierFence", 4);
+			recipe.AddIngredient(ModContent.ItemType<GlacierFence>(), 4);
 			recipe.SetResult(this, 1);
 			recipe.AddTile(18);
 			recipe.AddRecipe();

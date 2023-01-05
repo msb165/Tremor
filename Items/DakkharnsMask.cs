@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class DakkharnsMask : ModItem
+	public class DakkharnsMask:TremorModItem
 	{
 
 		public override void SetDefaults()

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Brutallisk
 {
-	public class BrutalliskTrophy : ModItem
+	public class BrutalliskTrophy:TremorModItem
 	{
 		public override void SetDefaults()
 		{

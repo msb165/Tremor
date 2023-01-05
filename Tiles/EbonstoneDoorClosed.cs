@@ -9,7 +9,7 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class EbonstoneDoorClosed : ModTile
+	public class EbonstoneDoorClosed:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -41,7 +41,7 @@ namespace Tremor.Tiles
 			AddMapEntry(new Color(121,14,203));
 			disableSmartCursor = true;
 			adjTiles = new int[]{ TileID.ClosedDoor };
-			openDoorID = ModContent.TileType<Tiles.EbonstoneDoorOpen>();
+			OpenDoorID = ModContent.TileType<Tiles.EbonstoneDoorOpen>();
 		}
 
 		public override void NumDust(int i, int j, bool fail, ref int num)
@@ -51,7 +51,7 @@ namespace Tremor.Tiles
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 16, 48, ModContent.ItemType<EbonstoneDoor>());
+			Item.NewItem(null, i * 16, j * 16, 16, 48, ModContent.ItemType<EbonstoneDoor>());
 		}
 	}
 }

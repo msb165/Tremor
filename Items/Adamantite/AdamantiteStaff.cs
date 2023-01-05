@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Adamantite
 {
-	public class AdamantiteStaff : ModItem
+	public class AdamantiteStaff:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 43;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 9;
 			item.width = 40;
 			item.height = 40;

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MoltenParts : ModItem
+	public class MoltenParts:TremorModItem
 	{
 
 		public override void SetDefaults()

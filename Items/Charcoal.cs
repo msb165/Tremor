@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Charcoal : ModItem
+	public class Charcoal:TremorModItem
 	{
 		public override void SetDefaults()
 		{

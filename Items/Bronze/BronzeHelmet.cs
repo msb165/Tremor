@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Bronze
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class BronzeHelmet : ModItem
+	public class BronzeHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items.Bronze
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeCrit += 6;
+			player.GetCritChance(DamageClass.Melee) += 6;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -37,9 +37,7 @@ namespace Tremor.Items.Bronze
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "8% increased damage";
-			player.meleeDamage += 0.08f;
-			player.magicDamage += 0.08f;
-			player.rangedDamage += 0.08f;
+			player.GetDamage(DamageClass.Generic) += 0.08f;
 		}
 
 		public override void ArmorSetShadows(Player player)

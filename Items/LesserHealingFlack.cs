@@ -13,7 +13,7 @@ namespace Tremor.Items
 		{
 			item.crit = 4;
 			item.damage = 11;
-			//item.thrown = true;
+			//item.DamageType = DamageClass.Throwing;
 			item.width = 26;
 			item.noUseGraphic = true;
 			item.maxStack = 999;
@@ -40,7 +40,7 @@ namespace Tremor.Items
 "Clouds deal damage to enemies and heal player hit enemy");
 		}
 
-		public override void PickAmmo(Player player, ref int type, ref float speed, ref int damage, ref float knockback)
+		public override void PickAmmo(Item weapon, Player player, ref int type, ref float speed, ref StatModifier damage, ref float knockback)
 		{
 			type = ModContent.ProjectileType<HealingCloudPro>();
 		}

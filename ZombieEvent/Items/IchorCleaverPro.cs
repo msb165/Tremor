@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class IchorCleaverPro : ModProjectile
+	public class IchorCleaverPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

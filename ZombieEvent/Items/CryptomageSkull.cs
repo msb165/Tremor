@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.ZombieEvent.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class CryptomageSkull : ModItem
+	public class CryptomageSkull:TremorModItem
 	{
 		public override void SetDefaults()
 		{

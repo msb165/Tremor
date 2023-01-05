@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class HardBulwark : ModItem
+	public class HardBulwark:TremorModItem
 	{
 
 		public override void SetDefaults()

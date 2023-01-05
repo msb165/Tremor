@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class SniperBreastplate : ModItem
+	public class SniperBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.rangedDamage *= 1.2f;
+			player.GetDamage(DamageClass.Ranged) *= 1.2f;
 			player.moveSpeed -= 0.20f;
 		}
 

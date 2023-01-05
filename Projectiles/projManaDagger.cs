@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class projManaDagger : ModProjectile
+	public class projManaDagger:TremorModProjectile
 	{
 		const int ManaPerHit = 2; // Маны за удар по мобу
 		int Mana; // Сколько маны уже собрано
@@ -18,7 +18,7 @@ namespace Tremor.Projectiles
 			projectile.height = 28;
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.penetrate = -1;
 			projectile.timeLeft = 3600;
 		}

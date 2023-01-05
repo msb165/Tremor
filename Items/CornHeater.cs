@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class CornHeater : ModItem
+	public class CornHeater:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 20;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 58;
 			item.height = 26;
 			item.useTime = 15;

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class projClamperLaser : ModProjectile
+	public class projClamperLaser:TremorModProjectile
 	{
 		Vector2 Offset
 		{
@@ -31,7 +31,7 @@ namespace Tremor.Projectiles
 			projectile.timeLeft = 2;
 			projectile.penetrate = -1;
 			projectile.hostile = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
 		}
@@ -73,7 +73,7 @@ namespace Tremor.Projectiles
 			for (float k = 0; k <= length; k += 8f)
 			{
 				Vector2 drawPos = projectile.Center + unit * k - Main.screenPosition;
-				spriteBatch.Draw(Main.projectileTexture[projectile.type], drawPos, null, new Color(255, 255, 255, 255), Helper.rotateBetween2Points(drawPos, endPoint), new Vector2(2, 2), 1f, SpriteEffects.None, 0f);
+				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, new Color(255, 255, 255, 255), Helper.rotateBetween2Points(drawPos, endPoint), new Vector2(2, 2), 1f, SpriteEffects.None, 0f);
 			}
 			return false;
 		}

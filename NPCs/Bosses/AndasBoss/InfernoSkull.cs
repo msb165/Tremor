@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.AndasBoss
 {
-	public class InfernoSkull : ModProjectile
+	public class InfernoSkull:TremorModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
@@ -33,11 +33,11 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 
 		public override void Kill(int timeLeft)
 		{
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 14);
-			Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 40, -ShootDirection, 0, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
-			Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 40, ShootDirection, 0, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
-			Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 40, 0, ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
-			Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 40, 0, -ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item14, projectile.position);
+			Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, -ShootDirection, 0, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, ShootDirection, 0, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, 0, ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, 0, -ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
 		}
 
 		public override void OnHitPlayer(Player target, int damage, bool crit)

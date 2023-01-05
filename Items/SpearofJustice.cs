@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SpearofJustice : ModItem
+	public class SpearofJustice:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -25,7 +25,7 @@ namespace Tremor.Items
 			item.shootSpeed = 14f;
 			item.noMelee = true; //So that the swing itself doesn't do damage; this weapon is projectile-only
 			item.noUseGraphic = true; //No swing animation
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.crit = 7;
 		}
 

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Crimstone
 {
-	public class CrimstoneBathtub : ModItem
+	public class CrimstoneBathtub:TremorModItem
 	{
 		public override void SetDefaults()
 		{

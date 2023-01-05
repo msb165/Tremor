@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Wolf
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class WolfJerkin : ModItem
+	public class WolfJerkin:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,7 +28,7 @@ namespace Tremor.Items.Wolf
 		public override void UpdateEquip(Player player)
 		{
 			player.maxMinions += 1;
-			player.minionDamage += 0.06f;
+			player.GetDamage(DamageClass.Summon) += 0.06f;
 		}
 
 		public override void AddRecipes()

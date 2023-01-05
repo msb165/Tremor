@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class TornPapyrus : ModItem
+	public class TornPapyrus:TremorModItem
 	{
 		public override void SetDefaults()
 		{

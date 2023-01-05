@@ -8,7 +8,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class HallowSlimer : ModNPC
+	public class HallowSlimer:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -44,7 +44,7 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				if(Main.netMode != 1)
-					NPC.NewNPC((int)npc.position.X, (int)npc.position.Y - 48, NPCID.IlluminantSlime);
+					NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y - 48, NPCID.IlluminantSlime);
 			}
 		}
 
@@ -59,7 +59,7 @@ namespace Tremor.NPCs
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Vector2 drawOrigin = new Vector2(Main.npcTexture[npc.type].Width, Main.npcTexture[npc.type].Height * 0.8f);
+			Vector2 drawOrigin = new Vector2(Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Width, Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Height * 0.8f);
 			for (int k = 0; k < npc.oldPos.Length; k++)
 			{
 				SpriteEffects effect = npc.direction == 1 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
@@ -67,12 +67,12 @@ namespace Tremor.NPCs
 				Rectangle frame = new Rectangle(0, 0, 90, 42);
 				frame.Y += 164 * (k / 60);
 
-				spriteBatch.Draw(Main.npcTexture[npc.type], npc.oldPos[k] - Main.screenPosition, frame, color, 0, Vector2.Zero, npc.scale, effect, 1f);
+				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Npc[npc.type].Value, npc.oldPos[k] - Main.screenPosition, frame, color, 0, Vector2.Zero, npc.scale, effect, 1f);
 			}
 			return true;
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.player.ZoneHoly && spawnInfo.spawnTileY < Main.worldSurface ? 0.01f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.Player.ZoneHallow && spawnInfo.SpawnTileY < Main.worldSurface ? 0.01f : 0f;
 	}
 }

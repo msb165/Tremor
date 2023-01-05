@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Dark
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class AegisofDarkness : ModItem
+	public class AegisofDarkness:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -29,10 +29,10 @@ namespace Tremor.Items.Dark
 
 		public override void UpdateEquip(Player player)
 		{
-			player.magicCrit += 10;
-			player.minionDamage += 0.1f;
+			player.GetCritChance(DamageClass.Magic) += 10;
+			player.GetDamage(DamageClass.Summon) += 0.1f;
 			player.statManaMax2 += 40;
-			player.magicDamage -= 0.08f;
+			player.GetDamage(DamageClass.Magic) -= 0.08f;
 		}
 
 		public override void AddRecipes()

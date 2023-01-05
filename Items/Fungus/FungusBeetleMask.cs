@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Fungus
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class FungusBeetleMask : ModItem
+	public class FungusBeetleMask:TremorModItem
 	{
 
 		public override void SetDefaults()

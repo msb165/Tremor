@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Ice.Items.Furniture
 {
-	public class IceBathtubTile : ModTile
+	public class IceBathtubTile:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -17,12 +17,12 @@ namespace Tremor.Ice.Items.Furniture
 			TileObjectData.addTile(Type);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
 			AddMapEntry(new Color(87, 144, 165));
-			bed = true;
+			TileID.Sets.CanBeSleptIn[Type] = true;//bed = true;
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 64, 32, ModContent.ItemType<IceBathtub>());
+			Item.NewItem(null, i * 16, j * 16, 64, 32, ModContent.ItemType<IceBathtub>());
 		}
 	}
 }

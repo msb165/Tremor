@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class FrostbiteGreaves : ModItem
+	public class FrostbiteGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()

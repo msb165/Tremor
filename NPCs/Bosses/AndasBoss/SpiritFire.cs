@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.AndasBoss
 {
-	public class SpiritFire : ModProjectile
+	public class SpiritFire:TremorModProjectile
 	{
 		public override void SetStaticDefaults()
 		{

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Invar
 {
-	public class OldInvarPlate : ModItem
+	public class OldInvarPlate:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -4,7 +4,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class FrostKingBag : ModItem
+	public class FrostKingBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -33,13 +33,13 @@ namespace Tremor.Items
 		{
 			if (Main.rand.NextBool(7))
 			{
-				player.QuickSpawnItem(ModContent.ItemType<FrostKingMask>());
+				player.QuickSpawnItem(null, ModContent.ItemType<FrostKingMask>());
 			}
-			player.QuickSpawnItem(ModContent.ItemType<EdgeofFrostKing>());
-			player.QuickSpawnItem(ModContent.ItemType<FrostoneOre>(), Main.rand.Next(24, 42));
+			player.QuickSpawnItem(null, ModContent.ItemType<EdgeofFrostKing>());
+			player.QuickSpawnItem(null, ModContent.ItemType<FrostoneOre>(), Main.rand.Next(24, 42));
 			if (Main.hardMode)
 			{
-				player.TryGettingDevArmor();
+				player.TryGettingDevArmor(null);
 			}
 		}
 

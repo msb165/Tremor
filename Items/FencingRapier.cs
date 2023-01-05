@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class FencingRapier : ModItem
+	public class FencingRapier:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 19;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 42;
 			item.height = 42;
 			item.useTime = 21;

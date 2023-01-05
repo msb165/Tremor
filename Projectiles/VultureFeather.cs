@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class VultureFeather : ModProjectile
+	public class VultureFeather:TremorModProjectile
 	{
 		const int TileCollideDustType = DustID.Tin;
 		const int TileCollideDustCount = 4;

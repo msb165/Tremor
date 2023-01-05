@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Harpy
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class HarpyChestplate : ModItem
+	public class HarpyChestplate:TremorModItem
 	{
 		public override void SetDefaults()
 		{

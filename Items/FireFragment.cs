@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class FireFragment : ModItem
+	public class FireFragment:TremorModItem
 	{
 		public override void SetDefaults()
 		{

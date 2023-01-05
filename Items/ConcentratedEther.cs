@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ConcentratedEther : ModItem
+	public class ConcentratedEther:TremorModItem
 	{
 		public override void SetDefaults()
 		{

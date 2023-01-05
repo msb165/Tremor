@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.ZombieEvent.Items
 {
 	[AutoloadEquip(EquipType.Wings)]
-	public class TornWings : ModItem
+	public class TornWings:TremorModItem
 	{
 
 		public override void SetDefaults()

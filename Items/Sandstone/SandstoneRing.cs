@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Sandstone
 {
-	public class SandstoneRing : ModItem
+	public class SandstoneRing:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,8 +28,8 @@ namespace Tremor.Items.Sandstone
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
 		{
-			player.meleeDamage += 0.05f;
-			player.meleeCrit += 5;
+			player.GetDamage(DamageClass.Melee) += 0.05f;
+			player.GetCritChance(DamageClass.Melee) += 5;
 		}
 	}
 }

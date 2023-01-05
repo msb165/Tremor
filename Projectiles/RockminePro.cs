@@ -6,7 +6,7 @@ using Tremor.Projectiles.Alchemic;
 
 namespace Tremor.Projectiles
 {
-	public class RockminePro : ModProjectile
+	public class RockminePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -52,7 +52,7 @@ namespace Tremor.Projectiles
 
 		public override void Kill(int timeLeft)
 		{
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
 			projectile.position.X = projectile.position.X + projectile.width / 2;
 			projectile.position.Y = projectile.position.Y + projectile.height / 2;
 			projectile.width = 80;
@@ -88,25 +88,25 @@ namespace Tremor.Projectiles
 				{
 					scaleFactor10 = 1f;
 				}
-				int num633 = Gore.NewGore(new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 1f);
+				int num633 = Gore.NewGore(null, new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 1f);
 				Main.gore[num633].velocity *= scaleFactor10;
 				Gore expr_13E6D_cp_0 = Main.gore[num633];
 				expr_13E6D_cp_0.velocity.X = expr_13E6D_cp_0.velocity.X + 1f;
 				Gore expr_13E8D_cp_0 = Main.gore[num633];
 				expr_13E8D_cp_0.velocity.Y = expr_13E8D_cp_0.velocity.Y + 1f;
-				num633 = Gore.NewGore(new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 2f);
+				num633 = Gore.NewGore(null, new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 2f);
 				Main.gore[num633].velocity *= scaleFactor10;
 				Gore expr_13F30_cp_0 = Main.gore[num633];
 				expr_13F30_cp_0.velocity.X = expr_13F30_cp_0.velocity.X - 1f;
 				Gore expr_13F50_cp_0 = Main.gore[num633];
 				expr_13F50_cp_0.velocity.Y = expr_13F50_cp_0.velocity.Y + 1f;
-				num633 = Gore.NewGore(new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 1f);
+				num633 = Gore.NewGore(null, new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 1f);
 				Main.gore[num633].velocity *= scaleFactor10;
 				Gore expr_13FF3_cp_0 = Main.gore[num633];
 				expr_13FF3_cp_0.velocity.X = expr_13FF3_cp_0.velocity.X + 1f;
 				Gore expr_14013_cp_0 = Main.gore[num633];
 				expr_14013_cp_0.velocity.Y = expr_14013_cp_0.velocity.Y - 1f;
-				num633 = Gore.NewGore(new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 1f);
+				num633 = Gore.NewGore(null, new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 1f);
 				Main.gore[num633].velocity *= scaleFactor10;
 				Gore expr_140B6_cp_0 = Main.gore[num633];
 				expr_140B6_cp_0.velocity.X = expr_140B6_cp_0.velocity.X - 1f;
@@ -128,7 +128,7 @@ namespace Tremor.Projectiles
 					Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 					value17.Normalize();
 					value17 *= Main.rand.Next(10, 201) * 0.01f;
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<BoomCloudPro>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
+					Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<BoomCloudPro>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
 				}
 			}
 		}

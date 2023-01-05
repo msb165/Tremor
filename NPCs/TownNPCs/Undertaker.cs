@@ -10,17 +10,17 @@ using Tremor.Items;
 namespace Tremor.NPCs.TownNPCs
 {
 	[AutoloadHead]
-	public class Undertaker : ModNPC
+	public class Undertaker:TremorModNPC
 	{
 		public override string Texture => $"{typeof(Undertaker).NamespaceToPath()}/Undertaker";
 
-		public override string[] AltTextures => new[] { $"{typeof(Undertaker).NamespaceToPath()}/Undertaker" };
+		//public override string[] AltTextures => new[] { $"{typeof(Undertaker).NamespaceToPath()}/Undertaker" };
 
-		public override bool Autoload(ref string name)
-		{
-			name = "Undertaker";
-			return mod.Properties.Autoload;
-		}
+		//public override bool Autoload(ref string name)
+		//{
+		//	name = "Undertaker";
+		//	return mod.Properties.Autoload;
+		//}
 
 		public override void SetStaticDefaults()
 		{
@@ -132,7 +132,7 @@ namespace Tremor.NPCs.TownNPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for (int i = 0; i < 3; i++)
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot($"Gores/TheUndertakerGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/TheUndertakerGore{i+1}"), 1f);
 			}
 		}
 	}

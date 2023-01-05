@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items
 {
-	public class FrostLancePro : ModProjectile
+	public class FrostLancePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

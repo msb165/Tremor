@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class FlamingReaper : ModNPC
+	public class FlamingReaper:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{

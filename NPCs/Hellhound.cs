@@ -10,7 +10,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class Hellhound : ModNPC
+	public class Hellhound:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -83,7 +83,7 @@ namespace Tremor.NPCs
 				if (npc.ai[1] == 30f && Main.netMode != 1)
 				{
 					int num744 = Main.expertMode ? 35 : 50;
-					Projectile.NewProjectile(npc.Center.X + npc.spriteDirection * -20, npc.Center.Y, npc.spriteDirection * -7, 0f, 467, num744, 0f, Main.myPlayer, npc.target, 0f);
+					Projectile.NewProjectile(null, npc.Center.X + npc.spriteDirection * -20, npc.Center.Y, npc.spriteDirection * -7, 0f, 467, num744, 0f, Main.myPlayer, npc.target, 0f);
 				}
 				if (npc.ai[1] >= 60f)
 				{
@@ -125,11 +125,11 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
 					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/HellhoundGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/HellhoundGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/HellhoundGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/HellhoundGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/HellhoundGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/HellhoundGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/HellhoundGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/HellhoundGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/HellhoundGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/HellhoundGore3"), 1f);
 			}
 			else
 			{
@@ -143,6 +143,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> (Helper.NoZoneAllowWater(spawnInfo)) && NPC.downedMoonlord && spawnInfo.spawnTileY > Main.maxTilesY - 200 ? 0.002f : 0f;
+			=> (Helper.NoZoneAllowWater(spawnInfo)) && NPC.downedMoonlord && spawnInfo.SpawnTileY > Main.maxTilesY - 200 ? 0.002f : 0f;
 	}
 }

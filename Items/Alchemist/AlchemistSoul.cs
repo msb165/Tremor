@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Alchemist
 {
-	public class AlchemistSoul : ModItem
+	public class AlchemistSoul:TremorModItem
 	{
 
 		public override void SetDefaults()

@@ -12,7 +12,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 	 * npc.ai[2] = Timer.
 	 */
 
-	public class CogLordHand : ModNPC
+	public class CogLordHand:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -88,14 +88,14 @@ namespace Tremor.NPCs.Bosses.CogLord
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CogLordHand"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CogLordHand"), 1f);
 			}
 		}
 
 		private void MakeArms()
 		{
-			int arm = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<CogLordArm>(), 0, 9999, 1, 1, npc.ai[1]);
-			int arm2 = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<CogLordArmSecond>(), 0, npc.whoAmI, 0, 1, arm);
+			int arm = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<CogLordArm>(), 0, 9999, 1, 1, npc.ai[1]);
+			int arm2 = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<CogLordArmSecond>(), 0, npc.whoAmI, 0, 1, arm);
 			Main.npc[arm].ai[0] = arm2;
 		}
 
@@ -108,11 +108,11 @@ namespace Tremor.NPCs.Bosses.CogLord
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D drawTexture = Main.npcTexture[npc.type];
+			Texture2D drawTexture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2((drawTexture.Width / 2) * 0.5F, (drawTexture.Height / Main.npcFrameCount[npc.type]) * 0.5F);
 			Vector2 drawPos = new Vector2(
-				npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Main.npcTexture[npc.type].Width / 2) * npc.scale / 2f + origin.X * npc.scale,
-				npc.position.Y - Main.screenPosition.Y + npc.height - Main.npcTexture[npc.type].Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
+				npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Width / 2) * npc.scale / 2f + origin.X * npc.scale,
+				npc.position.Y - Main.screenPosition.Y + npc.height - Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
 			SpriteEffects effects = npc.spriteDirection == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
 			spriteBatch.Draw(drawTexture, drawPos, npc.frame, Color.White, npc.rotation, origin, npc.scale, effects, 0);
 			return false;

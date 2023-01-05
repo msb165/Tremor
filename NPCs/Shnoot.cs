@@ -8,7 +8,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class Shnoot : ModNPC
+	public class Shnoot:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -49,11 +49,11 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 60; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ShnootGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ShnootGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ShnootGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ShnootGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ShnootGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ShnootGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ShnootGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ShnootGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ShnootGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ShnootGore2"), 1f);
 			}
 			else
 			{
@@ -67,6 +67,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.spawnTileY > Main.rockLayer ? 0.005f : 0f;
+			=> Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.SpawnTileY > Main.rockLayer ? 0.005f : 0f;
 	}
 }

@@ -8,7 +8,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class ShadowRelic : ModItem
+	public class ShadowRelic:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -64,7 +64,7 @@ namespace Tremor.Items
 
 		public void SpawnShadowWall(Vector2 pos)
 		{
-			if (pos.Y / 16.0 < (Main.maxTilesY - 205) || Main.wof >= 0 || Main.netMode == 1)
+			if (pos.Y / 16.0 < (Main.maxTilesY - 205) || Main.wofNPCIndex >= 0 || Main.netMode == 1)
 				return;
 			int num1 = Player.FindClosest(pos, 16, 16);
 			int num2 = 1;
@@ -92,9 +92,9 @@ namespace Tremor.Items
 			int num5 = 0;
 			try
 			{
-				for (; WorldGen.SolidTile(i, num4 - num5) || (int)Main.tile[i, num4 - num5].liquid >= 100; ++num5)
+				for (; WorldGen.SolidTile(i, num4 - num5) || (int)Main.tile[i, num4 - num5].LiquidAmount >= 100; ++num5)
 				{
-					if (!WorldGen.SolidTile(i, num4 + num5) && Main.tile[i, num4 + num5].liquid < 100)
+					if (!WorldGen.SolidTile(i, num4 + num5) && Main.tile[i, num4 + num5].LiquidAmount < 100)
 					{
 						num4 += num5;
 						goto label_21;

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class AncientClaymorePro : ModProjectile
+	public class AncientClaymorePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -14,7 +14,7 @@ namespace Tremor.Projectiles
 			projectile.height = 26;
 			projectile.aiStyle = 27;
 			projectile.friendly = true;
-			projectile.ranged = true;
+			projectile.DamageType = DamageClass.Ranged;
 			projectile.penetrate = -1;
 			projectile.timeLeft = 600;
 			projectile.light = 0.5f;
@@ -66,7 +66,7 @@ namespace Tremor.Projectiles
 			{
 				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 64, projectile.oldVelocity.X * 0.7f, projectile.oldVelocity.Y * 0.7f);
 			}
-			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y, 0);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Dig, projectile.position);//Variant 0
 		}
 
 	}

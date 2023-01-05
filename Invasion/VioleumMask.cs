@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Invasion
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class VioleumMask : ModItem
+	public class VioleumMask:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -21,9 +21,7 @@ namespace Tremor.Invasion
 			Tooltip.SetDefault("");
 		}
 
-		public override bool DrawHead()
-		{
-			return false;
-		}
+		//TODO: [Skipped for 1.4] DrawHead
+		//public override bool DrawHead() => false;
 	}
 }

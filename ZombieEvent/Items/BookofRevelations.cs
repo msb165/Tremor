@@ -4,11 +4,11 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class BookofRevelations : ModItem
+	public class BookofRevelations:TremorModItem
 	{
 		public override void SetDefaults()
 		{
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 50;
 			item.height = 55;
 			item.useTime = 30;
@@ -39,19 +39,19 @@ namespace Tremor.ZombieEvent.Items
 			recipe.AddRecipe();
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.TomeRechargeBuff1>()) < 1)
 			{
 				player.AddBuff(ModContent.BuffType<Buffs.TomeRechargeBuff1>(), 1200, true);
-				Item.NewItem((int)player.position.X - 25, (int)player.position.Y, player.width, player.height, 58, 1);
-				Item.NewItem((int)player.position.X - 50, (int)player.position.Y, player.width, player.height, 58, 1);
-				Item.NewItem((int)player.position.X - 75, (int)player.position.Y, player.width, player.height, 58, 1);
-				Item.NewItem((int)player.position.X - 100, (int)player.position.Y, player.width, player.height, 58, 1);
-				Item.NewItem((int)player.position.X + 25, (int)player.position.Y, player.width, player.height, 184, 1);
-				Item.NewItem((int)player.position.X + 50, (int)player.position.Y, player.width, player.height, 184, 1);
-				Item.NewItem((int)player.position.X + 75, (int)player.position.Y, player.width, player.height, 184, 1);
-				Item.NewItem((int)player.position.X + 100, (int)player.position.Y, player.width, player.height, 184, 1);
+				Item.NewItem(null, (int)player.position.X - 25, (int)player.position.Y, player.width, player.height, 58, 1);
+				Item.NewItem(null, (int)player.position.X - 50, (int)player.position.Y, player.width, player.height, 58, 1);
+				Item.NewItem(null, (int)player.position.X - 75, (int)player.position.Y, player.width, player.height, 58, 1);
+				Item.NewItem(null, (int)player.position.X - 100, (int)player.position.Y, player.width, player.height, 58, 1);
+				Item.NewItem(null, (int)player.position.X + 25, (int)player.position.Y, player.width, player.height, 184, 1);
+				Item.NewItem(null, (int)player.position.X + 50, (int)player.position.Y, player.width, player.height, 184, 1);
+				Item.NewItem(null, (int)player.position.X + 75, (int)player.position.Y, player.width, player.height, 184, 1);
+				Item.NewItem(null, (int)player.position.X + 100, (int)player.position.Y, player.width, player.height, 184, 1);
 			}
 			return false;
 		}

@@ -11,17 +11,17 @@ using Tremor.Items.Chain;
 namespace Tremor.NPCs.TownNPCs
 {
 	[AutoloadHead]
-	public class Knight : ModNPC
+	public class Knight:TremorModNPC
 	{
 		public override string Texture => $"{typeof(Knight).NamespaceToPath()}/Knight";
 
-		public override string[] AltTextures => new[] { $"{typeof(Knight).NamespaceToPath()}/Knight" };
+		//public override string[] AltTextures => new[] { $"{typeof(Knight).NamespaceToPath()}/Knight" };
 
-		public override bool Autoload(ref string name)
-		{
-			name = "Knight";
-			return mod.Properties.Autoload;
-		}
+		//public override bool Autoload(ref string name)
+		//{
+		//	name = "Knight";
+		//	return mod.Properties.Autoload;
+		//}
 
 		public override void SetStaticDefaults()
 		{
@@ -161,7 +161,7 @@ namespace Tremor.NPCs.TownNPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for (int i = 0; i < 3; ++i)
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot($"Gores/KnightGore{i + 1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/KnightGore{i + 1}"), 1f);
 			}
 		}
 	}

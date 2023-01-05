@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class ParadoxBat : ModNPC
+	public class ParadoxBat:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -39,9 +39,9 @@ namespace Tremor.Invasion
 				return 1000f;
 			return 0f;
 
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
+			int x = spawnInfo.SpawnTileX;
+			int y = spawnInfo.SpawnTileY;
+			int tile = Main.tile[x, y].TileType;
 			return InvasionWorld.CyberWrath && y > Main.worldSurface ? 1f : 0f;
 		}
 
@@ -87,7 +87,7 @@ namespace Tremor.Invasion
         public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
         {
             SpriteEffects Direction = (npc.target == -1) ? SpriteEffects.None : ((Main.player[npc.target].position.X < npc.position.X) ? SpriteEffects.None : SpriteEffects.FlipHorizontally);
-            spriteBatch.Draw(Main.npcTexture[npc.type], new Rectangle((int)(npc.position.X - Main.screenPosition.X), (int)(npc.position.Y - Main.screenPosition.Y), npc.width, npc.height), new Rectangle(0, Frame * npc.height, npc.width, npc.height), drawColor, 0, new Vector2(0, 0), Direction, 0);
+            spriteBatch.Draw(Terraria.GameContent.TextureAssets.Npc[npc.type].Value, new Rectangle((int)(npc.position.X - Main.screenPosition.X), (int)(npc.position.Y - Main.screenPosition.Y), npc.width, npc.height), new Rectangle(0, Frame * npc.height, npc.width, npc.height), drawColor, 0, new Vector2(0, 0), Direction, 0);
             return false;
         }  */
 
@@ -106,11 +106,11 @@ namespace Tremor.Invasion
 				int halfLength = npc.width / 2 / 16 + 1;
 				if (Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ParadoxElement>(), Main.rand.Next(3, 5));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ParadoxElement>(), Main.rand.Next(3, 5));
 				}
 				if (Main.rand.Next(50) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SecondHand>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SecondHand>());
 				}
 			}
 		}
@@ -210,9 +210,9 @@ namespace Tremor.Invasion
 				if (customAi1 >= 4f)
 					if (Main.rand.Next(120) == 1)
 					{
-						Main.PlaySound(16, (int)npc.position.X, (int)npc.position.Y, 12);
+						Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[16], npc.position);//Variant 12
 						float Angle = (float)Math.Atan2(NPos.Y - PTC.Y, NPos.X - PTC.X);
-						int SpitShot1 = Projectile.NewProjectile(NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), ModContent.ProjectileType<CyberLaserBat>(), 30, 0f, 0);
+						int SpitShot1 = Projectile.NewProjectile(null, NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), ModContent.ProjectileType<CyberLaserBat>(), 30, 0f, 0);
 						//Main.projectile[SpitShot1].friendly = false;
 						Main.projectile[SpitShot1].timeLeft = 500;
 						customAi1 = 1f;
@@ -256,9 +256,9 @@ namespace Tremor.Invasion
 				Vector2 NPos = npc.position + new Vector2(npc.width / 2, npc.height / 2);
 				if (Main.rand.Next(70) == 1)
 				{
-					Main.PlaySound(16, (int)npc.position.X, (int)npc.position.Y, 12);
+					Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[16], npc.position);//Variant 12
 					float Angle = (float)Math.Atan2(NPos.Y - PTC.Y, NPos.X - PTC.X);
-					int SpitShot1 = Projectile.NewProjectile(NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), ModContent.ProjectileType<CyberLaserBat>(), 30, 0f, 0);
+					int SpitShot1 = Projectile.NewProjectile(null, NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), ModContent.ProjectileType<CyberLaserBat>(), 30, 0f, 0);
 					//Main.projectile[SpitShot1].friendly = false;
 					Main.projectile[SpitShot1].timeLeft = 500;
 					customAi1 = 1f;
@@ -394,7 +394,7 @@ namespace Tremor.Invasion
 									npc_to_target_x += npc.velocity.X * 0.5f; // advance fwd half a tick
 									npc_pos.X -= npc_to_target_x * 1f;
 									npc_pos.Y -= npc_to_target_y * 1f;
-									//Projectile.NewProjectile(npc_pos.X, npc_pos.Y, npc_to_target_x, npc_to_target_y, ProjDef.byName["Pumpking:TerraGuardLaser"].type, projectile_dmg, 0f, Main.myPlayer);
+									//Projectile.NewProjectile(null, npc_pos.X, npc_pos.Y, npc_to_target_x, npc_to_target_y, ProjDef.byName["Pumpking:TerraGuardLaser"].type, projectile_dmg, 0f, Main.myPlayer);
 								}
 							}
 						}

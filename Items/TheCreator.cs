@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TheCreator : ModItem
+	public class TheCreator:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,18 +26,11 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.magicDamage += 0.15f;
-			player.minionDamage += 0.15f;
-			player.meleeDamage += 0.15f;
-			player.rangedDamage += 0.15f;
-			player.thrownDamage += 0.15f;
+			player.GetDamage(DamageClass.Generic) += 0.15f;
 			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.15f;
 			player.statManaMax2 += 100;
 			player.statLifeMax2 += 100;
-			player.meleeCrit += 15;
-			player.magicCrit += 15;
-			player.rangedCrit += 15;
-			player.thrownCrit += 15;
+			player.GetCritChance(DamageClass.Generic) += 15;
 			player.GetModPlayer<MPlayer>().alchemicalCrit += 15;
 		}
 

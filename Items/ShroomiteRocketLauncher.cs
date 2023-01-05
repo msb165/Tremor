@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ShroomiteRocketLauncher : ModItem
+	public class ShroomiteRocketLauncher:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 64;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 66;
 			item.height = 32;
 			item.useTime = 18;
@@ -38,7 +38,7 @@ namespace Tremor.Items
 			return new Vector2(-18, -4);
 		}
 
-		public override bool ConsumeAmmo(Player p)
+		public override bool CanConsumeAmmo(Item ammo, Player p)
 		{
 			return Main.rand.NextBool(3);
 		}

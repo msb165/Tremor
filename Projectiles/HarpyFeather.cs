@@ -1,9 +1,10 @@
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class HarpyFeather : ModProjectile
+	public class HarpyFeather:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -11,7 +12,7 @@ namespace Tremor.Projectiles
 			projectile.width = 16;
 			projectile.height = 16;
 			projectile.friendly = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.penetrate = 6;
 			projectile.aiStyle = 1;
 			projectile.timeLeft = 600;
@@ -25,7 +26,7 @@ namespace Tremor.Projectiles
 
 		public override void Kill(int timeLeft)
 		{
-			Main.PlaySound(6, (int)projectile.position.X, (int)projectile.position.Y, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[6], projectile.position);//Variant 0
 		}
 
 	}

@@ -1,13 +1,14 @@
 using System;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.Items.Brass;
 
 namespace Tremor.Items
 {
-	public class ManaStimPack : ModItem
+	public class ManaStimPack:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -30,11 +31,11 @@ namespace Tremor.Items
 "Has no cooldown");
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			if (player.whoAmI == Main.myPlayer)
 			{
-				Main.PlaySound(2, (int)player.position.X, (int)player.position.Y, 3);
+				SoundEngine.PlaySound(SoundID.Item3, player.position);
 				player.ManaEffect(20);
 				player.statMana = Math.Min(player.statManaMax2, player.statMana + 20);
 				return true;

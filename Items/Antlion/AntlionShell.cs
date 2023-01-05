@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Antlion
 {
-	public class AntlionShell : ModItem
+	public class AntlionShell:TremorModItem
 	{
 		public override void SetDefaults()
 		{

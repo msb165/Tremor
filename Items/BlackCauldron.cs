@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class BlackCauldron : ModItem
+	public class BlackCauldron:TremorModItem
 	{
 		public override void SetDefaults()
 		{

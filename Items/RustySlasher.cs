@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class RustySlasher : ModItem
+	public class RustySlasher:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 16;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 42;
 			item.height = 46;
 			item.useTime = 13;

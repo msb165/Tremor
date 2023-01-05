@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SwampMud : ModItem
+	public class SwampMud:TremorModItem
 	{
 		public override void SetDefaults()
 		{

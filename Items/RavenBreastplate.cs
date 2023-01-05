@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class RavenBreastplate : ModItem
+	public class RavenBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,8 +28,8 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.08f;
-			player.meleeCrit += 5;
+			player.GetDamage(DamageClass.Melee) += 0.08f;
+			player.GetCritChance(DamageClass.Melee) += 5;
 		}
 
 		public override void AddRecipes()

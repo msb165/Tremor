@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.ZombieEvent.Mobs
 {
 
-	public class SpearZombie : ModNPC
+	public class SpearZombie:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -40,12 +40,12 @@ namespace Tremor.ZombieEvent.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombieSpearHead"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingArm"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingArm"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingLeg"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingLeg"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombieSpearGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombieSpearHead"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingArm"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingArm"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingLeg"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingLeg"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombieSpearGore"), 1f);
 			}
 		}
 

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class PaladinBreastplate : ModItem
+	public class PaladinBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeCrit += 25;
+			player.GetCritChance(DamageClass.Melee) += 25;
 		}
 	}
 }

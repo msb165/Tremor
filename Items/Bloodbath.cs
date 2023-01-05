@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Bloodbath : ModItem
+	public class Bloodbath:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 98;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 28;
 			item.height = 30;
 			item.useTime = 14;

@@ -9,7 +9,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class ExuberantHound : ModNPC
+	public class ExuberantHound:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -84,7 +84,7 @@ namespace Tremor.NPCs
 				if (npc.ai[1] == 30f && Main.netMode != 1)
 				{
 					int projectileDamage = Main.expertMode ? 35 : 50;
-					Projectile.NewProjectile(npc.Center.X + npc.spriteDirection * -20, npc.Center.Y, npc.spriteDirection * -7, 0f, ProjectileID.MartianTurretBolt, projectileDamage, 0f, Main.myPlayer, npc.target, 0f);
+					Projectile.NewProjectile(null, npc.Center.X + npc.spriteDirection * -20, npc.Center.Y, npc.spriteDirection * -7, 0f, ProjectileID.MartianTurretBolt, projectileDamage, 0f, Main.myPlayer, npc.target, 0f);
 				}
 
 				if (npc.ai[1] >= 60f)
@@ -127,11 +127,11 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 226, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ExuberantHoundGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ExuberantHoundGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ExuberantHoundGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ExuberantHoundGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ExuberantHoundGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ExuberantHoundGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ExuberantHoundGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ExuberantHoundGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ExuberantHoundGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ExuberantHoundGore3"), 1f);
 			}
 			else
 			{
@@ -144,6 +144,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> (Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo)) && NPC.downedMoonlord && Main.hardMode && !Main.dayTime && spawnInfo.spawnTileY < Main.worldSurface ? 0.001f : 0f;
+			=> (Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo)) && NPC.downedMoonlord && Main.hardMode && !Main.dayTime && spawnInfo.SpawnTileY < Main.worldSurface ? 0.001f : 0f;
 	}
 }

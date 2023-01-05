@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Cyber
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class CyberKingMask : ModItem
+	public class CyberKingMask:TremorModItem
 	{
 
 		public override void SetDefaults()

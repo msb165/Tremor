@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class DemonEyePro : ModProjectile
+	public class DemonEyePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -31,9 +31,9 @@ namespace Tremor.Projectiles
 			{
 				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 1, projectile.oldVelocity.X * 0.1f, projectile.oldVelocity.Y * 0.1f);
 			}
-			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y, 0);
-			Gore.NewGore(projectile.position, projectile.velocity, 1, 1f);
-			Gore.NewGore(projectile.position, projectile.velocity, 2, 1f);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Dig, projectile.position);//Variant 0
+			Gore.NewGore(null, projectile.position, projectile.velocity, 1, 1f);
+			Gore.NewGore(null, projectile.position, projectile.velocity, 2, 1f);
 		}
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

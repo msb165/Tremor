@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Sparks
 {
-	public class WarriorSpark : ModItem
+	public class WarriorSpark:TremorModItem
 	{
 		public override void SetStaticDefaults()
 		{
@@ -26,8 +26,8 @@ namespace Tremor.Items.Sparks
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.meleeDamage += 0.03f;
-			player.meleeCrit += 8;
+			player.GetDamage(DamageClass.Melee) += 0.03f;
+			player.GetCritChance(DamageClass.Melee) += 8;
 		}
 
 		public override void AddRecipes()

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class GrassGlaviePro : ModProjectile
+	public class GrassGlaviePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

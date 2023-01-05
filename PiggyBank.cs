@@ -9,19 +9,18 @@ namespace Tremor
 	{
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)//Add support for defender coins in bank3?
 		{
-			bool flag;
-			int[] coins;
-
-			if (item.type == ItemID.PiggyBank || item.type == ItemID.MoneyTrough)
+			Chest bank = item.type switch
 			{
-				coins = Utils.CoinsSplit(Utils.CoinsCount(out flag, Main.LocalPlayer.bank.item, new int[0]));
-			}
-			else if (item.type == ItemID.Safe)
-			{
-				coins = Utils.CoinsSplit(Utils.CoinsCount(out flag, Main.LocalPlayer.bank2.item, new int[0]));
-			}
-			else{return;}
+				ItemID.PiggyBank or ItemID.MoneyTrough => Main.LocalPlayer.bank,
+				ItemID.Safe => Main.LocalPlayer.bank2,
+				ItemID.DefendersForge => Main.LocalPlayer.bank3,
+				ItemID.VoidVault => Main.LocalPlayer.bank4,
+				_ => null
+			};
 
+			if(bank == null){return;}
+
+			var coins = Utils.CoinsSplit(Utils.CoinsCount(out _, bank.item));
 			List<string> coinTexts = new List<string>(coins.Length);
 			for (int i=0; i<3; i++)
 			{
@@ -33,7 +32,7 @@ namespace Tremor
 
 			if(coinTexts.Count>0)
 			{
-				tooltips.Add(new TooltipLine(mod, "", string.Join(" ",coinTexts)));
+				tooltips.Add(new TooltipLine(Mod, "", string.Join(" ",coinTexts)));
 			}
 		}
 	}

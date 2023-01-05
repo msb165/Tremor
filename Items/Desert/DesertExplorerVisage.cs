@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Desert
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class DesertExplorerVisage : ModItem
+	public class DesertExplorerVisage:TremorModItem
 	{
 		public override void SetDefaults()
 		{

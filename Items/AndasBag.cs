@@ -5,7 +5,7 @@ using Tremor.NPCs.Bosses.AndasBoss;
 
 namespace Tremor.Items
 {
-	public class AndasBag : ModItem
+	public class AndasBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

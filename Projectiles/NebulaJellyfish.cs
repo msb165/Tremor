@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class NebulaJellyfish : ModProjectile
+	public class NebulaJellyfish:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

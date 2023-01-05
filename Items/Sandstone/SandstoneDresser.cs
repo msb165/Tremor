@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Sandstone
 {
-	public class SandstoneDresser : ModItem
+	public class SandstoneDresser:TremorModItem
 	{
 		public override void SetDefaults()
 		{

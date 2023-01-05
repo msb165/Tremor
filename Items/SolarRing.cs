@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SolarRing : ModItem
+	public class SolarRing:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,8 +27,8 @@ namespace Tremor.Items
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
 		{
-			player.meleeDamage += 0.2f;
-			player.meleeCrit += 15;
+			player.GetDamage(DamageClass.Melee) += 0.2f;
+			player.GetCritChance(DamageClass.Melee) += 15;
 			player.AddBuff(116, 60, true);
 		}
 

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class FrostoneBar : ModItem
+	public class FrostoneBar:TremorModItem
 	{
 		public override void SetDefaults()
 		{

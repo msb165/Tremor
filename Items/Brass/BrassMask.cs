@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Brass
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class BrassMask : ModItem
+	public class BrassMask:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,8 +28,8 @@ namespace Tremor.Items.Brass
 
 		public override void UpdateEquip(Player player)
 		{
-			player.rangedCrit += 8;
-			player.rangedDamage += 0.1f;
+			player.GetCritChance(DamageClass.Ranged) += 8;
+			player.GetDamage(DamageClass.Ranged) += 0.1f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class MudDoll : ModProjectile
+	public class MudDoll:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

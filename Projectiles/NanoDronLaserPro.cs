@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class NanoDronLaserPro : ModProjectile
+	public class NanoDronLaserPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Candy
 {
-	public class CandyBlaster : ModItem
+	public class CandyBlaster:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 226;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 42;
 			item.height = 30;
 
@@ -35,7 +35,7 @@ namespace Tremor.Items.Candy
 			Tooltip.SetDefault("Spends bullets and fires candies");
 		}
 
-		public override bool ConsumeAmmo(Player p)
+		public override bool CanConsumeAmmo(Item ammo, Player p)
 		{
 			return Main.rand.NextBool(3);
 		}

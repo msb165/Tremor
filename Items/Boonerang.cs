@@ -5,13 +5,13 @@ using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
-	public class Boonerang : ModItem
+	public class Boonerang:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 24;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 48;
 			item.height = 48;
 			item.useTime = 14;

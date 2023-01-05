@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GreatAnvil : ModItem
+	public class GreatAnvil:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Dark
 {
-	public class DarknessDust : ModItem
+	public class DarknessDust:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Marble
 {
-	public class MarbleVase : ModItem
+	public class MarbleVase:TremorModItem
 	{
 		public override void SetDefaults()
 		{

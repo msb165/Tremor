@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ChilledBow : ModItem
+	public class ChilledBow:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -11,7 +11,7 @@ namespace Tremor.Items
 			item.damage = 13;
 			item.width = 18;
 			item.height = 56;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.useTime = 30;
 			item.shoot = 1;
 			item.shootSpeed = 12f;

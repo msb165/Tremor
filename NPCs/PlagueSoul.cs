@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class PlagueSoul : ModNPC
+	public class PlagueSoul:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{

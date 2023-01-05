@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class GloomstoneWorkbench : ModTile
+	public class GloomstoneWorkbench:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -25,7 +25,7 @@ namespace Tremor.Tiles
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<Items.GloomstoneWorkbench>());
+			Item.NewItem(null, i * 16, j * 16, 32, 16, ModContent.ItemType<Items.GloomstoneWorkbench>());
 		}
 	}
 }

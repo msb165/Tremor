@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Wings)]
-	public class RedFeatherWings : ModItem
+	public class RedFeatherWings:TremorModItem
 	{
 
 		public override void SetDefaults()

@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class MagiumSword : ModNPC
+	public class MagiumSword:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{

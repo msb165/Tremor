@@ -1,6 +1,7 @@
 using System;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.Items;
@@ -8,7 +9,7 @@ using Tremor.Items;
 namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
-	public class FrostKing : ModNPC
+	public class FrostKing:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -43,11 +44,11 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FrostKingGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FrostKingGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FrostKingGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FrostKingGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FrostKingGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FrostKingGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FrostKingGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FrostKingGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FrostKingGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FrostKingGore4"), 1f);
 			}
 		}
 
@@ -137,7 +138,7 @@ namespace Tremor.NPCs
 							{
 								float angle = Main.rand.Next(0, (int)(Math.PI) * 200) / 100f;
 								Vector2 velocity = new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle)) * 25;
-								Projectile.NewProjectile(bossCenter.X - 90, bossCenter.Y + 7, velocity.X, velocity.Y, 349, 20, 5);
+								Projectile.NewProjectile(null, bossCenter.X - 90, bossCenter.Y + 7, velocity.X, velocity.Y, 349, 20, 5);
 							}
 							atackTimer = 0.3f;
 						}
@@ -169,7 +170,7 @@ namespace Tremor.NPCs
 							Vector2 shootPos = bossCenter + new Vector2(88, 32);
 							float angle = (float)Math.Atan2(targetPos.Y - shootPos.Y, targetPos.X - shootPos.X) + Main.rand.Next((int)(Math.PI * -100f), (int)(Math.PI * 100f)) / 3600f;
 							Vector2 velocity = new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle)) * 20;
-							Projectile.NewProjectile(shootPos.X, shootPos.Y, velocity.X, velocity.Y, 348, 40, 5);
+							Projectile.NewProjectile(null, shootPos.X, shootPos.Y, velocity.X, velocity.Y, 348, 40, 5);
 							atackTimer = 1;
 						}
 					}
@@ -198,9 +199,9 @@ namespace Tremor.NPCs
 						else
 						{
 							Vector2 shootPos = bossCenter + new Vector2(-90, 25);
-							Projectile.NewProjectile(shootPos.X, shootPos.Y, -20, 0, 464, 40, 5);
+							Projectile.NewProjectile(null, shootPos.X, shootPos.Y, -20, 0, 464, 40, 5);
 							shootPos = bossCenter + new Vector2(90, 25);
-							Projectile.NewProjectile(shootPos.X, shootPos.Y, 20, 0, 464, 40, 5);
+							Projectile.NewProjectile(null, shootPos.X, shootPos.Y, 20, 0, 464, 40, 5);
 							atackTimer = 3;
 						}
 					}
@@ -286,11 +287,16 @@ namespace Tremor.NPCs
 			npc.frame.Y = frameHeight * frame + 2;
 		}
 
+		public override void ModifyNPCLoot(NPCLoot npcLoot)
+		{
+			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<FrostKingBag>()));
+		}
+
 		public override void NPCLoot()
 		{
-			if (Main.expertMode)
+			if(Main.expertMode)
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 			if (Main.netMode != 1)
 			{
@@ -300,15 +306,15 @@ namespace Tremor.NPCs
 
 				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FrostKingMask>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FrostKingMask>());
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FrostKingTrophy>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FrostKingTrophy>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FrostoneOre>(), Main.rand.Next(24, 42));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FrostoneOre>(), Main.rand.Next(24, 42));
 				}
 				TremorWorld.Boss.FrostKing.Downed();
 			}

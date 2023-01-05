@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class RottenHand : ModItem
+	public class RottenHand:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 10;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 26;
 			item.height = 26;
 			item.useTime = 25;

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class DragonSpearPro : ModProjectile
+	public class DragonSpearPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

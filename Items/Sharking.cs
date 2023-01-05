@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Sharking : ModItem
+	public class Sharking:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 72;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 48;
 			item.height = 48;
 			item.useTime = 45;

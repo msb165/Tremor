@@ -6,7 +6,7 @@ using Tremor.Items.Doom;
 
 namespace Tremor.Items.Dark
 {
-	public class Darkhalis : ModItem
+	public class Darkhalis:TremorModItem
 	{
 		public override void SetDefaults()
 		{

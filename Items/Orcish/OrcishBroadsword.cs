@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Orcish
 {
-	public class OrcishBroadsword : ModItem
+	public class OrcishBroadsword:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 20;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 48;
 			item.height = 48;
 			item.useTime = 30;

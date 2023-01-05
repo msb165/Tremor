@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TechnologyofDionysus : ModItem
+	public class TechnologyofDionysus:TremorModItem
 	{
 
 		public override void SetDefaults()

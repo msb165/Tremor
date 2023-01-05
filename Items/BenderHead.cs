@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class BenderHead : ModItem
+	public class BenderHead:TremorModItem
 	{
 
 		public override void SetDefaults()

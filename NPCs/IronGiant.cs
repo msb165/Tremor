@@ -8,7 +8,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class IronGiant : ModNPC
+	public class IronGiant:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -52,19 +52,19 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 31, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore4"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore4"), 1f);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> (Helper.NoZoneAllowWater(spawnInfo)) && Main.hardMode && spawnInfo.spawnTileY > Main.rockLayer ? 0.001f : 0f;
+			=> (Helper.NoZoneAllowWater(spawnInfo)) && Main.hardMode && spawnInfo.SpawnTileY > Main.rockLayer ? 0.001f : 0f;
 	}
 }

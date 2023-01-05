@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class FallenSnakePro : ModProjectile
+	public class FallenSnakePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class DragonBreastplate : ModItem
+	public class DragonBreastplate:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,8 +26,8 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.rangedDamage += 0.5f;
-			player.rangedCrit += 34;
+			player.GetDamage(DamageClass.Ranged) += 0.5f;
+			player.GetCritChance(DamageClass.Ranged) += 34;
 		}
 
 		public virtual void ArmorSetShadows(Player player, ref bool longTrail, ref bool smallPulse, ref bool largePulse, ref bool shortTrail)

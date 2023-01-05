@@ -2,13 +2,14 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
 	[AutoloadBossHead]
-	public class Titan : ModNPC
+	public class Titan:TremorModNPC
 	{
 		/*
 		Интеллект босса состоит из резких рывков. 
@@ -53,7 +54,8 @@ namespace Tremor.Invasion
 
 		int draw = -25;
 		int draw_ = 75;
-		public override void PostDraw(SpriteBatch spriteBatch, Color drawColor)
+
+		public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{
 			//spriteBatch.Draw(mod.GetTexture("NPCs/CogLordBody"), npc.Center - Main.screenPosition, null, Color.White, 0f, new Vector2(74, -18), 1f, SpriteEffects.None, 0f);
 			spriteBatch.Draw(mod.GetTexture("Invasion/Hand_"), npc.Center - Main.screenPosition, null, Color.White, 0.0f, new Vector2(draw, -10), 1f, SpriteEffects.None, 1);
@@ -96,9 +98,9 @@ namespace Tremor.Invasion
 				int damage = 80;
 				if (Main.expertMode)
 				{
-					damage = (int)(100 / Main.expertDamage);
+					damage = (int)(100 / 2);//2 was Main.expertDamage
 				}
-				int proj = Projectile.NewProjectile(pos.X, pos.Y, 0f, 0f, ModContent.ProjectileType<TitanCrystal_>(), damage, 0f, Main.myPlayer, npc.whoAmI, angle);
+				int proj = Projectile.NewProjectile(null, pos.X, pos.Y, 0f, 0f, ModContent.ProjectileType<TitanCrystal_>(), damage, 0f, Main.myPlayer, npc.whoAmI, angle);
 				Main.projectile[proj].localAI[0] = radius;
 				Main.projectile[proj].localAI[1] = clockwise ? 1 : -1;
 				//NetMessage.SendData(27, -1, -1, "", proj);
@@ -112,7 +114,7 @@ namespace Tremor.Invasion
 			Vector2 NPos = npc.position + new Vector2(npc.width / 2, npc.height / 2);
 			if (Main.rand.Next(150) == 0)
 			{
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<TitanCrystal>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<TitanCrystal>());
 			}
 
 			if (Main.rand.Next(150) == 1)
@@ -159,7 +161,7 @@ namespace Tremor.Invasion
 
 			if ((npc.ai[1] >= 200 && npc.life > 90000 && npc.ai[1] < 3000) || (npc.ai[1] >= 120 && npc.life <= 90000 && npc.ai[1] < 3000) && Main.expertMode) //экспертные рывки
 			{
-				Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 8);
+				SoundEngine.PlaySound(SoundID.Item8, npc.position);
 				for (int num36 = 0; num36 < 10; num36++)
 				{
 					Color color = new Color();
@@ -187,7 +189,7 @@ namespace Tremor.Invasion
 
 			if ((npc.ai[1] >= 200 && npc.life > 45000 && npc.ai[1] < 500) || (npc.ai[1] >= 120 && npc.life <= 45000 && npc.ai[1] < 500) && !Main.expertMode) //рывки
 			{
-				Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 8);
+				SoundEngine.PlaySound(SoundID.Item8, npc.position);
 				for (int num36 = 0; num36 < 10; num36++)
 				{
 					Color color = new Color();
@@ -252,7 +254,7 @@ namespace Tremor.Invasion
 				npc.velocity.Y = (float)(Math.Sin(rotation) * 28) * -1;
 				npc.netUpdate = true;
 				float Angle = (float)Math.Atan2(NPos.Y - PTC.Y, NPos.X - PTC.X);
-				int SpitShot1 = Projectile.NewProjectile(NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), ModContent.ProjectileType<CyberLaserBat>(), 30, 0f, 0);
+				int SpitShot1 = Projectile.NewProjectile(null, NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), ModContent.ProjectileType<CyberLaserBat>(), 30, 0f, 0);
 				Main.projectile[SpitShot1].friendly = false;
 				Main.projectile[SpitShot1].timeLeft = 500;
 			}
@@ -267,7 +269,7 @@ namespace Tremor.Invasion
 					npc.velocity.X = (float)(Math.Cos(rotation) * 28) * -1;
 					npc.velocity.Y = (float)(Math.Sin(rotation) * 28) * -1;
 					float Angle = (float)Math.Atan2(NPos.Y - PTC.Y, NPos.X - PTC.X);
-					int SpitShot1 = Projectile.NewProjectile(NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), ModContent.ProjectileType<CyberLaserBat>(), 50, 0f, 0);
+					int SpitShot1 = Projectile.NewProjectile(null, NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), ModContent.ProjectileType<CyberLaserBat>(), 50, 0f, 0);
 					Main.projectile[SpitShot1].friendly = false;
 					Main.projectile[SpitShot1].timeLeft = 500;
 				}
@@ -281,7 +283,7 @@ namespace Tremor.Invasion
 				Vector2 vector8 = new Vector2(npc.position.X + (npc.width * 0.5f), npc.position.Y + (npc.height * 0.5f));
 				{
 					float Angle = (float)Math.Atan2(NPos.Y - PTC.Y, NPos.X - PTC.X);
-					int SpitShot1 = Projectile.NewProjectile(NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), ModContent.ProjectileType<CyberLaserBat>(), 90, 0f, 0);
+					int SpitShot1 = Projectile.NewProjectile(null, NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), ModContent.ProjectileType<CyberLaserBat>(), 90, 0f, 0);
 					Main.projectile[SpitShot1].friendly = false;
 					Main.projectile[SpitShot1].timeLeft = 500;
 					float rotation = (float)Math.Atan2((vector8.Y) - (Main.player[npc.target].position.Y + (Main.player[npc.target].height * 0.5f)), (vector8.X) - (Main.player[npc.target].position.X + (Main.player[npc.target].width * 0.5f)));
@@ -301,15 +303,15 @@ namespace Tremor.Invasion
 
 				if (Main.expertMode)
 				{
-					npc.DropBossBags();
+					DropBossBags();
 				}
 				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ParadoxTitanMask>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ParadoxTitanMask>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TimeTissue>(), Main.rand.Next(20, 32));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TimeTissue>(), Main.rand.Next(20, 32));
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
@@ -317,11 +319,11 @@ namespace Tremor.Invasion
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ParadoxTitanTrophy>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ParadoxTitanTrophy>());
 				}
 				if (Main.rand.Next(20) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<VioleumWings>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<VioleumWings>());
 				}
 			}
 		}

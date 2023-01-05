@@ -5,12 +5,12 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class BloodCarnage : ModItem
+	public class BloodCarnage:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 			item.damage = 44;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 44;
 			item.height = 44;
 			item.useTime = 26;

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class DeadTissue : ModItem
+	public class DeadTissue:TremorModItem
 	{
 		public override void SetDefaults()
 		{

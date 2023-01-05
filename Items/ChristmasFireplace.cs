@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ChristmasFireplace : ModItem
+	public class ChristmasFireplace:TremorModItem
 	{
 		public override void SetDefaults()
 		{

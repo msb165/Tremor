@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class VineHood : ModItem
+	public class VineHood:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -37,7 +37,7 @@ namespace Tremor.Items
 		}
 		public override void UpdateEquip(Player player)
 		{
-			player.rangedDamage += 0.05f;
+			player.GetDamage(DamageClass.Ranged) += 0.05f;
 		}
 
 		public override void AddRecipes()

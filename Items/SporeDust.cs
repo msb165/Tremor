@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SporeDust : ModItem
+	public class SporeDust:TremorModItem
 	{
 		public override void SetDefaults()
 		{

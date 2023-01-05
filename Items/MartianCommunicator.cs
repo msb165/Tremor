@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MartianCommunicator : ModItem
+	public class MartianCommunicator:TremorModItem
 	{
 		const int XOffset = 0;
 		const int YOffset = -200;
@@ -35,7 +35,7 @@ namespace Tremor.Items
 			return Main.hardMode && NPC.downedGolemBoss;
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			Main.StartInvasion(4);
 			return true;

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GloomstoneGrandfatherClock : ModItem
+	public class GloomstoneGrandfatherClock:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 
-	public class BloodmoonPotion : ModItem
+	public class BloodmoonPotion:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -35,7 +35,7 @@ namespace Tremor.Items
 			return false;
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			Main.bloodMoon = true;
 			return true;

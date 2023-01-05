@@ -5,7 +5,7 @@ using Tremor.Items.Wood;
 
 namespace Tremor.NPCs
 {
-	public class Woody : ModNPC
+	public class Woody:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -35,12 +35,12 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/WoodyGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/WoodyGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WoodyGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WoodyGore2"), 1f);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.player.ZoneJungle && spawnInfo.spawnTileY > Main.rockLayer ? 0.01f : 0f;
+			=> Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.Player.ZoneJungle && spawnInfo.SpawnTileY > Main.rockLayer ? 0.01f : 0f;
 	}
 }

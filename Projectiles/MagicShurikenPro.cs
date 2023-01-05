@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class MagicShurikenPro : ModProjectile
+	public class MagicShurikenPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

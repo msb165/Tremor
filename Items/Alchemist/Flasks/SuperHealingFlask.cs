@@ -11,7 +11,7 @@ namespace Tremor.Items.Alchemist.Flasks
 		{
 			item.crit = 4;
 			item.damage = 96;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 26;
 			item.noUseGraphic = true;
 			item.maxStack = 999;
@@ -38,7 +38,7 @@ namespace Tremor.Items.Alchemist.Flasks
 "Clouds deal damage to enemies and restore health");
 		}
 
-		public override void PickAmmo(Player player, ref int type, ref float speed, ref int damage, ref float knockback)
+		public override void PickAmmo(Item weapon, Player player, ref int type, ref float speed, ref StatModifier damage, ref float knockback)
 		{
 			type = ModContent.ProjectileType<HealingCloudPro>();
 		}

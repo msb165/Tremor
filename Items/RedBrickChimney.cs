@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class RedBrickChimney : ModItem
+	public class RedBrickChimney:TremorModItem
 	{
 		public override void SetDefaults()
 		{

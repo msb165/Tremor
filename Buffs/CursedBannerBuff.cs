@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class CursedBannerBuff : ModBuff
+	public class CursedBannerBuff:TremorModBuff
 	{
 		public override void SetDefaults()
 		{
@@ -15,10 +15,7 @@ namespace Tremor.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.meleeCrit += 25;
-			player.rangedCrit += 25;
-			player.magicCrit += 25;
-			player.thrownCrit += 25;
+			player.GetCritChance(DamageClass.Generic) += 25;
 			player.GetModPlayer<MPlayer>().alchemicalCrit += 25;
 		}
 	}

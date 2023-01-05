@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class DesertClaymorePro : ModProjectile
+	public class DesertClaymorePro:TremorModProjectile
 	{
 		const int MaxYOffset = 5;
 		const int SpeedMulti = 2;
@@ -22,7 +22,7 @@ namespace Tremor.Projectiles
 			projectile.height = 60;
 			projectile.aiStyle = 0;
 			projectile.friendly = true;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 			projectile.penetrate = -1;
 			projectile.timeLeft = 1080; // Время которое он будет стоять на месте (60ед. == 1сек.)
 		}

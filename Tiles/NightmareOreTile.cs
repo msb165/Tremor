@@ -5,21 +5,21 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class NightmareOreTile : ModTile
+	public class NightmareOreTile:TremorModTile
 	{
 		public override void SetDefaults()
 		{
 			Main.tileSolid[Type] = true;
-                                   soundType = 21;
-                                   soundStyle = 2;
+			soundType = 21;
+			soundStyle = 2;
 			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
 			dustType = ModContent.DustType<Dusts.NightmareFlame>();
 			drop = ModContent.ItemType<NightmareOre>();
 			AddMapEntry(new Color(90, 0, 157));
-mineResist = 12f;
-minPick = 225;
+			MineResist = 12f;
+			MinPick = 225;
 		}
 
 		public override void NumDust(int i, int j, bool fail, ref int num)
@@ -34,13 +34,13 @@ minPick = 225;
 			b = 0.7f;
 		}
 
-  public override bool CanExplode(int i, int j)
-  {
-   if (Main.tile[i, j].type == ModContent.TileType<Tiles.NightmareOreTile>())
-   {
-    return false;
-   }
-   return false;
-  }
+		public override bool CanExplode(int i, int j)
+		{
+			if(Main.tile[i, j].TileType == ModContent.TileType<Tiles.NightmareOreTile>())
+			{
+				return false;
+			}
+			return false;
+		}
 	}
 }

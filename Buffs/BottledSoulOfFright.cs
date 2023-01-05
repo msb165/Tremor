@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class BottledSoulOfFright : ModBuff
+	public class BottledSoulOfFright:TremorModBuff
 	{
 		public override void SetDefaults()
 		{
@@ -14,10 +14,7 @@ namespace Tremor.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.rangedCrit += 2;
-			player.meleeCrit += 2;
-			player.magicCrit += 2;
-			player.thrownCrit += 2;
+			player.GetCritChance(DamageClass.Generic) += 2;
 		}
 	}
 }

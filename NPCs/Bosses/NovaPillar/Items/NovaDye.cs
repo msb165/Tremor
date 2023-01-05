@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.Items
 {
-	public class NovaDye : ModItem
+	public class NovaDye:TremorModItem
 	{
 		public override void SetDefaults()
 		{

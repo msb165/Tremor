@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class OmnikronBreastplate : ModItem
+	public class OmnikronBreastplate:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -27,16 +27,12 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 		public override void UpdateEquip(Player player)
 		{
-			player.magicDamage += 0.2f;
-			player.minionDamage += 0.2f;
-			player.meleeDamage += 0.2f;
-			player.rangedDamage += 0.2f;
-			player.thrownDamage += 0.2f;
+			player.GetDamage(DamageClass.Generic) += 0.2f;
 			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.2f;
 		}
 

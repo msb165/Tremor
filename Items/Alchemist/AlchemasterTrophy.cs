@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Alchemist
 {
-	public class AlchemasterTrophy : ModItem
+	public class AlchemasterTrophy:TremorModItem
 	{
 		public override void SetDefaults()
 		{

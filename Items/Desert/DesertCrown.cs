@@ -6,7 +6,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items.Desert
 {
-	public class DesertCrown : ModItem
+	public class DesertCrown:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -34,10 +34,10 @@ namespace Tremor.Items.Desert
 			return !NPC.AnyNPCs(ModContent.NPCType<npcVultureKing>()) && player.ZoneDesert;
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<npcVultureKing>());
-			Main.PlaySound(SoundID.Roar, player.position, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.Roar, player.position);//Variant 0
 			return true;
 		}
 

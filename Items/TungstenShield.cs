@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class TungstenShield : ModItem
+	public class TungstenShield:TremorModItem
 	{
 		public override void SetDefaults()
 		{

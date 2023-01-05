@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items
 {
-	public class FrostByteEye : ModItem
+	public class FrostByteEye:TremorModItem
 	{
 
 		public override void SetDefaults()

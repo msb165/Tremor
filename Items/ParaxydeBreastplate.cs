@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class ParaxydeBreastplate : ModItem
+	public class ParaxydeBreastplate:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -25,8 +25,8 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.magicCrit += 15;
-			player.meleeCrit += 15;
+			player.GetCritChance(DamageClass.Magic) += 15;
+			player.GetCritChance(DamageClass.Melee) += 15;
 		}
 
 		public override void AddRecipes()

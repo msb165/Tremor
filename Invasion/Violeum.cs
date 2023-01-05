@@ -1,12 +1,13 @@
 using System;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class Violeum : ModNPC
+	public class Violeum:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -44,18 +45,18 @@ namespace Tremor.Invasion
 
 				if (Main.expertMode)
 				{
-					npc.DropBossBags();
+					DropBossBags();
 				}
 				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<VioleumMask>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<VioleumMask>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(5))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Crystyle>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Crystyle>());
 				}
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.HealingPotion, Main.rand.Next(7, 20));
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TimeTissue>(), Main.rand.Next(5, 15));
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.HealingPotion, Main.rand.Next(7, 20));
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TimeTissue>(), Main.rand.Next(5, 15));
 				Main.NewText("Violeum has been defeated!", 39, 86, 134);
 			}
 		}
@@ -63,9 +64,9 @@ namespace Tremor.Invasion
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
 			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
+			int x = spawnInfo.SpawnTileX;
+			int y = spawnInfo.SpawnTileY;
+			int tile = Main.tile[x, y].TileType;
 			return InvasionWorld.CyberWrath && y > Main.worldSurface ? 0.5f : 0f;
 		}
 
@@ -105,10 +106,10 @@ namespace Tremor.Invasion
 
 		void MakeHands()
 		{
-			Hands.X = NPC.NewNPC((int)npc.Center.X - 50, (int)npc.Center.Y, mod.NPCType(Boss_Left_Hand_Type), 0, 1, npc.whoAmI);
-			Hands.Y = NPC.NewNPC((int)npc.Center.X + 50, (int)npc.Center.Y, mod.NPCType(Boss_Right_Hand_Type), 0, -1, npc.whoAmI);
-			Hands.Y = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y - 1000, mod.NPCType(Boss_Down_Hand_Type), 0, -1, npc.whoAmI);
-			Hands.Y = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y + 1000, mod.NPCType(Boss_Up_Hand_Type), 0, -1, npc.whoAmI);
+			Hands.X = NPC.NewNPC(null, (int)npc.Center.X - 50, (int)npc.Center.Y, mod.NPCType(Boss_Left_Hand_Type), 0, 1, npc.whoAmI);
+			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X + 50, (int)npc.Center.Y, mod.NPCType(Boss_Right_Hand_Type), 0, -1, npc.whoAmI);
+			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y - 1000, mod.NPCType(Boss_Down_Hand_Type), 0, -1, npc.whoAmI);
+			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y + 1000, mod.NPCType(Boss_Up_Hand_Type), 0, -1, npc.whoAmI);
 		}
 
 		void CheckHands()
@@ -190,9 +191,9 @@ namespace Tremor.Invasion
 				if (customAi1 >= 4f)
 					if (Main.rand.Next(300) == 1)
 					{
-						Main.PlaySound(27, (int)npc.position.X, (int)npc.position.Y, 12);
+						SoundEngine.PlaySound(SoundID.Pixie, npc.position);//Variant 12
 						float Angle = (float)Math.Atan2(NPos.Y - PTC.Y, NPos.X - PTC.X);
-						int SpitShot1 = Projectile.NewProjectile(NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), ModContent.ProjectileType<CyberLaserBat>(), 70, 0f, 0);
+						int SpitShot1 = Projectile.NewProjectile(null, NPos.X, NPos.Y, (float)((Math.Cos(Angle) * 22f) * -1), (float)((Math.Sin(Angle) * 22f) * -1), ModContent.ProjectileType<CyberLaserBat>(), 70, 0f, 0);
 						Main.projectile[SpitShot1].timeLeft = 120;
 						customAi1 = 1f;
 					}
@@ -302,10 +303,10 @@ namespace Tremor.Invasion
 								j += 2;
 								m = (float)Math.Sin(j) * 25f;
 								n = (float)Math.Cos(j) * 25f;
-								Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 8);
+								SoundEngine.PlaySound(SoundID.Item8, npc.position);
 								int damage = 70,
 								type = ModContent.ProjectileType<CyberLaserBat>();
-								int num56 = Projectile.NewProjectile(npc.position.X + 20, npc.position.Y + 50, m, n, type, damage, 0f, Main.myPlayer);
+								int num56 = Projectile.NewProjectile(null, npc.position.X + 20, npc.position.Y + 50, m, n, type, damage, 0f, Main.myPlayer);
 								Main.projectile[num56].timeLeft = 600;
 							}
 					}

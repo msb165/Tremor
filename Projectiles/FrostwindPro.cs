@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class FrostwindPro : ModProjectile
+	public class FrostwindPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -95,7 +95,7 @@ namespace Tremor.Projectiles
 				float num618 = (num613 + num614 - projectile.ai[1] + 1f) * num615 / (num614 + num613);
 				center.Y -= num617 * num618 / 2f;
 				center.Y += 2f;
-				Projectile.NewProjectile(center.X, center.Y, projectile.velocity.X, projectile.velocity.Y, projectile.type, projectile.damage, projectile.knockBack, projectile.owner, 10f, projectile.ai[1] - 1f);
+				Projectile.NewProjectile(null, center.X, center.Y, projectile.velocity.X, projectile.velocity.Y, projectile.type, projectile.damage, projectile.knockBack, projectile.owner, 10f, projectile.ai[1] - 1f);
 			}
 			if (projectile.ai[0] <= 0f)
 			{

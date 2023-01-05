@@ -7,7 +7,7 @@ using Tremor.Items.Steel;
 namespace Tremor.Items.Brutallisk
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class BrutalliskHelmet : ModItem
+	public class BrutalliskHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -30,7 +30,7 @@ namespace Tremor.Items.Brutallisk
 		public override void UpdateEquip(Player player)
 		{
 			player.statLifeMax2 += 40;
-			player.meleeSpeed += 0.15f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.15f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

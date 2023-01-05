@@ -10,16 +10,16 @@ using Tremor.Items.Souls;
 namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
-	public class TheDarkEmperorTwo : ModNPC
+	public class TheDarkEmperorTwo:TremorModNPC
 	{
 
 		public override void HitEffect(int hitDirection, double damage)
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DEGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DETGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DETGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DEGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DETGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DETGore2"), 1f);
 			}
 		}
 
@@ -197,7 +197,7 @@ namespace Tremor.NPCs
 						num1327 = num1328 / num1327;
 						num1325 *= num1327;
 						num1326 *= num1327;
-						Projectile.NewProjectile(vector159.X, vector159.Y, num1325, num1326, ModContent.ProjectileType<Projectiles.FallingDarkServant>(), 54, 0f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(null, vector159.X, vector159.Y, num1325, num1326, ModContent.ProjectileType<Projectiles.FallingDarkServant>(), 54, 0f, Main.myPlayer, 0f, 0f);
 					}
 				}
 				else if (npc.ai[3] < 0f)
@@ -309,7 +309,7 @@ namespace Tremor.NPCs
 							}
 							num1333 += 3f;
 							float speedX2 = npc.velocity.X * 0.25f;
-							Projectile.NewProjectile(vector160.X, vector160.Y, speedX2, num1333, ModContent.ProjectileType<Projectiles.FallingDarkSlime>(), 34, 0f, Main.myPlayer, Main.rand.Next(5), 0f);
+							Projectile.NewProjectile(null, vector160.X, vector160.Y, speedX2, num1333, ModContent.ProjectileType<Projectiles.FallingDarkSlime>(), 34, 0f, Main.myPlayer, Main.rand.Next(5), 0f);
 						}
 					}
 				}
@@ -358,7 +358,7 @@ namespace Tremor.NPCs
 				if (npc.ai[3] > num1338)
 				{
 					npc.ai[3] = 0f;
-					Projectile.NewProjectile(vector161.X, vector161.Y, num1334, num1335, ModContent.ProjectileType<Projectiles.DarkBubblePro>(), 40, 0f, Main.myPlayer, 0f, 0f);
+					Projectile.NewProjectile(null, vector161.X, vector161.Y, num1334, num1335, ModContent.ProjectileType<Projectiles.DarkBubblePro>(), 40, 0f, Main.myPlayer, 0f, 0f);
 				}
 				if (Main.netMode != 1)
 				{
@@ -389,7 +389,7 @@ namespace Tremor.NPCs
 		{
 			if (Main.expertMode)
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 
 			if (Main.netMode != 1)
@@ -400,31 +400,31 @@ namespace Tremor.NPCs
 
 				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DarkEmperorMask>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DarkEmperorMask>());
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DarkEmperorTrophy>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DarkEmperorTrophy>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(5))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DrippingScythe>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DrippingScythe>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(5))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DelightfulClump>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DelightfulClump>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<NastyJavelin>(), Main.rand.Next(30, 50));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<NastyJavelin>(), Main.rand.Next(30, 50));
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DarkGel>(), Main.rand.Next(50, 100));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DarkGel>(), Main.rand.Next(50, 100));
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SoulofFight>(), Main.rand.Next(20, 30));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SoulofFight>(), Main.rand.Next(20, 30));
 				}
 				TremorWorld.Boss.DarkEmperor.Downed();
 			}

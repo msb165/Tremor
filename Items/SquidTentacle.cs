@@ -1,12 +1,13 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	class SquidTentacle : ModItem
+	class SquidTentacle:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -24,7 +25,7 @@ namespace Tremor.Items
 
 	}
 
-	class SquidTentacleProjectile : ModProjectile
+	class SquidTentacleProjectile:TremorModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
@@ -127,8 +128,8 @@ namespace Tremor.Items
 
 				//Draw chain
 				spriteBatch.Draw(mod.GetTexture("Items/SquidTentacleChain"), new Vector2(center.X - Main.screenPosition.X, center.Y - Main.screenPosition.Y),
-				new Rectangle(0, 0, Main.chain30Texture.Width, Main.chain30Texture.Height), drawColor, projRotation,
-				new Vector2(Main.chain30Texture.Width * 0.5f, Main.chain30Texture.Height * 0.5f), 1f, SpriteEffects.None, 0f);
+				new Rectangle(0, 0, TextureAssets.Chain30.Width(), TextureAssets.Chain30.Height()), drawColor, projRotation,
+				new Vector2(TextureAssets.Chain30.Width() * 0.5f, TextureAssets.Chain30.Height() * 0.5f), 1f, SpriteEffects.None, 0f);
 			}
 			return true;
 		}

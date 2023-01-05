@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Brass
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class BrassChestplate : ModItem
+	public class BrassChestplate:TremorModItem
 	{
 		public override void SetDefaults()
 		{

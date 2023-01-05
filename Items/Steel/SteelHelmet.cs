@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Steel
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class SteelHelmet : ModItem
+	public class SteelHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items.Steel
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeCrit += 3;
+			player.GetCritChance(DamageClass.Melee) += 3;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

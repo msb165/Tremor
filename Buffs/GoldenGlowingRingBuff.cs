@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class GoldenGlowingRingBuff : ModBuff
+	public class GoldenGlowingRingBuff:TremorModBuff
 	{
 		int MinionType = -1;
 		int MinionID = -1;
@@ -26,14 +26,14 @@ namespace Tremor.Buffs
 			if (MinionType == -1)
 				MinionType = ModContent.ProjectileType<Projectiles.FungusBlueSword>();
 			if (MinionID == -1 || Main.projectile[MinionID].type != MinionType || !Main.projectile[MinionID].active || Main.projectile[MinionID].owner != player.whoAmI)
-				MinionID = Projectile.NewProjectile(player.Center.X, player.Center.Y, 0, 0, MinionType, (int)(Damage * player.meleeDamage), KB, player.whoAmI);
+				MinionID = Projectile.NewProjectile(null, player.Center.X, player.Center.Y, 0, 0, MinionType, (int)player.GetTotalDamage(DamageClass.Melee).ApplyTo(Damage), KB, player.whoAmI);
 			else
 				Main.projectile[MinionID].timeLeft = 6;
 
 			if (MinionType1 == -1)
 				MinionType1 = ModContent.ProjectileType<Projectiles.FungusYellowSword>();
 			if (MinionID1 == -1 || Main.projectile[MinionID1].type != MinionType1 || !Main.projectile[MinionID1].active || Main.projectile[MinionID1].owner != player.whoAmI)
-				MinionID1 = Projectile.NewProjectile(player.Center.X, player.Center.Y, 0, 0, MinionType1, (int)(Damage * player.meleeDamage), KB, player.whoAmI);
+				MinionID1 = Projectile.NewProjectile(null, player.Center.X, player.Center.Y, 0, 0, MinionType1, (int)player.GetTotalDamage(DamageClass.Melee).ApplyTo(Damage), KB, player.whoAmI);
 			else
 				Main.projectile[MinionID1].timeLeft = 6;
 		}

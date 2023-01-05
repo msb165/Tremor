@@ -3,14 +3,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class NastyJavelin : ModItem
+	public class NastyJavelin:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 162;
 			item.width = 14;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.height = 84;
 			item.noUseGraphic = true;
 			item.consumable = true;

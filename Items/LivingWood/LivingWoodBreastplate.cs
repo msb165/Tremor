@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.LivingWood
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class LivingWoodBreastplate : ModItem
+	public class LivingWoodBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -29,7 +29,7 @@ namespace Tremor.Items.LivingWood
 		public override void UpdateEquip(Player player)
 		{
 			player.maxMinions += 1;
-			player.minionDamage += 0.04f;
+			player.GetDamage(DamageClass.Summon) += 0.04f;
 		}
 
 		public override void AddRecipes()

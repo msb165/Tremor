@@ -6,7 +6,7 @@ using Tremor.Items.LivingWood;
 
 namespace Tremor.NPCs
 {
-	public class JungleMimic : ModNPC
+	public class JungleMimic:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -38,6 +38,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> (Helper.NoZoneAllowWater(spawnInfo)) && Main.hardMode && spawnInfo.player.ZoneJungle && spawnInfo.spawnTileY > Main.rockLayer ? 0.003f : 0f;
+			=> (Helper.NoZoneAllowWater(spawnInfo)) && Main.hardMode && spawnInfo.Player.ZoneJungle && spawnInfo.SpawnTileY > Main.rockLayer ? 0.003f : 0f;
 	}
 }

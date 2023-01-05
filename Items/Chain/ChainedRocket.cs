@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Chain
 {
-	public class ChainedRocket : ModItem
+	public class ChainedRocket:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -24,7 +24,7 @@ namespace Tremor.Items.Chain
 			item.shoot = ModContent.ProjectileType<Projectiles.ChainedRocketPro>();
 			item.shootSpeed = 22.9F;
 			item.UseSound = SoundID.Item1;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.channel = true;
 		}
 

@@ -2,13 +2,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class UnfathomableFlower : ModItem
+	public class UnfathomableFlower:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 42;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 40;
 			item.mana = 11;
 			item.height = 20;

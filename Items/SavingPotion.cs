@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 
-	public class SavingPotion : ModItem
+	public class SavingPotion:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -28,7 +28,7 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Greatly reduces mana cost");
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			player.AddBuff(ModContent.BuffType<Buffs.ManaSaving>(), 14400);
 			return true;

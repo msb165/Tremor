@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Bronze
 {
-	public class BronzeBar : ModItem
+	public class BronzeBar:TremorModItem
 	{
 		public override void SetDefaults()
 		{

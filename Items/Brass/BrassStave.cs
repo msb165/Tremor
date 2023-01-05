@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Brass
 {
-	public class BrassStave : ModItem
+	public class BrassStave:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 80;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 60;
 			item.noMelee = true;
 			item.width = 40;
@@ -45,7 +45,7 @@ namespace Tremor.Items.Brass
 			if (player.altFunctionUse == 2)
 			{
 				item.damage = 80;
-				item.magic = true;
+				item.DamageType = DamageClass.Magic;
 				item.mana = 60;
 				item.noMelee = true;
 				item.width = 40;
@@ -66,7 +66,7 @@ namespace Tremor.Items.Brass
 			else
 			{
 				item.damage = 65;
-				item.magic = true;
+				item.DamageType = DamageClass.Magic;
 				item.mana = 10;
 				item.noMelee = true;
 				item.width = 40;

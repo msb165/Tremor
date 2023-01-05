@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	class CogLordMusicBox : ModTile
+	class CogLordMusicBox:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -23,15 +23,15 @@ namespace Tremor.Tiles
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 16, 48, ModContent.ItemType<NPCs.Bosses.CogLord.Items.CogLordMusicBox>());
+			Item.NewItem(null, i * 16, j * 16, 16, 48, ModContent.ItemType<NPCs.Bosses.CogLord.Items.CogLordMusicBox>());
 		}
 
 		public override void MouseOver(int i, int j)
 		{
 			Player player = Main.player[Main.myPlayer];
 			player.noThrow = 2;
-			player.showItemIcon = true;
-			player.showItemIcon2 = ModContent.ItemType<NPCs.Bosses.CogLord.Items.CogLordMusicBox>();
+			player.cursorItemIconEnabled = true;
+			player.cursorItemIconID = ModContent.ItemType<NPCs.Bosses.CogLord.Items.CogLordMusicBox>();
 		}
 	}
 }

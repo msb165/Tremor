@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Cursed
 {
-	public class CursedKnife : ModItem
+	public class CursedKnife:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 22;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 32;
 			item.height = 32;
 			item.useTime = 11;

@@ -9,7 +9,7 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class ScaryDoorClosed : ModTile
+	public class ScaryDoorClosed:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -38,12 +38,12 @@ namespace Tremor.Tiles
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
 			AddMapEntry(new Color(200, 200, 200));
 			adjTiles = new int[]{ TileID.ClosedDoor };
-			openDoorID = ModContent.TileType<Tiles.ScaryDoorOpen>();
+			OpenDoorID = ModContent.TileType<Tiles.ScaryDoorOpen>();
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 16, 48, ModContent.ItemType<CreepyDoor>());
+			Item.NewItem(null, i * 16, j * 16, 16, 48, ModContent.ItemType<CreepyDoor>());
 		}
 	}
 }

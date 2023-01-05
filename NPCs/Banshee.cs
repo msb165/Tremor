@@ -6,10 +6,11 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 using Tremor.Items;
+using Terraria.Audio;
 
 namespace Tremor.NPCs
 {
-	public class Banshee : ModNPC
+	public class Banshee:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -34,8 +35,8 @@ namespace Tremor.NPCs
 			npc.buffImmune[20] = true;
 			npc.buffImmune[31] = false;
 			npc.buffImmune[24] = true;
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<BansheeBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<BansheeBanner>();
 			NPCID.Sets.TrailCacheLength[npc.type] = 5;
 		}
 
@@ -43,11 +44,11 @@ namespace Tremor.NPCs
 		{
 
 			if (Main.rand.Next(500) == 0)
-				Main.PlaySound(101, (int)npc.position.X, (int)npc.position.Y, 1);
+				SoundEngine.PlaySound(SoundID.SoundByIndex[101], npc.position);//Variant 1
 			if (Main.rand.Next(500) == 0)
-				Main.PlaySound(100, (int)npc.position.X, (int)npc.position.Y, 1);
+				SoundEngine.PlaySound(SoundID.SoundByIndex[100], npc.position);//Variant 1
 			if (Main.rand.Next(500) == 0)
-				Main.PlaySound(102, (int)npc.position.X, (int)npc.position.Y, 1);
+				SoundEngine.PlaySound(SoundID.SoundByIndex[102], npc.position);//Variant 1
 
 			for (int i = npc.oldPos.Length - 1; i > 0; i--)
 			{
@@ -58,14 +59,14 @@ namespace Tremor.NPCs
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Vector2 drawOrigin = new Vector2(Main.npcTexture[npc.type].Width, Main.npcTexture[npc.type].Height * 0.8f);
+			Vector2 drawOrigin = new Vector2(Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Width, Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Height * 0.8f);
 			for (int k = 0; k < npc.oldPos.Length; k++)
 			{
 				SpriteEffects effect = npc.direction == 1 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
 				Color color = npc.GetAlpha(lightColor) * ((npc.oldPos.Length - k) / (float)npc.oldPos.Length);
 				Rectangle frame = new Rectangle(0, 164 * (k / 60), 50, 62);
 
-				spriteBatch.Draw(Main.npcTexture[npc.type], npc.oldPos[k] - Main.screenPosition, frame, color, 0, Vector2.Zero, npc.scale, effect, 1f);
+				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Npc[npc.type].Value, npc.oldPos[k] - Main.screenPosition, frame, color, 0, Vector2.Zero, npc.scale, effect, 1f);
 			}
 			return true;
 		}
@@ -102,16 +103,16 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 59, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 59, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/BansheeGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/BansheeGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/BansheeGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/BansheeGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BansheeGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BansheeGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BansheeGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BansheeGore3"), 1f);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			return Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.spawnTileY > Main.rockLayer ? 0.004f : 0f;
+			return Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.SpawnTileY > Main.rockLayer ? 0.004f : 0f;
 		}
 	}
 }

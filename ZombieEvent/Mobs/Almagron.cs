@@ -6,7 +6,7 @@ using Tremor.ZombieEvent.Items;
 
 namespace Tremor.ZombieEvent.Mobs
 {
-	public class Almagron : ModNPC
+	public class Almagron:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -50,15 +50,15 @@ namespace Tremor.ZombieEvent.Mobs
 				int halfLength = npc.width / 2 / 16 + 1;
 				if (Main.rand.Next(22) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ChargedLamp>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ChargedLamp>());
 				}
 				if (Main.rand.Next(25) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DreadLance>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DreadLance>());
 				}
 				if (Main.rand.Next(20) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DreadLance>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DreadLance>());
 				}
 			}
 		}
@@ -71,15 +71,15 @@ namespace Tremor.ZombieEvent.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 31, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore4"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore4"), 1f);
 			}
 		}
 	}

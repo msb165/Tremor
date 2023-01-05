@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TurtleGreatsword : ModItem
+	public class TurtleGreatsword:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 95;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 94;
 			item.height = 94;
 			item.useTime = 45;

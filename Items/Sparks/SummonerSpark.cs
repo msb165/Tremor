@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Sparks
 {
-	public class SummonerSpark : ModItem
+	public class SummonerSpark:TremorModItem
 	{
 		public override void SetStaticDefaults()
 		{
@@ -25,7 +25,7 @@ namespace Tremor.Items.Sparks
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.minionDamage += 0.05f;
+			player.GetDamage(DamageClass.Summon) += 0.05f;
 			player.maxMinions += 1;
 		}
 

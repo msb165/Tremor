@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Banhammer : ModItem
+	public class Banhammer:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,7 +26,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item1;
 			item.tileBoost = +3;
 			item.value = 520000;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()
@@ -37,7 +37,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

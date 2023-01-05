@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Brutallisk
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class BrutalliskMask : ModItem
+	public class BrutalliskMask:TremorModItem
 	{
 
 		public override void SetDefaults()

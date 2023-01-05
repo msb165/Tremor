@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Souls
 {
-	public class BottledSoulOfNight : ModItem
+	public class BottledSoulOfNight:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -45,7 +45,7 @@ namespace Tremor.Items.Souls
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
 		{
-			player.meleeSpeed += 0.15f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.15f;
 		}
 	}
 }

@@ -1,11 +1,12 @@
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
 
-	public class ParadoxPotion : ModItem
+	public class ParadoxPotion:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -41,9 +42,9 @@ namespace Tremor.Invasion
 			return true;
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
-			Main.PlaySound(2, (int)player.position.X, (int)player.position.Y, 3);
+			SoundEngine.PlaySound(SoundID.Item3, player.position);
 			Main.player[Main.myPlayer].HealEffect(300);
 			player.statLife += 300;
 			return true;

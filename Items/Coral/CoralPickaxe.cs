@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Coral
 {
-	public class CoralPickaxe : ModItem
+	public class CoralPickaxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 9;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 36;
 			item.height = 36;
 			item.useTime = 20;

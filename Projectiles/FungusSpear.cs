@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class FungusSpear : ModProjectile
+	public class FungusSpear:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

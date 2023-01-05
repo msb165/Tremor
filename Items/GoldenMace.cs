@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GoldenMace : ModItem
+	public class GoldenMace:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 34;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 50;
 			item.height = 52;
 			item.useTime = 25;

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class HellStormArrow : ModProjectile
+	public class HellStormArrow:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -16,7 +16,7 @@ namespace Tremor.Projectiles
 			projectile.ignoreWater = true;
 			projectile.penetrate = 1;
 			projectile.extraUpdates = 1;
-			projectile.ranged = true;
+			projectile.DamageType = DamageClass.Ranged;
 		}
 
 		public override void SetStaticDefaults()
@@ -36,7 +36,7 @@ namespace Tremor.Projectiles
 			{
 				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 6, projectile.oldVelocity.X * 0.1f, projectile.oldVelocity.Y * 0.1f);
 			}
-			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y, 0);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Dig, projectile.position);//Variant 0
 		}
 
 		public override void AI()

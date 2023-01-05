@@ -5,7 +5,7 @@ using Tremor.Projectiles.Alchemic;
 
 namespace Tremor.Items.Alchemist.Flasks
 {
-	public class ManaSupportFlask : ModItem
+	public class ManaSupportFlask:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -37,7 +37,7 @@ namespace Tremor.Items.Alchemist.Flasks
 "Clouds restore mana of your allies");
 		}
 
-		public override void PickAmmo(Player player, ref int type, ref float speed, ref int damage, ref float knockback)
+		public override void PickAmmo(Item weapon, Player player, ref int type, ref float speed, ref StatModifier damage, ref float knockback)
 		{
 			type = ModContent.ProjectileType<ManaSupportCloudPro>();
 		}

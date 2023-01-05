@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class ParaxydeHelmet : ModItem
+	public class ParaxydeHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,8 +27,8 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.magicDamage += 0.12f;
-			player.meleeDamage += 0.16f;
+			player.GetDamage(DamageClass.Magic) += 0.12f;
+			player.GetDamage(DamageClass.Melee) += 0.16f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

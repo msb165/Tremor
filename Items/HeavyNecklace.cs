@@ -3,12 +3,10 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class HeavyNecklace : ModItem
+	public class HeavyNecklace:TremorModItem
 	{
-
 		public override void SetDefaults()
 		{
-
 			item.width = 30;
 			item.height = 34;
 			item.value = 100000;
@@ -24,13 +22,8 @@ namespace Tremor.Items
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
-
 		{
-			player.meleeDamage += 0.05f;
-			player.rangedDamage += 0.05f;
-			player.magicDamage += 0.05f;
-			player.minionDamage += 0.05f;
-			player.thrownDamage += 0.05f;
+			player.GetDamage(DamageClass.Generic) += 0.05f;
 		}
 	}
 }

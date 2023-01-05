@@ -8,7 +8,7 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class TentTile : ModTile
+	public class TentTile:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -31,14 +31,14 @@ namespace Tremor.Tiles
 			AddMapEntry(new Color(181, 166, 124));
 		}
 
-		public override void RightClick(int i, int j)
+		public override bool RightClick(int i, int j)
 		{
 			Player player = Main.player[Main.myPlayer];
 			Tile tile = Main.tile[i, j];
-			int spawnX = i - tile.frameX / 18;
+			int spawnX = i - tile.TileFrameX / 18;
 			int spawnY = j + 2;
-			spawnX += tile.frameX >= 72 ? 5 : 2;
-			if (tile.frameY % 38 != 0)
+			spawnX += tile.TileFrameX >= 72 ? 5 : 2;
+			if (tile.TileFrameY % 38 != 0)
 			{
 				spawnY--;
 			}
@@ -46,18 +46,21 @@ namespace Tremor.Tiles
 			if (player.SpawnX == spawnX && player.SpawnY == spawnY)
 			{
 				player.RemoveSpawn();
-				Main.NewText("Spawn point removed!", 255, 240, 20, false);
+				Main.NewText("Spawn point removed!", 255, 240, 20);
+				return true;
 			}
 			else if (Player.CheckSpawn(spawnX, spawnY))
 			{
 				player.ChangeSpawn(spawnX, spawnY);
-				Main.NewText("Spawn point set!", 255, 240, 20, false);
+				Main.NewText("Spawn point set!", 255, 240, 20);
+				return true;
 			}
+			return false;
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<Tent>());
+			Item.NewItem(null, i * 16, j * 16, 32, 16, ModContent.ItemType<Tent>());
 		}
 	}
 }

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class HardCometiteOre : ModItem
+	public class HardCometiteOre:TremorModItem
 	{
 		public override void SetDefaults()
 		{

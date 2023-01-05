@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class CrSpear : ModProjectile
+	public class CrSpear:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -12,7 +12,7 @@ namespace Tremor.Projectiles
 			projectile.width = 14;
 			projectile.height = 14;
 			projectile.friendly = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.penetrate = 1;
 			projectile.timeLeft = 99999;
 			projectile.tileCollide = true;
@@ -37,7 +37,7 @@ namespace Tremor.Projectiles
 			{
 				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 16, projectile.oldVelocity.X * 0.7f, projectile.oldVelocity.Y * 0.7f);
 			}
-			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y, 0);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Dig, projectile.position);//Variant 0
 		}
 
 		public void CreateDust()

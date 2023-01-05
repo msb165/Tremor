@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class LostTurtleKnife : ModItem
+	public class LostTurtleKnife:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 177;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 26;
 			item.noUseGraphic = true;
 			item.maxStack = 999;

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TrueNightsWatch : ModItem
+	public class TrueNightsWatch:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,15 +26,10 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.magicDamage += 0.12f;
-			player.minionDamage += 0.12f;
-			player.meleeDamage += 0.12f;
-			player.rangedDamage += 0.12f;
+			player.GetDamage(DamageClass.Generic) += 0.12f;
 			player.statManaMax2 += 80;
 			player.statLifeMax2 += 80;
-			player.meleeCrit += 12;
-			player.magicCrit += 12;
-			player.rangedCrit += 12;
+			player.GetCritChance(DamageClass.Generic) += 12;
 		}
 
 		public override void AddRecipes()

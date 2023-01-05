@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 
-	public class GlassDoor : ModItem
+	public class GlassDoor:TremorModItem
 	{
 		public override void SetDefaults()
 		{

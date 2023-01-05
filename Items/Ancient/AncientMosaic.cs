@@ -5,7 +5,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items.Ancient
 {
-	public class AncientMosaic : ModItem
+	public class AncientMosaic:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -35,10 +35,10 @@ namespace Tremor.Items.Ancient
 			return !Main.dayTime && Main.hardMode && !NPC.AnyNPCs(ModContent.NPCType<Alchemaster>());
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<Alchemaster>());
-			Main.PlaySound(SoundID.Roar, player.position, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.Roar, player.position);//Variant 0
 			return true;
 		}
 

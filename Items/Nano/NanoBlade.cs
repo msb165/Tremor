@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Nano
 {
-	public class NanoBlade : ModItem
+	public class NanoBlade:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 72;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 50;
 			item.height = 55;
 			item.useTime = 25;

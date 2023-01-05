@@ -7,13 +7,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Galaxon : ModItem
+	public class Galaxon:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 246;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 12;
 			item.width = 42;
 			item.height = 30;
@@ -39,7 +39,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -103,7 +103,7 @@ namespace Tremor.Items
 				num149 *= num80;
 				float x4 = vector2.X;
 				float y4 = vector2.Y;
-				Projectile.NewProjectile(x4, y4, num148, num149, ModContent.ProjectileType<Projectiles.GalaxonPro>(), num73, num74, i, 0f, 0f);
+				Projectile.NewProjectile(null, x4, y4, num148, num149, ModContent.ProjectileType<Projectiles.GalaxonPro>(), num73, num74, i, 0f, 0f);
 			}
 			return false;
 		}

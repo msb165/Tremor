@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class projSteampunkProbe : ModProjectile
+	public class projSteampunkProbe:TremorModProjectile
 	{
 		const int ShootType = ProjectileID.HeatRay;
 		const float ShootRange = 600.0f;
@@ -67,7 +67,9 @@ namespace Tremor.Projectiles
 		int GetDamage()
 		{
 			if (STATIC_DAMAGE == -1)
-				return (10 * ((int)Main.player[projectile.owner].magicDamage + (int)Main.player[projectile.owner].meleeDamage + (int)Main.player[projectile.owner].minionDamage + (int)Main.player[projectile.owner].rangedDamage + (int)Main.player[projectile.owner].thrownDamage)) + 15;
+			{
+				return Main.player[projectile.owner].GetSpecialProjectileDamage(10, 15);
+			}
 			return STATIC_DAMAGE;
 		}
 
@@ -78,7 +80,7 @@ namespace Tremor.Projectiles
 			{
 				velocity.X = velocity.X + Main.rand.Next(-spread, spread + 1) * spreadMult;
 				velocity.Y = velocity.Y + Main.rand.Next(-spread, spread + 1) * spreadMult;
-				int i = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, velocity.X, velocity.Y, ShootType, Damage, ShootKN, projectile.owner);
+				int i = Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, velocity.X, velocity.Y, ShootType, Damage, ShootKN, projectile.owner);
 			}
 		}
 	}

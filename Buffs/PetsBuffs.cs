@@ -39,7 +39,7 @@ namespace Tremor.Buffs
 			}
 			if (type == 54)
 			{
-				player.armorPenetration += 8;
+				player.GetArmorPenetration(DamageClass.Generic) += 8;
 			}
 			if (type == 55)
 			{
@@ -52,11 +52,7 @@ namespace Tremor.Buffs
 			}
 			if (type == 61)
 			{
-				player.meleeDamage += 0.08f;
-				player.magicDamage += 0.08f;
-				player.rangedDamage += 0.08f;
-				player.thrownDamage += 0.08f;
-				player.minionDamage += 0.08f;
+				player.GetDamage(DamageClass.Generic) += 0.08f;
 			}
 			if (type == 65)
 			{
@@ -77,14 +73,11 @@ namespace Tremor.Buffs
 			}
 			if (type == 85)
 			{
-				player.meleeCrit += 8;
-				player.magicCrit += 8;
-				player.rangedCrit += 8;
-				player.thrownCrit += 8;
+				player.GetCritChance(DamageClass.Generic) += 8;
 			}
 			if (type == 91)
 			{
-				player.meleeSpeed += 0.1f;
+				player.GetAttackSpeed(DamageClass.Melee) += 0.1f;
 			}
 			if (type == 92)
 			{

@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class FiercePaw : ModItem
+	public class FiercePaw:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 56;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 40;
 			item.height = 40;
 			item.useTime = 10;

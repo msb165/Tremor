@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Ancient
 {
-	public class AncientSmasher : ModItem
+	public class AncientSmasher:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 100;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 88;
 			item.height = 88;
 			item.useTime = 30;

@@ -10,7 +10,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class Screamer : ModNPC
+	public class Screamer:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -78,7 +78,7 @@ namespace Tremor.NPCs
 					while (Math.Abs(randomProjectileVelocity.X) < 1.5f)
 						randomProjectileVelocity = Vector2.UnitY.RotatedByRandom(1.5707963705062866) * new Vector2(5f, 3f);
 
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, randomProjectileVelocity.X, randomProjectileVelocity.Y, ProjectileID.AncientDoomProjectile, 60, 0f, Main.myPlayer, 0f, npc.whoAmI);
+					Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, randomProjectileVelocity.X, randomProjectileVelocity.Y, ProjectileID.AncientDoomProjectile, 60, 0f, Main.myPlayer, 0f, npc.whoAmI);
 				}
 			}
 		}
@@ -93,14 +93,14 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ScreamerGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ScreamerGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ScreamerGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ScreamerGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ScreamerGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ScreamerGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ScreamerGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ScreamerGore3"), 1f);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> spawnInfo.spawnTileY < Main.rockLayer && NPC.downedMoonlord && Main.eclipse ? 0.001f : 0f;
+			=> spawnInfo.SpawnTileY < Main.rockLayer && NPC.downedMoonlord && Main.eclipse ? 0.001f : 0f;
 	}
 }

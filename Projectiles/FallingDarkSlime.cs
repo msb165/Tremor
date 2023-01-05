@@ -4,7 +4,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Projectiles
 {
-	public class FallingDarkSlime : ModProjectile
+	public class FallingDarkSlime:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.Projectiles
 			projectile.height = 32;
 			projectile.light = 0.8f;
 			projectile.hostile = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.penetrate = 6;
 			Main.projFrames[projectile.type] = 4;
 			projectile.aiStyle = 1;
@@ -43,7 +43,7 @@ namespace Tremor.Projectiles
 
 		public override void Kill(int timeLeft)
 		{
-			NPC.NewNPC((int)projectile.Center.X, (int)projectile.Center.Y, ModContent.NPCType<DarkSlime>());
+			NPC.NewNPC(null, (int)projectile.Center.X, (int)projectile.Center.Y, ModContent.NPCType<DarkSlime>());
 		}
 	}
 }

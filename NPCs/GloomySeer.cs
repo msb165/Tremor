@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class GloomySeer : ModNPC
+	public class GloomySeer:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -54,7 +54,7 @@ namespace Tremor.NPCs
 					targetX *= length;
 					targetY *= length;
 					
-					Main.projectile[Projectile.NewProjectile(npcCenter.X, npcCenter.Y, targetX, targetY, ProjectileID.Bone, 83, 0f, Main.myPlayer, 0f, 0f)].timeLeft = 3000;
+					Main.projectile[Projectile.NewProjectile(null, npcCenter.X, npcCenter.Y, targetX, targetY, ProjectileID.Bone, 83, 0f, Main.myPlayer, 0f, 0f)].timeLeft = 3000;
 				}
 			}
 			else if (npc.ai[0] >= 150 + Main.rand.Next(150))
@@ -68,14 +68,14 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.2f);
 
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/GSGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/GSGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/GSGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/GSGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GSGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GSGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GSGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GSGore3"), 1f);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && Main.bloodMoon && spawnInfo.spawnTileY < Main.worldSurface ? 0.001f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && Main.bloodMoon && spawnInfo.SpawnTileY < Main.worldSurface ? 0.001f : 0f;
 	}
 }

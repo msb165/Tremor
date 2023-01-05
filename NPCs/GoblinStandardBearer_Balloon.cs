@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class GoblinStandardBearer_Balloon : ModNPC
+	public class GoblinStandardBearer_Balloon:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{

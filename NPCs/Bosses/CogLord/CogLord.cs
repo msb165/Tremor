@@ -11,7 +11,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 {
 	// todo: redo
 	[AutoloadBossHead]
-	public class CogLord : ModNPC
+	public class CogLord:TremorModNPC
 	{
 		//Framework
 		private Vector2 _cogHands = new Vector2(-1, -1);
@@ -67,7 +67,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 			npc.HitSound = SoundID.NPCHit4;
 			npc.DeathSound = SoundID.NPCDeath10;
 			npc.boss = true;
-			music = mod.GetSoundSlot(SoundType.Music, "Sounds/Music/Boss6");
+			music = MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Boss6");
 			bossBag = ModContent.ItemType<CogLordBag>();
 		}
 
@@ -86,11 +86,11 @@ namespace Tremor.NPCs.Bosses.CogLord
 		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
 			spriteBatch.Draw(mod.GetTexture("NPCs/Bosses/CogLord/CogLordBody"), npc.Center - Main.screenPosition, null, Color.White, 0f, new Vector2(44, -18), 1f, SpriteEffects.None, 0f);
-			Texture2D drawTexture = Main.npcTexture[npc.type];
+			Texture2D drawTexture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2((drawTexture.Width / 2) * 0.5F, (drawTexture.Height / Main.npcFrameCount[npc.type]) * 0.5F);
 			Vector2 drawPos = new Vector2(
-				npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Main.npcTexture[npc.type].Width / 2) * npc.scale / 2f + origin.X * npc.scale,
-				npc.position.Y - Main.screenPosition.Y + npc.height - Main.npcTexture[npc.type].Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
+				npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Width / 2) * npc.scale / 2f + origin.X * npc.scale,
+				npc.position.Y - Main.screenPosition.Y + npc.height - Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
 			SpriteEffects effects = npc.spriteDirection == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
 			spriteBatch.Draw(drawTexture, drawPos, npc.frame, Color.White, npc.rotation, origin, npc.scale, effects, 0);
 			return false;
@@ -147,8 +147,8 @@ namespace Tremor.NPCs.Bosses.CogLord
 				else
 					CogMessage("Low health is detected. Launching support drone.");
 				if (Main.expertMode)
-					NPC.NewNPC((int)npc.Center.X - 100, (int)npc.Center.Y - 100, ModContent.NPCType<CogLordProbe>(), 0, npc.whoAmI, 0, 200);
-				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<CogLordProbe>(), 0, npc.whoAmI, 0, 200);
+					NPC.NewNPC(null, (int)npc.Center.X - 100, (int)npc.Center.Y - 100, ModContent.NPCType<CogLordProbe>(), 0, npc.whoAmI, 0, 200);
+				NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<CogLordProbe>(), 0, npc.whoAmI, 0, 200);
 			}
 			if (npc.life < npc.lifeMax * 0.4f && _flag1)
 			{
@@ -158,8 +158,8 @@ namespace Tremor.NPCs.Bosses.CogLord
 				else
 					CogMessage("Low health is detected. Launching support drone.");
 				if (Main.expertMode)
-					NPC.NewNPC((int)npc.Center.X - 100, (int)npc.Center.Y - 100, ModContent.NPCType<CogLordProbe>(), 0, npc.whoAmI, 0, 200);
-				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<CogLordProbe>(), 0, npc.whoAmI, 0, 200);
+					NPC.NewNPC(null, (int)npc.Center.X - 100, (int)npc.Center.Y - 100, ModContent.NPCType<CogLordProbe>(), 0, npc.whoAmI, 0, 200);
+				NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<CogLordProbe>(), 0, npc.whoAmI, 0, 200);
 			}
 			if (npc.life < npc.lifeMax * 0.2f && _flag2)
 			{
@@ -169,8 +169,8 @@ namespace Tremor.NPCs.Bosses.CogLord
 				else
 					CogMessage("Low health is detected. Launching support drone.");
 				if (Main.expertMode)
-					NPC.NewNPC((int)npc.Center.X - 100, (int)npc.Center.Y - 100, ModContent.NPCType<CogLordProbe>(), 0, npc.whoAmI, 0, 200);
-				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<CogLordProbe>(), 0, npc.whoAmI, 0, 200);
+					NPC.NewNPC(null, (int)npc.Center.X - 100, (int)npc.Center.Y - 100, ModContent.NPCType<CogLordProbe>(), 0, npc.whoAmI, 0, 200);
+				NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<CogLordProbe>(), 0, npc.whoAmI, 0, 200);
 			}
 			if (_firstAi)
 			{
@@ -209,7 +209,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 					for (int k = 0; k < ((Main.expertMode) ? 2 : 1); k++)
 					{
 						Vector2 velocity = Helper.VelocityToPoint(npc.Center, Helper.RandomPointInArea(new Vector2(Main.player[Main.myPlayer].Center.X - 10, Main.player[Main.myPlayer].Center.Y - 10), new Vector2(Main.player[Main.myPlayer].Center.X + 20, Main.player[Main.myPlayer].Center.Y + 20)), 20);
-						int i = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, 134, GetLaserDamage * ((Main.expertMode) ? 3 : 2), 1f);
+						int i = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, 134, GetLaserDamage * ((Main.expertMode) ? 3 : 2), 1f);
 						Main.projectile[i].hostile = true;
 						Main.projectile[i].tileCollide = true;
 						Main.projectile[i].friendly = false;
@@ -238,10 +238,10 @@ namespace Tremor.NPCs.Bosses.CogLord
 						var shootPos = npc.Center + new Vector2(0, 17);
 						var shootVel = new Vector2(0, 7).RotatedBy(_laserRotation);
 						int[] i = {
-							Projectile.NewProjectile(shootPos, shootVel, _shootType, GetLaserDamage, 1f),
-							Projectile.NewProjectile(shootPos, shootVel.RotatedBy(MathHelper.PiOver2), _shootType, GetLaserDamage, 1f),
-							Projectile.NewProjectile(shootPos, shootVel.RotatedBy(MathHelper.Pi), _shootType, GetLaserDamage, 1f),
-							Projectile.NewProjectile(shootPos, shootVel.RotatedBy(-MathHelper.PiOver2), _shootType, GetLaserDamage, 1f)
+							Projectile.NewProjectile(null, shootPos, shootVel, _shootType, GetLaserDamage, 1f),
+							Projectile.NewProjectile(null, shootPos, shootVel.RotatedBy(MathHelper.PiOver2), _shootType, GetLaserDamage, 1f),
+							Projectile.NewProjectile(null, shootPos, shootVel.RotatedBy(MathHelper.Pi), _shootType, GetLaserDamage, 1f),
+							Projectile.NewProjectile(null, shootPos, shootVel.RotatedBy(-MathHelper.PiOver2), _shootType, GetLaserDamage, 1f)
 						};
 						for (int l = 0; l < i.Length; l++)
 						{
@@ -269,7 +269,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 			if (_timer > 1200 && _timer < 1700)
 			{
 				if ((int)(Main.time % 15) == 0)
-					NPC.NewNPC((int)((Main.player[npc.target].position.X - 500) + Main.rand.Next(1000)), (int)((Main.player[npc.target].position.Y - 500) + Main.rand.Next(1000)), ModContent.NPCType<GogLordGog>());
+					NPC.NewNPC(null, (int)((Main.player[npc.target].position.X - 500) + Main.rand.Next(1000)), (int)((Main.player[npc.target].position.Y - 500) + Main.rand.Next(1000)), ModContent.NPCType<GogLordGog>());
 			}
 			if (_timer == 1600)
 			{
@@ -281,7 +281,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 				{
 					var shootPos = Main.player[npc.target].position + new Vector2(Main.rand.Next(-1000, 1000), -1000);
 					var shootVel = new Vector2(Main.rand.NextFloat(-3f, 3f), Main.rand.NextFloat(15f, 20f));
-					int i = Projectile.NewProjectile(shootPos, shootVel, 134, GetLaserDamage * ((Main.expertMode) ? 3 : 2), 1f);
+					int i = Projectile.NewProjectile(null, shootPos, shootVel, 134, GetLaserDamage * ((Main.expertMode) ? 3 : 2), 1f);
 					Main.projectile[i].hostile = true;
 					Main.projectile[i].tileCollide = true;
 					Main.projectile[i].friendly = false;
@@ -307,8 +307,8 @@ namespace Tremor.NPCs.Bosses.CogLord
 
 		public void MakeHands()
 		{
-			_cogHands.X = NPC.NewNPC((int)npc.Center.X - 50, (int)npc.Center.Y, mod.NPCType(_leftHandName), 0, 1, npc.whoAmI);
-			_cogHands.Y = NPC.NewNPC((int)npc.Center.X + 50, (int)npc.Center.Y, mod.NPCType(_rightHandName), 0, -1, npc.whoAmI);
+			_cogHands.X = NPC.NewNPC(null, (int)npc.Center.X - 50, (int)npc.Center.Y, mod.NPCType(_leftHandName), 0, 1, npc.whoAmI);
+			_cogHands.Y = NPC.NewNPC(null, (int)npc.Center.X + 50, (int)npc.Center.Y, mod.NPCType(_rightHandName), 0, -1, npc.whoAmI);
 		}
 
 		public void Animation()
@@ -342,35 +342,35 @@ namespace Tremor.NPCs.Bosses.CogLord
 			{
 				if (Main.expertMode)
 				{
-					npc.DropBossBags();
+					DropBossBags();
 				}
 				if (!Main.expertMode && Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrassChip>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrassChip>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CogLordMask>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CogLordMask>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrassRapier>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrassRapier>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrassChainRepeater>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrassChainRepeater>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrassStave>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrassStave>());
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CogLordTrophy>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CogLordTrophy>());
 				}
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 499, Main.rand.Next(6, 25));
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 500, Main.rand.Next(6, 25));
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrassNugget>(), Main.rand.Next(18, 32));
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 499, Main.rand.Next(6, 25));
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 500, Main.rand.Next(6, 25));
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrassNugget>(), Main.rand.Next(18, 32));
 			}
 		}
 	}

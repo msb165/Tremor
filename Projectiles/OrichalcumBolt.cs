@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class OrichalcumBolt : ModProjectile
+	public class OrichalcumBolt:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.Projectiles
 			projectile.width = 12;
 			projectile.height = 12;
 			projectile.friendly = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.aiStyle = 0;
 			projectile.penetrate = 3;
 			projectile.timeLeft = 1200;
@@ -31,7 +31,7 @@ namespace Tremor.Projectiles
 		{
 			if (projectile.localAI[0] == 0f)
 			{
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 20);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item20, projectile.position);
 			}
 			projectile.localAI[0] += 1f;
 			if (projectile.localAI[0] > 3f)
@@ -64,7 +64,7 @@ namespace Tremor.Projectiles
 			{
 				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 73, projectile.oldVelocity.X * 0.7f, projectile.oldVelocity.Y * 0.7f);
 			}
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 78);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item78, projectile.position);
 		}
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

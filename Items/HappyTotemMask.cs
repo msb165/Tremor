@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class HappyTotemMask : ModItem
+	public class HappyTotemMask:TremorModItem
 	{
 
 		public override void SetDefaults()

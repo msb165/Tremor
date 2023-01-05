@@ -9,7 +9,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public abstract class HeaterofWorldsPart : ModNPC
+	public abstract class HeaterofWorldsPart:TremorModNPC
 	{
 		public bool JustSpawned
 		{
@@ -30,7 +30,7 @@ namespace Tremor.NPCs
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Heater of Worlds");
-			NPCID.Sets.TechnicallyABoss[npc.type] = true;
+			NPCID.Sets.ShouldBeCountedAsBoss[npc.type] = true;//TechnicallyABoss
 		}
 
 		public override void SetDefaults()
@@ -73,12 +73,12 @@ namespace Tremor.NPCs
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D drawTexture = Main.npcTexture[npc.type];
+			Texture2D drawTexture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2(drawTexture.Width / 2 * 0.5f, drawTexture.Height / Main.npcFrameCount[npc.type] * 0.5f);
 
 			Vector2 drawPos = new Vector2(
-				npc.position.X - Main.screenPosition.X + npc.width / 2 - Main.npcTexture[npc.type].Width / 2 * npc.scale / 2f + origin.X * npc.scale,
-				npc.position.Y - Main.screenPosition.Y + npc.height - Main.npcTexture[npc.type].Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
+				npc.position.X - Main.screenPosition.X + npc.width / 2 - Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Width / 2 * npc.scale / 2f + origin.X * npc.scale,
+				npc.position.Y - Main.screenPosition.Y + npc.height - Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
 
 			SpriteEffects effects =
 				npc.spriteDirection == -1
@@ -111,7 +111,7 @@ namespace Tremor.NPCs
 		public override void SetStaticDefaults()
 		{
 			base.SetStaticDefaults();
-			NPCID.Sets.TechnicallyABoss[npc.type] = false;
+			NPCID.Sets.ShouldBeCountedAsBoss[npc.type] = false;//TechnicallyABoss
 		}
 
 		public override void SetDefaults()
@@ -142,7 +142,7 @@ namespace Tremor.NPCs
 
 			if (Main.rand.NextBool(odds))
 			{
-				NPC.NewNPC((int)npc.Center.X - 70, (int)npc.Center.Y, ModContent.NPCType<MagmaLeechHead>());
+				NPC.NewNPC(null, (int)npc.Center.X - 70, (int)npc.Center.Y, ModContent.NPCType<MagmaLeechHead>());
 			}
 		}
 
@@ -177,7 +177,7 @@ namespace Tremor.NPCs
 
 					// whoAmI is only set in NPC.Update...not NewNPC
 					// hence this manual work
-					int segmentWhoAmI = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, type, ai1: previous, ai2: npc.whoAmI);
+					int segmentWhoAmI = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y, type, ai1: previous, ai2: npc.whoAmI);
 					NPC segment = Main.npc[segmentWhoAmI];
 					segment.whoAmI = segmentWhoAmI;
 					segment.realLife = npc.whoAmI;
@@ -210,11 +210,11 @@ namespace Tremor.NPCs
 						|| y == center.Y + halfLength) 
 						&& !tile.active())
 					{
-						tile.type = TileID.ObsidianBrick;
+						tile.TileType = TileID.ObsidianBrick;
 						tile.active(true);
 					}
-					tile.lava(false);
-					tile.liquid = 0;
+					tile.LiquidType = LiquidID.Water;//was tile.lava(false)
+					tile.LiquidAmount = 0;
 					if (Main.netMode == NetmodeID.Server)
 					{
 						NetMessage.SendTileSquare(-1, x, y, 1);
@@ -231,7 +231,7 @@ namespace Tremor.NPCs
 		{
 			if (Main.expertMode)
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 			else
 			{

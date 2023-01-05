@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class DrippingSaddle : ModItem
+	public class DrippingSaddle:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -5,7 +5,7 @@ using Tremor.Items.Antlion;
 namespace Tremor.Items.Sandstone
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class SandStoneHelmet : ModItem
+	public class SandStoneHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()

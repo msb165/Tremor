@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class TitaniumVisage : ModItem
+	public class TitaniumVisage:TremorModItem
 	{
 		public override void SetDefaults()
 		{

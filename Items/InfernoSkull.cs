@@ -8,7 +8,7 @@ using Tremor.NPCs.Bosses.AndasBoss;
 
 namespace Tremor.Items
 {
-	public class InfernoSkull : ModItem
+	public class InfernoSkull:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -37,7 +37,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 		public override void AddRecipes()
@@ -54,10 +54,10 @@ namespace Tremor.Items
 			recipe.AddRecipe();
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<Andas>());
-			Main.PlaySound(SoundID.Roar, player.position, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.Roar, player.position);//Variant 0
 			return true;
 		}
 	}

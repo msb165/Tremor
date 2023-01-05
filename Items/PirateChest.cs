@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PirateChest : ModItem
+	public class PirateChest:TremorModItem
 	{
 		public override void SetDefaults()
 		{

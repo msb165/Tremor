@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class PlatinumSpearPro : ModProjectile
+	public class PlatinumSpearPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

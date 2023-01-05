@@ -5,7 +5,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items.Alchemist
 {
-	public class AlchemasterTreasureBag : ModItem
+	public class AlchemasterTreasureBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

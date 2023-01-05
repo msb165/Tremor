@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.NPCs.Bosses.NovaPillar.Items.Accessories
 {
 	[AutoloadEquip(EquipType.Wings)]
-	public class NovaWings : ModItem
+	public class NovaWings:TremorModItem
 	{
 		public override void SetDefaults()
 		{

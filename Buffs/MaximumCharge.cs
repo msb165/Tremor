@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class MaximumCharge : ModBuff
+	public class MaximumCharge:TremorModBuff
 	{
 		public override void SetDefaults()
 		{

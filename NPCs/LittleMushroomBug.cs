@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 namespace Tremor.NPCs
 {
 
-	public class LittleMushroomBug : ModNPC
+	public class LittleMushroomBug:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{

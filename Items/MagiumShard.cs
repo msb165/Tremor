@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MagiumShard : ModItem
+	public class MagiumShard:TremorModItem
 	{
 		public override void SetDefaults()
 		{

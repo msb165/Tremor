@@ -5,14 +5,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class ManiacChainsawPro : ModProjectile
+	public class ManiacChainsawPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
 			//projectile.CloneDefaults(509);
 
 			//aiType = 509;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 			projectile.friendly = true;
 			projectile.penetrate = -1;
 			Main.projFrames[projectile.type] = 2;
@@ -105,7 +105,7 @@ namespace Tremor.Projectiles
 				}
 			}
 
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 22);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item22, projectile.position);
 		}
 	}
 }

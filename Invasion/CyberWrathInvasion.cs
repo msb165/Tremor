@@ -15,50 +15,52 @@ namespace Tremor.Invasion
 
 		}
 
-		public static readonly PlayerLayer MiscEffects = new PlayerLayer("Tremor", "MiscEffects", PlayerLayer.MiscEffectsFront, delegate (PlayerDrawInfo drawInfo)
-		{
-			Player drawPlayer = drawInfo.drawPlayer;
-			Mod mod = Tremor.instance;
-			CyberWrathInvasion modPlayer = drawPlayer.GetModPlayer<CyberWrathInvasion>();
+		//TODO: [Skipped for 1.4] Replace with PlayerDrawLayer
+		//public static readonly PlayerLayer MiscEffects = new PlayerLayer("Tremor", "MiscEffects", PlayerLayer.MiscEffectsFront, delegate (PlayerDrawInfo drawInfo)
+		//{
+		//	Player drawPlayer = drawInfo.drawPlayer;
+		//	Mod mod = Tremor.instance;
+		//	CyberWrathInvasion modPlayer = drawPlayer.GetModPlayer<CyberWrathInvasion>();
 
-			Texture2D CyberWrathI = mod.GetTexture("Invasion/System/System1");
-			Texture2D CyberWrathI1 = mod.GetTexture("Invasion/System/System2");
-			Texture2D CyberWrathI2 = mod.GetTexture("Invasion/System/System3");
-			Texture2D CyberWrathI3 = mod.GetTexture("Invasion/System/System4");
-			Texture2D CyberWrathI4 = mod.GetTexture("Invasion/System/System5");
-			Texture2D CyberWrathI5 = mod.GetTexture("Invasion/System/System6");
-			Texture2D CyberWrathI6 = mod.GetTexture("Invasion/System/System7");
-			Texture2D CyberWrathI7 = mod.GetTexture("Invasion/System/System8");
-			Texture2D CyberWrathI8 = mod.GetTexture("Invasion/System/System9");
-			Texture2D CyberWrathI9 = mod.GetTexture("Invasion/System/System10");
-			Texture2D texture1 = mod.GetTexture("Invasion/System/System");
-			SpriteBatch sb1 = Main.spriteBatch;
+		//	Texture2D CyberWrathI = mod.GetTexture("Invasion/System/System1");
+		//	Texture2D CyberWrathI1 = mod.GetTexture("Invasion/System/System2");
+		//	Texture2D CyberWrathI2 = mod.GetTexture("Invasion/System/System3");
+		//	Texture2D CyberWrathI3 = mod.GetTexture("Invasion/System/System4");
+		//	Texture2D CyberWrathI4 = mod.GetTexture("Invasion/System/System5");
+		//	Texture2D CyberWrathI5 = mod.GetTexture("Invasion/System/System6");
+		//	Texture2D CyberWrathI6 = mod.GetTexture("Invasion/System/System7");
+		//	Texture2D CyberWrathI7 = mod.GetTexture("Invasion/System/System8");
+		//	Texture2D CyberWrathI8 = mod.GetTexture("Invasion/System/System9");
+		//	Texture2D CyberWrathI9 = mod.GetTexture("Invasion/System/System10");
+		//	Texture2D texture1 = mod.GetTexture("Invasion/System/System");
+		//	SpriteBatch sb1 = Main.spriteBatch;
 
-			int iH1 = texture1.Height;
-			int iW1 = texture1.Width;
+		//	int iH1 = texture1.Height;
+		//	int iW1 = texture1.Width;
 
-			int sX1 = 37;
-			int sY1 = 30;
+		//	int sX1 = 37;
+		//	int sY1 = 30;
 
-			int eH = CyberWrathI.Height;
-			int eW = CyberWrathI.Width;
+		//	int eH = CyberWrathI.Height;
+		//	int eW = CyberWrathI.Width;
 
-			int XX1 = ((24 - iW1) / 2) + Main.screenWidth - sX1;
-			int YY1 = ((24 - iH1) / 2) + sY1 + (int)(280 * 1.4) + (24 - iW1) * (-1) + 20;
+		//	int XX1 = ((24 - iW1) / 2) + Main.screenWidth - sX1;
+		//	int YY1 = ((24 - iH1) / 2) + sY1 + (int)(280 * 1.4) + (24 - iW1) * (-1) + 20;
 
-			int eX = XX1 - 333;
-			int eY = YY1 - 430 + (24 - eW) * (-1);
+		//	int eX = XX1 - 333;
+		//	int eY = YY1 - 430 + (24 - eW) * (-1);
 
-			bool _number = true;
-			int number = 1;
-		});
+		//	bool _number = true;
+		//	int number = 1;
+		//});
 
-		public override void ModifyDrawLayers(List<PlayerLayer> layers)
-		{
-			MiscEffects.visible = true;
-			layers.Add(MiscEffects);
-			layers.Insert(0, MiscEffects);
-		}
+		//TODO: [Skipped for 1.4] Replace with PlayerDrawLayer
+		//public override void ModifyDrawLayers(List<PlayerLayer> layers)
+		//{
+		//	MiscEffects.visible = true;
+		//	layers.Add(MiscEffects);
+		//	layers.Insert(0, MiscEffects);
+		//}
 
 		public override void PostUpdateBuffs()
 		{
@@ -71,7 +73,7 @@ namespace Tremor.Invasion
 			const int XOffset = 400;
 			const int YOffset = 400;
 
-			CyberWrathInvasion modPlayer = player.GetModPlayer<CyberWrathInvasion>();
+			CyberWrathInvasion modPlayer = Player.GetModPlayer<CyberWrathInvasion>();
 			if (!InvasionWorld.CyberWrath)
 			{
 				InvasionWorld.CyberWrathPoints1 = 0;
@@ -81,44 +83,44 @@ namespace Tremor.Invasion
 			{
 				//Main.spriteBatch.Draw(Main.blackTileTexture, new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), new Color(200, 200, 200) * 0.5f);
 				if (Main.rand.Next(700) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<InvisibleSoul>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<InvisibleSoul>());
 				if (Main.rand.Next(700) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<InvisibleSoul>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<InvisibleSoul>());
 
 				if (Main.rand.Next(150) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<ParadoxBat>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y + YOffset, ModContent.NPCType<ParadoxBat>());
 				if (Main.rand.Next(150) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y - YOffset, ModContent.NPCType<ParadoxBat>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y - YOffset, ModContent.NPCType<ParadoxBat>());
 
 				if (Main.rand.Next(500) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<ParadoxSun>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y + YOffset, ModContent.NPCType<ParadoxSun>());
 				if (Main.rand.Next(500) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y - YOffset, ModContent.NPCType<ParadoxSun>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y - YOffset, ModContent.NPCType<ParadoxSun>());
 			}
 
 			InvasionWorld.CyberWrathPoints = InvasionWorld.CyberWrathPoints1;
 
 			if (InvasionWorld.CyberWrathPoints1 == 15)
 			{
-				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - YOffset, ModContent.NPCType<Violeum>());
+				NPC.NewNPC(null, (int)Player.Center.X, (int)Player.Center.Y - YOffset, ModContent.NPCType<Violeum>());
 				InvasionWorld.CyberWrathPoints1 = 16;
 			}
 
 			if (InvasionWorld.CyberWrathPoints1 == 35)
 			{
-				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - YOffset, ModContent.NPCType<Violeum>());
+				NPC.NewNPC(null, (int)Player.Center.X, (int)Player.Center.Y - YOffset, ModContent.NPCType<Violeum>());
 				InvasionWorld.CyberWrathPoints1 = 36;
 			}
 
 			if (InvasionWorld.CyberWrathPoints1 == 50)
 			{
-				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - YOffset, ModContent.NPCType<Violeum>());
+				NPC.NewNPC(null, (int)Player.Center.X, (int)Player.Center.Y - YOffset, ModContent.NPCType<Violeum>());
 				InvasionWorld.CyberWrathPoints1 = 51;
 			}
 
 			if (InvasionWorld.CyberWrathPoints1 == 85)
 			{
-				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - YOffset, ModContent.NPCType<Violeum>());
+				NPC.NewNPC(null, (int)Player.Center.X, (int)Player.Center.Y - YOffset, ModContent.NPCType<Violeum>());
 				InvasionWorld.CyberWrathPoints1 = 86;
 			}
 
@@ -151,12 +153,12 @@ namespace Tremor.Invasion
 
 			if (!NPC.AnyNPCs(ModContent.NPCType<Titan_>()) && InvasionWorld.CyberWrath && InvasionWorld.CyberWrathPoints1 < 98)
 			{
-				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - 200, ModContent.NPCType<Titan_>());
+				NPC.NewNPC(null, (int)Player.Center.X, (int)Player.Center.Y - 200, ModContent.NPCType<Titan_>());
 			}
 
 			/*if (modPlayer.CyberWrathPoints1 == 94)
 			{
-				NPC.NewNPC((int)player.position.X, (int)player.position.Y - 200, ModContent.NPCType<Titan>());
+				NPC.NewNPC(null, (int)Player.position.X, (int)Player.position.Y - 200, ModContent.NPCType<Titan>());
 				Main.NewText("Your life happens?", Color.Red.R, Color.Orange.G, Color.Red.B);
 				modPlayer.CyberWrathPoints1 = 95;
 			} */
@@ -192,8 +194,14 @@ namespace Tremor.Invasion
 		{
 			return true;
 		}
+	}
 
-		public override void UpdateBiomeVisuals()
+	public class CyberWrathInvasion_SceneEffect:ModSceneEffect
+	{
+		//was from UpdateBiomeVisuals
+		public override bool IsSceneEffectActive(Player player) => InvasionWorld.CyberWrath;
+
+		public override void SpecialVisuals(Player player, bool isActive)
 		{
 			bool usePurity = InvasionWorld.CyberWrath;
 			player.ManageSpecialBiomeVisuals("Tremor:Invasion", usePurity);

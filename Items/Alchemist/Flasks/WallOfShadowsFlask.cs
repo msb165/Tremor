@@ -51,7 +51,7 @@ namespace Tremor.Items.Alchemist.Flasks
 			int Target = -1;
 			for (int k = 0; k < Main.npc.Length; k++)
 			{
-				if (Main.npc[k].active && Main.npc[k].lifeMax > 5 && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].Distance(Main.player[item.owner].Center) <= ShootRange && Collision.CanHitLine(Main.player[item.owner].Center, 4, 4, Main.npc[k].Center, 4, 4))
+				if (Main.npc[k].active && Main.npc[k].lifeMax > 5 && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].Distance(Main.player[item.playerIndexTheItemIsReservedFor].Center) <= ShootRange && Collision.CanHitLine(Main.player[item.playerIndexTheItemIsReservedFor].Center, 4, 4, Main.npc[k].Center, 4, 4))
 				{
 					Target = k;
 					break;
@@ -62,34 +62,34 @@ namespace Tremor.Items.Alchemist.Flasks
 
 		int GetDamage()
 		{
-			return (10 * (int)Main.player[item.owner].GetModPlayer<MPlayer>().alchemicalDamage) + 50;
+			return (10 * (int)Main.player[item.playerIndexTheItemIsReservedFor].GetModPlayer<MPlayer>().alchemicalDamage) + 50;
 		}
 
 		void Shoot(int Target, int Damage)
 		{
-			if (Main.player[item.owner].statLife < 50)
+			if (Main.player[item.playerIndexTheItemIsReservedFor].statLife < 50)
 			{
 				ShootCount = 7;
 			}
-			if (Main.player[item.owner].statLife < 100)
+			if (Main.player[item.playerIndexTheItemIsReservedFor].statLife < 100)
 			{
 				ShootCount = 6;
 			}
-			if (Main.player[item.owner].statLife < 200)
+			if (Main.player[item.playerIndexTheItemIsReservedFor].statLife < 200)
 			{
 				ShootCount = 5;
 			}
-			if (Main.player[item.owner].statLife < 300)
+			if (Main.player[item.playerIndexTheItemIsReservedFor].statLife < 300)
 			{
 				ShootCount = 4;
 			}
 
-			Vector2 velocity = Helper.VelocityToPoint(Main.player[item.owner].Center, Main.npc[Target].Center, ShootSpeed);
+			Vector2 velocity = Helper.VelocityToPoint(Main.player[item.playerIndexTheItemIsReservedFor].Center, Main.npc[Target].Center, ShootSpeed);
 			for (int l = 0; l < ShootCount; l++)
 			{
 				velocity.X = velocity.X + Main.rand.Next(-spread, spread + 1) * spreadMult;
 				velocity.Y = velocity.Y + Main.rand.Next(-spread, spread + 1) * spreadMult;
-				int i = Projectile.NewProjectile(Main.player[item.owner].Center.X, Main.player[item.owner].Center.Y, velocity.X, velocity.Y, ModContent.ProjectileType<Projectiles.WallOfShadowsFlask_Proj>(), Damage, ShootKN, item.owner);
+				int i = Projectile.NewProjectile(null, Main.player[item.playerIndexTheItemIsReservedFor].Center.X, Main.player[item.playerIndexTheItemIsReservedFor].Center.Y, velocity.X, velocity.Y, ModContent.ProjectileType<Projectiles.WallOfShadowsFlask_Proj>(), Damage, ShootKN, item.playerIndexTheItemIsReservedFor);
 			}
 		}
 	}

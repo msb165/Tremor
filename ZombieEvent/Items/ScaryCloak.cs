@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class ScaryCloak : ModItem
+	public class ScaryCloak:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -29,9 +29,9 @@ namespace Tremor.ZombieEvent.Items
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
 		{
-			player.magicDamage += 0.08f;
-			player.magicCrit += 8;
-			player.minionDamage += 0.08f;
+			player.GetDamage(DamageClass.Magic) += 0.08f;
+			player.GetCritChance(DamageClass.Magic) += 8;
+			player.GetDamage(DamageClass.Summon) += 0.08f;
 			//player.minionCrit += 8;
 			player.shroomiteStealth = true;
 		}

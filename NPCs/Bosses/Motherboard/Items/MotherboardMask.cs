@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.NPCs.Bosses.Motherboard.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class MotherboardMask : ModItem
+	public class MotherboardMask:TremorModItem
 	{
 		public override void SetDefaults()
 		{

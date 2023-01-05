@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class BrainSmasherPro : ModProjectile
+	public class BrainSmasherPro:TremorModProjectile
 	{
 		const float RotationSpeed = 0.05f;
 		const float Distanse = 300;
@@ -18,7 +18,7 @@ namespace Tremor.Projectiles
 			projectile.width = 48;
 			projectile.height = 48;
 			projectile.timeLeft = 6;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 			projectile.aiStyle = -1;
 			projectile.penetrate = -1;
 			projectile.tileCollide = false;
@@ -44,7 +44,7 @@ namespace Tremor.Projectiles
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D texture = ModContent.GetTexture("Tremor/Projectiles/BrainSmasher_Chain");
+			Texture2D texture = Mod.GetTexture("Tremor/Projectiles/BrainSmasher_Chain");
 
 			Vector2 position = projectile.Center;
 			Vector2 mountedCenter = Main.player[projectile.owner].MountedCenter;

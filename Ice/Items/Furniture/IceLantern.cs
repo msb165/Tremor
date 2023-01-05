@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items.Furniture
 {
-	public class IceLantern : ModItem
+	public class IceLantern:TremorModItem
 	{
 		public override void SetStaticDefaults()
 		{

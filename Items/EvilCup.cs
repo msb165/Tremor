@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class EvilCup : ModItem
+	public class EvilCup:TremorModItem
 	{
 
 		public override void SetDefaults()

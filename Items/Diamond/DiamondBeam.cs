@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Diamond
 {
-	public class DiamondBeam : ModItem
+	public class DiamondBeam:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 			item.channel = true;
 			item.damage = 288;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 7;
 			item.width = 40;
 			item.height = 40;

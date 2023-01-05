@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Sparks
 {
-	public class GunslingerSpark : ModItem
+	public class GunslingerSpark:TremorModItem
 	{
 		public override void SetStaticDefaults()
 		{
@@ -25,8 +25,8 @@ namespace Tremor.Items.Sparks
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.rangedDamage += 0.03f;
-			player.rangedCrit += 8;
+			player.GetDamage(DamageClass.Ranged) += 0.03f;
+			player.GetCritChance(DamageClass.Ranged) += 8;
 		}
 
 		public override void AddRecipes()

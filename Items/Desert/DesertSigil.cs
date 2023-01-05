@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Desert
 {
-	public class DesertSigil : ModItem
+	public class DesertSigil:TremorModItem
 	{
 
 		public override void SetDefaults()

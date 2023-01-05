@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class EvershinyBar : ModItem
+	public class EvershinyBar:TremorModItem
 	{
 		public override void SetDefaults()
 		{

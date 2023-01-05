@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 {
-	public class NovaFlierProj : ModProjectile
+	public class NovaFlierProj:TremorModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
@@ -41,7 +41,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 				Vector2 Vector = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 				Vector.Normalize();
 				Vector *= Main.rand.Next(10, 201) * 0.01f;
-				int i = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, Vector.X, Vector.Y, ModContent.ProjectileType<Projectiles.NovaAlchemistCloud>(), 14, 1f, Main.myPlayer, 0f, Main.rand.Next(-45, 1));
+				int i = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, Vector.X, Vector.Y, ModContent.ProjectileType<Projectiles.NovaAlchemistCloud>(), 14, 1f, Main.myPlayer, 0f, Main.rand.Next(-45, 1));
 				Main.projectile[i].friendly = false;
 			}
 		}

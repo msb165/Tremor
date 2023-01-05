@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class projMotherboardLaser : ModProjectile
+	public class projMotherboardLaser:TremorModProjectile
 	{
 		const float YOffset = 95f;
 		Color LaserColor = Color.Purple;
@@ -19,7 +19,7 @@ namespace Tremor.Projectiles
 			projectile.timeLeft = 30;
 			projectile.penetrate = -1;
 			projectile.hostile = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
 		}
@@ -64,8 +64,12 @@ namespace Tremor.Projectiles
 
 		private void PlayZapSound()
 		{
-			var zapSound = new LegacySoundStyle(SoundID.Trackable, TremorUtils.GetIdForSoundName($"dd2_lightning_bug_zap_{Main.rand.Next(3)}"));
-			Main.PlayTrackedSound(zapSound.WithPitchVariance(Main.rand.NextFloat() * .5f).WithVolume(Main.soundVolume * 0.5f));
+			var zapSound = TremorUtils.GetIdForSoundName($"dd2_lightning_bug_zap_{Main.rand.Next(3)}");
+			zapSound.PitchVariance = Main.rand.NextFloat() * .5f;
+			zapSound.Volume = Main.soundVolume * 0.5f;
+			SoundEngine.PlaySound(zapSound);
+			//var zapSound = new LegacySoundStyle(SoundID.Trackable, TremorUtils.GetIdForSoundName($"dd2_lightning_bug_zap_{Main.rand.Next(3)}"));
+			//Main.PlayTrackedSound(zapSound.WithPitchVariance(Main.rand.NextFloat() * .5f).WithVolume(Main.soundVolume * 0.5f));
 		}
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
@@ -78,7 +82,7 @@ namespace Tremor.Projectiles
 			{
 				Vector2 drawPos = projectile.Center + unit * k - Main.screenPosition;
 				Color alpha = new Color(LaserColor.R, LaserColor.G, LaserColor.B, projectile.alpha);
-				spriteBatch.Draw(Main.projectileTexture[projectile.type], drawPos, null, alpha, MathHelper.ToDegrees(Main.rand.Next(0, 181)), new Vector2(2, 2), 1f, SpriteEffects.None, 0f);
+				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, alpha, MathHelper.ToDegrees(Main.rand.Next(0, 181)), new Vector2(2, 2), 1f, SpriteEffects.None, 0f);
 			}
 			return false;
 		}

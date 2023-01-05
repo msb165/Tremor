@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 {
-	public class NovaCauldron : ModProjectile
+	public class NovaCauldron:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -216,7 +216,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 					Num12 = Num9 / Num12;
 					Num10 *= Num12;
 					Num11 *= Num12;
-					Projectile.NewProjectile(projectile.Center.X - 4f, projectile.Center.Y, Num10, Num11, ModContent.ProjectileType<Projectiles.NovaCauldron_Fire>(), 65, projectile.knockBack, projectile.owner, 0f, 0f);
+					Projectile.NewProjectile(null, projectile.Center.X - 4f, projectile.Center.Y, Num10, Num11, ModContent.ProjectileType<Projectiles.NovaCauldron_Fire>(), 65, projectile.knockBack, projectile.owner, 0f, 0f);
 					projectile.ai[0] = 50f;
 				}
 			}

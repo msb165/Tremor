@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class GoblinAssassin : ModNPC
+	public class GoblinAssassin:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -174,7 +174,7 @@ namespace Tremor.NPCs
 						{
 							return;
 						}
-						if (Main.tile[l, Num2].active() && Main.tileSolid[Main.tile[l, Num2].type])
+						if (Main.tile[l, Num2].active() && Main.tileSolid[Main.tile[l, Num2].TileType])
 						{
 							Flag3 = true;
 							break;
@@ -186,36 +186,36 @@ namespace Tremor.NPCs
 				{
 					int Num5 = (int)((npc.position.X + npc.width / 2 + (npc.width / 2 + 6) * npc.direction) / 16f);
 					int Num6 = (int)((npc.position.Y + npc.height - 15f) / 16f);
-					if (Main.tile[Num5, Num6] == null)
-					{
-						Main.tile[Num5, Num6] = new Tile();
-					}
-					if (Main.tile[Num5, Num6 - 1] == null)
-					{
-						Main.tile[Num5, Num6 - 1] = new Tile();
-					}
-					if (Main.tile[Num5, Num6 - 2] == null)
-					{
-						Main.tile[Num5, Num6 - 2] = new Tile();
-					}
-					if (Main.tile[Num5, Num6 - 3] == null)
-					{
-						Main.tile[Num5, Num6 - 3] = new Tile();
-					}
-					if (Main.tile[Num5, Num6 + 1] == null)
-					{
-						Main.tile[Num5, Num6 + 1] = new Tile();
-					}
-					if (Main.tile[Num5 + npc.direction, Num6 - 1] == null)
-					{
-						Main.tile[Num5 + npc.direction, Num6 - 1] = new Tile();
-					}
-					if (Main.tile[Num5 + npc.direction, Num6 + 1] == null)
-					{
-						Main.tile[Num5 + npc.direction, Num6 + 1] = new Tile();
-					}
+					//if (Main.tile[Num5, Num6] == null)
+					//{
+					//	Main.tile[Num5, Num6] = new Tile();
+					//}
+					//if (Main.tile[Num5, Num6 - 1] == null)
+					//{
+					//	Main.tile[Num5, Num6 - 1] = new Tile();
+					//}
+					//if (Main.tile[Num5, Num6 - 2] == null)
+					//{
+					//	Main.tile[Num5, Num6 - 2] = new Tile();
+					//}
+					//if (Main.tile[Num5, Num6 - 3] == null)
+					//{
+					//	Main.tile[Num5, Num6 - 3] = new Tile();
+					//}
+					//if (Main.tile[Num5, Num6 + 1] == null)
+					//{
+					//	Main.tile[Num5, Num6 + 1] = new Tile();
+					//}
+					//if (Main.tile[Num5 + npc.direction, Num6 - 1] == null)
+					//{
+					//	Main.tile[Num5 + npc.direction, Num6 - 1] = new Tile();
+					//}
+					//if (Main.tile[Num5 + npc.direction, Num6 + 1] == null)
+					//{
+					//	Main.tile[Num5 + npc.direction, Num6 + 1] = new Tile();
+					//}
 
-					if (Main.tile[Num5, Num6 - 1].active() && Main.tile[Num5, Num6 - 1].type == 10 && Flag2)
+					if (Main.tile[Num5, Num6 - 1].active() && Main.tile[Num5, Num6 - 1].TileType == 10 && Flag2)
 					{
 						npc.ai[2] += 1f;
 						npc.ai[3] = 0f;
@@ -249,9 +249,9 @@ namespace Tremor.NPCs
 
 					if ((npc.velocity.X < 0f && npc.spriteDirection == -1) || (npc.velocity.X > 0f && npc.spriteDirection == 1))
 					{
-						if (Main.tile[Num5, Num6 - 2].active() && Main.tileSolid[Main.tile[Num5, Num6 - 2].type])
+						if (Main.tile[Num5, Num6 - 2].active() && Main.tileSolid[Main.tile[Num5, Num6 - 2].TileType])
 						{
-							if ((Main.tile[Num5, Num6 - 3].active() && Main.tileSolid[Main.tile[Num5, Num6 - 3].type]))
+							if ((Main.tile[Num5, Num6 - 3].active() && Main.tileSolid[Main.tile[Num5, Num6 - 3].TileType]))
 							{
 								npc.velocity.Y = -8f;
 								npc.netUpdate = true;
@@ -264,21 +264,21 @@ namespace Tremor.NPCs
 						}
 						else
 						{
-							if (Main.tile[Num5, Num6 - 1].active() && Main.tileSolid[Main.tile[Num5, Num6 - 1].type])
+							if (Main.tile[Num5, Num6 - 1].active() && Main.tileSolid[Main.tile[Num5, Num6 - 1].TileType])
 							{
 								npc.velocity.Y = -6f;
 								npc.netUpdate = true;
 							}
 							else
 							{
-								if (Main.tile[Num5, Num6].active() && Main.tileSolid[Main.tile[Num5, Num6].type])
+								if (Main.tile[Num5, Num6].active() && Main.tileSolid[Main.tile[Num5, Num6].TileType])
 								{
 									npc.velocity.Y = -5f;
 									npc.netUpdate = true;
 								}
 								else
 								{
-									if (npc.directionY < 0 && (!Main.tile[Num5, Num6 + 1].active() || !Main.tileSolid[Main.tile[Num5, Num6 + 1].type]) && (!Main.tile[Num5 + npc.direction, Num6 + 1].active() || !Main.tileSolid[Main.tile[Num5 + npc.direction, Num6 + 1].type]))
+									if (npc.directionY < 0 && (!Main.tile[Num5, Num6 + 1].active() || !Main.tileSolid[Main.tile[Num5, Num6 + 1].TileType]) && (!Main.tile[Num5 + npc.direction, Num6 + 1].active() || !Main.tileSolid[Main.tile[Num5 + npc.direction, Num6 + 1].TileType]))
 									{
 										npc.velocity.Y = -8f;
 										npc.velocity.X = npc.velocity.X * 1.5f;
@@ -411,7 +411,7 @@ namespace Tremor.NPCs
 						{
 							return;
 						}
-						if (Main.tile[l, Num2].active() && Main.tileSolid[Main.tile[l, Num2].type])
+						if (Main.tile[l, Num2].active() && Main.tileSolid[Main.tile[l, Num2].TileType])
 						{
 							Flag3 = true;
 							break;
@@ -423,36 +423,36 @@ namespace Tremor.NPCs
 				{
 					int Num5 = (int)((npc.position.X + npc.width / 2 + (npc.width / 2 + 6) * npc.direction) / 16f);
 					int Num6 = (int)((npc.position.Y + npc.height - 15f) / 16f);
-					if (Main.tile[Num5, Num6] == null)
-					{
-						Main.tile[Num5, Num6] = new Tile();
-					}
-					if (Main.tile[Num5, Num6 - 1] == null)
-					{
-						Main.tile[Num5, Num6 - 1] = new Tile();
-					}
-					if (Main.tile[Num5, Num6 - 2] == null)
-					{
-						Main.tile[Num5, Num6 - 2] = new Tile();
-					}
-					if (Main.tile[Num5, Num6 - 3] == null)
-					{
-						Main.tile[Num5, Num6 - 3] = new Tile();
-					}
-					if (Main.tile[Num5, Num6 + 1] == null)
-					{
-						Main.tile[Num5, Num6 + 1] = new Tile();
-					}
-					if (Main.tile[Num5 + npc.direction, Num6 - 1] == null)
-					{
-						Main.tile[Num5 + npc.direction, Num6 - 1] = new Tile();
-					}
-					if (Main.tile[Num5 + npc.direction, Num6 + 1] == null)
-					{
-						Main.tile[Num5 + npc.direction, Num6 + 1] = new Tile();
-					}
+					//if (Main.tile[Num5, Num6] == null)
+					//{
+					//	Main.tile[Num5, Num6] = new Tile();
+					//}
+					//if (Main.tile[Num5, Num6 - 1] == null)
+					//{
+					//	Main.tile[Num5, Num6 - 1] = new Tile();
+					//}
+					//if (Main.tile[Num5, Num6 - 2] == null)
+					//{
+					//	Main.tile[Num5, Num6 - 2] = new Tile();
+					//}
+					//if (Main.tile[Num5, Num6 - 3] == null)
+					//{
+					//	Main.tile[Num5, Num6 - 3] = new Tile();
+					//}
+					//if (Main.tile[Num5, Num6 + 1] == null)
+					//{
+					//	Main.tile[Num5, Num6 + 1] = new Tile();
+					//}
+					//if (Main.tile[Num5 + npc.direction, Num6 - 1] == null)
+					//{
+					//	Main.tile[Num5 + npc.direction, Num6 - 1] = new Tile();
+					//}
+					//if (Main.tile[Num5 + npc.direction, Num6 + 1] == null)
+					//{
+					//	Main.tile[Num5 + npc.direction, Num6 + 1] = new Tile();
+					//}
 
-					if (Main.tile[Num5, Num6 - 1].active() && Main.tile[Num5, Num6 - 1].type == 10 && Flag2)
+					if (Main.tile[Num5, Num6 - 1].active() && Main.tile[Num5, Num6 - 1].TileType == 10 && Flag2)
 					{
 						npc.ai[2] += 1f;
 						npc.ai[3] = 0f;
@@ -486,9 +486,9 @@ namespace Tremor.NPCs
 
 					if ((npc.velocity.X < 0f && npc.spriteDirection == -1) || (npc.velocity.X > 0f && npc.spriteDirection == 1))
 					{
-						if (Main.tile[Num5, Num6 - 2].active() && Main.tileSolid[Main.tile[Num5, Num6 - 2].type])
+						if (Main.tile[Num5, Num6 - 2].active() && Main.tileSolid[Main.tile[Num5, Num6 - 2].TileType])
 						{
-							if ((Main.tile[Num5, Num6 - 3].active() && Main.tileSolid[Main.tile[Num5, Num6 - 3].type]))
+							if ((Main.tile[Num5, Num6 - 3].active() && Main.tileSolid[Main.tile[Num5, Num6 - 3].TileType]))
 							{
 								npc.velocity.Y = -8f;
 								npc.netUpdate = true;
@@ -501,21 +501,21 @@ namespace Tremor.NPCs
 						}
 						else
 						{
-							if (Main.tile[Num5, Num6 - 1].active() && Main.tileSolid[Main.tile[Num5, Num6 - 1].type])
+							if (Main.tile[Num5, Num6 - 1].active() && Main.tileSolid[Main.tile[Num5, Num6 - 1].TileType])
 							{
 								npc.velocity.Y = -6f;
 								npc.netUpdate = true;
 							}
 							else
 							{
-								if (Main.tile[Num5, Num6].active() && Main.tileSolid[Main.tile[Num5, Num6].type])
+								if (Main.tile[Num5, Num6].active() && Main.tileSolid[Main.tile[Num5, Num6].TileType])
 								{
 									npc.velocity.Y = -5f;
 									npc.netUpdate = true;
 								}
 								else
 								{
-									if (npc.directionY < 0 && (!Main.tile[Num5, Num6 + 1].active() || !Main.tileSolid[Main.tile[Num5, Num6 + 1].type]) && (!Main.tile[Num5 + npc.direction, Num6 + 1].active() || !Main.tileSolid[Main.tile[Num5 + npc.direction, Num6 + 1].type]))
+									if (npc.directionY < 0 && (!Main.tile[Num5, Num6 + 1].active() || !Main.tileSolid[Main.tile[Num5, Num6 + 1].TileType]) && (!Main.tile[Num5 + npc.direction, Num6 + 1].active() || !Main.tileSolid[Main.tile[Num5 + npc.direction, Num6 + 1].TileType]))
 									{
 										npc.velocity.Y = -8f;
 										npc.velocity.X = npc.velocity.X * 1.5f;
@@ -575,6 +575,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Main.invasionType == InvasionID.GoblinArmy && NPC.downedBoss3 && spawnInfo.spawnTileY < Main.worldSurface ? 0.08f : 0f;
+			=> Main.invasionType == InvasionID.GoblinArmy && NPC.downedBoss3 && spawnInfo.SpawnTileY < Main.worldSurface ? 0.08f : 0f;
 	}
 }

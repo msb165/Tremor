@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ChickenLegMace : ModItem
+	public class ChickenLegMace:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 22;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 54;
 			item.height = 54;
 			item.useTime = 45;

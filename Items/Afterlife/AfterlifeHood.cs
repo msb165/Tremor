@@ -5,7 +5,7 @@ using Tremor.Items.Steel;
 namespace Tremor.Items.Afterlife
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class AfterlifeHood : ModItem
+	public class AfterlifeHood:TremorModItem
 	{
 
 		public override void SetDefaults()

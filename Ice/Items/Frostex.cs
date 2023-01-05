@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items
 {
-	public class Frostex : ModItem
+	public class Frostex:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -25,8 +25,8 @@ namespace Tremor.Ice.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.1f;
-			player.rangedDamage += 0.1f;
+			player.GetDamage(DamageClass.Melee) += 0.1f;
+			player.GetDamage(DamageClass.Ranged) += 0.1f;
 		}
 	}
 }

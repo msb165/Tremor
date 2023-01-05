@@ -5,12 +5,12 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Brass
 {
-	public class BrassChainRepeater : ModItem
+	public class BrassChainRepeater:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 36;
 			item.height = 24;
 

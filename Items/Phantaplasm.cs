@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Phantaplasm : ModItem
+	public class Phantaplasm:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class RavenHeadgear : ModItem
+	public class RavenHeadgear:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,8 +28,8 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.05f;
-			player.meleeCrit += 5;
+			player.GetDamage(DamageClass.Melee) += 0.05f;
+			player.GetCritChance(DamageClass.Melee) += 5;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -41,8 +41,8 @@ namespace Tremor.Items
 		{
 			p.setBonus = "Increases player defense by 3, 8% increased melee speed, increases melee critical strike chance by 6";
 			p.statDefense += 3;
-			p.meleeCrit += 6;
-			p.meleeSpeed += 0.8f;
+			p.GetCritChance(DamageClass.Melee) += 6;
+			p.GetAttackSpeed(DamageClass.Melee) += 0.8f;
 		}
 
 		public override void AddRecipes()

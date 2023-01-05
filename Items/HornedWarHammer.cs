@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class HornedWarHammer : ModItem
+	public class HornedWarHammer:TremorModItem
 	{
 		public override void SetDefaults()
 		{

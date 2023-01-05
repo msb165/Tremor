@@ -7,7 +7,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class ScaryBat : ModNPC
+	public class ScaryBat:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -57,6 +57,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NoZoneAllowWater(spawnInfo) && NPC.downedPlantBoss && spawnInfo.spawnTileY > Main.rockLayer ? 0.01f : 0f;
+			=> Helper.NoZoneAllowWater(spawnInfo) && NPC.downedPlantBoss && spawnInfo.SpawnTileY > Main.rockLayer ? 0.01f : 0f;
 	}
 }

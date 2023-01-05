@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SharkRage : ModItem
+	public class SharkRage:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 46;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 10;
 			item.width = 54;
 			item.height = 54;

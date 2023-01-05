@@ -6,7 +6,8 @@ namespace Tremor.Waters
 {
 	public class IceWater : ModWaterStyle
 	{
-        public override bool ChooseWaterStyle()
+		//TODO: [Skipped for 1.4] Use WaterStyle
+        public /*override*/ bool ChooseWaterStyle()
         {
             TremorPlayer modPlayer = Main.player[Main.myPlayer].GetModPlayer<TremorPlayer>();
             return modPlayer.ZoneIce;
@@ -14,7 +15,7 @@ namespace Tremor.Waters
 
         public override int ChooseWaterfallStyle()
 		{
-			return mod.GetWaterfallStyleSlot<IceWaterfall>();
+			return Slot;//Mod.GetWaterfallStyleSlot<IceWaterfall>();
 		}
 
 		public override int GetSplashDust()
@@ -24,7 +25,7 @@ namespace Tremor.Waters
 
 		public override int GetDropletGore()
 		{
-			return mod.GetGoreSlot("Gores/IceDroplet");
+			return Mod.GetGoreSlot("Gores/IceDroplet");
 		}
 
 		public override void LightColorMultiplier(ref float r, ref float g, ref float b)

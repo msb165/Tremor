@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class EaterofDreamsPro : ModProjectile
+	public class EaterofDreamsPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

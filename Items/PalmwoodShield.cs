@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class PalmwoodShield : ModItem
+	public class PalmwoodShield:TremorModItem
 	{
 
 		public override void SetDefaults()

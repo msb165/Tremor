@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class WaterSpear : ModItem
+	public class WaterSpear:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 34;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 28;
 			item.height = 30;
 			item.useTime = 14;

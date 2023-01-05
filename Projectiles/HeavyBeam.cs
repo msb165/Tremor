@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class HeavyBeam : ModProjectile
+	public class HeavyBeam:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -14,7 +14,7 @@ namespace Tremor.Projectiles
 			projectile.timeLeft = 2;
 			projectile.penetrate = -1;
 			projectile.friendly = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
 			projectile.alpha = 100;

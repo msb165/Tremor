@@ -4,12 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Walls
 {
-	public class DoombrickWall : ModWall
-{
-    public override void SetDefaults()
-    {
-        Main.wallHouse[Type] = true;
-        drop = ModContent.ItemType<Items.Doom.DoombrickWall>();
-	AddMapEntry(new Color(233, 255, 0));
-    }
-}}
+	public class DoombrickWall:ModWall
+	{
+		public override void SetStaticDefaults()
+		{
+			Main.wallHouse[Type] = true;
+			ItemDrop = ModContent.ItemType<Items.Doom.DoombrickWall>();
+			AddMapEntry(new Color(233, 255, 0));
+		}
+	}
+}

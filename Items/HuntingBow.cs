@@ -4,7 +4,7 @@ using Tremor.Items.Wolf;
 
 namespace Tremor.Items
 {
-	public class HuntingBow : ModItem
+	public class HuntingBow:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.width = 18;
 			item.noMelee = true;
 			item.height = 56;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.useTime = 30;
 			item.shoot = 1;
 			item.shootSpeed = 12f;

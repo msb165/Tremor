@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Flesh
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class FleshHelmet : ModItem
+	public class FleshHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,7 +28,7 @@ namespace Tremor.Items.Flesh
 		public override void UpdateEquip(Player player)
 		{
 			player.maxMinions += 1;
-			player.minionDamage += 0.05f;
+			player.GetDamage(DamageClass.Summon) += 0.05f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

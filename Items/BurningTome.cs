@@ -2,14 +2,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class BurningTome : ModItem
+	public class BurningTome:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 7;
-			item.melee = false;
-			item.magic = true;
+			//item.melee = false;
+			item.DamageType = DamageClass.Magic;
 			item.width = 50;
 			item.height = 55;
 			item.useTime = 20;

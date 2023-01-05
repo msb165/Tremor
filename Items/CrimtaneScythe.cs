@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class CrimtaneScythe : ModItem
+	public class CrimtaneScythe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 19;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 50;
 			item.height = 40;
 			item.useTime = 18;

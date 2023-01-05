@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class LeechingSeed : ModItem
+	public class LeechingSeed:TremorModItem
 	{
 		public override void SetDefaults()
 		{

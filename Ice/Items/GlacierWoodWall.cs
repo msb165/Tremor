@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items
 {
-	public class GlacierWoodWall : ModItem
+	public class GlacierWoodWall:TremorModItem
 	{
 		public override void SetDefaults()
 		{

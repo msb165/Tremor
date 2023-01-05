@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class WhiteGoldBreastplate : ModItem
+	public class WhiteGoldBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,8 +26,8 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.rangedCrit += 25;
-			player.meleeCrit += 25;
+			player.GetCritChance(DamageClass.Ranged) += 25;
+			player.GetCritChance(DamageClass.Melee) += 25;
 		}
 
 		public override void AddRecipes()

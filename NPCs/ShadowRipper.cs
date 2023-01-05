@@ -9,7 +9,7 @@ using Tremor.Items.Doom;
 
 namespace Tremor.NPCs
 {
-	public class ShadowRipper : ModNPC
+	public class ShadowRipper:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -61,7 +61,7 @@ namespace Tremor.NPCs
 				}
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot($"Gores/RipperGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/RipperGore{i+1}"), 1f);
 			}
 			else
 			{
@@ -75,6 +75,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Main.hardMode && NPC.downedMoonlord && !spawnInfo.player.ZoneDungeon && spawnInfo.spawnTileY > Main.rockLayer ? 0.04f : 0f;
+			=> Main.hardMode && NPC.downedMoonlord && !spawnInfo.Player.ZoneDungeon && spawnInfo.SpawnTileY > Main.rockLayer ? 0.04f : 0f;
 	}
 }

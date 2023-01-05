@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class LongFuse : ModItem
+	public class LongFuse:TremorModItem
 	{
 		public override void SetDefaults()
 		{

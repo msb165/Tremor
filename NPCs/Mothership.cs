@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
-	public class Mothership : ModNPC
+	public class Mothership:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -59,10 +59,10 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CKMotherGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CKMotherGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CKMotherGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CKMotherGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CKMotherGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CKMotherGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CKMotherGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CKMotherGore3"), 1f);
 			}
 		}
 
@@ -133,18 +133,18 @@ namespace Tremor.NPCs
 			{
 				float angle = Main.rand.Next(0, (int)Math.PI * 200) / 100f;
 				Vector2 vel = new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle)) * 3 * Main.rand.Next(5);
-				Projectile.NewProjectile(bossCenter.X, bossCenter.Y + 15, vel.X + 15, vel.Y, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 5f);
-				Projectile.NewProjectile(bossCenter.X, bossCenter.Y, vel.X, vel.Y, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 5f);
-				Projectile.NewProjectile(bossCenter.X, bossCenter.Y - 15, vel.X - 15, vel.Y, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 5f);
-				Projectile.NewProjectile(bossCenter.X, bossCenter.Y + 30, vel.X + 30, vel.Y, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 5f);
-				Projectile.NewProjectile(bossCenter.X, bossCenter.Y - 30, vel.X - 30, vel.Y, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 5f);
+				Projectile.NewProjectile(null, bossCenter.X, bossCenter.Y + 15, vel.X + 15, vel.Y, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 5f);
+				Projectile.NewProjectile(null, bossCenter.X, bossCenter.Y, vel.X, vel.Y, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 5f);
+				Projectile.NewProjectile(null, bossCenter.X, bossCenter.Y - 15, vel.X - 15, vel.Y, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 5f);
+				Projectile.NewProjectile(null, bossCenter.X, bossCenter.Y + 30, vel.X + 30, vel.Y, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 5f);
+				Projectile.NewProjectile(null, bossCenter.X, bossCenter.Y - 30, vel.X - 30, vel.Y, ModContent.ProjectileType<Projectiles.PurplePulsePro>(), 30, 5f);
 				timeToShoot = 1;
 			}
 			else
 			{
 				float angle = (float)Math.Atan2(player.Center.Y - bossCenter.Y, player.Center.X - bossCenter.X);
 				Vector2 vel = new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle)) * 5;
-				Projectile.NewProjectile(bossCenter.X, bossCenter.Y, vel.X, vel.Y, 465, 25, 5f);
+				Projectile.NewProjectile(null, bossCenter.X, bossCenter.Y, vel.X, vel.Y, 465, 25, 5f);
 				timeToShoot = 8;
 			}
 		}
@@ -152,8 +152,8 @@ namespace Tremor.NPCs
 		public override bool PreNPCLoot()
 		{
 			Player player = Main.player[npc.target];
-			NPC.NewNPC((int)bossCenter.X, (int)bossCenter.Y, ModContent.NPCType<CyberKing>(), 0, 0, 0, 0, 0, npc.target);
-			Main.PlaySound(15, (int)player.position.X, (int)player.position.Y, 0);
+			NPC.NewNPC(null, (int)bossCenter.X, (int)bossCenter.Y, ModContent.NPCType<CyberKing>(), 0, 0, 0, 0, 0, npc.target);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[15], player.position);//Variant 0
 			return false;
 		}
 

@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class DarkDruidMinion : ModNPC
+	public class DarkDruidMinion:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -46,8 +46,8 @@ namespace Tremor.NPCs
 
 				for (int i = 0; i < 2; ++i)
 				{
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore1"), 1f);
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore2"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore1"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore2"), 1f);
 				}
 			}
 		}

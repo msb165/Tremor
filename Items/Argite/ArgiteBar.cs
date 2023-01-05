@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Argite
 {
-	public class ArgiteBar : ModItem
+	public class ArgiteBar:TremorModItem
 	{
 		public override void SetDefaults()
 		{

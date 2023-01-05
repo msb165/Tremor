@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class VultureKingMask : ModItem
+	public class VultureKingMask:TremorModItem
 	{
 
 		public override void SetDefaults()

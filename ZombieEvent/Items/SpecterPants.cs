@@ -5,7 +5,7 @@ using Tremor.Tiles;
 namespace Tremor.ZombieEvent.Items
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class SpecterPants : ModItem
+	public class SpecterPants:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,8 +26,8 @@ namespace Tremor.ZombieEvent.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.1f;
-			player.minionDamage += 0.1f;
+			player.GetDamage(DamageClass.Melee) += 0.1f;
+			player.GetDamage(DamageClass.Summon) += 0.1f;
 		}
 
 		public override void AddRecipes()

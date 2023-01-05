@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Chain
 {
 
-	public class ManiacChainsaw : ModItem
+	public class ManiacChainsaw:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 202;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 140;
 			item.height = 34;
 			item.useTime = 8;

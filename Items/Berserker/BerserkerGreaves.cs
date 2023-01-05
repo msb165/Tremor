@@ -5,7 +5,7 @@ using Tremor.Items.Steel;
 namespace Tremor.Items.Berserker
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class BerserkerGreaves : ModItem
+	public class BerserkerGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items.Berserker
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.04f;
+			player.GetDamage(DamageClass.Melee) += 0.04f;
 		}
 		public override void AddRecipes()
 		{

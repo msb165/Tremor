@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class Brutty : ModProjectile
+	public class Brutty:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

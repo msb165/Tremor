@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items
 {
-	public class BlueQuartz : ModItem
+	public class BlueQuartz:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -30,10 +30,7 @@ namespace Tremor.Ice.Items
 			if (player.ZoneSnow)
 			{
 				player.statLifeMax2 += 50;
-				player.meleeDamage += 0.06f;
-				player.rangedDamage += 0.06f;
-				player.magicDamage += 0.06f;
-				player.thrownDamage += 0.06f;
+				player.GetDamage(DamageClass.Generic) += 0.06f;
 				player.GetModPlayer<MPlayer>().alchemicalDamage += 0.06f;
 			}
 		}

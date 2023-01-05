@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class Spaceman : ModNPC
+	public class Spaceman:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -36,9 +36,9 @@ namespace Tremor.NPCs
 		public override void AI()
 		{
 			if (Main.rand.Next(1000) == 0)
-				Main.PlaySound(61, (int)npc.position.X, (int)npc.position.Y, 1);
+				Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[61], npc.position);//Variant 1
 			if (Main.rand.Next(1000) == 0)
-				Main.PlaySound(62, (int)npc.position.X, (int)npc.position.Y, 1);
+				Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[62], npc.position);//Variant 1
 		}
 
 		public override void NPCLoot()
@@ -58,16 +58,16 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore4"), 1f);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> spawnInfo.spawnTileY < Main.rockLayer && spawnInfo.player.ZoneMeteor && Main.dayTime ? 0.03f : 0f;
+			=> spawnInfo.SpawnTileY < Main.rockLayer && spawnInfo.Player.ZoneMeteor && Main.dayTime ? 0.03f : 0f;
 	}
 }

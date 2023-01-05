@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 namespace Tremor.Invasion
 {
 
-	public class ParadoxDrill : ModItem
+	public class ParadoxDrill:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 9;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 40;
 			item.height = 22;
 			item.useTime = 4;

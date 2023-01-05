@@ -2,7 +2,9 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.Audio;
 using Terraria.DataStructures;
+using Terraria.GameContent;
 using Terraria.Graphics;
 using Terraria.Graphics.Effects;
 using Terraria.Graphics.Shaders;
@@ -13,7 +15,7 @@ using Tremor.NPCs.Bosses.NovaPillar.Items;
 namespace Tremor.NPCs.Bosses.NovaPillar
 {
 	[AutoloadBossHead]
-	public class NovaPillar : ModNPC
+	public class NovaPillar:TremorModNPC
 	{
 
 		public override void SetStaticDefaults()
@@ -49,7 +51,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 				{
 					var ShootPos = Main.player[npc.target].position + new Vector2(Main.rand.Next(-1000, 1000), -1000);
 					var ShootVel = new Vector2(Main.rand.NextFloat(-3f, 3f), Main.rand.NextFloat(15f, 20f));
-					int i = Projectile.NewProjectile(ShootPos, ShootVel, ModContent.ProjectileType<Projectiles.NovaBottle>(), 34, 1f);
+					int i = Projectile.NewProjectile(null, ShootPos, ShootVel, ModContent.ProjectileType<Projectiles.NovaBottle>(), 34, 1f);
 					Main.projectile[i].friendly = false;
 				}
 			}
@@ -147,7 +149,8 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 							dust6.fadeIn = 1f;
 							dust6.scale = 1.5f + Main.rand.NextFloat() + num1365 * 0.13f;
 						}
-						Main.PlaySound(3, position6, Utils.SelectRandom(Main.rand, 1, 18));
+						//TODO: Can be any SoundID.NPCHit I think? It was 1-18 but I'm guessing that was the old limit.
+						SoundEngine.PlaySound(SoundID.SoundByIndex[3], position6);//, Utils.SelectRandom(Main.rand, 1, 18)
 					}
 				}
 				if (Main.rand.Next(3) != 0 && npc.ai[1] < 150f)
@@ -159,7 +162,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 				}
 				if (npc.ai[1] % 60 == 1)
 				{
-					Main.PlaySound(SoundID.NPCDeath22, npc.Center);
+					SoundEngine.PlaySound(SoundID.NPCDeath22, npc.Center);
 				}
 				if (npc.ai[1] >= 180f)
 				{
@@ -202,7 +205,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 			}
 			for (int i = 0; i < stacks; i++)
 			{
-				Item.NewItem((int)npc.position.X + Main.rand.Next(npc.width), (int)npc.position.Y + Main.rand.Next(npc.height), 2, 2, ModContent.ItemType<NovaFragment>(), Main.rand.Next(1, 4));
+				Item.NewItem(null, (int)npc.position.X + Main.rand.Next(npc.width), (int)npc.position.Y + Main.rand.Next(npc.height), 2, 2, ModContent.ItemType<NovaFragment>(), Main.rand.Next(1, 4));
 			}
 
 			TremorWorld.Boss.NovaPillar.Downed();
@@ -221,12 +224,12 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
 			var effects = npc.direction == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
-			spriteBatch.Draw(Main.npcTexture[npc.type], npc.Center - Main.screenPosition + new Vector2(0, npc.gfxOffY), npc.frame,
+			spriteBatch.Draw(TextureAssets.Npc[npc.type].Value, npc.Center - Main.screenPosition + new Vector2(0, npc.gfxOffY), npc.frame,
 							 Color.White, npc.rotation, npc.frame.Size() / 2, npc.scale, effects, 0);
 			return false;
 		}
 
-		public override void PostDraw(SpriteBatch spriteBatch, Color drawColor)
+		public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{
 			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, mod.GetTexture("NPCs/Bosses/NovaPillar/NovaPillar_GlowMask"));
 			float num88 = NovaHandler.ShieldStrength / (float)NPC.ShieldStrengthTowerMax;
@@ -242,7 +245,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 					num89 = 1f - npc.ai[3] / 30f;
 				}
 				Filters.Scene["Tremor:Nova"].GetShader().UseIntensity(1f + num89).UseProgress(0f);
-				DrawData drawData = new DrawData(TextureManager.Load("Images/Misc/Perlin"), center - new Vector2(0, 10), new Rectangle(0, 0, 600, 600), Color.White * (num88 * 0.8f + 0.2f), npc.rotation, new Vector2(300f, 300f), npc.scale * (1f + num89 * 0.05f), SpriteEffects.None, 0);
+				DrawData drawData = new DrawData(Main.Assets.Request<Texture2D>("Images/Misc/Perlin", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value, center - new Vector2(0, 10), new Rectangle(0, 0, 600, 600), Color.White * (num88 * 0.8f + 0.2f), npc.rotation, new Vector2(300f, 300f), npc.scale * (1f + num89 * 0.05f), SpriteEffects.None, 0);
 				GameShaders.Misc["ForceField"].UseColor(new Vector3(1f + num89 * 0.5f));
 				GameShaders.Misc["ForceField"].Apply(drawData);
 				drawData.Draw(Main.spriteBatch);
@@ -258,7 +261,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 				float num90 = npc.ai[3] / 120f;
 				float num91 = Math.Min(npc.ai[3] / 30f, 1f);
 				Filters.Scene["Tremor:Nova"].GetShader().UseIntensity(Math.Min(5f, 15f * num90) + 1f).UseProgress(num90);
-				DrawData drawData = new DrawData(TextureManager.Load("Images/Misc/Perlin"), center - new Vector2(0, 10), new Rectangle(0, 0, 600, 600), new Color(new Vector4(1f - (float)Math.Sqrt(num91))), npc.rotation, new Vector2(300f, 300f), npc.scale * (1f + num91), SpriteEffects.None, 0);
+				DrawData drawData = new DrawData(Main.Assets.Request<Texture2D>("Images/Misc/Perlin", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value, center - new Vector2(0, 10), new Rectangle(0, 0, 600, 600), new Color(new Vector4(1f - (float)Math.Sqrt(num91))), npc.rotation, new Vector2(300f, 300f), npc.scale * (1f + num91), SpriteEffects.None, 0);
 				GameShaders.Misc["ForceField"].UseColor(new Vector3(2f));
 				GameShaders.Misc["ForceField"].Apply(drawData);
 				drawData.Draw(Main.spriteBatch);

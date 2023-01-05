@@ -6,7 +6,7 @@ using Tremor.Items.Souls;
 namespace Tremor.Items.Plague
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class PlagueGreaves : ModItem
+	public class PlagueGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()

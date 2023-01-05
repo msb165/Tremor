@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class RockHorn : ModItem
+	public class RockHorn:TremorModItem
 	{
 		public override void SetDefaults()
 		{

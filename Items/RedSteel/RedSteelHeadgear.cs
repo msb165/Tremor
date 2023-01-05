@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.RedSteel
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class RedSteelHeadgear : ModItem
+	public class RedSteelHeadgear:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -23,7 +23,7 @@ namespace Tremor.Items.RedSteel
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.1f;
+			player.GetDamage(DamageClass.Melee) += 0.1f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

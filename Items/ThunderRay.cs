@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ThunderRay : ModItem
+	public class ThunderRay:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -11,7 +11,7 @@ namespace Tremor.Items
 			item.damage = 24;
 			item.width = 14;
 			item.height = 84;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 9;
 			item.useTime = 26;
 			item.shoot = 255;

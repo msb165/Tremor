@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GelCube : ModItem
+	public class GelCube:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class PaladinGreaves : ModItem
+	public class PaladinGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.22f;
+			player.GetDamage(DamageClass.Melee) += 0.22f;
 		}
 	}
 }

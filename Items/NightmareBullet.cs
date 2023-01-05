@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class NightmareBullet : ModItem
+	public class NightmareBullet:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 20;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 8;
 			item.height = 8;
 			item.maxStack = 999;

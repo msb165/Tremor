@@ -7,7 +7,7 @@ using Tremor.Items.Doom;
 
 namespace Tremor.NPCs
 {
-	public class Dranix : ModNPC
+	public class Dranix:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -30,14 +30,14 @@ namespace Tremor.NPCs
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 6, 9);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<DranixBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<DranixBanner>();
 		}
 
 		public override void AI()
 		{
 			if (Main.rand.Next(1000) == 0)
-				Main.PlaySound(22, (int)npc.position.X, (int)npc.position.Y, 1);
+				Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[22], npc.position);//Variant 1
 		}
 
 		public override void NPCLoot()
@@ -53,16 +53,16 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 74, 2.5f * hitDirection, -2.5f);
 
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DranixGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DranixGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DranixGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DranixGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DranixGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DranixGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DranixGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DranixGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DranixGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DranixGore3"), 1f);
 
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Main.hardMode && NPC.downedMoonlord && !spawnInfo.player.ZoneDungeon && spawnInfo.spawnTileY > Main.rockLayer ? 0.04f : 0f;
+			=> Main.hardMode && NPC.downedMoonlord && !spawnInfo.Player.ZoneDungeon && spawnInfo.SpawnTileY > Main.rockLayer ? 0.04f : 0f;
 	}
 }

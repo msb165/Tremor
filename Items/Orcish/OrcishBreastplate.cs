@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Orcish
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class OrcishBreastplate : ModItem
+	public class OrcishBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items.Orcish
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeSpeed += 0.15f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.15f;
 		}
 
 	}

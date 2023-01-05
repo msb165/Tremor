@@ -6,7 +6,7 @@ using Tremor.NPCs.Bosses.NovaPillar.Items.Placeable;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.Tiles
 {
-	public class NovaBlock : ModTile
+	public class NovaBlock:TremorModTile
 	{
 		public override void SetDefaults()
 		{

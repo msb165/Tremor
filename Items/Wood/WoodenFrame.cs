@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Wood
 {
-	public class WoodenFrame : ModItem
+	public class WoodenFrame:TremorModItem
 	{
 
 		public override void SetDefaults()

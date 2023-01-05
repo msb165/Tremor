@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class IcePickaxe : ModItem
+	public class IcePickaxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 32;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 36;
 			item.height = 36;
 			item.useTime = 5;

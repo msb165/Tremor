@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class MagiumHelmet : ModItem
+	public class MagiumHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.magicCrit += 9;
+			player.GetCritChance(DamageClass.Magic) += 9;
 			player.statManaMax2 += 40;
 		}
 

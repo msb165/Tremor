@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Flesh
 {
 	[AutoloadEquip(EquipType.Wings)]
-	public class FleshWings : ModItem
+	public class FleshWings:TremorModItem
 	{
 
 		public override void SetDefaults()

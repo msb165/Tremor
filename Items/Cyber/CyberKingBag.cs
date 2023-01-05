@@ -4,7 +4,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items.Cyber
 {
-	public class CyberKingBag : ModItem
+	public class CyberKingBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

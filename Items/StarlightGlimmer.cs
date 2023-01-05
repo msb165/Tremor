@@ -6,7 +6,7 @@ using Tremor.Items.Doom;
 
 namespace Tremor.Items
 {
-	public class StarlightGlimmer : ModItem
+	public class StarlightGlimmer:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,7 +26,7 @@ namespace Tremor.Items
 			item.value = 1000000;
 			item.rare = 2;
 
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 		}
 
 		public override void SetStaticDefaults()
@@ -39,9 +39,9 @@ namespace Tremor.Items
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
 			{
-				Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX - 1, speedY - 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX - 1, speedY - 1, type, damage, knockBack, Main.myPlayer);
 			}
 			return false;
 		}

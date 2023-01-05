@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Argite
 {
-	public class ArgiteHamaxe : ModItem
+	public class ArgiteHamaxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 20;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 54;
 			item.height = 48;
 			item.useTime = 18;

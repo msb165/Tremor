@@ -3,11 +3,12 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class TitanCrystal_ : ModProjectile
+	public class TitanCrystal_:TremorModProjectile
 	{
 		private int timer;
 
@@ -21,7 +22,7 @@ namespace Tremor.Invasion
 			projectile.width = 48;
 			projectile.height = 48;
 			projectile.penetrate = -1;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
 		}
@@ -66,7 +67,7 @@ namespace Tremor.Invasion
 		{
 			for (int k = 0; k < Player.MaxBuffs; k++)
 			{
-				if (target.buffType[k] > 0 && target.buffTime[k] > 0 && BuffLoader.CanBeCleared(target.buffType[k]) && Main.rand.NextBool(2))
+				if (target.buffType[k] > 0 && target.buffTime[k] > 0 && !BuffID.Sets.NurseCannotRemoveDebuff[target.buffType[k]] && Main.rand.NextBool(2))
 				{
 					target.DelBuff(k);
 					k--;
@@ -79,7 +80,7 @@ namespace Tremor.Invasion
 			return Color.White * ((255 - projectile.alpha) / 255f);
 		}
 
-		public override void PostDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override void PostDraw(Color lightColor)
 		{
 			//Vector2 drawPos = projectile.position - Main.screenPosition;
 			//spriteBatch.Draw(mod.GetTexture("Projectiles/PuritySpirit/PureCrystalShield"), drawPos, null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
@@ -92,7 +93,7 @@ namespace Tremor.Invasion
 			for (int k = 2; k <= 24; k += 2)
 			{
 				float scale = 2f * k / 48f;
-				spriteBatch.Draw(mod.GetTexture("Invasion/TitanCrystalRing"), drawPos, null, Color.White * ShieldTransparency(k), 0f, drawCenter, scale, SpriteEffects.None, 0f);
+				Main.spriteBatch.Draw(mod.GetTexture("Invasion/TitanCrystalRing"), drawPos, null, Color.White * ShieldTransparency(k), 0f, drawCenter, scale, SpriteEffects.None, 0f);
 			}
 		}
 

@@ -6,7 +6,7 @@ using Tremor.Items.Souls;
 namespace Tremor.Items.Bone
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class BoneShell : ModItem
+	public class BoneShell:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -29,8 +29,8 @@ namespace Tremor.Items.Bone
 
 		public override void UpdateEquip(Player p)
 		{
-			p.thrownDamage += 0.25f;
-			p.rangedDamage += 0.06f;
+			p.GetDamage(DamageClass.Throwing) += 0.25f;
+			p.GetDamage(DamageClass.Ranged) += 0.06f;
 		}
 
 		public override void AddRecipes()

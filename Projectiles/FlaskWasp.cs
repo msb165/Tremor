@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class FlaskWasp : ModProjectile
+	public class FlaskWasp:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class EssenseofJungle : ModItem
+	public class EssenseofJungle:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class VultureFeatherPro : ModProjectile
+	public class VultureFeatherPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

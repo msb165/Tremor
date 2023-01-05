@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class NightCombination : ModItem
+	public class NightCombination:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -31,11 +31,7 @@ namespace Tremor.Items
 				player.AddBuff(11, 10);
 				player.AddBuff(12, 10);
 				player.lifeRegen += 1;
-				player.meleeDamage += 0.1f;
-				player.rangedDamage += 0.1f;
-				player.thrownDamage += 0.1f;
-				player.minionDamage += 0.1f;
-				player.magicDamage += 0.1f;
+				player.GetDamage(DamageClass.Generic) += 0.1f;
 			}
 		}
 

@@ -1,10 +1,12 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class TrueDeathSickleProj : ModProjectile
+	public class TrueDeathSickleProj:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -19,7 +21,7 @@ namespace Tremor.Projectiles
 			projectile.ignoreWater = true;
 			projectile.hide = true;
 			projectile.ownerHitCheck = false;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()
@@ -33,7 +35,7 @@ namespace Tremor.Projectiles
 			projectile.soundDelay--;
 			if (projectile.soundDelay <= 0)
 			{
-				Main.PlaySound(2, (int)projectile.Center.X, (int)projectile.Center.Y, 71);
+				SoundEngine.PlaySound(SoundID.Item71, projectile.Center);
 				projectile.soundDelay = 45;
 			}
 			Player player = Main.player[projectile.owner];
@@ -77,7 +79,7 @@ namespace Tremor.Projectiles
 						{
 							spinningpoint = -Vector2.UnitY;
 						}
-						Projectile.NewProjectile(value2.X, value2.Y, spinningpoint.X, spinningpoint.Y, num6, projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
+						Projectile.NewProjectile(null, value2.X, value2.Y, spinningpoint.X, spinningpoint.Y, num6, projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
 						projectile.ai[0] = 50f;
 					}
 				}

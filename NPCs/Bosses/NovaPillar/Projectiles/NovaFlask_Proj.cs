@@ -3,6 +3,8 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.Audio;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.Buffs;
@@ -10,7 +12,7 @@ using Tremor.Projectiles;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 {
-	public class NovaFlask_Proj : ModProjectile
+	public class NovaFlask_Proj:TremorModProjectile
 	{
 		public override ModProjectile NewInstance(Projectile projectileClone) => base.NewInstance(projectileClone);
 
@@ -61,7 +63,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 					{
 						projectile.velocity.Y = -oldVelocity.Y;
 					}
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 10);
+					SoundEngine.PlaySound(SoundID.Item10, projectile.position);
 				}
 			}
 			else
@@ -119,7 +121,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 						num439 *= num440;
 						if (Main.rand.NextBool(2))
 						{
-							Projectile.NewProjectile(value10.X, value10.Y, num438, num439, ModContent.ProjectileType<TheCadenceProj>(), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
+							Projectile.NewProjectile(null, value10.X, value10.Y, num438, num439, ModContent.ProjectileType<TheCadenceProj>(), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
 						}
 					}
 				}
@@ -130,10 +132,10 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 		{
 			Player player = Main.player[projectile.owner];
 			MPlayer modPlayer = player.GetModPlayer<MPlayer>();
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 107);
-			Gore.NewGore(projectile.position, -projectile.oldVelocity * 0.2f, 704, 1f);
-			Gore.NewGore(projectile.position, -projectile.oldVelocity * 0.2f, 705, 1f);
-			Gore.NewGore(projectile.position, -projectile.oldVelocity * 0.2f, 705, 1f);
+			SoundEngine.PlaySound(SoundID.Item107, projectile.position);
+			Gore.NewGore(null, projectile.position, -projectile.oldVelocity * 0.2f, 704, 1f);
+			Gore.NewGore(null, projectile.position, -projectile.oldVelocity * 0.2f, 705, 1f);
+			Gore.NewGore(null, projectile.position, -projectile.oldVelocity * 0.2f, 705, 1f);
 			if (projectile.owner == Main.myPlayer)
 			{
 				int num220 = Main.rand.Next(2, 3);
@@ -142,7 +144,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 					Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 					value17.Normalize();
 					value17 *= Main.rand.Next(10, 201) * 0.01f;
-					int k = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<NovaFlask_ProjBall>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
+					int k = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<NovaFlask_ProjBall>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
 					Main.projectile[k].friendly = true;
 				}
 			}
@@ -153,7 +155,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 				{
 					Vector2 vector2 = new Vector2(player.position.X + 75f * (float)Math.Cos(12), player.position.Y + 1075f * (float)Math.Sin(12));
 					Vector2 Velocity = Helper.VelocityToPoint(vector2, Helper.RandomPointInArea(new Vector2(projectile.Center.X - 10, projectile.Center.Y - 10), new Vector2(projectile.Center.X + 20, projectile.Center.Y + 20)), 24);
-					int a = Projectile.NewProjectile(vector2.X, vector2.Y, Velocity.X, Velocity.Y, 134, projectile.damage, 1f);
+					int a = Projectile.NewProjectile(null, vector2.X, vector2.Y, Velocity.X, Velocity.Y, 134, projectile.damage, 1f);
 					Main.projectile[a].friendly = true;
 				}
 			}
@@ -165,19 +167,19 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 					Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 					value17.Normalize();
 					value17 *= Main.rand.Next(10, 201) * 0.01f;
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<Shatter1>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
+					Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<Shatter1>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
 				}
 			}
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color lightColor)
 		{
-			Vector2 drawOrigin = new Vector2(Main.projectileTexture[projectile.type].Width * 0.5f, projectile.height * 0.5f);
+			Vector2 drawOrigin = new Vector2(TextureAssets.Projectile[projectile.type].Width() * 0.5f, projectile.height * 0.5f);
 			for (int k = 0; k < projectile.oldPos.Length; k++)
 			{
 				Vector2 drawPos = projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, projectile.gfxOffY);
 				Color color = projectile.GetAlpha(lightColor) * ((float)(projectile.oldPos.Length - k) / (float)projectile.oldPos.Length);
-				spriteBatch.Draw(Main.projectileTexture[projectile.type], drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
+				Main.spriteBatch.Draw(TextureAssets.Projectile[projectile.type].Value, drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
 			}
 			return true;
 		}

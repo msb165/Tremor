@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class KeyMold : ModItem
+	public class KeyMold:TremorModItem
 	{
 		public override void SetDefaults()
 		{

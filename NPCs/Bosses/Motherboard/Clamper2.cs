@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.Motherboard
 {
-	public class Clamper2 : ModNPC
+	public class Clamper2:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{

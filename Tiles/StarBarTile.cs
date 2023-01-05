@@ -6,7 +6,7 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class StarBarTile : ModTile
+	public class StarBarTile:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -27,7 +27,7 @@ namespace Tremor.Tiles
 
         public override bool Drop(int i, int j)
         {
-            Item.NewItem(i * 16, j * 16, 32, 32, ModContent.ItemType<StarBar>());
+            Item.NewItem(null, i * 16, j * 16, 32, 32, ModContent.ItemType<StarBar>());
             return true;
         }
 }}

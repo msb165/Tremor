@@ -1,6 +1,7 @@
 using System;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.Items;
 using Tremor.Items.Brutallisk;
@@ -8,7 +9,7 @@ using Tremor.Items.Brutallisk;
 namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
-	public class Brutallisk : ModNPC
+	public class Brutallisk:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -78,12 +79,12 @@ namespace Tremor.NPCs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskGore4"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskGore4"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskCrystal"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskCrystal"), 1f);
 			}
 			else
 			{
@@ -114,7 +115,7 @@ namespace Tremor.NPCs
 			int XOffset = 1200;
 			int YOffset = 1200;
 			if (Main.rand.Next(190) == 0)
-				NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y - YOffset, ModContent.NPCType<Quetzalcoatl>());
+				NPC.NewNPC(null, (int)player.Center.X + XOffset, (int)player.Center.Y - YOffset, ModContent.NPCType<Quetzalcoatl>());
 
 			timer++;
 			if (timer <= 1000)
@@ -454,21 +455,21 @@ namespace Tremor.NPCs
 
 				if ((int)(Main.time % 120) == 0)
 				{
-					Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, -7, 0, 686, npc.damage, 0, Main.myPlayer, 0f, 0f);
-					Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, 7, 0, 467, npc.damage, 0, Main.myPlayer, 0f, 0f);
-					Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, 0, 7, 467, npc.damage, 0, Main.myPlayer, 0f, 0f);
-					Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, 0, -7, 467, npc.damage, 0, Main.myPlayer, 0f, 0f);
-					Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, -7, -7, 686, npc.damage, 0, Main.myPlayer, 0f, 0f);
-					Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, 7, -7, 467, npc.damage, 0, Main.myPlayer, 0f, 0f);
-					Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, -7, 7, 467, npc.damage, 0, Main.myPlayer, 0f, 0f);
-					Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, 7, 7, 686, npc.damage, 0, Main.myPlayer, 0f, 0f);
+					Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, -7, 0, 686, npc.damage, 0, Main.myPlayer, 0f, 0f);
+					Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, 7, 0, 467, npc.damage, 0, Main.myPlayer, 0f, 0f);
+					Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, 0, 7, 467, npc.damage, 0, Main.myPlayer, 0f, 0f);
+					Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, 0, -7, 467, npc.damage, 0, Main.myPlayer, 0f, 0f);
+					Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, -7, -7, 686, npc.damage, 0, Main.myPlayer, 0f, 0f);
+					Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, 7, -7, 467, npc.damage, 0, Main.myPlayer, 0f, 0f);
+					Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, -7, 7, 467, npc.damage, 0, Main.myPlayer, 0f, 0f);
+					Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, 7, 7, 686, npc.damage, 0, Main.myPlayer, 0f, 0f);
 				}
 
 			}
 
 			if (!Main.expertMode && Main.rand.Next(320) == 0)
 			{
-				Main.PlaySound(29, (int)npc.position.X, (int)npc.position.Y, 97);
+				Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[29], npc.position);//Variant 97
 
 				for (int i = 0; i < 255; ++i)
 				{
@@ -481,7 +482,7 @@ namespace Tremor.NPCs
 
 			if (Main.expertMode && Main.rand.Next(310) == 0)
 			{
-				Main.PlaySound(29, (int)npc.position.X, (int)npc.position.Y, 97);
+				Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[29], npc.position);//Variant 97
 
 				for (int i = 0; i < 255; ++i)
 				{
@@ -494,12 +495,12 @@ namespace Tremor.NPCs
 
 			if (Main.rand.Next(380) == 0)
 			{
-				NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<Naga>());
+				NPC.NewNPC(null, (int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<Naga>());
 			}
 
 			if (Main.rand.Next(380) == 0)
 			{
-				NPC.NewNPC((int)npc.position.Y + 100, (int)npc.position.Y, ModContent.NPCType<Quetzalcoatl>());
+				NPC.NewNPC(null, (int)npc.position.Y + 100, (int)npc.position.Y, ModContent.NPCType<Quetzalcoatl>());
 			}
 
 		}
@@ -515,7 +516,7 @@ namespace Tremor.NPCs
 
 			if (Main.expertMode)
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 
 			if (Main.netMode != 1)
@@ -526,43 +527,43 @@ namespace Tremor.NPCs
 
 				if (!Main.expertMode && Main.rand.NextBool(4))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SnakeDevourer>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SnakeDevourer>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(4))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Awakening>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Awakening>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(4))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<LightningStaff>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<LightningStaff>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(4))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<QuetzalcoatlStave>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<QuetzalcoatlStave>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(4))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TreasureGlaive>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TreasureGlaive>());
 				}
 				if (!Main.expertMode && Main.rand.Next(25) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FallenSnake>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FallenSnake>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Aquamarine>(), Main.rand.Next(10, 18));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Aquamarine>(), Main.rand.Next(10, 18));
 				}
 				if (!Main.expertMode && Main.rand.Next(100) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<StrangeEgg>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<StrangeEgg>());
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrutalliskTrophy>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrutalliskTrophy>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrutalliskMask>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BrutalliskMask>());
 				}
 				TremorWorld.Boss.Brutallisk.Downed();
 			}

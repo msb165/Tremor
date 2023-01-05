@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Bloodshed : ModItem
+	public class Bloodshed:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -27,13 +27,13 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.magicDamage += 0.08f;
-			player.minionDamage += 0.08f;
-			player.meleeDamage += 0.08f;
+			player.GetDamage(DamageClass.Magic) += 0.08f;
+			player.GetDamage(DamageClass.Summon) += 0.08f;
+			player.GetDamage(DamageClass.Melee) += 0.08f;
 			player.statManaMax2 += 60;
 			player.statLifeMax2 += 60;
-			player.meleeCrit += 10;
-			player.magicCrit += 10;
+			player.GetCritChance(DamageClass.Melee) += 10;
+			player.GetCritChance(DamageClass.Magic) += 10;
 		}
 
 		public override void AddRecipes()

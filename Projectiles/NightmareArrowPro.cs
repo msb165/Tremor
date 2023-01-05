@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Projectiles
 {
 	//ported from my tAPI mod because I don't want to make artwork
-	public class NightmareArrowPro : ModProjectile
+	public class NightmareArrowPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -15,7 +15,7 @@ namespace Tremor.Projectiles
 			projectile.friendly = true;
 			projectile.penetrate = -2;
 			projectile.tileCollide = true;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()
@@ -38,7 +38,7 @@ namespace Tremor.Projectiles
 			{
 				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, ModContent.DustType<Dusts.NightmareFlame>(), projectile.oldVelocity.X * 0.1f, projectile.oldVelocity.Y * 0.1f);
 			}
-			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y, 0);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Dig, projectile.position);//Variant 0
 		}
 
 		public override void OnHitPvp(Player target, int damage, bool crit)

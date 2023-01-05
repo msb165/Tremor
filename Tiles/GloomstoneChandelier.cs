@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class GloomstoneChandelier : ModTile
+	public class GloomstoneChandelier:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -37,7 +37,7 @@ namespace Tremor.Tiles
     {
         if(frameX == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<Items.GloomstoneChandelier>());
+            Item.NewItem(null, i * 16, j * 16, 48, 48, ModContent.ItemType<Items.GloomstoneChandelier>());
         }
     }
 }}

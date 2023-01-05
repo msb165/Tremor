@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class TheHauntPro : ModProjectile
+	public class TheHauntPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PoisonRod : ModItem
+	public class PoisonRod:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 21;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 50;
 			item.height = 52;
 			item.useTime = 25;

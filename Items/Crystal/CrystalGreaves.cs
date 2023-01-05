@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Crystal
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class CrystalGreaves : ModItem
+	public class CrystalGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items.Crystal
 
 		public override void UpdateEquip(Player p)
 		{
-			p.thrownCrit += 20;
+			p.GetCritChance(DamageClass.Throwing) += 20;
 		}
 
 		public override void AddRecipes()

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Fungus
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class FungusGreaves : ModItem
+	public class FungusGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()

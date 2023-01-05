@@ -9,7 +9,7 @@ using Tremor.Items.Dark;
 
 namespace Tremor.NPCs
 {
-	public class DarkDruid : ModNPC
+	public class DarkDruid:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -31,19 +31,19 @@ namespace Tremor.NPCs
 			npc.HitSound = SoundID.NPCHit2;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 6, 50);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<DarkDruidBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<DarkDruidBanner>();
 		}
 
 		public override void AI()
 		{
 			if (Main.netMode != 1 && Main.rand.Next(160) == 0)
-				NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<DarkDruidMinion>());
+				NPC.NewNPC(null, (int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<DarkDruidMinion>());
 
 			if (Main.rand.Next(1000) == 0)
-				Main.PlaySound(105, (int)npc.position.X, (int)npc.position.Y, 1);
+				Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[105], npc.position);//Variant 1
 			if (Main.rand.Next(1000) == 0)
-				Main.PlaySound(91, (int)npc.position.X, (int)npc.position.Y, 1);
+				Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[91], npc.position);//Variant 1
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -53,12 +53,12 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DarkDruidGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DarkDruidGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DarkDruidGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DarkDruidGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore2"), 1f);
 			}
 		}
 
@@ -77,6 +77,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> (Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo)) && Main.bloodMoon && spawnInfo.spawnTileY < Main.worldSurface ? 0.004f : 0f;
+			=> (Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo)) && Main.bloodMoon && spawnInfo.SpawnTileY < Main.worldSurface ? 0.004f : 0f;
 	}
 }

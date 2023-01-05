@@ -4,10 +4,10 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Chemikaze : ModItem
+	public class Chemikaze:TremorModItem
 	{
 
-		public override bool CanEquipAccessory(Player player, int slot)
+		public override bool CanEquipAccessory(Player player, int slot, bool modded)
 		{
 			for (int i = 0; i < player.armor.Length; i++)
 			{

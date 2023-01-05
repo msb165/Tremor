@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SuperBigCannon : ModItem
+	public class SuperBigCannon:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 340;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 70;
 			item.height = 34;
 

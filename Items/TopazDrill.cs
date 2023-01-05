@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 
-	public class TopazDrill : ModItem
+	public class TopazDrill:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 9;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 20;
 			item.height = 12;
 			item.useTime = 8;

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Projectiles
 {
 
-	public class IchorBreathPro : ModProjectile
+	public class IchorBreathPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -16,7 +16,7 @@ namespace Tremor.Projectiles
 			projectile.friendly = true;
 			projectile.penetrate = -1;
 			projectile.tileCollide = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 		}
 
 		public override void SetStaticDefaults()

@@ -5,7 +5,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class Zarprute : ModNPC
+	public class Zarprute:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -36,19 +36,19 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZarpruteGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZarpruteGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZarpruteGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZarpruteGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZarpruteGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZarpruteGore2"), 1f);
 
 				if (Main.netMode == 1) return;
 
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y + 15, ModContent.NPCType<Zarprite>());
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<Zarprite>());
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y - 15, ModContent.NPCType<Zarprite>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y + 15, ModContent.NPCType<Zarprite>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<Zarprite>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y - 15, ModContent.NPCType<Zarprite>());
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> (Helper.NoZoneAllowWater(spawnInfo)) && Main.hardMode && spawnInfo.spawnTileY > Main.rockLayer ? 0.01f : 0f;
+			=> (Helper.NoZoneAllowWater(spawnInfo)) && Main.hardMode && spawnInfo.SpawnTileY > Main.rockLayer ? 0.01f : 0f;
 	}
 }

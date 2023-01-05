@@ -7,7 +7,7 @@ using Tremor.Items.Souls;
 namespace Tremor.Items
 {
 
-	public class Incinerator : ModItem
+	public class Incinerator:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -16,7 +16,7 @@ namespace Tremor.Items
 			item.mana = 12;
 			item.width = 20;
 			item.height = 12;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.useTime = 27;
 			item.useAnimation = 27;
 			item.useStyle = 5;
@@ -42,14 +42,14 @@ namespace Tremor.Items
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
 			{
-				Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY + 2, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX - 1, speedY - 2, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 2, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX - 1, speedY - 2, type, damage, knockBack, Main.myPlayer);
 			}
 			return false;
 		}
 
-		public override bool ConsumeAmmo(Player p)
+		public override bool CanConsumeAmmo(Item ammo, Player p)
 		{
 			return Main.rand.NextBool(2);
 		}

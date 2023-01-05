@@ -5,7 +5,7 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class FrostoneOreTile : ModTile
+	public class FrostoneOreTile:TremorModTile
 {
     public override void SetDefaults()
     {

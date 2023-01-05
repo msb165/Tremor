@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Magmonium
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class MagmoniumHelmet : ModItem
+	public class MagmoniumHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()

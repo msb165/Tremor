@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Desert
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class DesertExplorerGreaves : ModItem
+	public class DesertExplorerGreaves:TremorModItem
 	{
 		public override void SetDefaults()
 		{

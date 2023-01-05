@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ObsidianHeart : ModItem
+	public class ObsidianHeart:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -9,7 +9,7 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class GlassDoorOpen : ModTile
+	public class GlassDoorOpen:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -60,12 +60,12 @@ namespace Tremor.Tiles
 			TileID.Sets.HousingWalls[Type] = true; //needed for non-solid blocks to count as walls
 			AddMapEntry(new Color(200, 200, 200));
 			adjTiles = new int[]{ TileID.OpenDoor };
-			closeDoorID = ModContent.TileType<Tiles.GlassDoorClosed>();
+			CloseDoorID = ModContent.TileType<Tiles.GlassDoorClosed>();
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 48, ModContent.ItemType<GlassDoor>());
+			Item.NewItem(null, i * 16, j * 16, 32, 48, ModContent.ItemType<GlassDoor>());
 		}
 	}
 }

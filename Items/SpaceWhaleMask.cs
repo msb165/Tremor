@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class SpaceWhaleMask : ModItem
+	public class SpaceWhaleMask:TremorModItem
 	{
 
 		public override void SetDefaults()

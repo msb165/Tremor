@@ -6,7 +6,7 @@ using Tremor.Projectiles;
 
 namespace Tremor.Items
 {
-	public class EmeraldStone : ModItem
+	public class EmeraldStone:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -29,14 +29,14 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Summons Emeraldy which lights the area");
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			player.AddBuff(ModContent.BuffType<EmeraldStoneBuff>(), 2);
 			for (int i = 0; i < Main.projectile.Length; i++)
 			{
-				if (Main.projectile[i].type == ModContent.ProjectileType<Emeraldy>() && Main.projectile[i].owner == item.owner)
+				if (Main.projectile[i].type == ModContent.ProjectileType<Emeraldy>() && Main.projectile[i].owner == player.whoAmI)
 				{
-					Main.projectile[i].Center = Main.player[item.owner].Center;
+					Main.projectile[i].Center = Main.player[player.whoAmI].Center;
 				}
 			}
 			return true;

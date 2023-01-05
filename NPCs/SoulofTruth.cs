@@ -9,7 +9,7 @@ using Tremor.Items;
 namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
-	public class SoulofTruth : ModNPC
+	public class SoulofTruth:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -148,10 +148,10 @@ namespace Tremor.NPCs
 
 			if (Main.expertMode && Main.rand.Next(7500) == 0)
 			{
-				NPC.NewNPC((int)npc.position.X - 150, (int)npc.position.Y - 150, 421);
-				NPC.NewNPC((int)npc.position.X + 150, (int)npc.position.Y - 150, 421);
-				NPC.NewNPC((int)npc.position.X - 150, (int)npc.position.Y + 150, 421);
-				NPC.NewNPC((int)npc.position.X + 150, (int)npc.position.Y + 150, 421);
+				NPC.NewNPC(null, (int)npc.position.X - 150, (int)npc.position.Y - 150, 421);
+				NPC.NewNPC(null, (int)npc.position.X + 150, (int)npc.position.Y - 150, 421);
+				NPC.NewNPC(null, (int)npc.position.X - 150, (int)npc.position.Y + 150, 421);
+				NPC.NewNPC(null, (int)npc.position.X + 150, (int)npc.position.Y + 150, 421);
 			}
 
 			if (npc.target != -1 && !RunAway)
@@ -255,7 +255,7 @@ namespace Tremor.NPCs
 				{
 					velocity.X = velocity.X + Main.rand.Next(-spread, spread + 1) * spreadMult;
 					velocity.Y = velocity.Y + Main.rand.Next(-spread, spread + 1) * spreadMult;
-					int i = Projectile.NewProjectile(npc.Center.X, npc.Center.Y + 20, velocity.X, velocity.Y, ShootType, PowerLaserDamage, PowerLaserKB);
+					int i = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y + 20, velocity.X, velocity.Y, ShootType, PowerLaserDamage, PowerLaserKB);
 					Main.projectile[i].hostile = true;
 					Main.projectile[i].friendly = false;
 					Main.projectile[i].tileCollide = false;
@@ -277,9 +277,9 @@ namespace Tremor.NPCs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TruthGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TruthGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TruthGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TruthGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TruthGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TruthGore3"), 1f);
 
 				if (!NPC.AnyNPCs(ModContent.NPCType<SoulofHope>()) && !NPC.AnyNPCs(ModContent.NPCType<SoulofTrust>()))
 				{
@@ -293,7 +293,7 @@ namespace Tremor.NPCs
 
 			if (Main.expertMode && !NPC.AnyNPCs(ModContent.NPCType<SoulofTrust>()) && !NPC.AnyNPCs(ModContent.NPCType<SoulofHope>()))
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 
 			if (Main.netMode != 1)
@@ -307,13 +307,13 @@ namespace Tremor.NPCs
 
 					if (!Main.expertMode && Main.rand.Next(10) == 0)
 					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TrinityTrophy>());
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TrinityTrophy>());
 					}
 
 					if (!Main.expertMode && Main.rand.NextBool())
 					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<OmnikronBar>(), Main.rand.Next(9, 15));
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TrueEssense>(), Main.rand.Next(10, 25));
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<OmnikronBar>(), Main.rand.Next(9, 15));
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TrueEssense>(), Main.rand.Next(10, 25));
 					}
 
 					if (!TremorWorld.Boss.Trinity.IsDowned())
@@ -336,17 +336,17 @@ namespace Tremor.NPCs
 
 				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TruthMask>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TruthMask>());
 				}
 
 				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TrebleClef>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TrebleClef>());
 				}
 
 				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Revolwar>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Revolwar>());
 				}
 
 			}

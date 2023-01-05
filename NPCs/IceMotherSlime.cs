@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class IceMotherSlime : ModNPC
+	public class IceMotherSlime:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -55,13 +55,13 @@ namespace Tremor.NPCs
 
 				if (Main.netMode == 1) return;
 
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y - 48, NPCID.IceSlime);
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y - 48, NPCID.IceSlime);
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y - 48, NPCID.IceSlime);
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y - 48, NPCID.IceSlime);
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y - 48, NPCID.IceSlime);
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y - 48, NPCID.IceSlime);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.spawnTileY < Main.worldSurface && spawnInfo.player.ZoneSnow ? 0.01f : 0f;
+			=> Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.SpawnTileY < Main.worldSurface && spawnInfo.Player.ZoneSnow ? 0.01f : 0f;
 	}
 }

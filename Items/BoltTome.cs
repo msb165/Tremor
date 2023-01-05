@@ -3,14 +3,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class BoltTome : ModItem
+	public class BoltTome:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 26;
-			item.melee = false;
-			item.magic = true;
+			//item.melee = false;
+			item.DamageType = DamageClass.Magic;
 			item.width = 50;
 			item.height = 55;
 			item.useTime = 30;

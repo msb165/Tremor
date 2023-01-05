@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class BoonerangPro : ModProjectile
+	public class BoonerangPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

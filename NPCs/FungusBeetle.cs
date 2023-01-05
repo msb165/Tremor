@@ -8,7 +8,7 @@ using Tremor.Items.Fungus;
 namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
-	public class FungusBeetle : ModNPC
+	public class FungusBeetle:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -41,7 +41,7 @@ namespace Tremor.NPCs
 		{
 			if (Main.expertMode)
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 			if (Main.netMode != 1)
 			{
@@ -50,17 +50,17 @@ namespace Tremor.NPCs
 				int halfLength = npc.width / 2 / 16 + 1;
 				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FungusBeetleMask>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FungusBeetleMask>());
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FungusBeetleTrophy>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FungusBeetleTrophy>());
 				}
 				if (!Main.expertMode)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FungusElement>(), Main.rand.Next(10, 23));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<FungusElement>(), Main.rand.Next(10, 23));
 				}
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 28, Main.rand.Next(9, 22));
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 28, Main.rand.Next(9, 22));
 				TremorWorld.Boss.FungusBeetle.Downed();
 			}
 		}
@@ -69,12 +69,12 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore4"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore4"), 1f);
 				for (int k = 0; k < 10; k++)
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 67, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
@@ -100,10 +100,10 @@ namespace Tremor.NPCs
 
 		void MakeHands()
 		{
-			Hands.X = NPC.NewNPC((int)npc.Center.X - 50, (int)npc.Center.Y, mod.NPCType(Boss_Left_Hand_Type), 0, 1, npc.whoAmI);
-			Hands.Y = NPC.NewNPC((int)npc.Center.X + 50, (int)npc.Center.Y, mod.NPCType(Boss_Right_Hand_Type), 0, -1, npc.whoAmI);
-			Hands.Y = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y - 1000, mod.NPCType(Boss_Down_Hand_Type), 0, -1, npc.whoAmI);
-			Hands.Y = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y + 1000, mod.NPCType(Boss_Up_Hand_Type), 0, -1, npc.whoAmI);
+			Hands.X = NPC.NewNPC(null, (int)npc.Center.X - 50, (int)npc.Center.Y, mod.NPCType(Boss_Left_Hand_Type), 0, 1, npc.whoAmI);
+			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X + 50, (int)npc.Center.Y, mod.NPCType(Boss_Right_Hand_Type), 0, -1, npc.whoAmI);
+			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y - 1000, mod.NPCType(Boss_Down_Hand_Type), 0, -1, npc.whoAmI);
+			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y + 1000, mod.NPCType(Boss_Up_Hand_Type), 0, -1, npc.whoAmI);
 		}
 
 		void CheckHands()
@@ -188,22 +188,22 @@ namespace Tremor.NPCs
 
 			if (Main.rand.Next(120) == 0 && !Main.expertMode)
 			{
-				NPC.NewNPC((int)npc.Center.X - 70, (int)npc.Center.Y, 261);
+				NPC.NewNPC(null, (int)npc.Center.X - 70, (int)npc.Center.Y, 261);
 			}
 
 			if (Main.rand.Next(110) == 0 && Main.expertMode)
 			{
-				NPC.NewNPC((int)npc.Center.X - 70, (int)npc.Center.Y, 261);
+				NPC.NewNPC(null, (int)npc.Center.X - 70, (int)npc.Center.Y, 261);
 			}
 
 			if (Main.rand.Next(200) == 0)
 			{
-				NPC.NewNPC((int)npc.Center.X - 70, (int)npc.Center.Y, ModContent.NPCType<LittleMushroomBug>());
+				NPC.NewNPC(null, (int)npc.Center.X - 70, (int)npc.Center.Y, ModContent.NPCType<LittleMushroomBug>());
 			}
 
 			if (Main.rand.Next(500) == 0)
 			{
-				NPC.NewNPC((int)npc.Center.X - 70, (int)npc.Center.Y, ModContent.NPCType<GreatFungusBug>());
+				NPC.NewNPC(null, (int)npc.Center.X - 70, (int)npc.Center.Y, ModContent.NPCType<GreatFungusBug>());
 			}
 
 			if (npc.life > npc.lifeMax / 2)

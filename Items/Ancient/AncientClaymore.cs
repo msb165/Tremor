@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Ancient
 {
-	public class AncientClaymore : ModItem
+	public class AncientClaymore:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 110;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 88;
 			item.height = 88;
 			item.useTime = 45;

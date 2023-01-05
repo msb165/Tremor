@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class DragonHead : ModItem
+	public class DragonHead:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -22,7 +22,7 @@ namespace Tremor.Items
 			item.shoot = ModContent.ProjectileType<Projectiles.DragonHead>();
 			item.shootSpeed = 13f;
 			item.UseSound = SoundID.Item1;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.channel = true;
 			item.value = 30000;
 

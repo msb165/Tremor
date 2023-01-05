@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ElectricSpear : ModItem
+	public class ElectricSpear:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.width = 70;
 			item.height = 70;
 			item.noUseGraphic = true;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.useTime = 25;
 			item.shoot = ModContent.ProjectileType<Projectiles.ElectricSpearPro>();
 			item.shootSpeed = 5f;

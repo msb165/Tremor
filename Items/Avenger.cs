@@ -3,7 +3,7 @@ using Tremor.Items.Steel;
 
 namespace Tremor.Items
 {
-	public class Avenger : ModItem
+	public class Avenger:TremorModItem
 	{
 		public override void SetDefaults()
 		{

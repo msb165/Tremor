@@ -6,7 +6,7 @@ using Tremor.Items.Sparks;
 
 namespace Tremor.Items
 {
-	public class ThrowerFocus : ModItem
+	public class ThrowerFocus:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -30,8 +30,8 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.thrownDamage += 0.06f;
-			player.thrownCrit += 12;
+			player.GetDamage(DamageClass.Throwing) += 0.06f;
+			player.GetCritChance(DamageClass.Throwing) += 12;
 		}
 
 		public override void AddRecipes()

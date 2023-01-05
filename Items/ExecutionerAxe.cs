@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ExecutionerAxe : ModItem
+	public class ExecutionerAxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 245;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 66;
 			item.height = 66;
 			item.useTime = 45;

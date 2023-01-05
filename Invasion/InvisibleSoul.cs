@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class InvisibleSoul : ModNPC
+	public class InvisibleSoul:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -38,9 +38,9 @@ namespace Tremor.Invasion
 				return 1000f;
 			return 0f;
 
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
+			int x = spawnInfo.SpawnTileX;
+			int y = spawnInfo.SpawnTileY;
+			int tile = Main.tile[x, y].TileType;
 			return InvasionWorld.CyberWrath && y > Main.worldSurface ? 1f : 0f;
 		}
 
@@ -84,7 +84,7 @@ namespace Tremor.Invasion
 				int halfLength = npc.width / 2 / 16 + 1;
 				if (Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ParadoxElement>(), Main.rand.Next(5, 7));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ParadoxElement>(), Main.rand.Next(5, 7));
 				}
 			}
 		}
@@ -189,7 +189,7 @@ namespace Tremor.Invasion
 
 				if (Main.rand.Next(160) == 0)
 				{
-					NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<MiniSoul>());
+					NPC.NewNPC(null, (int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<MiniSoul>());
 				}
 			}
 
@@ -264,12 +264,12 @@ namespace Tremor.Invasion
 
 				if (Main.rand.Next(120) == 0)
 				{
-					NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<MiniSoul>());
+					NPC.NewNPC(null, (int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<MiniSoul>());
 				}
 
 				//if (Main.rand.Next(200) == 0)
 				//{
-				//	NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<CyberSoul>());
+				//	NPC.NewNPC(null, (int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<CyberSoul>());
 				//}
 			}
 		}

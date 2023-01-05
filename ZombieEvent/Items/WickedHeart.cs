@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class WickedHeart : ModItem
+	public class WickedHeart:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -6,10 +6,10 @@ namespace Tremor.Ice.Dungeon
 {
 	public class DungeonWall : ModWall
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.wallHouse[Type] = true;
-			drop = ModContent.ItemType<DungeonWallItem>();
+			ItemDrop = ModContent.ItemType<DungeonWallItem>();
 			AddMapEntry(new Color(35, 87, 122));
 		}
 

@@ -5,7 +5,7 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class CoalBlock : ModTile
+	public class CoalBlock:TremorModTile
 {
     public override void SetDefaults()
     {

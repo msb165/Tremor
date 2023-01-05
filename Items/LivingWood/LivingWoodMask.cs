@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.LivingWood
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class LivingWoodMask : ModItem
+	public class LivingWoodMask:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items.LivingWood
 
 		public override void UpdateEquip(Player player)
 		{
-			player.minionDamage += 0.04f;
+			player.GetDamage(DamageClass.Summon) += 0.04f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

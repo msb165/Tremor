@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Granite
 {
-	public class GraniteMusicBox : ModItem
+	public class GraniteMusicBox:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GiantCricketBanner : ModItem
+	public class GiantCricketBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

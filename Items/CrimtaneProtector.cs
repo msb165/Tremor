@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class CrimtaneProtector : ModItem
+	public class CrimtaneProtector:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class JungleAlloy : ModItem
+	public class JungleAlloy:TremorModItem
 	{
 		public override void SetStaticDefaults()
 		{

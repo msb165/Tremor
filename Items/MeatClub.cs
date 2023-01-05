@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MeatClub : ModItem
+	public class MeatClub:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 52;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 44;
 			item.height = 44;
 			item.useTime = 26;

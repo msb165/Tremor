@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Heaven
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class HeavenLeggings : ModItem
+	public class HeavenLeggings:TremorModItem
 	{
 
 		public override void SetDefaults()

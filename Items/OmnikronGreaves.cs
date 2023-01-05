@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class OmnikronGreaves : ModItem
+	public class OmnikronGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -29,15 +29,12 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 		public override void UpdateEquip(Player player)
 		{
 			player.moveSpeed += 0.5f;
-			player.meleeCrit += 15;
-			player.magicCrit += 15;
-			player.rangedCrit += 15;
-			player.thrownCrit += 15;
+			player.GetCritChance(DamageClass.Generic) += 15;
 			player.GetModPlayer<MPlayer>().alchemicalCrit += 15;
 		}
 

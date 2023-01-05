@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PrizmaticSword : ModItem
+	public class PrizmaticSword:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 65;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 35;
 			item.height = 20;
 

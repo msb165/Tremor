@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Alchemist
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class AlchemasterMask : ModItem
+	public class AlchemasterMask:TremorModItem
 	{
 		public override void SetDefaults()
 		{

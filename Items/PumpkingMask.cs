@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class PumpkingMask : ModItem
+	public class PumpkingMask:TremorModItem
 	{
 
 		public override void SetDefaults()

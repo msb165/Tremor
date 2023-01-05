@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class OmnikronBar : ModItem
+	public class OmnikronBar:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -27,7 +27,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 	}

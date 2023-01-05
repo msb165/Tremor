@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class OrichalcumHeader : ModItem
+	public class OrichalcumHeader:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.thrownDamage += 0.20f;
+			player.GetDamage(DamageClass.Throwing) += 0.20f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -38,7 +38,7 @@ namespace Tremor.Items
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Increases thrown weapon velocity and flower petals will fall on your target for extra damage";
-			player.thrownVelocity += 0.25f;
+			player.ThrownVelocity += 0.25f;
 			player.onHitPetal = true;
 		}
 

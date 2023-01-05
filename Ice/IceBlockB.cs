@@ -3,7 +3,7 @@ using Tremor.Ice.Tree;
 
 namespace Tremor.Ice
 {
-	public class IceBlockB : ModItem
+	public class IceBlockB:TremorModItem
 	{
 		public override void SetDefaults()
 		{

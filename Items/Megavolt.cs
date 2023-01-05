@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Megavolt : ModItem
+	public class Megavolt:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.damage = 223;
 			item.width = 18;
 			item.height = 56;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.useTime = 30;
 			item.shoot = 1;
 			item.shootSpeed = 12f;
@@ -96,7 +96,7 @@ namespace Tremor.Items
 				num149 *= num80;
 				float x4 = vector2.X;
 				float y4 = vector2.Y;
-				Projectile.NewProjectile(x4, y4, num148, num149, ModContent.ProjectileType<Projectiles.ChargedArrow>(), num73, num74, i, 0f, 0f);
+				Projectile.NewProjectile(null, x4, y4, num148, num149, ModContent.ProjectileType<Projectiles.ChargedArrow>(), num73, num74, i, 0f, 0f);
 			}
 			return false;
 		}

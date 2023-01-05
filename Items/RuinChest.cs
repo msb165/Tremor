@@ -2,7 +2,7 @@
 
 namespace Tremor.Items
 {
-	public class RuinChest : ModItem
+	public class RuinChest:TremorModItem
 	{
 		public override void SetDefaults()
 		{

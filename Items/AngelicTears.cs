@@ -6,13 +6,13 @@ using Tremor.Items.Angelite;
 
 namespace Tremor.Items
 {
-	public class AngelicTears : ModItem
+	public class AngelicTears:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 256;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 28;
 			item.height = 30;
 			item.useTime = 14;
@@ -36,7 +36,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 		public override void AddRecipes()

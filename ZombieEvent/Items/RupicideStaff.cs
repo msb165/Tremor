@@ -6,13 +6,13 @@ using Tremor.Items;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class RupicideStaff : ModItem
+	public class RupicideStaff:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 18;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 14;
 			item.width = 40;
 			item.height = 40;
@@ -38,7 +38,7 @@ namespace Tremor.ZombieEvent.Items
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			int proj = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+			int proj = Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
 			Main.projectile[proj].hostile = false;
 			Main.projectile[proj].friendly = true;
 			return false;

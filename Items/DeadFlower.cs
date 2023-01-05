@@ -5,13 +5,13 @@ using Tremor.Items.Flesh;
 
 namespace Tremor.Items
 {
-	public class DeadFlower : ModItem
+	public class DeadFlower:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 12;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 4;
 			item.width = 40;
 			item.height = 40;

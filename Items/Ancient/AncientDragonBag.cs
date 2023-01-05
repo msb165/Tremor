@@ -4,7 +4,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items.Ancient
 {
-	public class AncientDragonBag : ModItem
+	public class AncientDragonBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

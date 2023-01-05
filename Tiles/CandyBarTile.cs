@@ -6,7 +6,7 @@ using Tremor.Items.Candy;
 
 namespace Tremor.Tiles
 {
-	public class CandyBarTile : ModTile
+	public class CandyBarTile:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -29,7 +29,7 @@ namespace Tremor.Tiles
     {
         if(frameX == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<CandyBar>());
+            Item.NewItem(null, i * 16, j * 16, 48, 48, ModContent.ItemType<CandyBar>());
         }
     }
 }}

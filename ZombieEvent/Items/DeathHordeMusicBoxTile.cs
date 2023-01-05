@@ -7,7 +7,7 @@ using Terraria.ObjectData;
 namespace Tremor.ZombieEvent.Items
 {
 
-	class DeathHordeMusicBoxTile : ModTile
+	class DeathHordeMusicBoxTile:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -24,15 +24,15 @@ namespace Tremor.ZombieEvent.Items
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 16, 48, ModContent.ItemType<DeathHordeMusicBox>());
+			Item.NewItem(null, i * 16, j * 16, 16, 48, ModContent.ItemType<DeathHordeMusicBox>());
 		}
 
 		public override void MouseOver(int i, int j)
 		{
 			Player player = Main.player[Main.myPlayer];
 			player.noThrow = 2;
-			player.showItemIcon = true;
-			player.showItemIcon2 = ModContent.ItemType<DeathHordeMusicBox>();
+			player.cursorItemIconEnabled = true;
+			player.cursorItemIconID = ModContent.ItemType<DeathHordeMusicBox>();
 		}
 	}
 }

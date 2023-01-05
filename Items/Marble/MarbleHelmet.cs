@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Marble
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class MarbleHelmet : ModItem
+	public class MarbleHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items.Marble
 
 		public override void UpdateEquip(Player p)
 		{
-			p.thrownVelocity += 0.1f;
+			p.ThrownVelocity += 0.1f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

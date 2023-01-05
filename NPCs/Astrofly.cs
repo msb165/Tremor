@@ -10,7 +10,7 @@ using Tremor.Tiles;
 namespace Tremor.NPCs
 {
 
-	public class Astrofly : ModNPC
+	public class Astrofly:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -61,10 +61,10 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 					Dust.NewDust(npc.position, npc.width, npc.height, 59, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AstroflyGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AstroflyGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AstroflyGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AstroflyGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AstroflyGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AstroflyGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AstroflyGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AstroflyGore3"), 1f);
 			}
 			else
 			{
@@ -79,8 +79,8 @@ namespace Tremor.NPCs
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			int tile = Main.tile[spawnInfo.spawnTileX, spawnInfo.spawnTileY].type;
-			return spawnInfo.spawnTileY < Main.rockLayer && NPC.downedMoonlord && tile == ModContent.TileType<CometiteOreTile>() || tile == ModContent.TileType<HardCometiteOreTile>() ? 0.005f : 0f;
+			int tile = Main.tile[spawnInfo.SpawnTileX, spawnInfo.SpawnTileY].TileType;
+			return spawnInfo.SpawnTileY < Main.rockLayer && NPC.downedMoonlord && tile == ModContent.TileType<CometiteOreTile>() || tile == ModContent.TileType<HardCometiteOreTile>() ? 0.005f : 0f;
 		}
 	}
 }

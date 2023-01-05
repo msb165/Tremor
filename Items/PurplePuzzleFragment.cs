@@ -4,7 +4,7 @@ using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
-	public class PurplePuzzleFragment : ModItem
+	public class PurplePuzzleFragment:TremorModItem
 	{
 		public override void SetDefaults()
 		{

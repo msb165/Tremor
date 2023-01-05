@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class HeaterOfWorldsMask : ModItem
+	public class HeaterOfWorldsMask:TremorModItem
 	{
 
 		public override void SetDefaults()

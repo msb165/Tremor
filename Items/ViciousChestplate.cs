@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class ViciousChestplate : ModItem
+	public class ViciousChestplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,7 +28,7 @@ namespace Tremor.Items
 		public override void UpdateEquip(Player player)
 		{
 			player.maxMinions += 1;
-			player.minionDamage += 0.08f;
+			player.GetDamage(DamageClass.Summon) += 0.08f;
 		}
 
 	}

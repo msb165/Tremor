@@ -7,7 +7,7 @@ namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
 
-	public class IndifferenceSoul : ModNPC
+	public class IndifferenceSoul:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{

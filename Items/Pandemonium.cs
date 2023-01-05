@@ -6,13 +6,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Pandemonium : ModItem
+	public class Pandemonium:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 320;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 52;
 			item.height = 34;
 			item.useTime = 3;
@@ -39,10 +39,10 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
-		public override bool ConsumeAmmo(Player player)
+		public override bool CanConsumeAmmo(Item ammo, Player player)
 		{
 			if (Main.rand.Next(0, 100) <= 75)
 				return false;
@@ -53,9 +53,9 @@ namespace Tremor.Items
 		{
 			float SpeedX = speedX + Main.rand.Next(-15, 16) * 0.05f;
 			float SpeedY = speedY + Main.rand.Next(-15, 16) * 0.05f;
-			Projectile.NewProjectile(position.X, position.Y, SpeedX, SpeedY, type, damage, knockBack, player.whoAmI, 0.0f, 0.0f);
+			Projectile.NewProjectile(null, position.X, position.Y, SpeedX, SpeedY, type, damage, knockBack, player.whoAmI, 0.0f, 0.0f);
 			if (Main.rand.NextBool(2))
-				Projectile.NewProjectile(position.X, position.Y, SpeedX, SpeedY, ModContent.ProjectileType<Projectiles.PandemoniumBullet>(), damage, knockBack, player.whoAmI, 0.0f, 0.0f);
+				Projectile.NewProjectile(null, position.X, position.Y, SpeedX, SpeedY, ModContent.ProjectileType<Projectiles.PandemoniumBullet>(), damage, knockBack, player.whoAmI, 0.0f, 0.0f);
 			return false;
 		}
 	}

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Chaos
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class ChaosGreaves : ModItem
+	public class ChaosGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()

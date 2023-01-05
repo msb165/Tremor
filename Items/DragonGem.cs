@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class DragonGem : ModItem
+	public class DragonGem:TremorModItem
 	{
 
 		public override void SetDefaults()

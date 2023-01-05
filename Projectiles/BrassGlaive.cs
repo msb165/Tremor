@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class BrassGlaive : ModProjectile
+	public class BrassGlaive:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

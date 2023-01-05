@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Blunderbuss : ModItem
+	public class Blunderbuss:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 32;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 40;
 			item.height = 40;
 			item.useTime = 40;

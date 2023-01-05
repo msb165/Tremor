@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
-	public class AngerSoul : ModNPC
+	public class AngerSoul:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{

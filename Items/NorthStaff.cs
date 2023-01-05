@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class NorthStaff : ModItem
+	public class NorthStaff:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 10;
-			item.summon = true;
+			item.DamageType = DamageClass.Summon;
 			item.mana = 12;
 			item.width = 26;
 			item.height = 28;
@@ -46,11 +46,11 @@ namespace Tremor.Items
 			return player.altFunctionUse != 2;
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			if (player.altFunctionUse == 2)
 			{
-				player.MinionNPCTargetAim();
+				player.MinionNPCTargetAim(false);
 			}
 			return base.UseItem(player);
 		}

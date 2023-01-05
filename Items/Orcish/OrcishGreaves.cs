@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Orcish
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class OrcishGreaves : ModItem
+	public class OrcishGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items.Orcish
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.07f;
+			player.GetDamage(DamageClass.Melee) += 0.07f;
 		}
 
 	}

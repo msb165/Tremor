@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.NPCs.Bosses.CogLord.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class CogLordMask : ModItem
+	public class CogLordMask:TremorModItem
 	{
 
 		public override void SetDefaults()

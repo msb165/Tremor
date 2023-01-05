@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items
 {
-	public class FrostWind : ModItem
+	public class FrostWind:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 20;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 46;
 			item.height = 46;
 			item.useTime = 25;

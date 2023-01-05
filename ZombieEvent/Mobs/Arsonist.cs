@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.ZombieEvent.Mobs
 {
 
-	public class Arsonist : ModNPC
+	public class Arsonist:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -55,11 +55,11 @@ namespace Tremor.ZombieEvent.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingHead1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingLeg"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingArm"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingLeg"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingArm"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingHead1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingLeg"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingArm"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingLeg"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingArm"), 1f);
 			}
 		}
 
@@ -80,7 +80,7 @@ namespace Tremor.ZombieEvent.Mobs
 				int halfLength = npc.width / 2 / 16 + 1;
 				if (Main.rand.NextBool(2))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 8, Main.rand.Next(1, 2));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 8, Main.rand.Next(1, 2));
 				};
 			}
 		}

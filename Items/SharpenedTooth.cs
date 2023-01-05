@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SharpenedTooth : ModItem
+	public class SharpenedTooth:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class VortexRing : ModItem
+	public class VortexRing:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,8 +26,8 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.rangedDamage += 0.2f;
-			player.rangedCrit += 15;
+			player.GetDamage(DamageClass.Ranged) += 0.2f;
+			player.GetCritChance(DamageClass.Ranged) += 15;
 			player.ammoCost75 = true;
 		}
 

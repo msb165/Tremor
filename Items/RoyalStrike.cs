@@ -4,13 +4,13 @@ using Tremor.Items.Steel;
 
 namespace Tremor.Items
 {
-	public class RoyalStrike : ModItem
+	public class RoyalStrike:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 189;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 30;
 			item.height = 38;
 			item.useTime = 26;

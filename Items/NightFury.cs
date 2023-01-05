@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class NightFury : ModItem
+	public class NightFury:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -24,7 +24,7 @@ namespace Tremor.Items
 			item.shoot = ModContent.ProjectileType<Projectiles.NightFuryPro>();
 			item.shootSpeed = 15.9F;
 			item.UseSound = SoundID.Item1;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.channel = true;
 		}
 

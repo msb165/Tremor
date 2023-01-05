@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Adamantite
 {
-	public class AdamantiteDisc : ModItem
+	public class AdamantiteDisc:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 44;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 48;
 			item.height = 48;
 			item.useTime = 20;

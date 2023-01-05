@@ -4,7 +4,7 @@ using Tremor.Projectiles.Minions;
 
 namespace Tremor.Buffs
 {
-	public class CrabBuff : ModBuff
+	public class CrabBuff:TremorModBuff
 	{
 		public override void SetDefaults()
 		{

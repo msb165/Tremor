@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SupremePossessedArmorBanner : ModItem
+	public class SupremePossessedArmorBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

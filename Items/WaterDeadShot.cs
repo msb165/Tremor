@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class WaterDeadShot : ModItem
+	public class WaterDeadShot:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.width = 18;
 			item.height = 48;
 			item.useTime = 30;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.shoot = 27;
 
 			item.shootSpeed = 23f;

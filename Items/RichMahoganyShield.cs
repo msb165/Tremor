@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class RichMahoganyShield : ModItem
+	public class RichMahoganyShield:TremorModItem
 	{
 
 		public override void SetDefaults()

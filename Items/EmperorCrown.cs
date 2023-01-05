@@ -7,7 +7,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class EmperorCrown : ModItem
+	public class EmperorCrown:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -45,10 +45,10 @@ namespace Tremor.Items
 			recipe.AddRecipe();
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<TheDarkEmperor>());
-			Main.PlaySound(SoundID.Roar, player.position, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.Roar, player.position);//Variant 0
 			return true;
 		}
 	}

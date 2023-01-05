@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.ZombieEvent.Mobs
 {
 
-	public class Zombomber : ModNPC
+	public class Zombomber:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -42,11 +42,11 @@ namespace Tremor.ZombieEvent.Mobs
 				int halfLength = npc.width / 2 / 16 + 1;
 				if (Main.rand.NextBool(5))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 168, Main.rand.Next(2, 3));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 168, Main.rand.Next(2, 3));
 				}
 				if (Main.rand.NextBool(5))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 166, Main.rand.Next(2, 3));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 166, Main.rand.Next(2, 3));
 				}
 			}
 		}
@@ -59,11 +59,11 @@ namespace Tremor.ZombieEvent.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombomberGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombomberGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombomberGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombomberGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombomberGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombomberGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore3"), 1f);
 			}
 		}
 

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Ice.Items
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class GlacierWoodLeggings : ModItem
+	public class GlacierWoodLeggings:TremorModItem
 	{
 		public override void SetDefaults()
 		{

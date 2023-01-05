@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items.Furniture
 {
-	public class IceBathtub : ModItem
+	public class IceBathtub:TremorModItem
 	{
 		public override void SetStaticDefaults()
 		{

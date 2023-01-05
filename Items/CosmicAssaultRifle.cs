@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class CosmicAssaultRifle : ModItem
+	public class CosmicAssaultRifle:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.damage = 190;
 			item.width = 64;
 			item.height = 28;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.useTime = 15;
 			item.shoot = 207;
 

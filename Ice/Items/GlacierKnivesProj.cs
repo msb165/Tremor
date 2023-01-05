@@ -5,14 +5,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items
 {
-	public class GlacierKnivesProj : ModProjectile
+	public class GlacierKnivesProj:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
 			projectile.width = 10;
 			projectile.height = 26;
 			projectile.friendly = true;
-			projectile.magic = false;
+			projectile.DamageType = DamageClass.Default;//magic = false;
 			projectile.penetrate = 1;
 			projectile.tileCollide = true;
 			projectile.hostile = false;

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class EbonstoneSink : ModItem
+	public class EbonstoneSink:TremorModItem
 	{
 		public override void SetDefaults()
 		{

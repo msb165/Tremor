@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TheTide : ModItem
+	public class TheTide:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 44;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 52;
 			item.height = 22;
 			item.useTime = 15;

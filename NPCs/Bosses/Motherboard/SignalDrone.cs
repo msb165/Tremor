@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.Motherboard
 {
-	public class SignalDrone : ModNPC
+	public class SignalDrone:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -33,7 +33,7 @@ namespace Tremor.NPCs.Bosses.Motherboard
 		{
 			foreach (NPC drone in Main.npc.Where(x => x.type == npc.type && npc.active))
 			{
-				var signalDrone = drone.modNPC as SignalDrone;
+				var signalDrone = drone.ModNPC as SignalDrone;
 				if (signalDrone != null)
 				{
 					signalDrone._immuneTime = 240;

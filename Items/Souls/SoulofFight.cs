@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Souls
 {
-	public class SoulofFight : ModItem
+	public class SoulofFight:TremorModItem
 	{
 		public override void SetDefaults()
 		{

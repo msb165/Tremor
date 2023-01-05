@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.MagicalArmor
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class MagicalRobe : ModItem
+	public class MagicalRobe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -27,7 +27,7 @@ namespace Tremor.Items.MagicalArmor
 
 		public override void UpdateEquip(Player player)
 		{
-			player.magicDamage += 0.04f;
+			player.GetDamage(DamageClass.Magic) += 0.04f;
 			player.statManaMax2 += 20;
 		}
 

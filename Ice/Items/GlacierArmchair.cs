@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items
 {
-	public class GlacierArmchair : ModItem
+	public class GlacierArmchair:TremorModItem
 	{
 		public override void SetDefaults()
 		{

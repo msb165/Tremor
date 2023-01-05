@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Plague
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class PlagueMask : ModItem
+	public class PlagueMask:TremorModItem
 	{
 
 		public override void SetDefaults()

@@ -8,13 +8,14 @@ using Microsoft.Xna.Framework;
 
 using Tremor.Items;
 using Tremor.Items.Souls;
+using Terraria.Audio;
 
 namespace Tremor.NPCs
 {
 	/*
 	 * AI could still use some cleaning up.
 	 */
-	public class SnowEater : ModNPC
+	public class SnowEater:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -79,7 +80,7 @@ namespace Tremor.NPCs
 			{
 				if (npc.ai[0] == 200f)
 				{
-					Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 5);
+					SoundEngine.PlaySound(SoundID.Item5, npc.position);
 				}
 				npc.ai[0] -= 1f;
 			}
@@ -88,7 +89,7 @@ namespace Tremor.NPCs
 				npc.ai[0] = 200f;
 				int num683 = 10;
 				int num684 = 109;
-				int num685 = Projectile.NewProjectile(vector67.X, vector67.Y, num680, num681, num684, num683, 0f, Main.myPlayer, 0f, 0f);
+				int num685 = Projectile.NewProjectile(null, vector67.X, vector67.Y, num680, num681, num684, num683, 0f, Main.myPlayer, 0f, 0f);
 				Main.projectile[num685].ai[0] = 2f;
 				Main.projectile[num685].timeLeft = 300;
 				Main.projectile[num685].friendly = false;
@@ -102,19 +103,19 @@ namespace Tremor.NPCs
 				int num688 = (int)(npc.position.X + npc.width) / 16;
 				int num689 = (int)(npc.position.Y + npc.height) / 16;
 				bool flag75 = false;
-				if (Main.tile[num686, num689] == null)
-				{
-					Main.tile[num686, num689] = new Tile();
-				}
-				if (Main.tile[num687, num689] == null)
-				{
-					Main.tile[num686, num689] = new Tile();
-				}
-				if (Main.tile[num688, num689] == null)
-				{
-					Main.tile[num686, num689] = new Tile();
-				}
-				if ((Main.tile[num686, num689].nactive() && Main.tileSolid[Main.tile[num686, num689].type]) || (Main.tile[num687, num689].nactive() && Main.tileSolid[Main.tile[num687, num689].type]) || (Main.tile[num688, num689].nactive() && Main.tileSolid[Main.tile[num688, num689].type]))
+				//if (Main.tile[num686, num689] == null)
+				//{
+				//	Main.tile[num686, num689] = new Tile();
+				//}
+				//if (Main.tile[num687, num689] == null)
+				//{
+				//	Main.tile[num686, num689] = new Tile();
+				//}
+				//if (Main.tile[num688, num689] == null)
+				//{
+				//	Main.tile[num686, num689] = new Tile();
+				//}
+				if ((Main.tile[num686, num689].nactive() && Main.tileSolid[Main.tile[num686, num689].TileType]) || (Main.tile[num687, num689].nactive() && Main.tileSolid[Main.tile[num687, num689].TileType]) || (Main.tile[num688, num689].nactive() && Main.tileSolid[Main.tile[num688, num689].TileType]))
 				{
 					flag75 = true;
 				}
@@ -164,9 +165,9 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 80, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 80, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/SEGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/SEGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/SEGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SEGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SEGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SEGore2"), 1f);
 
 				for (int k = 0; k < 20; k++)
 				{
@@ -177,6 +178,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> spawnInfo.player.ZoneSnow && spawnInfo.spawnTileY > Main.rockLayer ? 0.01f : 0f;
+			=> spawnInfo.Player.ZoneSnow && spawnInfo.SpawnTileY > Main.rockLayer ? 0.01f : 0f;
 	}
 }

@@ -8,7 +8,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class RuinGhost1 : ModNPC
+	public class RuinGhost1:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -47,16 +47,16 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, 13);
-				Gore.NewGore(npc.position, npc.velocity, 12);
-				Gore.NewGore(npc.position, npc.velocity, 11);
+				Gore.NewGore(null, npc.position, npc.velocity, 13);
+				Gore.NewGore(null, npc.position, npc.velocity, 12);
+				Gore.NewGore(null, npc.position, npc.velocity, 11);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
 			int[] TileArray2 = { ModContent.TileType<Tiles.RuinAltar>(), ModContent.TileType<Tiles.RuinChest>(), TileID.Mudstone };
-			return TileArray2.Contains(Main.tile[spawnInfo.spawnTileX, spawnInfo.spawnTileY].type) && TremorWorld.Boss.TikiTotem.IsDowned() ? 45f : 0f;
+			return TileArray2.Contains(Main.tile[spawnInfo.SpawnTileX, spawnInfo.SpawnTileY].TileType) && TremorWorld.Boss.TikiTotem.IsDowned() ? 45f : 0f;
 		}
 	}
 }

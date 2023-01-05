@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 {
-	public class NovaAlchemistCloud : ModProjectile
+	public class NovaAlchemistCloud:TremorModProjectile
 	{
 
 		public override void SetStaticDefaults()

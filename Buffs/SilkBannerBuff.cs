@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class SilkBannerBuff : ModBuff
+	public class SilkBannerBuff:TremorModBuff
 	{
 		public override void SetDefaults()
 		{

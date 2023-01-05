@@ -9,7 +9,7 @@ using Tremor.Items.Souls;
 
 namespace Tremor.NPCs
 {
-	public class NorthWind : ModNPC
+	public class NorthWind:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -65,6 +65,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NoZoneAllowWater(spawnInfo) && Main.cloudAlpha > 0f && spawnInfo.spawnTileY < Main.worldSurface && spawnInfo.player.ZoneSnow ? 0.06f : 0f;
+			=> Helper.NoZoneAllowWater(spawnInfo) && Main.cloudAlpha > 0f && spawnInfo.SpawnTileY < Main.worldSurface && spawnInfo.Player.ZoneSnow ? 0.06f : 0f;
 	}
 }

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class SamuraiChestplate : ModItem
+	public class SamuraiChestplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeSpeed += 0.25f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.25f;
 		}
 	}
 }

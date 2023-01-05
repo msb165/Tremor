@@ -7,7 +7,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class CloudSlime : ModNPC
+	public class CloudSlime:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -30,8 +30,8 @@ namespace Tremor.NPCs
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath4;
 			npc.value = Item.buyPrice(0, 0, 8, 9);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<CloudSlimeBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<CloudSlimeBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -61,6 +61,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.sky ? 0.02f : 0;
+			=> Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.Sky ? 0.02f : 0;
 	}
 }

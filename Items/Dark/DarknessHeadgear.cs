@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Dark
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class DarknessHeadgear : ModItem
+	public class DarknessHeadgear:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -58,8 +58,8 @@ namespace Tremor.Items.Dark
 
 			if (!Main.dayTime)
 			{
-				player.rangedCrit += 25;
-				player.rangedDamage += 0.30f;
+				player.GetCritChance(DamageClass.Ranged) += 25;
+				player.GetDamage(DamageClass.Ranged) += 0.30f;
 			}
 		}
 

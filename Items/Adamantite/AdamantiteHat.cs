@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Adamantite
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class AdamantiteHat : ModItem
+	public class AdamantiteHat:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,7 +26,7 @@ namespace Tremor.Items.Adamantite
 
 		public override void UpdateEquip(Player player)
 		{
-			player.minionDamage += 0.24f;
+			player.GetDamage(DamageClass.Summon) += 0.24f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

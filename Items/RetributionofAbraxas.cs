@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class RetributionofAbraxas : ModItem
+	public class RetributionofAbraxas:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 185;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 50;
 			item.height = 50;
 			item.scale = 1.3f;

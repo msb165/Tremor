@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class BicholmereBanner : ModItem
+	public class BicholmereBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

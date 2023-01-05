@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Buffs
 {
-	public class TomeRechargeBuff1 : ModBuff
+	public class TomeRechargeBuff1:TremorModBuff
 	{
 		public override void SetDefaults()
 		{

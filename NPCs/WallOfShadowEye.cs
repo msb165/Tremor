@@ -6,12 +6,12 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs
 {
-	public class WallOfShadowEye : ModNPC
+	public class WallOfShadowEye:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Wall of Shadows");
-			NPCID.Sets.TechnicallyABoss[npc.type] = true;
+			NPCID.Sets.ShouldBeCountedAsBoss[npc.type] = true;//was TechnicallyABoss
 		}
 
 		public override void SetDefaults()
@@ -44,21 +44,21 @@ namespace Tremor.NPCs
 
 		public override bool PreAI()
 		{
-			if (Main.wof < 0)
+			if (Main.wofNPCIndex < 0)
 			{
 				npc.active = false;
 			}
 			else
 			{
-				npc.realLife = Main.wof;
-				if (Main.npc[Main.wof].life > 0)
-					npc.life = Main.npc[Main.wof].life;
+				npc.realLife = Main.wofNPCIndex;
+				if (Main.npc[Main.wofNPCIndex].life > 0)
+					npc.life = Main.npc[Main.wofNPCIndex].life;
 				npc.TargetClosest(true);
-				npc.position.X = Main.npc[Main.wof].position.X;
-				npc.direction = Main.npc[Main.wof].direction;
+				npc.position.X = Main.npc[Main.wofNPCIndex].position.X;
+				npc.direction = Main.npc[Main.wofNPCIndex].direction;
 				npc.spriteDirection = npc.direction;
-				float num1 = ((Main.wofB + Main.wofT) / 2);
-				float num2 = (npc.ai[0] <= 0.0 ? ((num1 + Main.wofB) / 2) : ((num1 + Main.wofT) / 2)) - (npc.height / 2);
+				float num1 = ((Main.wofDrawAreaBottom + Main.wofDrawAreaTop) / 2);
+				float num2 = (npc.ai[0] <= 0.0 ? ((num1 + Main.wofDrawAreaBottom) / 2) : ((num1 + Main.wofDrawAreaTop) / 2)) - (npc.height / 2);
 				if (npc.position.Y > num2 + 1)
 					npc.velocity.Y = -1f;
 				else if (npc.position.Y < num2 - 1)
@@ -106,22 +106,22 @@ namespace Tremor.NPCs
 					return false;
 				int num8 = 4;
 				++npc.localAI[1];
-				if (Main.npc[Main.wof].life < Main.npc[Main.wof].lifeMax * 0.75F)
+				if (Main.npc[Main.wofNPCIndex].life < Main.npc[Main.wofNPCIndex].lifeMax * 0.75F)
 				{
 					++npc.localAI[1];
 					++num8;
 				}
-				if (Main.npc[Main.wof].life < Main.npc[Main.wof].lifeMax * 0.5F)
+				if (Main.npc[Main.wofNPCIndex].life < Main.npc[Main.wofNPCIndex].lifeMax * 0.5F)
 				{
 					++npc.localAI[1];
 					++num8;
 				}
-				if (Main.npc[Main.wof].life < Main.npc[Main.wof].lifeMax * 0.25F)
+				if (Main.npc[Main.wofNPCIndex].life < Main.npc[Main.wofNPCIndex].lifeMax * 0.25F)
 				{
 					++npc.localAI[1];
 					num8 += 2;
 				}
-				if (Main.npc[Main.wof].life < Main.npc[Main.wof].lifeMax * 0.1F)
+				if (Main.npc[Main.wofNPCIndex].life < Main.npc[Main.wofNPCIndex].lifeMax * 0.1F)
 				{
 					npc.localAI[1] += 2f;
 					num8 += 3;
@@ -130,7 +130,7 @@ namespace Tremor.NPCs
 				{
 					npc.localAI[1] += 0.5f;
 					++num8;
-					if (Main.npc[Main.wof].life < Main.npc[Main.wof].lifeMax * 0.1F)
+					if (Main.npc[Main.wofNPCIndex].life < Main.npc[Main.wofNPCIndex].lifeMax * 0.1F)
 					{
 						npc.localAI[1] += 2f;
 						num8 += 3;
@@ -156,17 +156,17 @@ namespace Tremor.NPCs
 					float num9 = 9f;
 					int Damage = 11;
 					int Type = 83;
-					if (Main.npc[Main.wof].life < Main.npc[Main.wof].lifeMax * 0.5F)
+					if (Main.npc[Main.wofNPCIndex].life < Main.npc[Main.wofNPCIndex].lifeMax * 0.5F)
 					{
 						++Damage;
 						++num9;
 					}
-					if (Main.npc[Main.wof].life < Main.npc[Main.wof].lifeMax * 0.25F)
+					if (Main.npc[Main.wofNPCIndex].life < Main.npc[Main.wofNPCIndex].lifeMax * 0.25F)
 					{
 						++Damage;
 						++num9;
 					}
-					if (Main.npc[Main.wof].life < Main.npc[Main.wof].lifeMax * 0.1F)
+					if (Main.npc[Main.wofNPCIndex].life < Main.npc[Main.wofNPCIndex].lifeMax * 0.1F)
 					{
 						Damage += 2;
 						num9 += 2f;
@@ -180,7 +180,7 @@ namespace Tremor.NPCs
 					float SpeedY = num11 * num13;
 					vector2.X += SpeedX;
 					vector2.Y += SpeedY;
-					Projectile.NewProjectile(vector2.X, vector2.Y, SpeedX, SpeedY, Type, Damage, 0.0f, Main.myPlayer, 0.0f, 0.0f);
+					Projectile.NewProjectile(null, vector2.X, vector2.Y, SpeedX, SpeedY, Type, Damage, 0.0f, Main.myPlayer, 0.0f, 0.0f);
 				}
 			}
 			return false;

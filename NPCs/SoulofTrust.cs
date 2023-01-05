@@ -8,7 +8,7 @@ using Tremor.Items;
 namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
-	public class SoulofTrust : ModNPC
+	public class SoulofTrust:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -160,8 +160,8 @@ namespace Tremor.NPCs
 
 			if (Main.expertMode && Main.rand.Next(4500) == 0)
 			{
-				NPC.NewNPC((int)npc.position.X - 100, (int)npc.position.Y - 50, 418);
-				NPC.NewNPC((int)npc.position.X + 100, (int)npc.position.Y - 50, 418);
+				NPC.NewNPC(null, (int)npc.position.X - 100, (int)npc.position.Y - 50, 418);
+				NPC.NewNPC(null, (int)npc.position.X + 100, (int)npc.position.Y - 50, 418);
 			}
 
 			if (Main.rand.NextBool(2))
@@ -239,7 +239,7 @@ namespace Tremor.NPCs
 						float spreadMult = 0.05f;
 						velocity.X = velocity.X + Main.rand.Next(-spread, spread + 1) * spreadMult;
 						velocity.Y = velocity.Y + Main.rand.Next(-spread, spread + 1) * spreadMult;
-						int i = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, PowerShootType, PowerBulletDamage, PowerBulletKB);
+						int i = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, PowerShootType, PowerBulletDamage, PowerBulletKB);
 						Main.projectile[i].hostile = true;
 						Main.projectile[i].friendly = true;
 					}
@@ -287,7 +287,7 @@ namespace Tremor.NPCs
 				{
 					velocity.X = velocity.X + Main.rand.Next(-spread, spread + 1) * spreadMult;
 					velocity.Y = velocity.Y + Main.rand.Next(-spread, spread + 1) * spreadMult;
-					int i = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, NormalShootType, NormalBulletDamage, NormalBulletKB);
+					int i = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, NormalShootType, NormalBulletDamage, NormalBulletKB);
 					Main.projectile[i].hostile = true;
 					Main.projectile[i].friendly = false;
 				}
@@ -302,9 +302,9 @@ namespace Tremor.NPCs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TrustGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TrustGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TrustGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TrustGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TrustGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TrustGore3"), 1f);
 
 				if (!NPC.AnyNPCs(ModContent.NPCType<SoulofTruth>()) && !NPC.AnyNPCs(ModContent.NPCType<SoulofHope>()))
 				{
@@ -318,7 +318,7 @@ namespace Tremor.NPCs
 
 			if (Main.expertMode && !NPC.AnyNPCs(ModContent.NPCType<SoulofTruth>()) && !NPC.AnyNPCs(ModContent.NPCType<SoulofHope>()))
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 
 			if (Main.netMode != 1)
@@ -332,13 +332,13 @@ namespace Tremor.NPCs
 
 					if (!Main.expertMode && Main.rand.Next(10) == 0)
 					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TrinityTrophy>());
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TrinityTrophy>());
 					}
 
 					if (!Main.expertMode && Main.rand.NextBool())
 					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<OmnikronBar>(), Main.rand.Next(9, 15));
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TrueEssense>(), Main.rand.Next(10, 25));
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<OmnikronBar>(), Main.rand.Next(9, 15));
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TrueEssense>(), Main.rand.Next(10, 25));
 					}
 
 					if (!TremorWorld.Boss.Trinity.IsDowned())
@@ -361,17 +361,17 @@ namespace Tremor.NPCs
 
 				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TrustMask>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TrustMask>());
 				}
 
 				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Volcannon>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Volcannon>());
 				}
 
 				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<HonestBlade>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<HonestBlade>());
 				}
 
 			}

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Sandstone
 {
-	public class SandstoneChair : ModItem
+	public class SandstoneChair:TremorModItem
 	{
 		public override void SetDefaults()
 		{

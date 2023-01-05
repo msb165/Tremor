@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class RoyalEgg : ModItem
+	public class RoyalEgg:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -32,10 +32,10 @@ namespace Tremor.Items
 			return NPC.downedMoonlord && !NPC.AnyNPCs(ModContent.NPCType<NPCs.Brutallisk>()) && player.ZoneDesert;
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<NPCs.Brutallisk>());
-			Main.PlaySound(SoundID.Roar, player.position, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.Roar, player.position);//Variant 0
 			return true;
 		}
 

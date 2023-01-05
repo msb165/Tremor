@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class KingSuit : ModItem
+	public class KingSuit:TremorModItem
 	{
 
 		public override void SetDefaults()

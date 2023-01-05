@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Coral
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class CoralHelmet : ModItem
+	public class CoralHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()

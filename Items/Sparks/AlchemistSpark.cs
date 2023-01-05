@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Sparks
 {
-	public class AlchemistSpark : ModItem
+	public class AlchemistSpark:TremorModItem
 	{
 		public override void SetStaticDefaults()
 		{

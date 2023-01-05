@@ -8,12 +8,12 @@ using Tremor.Items.Ancient;
 
 namespace Tremor.Items
 {
-	public class Phantablast : ModItem
+	public class Phantablast:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 			item.damage = 83;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 20;
 			item.height = 12;
 			item.useTime = 12;
@@ -67,7 +67,7 @@ namespace Tremor.Items
 				double newAngle = baseAngle + randomAngle; // add the random angle to the angle we add
 				velocity = ((float)newAngle).ToRotationVector2() * magnitude; // make the new velocity based on our offset angle
 																			  // ToRotationVector2 makes a Vector2 from our angle using cosine (X) and sine (Y)
-				Projectile.NewProjectile(position.X, position.Y, velocity.X, velocity.Y, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, velocity.X, velocity.Y, type, damage, knockBack, Main.myPlayer);
 
 				// If you decide to just shoot one projectile like normal, you can choose to simply change speedX and speedY, and return true;
 				// An alternative to this is using the .RotatedBy() or .RotatedByRandom() helpers for Vector2s, but it is important to know how it manipulates the velocity, which is showcased here
@@ -77,7 +77,7 @@ namespace Tremor.Items
 			return false;
 		}
 
-		public override bool ConsumeAmmo(Player p)
+		public override bool CanConsumeAmmo(Item ammo, Player p)
 			=> Main.rand.NextBool();
 
 		public override void AddRecipes()

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class FashionableHat : ModItem
+	public class FashionableHat:TremorModItem
 	{
 
 		public override void SetDefaults()

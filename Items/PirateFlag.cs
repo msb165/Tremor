@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PirateFlag : ModItem
+	public class PirateFlag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -3,14 +3,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class AlchemasterPoisonCloudPro : ModProjectile
+	public class AlchemasterPoisonCloudPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
 
 			projectile.width = 40;
 			projectile.height = 40;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.penetrate = 8;
 			projectile.aiStyle = 92;
 			projectile.hostile = true;

@@ -11,7 +11,7 @@ using Tremor.Items.Crystal;
 
 namespace Tremor.NPCs
 {
-	public class CometHead : ModNPC
+	public class CometHead:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -70,7 +70,7 @@ namespace Tremor.NPCs
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
 			int[] cometTiles = { ModContent.TileType<Tiles.CometiteOreTile>(), ModContent.TileType<Tiles.HardCometiteOreTile>() };
-			return cometTiles.Contains(Main.tile[spawnInfo.spawnTileX, spawnInfo.spawnTileY].type) ? 15f : 0f;
+			return cometTiles.Contains(Main.tile[spawnInfo.SpawnTileX, spawnInfo.SpawnTileY].TileType) ? 15f : 0f;
 		}
 	}
 }

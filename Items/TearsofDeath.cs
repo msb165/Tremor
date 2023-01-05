@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TearsofDeath : ModItem
+	public class TearsofDeath:TremorModItem
 	{
 
 		public override void SetDefaults()

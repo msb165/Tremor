@@ -5,7 +5,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class ChristmasFireplace : ModTile
+	public class ChristmasFireplace:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -23,7 +23,7 @@ namespace Tremor.Tiles
     {
         if(frameX == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<Items.ChristmasFireplace>());
+            Item.NewItem(null, i * 16, j * 16, 48, 48, ModContent.ItemType<Items.ChristmasFireplace>());
         }
     }
 
@@ -32,7 +32,7 @@ namespace Tremor.Tiles
         if(closer)
         {
             Player player = Main.player[Main.myPlayer];
-            int style = Main.tile[i, j].frameX / 15;
+            int style = Main.tile[i, j].TileFrameX / 15;
             string type;
             player.AddBuff(87, 60, true);
         }

@@ -11,7 +11,7 @@ using Tremor.Projectiles;
 
 namespace Tremor.NPCs
 {
-	public class Magus : ModNPC
+	public class Magus:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -64,7 +64,7 @@ namespace Tremor.NPCs
 			Length = Speed / Length;
 			SpeedX = SpeedX * Length;
 			SpeedY = SpeedY * Length;
-			int Proj = Projectile.NewProjectile(npc.Center.X - 10f, npc.Center.Y, SpeedX, SpeedY, ModContent.ProjectileType<MagusBall>(), 14, 1f, Main.myPlayer);
+			int Proj = Projectile.NewProjectile(null, npc.Center.X - 10f, npc.Center.Y, SpeedX, SpeedY, ModContent.ProjectileType<MagusBall>(), 14, 1f, Main.myPlayer);
 			Main.projectile[Proj].timeLeft = 300;
 			Main.projectile[Proj].netUpdate = true;
 		}
@@ -96,6 +96,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Main.invasionType == InvasionID.GoblinArmy && Main.hardMode && spawnInfo.spawnTileY < Main.worldSurface ? 0.08f : 0f;
+			=> Main.invasionType == InvasionID.GoblinArmy && Main.hardMode && spawnInfo.SpawnTileY < Main.worldSurface ? 0.08f : 0f;
 	}
 }

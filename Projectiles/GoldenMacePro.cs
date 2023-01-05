@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class GoldenMacePro : ModProjectile
+	public class GoldenMacePro:TremorModProjectile
 	{
 
 		public override void Kill(int timeLeft)

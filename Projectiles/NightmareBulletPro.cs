@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class NightmareBulletPro : ModProjectile
+	public class NightmareBulletPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -15,7 +15,7 @@ namespace Tremor.Projectiles
 			projectile.height = 30;
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
-			projectile.ranged = true;
+			projectile.DamageType = DamageClass.Ranged;
 			projectile.penetrate = 7;
 			projectile.timeLeft = 600;
 			projectile.alpha = 255;
@@ -55,19 +55,19 @@ namespace Tremor.Projectiles
 				{
 					projectile.velocity.Y = -oldVelocity.Y;
 				}
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 10);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item10, projectile.position);
 			}
 			return false;
 		}
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Vector2 drawOrigin = new Vector2(Main.projectileTexture[projectile.type].Width * 0.5f, projectile.height * 0.5f);
+			Vector2 drawOrigin = new Vector2(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value.Width * 0.5f, projectile.height * 0.5f);
 			for (int k = 0; k < projectile.oldPos.Length; k++)
 			{
 				Vector2 drawPos = projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, projectile.gfxOffY);
 				Color color = projectile.GetAlpha(lightColor) * ((projectile.oldPos.Length - k) / (float)projectile.oldPos.Length);
-				spriteBatch.Draw(Main.projectileTexture[projectile.type], drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
+				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
 			}
 			return true;
 		}

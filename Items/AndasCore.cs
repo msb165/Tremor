@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Wings)]
-	public class AndasCore : ModItem
+	public class AndasCore:TremorModItem
 	{
 		public override void SetDefaults()
 		{

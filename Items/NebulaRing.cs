@@ -1,9 +1,10 @@
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.ID;
 
 namespace Tremor.Items
 {
-	public class NebulaRing : ModItem
+	public class NebulaRing:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -12,7 +13,7 @@ namespace Tremor.Items
 			item.width = 28;
 			item.height = 22;
 			item.value = 250000;
-			item.rare = 8;
+			item.rare = ItemRarityID.Yellow;
 			item.accessory = true;
 		}
 
@@ -27,8 +28,8 @@ namespace Tremor.Items
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
 		{
-			player.magicDamage += 0.2f;
-			player.magicCrit += 15;
+			player.GetDamage(DamageClass.Magic) += 0.2f;
+			player.GetCritChance(DamageClass.Magic) += 15;
 			player.statManaMax2 += 80;
 		}
 

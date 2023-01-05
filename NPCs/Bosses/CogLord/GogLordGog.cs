@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.CogLord
 {
-	public class GogLordGog : ModNPC
+	public class GogLordGog:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{

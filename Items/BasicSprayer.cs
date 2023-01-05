@@ -77,7 +77,7 @@ namespace Tremor.Items
 			recipe.AddRecipe();
 		}
 
-		public override bool ConsumeAmmo(Player player)
+		public override bool CanConsumeAmmo(Item ammo, Player player)
 		{
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.EnchantmentSolution>()) != -1)
 			{
@@ -127,16 +127,16 @@ namespace Tremor.Items
 				{
 					if (player.FindBuffIndex(ModContent.BuffType<Buffs.BottledSpirit>()) != -1)
 					{
-						Projectile.NewProjectile(position.X, position.Y, speedX + 2, speedY + 2, 297, damage, knockBack, Main.myPlayer);
+						Projectile.NewProjectile(null, position.X, position.Y, speedX + 2, speedY + 2, 297, damage, knockBack, Main.myPlayer);
 					}
 					if (player.FindBuffIndex(ModContent.BuffType<Buffs.BigBottledSpirit>()) != -1)
 					{
-						Projectile.NewProjectile(position.X, position.Y, speedX + 3, speedY + 3, 297, damage, knockBack, Main.myPlayer);
-						Projectile.NewProjectile(position.X, position.Y, speedX + 2, speedY + 2, 297, damage, knockBack, Main.myPlayer);
+						Projectile.NewProjectile(null, position.X, position.Y, speedX + 3, speedY + 3, 297, damage, knockBack, Main.myPlayer);
+						Projectile.NewProjectile(null, position.X, position.Y, speedX + 2, speedY + 2, 297, damage, knockBack, Main.myPlayer);
 					}
-					Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
-					Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
-					int k = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+					Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
+					Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
+					int k = Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
 					Main.projectile[k].friendly = true;
 				}
 				return false;
@@ -145,8 +145,8 @@ namespace Tremor.Items
 			{
 				for (int i = 0; i < 1; ++i)
 				{
-					Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY + 1, 297, damage, knockBack, Main.myPlayer);
-					int k = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+					Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 1, 297, damage, knockBack, Main.myPlayer);
+					int k = Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
 					Main.projectile[k].friendly = true;
 				}
 				return false;
@@ -155,9 +155,9 @@ namespace Tremor.Items
 			{
 				for (int i = 0; i < 1; ++i)
 				{
-					Projectile.NewProjectile(position.X, position.Y, speedX + 2, speedY + 2, 297, damage, knockBack, Main.myPlayer);
-					Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY + 1, 297, damage, knockBack, Main.myPlayer);
-					int k = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+					Projectile.NewProjectile(null, position.X, position.Y, speedX + 2, speedY + 2, 297, damage, knockBack, Main.myPlayer);
+					Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 1, 297, damage, knockBack, Main.myPlayer);
+					int k = Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
 					Main.projectile[k].friendly = true;
 				}
 				return false;

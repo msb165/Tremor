@@ -1,9 +1,10 @@
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.ID;
 
 namespace Tremor.Items
 {
-	public class WaterStorm : ModItem
+	public class WaterStorm:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -12,7 +13,7 @@ namespace Tremor.Items
 			item.height = 44;
 
 			item.value = 15000;
-			item.rare = 3;
+			item.rare = ItemRarityID.Orange;
 			item.defense = 3;
 			item.accessory = true;
 		}
@@ -27,7 +28,7 @@ namespace Tremor.Items
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.statManaMax2 += 40;
-			player.magicCrit += 10;
+			player.GetCritChance(DamageClass.Magic) += 10;
 		}
 
 	}

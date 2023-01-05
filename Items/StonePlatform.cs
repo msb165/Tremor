@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class StonePlatform : ModItem
+	public class StonePlatform:TremorModItem
 	{
 		public override void SetDefaults()
 		{

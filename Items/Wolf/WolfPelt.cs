@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Wolf
 {
-	public class WolfPelt : ModItem
+	public class WolfPelt:TremorModItem
 	{
 		public override void SetDefaults()
 		{

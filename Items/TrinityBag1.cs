@@ -4,7 +4,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class TrinityBag1 : ModItem
+	public class TrinityBag1:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -29,45 +29,46 @@ namespace Tremor.Items
 
 		public override void OpenBossBag(Player player)
 		{
+			//TODO: Sources
 			if (Main.rand.NextBool(7))
 			{
-				player.QuickSpawnItem(ModContent.ItemType<HopeMask>());
-			}
-			if (Main.rand.NextBool(7))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<TrustMask>());
+				player.QuickSpawnItem(null, ModContent.ItemType<HopeMask>());
 			}
 			if (Main.rand.NextBool(7))
 			{
-				player.QuickSpawnItem(ModContent.ItemType<TruthMask>());
+				player.QuickSpawnItem(null, ModContent.ItemType<TrustMask>());
+			}
+			if (Main.rand.NextBool(7))
+			{
+				player.QuickSpawnItem(null, ModContent.ItemType<TruthMask>());
 			}
 			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(ModContent.ItemType<Banhammer>());
+				player.QuickSpawnItem(null, ModContent.ItemType<Banhammer>());
 			}
 			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(ModContent.ItemType<BestNightmare>());
+				player.QuickSpawnItem(null, ModContent.ItemType<BestNightmare>());
 			}
 			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(ModContent.ItemType<HonestBlade>());
+				player.QuickSpawnItem(null, ModContent.ItemType<HonestBlade>());
 			}
 			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(ModContent.ItemType<Volcannon>());
+				player.QuickSpawnItem(null, ModContent.ItemType<Volcannon>());
 			}
 			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(ModContent.ItemType<TrebleClef>());
+				player.QuickSpawnItem(null, ModContent.ItemType<TrebleClef>());
 			}
 			if (Main.rand.NextBool(3))
 			{
-				player.QuickSpawnItem(ModContent.ItemType<Revolwar>());
+				player.QuickSpawnItem(null, ModContent.ItemType<Revolwar>());
 			}
-			player.QuickSpawnItem(ModContent.ItemType<UnpredictableСompass>());
-			player.QuickSpawnItem(ModContent.ItemType<OmnikronBar>(), Main.rand.Next(20, 36));
-			player.QuickSpawnItem(ModContent.ItemType<TrueEssense>(), Main.rand.Next(10, 25));
+			player.QuickSpawnItem(null, ModContent.ItemType<UnpredictableСompass>());
+			player.QuickSpawnItem(null, ModContent.ItemType<OmnikronBar>(), Main.rand.Next(20, 36));
+			player.QuickSpawnItem(null, ModContent.ItemType<TrueEssense>(), Main.rand.Next(10, 25));
 		}
 	}
 }

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class AndasMask : ModItem
+	public class AndasMask:TremorModItem
 	{
 
 		public override void SetDefaults()

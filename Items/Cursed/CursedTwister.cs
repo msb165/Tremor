@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Cursed
 {
-	public class CursedTwister : ModItem
+	public class CursedTwister:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 82;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 28;
 			item.height = 30;
 			item.useTime = 14;

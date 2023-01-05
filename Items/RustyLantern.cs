@@ -1,10 +1,11 @@
 ﻿using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class RustyLantern : ModItem
+	public class RustyLantern:TremorModItem
 	{
 
 		const int XOffset = -400;
@@ -38,13 +39,13 @@ namespace Tremor.Items
 			return modPlayer.ruinAltar && !NPC.AnyNPCs(ModContent.NPCType<Dragon_HeadB>());
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			Main.NewText("Ancient Dragon has awoken!", 175, 75, 255);
-			Main.PlaySound(15, (int)player.position.X, (int)player.position.Y, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[15], player.position);//Variant 0
 			//if(Main.netMode !=1)
 			//{
-			NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, mod.NPCType(""), 0, NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<Dragon_HeadB>()));
+			NPC.NewNPC(null, (int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, mod.NPCType(""), 0, NPC.NewNPC(null, (int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<Dragon_HeadB>()));
 			//}
 			return true;
 		}

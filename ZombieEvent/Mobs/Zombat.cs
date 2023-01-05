@@ -6,7 +6,7 @@ using Tremor.ZombieEvent.Items;
 namespace Tremor.ZombieEvent.Mobs
 {
 
-	public class Zombat : ModNPC
+	public class Zombat:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -43,9 +43,9 @@ namespace Tremor.ZombieEvent.Mobs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombatGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombatGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombatGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombatGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombatGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombatGore3"), 1f);
 			}
 		}
 
@@ -58,7 +58,7 @@ namespace Tremor.ZombieEvent.Mobs
 				int halfLength = npc.width / 2 / 16 + 1;
 				if (Main.rand.Next(25) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TornWings>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TornWings>());
 				};
 			}
 		}

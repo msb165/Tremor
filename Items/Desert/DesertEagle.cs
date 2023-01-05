@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Desert
 {
-	public class DesertEagle : ModItem
+	public class DesertEagle:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 56;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 52;
 			item.height = 34;
 			item.useTime = 30;

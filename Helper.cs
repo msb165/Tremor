@@ -3,6 +3,7 @@ using System.Globalization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ModLoader;
 
 namespace Tremor
@@ -15,28 +16,28 @@ namespace Tremor
 		#region Spawn helpers
 		public static bool NoInvasion(NPCSpawnInfo spawnInfo)
 		{
-			return !spawnInfo.invasion && ((!Main.pumpkinMoon && !Main.snowMoon) || spawnInfo.spawnTileY > Main.worldSurface || Main.dayTime) && (!Main.eclipse || spawnInfo.spawnTileY > Main.worldSurface || !Main.dayTime);
+			return !spawnInfo.Invasion && ((!Main.pumpkinMoon && !Main.snowMoon) || spawnInfo.SpawnTileY > Main.worldSurface || Main.dayTime) && (!Main.eclipse || spawnInfo.SpawnTileY > Main.worldSurface || !Main.dayTime);
 		}
 
 		public static bool NoBiome(NPCSpawnInfo spawnInfo)
 		{
-			Player player = spawnInfo.player;
-			return !player.ZoneJungle && !player.ZoneDungeon && !player.ZoneCorrupt && !player.ZoneCrimson && !player.ZoneHoly && !player.ZoneSnow && !player.ZoneUndergroundDesert;
+			Player player = spawnInfo.Player;
+			return !player.ZoneJungle && !player.ZoneDungeon && !player.ZoneCorrupt && !player.ZoneCrimson && !player.ZoneHallow && !player.ZoneSnow && !player.ZoneUndergroundDesert;
 		}
 
 		public static bool NoZoneAllowWater(NPCSpawnInfo spawnInfo)
 		{
-			return !spawnInfo.sky && !spawnInfo.player.ZoneMeteor && !spawnInfo.spiderCave;
+			return !spawnInfo.Sky && !spawnInfo.Player.ZoneMeteor && !spawnInfo.SpiderCave;
 		}
 
 		public static bool NoZone(NPCSpawnInfo spawnInfo)
 		{
-			return NoZoneAllowWater(spawnInfo) && !spawnInfo.water;
+			return NoZoneAllowWater(spawnInfo) && !spawnInfo.Water;
 		}
 
 		public static bool NormalSpawn(NPCSpawnInfo spawnInfo)
 		{
-			return !spawnInfo.playerInTown && NoInvasion(spawnInfo);
+			return !spawnInfo.PlayerInTown && NoInvasion(spawnInfo);
 		}
 
 		public static bool NoZoneNormalSpawn(NPCSpawnInfo spawnInfo)
@@ -306,19 +307,19 @@ namespace Tremor
 					{
 						scaleFactor = 0.8f;
 					}
-					Gore gore1 = Gore.NewGoreDirect(projectile.position, default(Vector2), Main.rand.Next(61, 64), 1f);
+					Gore gore1 = Gore.NewGoreDirect(null, projectile.position, default(Vector2), Main.rand.Next(61, 64), 1f);
 					gore1.velocity *= scaleFactor;
 					gore1.velocity.X += 1f;
 					gore1.velocity.Y += 1f;
-					Gore gore2 = Gore.NewGoreDirect(projectile.position, default(Vector2), Main.rand.Next(61, 64), 1f);
+					Gore gore2 = Gore.NewGoreDirect(null, projectile.position, default(Vector2), Main.rand.Next(61, 64), 1f);
 					gore2.velocity *= scaleFactor;
 					gore2.velocity.X -= 1f;
 					gore2.velocity.Y += 1f;
-					Gore gore3 = Gore.NewGoreDirect(projectile.position, default(Vector2), Main.rand.Next(61, 64), 1f);
+					Gore gore3 = Gore.NewGoreDirect(null, projectile.position, default(Vector2), Main.rand.Next(61, 64), 1f);
 					gore3.velocity *= scaleFactor;
 					gore3.velocity.X += 1f;
 					gore3.velocity.Y -= 1f;
-					Gore gore4 = Gore.NewGoreDirect(projectile.position, default(Vector2), Main.rand.Next(61, 64), 1f);
+					Gore gore4 = Gore.NewGoreDirect(null, projectile.position, default(Vector2), Main.rand.Next(61, 64), 1f);
 					gore4.velocity *= scaleFactor;
 					gore4.velocity.X -= 1f;
 					gore4.velocity.Y -= 1f;
@@ -331,7 +332,7 @@ namespace Tremor
 		public static void DrawAroundOrigin(int index, Color lightColor)
 		{
 			Projectile projectile = Main.projectile[index];
-			Texture2D texture2D = Main.projectileTexture[projectile.type];
+			Texture2D texture2D = TextureAssets.Projectile[projectile.type].Value;
 			Vector2 origin = new Vector2(texture2D.Width * 0.5f, texture2D.Height / Main.projFrames[projectile.type] * 0.5f);
 			SpriteEffects effects = (projectile.direction == -1) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
 			Main.spriteBatch.Draw(texture2D, projectile.Center - Main.screenPosition, texture2D.Frame(1, Main.projFrames[projectile.type], 0, projectile.frame), lightColor, projectile.rotation, origin, projectile.scale, effects, 0f);
@@ -343,7 +344,7 @@ namespace Tremor
 			{
 				if (Main.rand.NextBool(drop.DropChance))
 				{
-					Item.NewItem(position, randomBox, drop.ItemType, drop.StackSize);
+					Item.NewItem(null, position, randomBox, drop.ItemType, drop.StackSize);
 				}
 			}
 		}

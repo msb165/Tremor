@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 namespace Tremor.NPCs
 {
 
-	public class ShadowSteed : ModNPC
+	public class ShadowSteed:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -38,17 +38,17 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y,
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y,
 				ModContent.NPCType<ShadowHandTwo>());
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y,
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y,
 				ModContent.NPCType<ShadowHandTwo>());
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y,
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y,
 				ModContent.NPCType<ShadowHandTwo>());
 			}
 		}
@@ -93,7 +93,7 @@ namespace Tremor.NPCs
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
-			Texture2D texture = Main.npcTexture[npc.type];
+			Texture2D texture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2(texture.Width * 0.5F, (texture.Height / Main.npcFrameCount[npc.type]) * 0.5F);
 			SpriteEffects effects = npc.velocity.X < 0 ? SpriteEffects.FlipVertically : SpriteEffects.None;
 			spriteBatch.Draw(texture, npc.Center - Main.screenPosition, npc.frame, drawColor, npc.rotation, origin, 1, effects, 0);

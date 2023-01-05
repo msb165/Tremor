@@ -6,13 +6,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class Relayx : ModItem
+	public class Relayx:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 95;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 50;
 			item.height = 50;
 			item.useTime = 15;
@@ -50,17 +50,17 @@ namespace Tremor.Invasion
 			{
 				if (Main.rand.NextBool(3))
 				{
-					Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ModContent.ProjectileType<RelayxDragonBig>(), item.damage + 200, 10, Main.myPlayer);
+					Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, ModContent.ProjectileType<RelayxDragonBig>(), item.damage + 200, 10, Main.myPlayer);
 				}
 				else
 				{
-					Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ModContent.ProjectileType<RelayxDragon>(), item.damage + 100, 10, Main.myPlayer);
+					Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, ModContent.ProjectileType<RelayxDragon>(), item.damage + 100, 10, Main.myPlayer);
 				}
 			}
 			else
 			{
-				Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY + 1, type, item.damage - 20, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, item.damage - 20, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 1, type, item.damage - 20, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, item.damage - 20, knockBack, Main.myPlayer);
 			}
 			return false;
 		}
@@ -68,7 +68,7 @@ namespace Tremor.Invasion
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
 			TooltipLine tip = new TooltipLine(mod, "Tremor:Tooltip", "-Donator Items-");
-			tip.overrideColor = new Color(119, 200, 203);
+			tip.OverrideColor = new Color(119, 200, 203);
 			tooltips.Insert(3, tip);
 		}
 	}

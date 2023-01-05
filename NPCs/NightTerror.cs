@@ -8,7 +8,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class NightTerror : ModNPC
+	public class NightTerror:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -57,21 +57,21 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
 			}
 			else
 			{
 				for (int k = 0; k < damage / npc.lifeMax * 50; k++)
-					Gore.NewGore(npc.position, npc.velocity, 99, 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> (Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo)) && NPC.downedMoonlord && Main.hardMode && Main.bloodMoon && spawnInfo.spawnTileY < Main.worldSurface ? 0.004f : 0f;
+			=> (Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo)) && NPC.downedMoonlord && Main.hardMode && Main.bloodMoon && spawnInfo.SpawnTileY < Main.worldSurface ? 0.004f : 0f;
 	}
 }

@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class MechanicalFirefly : ModNPC
+	public class MechanicalFirefly:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -41,15 +41,15 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(npc.position, npc.velocity, 61, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 61, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 62, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 62, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 63, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 61, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 61, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 62, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 62, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 63, 1f);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && NPC.downedMoonlord && Main.hardMode && Main.bloodMoon && spawnInfo.spawnTileY < Main.worldSurface ? 0.007f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && NPC.downedMoonlord && Main.hardMode && Main.bloodMoon && spawnInfo.SpawnTileY < Main.worldSurface ? 0.007f : 0f;
 	}
 }

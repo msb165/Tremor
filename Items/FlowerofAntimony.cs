@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class FlowerofAntimony : ModItem
+	public class FlowerofAntimony:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 60;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 11;
 			item.width = 40;
 			item.height = 40;

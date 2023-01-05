@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class StardustRing : ModItem
+	public class StardustRing:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
 		{
-			player.minionDamage += 0.2f;
+			player.GetDamage(DamageClass.Summon) += 0.2f;
 			player.maxMinions += 2;
 		}
 

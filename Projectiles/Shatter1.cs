@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class Shatter1 : ModProjectile
+	public class Shatter1:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -44,7 +44,7 @@ namespace Tremor.Projectiles
 					projectile.velocity.Y = -oldVelocity.Y;
 				}
 				projectile.velocity *= 0.75f;
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 27);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item27, projectile.position);
 			}
 			return false;
 		}

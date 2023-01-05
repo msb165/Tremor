@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class DeathBlaze : ModItem
+	public class DeathBlaze:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 26;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 28;
 			item.height = 30;
 			item.useTime = 12;

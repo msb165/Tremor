@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class RavenGreaves : ModItem
+	public class RavenGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,8 +28,8 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.05f;
-			player.meleeCrit += 5;
+			player.GetDamage(DamageClass.Melee) += 0.05f;
+			player.GetCritChance(DamageClass.Melee) += 5;
 		}
 
 		public override void AddRecipes()

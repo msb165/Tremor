@@ -5,6 +5,7 @@ using System.Reflection;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -212,31 +213,31 @@ namespace Tremor
 		/// Spawns a new NPC on the given ModItem's position, and returns the instance
 		/// </summary>
 		public static NPC NewNPC(this ModItem item, int type, float ai0 = 0f, float ai1 = 0f, float ai2 = 0f, float ai3 = 0f, int target = 255, int start = 0, float offsetX = 0f, float offsetY = 0f)
-			=> NewNPC(item.item, type, ai0, ai1, ai2, ai3, target, start, offsetX, offsetY);
+			=> NewNPC(item.Item, type, ai0, ai1, ai2, ai3, target, start, offsetX, offsetY);
 
 		/// <summary>
 		/// Spawns a new NPC on the given ModPlayer's position, and returns the instance
 		/// </summary>
 		public static NPC NewNPC(this ModPlayer plr, int type, float ai0 = 0f, float ai1 = 0f, float ai2 = 0f, float ai3 = 0f, int target = 255, int start = 0, float offsetX = 0f, float offsetY = 0f)
-			=> NewNPC(plr.player, type, ai0, ai1, ai2, ai3, target, start, offsetX, offsetY);
+			=> NewNPC(plr.Player, type, ai0, ai1, ai2, ai3, target, start, offsetX, offsetY);
 
 		/// <summary>
 		/// Spawns a new NPC on the given ModProjectile's position, and returns the instance
 		/// </summary>
 		public static NPC NewNPC(this ModProjectile proj, int type, float ai0 = 0f, float ai1 = 0f, float ai2 = 0f, float ai3 = 0f, int target = 255, int start = 0, float offsetX = 0f, float offsetY = 0f)
-			=> NewNPC(proj.projectile, type, ai0, ai1, ai2, ai3, target, start, offsetX, offsetY);
+			=> NewNPC(proj.Projectile, type, ai0, ai1, ai2, ai3, target, start, offsetX, offsetY);
 
 		/// <summary>
 		/// Spawns a new NPC on the given ModNPC's position, and returns the instance
 		/// </summary>
 		public static NPC NewNPC(this ModNPC npc, int type, float ai0 = 0f, float ai1 = 0f, float ai2 = 0f, float ai3 = 0f, int target = 255, int start = 0, float offsetX = 0f, float offsetY = 0f)
-			=> NewNPC(npc.npc, type, ai0, ai1, ai2, ai3, target, start, offsetX, offsetY);
+			=> NewNPC(npc.NPC, type, ai0, ai1, ai2, ai3, target, start, offsetX, offsetY);
 
 		/// <summary>
 		/// Spawns a new NPC on the given Entity's position, and returns the instance
 		/// </summary>
 		public static NPC NewNPC(this Entity entity, int type, float ai0 = 0f, float ai1 = 0f, float ai2 = 0f, float ai3 = 0f, int target = 255, int start = 0, float offsetX = 0f, float offsetY = 0f)
-			=> Main.npc[NPC.NewNPC((int)(entity.position.X + offsetX), (int)(entity.position.Y + offsetY), type, ai0: ai0, ai1: ai1, ai2: ai2, ai3: ai3, Target: target, Start: start)];
+			=> Main.npc[NPC.NewNPC(null, (int)(entity.position.X + offsetX), (int)(entity.position.Y + offsetY), type, ai0: ai0, ai1: ai1, ai2: ai2, ai3: ai3, Target: target, Start: start)];
 
 		/// <summary>
 		/// Adds the given item to the chest, if the item is not present yet
@@ -271,58 +272,59 @@ namespace Tremor
 		/// Spawns an item on the given ModPlayer's position, and returns the instance
 		/// </summary>
 		public static Item NewItem(this ModPlayer plr, int type, int stack = 1)
-			=> NewItem(plr.player, type, stack);
+			=> NewItem(plr.Player, type, stack);
 
 		/// <summary>
 		/// Spawns an item on the given ModProjectile's position, and returns the instance
 		/// </summary>
 		public static Item NewItem(this ModProjectile proj, int type, int stack = 1)
-			=> NewItem(proj.projectile, type, stack);
+			=> NewItem(proj.Projectile, type, stack);
 
 		/// <summary>
 		/// Spawns an item on the given ModNPC's position, and returns the instance
 		/// </summary>
 		public static Item NewItem(this ModNPC npc, int type, int stack = 1)
-			=> NewItem(npc.npc, type, stack);
+			=> NewItem(npc.NPC, type, stack);
 
 		/// <summary>
 		/// Spawns an item on the given Entity's position, and returns the instance
 		/// </summary>
 		public static Item NewItem(this Entity entity, int type, int stack = 1)
-			=> Main.item[Item.NewItem((int)entity.position.X, (int)entity.position.Y, entity.width, entity.height, type, stack)];
+			=> Main.item[Item.NewItem(null, (int)entity.position.X, (int)entity.position.Y, entity.width, entity.height, type, stack)];
 
 		/// <summary>
 		/// Spawns an item on the given position, and returns the instance
 		/// </summary>
 		public static Item NewItem(Vector2 position, Vector2 size, int type, int stack = 1)
-			=> Main.item[Item.NewItem((int)position.X, (int)position.Y, (int)size.X, (int)size.Y, type, stack)];
+			=> Main.item[Item.NewItem(null, position, (int)size.X, (int)size.Y, type, stack)];
 
 		/// <summary>
 		/// Get an ID for a sound name, thanks Skiphs for helping
 		/// </summary>
-		public static int GetIdForSoundName(string soundName)
+		public static SoundStyle GetIdForSoundName(string soundName)
 		{
-			for (int i = 0; i < SoundID.TrackableLegacySoundCount; i++)
-			{
-				if (SoundID.GetTrackableLegacySoundPath(i).EndsWith(soundName))
-				{
-					return i;
-				}
-			}
-			return 0;
+
+			//TODO: Is this right?
+			return SoundID.SoundByName.GetValueOrDefault(soundName);//was IndexByName
+			//for (int i = 0; i < SoundID.TrackableLegacySoundCount; i++)
+			//{
+			//	if (SoundID.GetTrackableLegacySoundPath(i).EndsWith(soundName))
+			//	{
+			//		return i;
+			//	}
+			//}
+			//return 0;
 		}
 
-		/// <summary>
-		/// Returns if the next random value is equal to 0
-		/// </summary>
-		public static bool NextBool(this UnifiedRandom rand, int total)
-			=> rand.Next(total) == 0;
+		///// <summary>
+		///// Returns if the next random value is equal to 0
+		///// </summary>
+		//public static bool NextBool(this UnifiedRandom rand, int total) => rand.Next(total) == 0;
 
-		/// <summary>
-		/// Returns if the next random value is below or equal to the chance
-		/// </summary>
-		public static bool NextBool(this UnifiedRandom rand, int chance, int total)
-			=> rand.Next(total) <= chance;
+		///// <summary>
+		///// Returns if the next random value is below or equal to the chance
+		///// </summary>
+		//public static bool NextBool(this UnifiedRandom rand, int chance, int total) => rand.NextBool(total) <= chance;
 
 		/// <summary>
 		/// Draws an NPC glowmask
@@ -334,110 +336,112 @@ namespace Tremor
 							 Color.White, npc.rotation, npc.frame.Size() / 2, npc.scale, effects, 0);
 		}
 
-		/// <summary>
-		/// Draws an armor glowmask for a player, used in PlayerLayers
-		/// </summary>
-		public static void DrawArmorGlowMask(EquipType type, Texture2D texture, PlayerDrawInfo info)
-		{
-			switch (type)
-			{
-				case EquipType.Head:
-				{
-					//Add if(!drawPlayer.invis) ?
-					DrawData drawData = new DrawData(texture, new Vector2((int)(info.position.X - Main.screenPosition.X) + ((info.drawPlayer.width - info.drawPlayer.bodyFrame.Width) / 2), (int)(info.position.Y - Main.screenPosition.Y) + info.drawPlayer.height - info.drawPlayer.bodyFrame.Height + 4) + info.drawPlayer.headPosition + info.headOrigin, info.drawPlayer.bodyFrame, info.headGlowMaskColor, info.drawPlayer.headRotation, info.headOrigin, 1f, info.spriteEffects, 0);
-					drawData.shader = info.headArmorShader;
-					Main.playerDrawData.Add(drawData);
-				}
-				return;
-				case EquipType.Body:
-				{
-					int num2 = 0;//Add in backAcc stuff later
-					Rectangle bodyFrame = info.drawPlayer.bodyFrame;
-					int num123 = num2;
-					bodyFrame.X += num123;
-					bodyFrame.Width -= num123;
-					if (info.drawPlayer.direction == -1)
-					{
-						num123 = 0;
-					}
-					if (!info.drawPlayer.invis)
-					{
-						DrawData drawData = new DrawData(texture, new Vector2((int)(info.position.X - Main.screenPosition.X - (info.drawPlayer.bodyFrame.Width / 2) + (info.drawPlayer.width / 2) + num123), ((int)(info.position.Y - Main.screenPosition.Y + info.drawPlayer.height - info.drawPlayer.bodyFrame.Height + 4))) + info.drawPlayer.bodyPosition + new Vector2(info.drawPlayer.bodyFrame.Width / 2, info.drawPlayer.bodyFrame.Height / 2), bodyFrame, info.bodyGlowMaskColor, info.drawPlayer.bodyRotation, info.bodyOrigin, 1f, info.spriteEffects, 0);
-						drawData.shader = info.bodyArmorShader;
-						Main.playerDrawData.Add(drawData);
-					}
-				}
-				return;
-				case EquipType.Legs:
-				{
-					if (info.drawPlayer.shoe != 15 || info.drawPlayer.wearsRobe)
-					{
-						if (!info.drawPlayer.invis)
-						{
-							DrawData drawData = new DrawData(texture, new Vector2((int)(info.position.X - Main.screenPosition.X - (info.drawPlayer.legFrame.Width / 2) + (info.drawPlayer.width / 2)), (int)(info.position.Y - Main.screenPosition.Y + info.drawPlayer.height - info.drawPlayer.legFrame.Height + 4)) + info.drawPlayer.legPosition + info.legOrigin, info.drawPlayer.legFrame, info.legGlowMaskColor, info.drawPlayer.legRotation, info.legOrigin, 1f, info.spriteEffects, 0);
-							drawData.shader = info.legArmorShader;
-							Main.playerDrawData.Add(drawData);
-						}
-					}
-				}
-				return;
-			}
-		}
+		//TODO: [Skipped for 1.4] PlayerDrawLayers
+		///// <summary>
+		///// Draws an armor glowmask for a player, used in PlayerLayers
+		///// </summary>
+		//public static void DrawArmorGlowMask(EquipType type, Texture2D texture, PlayerDrawInfo info)
+		//{
+		//	switch (type)
+		//	{
+		//		case EquipType.Head:
+		//		{
+		//			//Add if(!drawPlayer.invis) ?
+		//			DrawData drawData = new DrawData(texture, new Vector2((int)(info.position.X - Main.screenPosition.X) + ((info.drawPlayer.width - info.drawPlayer.bodyFrame.Width) / 2), (int)(info.position.Y - Main.screenPosition.Y) + info.drawPlayer.height - info.drawPlayer.bodyFrame.Height + 4) + info.drawPlayer.headPosition + info.headOrigin, info.drawPlayer.bodyFrame, info.headGlowMaskColor, info.drawPlayer.headRotation, info.headOrigin, 1f, info.spriteEffects, 0);
+		//			drawData.shader = info.headArmorShader;
+		//			Main.playerDrawData.Add(drawData);
+		//		}
+		//		return;
+		//		case EquipType.Body:
+		//		{
+		//			int num2 = 0;//Add in backAcc stuff later
+		//			Rectangle bodyFrame = info.drawPlayer.bodyFrame;
+		//			int num123 = num2;
+		//			bodyFrame.X += num123;
+		//			bodyFrame.Width -= num123;
+		//			if (info.drawPlayer.direction == -1)
+		//			{
+		//				num123 = 0;
+		//			}
+		//			if (!info.drawPlayer.invis)
+		//			{
+		//				DrawData drawData = new DrawData(texture, new Vector2((int)(info.position.X - Main.screenPosition.X - (info.drawPlayer.bodyFrame.Width / 2) + (info.drawPlayer.width / 2) + num123), ((int)(info.position.Y - Main.screenPosition.Y + info.drawPlayer.height - info.drawPlayer.bodyFrame.Height + 4))) + info.drawPlayer.bodyPosition + new Vector2(info.drawPlayer.bodyFrame.Width / 2, info.drawPlayer.bodyFrame.Height / 2), bodyFrame, info.bodyGlowMaskColor, info.drawPlayer.bodyRotation, info.bodyOrigin, 1f, info.spriteEffects, 0);
+		//				drawData.shader = info.bodyArmorShader;
+		//				Main.playerDrawData.Add(drawData);
+		//			}
+		//		}
+		//		return;
+		//		case EquipType.Legs:
+		//		{
+		//			if (info.drawPlayer.shoe != 15 || info.drawPlayer.wearsRobe)
+		//			{
+		//				if (!info.drawPlayer.invis)
+		//				{
+		//					DrawData drawData = new DrawData(texture, new Vector2((int)(info.position.X - Main.screenPosition.X - (info.drawPlayer.legFrame.Width / 2) + (info.drawPlayer.width / 2)), (int)(info.position.Y - Main.screenPosition.Y + info.drawPlayer.height - info.drawPlayer.legFrame.Height + 4)) + info.drawPlayer.legPosition + info.legOrigin, info.drawPlayer.legFrame, info.legGlowMaskColor, info.drawPlayer.legRotation, info.legOrigin, 1f, info.spriteEffects, 0);
+		//					drawData.shader = info.legArmorShader;
+		//					Main.playerDrawData.Add(drawData);
+		//				}
+		//			}
+		//		}
+		//		return;
+		//	}
+		//}
 
-		/// <summary>
-		/// Draws an item glowmask for the item a player is holding, used in PlayerLayers
-		/// </summary>
-		public static void DrawItemGlowMask(Texture2D texture, PlayerDrawInfo info)
-		{
-			Item item=info.drawPlayer.HeldItem;
-			if(info.shadow!=0f||info.drawPlayer.frozen||((info.drawPlayer.itemAnimation<=0||item.useStyle==0)&&(item.holdStyle<=0||info.drawPlayer.pulley))/*||item.type<=0*/||info.drawPlayer.dead||item.noUseGraphic||(info.drawPlayer.wet&&item.noWet))
-			{
-				return;
-			}
-			Vector2 offset=new Vector2();
-			float rotOffset=0;
-			Vector2 origin=new Vector2();
-			if(item.useStyle==5)
-			{
-				if(Item.staff[item.type])
-				{
-					rotOffset=0.785f*info.drawPlayer.direction;
-					if(info.drawPlayer.gravDir==-1f){rotOffset-=1.57f*info.drawPlayer.direction;}
-					origin=new Vector2(texture.Width*0.5f*(1-info.drawPlayer.direction),(info.drawPlayer.gravDir==-1f)?0:texture.Height);
-					int num86=-(int)origin.X;
-					ItemLoader.HoldoutOrigin(info.drawPlayer,ref origin);
-					offset=new Vector2(origin.X+num86,0);
-				}
-				else
-				{
-					offset=new Vector2(10,texture.Height/2);
-					ItemLoader.HoldoutOffset(info.drawPlayer.gravDir,item.type,ref offset);
-					origin=new Vector2(-offset.X,texture.Height/2);
-					if(info.drawPlayer.direction==-1)
-					{
-						origin.X=texture.Width+offset.X;
-					}
-					offset=new Vector2(texture.Width/2,offset.Y);
-				}
-			}
-			else
-			{
-				origin=new Vector2(texture.Width*0.5f*(1-info.drawPlayer.direction),(info.drawPlayer.gravDir==-1f)?0:texture.Height);
-			}
-			Main.playerDrawData.Add
-			(
-				new DrawData
-				(
-					texture,
-					info.itemLocation-Main.screenPosition+offset,
-					texture.Bounds,
-					new Color(250,250,250,item.alpha),
-					info.drawPlayer.itemRotation+rotOffset,
-					origin,
-					item.scale,info.spriteEffects,0
-				)
-			);
-		}
+		//TODO: [Skipped for 1.4] PlayerDrawLayers
+		///// <summary>
+		///// Draws an item glowmask for the item a player is holding, used in PlayerLayers
+		///// </summary>
+		//public static void DrawItemGlowMask(Texture2D texture, PlayerDrawInfo info)
+		//{
+		//	Item item=info.drawPlayer.HeldItem;
+		//	if(info.shadow!=0f||info.drawPlayer.frozen||((info.drawPlayer.itemAnimation<=0||item.useStyle==0)&&(item.holdStyle<=0||info.drawPlayer.pulley))/*||item.type<=0*/||info.drawPlayer.dead||item.noUseGraphic||(info.drawPlayer.wet&&item.noWet))
+		//	{
+		//		return;
+		//	}
+		//	Vector2 offset=new Vector2();
+		//	float rotOffset=0;
+		//	Vector2 origin=new Vector2();
+		//	if(item.useStyle==5)
+		//	{
+		//		if(Item.staff[item.type])
+		//		{
+		//			rotOffset=0.785f*info.drawPlayer.direction;
+		//			if(info.drawPlayer.gravDir==-1f){rotOffset-=1.57f*info.drawPlayer.direction;}
+		//			origin=new Vector2(texture.Width*0.5f*(1-info.drawPlayer.direction),(info.drawPlayer.gravDir==-1f)?0:texture.Height);
+		//			int num86=-(int)origin.X;
+		//			ItemLoader.HoldoutOrigin(info.drawPlayer,ref origin);
+		//			offset=new Vector2(origin.X+num86,0);
+		//		}
+		//		else
+		//		{
+		//			offset=new Vector2(10,texture.Height/2);
+		//			ItemLoader.HoldoutOffset(info.drawPlayer.gravDir,item.type,ref offset);
+		//			origin=new Vector2(-offset.X,texture.Height/2);
+		//			if(info.drawPlayer.direction==-1)
+		//			{
+		//				origin.X=texture.Width+offset.X;
+		//			}
+		//			offset=new Vector2(texture.Width/2,offset.Y);
+		//		}
+		//	}
+		//	else
+		//	{
+		//		origin=new Vector2(texture.Width*0.5f*(1-info.drawPlayer.direction),(info.drawPlayer.gravDir==-1f)?0:texture.Height);
+		//	}
+		//	Main.playerDrawData.Add
+		//	(
+		//		new DrawData
+		//		(
+		//			texture,
+		//			info.itemLocation-Main.screenPosition+offset,
+		//			texture.Bounds,
+		//			new Color(250,250,250,item.alpha),
+		//			info.drawPlayer.itemRotation+rotOffset,
+		//			origin,
+		//			item.scale,info.spriteEffects,0
+		//		)
+		//	);
+		//}
 
 		/// <summary>
 		/// Draws an item glowmask that is in the world
@@ -459,13 +463,13 @@ namespace Tremor
 			);
 		}
 
-		// DO NOT remove this method
-		// The trick here is to reference System.Core is some way, in any class
-		// This is a trick to get the mod to compile with extension methods
-		// Normally you would get an error, this is a workaround trick for now
-		public static void RedundantFunc()
-		{
-			var something = Enumerable.Range(1, 10);
-		}
+		//// DO NOT remove this method
+		//// The trick here is to reference System.Core is some way, in any class
+		//// This is a trick to get the mod to compile with extension methods
+		//// Normally you would get an error, this is a workaround trick for now
+		//public static void RedundantFunc()
+		//{
+		//	var something = Enumerable.Range(1, 10);
+		//}
 	}
 }

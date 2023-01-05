@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class EbonwoodArmchair : ModItem
+	public class EbonwoodArmchair:TremorModItem
 	{
 		public override void SetDefaults()
 		{

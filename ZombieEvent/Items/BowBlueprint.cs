@@ -3,7 +3,7 @@ using Tremor.Items;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class BowBlueprint : ModItem
+	public class BowBlueprint:TremorModItem
 	{
 		public override void SetDefaults()
 		{

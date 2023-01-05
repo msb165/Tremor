@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 
-	public class SpiderMeat : ModItem
+	public class SpiderMeat:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -28,7 +28,7 @@ namespace Tremor.Items
 			Tooltip.SetDefault("'I don't see anything wrong with it, eat it!'");
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			player.AddBuff(22, 10000, true);
 			player.AddBuff(32, 10000, true);

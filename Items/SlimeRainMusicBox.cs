@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SlimeRainMusicBox : ModItem
+	public class SlimeRainMusicBox:TremorModItem
 	{
 		public override void SetDefaults()
 		{

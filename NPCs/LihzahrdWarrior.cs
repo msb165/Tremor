@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class LihzahrdWarrior : ModNPC
+	public class LihzahrdWarrior:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -46,15 +46,15 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/LWGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/LWGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/LWGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/LWGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/LWGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/LWGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/LWGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/LWGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/LWGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/LWGore3"), 1f);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Main.hardMode && spawnInfo.spawnTileType == TileID.LihzahrdBrick && NPC.downedMoonlord && spawnInfo.spawnTileY > Main.rockLayer ? 0.01f : 0f;
+			=> Main.hardMode && spawnInfo.SpawnTileType == TileID.LihzahrdBrick && NPC.downedMoonlord && spawnInfo.SpawnTileY > Main.rockLayer ? 0.01f : 0f;
 	}
 }

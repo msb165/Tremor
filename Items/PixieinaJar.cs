@@ -6,7 +6,7 @@ using Tremor.NPCs;
 namespace Tremor.Items
 {
 
-	public class PixieinaJar : ModItem
+	public class PixieinaJar:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -33,13 +33,13 @@ namespace Tremor.Items
 
 		public override bool CanUseItem(Player player)
 		{
-			return NPC.downedMechBossAny && !Main.dayTime && !NPC.AnyNPCs(ModContent.NPCType<PixieQueen>()) && player.ZoneHoly;
+			return NPC.downedMechBossAny && !Main.dayTime && !NPC.AnyNPCs(ModContent.NPCType<PixieQueen>()) && player.ZoneHallow;
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<PixieQueen>());
-			Main.PlaySound(SoundID.Roar, player.position, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.Roar, player.position);//Variant 0
 			return true;
 		}
 

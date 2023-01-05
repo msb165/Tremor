@@ -4,7 +4,7 @@ using Tremor.NPCs.Bosses.NovaPillar.Tiles;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.Items.Placeable
 {
-	public class NovaMonolith : ModItem
+	public class NovaMonolith:TremorModItem
 	{
 		public override void SetDefaults()
 		{

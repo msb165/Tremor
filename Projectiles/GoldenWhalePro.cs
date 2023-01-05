@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class GoldenWhalePro : ModProjectile
+	public class GoldenWhalePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

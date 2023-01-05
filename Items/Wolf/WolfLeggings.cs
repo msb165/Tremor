@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Wolf
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class WolfLeggings : ModItem
+	public class WolfLeggings:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items.Wolf
 
 		public override void UpdateEquip(Player player)
 		{
-			player.minionDamage += 0.06f;
+			player.GetDamage(DamageClass.Summon) += 0.06f;
 			player.moveSpeed += 0.10f;
 		}
 

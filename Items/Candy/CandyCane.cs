@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Candy
 {
-	public class CandyCane : ModItem
+	public class CandyCane:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 14;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 32;
 			item.height = 28;
 			item.useTime = 32;

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class BerserkerPro : ModProjectile
+	public class BerserkerPro:TremorModProjectile
 	{
 		const float RotationSpeed = 0.05f;
 		const float Distanse = 48;
@@ -16,7 +16,7 @@ namespace Tremor.Projectiles
 			projectile.width = 18;
 			projectile.height = 34;
 			projectile.timeLeft = 6;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 			projectile.aiStyle = -1;
 			projectile.penetrate = -1;
 			projectile.tileCollide = false;

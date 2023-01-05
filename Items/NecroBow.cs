@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class NecroBow : ModItem
+	public class NecroBow:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.width = 16;
 			item.height = 32;
 			item.useTime = 38;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.shoot = 1;
 			item.shootSpeed = 22f;
 			item.useAnimation = 30;

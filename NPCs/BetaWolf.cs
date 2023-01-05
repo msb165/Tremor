@@ -9,7 +9,7 @@ using Tremor.Items.Wolf;
 
 namespace Tremor.NPCs
 {
-	public class BetaWolf : ModNPC
+	public class BetaWolf:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -50,15 +50,15 @@ namespace Tremor.NPCs
 
 				for (int i = 0; i < 2; ++i)
 				{
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot($"Gores/WolfGore{i + 1}"), 1f);
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot($"Gores/BetaWolfGore1{i + 1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/WolfGore{i + 1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/BetaWolfGore1{i + 1}"), 1f);
 				}
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			return Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.player.ZoneSnow && spawnInfo.spawnTileY < Main.worldSurface ? 0.01f : 0f;
+			return Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.Player.ZoneSnow && spawnInfo.SpawnTileY < Main.worldSurface ? 0.01f : 0f;
 		}
 	}
 }

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Alchemist
 {
-	public class AlchemyStation : ModItem
+	public class AlchemyStation:TremorModItem
 	{
 		public override void SetDefaults()
 		{

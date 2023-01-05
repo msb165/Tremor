@@ -5,7 +5,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class CursedBanner : ModTile
+	public class CursedBanner:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -21,9 +21,9 @@ namespace Tremor.Tiles
 
 public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
     {
-        if(Main.tile[i, j].frameX == 0 && Main.tile[i, j].frameY == 0)
+        if(Main.tile[i, j].TileFrameX == 0 && Main.tile[i, j].TileFrameY == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<Items.Cursed.CursedBanner>());
+            Item.NewItem(null, i * 16, j * 16, 48, 48, ModContent.ItemType<Items.Cursed.CursedBanner>());
         }
     }
 
@@ -32,7 +32,7 @@ public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, 
         if(closer)
         {
             Player player = Main.player[Main.myPlayer];
-            int style = Main.tile[i, j].frameX / 15;
+            int style = Main.tile[i, j].TileFrameX / 15;
             string type;
             player.AddBuff(ModContent.BuffType<Buffs.CursedBannerBuff>(), 60, true);
         }

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Ice.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class GlacierWoodHelmet : ModItem
+	public class GlacierWoodHelmet:TremorModItem
 	{
 		public override void SetDefaults()
 		{

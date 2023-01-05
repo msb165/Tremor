@@ -6,7 +6,7 @@ using Tremor.ZombieEvent.Items;
 
 namespace Tremor.ZombieEvent.Mobs
 {
-	public class DiceZombie : ModNPC
+	public class DiceZombie:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -40,14 +40,14 @@ namespace Tremor.ZombieEvent.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingHead1"));
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingLeg"));
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingArm"));
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingLeg"));
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingArm"));
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DiceGore1"));
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DiceGore2"));
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/DiceGore3"));
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingHead1"));
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingLeg"));
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingArm"));
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingLeg"));
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingArm"));
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DiceGore1"));
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DiceGore2"));
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DiceGore3"));
 			}
 		}
 
@@ -55,12 +55,12 @@ namespace Tremor.ZombieEvent.Mobs
 		{
 			if (Main.rand.NextBool())
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Rupicide>(), Main.rand.Next(1, 3));
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Rupicide>(), Main.rand.Next(1, 3));
 			};
 
 			if (Main.rand.NextBool(5))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<StoneDice>());
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<StoneDice>());
 			};
 		}
 	}

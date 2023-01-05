@@ -6,10 +6,10 @@ namespace Tremor.Ice.Items
 {
 	public class GlacierFenceWall : ModWall
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.wallHouse[Type] = true;
-			drop = ModContent.ItemType<GlacierFence>();
+			ItemDrop = ModContent.ItemType<GlacierFence>();
 			AddMapEntry(new Color(36, 43, 102));
 		}
 

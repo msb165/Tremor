@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class SandstormMinion : ModProjectile
+	public class SandstormMinion:TremorModProjectile
 	{
 		const int Frames = 6; // Кол-во кадров
 		const int AnimationRate = 12; // Частота анимации
@@ -91,7 +91,7 @@ namespace Tremor.Projectiles
 				if (NearestNPC == -1)
 					return;
 				Vector2 Velocity = Helper.VelocityToPoint(projectile.Center, Main.npc[NearestNPC].Center, ShootSpeed);
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, Velocity.X, Velocity.Y, ShootType, ShootDamage, ShootKnockback, projectile.owner);
+				Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, Velocity.X, Velocity.Y, ShootType, ShootDamage, ShootKnockback, projectile.owner);
 			}
 		}
 
@@ -124,7 +124,7 @@ namespace Tremor.Projectiles
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			spriteBatch.Draw(Main.projectileTexture[projectile.type], new Rectangle((int)(projectile.position.X - Main.screenPosition.X), (int)(projectile.position.Y - Main.screenPosition.Y), projectile.width, projectile.height), FrameRect, lightColor, projectile.rotation, new Vector2(), (projectile.spriteDirection < 0) ? SpriteEffects.None : SpriteEffects.FlipHorizontally, 0);
+			spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, new Rectangle((int)(projectile.position.X - Main.screenPosition.X), (int)(projectile.position.Y - Main.screenPosition.Y), projectile.width, projectile.height), FrameRect, lightColor, projectile.rotation, new Vector2(), (projectile.spriteDirection < 0) ? SpriteEffects.None : SpriteEffects.FlipHorizontally, 0);
 			return false;
 		}
 	}

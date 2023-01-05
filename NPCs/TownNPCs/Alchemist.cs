@@ -13,18 +13,14 @@ using Tremor.Projectiles.Alchemic;
 namespace Tremor.NPCs.TownNPCs
 {
 	[AutoloadHead]
-	public class Alchemist : ModNPC
+	public class Alchemist:TremorModNPC
 	{
 		public override string Texture => $"{typeof(Alchemist).NamespaceToPath()}/Alchemist";
 
-		public override string[] AltTextures => new[] { $"{typeof(Alchemist).NamespaceToPath()}/Alchemist" };
+		//public override string[] AltTextures => new[] { $"{typeof(Alchemist).NamespaceToPath()}/Alchemist" };
 
-		public override bool Autoload(ref string name)
-		{
-			name = "Alchemist";
-			return mod.Properties.Autoload;
-		}
-
+		//public override string Name => "Alchemist";
+		
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Alchemist");
@@ -179,7 +175,7 @@ namespace Tremor.NPCs.TownNPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot($"Gores/AlchemistGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/AlchemistGore{i+1}"), 1f);
 			}
 		}
 	}

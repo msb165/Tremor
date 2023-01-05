@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Fungus
 {
-	public class FungusElement : ModItem
+	public class FungusElement:TremorModItem
 	{
 
 		public override void SetDefaults()

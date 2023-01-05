@@ -5,7 +5,7 @@ using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
-	public class DeathFormula : ModItem
+	public class DeathFormula:TremorModItem
 	{
 
 		public override void SetDefaults()

@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ThornBall : ModItem
+	public class ThornBall:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 36;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 18;
 			item.height = 18;
 			item.maxStack = 999;

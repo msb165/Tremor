@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class EndlessPainPro : ModProjectile
+	public class EndlessPainPro:TremorModProjectile
 	{
 
 		const int ShootRate = 20; 
@@ -43,7 +43,7 @@ namespace Tremor.Invasion
 			{
 				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 27, projectile.oldVelocity.X * 0.1f, projectile.oldVelocity.Y * 0.1f);
 			}
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 109);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item109, projectile.position);
 		}
 
 		void Shoot()
@@ -71,7 +71,7 @@ namespace Tremor.Invasion
 				if (NearestNPC == -1)
 					return;
 				Vector2 Velocity = Helper.VelocityToPoint(projectile.Center, Main.npc[NearestNPC].Center, ShootSpeed);
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, Velocity.X, Velocity.Y, ShootType, ShootDamage, ShootKnockback, projectile.owner);
+				Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, Velocity.X, Velocity.Y, ShootType, ShootDamage, ShootKnockback, projectile.owner);
 			}
 		}
 

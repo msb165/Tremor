@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ManaFruit : ModItem
+	public class ManaFruit:TremorModItem
 	{
 		public override void SetDefaults()
 		{

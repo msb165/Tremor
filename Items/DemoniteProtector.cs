@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class DemoniteProtector : ModItem
+	public class DemoniteProtector:TremorModItem
 	{
 		public override void SetDefaults()
 		{

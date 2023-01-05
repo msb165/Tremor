@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class DiamondBeamPro : ModProjectile
+	public class DiamondBeamPro:TremorModProjectile
 	{
 		private const int MAX_CHARGE = 50;
 		private const float MOVE_DISTANCE = 60f;       //The distance charge particle from the player center
@@ -32,7 +32,7 @@ namespace Tremor.Projectiles
 			projectile.friendly = true;
 			projectile.penetrate = -1;
 			projectile.tileCollide = false;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.hide = true;
 		}
 
@@ -47,7 +47,7 @@ namespace Tremor.Projectiles
 			if (Charge == MAX_CHARGE)
 			{
 				Vector2 unit = projectile.velocity;
-				DrawLaser(spriteBatch, Main.projectileTexture[projectile.type],
+				DrawLaser(spriteBatch, Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value,
 					Main.player[projectile.owner].Center, unit, 10, projectile.damage,
 					-1.57f, 1f, 1000f, Color.White, (int)MOVE_DISTANCE);
 			}

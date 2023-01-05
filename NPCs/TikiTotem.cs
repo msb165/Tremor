@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.Chat;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -11,7 +13,7 @@ using Tremor.Items;
 namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
-	public class TikiTotem : ModNPC
+	public class TikiTotem:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -78,7 +80,7 @@ namespace Tremor.NPCs
 			}
 			if (NPC.CountNPCS(ModContent.NPCType<TikiSoul>()) <= ((Main.expertMode) ? 6 : 3) && Main.time % 60 == 0 && !_spawnTiki)
 			{
-				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<TikiSoul>());
+				NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<TikiSoul>());
 			}
 			if (NPC.CountNPCS(ModContent.NPCType<TikiSoul>()) >= ((Main.expertMode) ? 6 : 3))
 			{
@@ -98,12 +100,12 @@ namespace Tremor.NPCs
 				npc.dontTakeDamage = false;
 				if (Main.rand.Next(280) == 0 && NPC.CountNPCS(ModContent.NPCType<TikiWarrior>()) < 7)
 				{
-					NPC.NewNPC((int)npc.Center.X - 70, (int)npc.Center.Y, ModContent.NPCType<TikiWarrior>());
+					NPC.NewNPC(null, (int)npc.Center.X - 70, (int)npc.Center.Y, ModContent.NPCType<TikiWarrior>());
 				}
 
 				if (Main.rand.Next(180) == 0 && NPC.CountNPCS(ModContent.NPCType<TikiWarrior>()) < 4)
 				{
-					NPC.NewNPC((int)npc.Center.X + 30, (int)npc.Center.Y, ModContent.NPCType<TikiSorcerer>());
+					NPC.NewNPC(null, (int)npc.Center.X + 30, (int)npc.Center.Y, ModContent.NPCType<TikiSorcerer>());
 				}
 				float num1263 = 2f;
 				npc.noGravity = true;
@@ -167,7 +169,7 @@ namespace Tremor.NPCs
 							num1265 *= num1266;
 							num1264 *= 1f + Main.rand.Next(-20, 21) * 0.02f;
 							num1265 *= 1f + Main.rand.Next(-20, 21) * 0.02f;
-							Projectile.NewProjectile(vector146.X, vector146.Y, num1264, num1265, ModContent.ProjectileType<Projectiles.LizardPro>(), 23, 0f, Main.myPlayer, Main.rand.Next(0, 31), 0f);
+							Projectile.NewProjectile(null, vector146.X, vector146.Y, num1264, num1265, ModContent.ProjectileType<Projectiles.LizardPro>(), 23, 0f, Main.myPlayer, Main.rand.Next(0, 31), 0f);
 						}
 						if (npc.ai[1] >= 180f)
 						{
@@ -191,7 +193,7 @@ namespace Tremor.NPCs
 							num1269 *= num1270;
 							num1268 *= 1f + Main.rand.Next(-20, 21) * 0.01f;
 							num1269 *= 1f + Main.rand.Next(-20, 21) * 0.01f;
-							Projectile.NewProjectile(vector147.X, vector147.Y, num1268, num1269, ModContent.ProjectileType<Projectiles.LizardPro>(), 50, 0f, Main.myPlayer, 0f, 0f);
+							Projectile.NewProjectile(null, vector147.X, vector147.Y, num1268, num1269, ModContent.ProjectileType<Projectiles.LizardPro>(), 50, 0f, Main.myPlayer, 0f, 0f);
 						}
 						if (npc.ai[1] >= 120f)
 						{
@@ -222,7 +224,7 @@ namespace Tremor.NPCs
 							num1274 *= num1275;
 							num1273 *= 1f + Main.rand.Next(-30, 31) * 0.01f;
 							num1274 *= 1f + Main.rand.Next(-30, 31) * 0.01f;
-							Projectile.NewProjectile(vector148.X, vector148.Y, num1273, num1274, ModContent.ProjectileType<Projectiles.LizardPro>(), 23, 0f, Main.myPlayer, 0f, Main.rand.Next(2));
+							Projectile.NewProjectile(null, vector148.X, vector148.Y, num1273, num1274, ModContent.ProjectileType<Projectiles.LizardPro>(), 23, 0f, Main.myPlayer, 0f, Main.rand.Next(2));
 						}
 						if (npc.ai[1] >= 300f)
 						{
@@ -254,7 +256,7 @@ namespace Tremor.NPCs
 							num1278 *= num1279;
 							num1277 *= 1f + Main.rand.Next(-30, 31) * 0.01f;
 							num1278 *= 1f + Main.rand.Next(-30, 31) * 0.01f;
-							Projectile.NewProjectile(vector149.X, vector149.Y, num1277, num1278, 81, 23, 0f, Main.myPlayer, 0f, 0f);
+							Projectile.NewProjectile(null, vector149.X, vector149.Y, num1277, num1278, 81, 23, 0f, Main.myPlayer, 0f, 0f);
 						}
 						if (npc.ai[1] >= 300f)
 						{
@@ -279,7 +281,7 @@ namespace Tremor.NPCs
 						num1281 *= num1282;
 						num1280 *= 1f + Main.rand.Next(-20, 21) * 0.001f;
 						num1281 *= 1f + Main.rand.Next(-20, 21) * 0.001f;
-						Projectile.NewProjectile(vector150.X, vector150.Y, num1280, num1281, ModContent.ProjectileType<Projectiles.LizardPro>(), 23, 0f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(null, vector150.X, vector150.Y, num1280, num1281, ModContent.ProjectileType<Projectiles.LizardPro>(), 23, 0f, Main.myPlayer, 0f, 0f);
 					}
 					if (npc.ai[1] >= 120f)
 					{
@@ -311,7 +313,7 @@ namespace Tremor.NPCs
 						num1286 *= num1287;
 						num1285 *= 1f + Main.rand.Next(-30, 31) * 0.005f;
 						num1286 *= 1f + Main.rand.Next(-30, 31) * 0.005f;
-						Projectile.NewProjectile(vector151.X, vector151.Y, num1285, num1286, 81, 23, 0f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(null, vector151.X, vector151.Y, num1285, num1286, 81, 23, 0f, Main.myPlayer, 0f, 0f);
 					}
 					if (npc.ai[1] >= 240f)
 					{
@@ -393,17 +395,17 @@ namespace Tremor.NPCs
 				if (npc.life < npc.lifeMax * 0.5f && _flag1)
 				{
 					_flag1 = false;
-					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y + 95, ModContent.NPCType<HappySoul>());
+					NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y + 95, ModContent.NPCType<HappySoul>());
 				}
 				if (npc.life < npc.lifeMax * 0.3f && _flag2)
 				{
 					_flag2 = false;
-					NPC.NewNPC((int)npc.Center.X - 50, (int)npc.Center.Y + 110, ModContent.NPCType<AngerSoul>());
+					NPC.NewNPC(null, (int)npc.Center.X - 50, (int)npc.Center.Y + 110, ModContent.NPCType<AngerSoul>());
 				}
 				if (npc.life < npc.lifeMax * 0.1f && _flag3)
 				{
 					_flag3 = false;
-					NPC.NewNPC((int)npc.Center.X + 50, (int)npc.Center.Y + 110, ModContent.NPCType<IndifferenceSoul>());
+					NPC.NewNPC(null, (int)npc.Center.X + 50, (int)npc.Center.Y + 110, ModContent.NPCType<IndifferenceSoul>());
 				}
 			}
 		}
@@ -415,7 +417,7 @@ namespace Tremor.NPCs
 				_timer = 0;
 				for (int i = 0; i < 3; i++)
 				{
-					Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot($"Gores/TikiTotemGore{i + 1}"), 1f);
+					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot($"Gores/TikiTotemGore{i + 1}"), 1f);
 				}
 			}
 		}
@@ -429,7 +431,7 @@ namespace Tremor.NPCs
 				Rectangle frame = new Rectangle(0, 0, 86, 162);
 				frame.Y += 164 * (k / 60);
 
-				spriteBatch.Draw(Main.npcTexture[npc.type], drawPos, frame, color, 0, Vector2.Zero, npc.scale, SpriteEffects.None, 1f);
+				spriteBatch.Draw(TextureAssets.Npc[npc.type].Value, drawPos, frame, color, 0, Vector2.Zero, npc.scale, SpriteEffects.None, 1f);
 			}
 			return true;
 		}
@@ -438,7 +440,7 @@ namespace Tremor.NPCs
 		{
 			if (Main.expertMode)
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 
 			(int type,int chance,int quantity)[] drops = new[]
@@ -461,14 +463,14 @@ namespace Tremor.NPCs
 				{
 					if (Main.rand.NextBool(drops[i].chance))
 					{
-						Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, drops[i].type, drops[i].quantity);
+						Item.NewItem(null, (int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, drops[i].type, drops[i].quantity);
 					}
 				}
 			}
 
 			if (Main.rand.NextBool(10))
 			{
-				Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<TikiTotemTrophy>());
+				Item.NewItem(null, (int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<TikiTotemTrophy>());
 			}
 
 			TremorWorld.Boss.TikiTotem.Downed();
@@ -477,7 +479,7 @@ namespace Tremor.NPCs
 			Main.NewText(msg, 193, 139, 77);
 			if (Main.netMode == NetmodeID.MultiplayerClient)
 			{
-				NetMessage.BroadcastChatMessage(NetworkText.FromLiteral(msg), new Color(193, 139, 77));
+				ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral(msg), new Color(193, 139, 77));
 			}
 		}
 	}

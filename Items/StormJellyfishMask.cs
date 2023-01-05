@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class StormJellyfishMask : ModItem
+	public class StormJellyfishMask:TremorModItem
 	{
 
 		public override void SetDefaults()

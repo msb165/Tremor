@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TrueDeathSickle : ModItem
+	public class TrueDeathSickle:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 71;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 120;
 			item.height = 112;
 			item.useTime = 10;
@@ -34,10 +34,9 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-		public override bool UseItemFrame(Player player)
+		public override void UseItemFrame(Player player)
 		{
 			player.bodyFrame.Y = 3 * player.bodyFrame.Height;
-			return true;
 		}
 
 		public override void AddRecipes()

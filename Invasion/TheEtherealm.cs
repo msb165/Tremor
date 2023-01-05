@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class TheEtherealm : ModItem
+	public class TheEtherealm:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.Invasion
 			item.damage = 100;
 			item.width = 18;
 			item.height = 56;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.useTime = 17;
 			item.shoot = 1;
 			item.shootSpeed = 52f;
@@ -38,13 +38,13 @@ namespace Tremor.Invasion
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
 			{
-				Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY + 1, 440, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, 440, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX - 1, speedY - 1, 440, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX + 2, speedY + 2, 440, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX - 2, speedY - 2, 440, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX + 3, speedY + 3, 440, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX - 3, speedY - 3, 440, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 1, 440, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, 440, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX - 1, speedY - 1, 440, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 2, speedY + 2, 440, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX - 2, speedY - 2, 440, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 3, speedY + 3, 440, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX - 3, speedY - 3, 440, damage, knockBack, Main.myPlayer);
 			}
 			return false;
 		}

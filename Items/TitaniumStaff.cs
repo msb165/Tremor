@@ -5,14 +5,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TitaniumStaff : ModItem
+	public class TitaniumStaff:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Starfury);
 
 			item.damage = 43;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 9;
 			item.width = 40;
 			item.height = 40;

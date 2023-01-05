@@ -10,7 +10,7 @@ using Tremor.Items.Dark;
 namespace Tremor.NPCs
 {
 
-	public class DarkSlime : ModNPC
+	public class DarkSlime:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -43,9 +43,9 @@ namespace Tremor.NPCs
 
 				Dust.NewDust(npc.position, npc.width, npc.height, 191, 2.5f * hitDirection, -2.5f, 0, Color.Green, 0.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 191, 2.5f * hitDirection, -2.5f, 0, Color.Green, 0.7f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
 			}
 		}
 

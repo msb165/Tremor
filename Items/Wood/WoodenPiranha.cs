@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Wood
 {
-	public class WoodenPiranha : ModItem
+	public class WoodenPiranha:TremorModItem
 	{
 		public override void SetDefaults()
 		{

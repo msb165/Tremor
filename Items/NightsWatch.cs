@@ -1,9 +1,10 @@
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.ID;
 
 namespace Tremor.Items
 {
-	public class NightsWatch : ModItem
+	public class NightsWatch:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -11,7 +12,7 @@ namespace Tremor.Items
 			item.width = 22;
 			item.height = 44;
 			item.value = 10000;
-			item.rare = 3;
+			item.rare = ItemRarityID.Orange;
 			item.defense = 6;
 			item.accessory = true;
 		}
@@ -26,13 +27,13 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.magicDamage += 0.08f;
-			player.minionDamage += 0.08f;
-			player.meleeDamage += 0.08f;
+			player.GetDamage(DamageClass.Magic) += 0.08f;
+			player.GetDamage(DamageClass.Summon) += 0.08f;
+			player.GetDamage(DamageClass.Melee) += 0.08f;
 			player.statManaMax2 += 60;
 			player.statLifeMax2 += 60;
-			player.meleeCrit += 10;
-			player.magicCrit += 10;
+			player.GetCritChance(DamageClass.Melee) += 10;
+			player.GetCritChance(DamageClass.Magic) += 10;
 		}
 
 		public override void AddRecipes()

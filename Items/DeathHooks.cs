@@ -3,14 +3,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class DeathHooks : ModItem
+	public class DeathHooks:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 262;
 			item.width = 14;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.height = 84;
 			item.noUseGraphic = true;
 			item.maxStack = 999;

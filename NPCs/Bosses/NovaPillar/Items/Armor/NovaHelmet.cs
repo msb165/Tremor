@@ -6,7 +6,7 @@ using Tremor.NPCs.Bosses.NovaPillar.Projectiles;
 namespace Tremor.NPCs.Bosses.NovaPillar.Items.Armor
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class NovaHelmet : ModItem
+	public class NovaHelmet:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -43,7 +43,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items.Armor
 			player.GetModPlayer<MPlayer>().novaSet = true;
 			if (player.ownedProjectileCounts[ModContent.ProjectileType<NovaCauldron>()] < 1)
 			{
-				Projectile.NewProjectile(player.position, Vector2.Zero, ModContent.ProjectileType<NovaCauldron>(), 50, 0, player.whoAmI);
+				Projectile.NewProjectile(null, player.position, Vector2.Zero, ModContent.ProjectileType<NovaCauldron>(), 50, 0, player.whoAmI);
 			}
 		}
 

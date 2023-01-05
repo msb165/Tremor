@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Doom
 {
-	public class Doombrick : ModItem
+	public class Doombrick:TremorModItem
 	{
 		public override void SetDefaults()
 		{

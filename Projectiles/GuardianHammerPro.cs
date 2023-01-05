@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class GuardianHammerPro : ModProjectile
+	public class GuardianHammerPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

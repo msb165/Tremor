@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class StarLantern : ModItem
+	public class StarLantern:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.AddBuff(11, 10);
-			player.magicDamage += 0.25f;
+			player.GetDamage(DamageClass.Magic) += 0.25f;
 		}
 	}
 }

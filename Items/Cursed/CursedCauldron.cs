@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Cursed
 {
-	public class CursedCauldron : ModItem
+	public class CursedCauldron:TremorModItem
 	{
 		public override void SetDefaults()
 		{

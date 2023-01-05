@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class NightmareBrick : ModItem
+	public class NightmareBrick:TremorModItem
 	{
 		public override void SetDefaults()
 		{

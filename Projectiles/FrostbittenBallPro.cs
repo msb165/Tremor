@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class FrostbittenBallPro : ModProjectile
+	public class FrostbittenBallPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -15,7 +15,7 @@ namespace Tremor.Projectiles
 			projectile.height = 34;
 			projectile.friendly = true;
 			projectile.penetrate = -1; // Penetrates NPCs infinitely.
-			projectile.melee = true; // Deals melee dmg.
+			projectile.DamageType = DamageClass.Melee; // Deals melee dmg.
 
 			projectile.aiStyle = 15; // Set the aiStyle to that of a flail.
 		}
@@ -50,7 +50,7 @@ namespace Tremor.Projectiles
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D texture = ModContent.GetTexture("Tremor/Projectiles/FrostbittenBall_Chain");
+			Texture2D texture = Mod.GetTexture("Tremor/Projectiles/FrostbittenBall_Chain");
 
 			Vector2 position = projectile.Center;
 			Vector2 mountedCenter = Main.player[projectile.owner].MountedCenter;

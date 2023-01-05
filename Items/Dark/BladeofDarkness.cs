@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Dark
 {
-	public class BladeofDarkness : ModItem
+	public class BladeofDarkness:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 75;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 50;
 			item.height = 52;
 			item.useTime = 25;

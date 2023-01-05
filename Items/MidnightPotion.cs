@@ -6,7 +6,7 @@ using Tremor.Items.Alien;
 namespace Tremor.Items
 {
 
-	public class MidnightPotion : ModItem
+	public class MidnightPotion:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -29,7 +29,7 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Increases all stats during night time");
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			player.AddBuff(ModContent.BuffType<Buffs.NightHunting>(), 14400);
 			return true;

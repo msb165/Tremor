@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.NPCs.Bosses.NovaPillar.Items.Armor
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class NovaBreastplate : ModItem
+	public class NovaBreastplate:TremorModItem
 	{
 		public override void SetDefaults()
 		{

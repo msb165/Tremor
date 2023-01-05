@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Tremor.NPCs
 {
-	public class BoneFish : ModNPC
+	public class BoneFish:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -42,14 +42,14 @@ namespace Tremor.NPCs
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Vector2 drawOrigin = new Vector2(Main.npcTexture[npc.type].Width, Main.npcTexture[npc.type].Height * 0.8f);
+			Vector2 drawOrigin = new Vector2(Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Width, Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Height * 0.8f);
 			for (int k = 0; k < npc.oldPos.Length; k++)
 			{
 				SpriteEffects effect = npc.direction == 1 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
 				Color color = npc.GetAlpha(lightColor) * ((npc.oldPos.Length - k) / (float)npc.oldPos.Length);
 				Rectangle frame = new Rectangle(0, 164 * (k / 60), 38, 26);
 
-				spriteBatch.Draw(Main.npcTexture[npc.type], npc.oldPos[k] - Main.screenPosition, frame, color, 0, Vector2.Zero, npc.scale, effect, 1f);
+				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Npc[npc.type].Value, npc.oldPos[k] - Main.screenPosition, frame, color, 0, Vector2.Zero, npc.scale, effect, 1f);
 			}
 			return true;
 		}
@@ -64,7 +64,7 @@ namespace Tremor.NPCs
 		public override void HitEffect(int hitDirection, double damage)
 		{
 			if (npc.life <= 0)
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/BoneFishGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BoneFishGore"), 1f);
 		}
 	}
 }

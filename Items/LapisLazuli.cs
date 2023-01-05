@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class LapisLazuli : ModItem
+	public class LapisLazuli:TremorModItem
 	{
 		public override void SetDefaults()
 		{

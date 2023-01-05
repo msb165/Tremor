@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class CyberBuff : ModBuff
+	public class CyberBuff:TremorModBuff
 	{
 		public override void SetDefaults()
 		{

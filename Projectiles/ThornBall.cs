@@ -1,10 +1,11 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class ThornBall : ModProjectile
+	public class ThornBall:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +14,7 @@ namespace Tremor.Projectiles
 			projectile.height = 18;
 			projectile.aiStyle = 14;
 			projectile.friendly = true;
-			projectile.ranged = true;
+			projectile.DamageType = DamageClass.Ranged;
 			projectile.penetrate = 5;
 			projectile.timeLeft = 9000;
 			projectile.extraUpdates = 1;
@@ -44,7 +45,7 @@ namespace Tremor.Projectiles
 					projectile.velocity.Y = -oldVelocity.Y;
 				}
 				projectile.velocity *= 0.75f;
-				Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y, 0);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Dig, projectile.position);//Variant 0
 			}
 			return false;
 		}
@@ -55,7 +56,7 @@ namespace Tremor.Projectiles
 			{
 				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 21, projectile.oldVelocity.X * 0.7f, projectile.oldVelocity.Y * 0.7f);
 			}
-			Main.PlaySound(6, (int)projectile.position.X, (int)projectile.position.Y, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[6], projectile.position);//Variant 0
 		}
 	}
 }

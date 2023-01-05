@@ -1,13 +1,14 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.Projectiles;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 {
-	public class NovaAlchemist : ModNPC
+	public class NovaAlchemist:TremorModNPC
 	{
 
 		//Int variables
@@ -53,7 +54,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				{
 					NPC parent = Main.npc[NPC.FindFirstNPC(ModContent.NPCType<NovaPillar>())];
 					Vector2 Velocity = Helper.VelocityToPoint(npc.Center, parent.Center, 20);
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CogLordLaser>(), 1, 1f);
+					Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CogLordLaser>(), 1, 1f);
 				}
 				for (int i = 0; i < 5; i++)
 				{
@@ -61,11 +62,11 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				}
 				for (int i = 0; i < 2; i++)
 				{
-					Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot("Gores/NovaAlchemistGore3"));
-					Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot("Gores/NovaAlchemistGore4"));
+					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/NovaAlchemistGore3"));
+					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/NovaAlchemistGore4"));
 				}
-				Gore.NewGore(npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/NovaAlchemistGore2"));
-				Gore.NewGore(npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/NovaAlchemistGore1"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/NovaAlchemistGore2"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/NovaAlchemistGore1"));
 			}
 		}
 
@@ -83,7 +84,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			npc.spriteDirection = npc.direction;
 			if (Main.rand.Next(800) == 0)
 			{
-				Main.PlaySound(SoundID.NPCDeath51, npc.Center);
+				SoundEngine.PlaySound(SoundID.NPCDeath51, npc.Center);
 			}
 			Timer++;
 			NovaAnimation();
@@ -95,9 +96,9 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			{
 				if (Main.netMode != 1)
 				{
-					Main.PlaySound(SoundID.NPCDeath55, npc.Center);
-					NPC.NewNPC((int)npc.Center.X + 25, (int)npc.Center.Y, ModContent.NPCType<NovaAlchemistC>());
-					NPC.NewNPC((int)npc.Center.X - 25, (int)npc.Center.Y, ModContent.NPCType<NovaAlchemistC>());
+					SoundEngine.PlaySound(SoundID.NPCDeath55, npc.Center);
+					NPC.NewNPC(null, (int)npc.Center.X + 25, (int)npc.Center.Y, ModContent.NPCType<NovaAlchemistC>());
+					NPC.NewNPC(null, (int)npc.Center.X - 25, (int)npc.Center.Y, ModContent.NPCType<NovaAlchemistC>());
 				}
 			}
 			if (Timer < 600)
@@ -115,7 +116,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			}
 		}
 
-		public override void PostDraw(SpriteBatch spriteBatch, Color drawColor)
+		public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{
 			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/NovaAlchemist_GlowMask"));
 		}
@@ -143,7 +144,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			if (spawnInfo.player.GetModPlayer<TremorPlayer>().ZoneTowerNova)
+			if (spawnInfo.Player.GetModPlayer<TremorPlayer>().ZoneTowerNova)
 				return 1f;
 			return 0;
 		}

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Wood
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class MourningWoodMask : ModItem
+	public class MourningWoodMask:TremorModItem
 	{
 
 		public override void SetDefaults()

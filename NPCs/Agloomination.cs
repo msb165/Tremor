@@ -7,7 +7,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class Agloomination : ModNPC
+	public class Agloomination:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -55,7 +55,7 @@ namespace Tremor.NPCs
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			return Helper.NoZoneAllowWater(spawnInfo) && NPC.downedPlantBoss && spawnInfo.spawnTileY > Main.rockLayer ? 0.01f : 0f;
+			return Helper.NoZoneAllowWater(spawnInfo) && NPC.downedPlantBoss && spawnInfo.SpawnTileY > Main.rockLayer ? 0.01f : 0f;
 		}
 	}
 }

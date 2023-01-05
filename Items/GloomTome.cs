@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GloomTome : ModItem
+	public class GloomTome:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 23;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 28;
 			item.height = 30;
 			item.useTime = 14;

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class SalamanderMask : ModItem
+	public class SalamanderMask:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -37,7 +37,7 @@ namespace Tremor.Items
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Increases armor penetration by 5";
-			player.armorPenetration = 5;
+			player.GetArmorPenetration(DamageClass.Generic) = 5;
 		}
 
 		public override void AddRecipes()

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Harpy
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class HarpyLeggings : ModItem
+	public class HarpyLeggings:TremorModItem
 	{
 
 		public override void SetDefaults()

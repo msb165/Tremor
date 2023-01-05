@@ -9,7 +9,7 @@ using Tremor.Ice.Tree;
 
 namespace Tremor.Ice.Mobs
 {
-	public class IceWolf : ModNPC
+	public class IceWolf:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -55,9 +55,9 @@ namespace Tremor.Ice.Mobs
 		public override void NPCLoot()
 		{
 			if (Main.rand.Next(60) == 0 && Main.hardMode)
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, 12, 12, ModContent.ItemType<BlueQuartz>(), 1);
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, 12, 12, ModContent.ItemType<BlueQuartz>(), 1);
 			if (Main.rand.Next(60) == 0 && Main.hardMode)
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, 12, 12, ModContent.ItemType<GlacierKnives>(), 1);
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, 12, 12, ModContent.ItemType<GlacierKnives>(), 1);
 
 			// 10% chance to drop a few ice blocks
 			if (Main.rand.NextBool(10))
@@ -74,7 +74,7 @@ namespace Tremor.Ice.Mobs
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
 			int[] TileArray2 = { ModContent.TileType<IceOre>(), ModContent.TileType<IceBlock>(), ModContent.TileType<VeryVeryIce>(), ModContent.TileType<DungeonBlock>() };
-			return TileArray2.Contains(Main.tile[spawnInfo.spawnTileX, spawnInfo.spawnTileY].type)
+			return TileArray2.Contains(Main.tile[spawnInfo.SpawnTileX, spawnInfo.SpawnTileY].TileType)
 			       && !NPC.AnyNPCs(NPCID.LunarTowerVortex)
 			       && !NPC.AnyNPCs(NPCID.LunarTowerStardust)
 			       && !NPC.AnyNPCs(NPCID.LunarTowerNebula)
@@ -90,12 +90,12 @@ namespace Tremor.Ice.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IceWolfGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IceWolfGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IceWolfGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IceWolfGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IceWolfGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/IceWolfGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IceWolfGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IceWolfGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IceWolfGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IceWolfGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IceWolfGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IceWolfGore3"), 1f);
 			}
 		}
 	}

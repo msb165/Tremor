@@ -33,7 +33,7 @@ namespace Tremor.Projectiles.Alchemic.Blasts
 				Vector2 valuekok = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 				valuekok.Normalize();
 				valuekok *= Main.rand.Next(10, 201) * 0.01f;
-				int proj = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, valuekok.X, valuekok.Y, ModContent.ProjectileType<ClusterBlast>(), projectile.damage, 0.8f, projectile.owner, 2f, Main.rand.Next(-45, 45));
+				int proj = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, valuekok.X, valuekok.Y, ModContent.ProjectileType<ClusterBlast>(), projectile.damage, 0.8f, projectile.owner, 2f, Main.rand.Next(-45, 45));
 				Main.projectile[proj].scale = 0.8f;
 			}
 		}

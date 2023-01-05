@@ -57,7 +57,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 				{
 					var rect = new Rectangle(0, (int)Math.Ceiling(Main.screenHeight / 200f) * i, Main.screenWidth, (int)Math.Ceiling(Main.screenHeight / 200f));
 					var color = Color.Lerp(Color.Black, Color.Yellow, i / 200f) * Intensity;
-					spriteBatch.Draw(Main.blackTileTexture, rect, color);
+					spriteBatch.Draw(Terraria.GameContent.TextureAssets.BlackTile.Value, rect, color);
 				}
 				var planetPos = new Vector2(Main.screenWidth * 0.3f, Main.screenHeight * 0.3f);
 				spriteBatch.Draw(PlanetTexture, planetPos, null, Color.White * 0.9f * Intensity, 0f, PlanetTexture.Size() / 2, 0.4f, 0, 0);
@@ -90,8 +90,8 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 				Vector2 position = (_stars[j].Position - value3) * value4 + value3 - Main.screenPosition;
 				if (rectangle.Contains((int)position.X, (int)position.Y))
 				{
-					float num3 = (float)Math.Sin(_stars[j].AlphaFrequency * Main.GlobalTime + _stars[j].SinOffset) * _stars[j].AlphaAmplitude + _stars[j].AlphaAmplitude;
-					float num4 = (float)Math.Sin(_stars[j].AlphaFrequency * Main.GlobalTime * 5f + _stars[j].SinOffset) * 0.1f - 0.1f;
+					float num3 = (float)Math.Sin(_stars[j].AlphaFrequency * Main.GlobalTimeWrappedHourly + _stars[j].SinOffset) * _stars[j].AlphaAmplitude + _stars[j].AlphaAmplitude;
+					float num4 = (float)Math.Sin(_stars[j].AlphaFrequency * Main.GlobalTimeWrappedHourly * 5f + _stars[j].SinOffset) * 0.1f - 0.1f;
 					num3 = MathHelper.Clamp(num3, 0f, 1f);
 					Texture2D texture2D = _starTextures[_stars[j].TextureIndex];
 					spriteBatch.Draw(texture2D, position, null, Color.White * scale * num3 * 0.8f * (1f - num4) * Intensity, 0f, new Vector2(texture2D.Width >> 1, texture2D.Height >> 1), (value4.X * 0.5f + 0.5f) * (num3 * 0.3f + 0.7f), SpriteEffects.None, 0f);

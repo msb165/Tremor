@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class TimeTissue : ModItem
+	public class TimeTissue:TremorModItem
 	{
 		public override void SetDefaults()
 		{

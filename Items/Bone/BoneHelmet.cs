@@ -8,7 +8,7 @@ using Tremor.Items.Souls;
 namespace Tremor.Items.Bone
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class BoneHelmet : ModItem
+	public class BoneHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -29,7 +29,7 @@ namespace Tremor.Items.Bone
 
 		public override void UpdateEquip(Player p)
 		{
-			p.thrownVelocity += 0.25f;
+			p.ThrownVelocity += 0.25f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

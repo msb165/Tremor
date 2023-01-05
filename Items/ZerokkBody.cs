@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class ZerokkBody : ModItem
+	public class ZerokkBody:TremorModItem
 	{
 
 		public override void SetDefaults()

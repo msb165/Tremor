@@ -6,13 +6,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Alien
 {
-	public class AlienBlaster : ModItem
+	public class AlienBlaster:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 136;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 4;
 			item.width = 40;
 			item.height = 40;
@@ -70,7 +70,7 @@ namespace Tremor.Items.Alien
 					vector2 = new Vector2(position.X - 75f * (float)Math.Cos(angle), position.Y - 75f * (float)Math.Sin(angle));
 				}
 
-				Projectile.NewProjectile(vector2.X, vector2.Y, vX, vY, 440, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, vector2.X, vector2.Y, vX, vY, 440, damage, knockBack, Main.myPlayer);
 
 			}
 			return false;

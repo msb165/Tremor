@@ -6,7 +6,7 @@ using Tremor.Items.Souls;
 namespace Tremor.Items.Plague
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class PlagueBreastplate : ModItem
+	public class PlagueBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()

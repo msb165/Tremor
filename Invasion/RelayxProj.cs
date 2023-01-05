@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class RelayxProj : ModProjectile
+	public class RelayxProj:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -14,7 +14,7 @@ namespace Tremor.Invasion
 			projectile.height = 28;
 			projectile.aiStyle = 27;
 			projectile.friendly = true;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 			projectile.penetrate = 1;
 			projectile.extraUpdates = 1;
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;

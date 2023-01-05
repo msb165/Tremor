@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class DissolverPro : ModProjectile
+	public class DissolverPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

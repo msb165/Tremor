@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class LeafBall : ModItem
+	public class LeafBall:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -25,7 +25,7 @@ namespace Tremor.Items
 			item.shoot = ModContent.ProjectileType<Projectiles.LeafBallPro>();
 			item.shootSpeed = 15.9F;
 			item.UseSound = SoundID.Item1;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.channel = true;
 		}
 

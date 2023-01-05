@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PlazmaSword : ModItem
+	public class PlazmaSword:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 220;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 52;
 			item.height = 52;
 			item.useTime = 32;

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class AxeofExecutioner : ModItem
+	public class AxeofExecutioner:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -22,7 +22,7 @@ namespace Tremor.Items
 			item.noMelee = true;
 			item.value = 500000;
 			item.knockBack = 5f;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.rare = 10;
 		}
 

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class FatSpider : ModBuff
+	public class FatSpider:TremorModBuff
 	{
 		public override void SetDefaults()
 		{

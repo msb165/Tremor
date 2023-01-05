@@ -3,7 +3,7 @@ using Tremor.Ice.Items;
 
 namespace Tremor.Items
 {
-	public class FrostCore : ModItem
+	public class FrostCore:TremorModItem
 	{
 		public override void SetDefaults()
 		{

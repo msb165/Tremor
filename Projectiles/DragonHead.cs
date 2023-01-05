@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class DragonHead : ModProjectile
+	public class DragonHead:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -15,7 +15,7 @@ namespace Tremor.Projectiles
 			projectile.height = 24;
 			projectile.friendly = true;
 			projectile.penetrate = -1; // Penetrates NPCs infinitely.
-			projectile.melee = true; // Deals melee dmg.
+			projectile.DamageType = DamageClass.Melee; // Deals melee dmg.
 
 			projectile.aiStyle = 15; // Set the aiStyle to that of a flail.
 		}
@@ -28,7 +28,7 @@ namespace Tremor.Projectiles
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D texture = ModContent.GetTexture("Tremor/Projectiles/DragonHead_Chain");
+			Texture2D texture = Mod.GetTexture("Tremor/Projectiles/DragonHead_Chain");
 
 			Vector2 position = projectile.Center;
 			Vector2 mountedCenter = Main.player[projectile.owner].MountedCenter;
@@ -67,7 +67,7 @@ namespace Tremor.Projectiles
 		{
 			if (Main.rand.NextBool(3))
 			{
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, 400, projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
+				Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, 0f, 0f, 400, projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
 			}
 		}
 	}

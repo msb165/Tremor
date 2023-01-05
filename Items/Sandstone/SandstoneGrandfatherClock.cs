@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Sandstone
 {
-	public class SandstoneGrandfatherClock : ModItem
+	public class SandstoneGrandfatherClock:TremorModItem
 	{
 		public override void SetDefaults()
 		{

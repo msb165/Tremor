@@ -5,7 +5,7 @@ using Tremor.Items.Doom;
 
 namespace Tremor.Items
 {
-	public class SuspiciousBag : ModItem
+	public class SuspiciousBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

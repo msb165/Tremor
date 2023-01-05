@@ -4,7 +4,7 @@ using Tremor.NPCs.Bosses.NovaPillar.Items;
 
 namespace Tremor.Items
 {
-	public class NovaRing : ModItem
+	public class NovaRing:TremorModItem
 	{
 		public override void SetDefaults()
 		{

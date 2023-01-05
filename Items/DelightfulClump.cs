@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class DelightfulClump : ModItem
+	public class DelightfulClump:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -25,10 +25,7 @@ namespace Tremor.Items
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.statLifeMax2 += 100;
-			player.rangedCrit += 5;
-			player.meleeCrit += 5;
-			player.magicCrit += 5;
-			player.thrownCrit += 5;
+			player.GetCritChance(DamageClass.Generic) += 5;
 		}
 
 	}

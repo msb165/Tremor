@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ShroomiteRepeater : ModItem
+	public class ShroomiteRepeater:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 36;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 62;
 			item.height = 30;
 			item.useTime = 10;

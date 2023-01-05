@@ -6,7 +6,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class VultureKingBag : ModItem
+	public class VultureKingBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

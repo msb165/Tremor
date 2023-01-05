@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Sharkhalis : ModItem
+	public class Sharkhalis:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Bronze
 {
-	public class BronzePickaxe : ModItem
+	public class BronzePickaxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 9;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 32;
 			item.height = 32;
 			item.useTime = 16;

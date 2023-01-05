@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class PaladinBuff : ModBuff
+	public class PaladinBuff:TremorModBuff
 	{
 		int MinionType = -1;
 		int MinionID = -1;
@@ -22,7 +22,7 @@ namespace Tremor.Buffs
 			if (MinionType == -1)
 				MinionType = ModContent.ProjectileType<Projectiles.PaladinHammerPro>();
 			if (MinionID == -1 || Main.projectile[MinionID].type != MinionType || !Main.projectile[MinionID].active || Main.projectile[MinionID].owner != player.whoAmI)
-				MinionID = Projectile.NewProjectile(player.Center.X, player.Center.Y, 0, 0, MinionType, (int)(Damage * player.meleeDamage), KB, player.whoAmI);
+				MinionID = Projectile.NewProjectile(null, player.Center.X, player.Center.Y, 0, 0, MinionType, (int)player.GetTotalDamage(DamageClass.Melee).ApplyTo(Damage), KB, player.whoAmI);
 			else
 				Main.projectile[MinionID].timeLeft = 6;
 		}

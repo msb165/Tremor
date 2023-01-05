@@ -9,7 +9,7 @@ using Tremor.Items.Souls;
 
 namespace Tremor.NPCs
 {
-	public class Phantom : ModNPC
+	public class Phantom:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -40,9 +40,9 @@ namespace Tremor.NPCs
 		public override void NPCLoot()
 		{
 			if (Main.rand.NextBool())
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PhantomSoul>());
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PhantomSoul>());
 			if (Main.rand.Next(48) == 0)
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<GloomTome>());
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<GloomTome>());
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -64,6 +64,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && Main.bloodMoon && spawnInfo.spawnTileY < Main.worldSurface ? 0.03f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && Main.bloodMoon && spawnInfo.SpawnTileY < Main.worldSurface ? 0.03f : 0f;
 	}
 }

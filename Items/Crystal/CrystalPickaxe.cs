@@ -6,13 +6,13 @@ using Tremor.Items.Chaos;
 
 namespace Tremor.Items.Crystal
 {
-	public class CrystalPickaxe : ModItem
+	public class CrystalPickaxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 20;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 40;
 			item.height = 40;
 			item.useTime = 10;

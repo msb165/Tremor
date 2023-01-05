@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class TheCadenceProj : ModProjectile
+	public class TheCadenceProj:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.Projectiles
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
 			projectile.ignoreWater = true;
-			projectile.ranged = true;
+			projectile.DamageType = DamageClass.Ranged;
 			projectile.alpha = 255;
 			projectile.penetrate = 1;
 			projectile.extraUpdates = 2;
@@ -25,7 +25,7 @@ namespace Tremor.Projectiles
 			if (projectile.ai[1] == 0f)
 			{
 				projectile.ai[1] = 1f;
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 12);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item12, projectile.position);
 			}
 			if (projectile.alpha > 0)
 			{

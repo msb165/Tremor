@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class DragonHelmet : ModItem
+	public class DragonHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -37,7 +37,7 @@ namespace Tremor.Items
 		public override void UpdateArmorSet(Player p)
 		{
 			p.setBonus = "Allows you to detect enemies and increases ranged critical strike chance by 25";
-			p.rangedCrit += 25;
+			p.GetCritChance(DamageClass.Ranged) += 25;
 			p.detectCreature = true;
 		}
 

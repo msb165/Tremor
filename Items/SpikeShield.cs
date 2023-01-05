@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class SpikeShield : ModItem
+	public class SpikeShield:TremorModItem
 	{
 
 		public override void SetDefaults()

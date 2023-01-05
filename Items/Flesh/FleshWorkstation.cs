@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Flesh
 {
-	public class FleshWorkstation : ModItem
+	public class FleshWorkstation:TremorModItem
 	{
 		public override void SetDefaults()
 		{

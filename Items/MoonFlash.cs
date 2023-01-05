@@ -5,14 +5,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MoonFlash : ModItem
+	public class MoonFlash:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 90;
-			item.melee = false;
-			item.magic = true;
+			//item.melee = false;
+			item.DamageType = DamageClass.Magic;
 			item.width = 50;
 			item.height = 55;
 			item.useTime = 25;
@@ -38,9 +38,9 @@ namespace Tremor.Items
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
 			{
-				Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX - 1, speedY - 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX - 1, speedY - 1, type, damage, knockBack, Main.myPlayer);
 			}
 			return false;
 		}

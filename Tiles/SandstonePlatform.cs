@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class SandstonePlatform : ModTile
+	public class SandstonePlatform:TremorModTile
 	{
 		public override void SetDefaults()
 		{

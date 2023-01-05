@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SpectreTaroCards : ModItem
+	public class SpectreTaroCards:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 67;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 36;
 			item.mana = 8;
 			item.height = 34;
@@ -39,9 +39,9 @@ namespace Tremor.Items
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
 			{
-				Projectile.NewProjectile(position.X, position.Y, speedX + 2, speedY + 1, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX - 2, speedY - 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 2, speedY + 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX - 2, speedY - 1, type, damage, knockBack, Main.myPlayer);
 			}
 			return false;
 		}

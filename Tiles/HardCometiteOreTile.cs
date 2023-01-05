@@ -5,21 +5,21 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class HardCometiteOreTile : ModTile
+	public class HardCometiteOreTile:TremorModTile
 	{
 		public override void SetDefaults()
 		{
 			Main.tileSolid[Type] = true;
-                                   soundType = 21;
-                                   soundStyle = 2;
+			soundType = 21;
+			soundStyle = 2;
 			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
 			dustType = 27;
 			drop = ModContent.ItemType<HardCometiteOre>();
 			AddMapEntry(new Color(255, 20, 147));
-			mineResist = 12f;
-			minPick = 225;
+			MineResist = 12f;
+			MinPick = 225;
 		}
 
 		public override void NumDust(int i, int j, bool fail, ref int num)
@@ -34,24 +34,24 @@ namespace Tremor.Tiles
 			b = 0.7f;
 		}
 
-  public override bool CanExplode(int i, int j)
-  {
-   if (Main.tile[i, j].type == ModContent.TileType<Tiles.HardCometiteOreTile>())
-   {
-    return false;
-   }
-   return false;
-  }
+		public override bool CanExplode(int i, int j)
+		{
+			if(Main.tile[i, j].TileType == ModContent.TileType<Tiles.HardCometiteOreTile>())
+			{
+				return false;
+			}
+			return false;
+		}
 
-    public override void NearbyEffects(int i, int j, bool closer)
-    {
-        if(closer)
-        {
-            Player player = Main.player[Main.myPlayer];
-            int style = Main.tile[i, j].frameX / 100;
-            string type;
-            player.AddBuff(44, 60, true);
-        }
-    }
+		public override void NearbyEffects(int i, int j, bool closer)
+		{
+			if(closer)
+			{
+				Player player = Main.player[Main.myPlayer];
+				int style = Main.tile[i, j].TileFrameX / 100;
+				string type;
+				player.AddBuff(44, 60, true);
+			}
+		}
 	}
 }

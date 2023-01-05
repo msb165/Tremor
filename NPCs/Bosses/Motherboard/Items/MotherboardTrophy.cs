@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.Motherboard.Items
 {
-	public class MotherboardTrophy : ModItem
+	public class MotherboardTrophy:TremorModItem
 	{
 		public override void SetDefaults()
 		{

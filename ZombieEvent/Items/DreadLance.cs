@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class DreadLance : ModItem
+	public class DreadLance:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.ZombieEvent.Items
 			item.width = 54;
 			item.height = 54;
 			item.noUseGraphic = true;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.useTime = 30;
 			item.shoot = ModContent.ProjectileType<DreadLancePro>();
 			item.shootSpeed = 4f;

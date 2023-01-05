@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class SecondHand : ModItem
+	public class SecondHand:TremorModItem
 	{
 
 		public override void SetDefaults()

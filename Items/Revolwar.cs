@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Revolwar : ModItem
+	public class Revolwar:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -24,7 +24,7 @@ namespace Tremor.Items
 			item.value = 500000;
 			item.scale = 0.9f;
 			item.rare = 0;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 		}
 
 		public override void SetStaticDefaults()
@@ -35,7 +35,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 		public override Vector2? HoldoutOffset()

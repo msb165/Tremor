@@ -81,7 +81,7 @@ namespace Tremor.Projectiles.Alchemic
 						num439 *= num440;
 						if (Main.rand.NextBool(2))
 						{
-							Projectile.NewProjectile(value10.X, value10.Y, num438, num439, ModContent.ProjectileType<TheCadenceProj>(), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
+							Projectile.NewProjectile(null, value10.X, value10.Y, num438, num439, ModContent.ProjectileType<TheCadenceProj>(), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
 						}
 					}
 				}
@@ -107,7 +107,7 @@ namespace Tremor.Projectiles.Alchemic
 					{
 						projectile.velocity.Y = -oldVelocity.Y;
 					}
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 10);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item10, projectile.position);
 				}
 			}
 			else
@@ -122,14 +122,14 @@ namespace Tremor.Projectiles.Alchemic
 		{
 			if (Main.LocalPlayer.HasBuffSafe(ModContent.BuffType<Buffs.DesertEmperorSetBuff>()))
 			{
-				int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FlaskWasp>(), projectile.damage * 2, 1.5f, projectile.owner);
-				int b = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FlaskWasp>(), projectile.damage * 2, 1.5f, projectile.owner);
+				int a = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FlaskWasp>(), projectile.damage * 2, 1.5f, projectile.owner);
+				int b = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FlaskWasp>(), projectile.damage * 2, 1.5f, projectile.owner);
 			}
 			Player player = Main.player[projectile.owner];
 			MPlayer modPlayer = player.GetModPlayer<MPlayer>();
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 107);
-			Gore.NewGore(projectile.position, -projectile.oldVelocity * 0.2f, 704, 1f);
-			Gore.NewGore(projectile.position, -projectile.oldVelocity * 0.2f, 705, 1f);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item107, projectile.position);
+			Gore.NewGore(null, projectile.position, -projectile.oldVelocity * 0.2f, 704, 1f);
+			Gore.NewGore(null, projectile.position, -projectile.oldVelocity * 0.2f, 705, 1f);
 
 			if (player.HasBuffSafe(ModContent.BuffType<Buffs.BrassChipBuff>()))
 			{
@@ -137,7 +137,7 @@ namespace Tremor.Projectiles.Alchemic
 				{
 					Vector2 vector2 = new Vector2(player.position.X + 75f * (float)Math.Cos(12), player.position.Y + 1075f * (float)Math.Sin(12));
 					Vector2 Velocity = Helper.VelocityToPoint(vector2, Helper.RandomPointInArea(new Vector2(projectile.Center.X - 10, projectile.Center.Y - 10), new Vector2(projectile.Center.X + 20, projectile.Center.Y + 20)), 24);
-					int a = Projectile.NewProjectile(vector2.X, vector2.Y, Velocity.X, Velocity.Y, 134, projectile.damage, 1f);
+					int a = Projectile.NewProjectile(null, vector2.X, vector2.Y, Velocity.X, Velocity.Y, 134, projectile.damage, 1f);
 					Main.projectile[a].friendly = true;
 				}
 			}
@@ -149,7 +149,7 @@ namespace Tremor.Projectiles.Alchemic
 					Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 					value17.Normalize();
 					value17 *= Main.rand.Next(10, 201) * 0.01f;
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<Shatter1>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
+					Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<Shatter1>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
 				}
 			}
 
@@ -163,7 +163,7 @@ namespace Tremor.Projectiles.Alchemic
 						Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 						value17.Normalize();
 						value17 *= Main.rand.Next(10, 201) * 0.01f;
-						Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<FrostCloudPro>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
+						Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<FrostCloudPro>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
 					}
 				}
 
@@ -172,323 +172,323 @@ namespace Tremor.Projectiles.Alchemic
 			{
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.PyroBuff>()) && !modPlayer.nitro)
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
+					int a = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
 					Main.projectile[a].scale = 1.5f;
 				}
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.ChemikazeBuff>()) && !modPlayer.nitro)
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.25f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
+					int a = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.25f, projectile.owner);
 					Main.projectile[a].scale = 1.25f;
-					int b = Projectile.NewProjectile(projectile.position.X + 32, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X - 32, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 32, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 32, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(null, projectile.position.X + 32, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(null, projectile.position.X - 32, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y + 32, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y - 32, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
 				}
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.CrossBlastBuff>()) && !modPlayer.nitro)
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.25f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
+					int a = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.25f, projectile.owner);
 					Main.projectile[a].scale = 1.25f;
-					int b = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 30, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 30, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
+					int b = Projectile.NewProjectile(null, projectile.position.X + 30, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(null, projectile.position.X - 30, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y + 30, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y - 30, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(null, projectile.position.X + 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
 					Main.projectile[f].scale = 0.7f;
-					int g = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
+					int g = Projectile.NewProjectile(null, projectile.position.X - 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
 					Main.projectile[g].scale = 0.7f;
-					int h = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 50, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
+					int h = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y + 50, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
 					Main.projectile[h].scale = 0.7f;
-					int i = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 50, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
+					int i = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y - 50, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
 					Main.projectile[i].scale = 0.7f;
-					int j = Projectile.NewProjectile(projectile.position.X + 70, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.5f, projectile.owner);
+					int j = Projectile.NewProjectile(null, projectile.position.X + 70, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.5f, projectile.owner);
 					Main.projectile[j].scale = 0.8f;
-					int k = Projectile.NewProjectile(projectile.position.X - 70, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.5f, projectile.owner);
+					int k = Projectile.NewProjectile(null, projectile.position.X - 70, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.5f, projectile.owner);
 					Main.projectile[k].scale = 0.8f;
-					int l = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.5f, projectile.owner);
+					int l = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y + 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.5f, projectile.owner);
 					Main.projectile[l].scale = 0.8f;
-					int m = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.5f, projectile.owner);
+					int m = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y - 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 0.5f, projectile.owner);
 					Main.projectile[m].scale = 0.8f;
 				}
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.RoundBlastBuff>()) && !modPlayer.nitro)
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 60, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 60, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 40, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y + 40, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int g = Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y - 40, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int h = Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y - 40, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
+					int a = Projectile.NewProjectile(null, projectile.position.X + 60, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(null, projectile.position.X - 60, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y + 60, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y - 60, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(null, projectile.position.X - 40, projectile.position.Y + 40, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y - 40, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(null, projectile.position.X - 40, projectile.position.Y - 40, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.SquareBlastBuff>()) && !modPlayer.nitro)
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X + 70, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X - 70, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 70, projectile.position.Y + 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X - 70, projectile.position.Y + 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int g = Projectile.NewProjectile(projectile.position.X + 70, projectile.position.Y - 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
-					int h = Projectile.NewProjectile(projectile.position.X - 70, projectile.position.Y - 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
+					int a = Projectile.NewProjectile(null, projectile.position.X + 70, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(null, projectile.position.X - 70, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y + 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y - 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X + 70, projectile.position.Y + 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(null, projectile.position.X - 70, projectile.position.Y + 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(null, projectile.position.X + 70, projectile.position.Y - 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(null, projectile.position.X - 70, projectile.position.Y - 70, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.NitroBuff>()) && !modPlayer.pyro)
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 100);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item100, projectile.position);
+					int a = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.ReinforcedBurstBuff>()) && !modPlayer.pyro)
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 100);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item100, projectile.position);
+					int a = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(null, projectile.position.X + 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(null, projectile.position.X - 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.LinearBurstBuff>()) && !modPlayer.pyro)
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 100);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X + 100, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X - 100, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item100, projectile.position);
+					int a = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(null, projectile.position.X + 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(null, projectile.position.X - 50, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(null, projectile.position.X + 100, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X - 100, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.NitroBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.PyroBuff>()))
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 42);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item42, projectile.position);
+					int a = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
 					Main.projectile[a].scale = 1.5f;
-					int b = Projectile.NewProjectile(projectile.position.X + 20, projectile.position.Y, +5, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X - 20, projectile.position.Y, -5, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(null, projectile.position.X + 20, projectile.position.Y, +5, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(null, projectile.position.X - 20, projectile.position.Y, -5, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.ReinforcedBurstBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.PyroBuff>()))
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 42);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item42, projectile.position);
+					int a = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
 					Main.projectile[a].scale = 1.5f;
-					int b = Projectile.NewProjectile(projectile.position.X + 10, projectile.position.Y - 10, +6, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X - 10, projectile.position.Y - 10, -6, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 10, +4, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y + 10, -4, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(null, projectile.position.X + 10, projectile.position.Y - 10, +6, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(null, projectile.position.X - 10, projectile.position.Y - 10, -6, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 10, +4, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X - 40, projectile.position.Y + 10, -4, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.LinearBurstBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.PyroBuff>()))
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 42);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item42, projectile.position);
+					int a = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
 					Main.projectile[a].scale = 1.5f;
-					int b = Projectile.NewProjectile(projectile.position.X + 10, projectile.position.Y - 15, +6, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X - 10, projectile.position.Y - 15, -6, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y, +5, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y, -5, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X + 70, projectile.position.Y + 15, +4, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
-					int g = Projectile.NewProjectile(projectile.position.X - 70, projectile.position.Y + 15, -4, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(null, projectile.position.X + 10, projectile.position.Y - 15, +6, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(null, projectile.position.X - 10, projectile.position.Y - 15, -6, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y, +5, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X - 40, projectile.position.Y, -5, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(null, projectile.position.X + 70, projectile.position.Y + 15, +4, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(null, projectile.position.X - 70, projectile.position.Y + 15, -4, 0, ModContent.ProjectileType<FrostSkull>(), projectile.damage, 1f, projectile.owner);
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.RoundBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.NitroBuff>()))
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
+					int z = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
 					Main.projectile[z].scale = 1.25f;
-					int a = Projectile.NewProjectile(projectile.position.X + 25, projectile.position.Y, 4, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X - 25, projectile.position.Y, -4, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 25, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 25, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 20, projectile.position.Y + 20, 4, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int a = Projectile.NewProjectile(null, projectile.position.X + 25, projectile.position.Y, 4, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(null, projectile.position.X - 25, projectile.position.Y, -4, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y + 25, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y - 25, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X + 20, projectile.position.Y + 20, 4, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[e].scale = 0.8f;
-					int f = Projectile.NewProjectile(projectile.position.X - 20, projectile.position.Y + 20, -4, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(null, projectile.position.X - 20, projectile.position.Y + 20, -4, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[f].scale = 0.8f;
-					int g = Projectile.NewProjectile(projectile.position.X + 20, projectile.position.Y - 20, 4, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(null, projectile.position.X + 20, projectile.position.Y - 20, 4, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[g].scale = 0.8f;
-					int h = Projectile.NewProjectile(projectile.position.X - 20, projectile.position.Y - 20, -4, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(null, projectile.position.X - 20, projectile.position.Y - 20, -4, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[h].scale = 0.8f;
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.RoundBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.ReinforcedBurstBuff>()))
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
+					int z = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
 					Main.projectile[z].scale = 1.25f;
-					int a = Projectile.NewProjectile(projectile.position.X + 65, projectile.position.Y, 3, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X - 65, projectile.position.Y, -3, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 35, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 35, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int a = Projectile.NewProjectile(null, projectile.position.X + 65, projectile.position.Y, 3, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(null, projectile.position.X - 65, projectile.position.Y, -3, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y + 35, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y - 35, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X + 50, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[e].scale = 1.2f;
-					int f = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(null, projectile.position.X - 50, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[f].scale = 1.2f;
-					int g = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(null, projectile.position.X + 50, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[g].scale = 1.2f;
-					int h = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(null, projectile.position.X - 50, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[h].scale = 1.2f;
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.RoundBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.LinearBurstBuff>()))
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int z = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
+					int z = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1.5f, projectile.owner);
 					Main.projectile[z].scale = 1.25f;
-					int a = Projectile.NewProjectile(projectile.position.X + 65, projectile.position.Y, 3, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X - 65, projectile.position.Y, -3, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 35, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 35, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int a = Projectile.NewProjectile(null, projectile.position.X + 65, projectile.position.Y, 3, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(null, projectile.position.X - 65, projectile.position.Y, -3, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y + 35, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y - 35, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X + 50, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[e].scale = 0.8f;
-					int f = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(null, projectile.position.X - 50, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[f].scale = 0.8f;
-					int g = Projectile.NewProjectile(projectile.position.X + 50, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(null, projectile.position.X + 50, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[g].scale = 0.8f;
-					int h = Projectile.NewProjectile(projectile.position.X - 50, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(null, projectile.position.X - 50, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[h].scale = 0.8f;
-					int i = Projectile.NewProjectile(projectile.position.X + 80, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int i = Projectile.NewProjectile(null, projectile.position.X + 80, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[i].scale = 0.6f;
-					int k = Projectile.NewProjectile(projectile.position.X - 80, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int k = Projectile.NewProjectile(null, projectile.position.X - 80, projectile.position.Y + 20, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[k].scale = 0.6f;
-					int l = Projectile.NewProjectile(projectile.position.X + 80, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int l = Projectile.NewProjectile(null, projectile.position.X + 80, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[l].scale = 0.6f;
-					int m = Projectile.NewProjectile(projectile.position.X - 80, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
+					int m = Projectile.NewProjectile(null, projectile.position.X - 80, projectile.position.Y - 20, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[m].scale = 0.6f;
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.SquareBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.NitroBuff>()))
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
+					int d = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[d].scale = 1.5f;
-					int e = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 3, 3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -3, 3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
-					int g = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 3, -3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
-					int h = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -3, -3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X + 30, projectile.position.Y + 30, 3, 3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(null, projectile.position.X - 30, projectile.position.Y + 30, -3, 3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(null, projectile.position.X + 30, projectile.position.Y - 30, 3, -3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(null, projectile.position.X - 30, projectile.position.Y - 30, -3, -3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.SquareBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.ReinforcedBurstBuff>()))
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
+					int d = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[d].scale = 1.5f;
-					int e = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 2, 3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X + 30, projectile.position.Y + 30, 2, 3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[e].scale = 0.75f;
-					int f = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -2, 3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(null, projectile.position.X - 30, projectile.position.Y + 30, -2, 3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[f].scale = 0.75f;
-					int g = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 2, -3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(null, projectile.position.X + 30, projectile.position.Y - 30, 2, -3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[g].scale = 0.75f;
-					int h = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -2, -3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(null, projectile.position.X - 30, projectile.position.Y - 30, -2, -3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[h].scale = 0.75f;
-					int i = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 3, 2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int i = Projectile.NewProjectile(null, projectile.position.X + 30, projectile.position.Y + 30, 3, 2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[i].scale = 0.75f;
-					int j = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -3, 2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int j = Projectile.NewProjectile(null, projectile.position.X - 30, projectile.position.Y + 30, -3, 2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[j].scale = 0.75f;
-					int k = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 3, -2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int k = Projectile.NewProjectile(null, projectile.position.X + 30, projectile.position.Y - 30, 3, -2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[k].scale = 0.75f;
-					int l = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -3, -2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int l = Projectile.NewProjectile(null, projectile.position.X - 30, projectile.position.Y - 30, -3, -2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[l].scale = 0.75f;
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.SquareBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.LinearBurstBuff>()))
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
+					int d = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<FrostBlast>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[d].scale = 1.5f;
-					int e = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 2, 4, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X + 30, projectile.position.Y + 30, 2, 4, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[e].scale = 0.65f;
-					int f = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -2, 4, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(null, projectile.position.X - 30, projectile.position.Y + 30, -2, 4, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[f].scale = 0.65f;
-					int g = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 2, -4, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(null, projectile.position.X + 30, projectile.position.Y - 30, 2, -4, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[g].scale = 0.65f;
-					int h = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -2, -4, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(null, projectile.position.X - 30, projectile.position.Y - 30, -2, -4, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[h].scale = 0.65f;
-					int i = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 4, 2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int i = Projectile.NewProjectile(null, projectile.position.X + 30, projectile.position.Y + 30, 4, 2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[i].scale = 0.65f;
-					int j = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -4, 2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int j = Projectile.NewProjectile(null, projectile.position.X - 30, projectile.position.Y + 30, -4, 2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[j].scale = 0.65f;
-					int k = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 4, -2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int k = Projectile.NewProjectile(null, projectile.position.X + 30, projectile.position.Y - 30, 4, -2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[k].scale = 0.65f;
-					int l = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -4, -2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int l = Projectile.NewProjectile(null, projectile.position.X - 30, projectile.position.Y - 30, -4, -2, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[l].scale = 0.65f;
-					int m = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y + 30, 3, 3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int m = Projectile.NewProjectile(null, projectile.position.X + 30, projectile.position.Y + 30, 3, 3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[m].scale = 0.7f;
-					int n = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y + 30, -3, 3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int n = Projectile.NewProjectile(null, projectile.position.X - 30, projectile.position.Y + 30, -3, 3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[n].scale = 0.7f;
-					int o = Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y - 30, 3, -3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int o = Projectile.NewProjectile(null, projectile.position.X + 30, projectile.position.Y - 30, 3, -3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[o].scale = 0.7f;
-					int p = Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y - 30, -3, -3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
+					int p = Projectile.NewProjectile(null, projectile.position.X - 30, projectile.position.Y - 30, -3, -3, ModContent.ProjectileType<FrostSkull>(), projectile.damage * 2, 1f, projectile.owner);
 					Main.projectile[p].scale = 0.7f;
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.NitroBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.ChemikazeBuff>()))
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 100);
-					Projectile.NewProjectile(projectile.position.X - 30, projectile.position.Y, -2, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X + 30, projectile.position.Y, +2, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item100, projectile.position);
+					Projectile.NewProjectile(null, projectile.position.X - 30, projectile.position.Y, -2, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(null, projectile.position.X + 30, projectile.position.Y, +2, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.ReinforcedBurstBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.ChemikazeBuff>()))
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 100);
-					Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y, -2, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y, +2, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, -3, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, +3, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item100, projectile.position);
+					Projectile.NewProjectile(null, projectile.position.X - 40, projectile.position.Y, -2, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y, +2, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(null, projectile.position.X - 60, projectile.position.Y, -3, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(null, projectile.position.X + 60, projectile.position.Y, +3, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.LinearBurstBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.ChemikazeBuff>()))
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 100);
-					Projectile.NewProjectile(projectile.position.X - 40, projectile.position.Y, -2, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y, +2, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, -3, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, +3, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X - 80, projectile.position.Y, -4, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
-					Projectile.NewProjectile(projectile.position.X + 80, projectile.position.Y, +4, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item100, projectile.position);
+					Projectile.NewProjectile(null, projectile.position.X - 40, projectile.position.Y, -2, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y, +2, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(null, projectile.position.X - 60, projectile.position.Y, -3, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(null, projectile.position.X + 60, projectile.position.Y, +3, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(null, projectile.position.X - 80, projectile.position.Y, -4, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
+					Projectile.NewProjectile(null, projectile.position.X + 80, projectile.position.Y, +4, 0, ModContent.ProjectileType<FrostBurst>(), projectile.damage, 1f, projectile.owner);
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.CrossBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.NitroBuff>()))
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 4, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, -4, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, -4, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, 4, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int g = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 60, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int h = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 60, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
+					int a = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 4, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, -4, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X + 60, projectile.position.Y, -4, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(null, projectile.position.X - 60, projectile.position.Y, 4, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y + 60, 0, -4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y - 60, 0, 4, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.CrossBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.ReinforcedBurstBuff>()))
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 6, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, -6, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 6, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, -6, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, -6, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, 6, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int g = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 60, 0, -6, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int h = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 60, 0, 6, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
+					int a = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 6, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, -6, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 6, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, -6, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X + 60, projectile.position.Y, -6, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(null, projectile.position.X - 60, projectile.position.Y, 6, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y + 60, 0, -6, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y - 60, 0, 6, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
 				}
 
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.CrossBlastBuff>()) && player.HasBuffSafe(ModContent.BuffType<Buffs.LinearBurstBuff>()))
 				{
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-					int a = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 8, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int b = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, -8, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int c = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 8, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int d = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, -8, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int e = Projectile.NewProjectile(projectile.position.X + 60, projectile.position.Y, -8, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int f = Projectile.NewProjectile(projectile.position.X - 60, projectile.position.Y, 8, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int g = Projectile.NewProjectile(projectile.position.X, projectile.position.Y + 60, 0, -8, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
-					int h = Projectile.NewProjectile(projectile.position.X, projectile.position.Y - 60, 0, 8, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
+					int a = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 8, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int b = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, -8, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int c = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 8, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int d = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, -8, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int e = Projectile.NewProjectile(null, projectile.position.X + 60, projectile.position.Y, -8, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int f = Projectile.NewProjectile(null, projectile.position.X - 60, projectile.position.Y, 8, 0, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int g = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y + 60, 0, -8, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
+					int h = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y - 60, 0, 8, ModContent.ProjectileType<FrostSkullburst>(), projectile.damage * 1, 1f, projectile.owner);
 				}
 			}
 		}

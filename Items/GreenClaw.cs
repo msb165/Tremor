@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GreenClaw : ModItem
+	public class GreenClaw:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -20,7 +20,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item1;
 			item.useTurn = true;
 			item.value = 8400;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()

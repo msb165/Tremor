@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class HeavyBeamCannon : ModItem
+	public class HeavyBeamCannon:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 52;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 9;
 			item.width = 42;
 			item.height = 30;

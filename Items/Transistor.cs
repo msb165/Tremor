@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Transistor : ModItem
+	public class Transistor:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 133;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 66;
 			item.height = 66;
 

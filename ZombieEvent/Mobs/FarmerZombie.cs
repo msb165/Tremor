@@ -7,7 +7,7 @@ using Tremor.Items;
 namespace Tremor.ZombieEvent.Mobs
 {
 
-	public class FarmerZombie : ModNPC
+	public class FarmerZombie:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -42,19 +42,19 @@ namespace Tremor.ZombieEvent.Mobs
 				int halfLength = npc.width / 2 / 16 + 1;
 				//if (Main.rand.NextBool(4))
 				//{
-				//	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Tomato>(), Main.rand.Next(1, 2));
+				//	Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Tomato>(), Main.rand.Next(1, 2));
 				//};
 				//if (Main.rand.NextBool(4))
 				//{
-				//	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Potato>(), Main.rand.Next(1, 2));
+				//	Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Potato>(), Main.rand.Next(1, 2));
 				//};
 				if(Main.rand.NextBool(6))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Carrot>(), Main.rand.Next(1, 6));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Carrot>(), Main.rand.Next(1, 6));
 				};
 				//if (Main.rand.NextBool(6))
 				//{
-				//	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Wheat>(), Main.rand.Next(1, 6));
+				//	Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Wheat>(), Main.rand.Next(1, 6));
 				//};
 			}
 		}
@@ -67,12 +67,12 @@ namespace Tremor.ZombieEvent.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmForkGore"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmForkGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore3"), 1f);
 			}
 		}
 

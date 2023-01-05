@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -5,7 +6,7 @@ using Tremor.NPCs.Bosses.NovaPillar.Items;
 
 namespace Tremor.Items
 {
-	public class NovaBand : ModItem
+	public class NovaBand:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,7 +27,7 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Summons a warkee");
 		}
 
-		public override void UseStyle(Player player)
+		public override void UseStyle(Player player, Rectangle heldItemFrame)
 		{
 			if (player.whoAmI == Main.myPlayer && player.itemTime == 0)
 			{

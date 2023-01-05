@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TrueTerraBlade : ModItem
+	public class TrueTerraBlade:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -21,7 +21,7 @@ namespace Tremor.Items
 			item.scale = 1.1f;
 			item.shootSpeed = 15f;
 			item.knockBack = 6.5f;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.value = Item.sellPrice(0, 20, 0, 0);
 			item.autoReuse = true;
 		}

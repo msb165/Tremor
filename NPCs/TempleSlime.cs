@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class TempleSlime : ModNPC
+	public class TempleSlime:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -55,6 +55,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Main.hardMode && spawnInfo.spawnTileType == TileID.LihzahrdBrick && NPC.downedMoonlord && spawnInfo.spawnTileY > Main.rockLayer ? 0.005f : 0f;
+			=> Main.hardMode && spawnInfo.SpawnTileType == TileID.LihzahrdBrick && NPC.downedMoonlord && spawnInfo.SpawnTileY > Main.rockLayer ? 0.005f : 0f;
 	}
 }

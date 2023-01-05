@@ -5,7 +5,7 @@ using Tremor.Items.Steel;
 namespace Tremor.Items.Afterlife
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class AfterlifeBreastplate : ModItem
+	public class AfterlifeBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -29,11 +29,7 @@ namespace Tremor.Items.Afterlife
 		public override void UpdateEquip(Player player)
 		{
 			player.maxMinions += 2;
-			player.minionDamage += 0.09f;
-			player.thrownDamage += 0.09f;
-			player.magicDamage += 0.09f;
-			player.meleeDamage += 0.09f;
-			player.rangedDamage += 0.09f;
+			player.GetDamage(DamageClass.Generic) += 0.09f;
 		}
 
 		public override void AddRecipes()

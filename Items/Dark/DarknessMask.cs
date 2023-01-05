@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Dark
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class DarknessMask : ModItem
+	public class DarknessMask:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -56,7 +56,7 @@ namespace Tremor.Items.Dark
 			player.setBonus = "Your summoner stats increases during the night!";
 			if (!Main.dayTime)
 			{
-				player.minionDamage += 0.30f;
+				player.GetDamage(DamageClass.Summon) += 0.30f;
 				player.maxMinions += 2;
 			}
 		}

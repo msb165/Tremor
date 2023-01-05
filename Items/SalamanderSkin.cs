@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SalamanderSkin : ModItem
+	public class SalamanderSkin:TremorModItem
 	{
 		public override void SetDefaults()
 		{

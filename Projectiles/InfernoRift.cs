@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class InfernoRift : ModProjectile
+	public class InfernoRift:TremorModProjectile
 	{
 		const int ShootRate = 20; 
 		const float ShootDistance = 500f; 
@@ -30,7 +30,7 @@ namespace Tremor.Projectiles
 			projectile.hostile = false;
 			projectile.tileCollide = true;
 			projectile.ignoreWater = true;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 			projectile.penetrate = 1;
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 0;
@@ -44,11 +44,11 @@ namespace Tremor.Projectiles
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Vector2 drawOrigin = new Vector2(Main.projectileTexture[projectile.type].Width * 0.5f, projectile.height * 0.5f);
+			Vector2 drawOrigin = new Vector2(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value.Width * 0.5f, projectile.height * 0.5f);
 			for (int k = 0; k < projectile.oldPos.Length; k++)
 			{
 				Vector2 drawPos = projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, projectile.gfxOffY);
-				spriteBatch.Draw(Main.projectileTexture[projectile.type], drawPos, null, Color.White, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
+				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, Color.White, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
 			}
 			return true;
 		}
@@ -59,7 +59,7 @@ namespace Tremor.Projectiles
 			{
 				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 6, projectile.oldVelocity.X * 0.1f, projectile.oldVelocity.Y * 0.1f);
 			}
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 109);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item109, projectile.position);
 		}
 
 		void Shoot()
@@ -87,7 +87,7 @@ namespace Tremor.Projectiles
 				if (NearestNPC == -1)
 					return;
 				Vector2 Velocity = Helper.VelocityToPoint(projectile.Center, Main.npc[NearestNPC].Center, ShootSpeed);
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, Velocity.X, Velocity.Y, ShootType, ShootDamage, ShootKnockback, projectile.owner);
+				Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, Velocity.X, Velocity.Y, ShootType, ShootDamage, ShootKnockback, projectile.owner);
 			}
 		}
 

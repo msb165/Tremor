@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 
-	public class InspirationPotion : ModItem
+	public class InspirationPotion:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -28,7 +28,7 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Increases maximum mana");
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			player.AddBuff(ModContent.BuffType<Buffs.MaximumCharge>(), 14400);
 			return true;

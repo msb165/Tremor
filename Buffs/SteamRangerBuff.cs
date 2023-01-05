@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class SteamRangerBuff : ModBuff
+	public class SteamRangerBuff:TremorModBuff
 	{
 		public override void SetDefaults()
 		{

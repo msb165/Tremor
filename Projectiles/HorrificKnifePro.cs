@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class HorrificKnifePro : ModProjectile
+	public class HorrificKnifePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -39,7 +39,7 @@ namespace Tremor.Projectiles
 			{
 				Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, ModContent.DustType<Dusts.NightmareFlame>(), projectile.oldVelocity.X * 0.5f, projectile.oldVelocity.Y * 2f, 100, default(Color), 2f);
 			}
-			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y, 0);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Dig, projectile.position);//Variant 0
 		}
 
 		public override void OnHitPvp(Player target, int damage, bool crit)

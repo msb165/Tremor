@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GoldenGlowingRing : ModItem
+	public class GoldenGlowingRing:TremorModItem
 	{
 		public override void SetDefaults()
 		{

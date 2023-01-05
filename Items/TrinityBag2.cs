@@ -4,7 +4,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class TrinityBag2 : ModItem
+	public class TrinityBag2:TremorModItem
 	{
 		public override void SetDefaults()
 		{

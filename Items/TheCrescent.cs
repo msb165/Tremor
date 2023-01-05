@@ -5,14 +5,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TheCrescent : ModItem
+	public class TheCrescent:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 275;
 			item.noMelee = true;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 16;
 			item.height = 32;
 			item.useTime = 5;
@@ -34,7 +34,7 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-		public override bool ConsumeAmmo(Player p)
+		public override bool CanConsumeAmmo(Item ammo, Player p)
 		{
 			return Main.rand.NextBool(2);
 		}

@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ScorpionStinger : ModItem
+	public class ScorpionStinger:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 41;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 46;
 			item.height = 54;
 

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class GurdPet : ModProjectile
+	public class GurdPet:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

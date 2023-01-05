@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Rockspear : ModItem
+	public class Rockspear:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.width = 14;
 			item.height = 84;
 			item.noUseGraphic = true;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.useTime = 35;
 			item.shoot = ModContent.ProjectileType<Projectiles.RockspearPro>();
 			item.shootSpeed = 3f;

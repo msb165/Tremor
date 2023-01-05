@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class OrichalcumVisage : ModItem
+	public class OrichalcumVisage:TremorModItem
 	{
 
 		public override void SetDefaults()

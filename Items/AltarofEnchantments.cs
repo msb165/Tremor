@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class AltarofEnchantments : ModItem
+	public class AltarofEnchantments:TremorModItem
 	{
 		public override void SetDefaults()
 		{

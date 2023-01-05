@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Jellyxir : ModItem
+	public class Jellyxir:TremorModItem
 	{
 		public override void SetDefaults()
 		{

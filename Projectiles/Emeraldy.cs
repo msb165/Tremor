@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class Emeraldy : ModProjectile
+	public class Emeraldy:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -19,7 +19,10 @@ namespace Tremor.Projectiles
 			projectile.ignoreWater = true;
 			aiType = 380;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 2;
-			ProjectileID.Sets.Homing[projectile.type] = true;
+
+			//TODO: I don't think they intended this
+			//ProjectileID.Sets.CultistIsResistantTo[projectile.type] = true; //ProjectileID.Sets.Homing[projectile.type] = true;
+			
 			Main.projFrames[projectile.type] = 1;
 			ProjectileID.Sets.LightPet[projectile.type] = true;
 			Main.projPet[projectile.type] = true;

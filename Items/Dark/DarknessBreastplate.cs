@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Dark
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class DarknessBreastplate : ModItem
+	public class DarknessBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()

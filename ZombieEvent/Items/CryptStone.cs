@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class CryptStone : ModItem
+	public class CryptStone:TremorModItem
 	{
 		public override void SetDefaults()
 		{

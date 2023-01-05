@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Dark
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class DarkAbsorber : ModItem
+	public class DarkAbsorber:TremorModItem
 	{
 		public override void SetDefaults()
 		{

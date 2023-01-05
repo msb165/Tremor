@@ -49,7 +49,7 @@ namespace Tremor.NPCs
 			{
 				ShootCooldown = MaxCooldown;
 				Vector2 velocity = Helper.VelocityFPTP(npc.Center, Main.player[npc.target].Center, 4);
-				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, 326, 10, 1f);
+				Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, 326, 10, 1f);
 			}
 		}
 

@@ -1,6 +1,7 @@
 using System.Linq;
 
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -8,7 +9,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class RuinGhost2 : ModNPC
+	public class RuinGhost2:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -40,7 +41,7 @@ namespace Tremor.NPCs
 		public override void AI()
 		{
 			if (Main.rand.Next(700) == 0)
-				Main.PlaySound(29, (int)npc.position.X, (int)npc.position.Y, Main.rand.Next(81, 84));
+				SoundEngine.PlaySound(SoundID.Zombie1, npc.position);//Variant Main.rand.Next(81, 84)
 		}
 
 		public override void NPCLoot()
@@ -55,16 +56,16 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, 13);
-				Gore.NewGore(npc.position, npc.velocity, 12);
-				Gore.NewGore(npc.position, npc.velocity, 11);
+				Gore.NewGore(null, npc.position, npc.velocity, 13);
+				Gore.NewGore(null, npc.position, npc.velocity, 12);
+				Gore.NewGore(null, npc.position, npc.velocity, 11);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
 			int[] TileArray2 = { ModContent.TileType<Tiles.RuinAltar>(), ModContent.TileType<Tiles.RuinChest>(), 120 };
-			return TileArray2.Contains(Main.tile[spawnInfo.spawnTileX, spawnInfo.spawnTileY].type) && TremorWorld.Boss.TikiTotem.IsDowned() ? 45f : 0f;
+			return TileArray2.Contains(Main.tile[spawnInfo.SpawnTileX, spawnInfo.SpawnTileY].TileType) && TremorWorld.Boss.TikiTotem.IsDowned() ? 45f : 0f;
 		}
 	}
 }

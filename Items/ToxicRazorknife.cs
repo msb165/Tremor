@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ToxicRazorknife : ModItem
+	public class ToxicRazorknife:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -11,7 +11,7 @@ namespace Tremor.Items
 			item.damage = 29;
 			item.width = 16;
 			item.height = 32;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.useTime = 30;
 			item.shoot = ModContent.ProjectileType<Projectiles.ToxicRazorknifePro>();
 			item.shootSpeed = 12f;

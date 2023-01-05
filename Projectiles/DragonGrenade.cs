@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class DragonGrenade : ModProjectile
+	public class DragonGrenade:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

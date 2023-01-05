@@ -2,6 +2,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.Items;
@@ -14,7 +15,7 @@ namespace Tremor.NPCs
 {
 	// todo: REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 	[AutoloadBossHead]
-	public class WallOfShadow : ModNPC
+	public class WallOfShadow:TremorModNPC
 	{
 		//private const int AnimationRate = 8;
 		//private const int FrameCount = 4;
@@ -116,7 +117,7 @@ namespace Tremor.NPCs
 				var shootVel = targetPos - shootPos + new Vector2(Main.rand.NextFloat(-inaccuracy, inaccuracy), Main.rand.NextFloat(-inaccuracy, inaccuracy));
 				shootVel.Normalize();
 				shootVel *= 10f;
-				Projectile.NewProjectile(shootPos, shootVel, 290, npc.damage, 5f, Main.myPlayer);
+				Projectile.NewProjectile(null, shootPos, shootVel, 290, npc.damage, 5f, Main.myPlayer);
 			}
 			if (MagicBoltCooldown <= 0)
 			{
@@ -136,7 +137,7 @@ namespace Tremor.NPCs
 					_shootSpeed = 25;
 				}
 				Vector2 velocity = Helper.VelocityToPoint(npc.Center, Helper.RandomPointInArea(new Vector2(Main.player[npc.target].Center.X - 10, Main.player[npc.target].Center.Y - 10), new Vector2(Main.player[npc.target].Center.X + 20, Main.player[npc.target].Center.Y + 20)), _shootSpeed); //здесь устанавливаем позиции (здесь от перса в плеера)
-				int proj = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, 83, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent)); //подтверждаем все выше действие: от перса к мобу, от моба к персу (второе выстрел)
+				int proj = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, 83, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent)); //подтверждаем все выше действие: от перса к мобу, от моба к персу (второе выстрел)
 				Main.projectile[proj].Center = npc.Center;
 			}
 		}
@@ -147,7 +148,7 @@ namespace Tremor.NPCs
 			if (LaserCooldown <= 60 && LaserCooldown % ((Main.expertMode) ? 4 : 7) == 0 && Main.netMode != 1)
 			{
 				Vector2 velocity = Helper.VelocityToPoint(npc.Center, Helper.RandomPointInArea(new Vector2(Main.player[npc.target].Center.X - 100, Main.player[npc.target].Center.Y - 100), new Vector2(Main.player[npc.target].Center.X + 20, Main.player[npc.target].Center.Y + 20)), ((Main.expertMode) ? 20 : 15)); //здесь устанавливаем позиции (здесь от перса в плеера)
-				int proj = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, 83, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent)); //подтверждаем все выше действие: от перса к мобу, от моба к персу (второе выстрел)
+				int proj = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, 83, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent)); //подтверждаем все выше действие: от перса к мобу, от моба к персу (второе выстрел)
 				Main.projectile[proj].Center = npc.Center;
 			}
 			if (LaserCooldown <= 0)
@@ -189,12 +190,13 @@ namespace Tremor.NPCs
 			ShootSuper();
 			if (npc.life < npc.lifeMax * 0.5f)
 			{
-				Main.npcHeadBossTexture[NPCID.Sets.BossHeadTextures[npc.type]] = mod.GetTexture("NPCs/WallOfShadow_Head_Boss1");
+				//TODO: Fix this trash assignment
+				TextureAssets.NpcHeadBoss[NPCID.Sets.BossHeadTextures[npc.type]] = mod.Assets.Request<Texture2D>("NPCs/WallOfShadow_Head_Boss1", ReLogic.Content.AssetRequestMode.ImmediateLoad);
 				Shoot();
 
 				if ((int)(Main.time % 360) == 0)
 				{
-					int index = NPC.NewNPC((int)(npc.position.X + (npc.width / 2)), (int)(npc.position.Y + (npc.height / 2) + 20.0),
+					int index = NPC.NewNPC(null, (int)(npc.position.X + (npc.width / 2)), (int)(npc.position.Y + (npc.height / 2) + 20.0),
 						ModContent.NPCType<ShadowSteed>(), 1, 0.0f, 0.0f, 0.0f, 0.0f, byte.MaxValue);
 					Main.npc[index].velocity.X = npc.direction * 6;
 				}
@@ -202,8 +204,8 @@ namespace Tremor.NPCs
 				if (npc.localAI[0] == 0.0)
 				{
 					npc.localAI[0] = 1f;
-					Main.wofB = -1;
-					Main.wofT = -1;
+					Main.wofDrawAreaBottom = -1;
+					Main.wofDrawAreaTop = -1;
 				}
 
 				npc.ai[1]++;
@@ -229,16 +231,16 @@ namespace Tremor.NPCs
 					if (Main.netMode != 1)
 					{
 						// Spawn... a Shadow Steed?
-						//int index = NPC.NewNPC((int)(npc.position.X + (npc.width / 2)), (int)(npc.position.Y + (npc.height / 2) + 20.0), ModContent.NPCType<ShadowSteed>(), 1, 0.0f, 0.0f, 0.0f, 0.0f, (int)byte.MaxValue);
-						//int index2 = NPC.NewNPC((int)(npc.position.X + (npc.width / 2)), (int)(npc.position.Y + (npc.height / 2) + 20.0), ModContent.NPCType<ShadowSteed>(), 1, 0.0f, 0.0f, 0.0f, 0.0f, (int)byte.MaxValue);
-						//NPC.NewNPC((int)(npc.position.X + (npc.width / 2)), (int)(npc.position.Y + (npc.height / 2) + 10.0), ModContent.NPCType<ShadowSteed>(), 1, 0.0f, 0.0f, 0.0f, 0.0f, (int)byte.MaxValue);
-						//NPC.NewNPC((int)(npc.position.X + (npc.width / 2)), (int)(npc.position.Y + (npc.height / 2) + 30.0), ModContent.NPCType<ShadowSteed>(), 1, 0.0f, 0.0f, 0.0f, 0.0f, (int)byte.MaxValue);
+						//int index = NPC.NewNPC(null, (int)(npc.position.X + (npc.width / 2)), (int)(npc.position.Y + (npc.height / 2) + 20.0), ModContent.NPCType<ShadowSteed>(), 1, 0.0f, 0.0f, 0.0f, 0.0f, (int)byte.MaxValue);
+						//int index2 = NPC.NewNPC(null, (int)(npc.position.X + (npc.width / 2)), (int)(npc.position.Y + (npc.height / 2) + 20.0), ModContent.NPCType<ShadowSteed>(), 1, 0.0f, 0.0f, 0.0f, 0.0f, (int)byte.MaxValue);
+						//NPC.NewNPC(null, (int)(npc.position.X + (npc.width / 2)), (int)(npc.position.Y + (npc.height / 2) + 10.0), ModContent.NPCType<ShadowSteed>(), 1, 0.0f, 0.0f, 0.0f, 0.0f, (int)byte.MaxValue);
+						//NPC.NewNPC(null, (int)(npc.position.X + (npc.width / 2)), (int)(npc.position.Y + (npc.height / 2) + 30.0), ModContent.NPCType<ShadowSteed>(), 1, 0.0f, 0.0f, 0.0f, 0.0f, (int)byte.MaxValue);
 						//Main.npc[index].velocity.X = npc.direction * 6;
 						//Main.npc[index2].velocity.X = npc.direction * 6;
 					}
 				}
 
-				Main.wof = npc.whoAmI;
+				Main.wofNPCIndex = npc.whoAmI;
 				int npcTileX = (int)(npc.position.X / 16);
 				int npcRightXTile = (int)((npc.position.X + npc.width) / 16);
 				int npcCenterYTile = (int)((npc.position.Y + (npc.height / 2)) / 16);
@@ -253,7 +255,7 @@ namespace Tremor.NPCs
 						{
 							if (!WorldGen.SolidTile(i, npcBottom))
 							{
-								if (Main.tile[i, npcBottom].liquid <= 0)
+								if (Main.tile[i, npcBottom].LiquidAmount <= 0)
 									continue;
 							}
 							++solidTiles;
@@ -265,19 +267,19 @@ namespace Tremor.NPCs
 					}
 				}
 				int num5 = npcBottom + 4;
-				if (Main.wofB == -1)
-					Main.wofB = num5 * 16;
-				else if (Main.wofB > num5 * 16)
+				if (Main.wofDrawAreaBottom == -1)
+					Main.wofDrawAreaBottom = num5 * 16;
+				else if (Main.wofDrawAreaBottom > num5 * 16)
 				{
-					--Main.wofB;
-					if (Main.wofB < num5 * 16)
-						Main.wofB = num5 * 16;
+					--Main.wofDrawAreaBottom;
+					if (Main.wofDrawAreaBottom < num5 * 16)
+						Main.wofDrawAreaBottom = num5 * 16;
 				}
-				else if (Main.wofB < num5 * 16)
+				else if (Main.wofDrawAreaBottom < num5 * 16)
 				{
-					++Main.wofB;
-					if (Main.wofB > num5 * 16)
-						Main.wofB = num5 * 16;
+					++Main.wofDrawAreaBottom;
+					if (Main.wofDrawAreaBottom > num5 * 16)
+						Main.wofDrawAreaBottom = num5 * 16;
 				}
 
 				int num6 = 0;
@@ -291,7 +293,7 @@ namespace Tremor.NPCs
 						{
 							if (!WorldGen.SolidTile(i, j2))
 							{
-								if (Main.tile[i, j2].liquid <= 0)
+								if (Main.tile[i, j2].LiquidAmount <= 0)
 									continue;
 							}
 							++num6;
@@ -303,24 +305,24 @@ namespace Tremor.NPCs
 					}
 				}
 				int num7 = j2 - 4;
-				if (Main.wofT == -1)
-					Main.wofT = num7 * 16;
-				else if (Main.wofT > num7 * 16)
+				if (Main.wofDrawAreaTop == -1)
+					Main.wofDrawAreaTop = num7 * 16;
+				else if (Main.wofDrawAreaTop > num7 * 16)
 				{
-					--Main.wofT;
-					if (Main.wofT < num7 * 16)
-						Main.wofT = num7 * 16;
+					--Main.wofDrawAreaTop;
+					if (Main.wofDrawAreaTop < num7 * 16)
+						Main.wofDrawAreaTop = num7 * 16;
 				}
-				else if (Main.wofT < num7 * 16)
+				else if (Main.wofDrawAreaTop < num7 * 16)
 				{
-					++Main.wofT;
-					if (Main.wofT > num7 * 16)
-						Main.wofT = num7 * 16;
+					++Main.wofDrawAreaTop;
+					if (Main.wofDrawAreaTop > num7 * 16)
+						Main.wofDrawAreaTop = num7 * 16;
 				}
 
 				#region Movement
 
-				float num8 = ((Main.wofB + Main.wofT) / 2 - npc.height / 2);
+				float num8 = ((Main.wofDrawAreaBottom + Main.wofDrawAreaTop) / 2 - npc.height / 2);
 				if (npc.position.Y > num8 + 1.0)
 					npc.velocity.Y = -1f;
 				else if (npc.position.Y < num8 - 1.0)
@@ -416,15 +418,16 @@ namespace Tremor.NPCs
 
 			if (npc.life > npc.lifeMax * 0.5f)
 			{
-				Main.npcHeadBossTexture[NPCID.Sets.BossHeadTextures[npc.type]] = mod.GetTexture("NPCs/WallOfShadow_Head_Boss");
+				//TODO: Fix this trash assignment
+				TextureAssets.NpcHeadBoss[NPCID.Sets.BossHeadTextures[npc.type]] =  mod.Assets.Request<Texture2D>("NPCs/WallOfShadow_Head_Boss", ReLogic.Content.AssetRequestMode.ImmediateLoad);
 				Shoot();
 				if (npc.position.X < 160 || npc.position.X > (Main.maxTilesX - 10) * 16)
 					npc.active = false;
 				if (npc.localAI[0] == 0.0)
 				{
 					npc.localAI[0] = 1f;
-					Main.wofB = -1;
-					Main.wofT = -1;
+					Main.wofDrawAreaBottom = -1;
+					Main.wofDrawAreaTop = -1;
 				}
 
 				npc.ai[1]++;
@@ -453,7 +456,7 @@ namespace Tremor.NPCs
 					}
 				}
 
-				Main.wof = npc.whoAmI;
+				Main.wofNPCIndex = npc.whoAmI;
 				int npcTileX = (int)(npc.position.X / 16);
 				int npcRightXTile = (int)((npc.position.X + npc.width) / 16);
 				int npcCenterYTile = (int)((npc.position.Y + (npc.height / 2)) / 16);
@@ -468,7 +471,7 @@ namespace Tremor.NPCs
 						{
 							if (!WorldGen.SolidTile(i, npcBottom))
 							{
-								if (Main.tile[i, npcBottom].liquid <= 0)
+								if (Main.tile[i, npcBottom].LiquidAmount <= 0)
 									continue;
 							}
 							++solidTiles;
@@ -480,19 +483,19 @@ namespace Tremor.NPCs
 					}
 				}
 				int num5 = npcBottom + 4;
-				if (Main.wofB == -1)
-					Main.wofB = num5 * 16;
-				else if (Main.wofB > num5 * 16)
+				if (Main.wofDrawAreaBottom == -1)
+					Main.wofDrawAreaBottom = num5 * 16;
+				else if (Main.wofDrawAreaBottom > num5 * 16)
 				{
-					--Main.wofB;
-					if (Main.wofB < num5 * 16)
-						Main.wofB = num5 * 16;
+					--Main.wofDrawAreaBottom;
+					if (Main.wofDrawAreaBottom < num5 * 16)
+						Main.wofDrawAreaBottom = num5 * 16;
 				}
-				else if (Main.wofB < num5 * 16)
+				else if (Main.wofDrawAreaBottom < num5 * 16)
 				{
-					++Main.wofB;
-					if (Main.wofB > num5 * 16)
-						Main.wofB = num5 * 16;
+					++Main.wofDrawAreaBottom;
+					if (Main.wofDrawAreaBottom > num5 * 16)
+						Main.wofDrawAreaBottom = num5 * 16;
 				}
 
 				int num6 = 0;
@@ -506,7 +509,7 @@ namespace Tremor.NPCs
 						{
 							if (!WorldGen.SolidTile(i, j2))
 							{
-								if (Main.tile[i, j2].liquid <= 0)
+								if (Main.tile[i, j2].LiquidAmount <= 0)
 									continue;
 							}
 							++num6;
@@ -518,24 +521,24 @@ namespace Tremor.NPCs
 					}
 				}
 				int num7 = j2 - 4;
-				if (Main.wofT == -1)
-					Main.wofT = num7 * 16;
-				else if (Main.wofT > num7 * 16)
+				if (Main.wofDrawAreaTop == -1)
+					Main.wofDrawAreaTop = num7 * 16;
+				else if (Main.wofDrawAreaTop > num7 * 16)
 				{
-					--Main.wofT;
-					if (Main.wofT < num7 * 16)
-						Main.wofT = num7 * 16;
+					--Main.wofDrawAreaTop;
+					if (Main.wofDrawAreaTop < num7 * 16)
+						Main.wofDrawAreaTop = num7 * 16;
 				}
-				else if (Main.wofT < num7 * 16)
+				else if (Main.wofDrawAreaTop < num7 * 16)
 				{
-					++Main.wofT;
-					if (Main.wofT > num7 * 16)
-						Main.wofT = num7 * 16;
+					++Main.wofDrawAreaTop;
+					if (Main.wofDrawAreaTop > num7 * 16)
+						Main.wofDrawAreaTop = num7 * 16;
 				}
 
 				#region Movement
 
-				float num8 = ((Main.wofB + Main.wofT) / 2 - npc.height / 2);
+				float num8 = ((Main.wofDrawAreaBottom + Main.wofDrawAreaTop) / 2 - npc.height / 2);
 				if (npc.position.Y > num8 + 1.0)
 					npc.velocity.Y = -1f;
 				else if (npc.position.Y < num8 - 1.0)
@@ -672,7 +675,7 @@ namespace Tremor.NPCs
 						}
 						if (num17 >= 0)
 						{
-							int index2 = NPC.NewNPC((int)npc.position.X, (int)num8, ModContent.NPCType<ShadowHand>(), npc.whoAmI, 0.0f, 0.0f,
+							int index2 = NPC.NewNPC(null, (int)npc.position.X, (int)num8, ModContent.NPCType<ShadowHand>(), npc.whoAmI, 0.0f, 0.0f,
 								0.0f, 0.0f, 255);
 							Main.npc[index2].ai[0] = (num17 * 0.100000001490116F - 0.0500000007450581F);
 						}
@@ -683,10 +686,10 @@ namespace Tremor.NPCs
 					return false;
 				npc.localAI[0] = 2f;
 
-				float num20 = ((((Main.wofB + Main.wofT) / 2) + Main.wofB) / 2.0F);
+				float num20 = ((((Main.wofDrawAreaBottom + Main.wofDrawAreaTop) / 2) + Main.wofDrawAreaBottom) / 2.0F);
 				for (int index1 = 0; index1 < 11; ++index1)
 				{
-					int index2 = NPC.NewNPC((int)npc.position.X, (int)num20, ModContent.NPCType<ShadowHand>(), npc.whoAmI, 0.0f, 0.0f,
+					int index2 = NPC.NewNPC(null, (int)npc.position.X, (int)num20, ModContent.NPCType<ShadowHand>(), npc.whoAmI, 0.0f, 0.0f,
 						0.0f, 0.0f, 255);
 					Main.npc[index2].ai[0] = (index1 * 0.100000001490116F - 0.0500000007450581F);
 				}
@@ -745,13 +748,13 @@ namespace Tremor.NPCs
 						: i <= 18 ? 3f
 						: i <= 26 ? 4f
 						: 5f;
-					Gore.NewGore(npc.position, npc.velocity, 99, x);
+					Gore.NewGore(null, npc.position, npc.velocity, 99, x);
 				}
 
 				for (int i = 1; i <= 13; i++)
 				{
 					int x = i <= 2 ? 1 : 2;
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/WallOfShadowGore" + x));
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WallOfShadowGore" + x));
 				}
 			}
 		}
@@ -762,22 +765,22 @@ namespace Tremor.NPCs
 
 			if (Main.expertMode)
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 			else
 			{
 				Helper.DropItems(npc.position, npc.Size, new Drop(ModContent.ItemType<HeavyBeamCannon>(), 1, 1), new Drop(ModContent.ItemType<Bolter>(), 1, 1), new Drop(ModContent.ItemType<StrikerBlade>(), 1, 1));
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 499, Main.rand.Next(5, 15));
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DarknessCloth>(), Main.rand.Next(8, 15));
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 499, Main.rand.Next(5, 15));
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DarknessCloth>(), Main.rand.Next(8, 15));
 				if (Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<WallofShadowMask>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<WallofShadowMask>());
 				}
 			}
 
 			if (Main.rand.Next(10) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<WallofShadowTrophy>());
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<WallofShadowTrophy>());
 			}
 
 			if (Main.netMode != 1)
@@ -789,13 +792,14 @@ namespace Tremor.NPCs
 				{
 					for (int index3 = num2 - num5; index3 <= num2 + num5; ++index3)
 					{
+						var tile = Main.tile[index2, index3];
 						if ((index2 == num1 - num5 || index2 == num1 + num5 || (index3 == num2 - num5 || index3 == num2 + num5)) && !Main.tile[index2, index3].active())
 						{
-							Main.tile[index2, index3].type = 140;
-							Main.tile[index2, index3].active(true);
+							tile.TileType = 140;
+							tile.active(true);
 						}
-						Main.tile[index2, index3].lava(false);
-						Main.tile[index2, index3].liquid = 0;
+						tile.LiquidType = LiquidID.Water;//was tile.lava(false)
+						tile.LiquidAmount = 0;
 						if (Main.netMode == 2)
 							NetMessage.SendTileSquare(-1, index2, index3, 1);
 						else
@@ -850,9 +854,9 @@ namespace Tremor.NPCs
 				{
 					float num6 = npc.position.X + (npc.width / 2);
 					float num7 = npc.position.Y;
-					float num8 = (Main.wofB - Main.wofT);
+					float num8 = (Main.wofDrawAreaBottom - Main.wofDrawAreaTop);
 					bool flag2 = Main.npc[j].frameCounter > 7.0;
-					num7 = Main.wofT + num8 * Main.npc[j].ai[0];
+					num7 = Main.wofDrawAreaTop + num8 * Main.npc[j].ai[0];
 					Vector2 vector2 = new Vector2(Main.npc[j].position.X + (Main.npc[j].width / 2), Main.npc[j].position.Y + (Main.npc[j].height / 2));
 					float num9 = num6 - vector2.X;
 					float num10 = num7 - vector2.Y;
@@ -890,8 +894,8 @@ namespace Tremor.NPCs
 				}
 			}
 			int num12 = 140;
-			float num13 = Main.wofT;
-			float num14 = Main.wofB;
+			float num13 = Main.wofDrawAreaTop;
+			float num14 = Main.wofDrawAreaBottom;
 			num14 = Main.screenPosition.Y + Main.screenHeight;
 			float num15 = (int)((num13 - Main.screenPosition.Y) / num12) + 1;
 			num15 *= num12;
@@ -915,17 +919,17 @@ namespace Tremor.NPCs
 			int num19 = 0;
 			if (!Main.gamePaused)
 			{
-				Main.wofF++;
+				Main.wofDrawFrameIndex++;
 			}
-			if (Main.wofF > 12)
+			if (Main.wofDrawFrameIndex > 12)
 			{
 				num19 = 280;
-				if (Main.wofF > 17)
+				if (Main.wofDrawFrameIndex > 17)
 				{
-					Main.wofF = 0;
+					Main.wofDrawFrameIndex = 0;
 				}
 			}
-			else if (Main.wofF > 6)
+			else if (Main.wofDrawFrameIndex > 6)
 			{
 				num19 = 140;
 			}
@@ -956,12 +960,12 @@ namespace Tremor.NPCs
 				}
 			}
 
-			Texture2D drawTexture = Main.npcTexture[npc.type];
+			Texture2D drawTexture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2((drawTexture.Width / 2) * 0.5F, (drawTexture.Height / Main.npcFrameCount[npc.type]) * 0.5F);
 
 			Vector2 drawPos = new Vector2(
-			npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Main.npcTexture[npc.type].Width / 2) * npc.scale / 2f + origin.X * npc.scale,
-			npc.position.Y - Main.screenPosition.Y + npc.height - Main.npcTexture[npc.type].Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
+			npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Width / 2) * npc.scale / 2f + origin.X * npc.scale,
+			npc.position.Y - Main.screenPosition.Y + npc.height - Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
 
 			SpriteEffects effects = npc.spriteDirection == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
 			spriteBatch.Draw(drawTexture, drawPos, npc.frame, drawColor, npc.rotation, origin, npc.scale, effects, 0);

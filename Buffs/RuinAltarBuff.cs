@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class RuinAltarBuff : ModBuff
+	public class RuinAltarBuff:TremorModBuff
 	{
 		public override void SetDefaults()
 		{

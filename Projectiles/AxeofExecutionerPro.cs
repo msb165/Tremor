@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class AxeofExecutionerPro : ModProjectile
+	public class AxeofExecutionerPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

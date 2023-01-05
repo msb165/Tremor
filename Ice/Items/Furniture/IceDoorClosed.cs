@@ -8,7 +8,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Ice.Items.Furniture
 {
-	public class IceDoorClosed : ModTile
+	public class IceDoorClosed:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -37,12 +37,12 @@ namespace Tremor.Ice.Items.Furniture
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
 			AddMapEntry(new Color(87, 144, 165));
 			adjTiles = new int[] { TileID.ClosedDoor };
-			openDoorID = ModContent.TileType<IceDoorOpen>();
+			OpenDoorID = ModContent.TileType<IceDoorOpen>();
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 16, 48, ModContent.ItemType<IceDoor>());
+			Item.NewItem(null, i * 16, j * 16, 16, 48, ModContent.ItemType<IceDoor>());
 		}
 	}
 }

@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.Enums;
 using Terraria.ID;
@@ -8,7 +9,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class StoneChest : ModTile
+	public class StoneChest:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -18,11 +19,11 @@ namespace Tremor.Tiles
 			Main.tileShine[Type] = 1200;
 			Main.tileFrameImportant[Type] = true;
 			Main.tileNoAttach[Type] = true;
-			Main.tileValue[Type] = 500;
+			//Main.tileValue[Type] = 500;
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
 			TileObjectData.newTile.Origin = new Point16(0, 1);
 			TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
-			TileObjectData.newTile.HookCheck = new PlacementHook(Chest.FindEmptyChest, -1, 0, true);
+			TileObjectData.newTile.HookCheckIfCanPlace = new PlacementHook(Chest.FindEmptyChest, -1, 0, true);
 			TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(Chest.AfterPlacement_Hook, -1, 0, false);
 			TileObjectData.newTile.AnchorInvalidTiles = new[] { 127 };
 			TileObjectData.newTile.StyleHorizontal = true;
@@ -31,9 +32,9 @@ namespace Tremor.Tiles
 			TileObjectData.addTile(Type);
 			AddMapEntry(new Color(162,162,162));
 			disableSmartCursor = true;
-			adjTiles = new int[] { TileID.Containers };
+			AdjTiles = new int[] { TileID.Containers };
 			chest = "Stone Chest";
-			chestDrop = ModContent.ItemType<Items.StoneChest>();
+			ChestDrop = ModContent.ItemType<Items.StoneChest>();
 		}
 
 				public string MapChestName(string name, int i, int j)
@@ -41,11 +42,11 @@ namespace Tremor.Tiles
 			int left = i;
 			int top = j;
 			Tile tile = Main.tile[i, j];
-			if (tile.frameX % 36 != 0)
+			if (tile.TileFrameX % 36 != 0)
 			{
 				left--;
 			}
-			if (tile.frameY != 0)
+			if (tile.TileFrameY != 0)
 			{
 				top--;
 			}
@@ -64,35 +65,35 @@ namespace Tremor.Tiles
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 32, chestDrop);
+			Item.NewItem(null, i * 16, j * 16, 32, 32, chestDrop);
 			Chest.DestroyChest(i, j);
 		}
 
-		public override void RightClick(int i, int j)
+		public override bool RightClick(int i, int j)
 		{
 			Player player = Main.LocalPlayer;
 			Tile tile = Main.tile[i, j];
 			Main.mouseRightRelease = false;
 			int left = i;
 			int top = j;
-			if (tile.frameX % 36 != 0)
+			if (tile.TileFrameX % 36 != 0)
 			{
 				left--;
 			}
-			if (tile.frameY != 0)
+			if (tile.TileFrameY != 0)
 			{
 				top--;
 			}
 			if (player.sign >= 0)
 			{
-				Main.PlaySound(SoundID.MenuClose);
+				Terraria.Audio.SoundEngine.PlaySound(SoundID.MenuClose);
 				player.sign = -1;
 				Main.editSign = false;
 				Main.npcChatText = "";
 			}
 			if (Main.editChest)
 			{
-				Main.PlaySound(SoundID.MenuTick);
+				Terraria.Audio.SoundEngine.PlaySound(SoundID.MenuTick);
 				Main.editChest = false;
 				Main.npcChatText = "";
 			}
@@ -107,7 +108,7 @@ namespace Tremor.Tiles
 				{
 					player.chest = -1;
 					Recipe.FindRecipes();
-					Main.PlaySound(SoundID.MenuClose);
+					Terraria.Audio.SoundEngine.PlaySound(SoundID.MenuClose);
 				}
 				else
 				{
@@ -124,7 +125,7 @@ namespace Tremor.Tiles
 					if (chest == player.chest)
 					{
 						player.chest = -1;
-						Main.PlaySound(SoundID.MenuClose);
+						Terraria.Audio.SoundEngine.PlaySound(SoundID.MenuClose);
 					}
 					else
 					{
@@ -133,11 +134,12 @@ namespace Tremor.Tiles
 						Main.recBigList = false;
 						player.chestX = left;
 						player.chestY = top;
-						Main.PlaySound(player.chest < 0 ? SoundID.MenuOpen : SoundID.MenuTick);
+						SoundEngine.PlaySound(player.chest < 0 ? SoundID.MenuOpen : SoundID.MenuTick);
 					}
 					Recipe.FindRecipes();
 				}
 			}
+			return true;
 		}
 
 		public override void MouseOver(int i, int j)
@@ -146,41 +148,41 @@ namespace Tremor.Tiles
 			Tile tile = Main.tile[i, j];
 			int left = i;
 			int top = j;
-			if (tile.frameX % 36 != 0)
+			if (tile.TileFrameX % 36 != 0)
 			{
 				left--;
 			}
-			if (tile.frameY != 0)
+			if (tile.TileFrameY != 0)
 			{
 				top--;
 			}
 			int chest = Chest.FindChest(left, top);
-			player.showItemIcon2 = -1;
+			player.cursorItemIconID = -1;
 			if (chest < 0)
 			{
-				player.showItemIconText = Lang.chestType[0].Value;
+				player.cursorItemIconText = Lang.chestType[0].Value;
 			}
 			else
 			{
-				player.showItemIconText = Main.chest[chest].name.Length > 0 ? Main.chest[chest].name : "Stone Chest";
-				if (player.showItemIconText == "Stone Chest")
+				player.cursorItemIconText = Main.chest[chest].name.Length > 0 ? Main.chest[chest].name : "Stone Chest";
+				if (player.cursorItemIconText == "Stone Chest")
 				{
-					player.showItemIcon2 = ModContent.ItemType<Items.StoneChest>();
-					player.showItemIconText = "";
+					player.cursorItemIconID = ModContent.ItemType<Items.StoneChest>();
+					player.cursorItemIconText = "";
 				}
 			}
 			player.noThrow = 2;
-			player.showItemIcon = true;
+			player.cursorItemIconEnabled = true;
 		}
 
 		public override void MouseOverFar(int i, int j)
 		{
 			MouseOver(i, j);
 			Player player = Main.LocalPlayer;
-			if (player.showItemIconText == "")
+			if (player.cursorItemIconText == "")
 			{
-				player.showItemIcon = false;
-				player.showItemIcon2 = 0;
+				player.cursorItemIconEnabled = false;
+				player.cursorItemIconID = 0;
 			}
 		}
 	}

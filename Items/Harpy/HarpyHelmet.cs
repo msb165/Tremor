@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Harpy
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class HarpyHelmet : ModItem
+	public class HarpyHelmet:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,7 +26,7 @@ namespace Tremor.Items.Harpy
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.1f;
+			player.GetDamage(DamageClass.Melee) += 0.1f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

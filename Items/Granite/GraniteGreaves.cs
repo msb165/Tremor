@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Granite
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class GraniteGreaves : ModItem
+	public class GraniteGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()

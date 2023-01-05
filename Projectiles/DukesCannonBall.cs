@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class DukesCannonBall : ModProjectile
+	public class DukesCannonBall:TremorModProjectile
 	{
 		const int LifePerHit = 10;
 		int Life = 0;
@@ -17,7 +17,7 @@ namespace Tremor.Projectiles
 			projectile.width = 12;
 			projectile.height = 12;
 			projectile.friendly = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.penetrate = 25;
 			projectile.timeLeft = 99999999;
 			projectile.aiStyle = -1;
@@ -117,7 +117,7 @@ namespace Tremor.Projectiles
 				{
 					projectile.velocity.Y = -oldVelocity.Y;
 				}
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 10);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item10, projectile.position);
 			}
 			return false;
 		}

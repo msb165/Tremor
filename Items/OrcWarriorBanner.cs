@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class OrcWarriorBanner : ModItem
+	public class OrcWarriorBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

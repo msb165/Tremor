@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ThrowerEmblem : ModItem
+	public class ThrowerEmblem:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -24,7 +24,7 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.thrownDamage += 0.15f;
+			player.GetDamage(DamageClass.Throwing) += 0.15f;
 		}
 
 		public override void AddRecipes()

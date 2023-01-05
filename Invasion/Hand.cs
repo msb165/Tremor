@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class Hand : ModNPC
+	public class Hand:TremorModNPC
 	{
 		//[1] id head
 

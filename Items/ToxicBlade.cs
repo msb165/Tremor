@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ToxicBlade : ModItem
+	public class ToxicBlade:TremorModItem
 	{
 		public override void SetDefaults()
 		{

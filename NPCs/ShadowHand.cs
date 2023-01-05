@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs
 {
-	public class ShadowHand : ModNPC
+	public class ShadowHand:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -41,11 +41,14 @@ namespace Tremor.NPCs
 			npc.damage = (int)(npc.damage * 0.6f);
 		}
 
+		//Was pulled from Main.damageMultiplier in 1.3.5
+		private static float damageMultiplier => Main.expertMode ? 2 : 1;
+
 		public override bool PreAI()
 		{
 			if (npc.justHit)
 				npc.ai[1] = 10f;
-			if (Main.wof < 0)
+			if (Main.wofNPCIndex < 0)
 			{
 				npc.active = false;
 			}
@@ -54,27 +57,27 @@ namespace Tremor.NPCs
 				npc.TargetClosest(true);
 				float num1 = 0.1f;
 				float num2 = 300f;
-				if (Main.npc[Main.wof].life < Main.npc[Main.wof].lifeMax * 0.25F)
+				if (Main.npc[Main.wofNPCIndex].life < Main.npc[Main.wofNPCIndex].lifeMax * 0.25F)
 				{
-					npc.damage = (int)(75 * Main.damageMultiplier);
+					npc.damage = (int)(75 * damageMultiplier);
 					npc.defense = 40;
 					if (!Main.expertMode)
 						num2 = 900;
 					else
 						num1 += 0.1F;
 				}
-				else if (Main.npc[Main.wof].life < Main.npc[Main.wof].lifeMax * 0.5F)
+				else if (Main.npc[Main.wofNPCIndex].life < Main.npc[Main.wofNPCIndex].lifeMax * 0.5F)
 				{
-					npc.damage = (int)(60 * (double)Main.damageMultiplier);
+					npc.damage = (int)(60 * (double)damageMultiplier);
 					npc.defense = 30;
 					if (!Main.expertMode)
 						num2 = 700;
 					else
 						num1 += 0.066F;
 				}
-				else if (Main.npc[Main.wof].life < Main.npc[Main.wof].lifeMax * 0.75F)
+				else if (Main.npc[Main.wofNPCIndex].life < Main.npc[Main.wofNPCIndex].lifeMax * 0.75F)
 				{
-					npc.damage = (int)(45 * Main.damageMultiplier);
+					npc.damage = (int)(45 * damageMultiplier);
 					npc.defense = 20;
 					if (!Main.expertMode)
 						num2 = 500;
@@ -96,10 +99,10 @@ namespace Tremor.NPCs
 						num2 *= 1.25F;
 					num2 *= 0.75F;
 				}
-				float x = Main.npc[Main.wof].position.X + (Main.npc[Main.wof].width / 2);
-				float num3 = Main.npc[Main.wof].position.Y;
-				float num4 = (Main.wofB - Main.wofT);
-				float y = Main.wofT + num4 * npc.ai[0];
+				float x = Main.npc[Main.wofNPCIndex].position.X + (Main.npc[Main.wofNPCIndex].width / 2);
+				float num3 = Main.npc[Main.wofNPCIndex].position.Y;
+				float num4 = (Main.wofDrawAreaBottom - Main.wofDrawAreaTop);
+				float y = Main.wofDrawAreaTop + num4 * npc.ai[0];
 				++npc.ai[2];
 				if (npc.ai[2] > 100)
 				{
@@ -144,10 +147,10 @@ namespace Tremor.NPCs
 							npc.velocity.Y = npc.velocity.Y - num1 * 2.5f;
 					}
 					float num9 = 4f;
-					if (Main.expertMode && Main.wof >= 0)
+					if (Main.expertMode && Main.wofNPCIndex >= 0)
 					{
 						float num8 = 1.5f;
-						float num10 = (Main.npc[Main.wof].life / Main.npc[Main.wof].lifeMax);
+						float num10 = (Main.npc[Main.wofNPCIndex].life / Main.npc[Main.wofNPCIndex].lifeMax);
 						if (num10 < 0.75)
 							num8 += 0.7f;
 						if (num10 < 0.5)
@@ -158,9 +161,9 @@ namespace Tremor.NPCs
 							num8 += 0.9f;
 						float num11 = num8 * 1.25f + 0.3f;
 						num9 += num11 * 0.35f;
-						if (npc.Center.X < Main.npc[Main.wof].Center.X && Main.npc[Main.wof].velocity.X > 0.0)
+						if (npc.Center.X < Main.npc[Main.wofNPCIndex].Center.X && Main.npc[Main.wofNPCIndex].velocity.X > 0.0)
 							num9 += 6f;
-						if (npc.Center.X > Main.npc[Main.wof].Center.X && Main.npc[Main.wof].velocity.X < 0.0)
+						if (npc.Center.X > Main.npc[Main.wofNPCIndex].Center.X && Main.npc[Main.wofNPCIndex].velocity.X < 0.0)
 							num9 += 6f;
 					}
 					if (npc.velocity.X > num9)
@@ -196,10 +199,10 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y,
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y,
 				ModContent.NPCType<ShadowHandTwo>());
 			}
 		}

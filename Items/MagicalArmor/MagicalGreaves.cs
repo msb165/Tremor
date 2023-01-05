@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.MagicalArmor
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class MagicalGreaves : ModItem
+	public class MagicalGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items.MagicalArmor
 
 		public override void UpdateEquip(Player player)
 		{
-			player.magicDamage += 0.03f;
+			player.GetDamage(DamageClass.Magic) += 0.03f;
 		}
 
 		public override void AddRecipes()

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Sanctifier : ModItem
+	public class Sanctifier:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -29,7 +29,7 @@ namespace Tremor.Items
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.15f;
-			player.thrownDamage += 0.15f;
+			player.GetDamage(DamageClass.Throwing) += 0.15f;
 		}
 
 		public override void AddRecipes()

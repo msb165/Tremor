@@ -6,7 +6,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class WallofShadowBag : ModItem
+	public class WallofShadowBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

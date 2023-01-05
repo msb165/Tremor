@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class FossilSugar : ModItem
+	public class FossilSugar:TremorModItem
 	{
 		public override void SetDefaults()
 		{

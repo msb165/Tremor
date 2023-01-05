@@ -4,7 +4,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items.Fungus
 {
-	public class FungusBeetleBag : ModItem
+	public class FungusBeetleBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

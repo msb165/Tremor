@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class LunarSquid : ModItem
+	public class LunarSquid:TremorModItem
 	{
 		public override void SetDefaults()
 		{

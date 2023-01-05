@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Argite
 {
-	public class ArgitePickaxe : ModItem
+	public class ArgitePickaxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 9;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 54;
 			item.height = 48;
 			item.useTime = 15;

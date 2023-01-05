@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Chaos
 {
-	public class ChaosBar : ModItem
+	public class ChaosBar:TremorModItem
 	{
 		public override void SetDefaults()
 		{

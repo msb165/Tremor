@@ -5,7 +5,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class ArgiteBar : ModTile
+	public class ArgiteBar:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -28,7 +28,7 @@ namespace Tremor.Tiles
     {
         if(frameX == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<Items.Argite.ArgiteBar>());
+            Item.NewItem(null, i * 16, j * 16, 48, 48, ModContent.ItemType<Items.Argite.ArgiteBar>());
         }
     }
 }}

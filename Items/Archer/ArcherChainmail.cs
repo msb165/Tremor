@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Archer
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class ArcherChainmail : ModItem
+	public class ArcherChainmail:TremorModItem
 	{
 
 		public override void SetDefaults()

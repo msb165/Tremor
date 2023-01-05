@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 
-	public class RockClimberPotion : ModItem
+	public class RockClimberPotion:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -28,7 +28,7 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Grants ability to climb walls");
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			player.AddBuff(ModContent.BuffType<Buffs.RockClimberBuff>(), 3600);
 			return true;

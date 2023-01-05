@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class HeartAmulet : ModItem
+	public class HeartAmulet:TremorModItem
 	{
 		public override void SetDefaults()
 		{

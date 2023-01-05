@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class GarnetGlovePro : ModProjectile
+	public class GarnetGlovePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

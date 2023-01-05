@@ -11,7 +11,7 @@ namespace Tremor.NPCs
 {
 	//todo: refactor, comparable to HoW
 	[AutoloadBossHead]
-	public class Dragon_HeadB : ModNPC
+	public class Dragon_HeadB:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -54,26 +54,26 @@ namespace Tremor.NPCs
 		{
 			if (Main.expertMode)
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 			else
 			{
 				if (Main.rand.NextBool(7))
 				{
-					Item.NewItem(npc.position, npc.Size, ModContent.ItemType<AncientDragonMask>());
+					Item.NewItem(null, npc.position, npc.Size, ModContent.ItemType<AncientDragonMask>());
 				}
 
 				if (Main.rand.NextBool())
 				{
-					Item.NewItem(npc.position, npc.Size, ModContent.ItemType<AncientTimesEdge>());
-					Item.NewItem(npc.position, npc.Size, ModContent.ItemType<DragonHead>());
-					Item.NewItem(npc.position, npc.Size, ModContent.ItemType<Swordstorm>());
+					Item.NewItem(null, npc.position, npc.Size, ModContent.ItemType<AncientTimesEdge>());
+					Item.NewItem(null, npc.position, npc.Size, ModContent.ItemType<DragonHead>());
+					Item.NewItem(null, npc.position, npc.Size, ModContent.ItemType<Swordstorm>());
 				}
 			}
 
 			if (Main.rand.NextBool(10))
 			{
-				Item.NewItem(npc.position, npc.Size, ModContent.ItemType<AncientDragonTrophy>());
+				Item.NewItem(null, npc.position, npc.Size, ModContent.ItemType<AncientDragonTrophy>());
 			}
 
 			TremorWorld.Boss.AncientDragon.Downed();
@@ -91,11 +91,11 @@ namespace Tremor.NPCs
 					int lol = 0;
 					if (num36 >= 0 && num36 < 18)
 					{
-						lol = NPC.NewNPC((int)npc.position.X + (npc.width / 2), (int)npc.position.Y + (npc.width / 2), ModContent.NPCType<Dragon_BodyB>(), npc.whoAmI);
+						lol = NPC.NewNPC(null, (int)npc.position.X + (npc.width / 2), (int)npc.position.Y + (npc.width / 2), ModContent.NPCType<Dragon_BodyB>(), npc.whoAmI);
 					}
 					else
 					{
-						lol = NPC.NewNPC((int)npc.position.X + (npc.width / 2), (int)npc.position.Y + (npc.width / 2), ModContent.NPCType<Dragon_LegB>(), npc.whoAmI);
+						lol = NPC.NewNPC(null, (int)npc.position.X + (npc.width / 2), (int)npc.position.Y + (npc.width / 2), ModContent.NPCType<Dragon_LegB>(), npc.whoAmI);
 					}
 					Main.npc[lol].realLife = npc.whoAmI;
 					Main.npc[lol].ai[2] = npc.whoAmI;
@@ -119,12 +119,12 @@ namespace Tremor.NPCs
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D drawTexture = Main.npcTexture[npc.type];
+			Texture2D drawTexture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2((drawTexture.Width / 2) * 0.5F, (drawTexture.Height / Main.npcFrameCount[npc.type]) * 0.5F);
 
 			Vector2 drawPos = new Vector2(
-				npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Main.npcTexture[npc.type].Width / 2) * npc.scale / 2f + origin.X * npc.scale,
-				npc.position.Y - Main.screenPosition.Y + npc.height - Main.npcTexture[npc.type].Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
+				npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Width / 2) * npc.scale / 2f + origin.X * npc.scale,
+				npc.position.Y - Main.screenPosition.Y + npc.height - Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
 
 			SpriteEffects effects = npc.spriteDirection == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
 			spriteBatch.Draw(drawTexture, drawPos, npc.frame, Color.White, npc.rotation, origin, npc.scale, effects, 0);

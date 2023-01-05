@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Argite
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class ArgiteGreaves : ModItem
+	public class ArgiteGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()

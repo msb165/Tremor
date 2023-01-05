@@ -1,43 +1,55 @@
-using Microsoft.Xna.Framework.Graphics;
-using Terraria.ModLoader;
-using Tremor.Ice.Items;
+//using Microsoft.Xna.Framework.Graphics;
+//using ReLogic.Content;
+//using Terraria;
+//using Terraria.GameContent;
+//using Terraria.ID;
+//using Terraria.ModLoader;
+//using Tremor.Ice.Items;
 
-namespace Tremor.Ice.Tree
-{
-	public class TremorTree : ModTree
-	{
-		private Mod mod => Tremor.instance;
+//namespace Tremor.Ice.Tree
+//{
+//	public class TremorTree : ModTree
+//	{
+//		//TODO: Tree Type
 
-		/* TODO: TreeCrash does not exist
-		public override int CreateDust()
-		{
-			return ModContent.DustType<TreeCrash>();
-		}
-		*/
 
-		public override int GrowthFXGore()
-		{
-			return mod.GetGoreSlot("Ice/Tree/TremorTreeFX");
-		}
+//		private Mod mod => Tremor.instance;
 
-		public override int DropWood()
-		{
-			return ModContent.ItemType<GlacierWood>();
-		}
+//		/* TODO: TreeCrash does not exist
+//		public override int CreateDust()
+//		{
+//			return ModContent.DustType<TreeCrash>();
+//		}
+//		*/
 
-		public override Texture2D GetTexture()
-		{
-			return mod.GetTexture("Ice/Tree/TremorTree");
-		}
+//		//TODO: [1.4] These members are now required
+//		public override TreePaintingSettings TreeShaderSettings{get;} = new TreePaintingSettings();
+//		public override void SetStaticDefaults(){}
+//		public override void SetTreeFoliageSettings(Tile tile, ref int xoffset, ref int treeFrame, ref int floorY, ref int topTextureFrameWidth, ref int topTextureFrameHeight){}
 
-		public override Texture2D GetBranchTextures(int i, int j, int trunkOffset, ref int frame)
-		{
-			return mod.GetTexture("Ice/Tree/TremorTree_Branches");
-		}
+//		//TODO: Tree Gore
+//		public /*override*/ int GrowthFXGore()
+//		{
+//			return mod.GetGoreSlot("Ice/Tree/TremorTreeFX");
+//		}
 
-		public override Texture2D GetTopTextures(int i, int j, ref int frame, ref int frameWidth, ref int frameHeight, ref int xOffsetLeft, ref int yOffset)
-		{
-			return mod.GetTexture("Ice/Tree/TremorTree_Tops");
-		}
-	}
-}
+//		public override int DropWood()
+//		{
+//			return ModContent.ItemType<GlacierWood>();
+//		}
+
+//		public override Asset<Texture2D> GetTexture()
+//		{
+//			return mod.GetTextureAsset("Ice/Tree/TremorTree");
+//		}
+//		public override Asset<Texture2D> GetBranchTextures()
+//		{
+//			return mod.GetTextureAsset("Ice/Tree/TremorTree_Branches");
+//		}
+
+//		public override Asset<Texture2D> GetTopTextures()
+//		{
+//			return mod.GetTextureAsset("Ice/Tree/TremorTree_Tops");
+//		}
+//	}
+//}

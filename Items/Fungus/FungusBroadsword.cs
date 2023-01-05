@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Fungus
 {
-	public class FungusBroadsword : ModItem
+	public class FungusBroadsword:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -20,7 +20,7 @@ namespace Tremor.Items.Fungus
 			item.shoot = 131;
 			item.shootSpeed = 15f;
 			item.knockBack = 3f;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.value = Item.sellPrice(0, 0, 5, 0);
 			item.autoReuse = true;
 		}

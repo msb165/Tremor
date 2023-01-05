@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TikiTotemMusicBox : ModItem
+	public class TikiTotemMusicBox:TremorModItem
 	{
 		public override void SetDefaults()
 		{

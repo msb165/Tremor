@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Souls
 {
-	public class InfernoSoul : ModItem
+	public class InfernoSoul:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -27,7 +27,7 @@ namespace Tremor.Items.Souls
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 	}

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Dark
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class DarkDruidMask : ModItem
+	public class DarkDruidMask:TremorModItem
 	{
 
 		public override void SetDefaults()

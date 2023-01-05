@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Argite
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class ArgiteHelmet : ModItem
+	public class ArgiteHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,7 +28,7 @@ namespace Tremor.Items.Argite
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeSpeed += 0.1f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.1f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

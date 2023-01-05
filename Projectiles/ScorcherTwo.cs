@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class ScorcherTwo : ModProjectile
+	public class ScorcherTwo:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -53,7 +53,7 @@ namespace Tremor.Projectiles
 					}
 					value12.Normalize();
 					value12 *= Main.rand.Next(70, 101) * 0.1f;
-					Projectile.NewProjectile(projectile.oldPosition.X + projectile.width / 2, projectile.oldPosition.Y + projectile.height / 2, value12.X, value12.Y, 612, (int)(projectile.damage * 0.8), projectile.knockBack * 2.8f, projectile.owner, 0f, 0f);
+					Projectile.NewProjectile(null, projectile.oldPosition.X + projectile.width / 2, projectile.oldPosition.Y + projectile.height / 2, value12.X, value12.Y, 612, (int)(projectile.damage * 0.8), projectile.knockBack * 2.8f, projectile.owner, 0f, 0f);
 				}
 			}
 		}
@@ -140,7 +140,7 @@ namespace Tremor.Projectiles
 						}
 						if (num670 > projectile.damage * 0.1f)
 						{
-							Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.ScorcherStar>(), projectile.damage, projectile.knockBack * 0.55f, projectile.owner, 0f, Main.rand.Next(2));
+							Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.ScorcherStar>(), projectile.damage, projectile.knockBack * 0.55f, projectile.owner, 0f, Main.rand.Next(2));
 						}
 					}
 				}

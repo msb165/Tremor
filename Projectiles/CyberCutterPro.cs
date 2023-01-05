@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class CyberCutterPro : ModProjectile
+	public class CyberCutterPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -18,7 +18,7 @@ namespace Tremor.Projectiles
 			projectile.hostile = false;
 			projectile.tileCollide = true;
 			projectile.ignoreWater = true;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 			projectile.penetrate = 50;
 		}
 
@@ -163,7 +163,7 @@ namespace Tremor.Projectiles
 				projectile.rotation += projectile.direction * 0.8f;
 			}
 			if (projectile.timeLeft % 60 == 0)
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 23);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item23, projectile.position);
 		}
 		public override bool OnTileCollide(Vector2 velocityChange)
 		{

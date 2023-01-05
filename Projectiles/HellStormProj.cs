@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class HellStormProj : ModProjectile
+	public class HellStormProj:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -16,7 +16,7 @@ namespace Tremor.Projectiles
 			projectile.penetrate = -1;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
-			projectile.ranged = true;
+			projectile.DamageType = DamageClass.Ranged;
 		}
 
 		public override void SetStaticDefaults()
@@ -75,7 +75,7 @@ namespace Tremor.Projectiles
 					projectile.soundDelay = num3 - num4 * num2;
 					if (projectile.ai[0] != 1f)
 					{
-						Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 5);
+						Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item5, projectile.position);
 					}
 				}
 				if (flag && Main.myPlayer == projectile.owner)
@@ -111,7 +111,7 @@ namespace Tremor.Projectiles
 						{
 							spinningpoint = -Vector2.UnitY;
 						}
-						Projectile.NewProjectile(value2.X, value2.Y, spinningpoint.X, spinningpoint.Y, num6, projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
+						Projectile.NewProjectile(null, value2.X, value2.Y, spinningpoint.X, spinningpoint.Y, num6, projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
 					}
 					else
 					{

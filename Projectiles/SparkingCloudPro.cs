@@ -3,14 +3,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class SparkingCloudPro : ModProjectile
+	public class SparkingCloudPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
 
 			projectile.width = 16;
 			projectile.height = 16;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.penetrate = 8;
 			projectile.aiStyle = 92;
 			projectile.hostile = true;

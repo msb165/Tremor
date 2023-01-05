@@ -5,7 +5,7 @@ using Tremor.Projectiles.Alchemic.Blasts;
 
 namespace Tremor.Projectiles
 {
-	public class BigPlague : ModProjectile
+	public class BigPlague:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -31,7 +31,7 @@ namespace Tremor.Projectiles
 
 		public override void Kill(int timeLeft)
 		{
-			int ses = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<PlagueBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
+			int ses = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<PlagueBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
 			Main.projectile[ses].scale = projectile.scale;
 		}
 		public override void AI()

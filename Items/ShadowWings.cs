@@ -6,7 +6,7 @@ using Tremor.Items.Dark;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Wings)]
-	public class ShadowWings : ModItem
+	public class ShadowWings:TremorModItem
 	{
 
 		public override void SetDefaults()

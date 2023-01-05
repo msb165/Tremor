@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GenieLamp : ModItem
+	public class GenieLamp:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,12 +26,12 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Summons a Genie");
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			player.AddBuff(ModContent.BuffType<Buffs.petGenie>(), 2);
 			for (int i = 0; i < Main.projectile.Length; i++)
-				if (Main.projectile[i].type == ModContent.ProjectileType<Projectiles.projGenie>() && Main.projectile[i].owner == item.owner)
-					Main.projectile[i].Center = Main.player[item.owner].Center;
+				if (Main.projectile[i].type == ModContent.ProjectileType<Projectiles.projGenie>() && Main.projectile[i].owner == player.whoAmI)
+					Main.projectile[i].Center = Main.player[player.whoAmI].Center;
 			return true;
 		}
 	}

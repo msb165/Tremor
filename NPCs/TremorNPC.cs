@@ -20,131 +20,132 @@ namespace Tremor.NPCs
 {
 	public class TremorNPC : GlobalNPC
 	{
-		public override void NPCLoot(NPC npc)
+		//TODO: Convert to loot method
+		public override void OnKill(NPC npc)
 		{
 			if (NPC.downedMoonlord)
 			{
 				if (npc.type == 147)
 				{
 					if (Main.rand.NextBool(7))
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
 				}
 				if (npc.type == 150)
 				{
 					if (Main.rand.NextBool(7))
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
 				}
 				if (npc.type == 154)
 				{
 					if (Main.rand.NextBool(7))
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
 				}
 				if (npc.type == 155)
 				{
 					if (Main.rand.NextBool(7))
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
 				}
 				if (npc.type == 161)
 				{
 					if (Main.rand.NextBool(7))
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
 				}
 				if (npc.type == 167)
 				{
 					if (Main.rand.NextBool(7))
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
 
 				}
 				if (npc.type == 168)
 				{
 					if (Main.rand.NextBool(7))
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
 
 				}
 				if (npc.type == 169)
 				{
 					if (Main.rand.NextBool(7))
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
 				}
 				if (npc.type == 184)
 				{
 					if (Main.rand.NextBool(7))
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
 				}
 				if (npc.type == 185)
 				{
 					if (Main.rand.NextBool(7))
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
 				}
 				if (npc.type == 197)
 				{
 					if (Main.rand.NextBool(7))
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
 				}
 				if (npc.type == 206)
 				{
 					if (Main.rand.NextBool(7))
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
 				}
 				if (npc.type == 431)
 				{
 					if (Main.rand.NextBool(7))
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
+						Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceSoul>());
 
 				}
 			}
 
 			if (npc.type == 77 && Main.rand.NextBool(3))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<TheRib>());
 			}
 
 			if (npc.type == 110 && Main.rand.NextBool(3))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<TheRib>());
 			}
 
 			if (npc.type == 483 && Main.rand.NextBool(4))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<StoneofLife>());
 			}
 
 			if (npc.type == 481 && Main.rand.NextBool(4))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<StoneofLife>());
 			}
 
 			if (npc.type == 140 && Main.rand.Next(25) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<PossessedHelmet>());
 			}
 
 			if (npc.type == 140 && Main.rand.Next(25) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<PossessedChestplate>());
 			}
 
 			if (npc.type == 140 && Main.rand.Next(25) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<PossessedGreaves>());
 			}
 
 			if (!Main.expertMode && npc.type == 127 && Main.rand.NextBool(6))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<PrimeBlade>());
 			}
 
 			if (!Main.expertMode && npc.type == 134 && Main.rand.NextBool(6))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<Destructor>());
 			}
 
@@ -152,245 +153,245 @@ namespace Tremor.NPCs
 				 (npc.type == 388) || (npc.type == 389) || (npc.type == 390) || (npc.type == 391) || (npc.type == 520)) &&
 				Main.rand.Next(500) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<Transistor>());
 			}
 
 			if (!Main.expertMode && npc.type == 113 && Main.rand.NextBool())
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<PieceofFlesh>(), Main.rand.Next(8, 17));
 			}
 
 			if (npc.type == 489 && Main.rand.Next(30) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Stigmata>());
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Stigmata>());
 			}
 
 			if (npc.type == 62 && Main.rand.NextBool(2))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<DemonBlood>());
 			}
 
 			if (npc.type == 66 && Main.rand.NextBool(2))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<DemonBlood>());
 			}
 
 			if (npc.type == 111 && Main.rand.Next(20) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<LongBow>());
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<LongBow>());
 			}
 
 			if (npc.type == 127 && Main.rand.NextBool(3))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<BenderHead>());
 			}
 
 			if (npc.type == 125 && Main.rand.NextBool(5))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<BenderBody>());
 			}
 
 			if (npc.type == 126 && Main.rand.NextBool(5))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<BenderBody>());
 			}
 
 			if (npc.type == 134 && Main.rand.NextBool(3))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<BenderLegs>());
 			}
 
 			if (npc.type == 42 && Main.rand.Next(30) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<ToxicHilt>());
 			}
 
 			if (npc.type == 231 && Main.rand.Next(30) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<ToxicHilt>());
 			}
 
 			if (npc.type == 232 && Main.rand.Next(30) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<ToxicHilt>());
 			}
 
 			if (npc.type == 233 && Main.rand.Next(30) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<ToxicHilt>());
 			}
 
 			if (npc.type == 234 && Main.rand.Next(30) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<ToxicHilt>());
 			}
 
 			if (npc.type == 235 && Main.rand.Next(30) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<ToxicHilt>());
 			}
 
 			if (npc.type == 6 && Main.rand.Next(30) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<PiercingQuartz>());
 			}
 
 			if (npc.type == 239 && Main.rand.Next(30) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<Vertebrow>());
 			}
 
 			if (npc.type == 166 && Main.rand.Next(28) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<SwampClump>());
 			}
 
 			if (npc.type == 469 && Main.rand.Next(28) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<LeechingSeed>());
 			}
 
 			if (npc.type == 166 && Main.rand.Next(25) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<FiercePaw>());
 			}
 
 			if (npc.type == 460 && Main.rand.Next(20) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<ButcherMask>());
 			}
 
 			if (npc.type == 175 && Main.rand.NextBool(2))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<ThornBall>(), Main.rand.Next(6, 15));
 			}
 
 			if (npc.type == 164 && Main.rand.Next(40) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<Arachnophobia>());
 			}
 
 			if (npc.type == 165 && Main.rand.Next(40) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<Arachnophobia>());
 			}
 
 			if (!TremorWorld.Boss.Motherboard.IsDowned() && Main.hardMode && Main.rand.Next(2500) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<MechanicalBrain>());
 			}
 
 			if (npc.type == 532 && Main.rand.NextBool(3))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<PetrifiedSpike>(), Main.rand.Next(5, 10));
 			}
 
 			if (npc.type == 530 && Main.rand.Next(16) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<ScorpionStinger>());
 			}
 
 			if (npc.type == 531 && Main.rand.Next(16) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<ScorpionStinger>());
 			}
 
 			if (npc.type == 23 && Main.rand.Next(100) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<AncientMeteorHelmet>());
 			}
 
 			if (npc.type == 346 && Main.rand.NextBool(7))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<SantaNK1Mask>());
 			}
 
 			if (npc.type == 345 && Main.rand.NextBool(7))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<IceQueenMask>());
 			}
 
 			if (npc.type == 344 && Main.rand.NextBool(7))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<EverscreamMask>());
 			}
 
 			if (npc.type == 327 && Main.rand.NextBool(7))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<PumpkingMask>());
 			}
 
 			if (npc.type == 328 && Main.rand.NextBool(7))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<PumpkingMask>());
 			}
 
 			if (npc.type == 325 && Main.rand.NextBool(7))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<MourningWoodMask>());
 			}
 
 			if (npc.type == 491 && Main.rand.NextBool(3))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<PirateChest>());
 			}
 
 			if (!Main.expertMode && npc.type == 245 && Main.rand.NextBool())
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<GolemCore>());
 			}
 
 			if (npc.type == 124 && Main.rand.NextBool())
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<ThrowingWrench>(), Main.rand.Next(10, 20));
 			}
 
 			if (npc.type == 513 && Main.rand.Next(25) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<IonBlaster>());
 			}
 
 			if (npc.type == 513 && Main.rand.NextBool(3))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<PetrifiedSpike>(), Main.rand.Next(5, 10));
 			}
 
@@ -399,20 +400,20 @@ namespace Tremor.NPCs
 				 npc.type == 321 || npc.type == 331 || npc.type == 332 || npc.type == 430 || npc.type == 432 ||
 				 npc.type == 433 || npc.type == 434 || npc.type == 435 || npc.type == 436) && Main.rand.NextBool(3))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<UntreatedFlesh>());
 			}
 
 			if ((npc.type == 48 || npc.type == 75 || npc.type == 87) && Main.rand.NextBool(3))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<AirFragment>());
 			}
 
 			if ((npc.type == 58 || npc.type == 65 || npc.type == 63 || npc.type == 64 || npc.type == 102 ||
 				 npc.type == 103 || npc.type == 157) && Main.rand.NextBool(2))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<SeaFragment>());
 			}
 
@@ -420,96 +421,96 @@ namespace Tremor.NPCs
 				 npc.type == 176 || npc.type == 205 || npc.type == 231 || npc.type == 232 || npc.type == 233 ||
 				 npc.type == 234 || npc.type == 235 || npc.type == 236 || npc.type == 237) && Main.rand.NextBool(4))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<EarthFragment>());
 			}
 
 			if ((npc.type == 24 || npc.type == 59 || npc.type == 60 || npc.type == 151 || npc.type == 62 ||
 				 npc.type == 66) && Main.rand.NextBool(3))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<FireFragment>());
 			}
 
 			if ((npc.type == 466 || npc.type == 467 || npc.type == 468 || npc.type == 463 || npc.type == 460) &&
 				Main.rand.NextBool())
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<DarkMatter>(), Main.rand.Next(2, 3));
 			}
 
 			if (npc.type == 496 && Main.rand.Next(22) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<PurpleShelmet>());
 			}
 
 			if (npc.type == 497 && Main.rand.Next(22) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<OrangeShelmet>());
 			}
 
 			if (npc.lifeMax > 100 && npc.lifeMax < 200 && Main.rand.Next(300) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TinySai>());
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TinySai>());
 			}
 			if (npc.value > 100f && npc.value < 1000f && Main.rand.Next(300) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<RoyalClaymore>());
 			}
 			if (npc.lifeMax > 200 && npc.lifeMax < 500 && Main.rand.Next(300) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<MassiveHammer>());
 			}
 			if (npc.defense > 10 && npc.defense < 30 && Main.rand.Next(300) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Crowbar>());
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Crowbar>());
 			}
 			if (npc.damage < 200 && npc.damage > 80 && Main.hardMode && Main.rand.Next(300) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Narsil>());
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Narsil>());
 			}
 			if (npc.boss && !Main.hardMode && Main.rand.NextBool(5))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<HeavenHelmet>());
 			}
 			if (npc.boss && !Main.hardMode && Main.rand.NextBool(5))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<HeavenBreastplate>());
 			}
 			if (npc.boss && !Main.hardMode && Main.rand.NextBool(5))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<HeavenLeggings>());
 			}
 
 			if (npc.type == 13 && Main.rand.Next(20) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<CorruptorStaff>());
 			}
 
 			if (npc.type == 266 && Main.rand.NextBool(3))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<CreeperStaff>());
 			}
 
 			if (Main.xMas && !Main.player[Main.myPlayer].HasItem(ModContent.ItemType<SuspiciousLookingPresent>()) &&
 				Main.rand.Next(250) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<SuspiciousLookingPresent>());
 			}
 
 			if (NPC.downedMoonlord && Main.rand.Next(250) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<SuspiciousBag>());
 			}
 
@@ -517,75 +518,75 @@ namespace Tremor.NPCs
 			{
 				if (npc.lifeMax > 200 && !Main.expertMode)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 						ModContent.ItemType<Phantaplasm>());
 				}
 				if (npc.lifeMax > 400 && Main.expertMode)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 						ModContent.ItemType<Phantaplasm>());
 				}
 			}
 
 			if (npc.type == 7 && Main.rand.Next(26) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<CorruptorGun>());
 			}
 			if ((npc.type == 69 || npc.type == 508) && Main.rand.NextBool(6))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<AntlionShell>());
 			}
 			if (npc.type == 298 && Main.rand.Next(100) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<RedMask>());
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<RedMask>());
 			}
 
 			if (npc.type == 494 && Main.rand.Next(29) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<RedClaw>());
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<RedClaw>());
 			}
 			if (npc.type == 495 && Main.rand.Next(29) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<GreenClaw>());
 			}
 			if ((npc.type == 498 || npc.type == 499 || npc.type == 500 || npc.type == 501 || npc.type == 502 ||
 				 npc.type == 503 || npc.type == 504 || npc.type == 505 || npc.type == 506) && Main.rand.NextBool(2))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<SalamanderSkin>(), Main.rand.Next(2));
 			}
 
 			if ((npc.type == 173) && Main.rand.Next(40) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<CrimCudgel>());
 			}
 
 			if ((npc.type == 4) && Main.rand.Next(10) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<TriangleMask>());
 			}
 
 			if ((npc.type == 35) && Main.rand.NextBool(6))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<TheArtifact>());
 			}
 
 			if (Main.eclipse && NPC.downedMoonlord && Main.rand.Next(10) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<ToothofAbraxas>());
 			}
 
 			if ((npc.type == 125 || npc.type == 126 || npc.type == 127 || npc.type == 134) && NPC.downedMoonlord &&
 				Main.rand.NextBool())
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<CarbonSteel>(), Main.rand.Next(6, 12));
 			}
 
@@ -594,7 +595,7 @@ namespace Tremor.NPCs
 			//	 npc.type == 296 || npc.type == 201 || npc.type == 202 || npc.type == 20 || npc.type == 450 ||
 			//	 npc.type == 451 || npc.type == 452) && WorldGen.shadowOrbSmashed && Main.rand.NextBool(8))
 			//{
-			//	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+			//	Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 			//		ModContent.ItemType<RedSteelArmorPiece>());
 			//}
 
@@ -603,7 +604,7 @@ namespace Tremor.NPCs
 			//	 npc.type == 296 || npc.type == 201 || npc.type == 202 || npc.type == 20 || npc.type == 450 ||
 			//	 npc.type == 451 || npc.type == 452) && WorldGen.shadowOrbSmashed && Main.rand.NextBool(8))
 			//{
-			//	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+			//	Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 			//		ModContent.ItemType<FaultyRedSteelShield>());
 			//}
 
@@ -612,275 +613,275 @@ namespace Tremor.NPCs
 			//	 npc.type == 296 || npc.type == 201 || npc.type == 202 || npc.type == 20 || npc.type == 450 ||
 			//	 npc.type == 451 || npc.type == 452) && WorldGen.shadowOrbSmashed && Main.rand.NextBool(8))
 			//{
-			//	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+			//	Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 			//		ModContent.ItemType<ChippyRedSteelSword>());
 			//}
 
 			if ((npc.type == 489) && Main.rand.Next(24) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TheBrain>());
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TheBrain>());
 			}
 
 			if ((npc.type == 490) && Main.rand.NextBool(4))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<DrippingRoot>());
 			}
 
 			if ((npc.aiStyle == 1) && NPC.downedMoonlord && Main.rand.Next(60) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DarkMass>());
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DarkMass>());
 			}
 
 			if ((npc.type == 164 || npc.type == 165) && Main.rand.NextBool(5))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<SpiderMeat>(), Main.rand.Next(1, 3));
 			}
 
 			if ((npc.type == 98 || npc.type == 94 || npc.type == 101 || npc.type == 170 || npc.type == 180 ||
 				 npc.type == 182) && NPC.downedMoonlord && Main.rand.NextBool(7))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<ClusterShard>(), Main.rand.Next(1, 2));
 			}
 
 			if ((npc.type == 175 || npc.type == 205 || npc.type == 226) && NPC.downedMoonlord && Main.rand.NextBool(4))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<DragonCapsule>(), Main.rand.Next(1, 2));
 			}
 
 			if (npc.type == 290 && NPC.downedMoonlord && Main.rand.Next(20) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<PaladinHelmet>());
 			}
 
 			if (npc.type == 290 && NPC.downedMoonlord && Main.rand.Next(20) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<PaladinBreastplate>());
 			}
 
 			if (npc.type == 290 && NPC.downedMoonlord && Main.rand.Next(20) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<PaladinGreaves>());
 			}
 
 			if (!Main.expertMode && npc.type == 35)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<TearsofDeath>(), Main.rand.Next(1, 3));
 			}
 
 			if (npc.type == 169 && Main.rand.NextBool(5))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<FrostCore>(), Main.rand.Next(1, 3));
 			}
 
 			if (npc.type == 431 && Main.rand.NextBool(8))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<FrostCore>(), Main.rand.Next(1, 2));
 			}
 
 			if (npc.type == 161 && Main.rand.NextBool(8))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<FrostCore>(), Main.rand.Next(1, 2));
 			}
 
 			if (npc.type == 477 && Main.rand.NextBool(4))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<BrokenHeroAmulet>());
 			}
 
 			if (npc.type == 32 && Main.rand.Next(50) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<WaterStorm>());
 			}
 
 			if (npc.type == 34 && Main.rand.Next(50) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<WaterStorm>());
 			}
 
 			if (npc.type == 34 && Main.rand.Next(40) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<KeyKnife>());
 			}
 
 			if (!Main.expertMode && npc.type == 4 && Main.rand.NextBool(5))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<EyeMonolith>());
 			}
 
 			if (!Main.expertMode && npc.type == 4 && Main.rand.NextBool(3))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<MonsterTooth>(), Main.rand.Next(20, 40));
 			}
 
 			if (npc.type == 167 && Main.rand.Next(32) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<NorthAxe>());
 			}
 
 			if (npc.type == 167 && Main.rand.Next(32) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<NorthHammer>());
 			}
 
 			if (npc.type == 167 && Main.rand.Next(32) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<NorthCutlass>());
 			}
 
 			if (npc.type == 82 && Main.rand.Next(40) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<WrathofWraith>());
 			}
 
 			if (npc.type == 439 && Main.rand.NextBool())
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<AncientTablet>(), Main.rand.Next(12, 22));
 			}
 
 			if (npc.type == 262 && Main.rand.NextBool())
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<EssenseofJungle>(), Main.rand.Next(2, 3));
 			}
 
 			//if (npc.type == NPCID.DukeFishron && !Main.expertMode && Main.rand.NextBool(6))
 			//{
-			//	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+			//	Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 			//		ModContent.ItemType<DukesCannon>(), Main.rand.Next(2, 3));
 			//}
 
 			if (npc.type == 138 && Main.rand.Next(35) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<CrystalSpear>(), Main.rand.Next(2, 3));
 			}
 
 			if (npc.type == 137 && Main.rand.Next(35) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<CrystalSpear>(), Main.rand.Next(2, 3));
 			}
 
 			//if (npc.type == NPCID.BoneSerpentHead && Main.rand.Next(40) == 0)
 			//{
-			//	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+			//	Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 			//		ModContent.ItemType<GunBlade>(), Main.rand.Next(2, 3));
 			//}
 
 			if (npc.type == 346 && Main.rand.NextBool())
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<SpiK3Ball>(), Main.rand.Next(50, 100));
 			}
 
 			if (!NPC.downedMoonlord && (npc.type == 75 || npc.type == 86 || npc.type == 244 || npc.type == 122 || npc.type == 80 || npc.type == 527) && Main.rand.Next(50) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<UnstableCrystal>());
 			}
 
 			if (npc.type == 17 && Main.rand.NextBool(2))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<MoneySack>(), Main.rand.Next(2, 4));
 			}
 
 			if (npc.type == 398)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<MultidimensionalFragment>(), Main.rand.Next(6, 12));
 			}
 
 			if (!Main.expertMode && npc.type == 222 && Main.rand.NextBool(3))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<YellowPuzzleFragment>());
 			}
 
 			if ((npc.type == 381 || npc.type == 382 || npc.type == 383 || npc.type == 385 || npc.type == 386 || npc.type == 387 || npc.type == 388 || npc.type == 389 || npc.type == 390) && Main.rand.Next(100) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<WarpPad>());
 			}
 
 			if ((npc.type == 273 || npc.type == 274 || npc.type == 275 || npc.type == 276 || npc.type == 269 || npc.type == 270 || npc.type == 271 || npc.type == 272 || npc.type == 277 || npc.type == 278 || npc.type == 279 || npc.type == 280 || npc.type == 283 || npc.type == 284 || npc.type == 281 || npc.type == 282 || npc.type == 285 || npc.type == 286) && Main.rand.Next(25) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<BottledSpirit>());
 			}
 
 			if ((npc.type == 134 || npc.type == 125 || npc.type == 126 || npc.type == 127) && NPC.downedMechBossAny && Main.rand.Next(10) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<FlaskCore>());
 			}
 
 			if (npc.type == 175 && Main.rand.Next(50) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<RichMahoganySeed>());
 			}
 
 			if (!Main.expertMode && npc.type == 126 && !NPC.AnyNPCs(125) && Main.rand.NextBool(6))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<MechaSprayer>());
 			}
 
 			if (!Main.expertMode && npc.type == 125 && !NPC.AnyNPCs(126) && Main.rand.NextBool(6))
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<MechaSprayer>());
 			}
 
 			if (npc.type == 395 && Main.rand.Next(20) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<MartianSprayer>());
 			}
 
 			if (npc.type == 370 && Main.rand.NextBool())
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<DukeFlask>(), Main.rand.Next(550, 750));
 			}
 
 			if (npc.type == 120 && Main.rand.Next(20) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<ChaosElement>());
 			}
 
 			if ((npc.type == 361 || npc.type == 445) && Main.rand.Next(33) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<FrogMask>());
 			}
 			if (npc.type == 35 && Main.rand.NextBool())
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height,
 					ModContent.ItemType<CursedSoul>(), Main.rand.Next(1, 5));
 			}
 

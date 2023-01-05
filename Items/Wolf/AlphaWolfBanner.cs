@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Wolf
 {
-	public class AlphaWolfBanner : ModItem
+	public class AlphaWolfBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

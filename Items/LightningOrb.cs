@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class LightningOrb : ModItem
+	public class LightningOrb:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 50;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 10;
 			item.height = 10;
 
@@ -40,7 +40,7 @@ namespace Tremor.Items
 			Vector2 vector82 = -Main.player[Main.myPlayer].Center + Main.MouseWorld;
 			float ai = Main.rand.Next(100);
 			Vector2 vector83 = Vector2.Normalize(vector82) * item.shootSpeed;
-			Projectile.NewProjectile(player.Center.X, player.Center.Y, vector83.X, vector83.Y, type, damage, .5f, player.whoAmI, vector82.ToRotation(), ai);
+			Projectile.NewProjectile(null, player.Center.X, player.Center.Y, vector83.X, vector83.Y, type, damage, .5f, player.whoAmI, vector82.ToRotation(), ai);
 			return false;
 		}
 

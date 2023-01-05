@@ -8,7 +8,7 @@ using Tremor.Items;
 namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
-	public class SpaceWhale : ModNPC
+	public class SpaceWhale:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -46,12 +46,12 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.Center, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 					Dust.NewDust(npc.Center, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore1"), 1f);
-				Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore2"), 1f);
-				Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore2"), 1f);
-				Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore3"), 1f);
-				Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore3"), 1f);
-				Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore4"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore1"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore2"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore2"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore3"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore3"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore4"), 1f);
 			}
 			else
 			{
@@ -297,7 +297,7 @@ namespace Tremor.NPCs
 						Main.dust[num1093].noLight = true;
 						Main.dust[num1093].velocity = Vector2.Normalize(value2) * 3f;
 					}
-					Main.PlaySound(29, (int)vector134.X, (int)vector134.Y, 96);
+					Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[29], vector134);//Variant 96
 				}
 				npc.ai[2] += 1f;
 				if (npc.ai[2] >= num1087)
@@ -497,15 +497,15 @@ namespace Tremor.NPCs
 				}
 				if (npc.ai[2] == 0f)
 				{
-					Main.PlaySound(29, (int)vector134.X, (int)vector134.Y, 96);
+					Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[29], vector134);//Variant 96
 				}
 				if (npc.ai[2] % num1080 == 0f)
 				{
-					Main.PlaySound(4, (int)npc.Center.X, (int)npc.Center.Y, 19);
+					Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[4], npc.Center);//Variant 19
 					if (Main.netMode != 1)
 					{
 						Vector2 vector139 = Vector2.Normalize(player2.Center - vector134) * (npc.width + 20) / 2f + vector134;
-						NPC.NewNPC((int)vector139.X, (int)vector139.Y + 45, ModContent.NPCType<SpaceWhaleMinion>(), 0);
+						NPC.NewNPC(null, (int)vector139.X, (int)vector139.Y + 45, ModContent.NPCType<SpaceWhaleMinion>(), 0);
 					}
 				}
 				int num1099 = Math.Sign(player2.Center.X - vector134.X);
@@ -533,15 +533,15 @@ namespace Tremor.NPCs
 				npc.velocity.Y = MathHelper.Lerp(npc.velocity.Y, 0f, 0.02f);
 				if (npc.ai[2] == num1082 - 30)
 				{
-					Main.PlaySound(29, (int)vector134.X, (int)vector134.Y, 95);
+					Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[29], vector134);//Variant 95
 				}
 				if (Main.netMode != 1 && npc.ai[2] == num1082 - 30)
 				{
 					Vector2 vector140 = npc.rotation.ToRotationVector2() * (Vector2.UnitX * npc.direction) * (npc.width + 20) / 2f + vector134;
 					for(int i=2; i<=9; i++)
 					{
-						Projectile.NewProjectile(vector140.X, vector140.Y, +npc.direction * i, 8f, ProjectileID.CultistBossFireBall, 0, 0f, Main.myPlayer, 0f, 0f);
-						Projectile.NewProjectile(vector140.X, vector140.Y, -npc.direction * i, 8f, ProjectileID.CultistBossFireBall, 0, 0f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(null, vector140.X, vector140.Y, +npc.direction * i, 8f, ProjectileID.CultistBossFireBall, 0, 0f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(null, vector140.X, vector140.Y, -npc.direction * i, 8f, ProjectileID.CultistBossFireBall, 0, 0f, Main.myPlayer, 0f, 0f);
 					}
 				}
 				npc.ai[2] += 1f;
@@ -559,7 +559,7 @@ namespace Tremor.NPCs
 				npc.velocity.Y = MathHelper.Lerp(npc.velocity.Y, 0f, 0.02f);
 				if (npc.ai[2] == num1083 - 60)
 				{
-					Main.PlaySound(29, (int)vector134.X, (int)vector134.Y, 98);
+					Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[29], vector134);//Variant 98
 				}
 				npc.ai[2] += 1f;
 				if (npc.ai[2] >= num1083)
@@ -719,15 +719,15 @@ namespace Tremor.NPCs
 			{
 				if (npc.ai[2] == 0f)
 				{
-					Main.PlaySound(29, (int)vector134.X, (int)vector134.Y, 98);
+					Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[29], vector134);//Variant 98
 				}
 				if (npc.ai[2] % num1085 == 0f)
 				{
-					Main.PlaySound(4, (int)npc.Center.X, (int)npc.Center.Y, 19);
+					Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[4], npc.Center);//Variant 19
 					if (Main.netMode != 1)
 					{
 						Vector2 vector143 = Vector2.Normalize(npc.velocity) * (npc.width + 20) / 2f + vector134;
-						int num1105 = NPC.NewNPC((int)vector143.X, (int)vector143.Y + 45, ModContent.NPCType<SpaceWhaleMinion>(), 0);
+						int num1105 = NPC.NewNPC(null, (int)vector143.X, (int)vector143.Y + 45, ModContent.NPCType<SpaceWhaleMinion>(), 0);
 						Main.npc[num1105].target = npc.target;
 						Main.npc[num1105].velocity = Vector2.Normalize(npc.velocity).RotatedBy(1.57079637f * npc.direction, default(Vector2)) * scaleFactor4;
 						Main.npc[num1105].netUpdate = true;
@@ -751,12 +751,12 @@ namespace Tremor.NPCs
 				npc.velocity.Y = MathHelper.Lerp(npc.velocity.Y, 0f, 0.02f);
 				if (npc.ai[2] == num1082 - 30)
 				{
-					Main.PlaySound(29, (int)vector134.X, (int)vector134.Y, 94);
+					Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[29], vector134);//Variant 94
 				}
 				if (Main.netMode != 1 && npc.ai[2] == num1082 - 30)
 				{
 					//MISSING: SpaceMeteorPro
-					//Projectile.NewProjectile(vector134.X, vector134.Y, 0f, 0f, ModContent.ProjectileType<SpaceMeteorPro>(), 0, 0f, Main.myPlayer, 1f, npc.target + 1);
+					//Projectile.NewProjectile(null, vector134.X, vector134.Y, 0f, 0f, ModContent.ProjectileType<SpaceMeteorPro>(), 0, 0f, Main.myPlayer, 1f, npc.target + 1);
 				}
 				npc.ai[2] += 1f;
 				if (npc.ai[2] >= num1082)
@@ -775,7 +775,7 @@ namespace Tremor.NPCs
 
 			if (Main.expertMode)
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 
 			if (Main.netMode != 1)
@@ -800,40 +800,40 @@ namespace Tremor.NPCs
 
 				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<SpaceWhaleMask>());
+					Item.NewItem(null, (int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<SpaceWhaleMask>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<SpaceWhaleTrophy>());
+					Item.NewItem(null, (int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<SpaceWhaleTrophy>());
 				}
 
 				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<SDL>());
+					Item.NewItem(null, (int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<SDL>());
 				}
 
 				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<BlackHoleCannon>());
+					Item.NewItem(null, (int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<BlackHoleCannon>());
 				}
 
 				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<HornedWarHammer>());
+					Item.NewItem(null, (int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<HornedWarHammer>());
 				}
 
 				if (!Main.expertMode && Main.rand.NextBool(5))
 				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<StarLantern>());
+					Item.NewItem(null, (int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<StarLantern>());
 				}
 
 				if (!Main.expertMode && Main.rand.NextBool(8))
 				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<WhaleFlippers>());
+					Item.NewItem(null, (int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<WhaleFlippers>());
 				}
 				if (Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<CosmicFuel>());
+					Item.NewItem(null, (int)npc.Center.X, (int)npc.Center.Y, npc.width, npc.height, ModContent.ItemType<CosmicFuel>());
 				}
 			}
 		}

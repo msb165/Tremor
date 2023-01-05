@@ -25,7 +25,7 @@ namespace Tremor.Items.Invar
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeSpeed += 0.1f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.1f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -36,7 +36,7 @@ namespace Tremor.Items.Invar
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "10% increased melee speed";
-			player.meleeSpeed += 0.1f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.1f;
 		}
 	}
 

@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Awakening : ModItem
+	public class Awakening:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 300;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 70;
 			item.height = 70;
 			item.useTime = 23;

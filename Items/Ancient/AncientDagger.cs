@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Ancient
 {
-	public class AncientDagger : ModItem
+	public class AncientDagger:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 96;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 26;
 			item.noUseGraphic = true;
 			item.maxStack = 999;

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.Audio;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.Items;
@@ -133,21 +135,25 @@ namespace Tremor.NPCs.Bosses.Motherboard
 							new Vector2(boss.npc.Center.X - DroneSpawnAreaX * .5f, boss.npc.Center.Y - DroneSpawnAreaY * .5f),
 							new Vector2(boss.npc.Center.X + DroneSpawnAreaX * .5f, boss.npc.Center.Y + DroneSpawnAreaY * .5f));
 
-					_signalDrones.Add(NPC.NewNPC((int)spawnPosition.X, (int)spawnPosition.Y + LaserYOffset, ModContent.NPCType<SignalDrone>(), ai3: boss.npc.whoAmI));
+					_signalDrones.Add(NPC.NewNPC(null, (int)spawnPosition.X, (int)spawnPosition.Y + LaserYOffset, ModContent.NPCType<SignalDrone>(), ai3: boss.npc.whoAmI));
 				}
 			}
 		}
 
 		private void ShootOneLaser(Motherboard boss)
 		{
+			//TODO: Fix this
 			// this code is still poop
 			try
 			{
 				int ai0 = _lastSignalDrone == -1 ? boss.npc.whoAmI : _signalDrones[_lastSignalDrone];
 				++_lastSignalDrone;
-				var zapSound = new LegacySoundStyle(SoundID.Trackable, TremorUtils.GetIdForSoundName($"dd2_lightning_aura_zap_{Main.rand.Next(4)}"));
-				Main.PlayTrackedSound(zapSound.WithPitchVariance(Main.rand.NextFloat() * .5f).WithVolume(Main.soundVolume * 1.5f));
-				int newProj = Projectile.NewProjectile(boss.npc.Center.X, boss.npc.Center.Y, 0, 0,
+
+				//TODO: [Skipped for 1.4] Audio
+				//var zapSound = new LegacySoundStyle(SoundID.Trackable, TremorUtils.GetIdForSoundName($"dd2_lightning_aura_zap_{Main.rand.Next(4)}"));
+				//Main.PlayTrackedSound(zapSound.WithPitchVariance(Main.rand.NextFloat() * .5f).WithVolume(Main.soundVolume * 1.5f));
+
+				int newProj = Projectile.NewProjectile(null, boss.npc.Center.X, boss.npc.Center.Y, 0, 0,
 					ModContent.ProjectileType<Projectiles.projMotherboardLaser>(),
 					LaserDamage, LaserKb, 0, ai0, _signalDrones[_lastSignalDrone]);
 				if (_lastSignalDrone == 0)
@@ -172,7 +178,7 @@ namespace Tremor.NPCs.Bosses.Motherboard
 			velocity += new Vector2(Main.rand.Next(-(int)SecondShootSpeed / 2, (int)SecondShootSpeed / 2 + 1) * SecondShootSpreadMult);
 
 			// Shoot proj
-			Projectile.NewProjectile(boss.npc.Center.X, boss.npc.Center.Y, velocity.X, velocity.Y, ProjectileID.ShadowBeamHostile, SecondShootDamage, SecondShootKn);
+			Projectile.NewProjectile(null, boss.npc.Center.X, boss.npc.Center.Y, velocity.X, velocity.Y, ProjectileID.ShadowBeamHostile, SecondShootDamage, SecondShootKn);
 		}
 
 		private void ShootDroneLasers(Motherboard boss) // If it is time to shoot
@@ -217,7 +223,8 @@ namespace Tremor.NPCs.Bosses.Motherboard
 
 		public override void AdjustHead(Motherboard boss)
 		{
-			Main.npcHeadBossTexture[boss.headTexture] = boss.mod.GetTexture("NPCs/Bosses/Motherboard/Motherboard_Head_Boss");
+			//TODO: Fix this trash assignment
+			TextureAssets.NpcHeadBoss[boss.headTexture] = boss.Mod.Assets.Request<Texture2D>("NPCs/Bosses/Motherboard/Motherboard_Head_Boss", ReLogic.Content.AssetRequestMode.ImmediateLoad);
 		}
 
 		public override void AI(Motherboard boss)
@@ -264,17 +271,17 @@ namespace Tremor.NPCs.Bosses.Motherboard
 
 		public override void AdjustHead(Motherboard boss)
 		{
-			Main.npcHeadBossTexture[boss.headTexture] = boss.mod.GetTexture("NPCs/Bosses/Motherboard/Motherboard_Head_Boss");
+			TextureAssets.NpcHeadBoss[boss.headTexture] = boss.Mod.Assets.Request<Texture2D>("NPCs/Bosses/Motherboard/Motherboard_Head_Boss", ReLogic.Content.AssetRequestMode.ImmediateLoad);
 		}
 
 		public override void Start(Motherboard boss)
 		{
 			_clampers = new List<int>
 			{
-				NPC.NewNPC((int) boss.npc.Center.X - 15, (int) boss.npc.Center.Y + 25, ModContent.NPCType<Clamper>(), 0, 0, 0, 0, boss.npc.whoAmI),
-				NPC.NewNPC((int) boss.npc.Center.X - 10, (int) boss.npc.Center.Y + 25, ModContent.NPCType<Clamper>(), 0, 0, 0, 0, boss.npc.whoAmI),
-				NPC.NewNPC((int) boss.npc.Center.X + 10, (int) boss.npc.Center.Y + 25, ModContent.NPCType<Clamper>(), 0, 0, 0, 0, boss.npc.whoAmI),
-				NPC.NewNPC((int) boss.npc.Center.X + 15, (int) boss.npc.Center.Y + 25, ModContent.NPCType<Clamper>(), 0, 0, 0, 0, boss.npc.whoAmI)
+				NPC.NewNPC(null, (int) boss.npc.Center.X - 15, (int) boss.npc.Center.Y + 25, ModContent.NPCType<Clamper>(), 0, 0, 0, 0, boss.npc.whoAmI),
+				NPC.NewNPC(null, (int) boss.npc.Center.X - 10, (int) boss.npc.Center.Y + 25, ModContent.NPCType<Clamper>(), 0, 0, 0, 0, boss.npc.whoAmI),
+				NPC.NewNPC(null, (int) boss.npc.Center.X + 10, (int) boss.npc.Center.Y + 25, ModContent.NPCType<Clamper>(), 0, 0, 0, 0, boss.npc.whoAmI),
+				NPC.NewNPC(null, (int) boss.npc.Center.X + 15, (int) boss.npc.Center.Y + 25, ModContent.NPCType<Clamper>(), 0, 0, 0, 0, boss.npc.whoAmI)
 			};
 
 			for (int i = 0; i <= 3; i++)
@@ -285,8 +292,9 @@ namespace Tremor.NPCs.Bosses.Motherboard
 			boss.npc.dontTakeDamage = false;
 			boss.npc.aiStyle = 2;
 
-			Main.PlaySound(15, (int)boss.npc.position.X, (int)boss.npc.position.Y, 2, pitchOffset: Main.rand.NextFloat()); // high tonal boss screech
-			Main.PlaySound(SoundID.DD2_LightningBugDeath.AsSound().WithPitchVariance(Main.rand.NextFloat()).WithVolume(Main.soundVolume * 1.5f), boss.npc.position);
+			//TODO: [Skipped for 1.4] Audio
+			//Main.PlaySound(15, (int)boss.npc.position.X, (int)boss.npc.position.Y, 2, pitchOffset: Main.rand.NextFloat()); // high tonal boss screech
+			//Main.PlaySound(SoundID.DD2_LightningBugDeath.AsSound().WithPitchVariance(Main.rand.NextFloat()).WithVolume(Main.soundVolume * 1.5f), boss.npc.position);
 		}
 
 		private void CheckClampers(Motherboard boss)
@@ -302,7 +310,7 @@ namespace Tremor.NPCs.Bosses.Motherboard
 			{
 				foreach (int clamper in _clampers)
 				{
-					int id = Projectile.NewProjectile(boss.npc.Center.X, boss.npc.Center.Y + LaserYOffset, 0, 0,
+					int id = Projectile.NewProjectile(null, boss.npc.Center.X, boss.npc.Center.Y + LaserYOffset, 0, 0,
 						ModContent.ProjectileType<Projectiles.projClamperLaser>(), LaserDamage, LaserKb, 0, boss.npc.whoAmI, clamper);
 					Main.projectile[id].localAI[1] = stateTime;
 				}
@@ -321,9 +329,10 @@ namespace Tremor.NPCs.Bosses.Motherboard
 				_secondShootTime = SecondShootRate;
 				for (int i = 0; i < 2; i++)
 				{
-					Main.PlaySound(SoundID.Item113.WithPitchVariance(Main.rand.NextFloat()), boss.npc.position);
+					//TODO: [Skipped for 1.4] Audio
+					//Main.PlaySound(SoundID.Item113.WithPitchVariance(Main.rand.NextFloat()), boss.npc.position);
 					if (Main.netMode != NetmodeID.MultiplayerClient)
-						Projectile.NewProjectile(boss.npc.Center.X, boss.npc.Center.Y + 95, 0, 0,
+						Projectile.NewProjectile(null, boss.npc.Center.X, boss.npc.Center.Y + 95, 0, 0,
 							ModContent.ProjectileType<Projectiles.projMotherboardSuperLaser>(), SecondShootDamage, SecondShootKn, 0, boss.npc.whoAmI, i);
 				}
 			}
@@ -398,11 +407,13 @@ namespace Tremor.NPCs.Bosses.Motherboard
 					boss.npc.position.X = boss.npc.ai[2] * 16f - boss.npc.width / 2;
 					boss.npc.position.Y = boss.npc.ai[3] * 16f - boss.npc.height / 2;
 					boss.npc.ai[1] = 2f;
+
+					//TODO: [Skipped for 1.4] Audio
 					// Motherboard screech
-					var screech = new LegacySoundStyle(SoundID.Trackable, TremorUtils.GetIdForSoundName($"dd2_lightning_bug_death_{Main.rand.Next(3)}"));
-					Main.PlayTrackedSound(screech.WithPitchVariance(Main.rand.NextFloat()));
-					//Main.PlaySound(SoundID.DD2_LightningBugDeath.WithPitchVariance(Main.rand.NextFloat()).WithVolume(Main.soundVolume * 2.5f), boss.npc.position);
-					Main.PlaySound(SoundID.Item78.WithVolume(Main.soundVolume * 1.15f), boss.npc.position); // tp
+					//var screech = new LegacySoundStyle(SoundID.Trackable, TremorUtils.GetIdForSoundName($"dd2_lightning_bug_death_{Main.rand.Next(3)}"));
+					//Main.PlayTrackedSound(screech.WithPitchVariance(Main.rand.NextFloat()));
+					//Already commented out//Main.PlaySound(SoundID.DD2_LightningBugDeath.WithPitchVariance(Main.rand.NextFloat()).WithVolume(Main.soundVolume * 2.5f), boss.npc.position);
+					//Main.PlaySound(SoundID.Item78.WithVolume(Main.soundVolume * 1.15f), boss.npc.position); // tp
 					return;
 				}
 			}
@@ -428,7 +439,7 @@ namespace Tremor.NPCs.Bosses.Motherboard
 	// BOSS CODE
 
 	[AutoloadBossHead]
-	public class Motherboard : ModNPC
+	public class Motherboard:TremorModNPC
 	{
 		public Stage stage0 = new Stage(120, 30, 30);
 		public Stage stage1 = new Stage1(120, 30, 30);
@@ -509,7 +520,7 @@ namespace Tremor.NPCs.Bosses.Motherboard
 				const int goreAmount = 4;
 				for (int i = 0; i < goreAmount; i++)
 				{
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot($"Gores/MotherboardGore{i + 1}"));
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/MotherboardGore{i + 1}"));
 				}
 			}
 		}
@@ -522,7 +533,7 @@ namespace Tremor.NPCs.Bosses.Motherboard
 
 			if (Main.expertMode)
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 			else
 			{

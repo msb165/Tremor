@@ -6,13 +6,13 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 
-	public class Stormtron : ModItem
+	public class Stormtron:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 63;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 20;
 			item.height = 12;
 			item.useTime = 12;
@@ -40,20 +40,20 @@ namespace Tremor.Items
 		{
 			for (int i = 0; i < 1; ++i)
 			{
-				Projectile.NewProjectile(position.X, position.Y, speedX + -2, speedY - 4, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY + 4, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY + 3, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX - 2, speedY - 3, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX - 3, speedY - 2, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX + 3, speedY - 1, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX + 4, speedY + 1, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX + 4, speedY + 2, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + -2, speedY - 4, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 4, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 3, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX - 2, speedY - 3, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX - 3, speedY - 2, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 3, speedY - 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 4, speedY + 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 4, speedY + 2, type, damage, knockBack, Main.myPlayer);
 			}
 			return false;
 		}
 
-		public override bool ConsumeAmmo(Player p)
+		public override bool CanConsumeAmmo(Item ammo, Player p)
 		{
 			return Main.rand.NextBool(2);
 		}

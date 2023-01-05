@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Chain
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class WarriorChainmail : ModItem
+	public class WarriorChainmail:TremorModItem
 	{
 
 		public override void SetDefaults()

@@ -6,13 +6,13 @@ using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
-	public class Infernality : ModItem
+	public class Infernality:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 20;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 40;
 			item.height = 40;
 

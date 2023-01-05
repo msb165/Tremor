@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SeaDawn : ModItem
+	public class SeaDawn:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 225;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 72;
 			item.height = 72;
 			item.useTime = 38;

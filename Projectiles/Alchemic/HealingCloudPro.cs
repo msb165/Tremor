@@ -10,7 +10,7 @@ namespace Tremor.Projectiles.Alchemic
 		{
 			projectile.width = 16;
 			projectile.height = 16;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.penetrate = 8;
 			projectile.aiStyle = 92;
 			projectile.friendly = true;

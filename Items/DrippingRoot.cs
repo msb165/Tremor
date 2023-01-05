@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class DrippingRoot : ModItem
+	public class DrippingRoot:TremorModItem
 	{
 		public override void SetDefaults()
 		{

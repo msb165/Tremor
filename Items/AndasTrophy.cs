@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class AndasTrophy : ModItem
+	public class AndasTrophy:TremorModItem
 	{
 		public override void SetDefaults()
 		{

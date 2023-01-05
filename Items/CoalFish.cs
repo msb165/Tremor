@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class CoalFish : ModItem
+	public class CoalFish:TremorModItem
 	{
 		public override void SetDefaults()
 		{

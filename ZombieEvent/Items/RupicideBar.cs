@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class RupicideBar : ModItem
+	public class RupicideBar:TremorModItem
 	{
 		public override void SetDefaults()
 		{

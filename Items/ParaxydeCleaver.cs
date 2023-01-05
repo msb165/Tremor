@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ParaxydeCleaver : ModItem
+	public class ParaxydeCleaver:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 66;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 50;
 			item.height = 60;
 			item.useTime = 25;

@@ -9,7 +9,7 @@ namespace Tremor.Tiles
         {
 			if(type == 120)
 			{
-                if (Main.tile[i, j - 1].type == ModContent.TileType<Tiles.RuinAltar>())
+                if (Main.tile[i, j - 1].TileType == ModContent.TileType<Tiles.RuinAltar>())
                 {
                     return false;
                 }

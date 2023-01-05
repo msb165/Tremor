@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Ancient
 {
-	public class AncientSunStaff : ModItem
+	public class AncientSunStaff:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 80;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 16;
 			item.width = 88;
 			item.height = 88;

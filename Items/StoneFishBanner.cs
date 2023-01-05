@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class StoneFishBanner : ModItem
+	public class StoneFishBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

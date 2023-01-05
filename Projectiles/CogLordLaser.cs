@@ -6,7 +6,7 @@ using Tremor.NPCs.Bosses.NovaPillar;
 
 namespace Tremor.Projectiles
 {
-	public class CogLordLaser : ModProjectile
+	public class CogLordLaser:TremorModProjectile
 	{
 		private const float length = 2400f;
 
@@ -17,10 +17,10 @@ namespace Tremor.Projectiles
 			projectile.height = 48;
 			projectile.hostile = true;
 			projectile.penetrate = -1;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
-			cooldownSlot = 1;
+			CooldownSlot = 1;
 		}
 
 		public override void SetStaticDefaults()

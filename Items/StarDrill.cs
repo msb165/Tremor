@@ -7,13 +7,13 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 
-	public class StarDrill : ModItem
+	public class StarDrill:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 100;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 20;
 			item.height = 12;
 			item.useTime = 5;
@@ -41,7 +41,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 		public override void AddRecipes()

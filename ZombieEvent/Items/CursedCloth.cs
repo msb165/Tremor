@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class CursedCloth : ModItem
+	public class CursedCloth:TremorModItem
 	{
 		public override void SetDefaults()
 		{

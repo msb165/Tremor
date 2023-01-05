@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Chain
 {
-	public class ChainBow : ModItem
+	public class ChainBow:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.Items.Chain
 			item.damage = 300;
 			item.width = 16;
 			item.height = 32;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.useTime = 20;
 			item.shoot = 1;
 

@@ -3,7 +3,7 @@ using Tremor.Items.Flesh;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class NecromaniacWorkbench : ModItem
+	public class NecromaniacWorkbench:TremorModItem
 	{
 		public override void SetDefaults()
 		{

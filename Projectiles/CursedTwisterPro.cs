@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class CursedTwisterPro : ModProjectile
+	public class CursedTwisterPro:TremorModProjectile
 	{
 
 		public override void Kill(int timeLeft)

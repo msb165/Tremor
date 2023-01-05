@@ -5,7 +5,7 @@ using Tremor.Items.Antlion;
 namespace Tremor.Items.Sandstone
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class SandStoneBreastplate : ModItem
+	public class SandStoneBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()

@@ -4,14 +4,14 @@ using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
-	public class EaterofDreams : ModItem
+	public class EaterofDreams:TremorModItem
 	{
 
 		public override void SetDefaults()
 		{
 
 			item.damage = 99;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 76;
 			item.height = 36;
 			item.useTime = 10;

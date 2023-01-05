@@ -8,7 +8,7 @@ using Tremor.Items.Desert;
 
 namespace Tremor.NPCs
 {
-	public class DesertPrincess : ModNPC
+	public class DesertPrincess:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -474,7 +474,7 @@ namespace Tremor.NPCs
 								npc.ai[3] += 1f;
 								if (npc.ai[3] == num1325)
 								{
-									NPC.NewNPC(num1321 * 16 + 8, num1322 * 16, ModContent.NPCType<DesertPrincess2>(), npc.whoAmI, 0f, 0f, 0f, 0f, 255);
+									NPC.NewNPC(null, num1321 * 16 + 8, num1322 * 16, ModContent.NPCType<DesertPrincess2>(), npc.whoAmI, 0f, 0f, 0f, 0f, 255);
 								}
 								else if (npc.ai[3] == num1325 * 2)
 								{
@@ -506,7 +506,7 @@ namespace Tremor.NPCs
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			return spawnInfo.player.ZoneDesert && NPC.downedPlantBoss ? 0.001f : 0f;
+			return spawnInfo.Player.ZoneDesert && NPC.downedPlantBoss ? 0.001f : 0f;
 		}
 
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)

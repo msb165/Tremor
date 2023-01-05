@@ -3,9 +3,9 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Alchemist.Flasks
 {
-	public class FlaskCore : ModItem
+	public class FlaskCore:TremorModItem
 	{
-		public override bool CanEquipAccessory(Player player, int slot)
+		public override bool CanEquipAccessory(Player player, int slot, bool modded)
 			=> !MPlayer.GetModPlayer(player).core;
 
 		public override void SetDefaults()

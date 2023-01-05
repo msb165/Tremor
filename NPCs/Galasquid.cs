@@ -10,7 +10,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class Galasquid : ModNPC
+	public class Galasquid:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -81,7 +81,7 @@ namespace Tremor.NPCs
 				while (Math.Abs(projectileVelocity.X) < 1.5f)
 					projectileVelocity = Vector2.UnitY.RotatedByRandom(Math.PI / 2) * new Vector2(5f, 3f);
 
-				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, projectileVelocity.X, projectileVelocity.Y, ProjectileID.MartianTurretBolt, 60, 0f, Main.myPlayer, 0f, npc.whoAmI);
+				Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, projectileVelocity.X, projectileVelocity.Y, ProjectileID.MartianTurretBolt, 60, 0f, Main.myPlayer, 0f, npc.whoAmI);
 				npc.ai[0] = 0f;
 			}
 		}
@@ -96,14 +96,14 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/GalasquidGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/GalasquidGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/GalasquidGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/GalasquidGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GalasquidGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GalasquidGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GalasquidGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GalasquidGore2"), 1f);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> spawnInfo.spawnTileY < Main.rockLayer && NPC.downedMoonlord && spawnInfo.spawnTileType == ModContent.TileType<Tiles.CometiteOreTile>() || spawnInfo.spawnTileType == ModContent.TileType<Tiles.HardCometiteOreTile>() ? 0.005f : 0f;
+			=> spawnInfo.SpawnTileY < Main.rockLayer && NPC.downedMoonlord && spawnInfo.SpawnTileType == ModContent.TileType<Tiles.CometiteOreTile>() || spawnInfo.SpawnTileType == ModContent.TileType<Tiles.HardCometiteOreTile>() ? 0.005f : 0f;
 	}
 }

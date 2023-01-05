@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Chlorophyte
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class ChlorophyteHeader : ModItem
+	public class ChlorophyteHeader:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items.Chlorophyte
 
 		public override void UpdateEquip(Player player)
 		{
-			player.thrownDamage += 0.28f;
+			player.GetDamage(DamageClass.Throwing) += 0.28f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -38,7 +38,7 @@ namespace Tremor.Items.Chlorophyte
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Increases thrown weapon velocity and summons a powerful leaf crystal to shoot at nearby enemies.";
-			player.thrownVelocity += 0.25f;
+			player.ThrownVelocity += 0.25f;
 			player.AddBuff(60, 60, true);
 		}
 

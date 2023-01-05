@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class NightTerrorBanner : ModItem
+	public class NightTerrorBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

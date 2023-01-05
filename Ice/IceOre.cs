@@ -5,7 +5,7 @@ using Tremor.Ice.Items;
 
 namespace Tremor.Ice
 {
-	public class IceOre : ModTile
+	public class IceOre:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -18,7 +18,7 @@ namespace Tremor.Ice
 			Main.tileMerge[Type][164] = true;
 			Main.tileMerge[Type][147] = true;
 			//Main.tileMinPick[Type] = 200;
-			minPick = 95;
+			MinPick = 95;
 			soundType = 21;
 			soundStyle = 2;
 			Main.tileLighted[Type] = true;

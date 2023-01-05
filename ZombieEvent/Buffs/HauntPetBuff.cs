@@ -4,7 +4,7 @@ using Tremor.ZombieEvent.Items;
 
 namespace Tremor.ZombieEvent.Buffs
 {
-	public class HauntPetBuff : ModBuff
+	public class HauntPetBuff:TremorModBuff
 	{
 		public override void SetDefaults()
 		{
@@ -17,7 +17,7 @@ namespace Tremor.ZombieEvent.Buffs
 		public override void Update(Player player, ref int buffIndex)
 		{
                         
-            player.minionDamage += 0.1f;
+            player.GetDamage(DamageClass.Summon) += 0.1f;
 
 			player.buffTime[buffIndex] = 18000;
 			TremorPlayer modPlayer = player.GetModPlayer<TremorPlayer>();
@@ -29,7 +29,7 @@ namespace Tremor.ZombieEvent.Buffs
 			}
 			if (petProjectileNotSpawned && player.whoAmI == Main.myPlayer)
 			{
-				Projectile.NewProjectile(player.position.X + player.width / 2, player.position.Y + player.height / 2, 0f, 0f, ModContent.ProjectileType<TheHauntPro>(), 0, 0f, player.whoAmI, 0f, 0f);
+				Projectile.NewProjectile(null, player.position.X + player.width / 2, player.position.Y + player.height / 2, 0f, 0f, ModContent.ProjectileType<TheHauntPro>(), 0, 0f, player.whoAmI, 0f, 0f);
 			}
 		}
 	}

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class DimensionalTopHat : ModItem
+	public class DimensionalTopHat:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,8 +27,8 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.minionDamage += 0.25f;
-			player.magicDamage += 0.25f;
+			player.GetDamage(DamageClass.Summon) += 0.25f;
+			player.GetDamage(DamageClass.Magic) += 0.25f;
 			player.AddBuff(29, 60, true);
 			player.manaRegen += 25;
 		}

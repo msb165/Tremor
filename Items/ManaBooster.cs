@@ -1,10 +1,11 @@
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ManaBooster : ModItem
+	public class ManaBooster:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,7 +27,7 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Regenerates mana every minute");
 		}
 
-		public override void UseStyle(Player player)
+		public override void UseStyle(Player player, Rectangle heldItemFrame)
 		{
 			if (player.whoAmI == Main.myPlayer && player.itemTime == 0)
 			{

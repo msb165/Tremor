@@ -5,7 +5,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class TikiTotemBag : ModItem
+	public class TikiTotemBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

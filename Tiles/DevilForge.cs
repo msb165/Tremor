@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class DevilForge : ModTile
+	public class DevilForge:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -16,7 +16,7 @@ namespace Tremor.Tiles
         Main.tileLavaDeath[Type] = true;
         TileObjectData.newTile.CopyFrom(TileObjectData.Style4x2);
         TileObjectData.addTile(Type);
-        animationFrameHeight = 36;
+        AnimationFrameHeight = 36;
         AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
 		ModTranslation name = CreateMapEntryName();
 		name.SetDefault("Devil Forge");		
@@ -36,6 +36,6 @@ public override void AnimateTile(ref int frame, ref int frameCounter)
 
     public override void KillMultiTile(int i, int j, int frameX, int frameY)
     {
-        Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<Items.DevilForge>());
+        Item.NewItem(null, i * 16, j * 16, 32, 16, ModContent.ItemType<Items.DevilForge>());
     }
 }}

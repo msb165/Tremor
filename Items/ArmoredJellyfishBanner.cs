@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ArmoredJellyfishBanner : ModItem
+	public class ArmoredJellyfishBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

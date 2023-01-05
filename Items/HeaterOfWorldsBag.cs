@@ -4,7 +4,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class HeaterOfWorldsBag : ModItem
+	public class HeaterOfWorldsBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

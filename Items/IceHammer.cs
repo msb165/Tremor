@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class IceHammer : ModItem
+	public class IceHammer:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 72;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 36;
 			item.height = 36;
 			item.useTime = 5;

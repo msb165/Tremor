@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class SolarMeteor : ModProjectile
+	public class SolarMeteor:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

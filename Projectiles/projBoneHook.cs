@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class projBoneHook : ModProjectile
+	public class projBoneHook:TremorModProjectile
 	{
 		const int HookTime = 50; // "Длина" хука
 		const float BackSpeedMulti = 0.75f; // Множитель скорости возвращения хука
@@ -17,7 +17,7 @@ namespace Tremor.Projectiles
 			projectile.width = 42;
 			projectile.height = 38;
 			projectile.timeLeft = 36000;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 			projectile.aiStyle = 13;
 			projectile.penetrate = -1;
 		}
@@ -47,7 +47,7 @@ namespace Tremor.Projectiles
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			spriteBatch.Draw(Main.projectileTexture[projectile.type], new Rectangle((int)(projectile.position - Main.screenPosition).X, (int)(projectile.position - Main.screenPosition).Y, projectile.width, projectile.height), null, lightColor, projectile.rotation, new Vector2(projectile.width / 2, projectile.height / 2), SpriteEffects.None, 0);
+			spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, new Rectangle((int)(projectile.position - Main.screenPosition).X, (int)(projectile.position - Main.screenPosition).Y, projectile.width, projectile.height), null, lightColor, projectile.rotation, new Vector2(projectile.width / 2, projectile.height / 2), SpriteEffects.None, 0);
 			return false;
 		}
 

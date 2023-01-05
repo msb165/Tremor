@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GarnetGlove : ModItem
+	public class GarnetGlove:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 26;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 40;
 			item.height = 20;
 			item.noUseGraphic = true;

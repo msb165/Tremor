@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class EbonstoneDresser : ModItem
+	public class EbonstoneDresser:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class CursedCloudBuff : ModBuff
+	public class CursedCloudBuff:TremorModBuff
 	{
 		public override void SetDefaults()
 		{

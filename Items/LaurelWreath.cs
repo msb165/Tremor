@@ -4,12 +4,11 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class LaurelWreath : ModItem
+	public class LaurelWreath:TremorModItem
 	{
 
 		public override void SetDefaults()
 		{
-
 			item.width = 26;
 
 			item.height = 24;
@@ -22,10 +21,11 @@ namespace Tremor.Items
 			Tooltip.SetDefault("'The latest fashion trend'");
 		}
 
-		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)
-		{
-			drawHair = true;
-		}
+		//TODO: [Skipped for 1.4] DrawHair
+		//public override void DrawHair(ref bool drawHair, ref bool drawAltHair)
+		//{
+		//	drawHair = true;
+		//}
 
 		public override void AddRecipes()
 		{

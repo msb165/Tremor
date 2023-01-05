@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class SandstoneBathtub : ModTile
+	public class SandstoneBathtub:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -17,20 +17,20 @@ namespace Tremor.Tiles
 			TileObjectData.addTile(Type);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
 			AddMapEntry(new Color(233, 211, 123));
-			bed = true;
+			TileID.Sets.CanBeSleptIn[Type] = true;//bed = true;
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 64, 32, ModContent.ItemType<Items.Sandstone.SandstoneBathtub>());
+			Item.NewItem(null, i * 16, j * 16, 64, 32, ModContent.ItemType<Items.Sandstone.SandstoneBathtub>());
 		}
 
 		public override void MouseOver(int i, int j)
 		{
 			Player player = Main.player[Main.myPlayer];
 			player.noThrow = 2;
-			player.showItemIcon = true;
-			player.showItemIcon2 = ModContent.ItemType<Items.Sandstone.SandstoneBathtub>();
+			player.cursorItemIconEnabled = true;
+			player.cursorItemIconID = ModContent.ItemType<Items.Sandstone.SandstoneBathtub>();
 		}
 	}
 }

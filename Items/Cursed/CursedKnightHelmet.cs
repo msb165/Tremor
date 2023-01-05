@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Cursed
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class CursedKnightHelmet : ModItem
+	public class CursedKnightHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()

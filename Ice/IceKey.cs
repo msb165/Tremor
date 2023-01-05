@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice
 {
-	public class IceKey : ModItem
+	public class IceKey:TremorModItem
 	{
 		public override void SetDefaults()
 		{

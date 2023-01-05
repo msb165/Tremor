@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Magmonium
 {
-	public class MagmoniumBar : ModItem
+	public class MagmoniumBar:TremorModItem
 	{
 		public override void SetDefaults()
 		{

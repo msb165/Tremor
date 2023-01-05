@@ -8,7 +8,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class projEyeofInfinity : ModProjectile
+	public class projEyeofInfinity:TremorModProjectile
 	{
 		const float Distanse = 25f; // Дистанция на которой вращяются половины друг от друга
 		const int DrawCount = 10; // кол-во "шлейфов" за одной половиной
@@ -27,7 +27,7 @@ namespace Tremor.Projectiles
 			projectile.aiStyle = 0;
 			projectile.friendly = true;
 			projectile.penetrate = -1;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.timeLeft = 3600;
 			projectile.tileCollide = false;
 		}
@@ -122,8 +122,8 @@ namespace Tremor.Projectiles
             Color color2 = new Color(0, 0, 0, 250);
             for (int i = 0; i < DrawCount; i++)
             {
-                spriteBatch.Draw(Main.projectileTexture[projectile.type], Helper.PolarPos(projectile.position, Distanse, AngleLeft - (AngleStep * i * 1.5f), 0, 0) - Main.screenPosition, null, color, AngleLeft, new Vector2(2, 2), 1, SpriteEffects.None, 0f);
-                spriteBatch.Draw(Main.projectileTexture[projectile.type], Helper.PolarPos(projectile.position, Distanse, AngleRight - (AngleStep * i * 1.5f), 0, 0) - Main.screenPosition - projectile.Size / 2, null, color, AngleRight, new Vector2(2, 2), 1, SpriteEffects.None, 0f);
+                spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, Helper.PolarPos(projectile.position, Distanse, AngleLeft - (AngleStep * i * 1.5f), 0, 0) - Main.screenPosition, null, color, AngleLeft, new Vector2(2, 2), 1, SpriteEffects.None, 0f);
+                spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, Helper.PolarPos(projectile.position, Distanse, AngleRight - (AngleStep * i * 1.5f), 0, 0) - Main.screenPosition - projectile.Size / 2, null, color, AngleRight, new Vector2(2, 2), 1, SpriteEffects.None, 0f);
                 color = new Color(color.R - 250 / DrawCount, color.G - 250 / DrawCount, color.B - 250 / DrawCount, color.A + 250 / DrawCount);
                 color2 = new Color(color2.R + 250 / DrawCount, color.G + 250 / DrawCount, color.B + 250 / DrawCount, color.A - 250 / DrawCount);
             }
@@ -137,8 +137,8 @@ namespace Tremor.Projectiles
 			for (int i = 0; i < OldPositionsLeft.Count; i++)
 			{
 				color = new Color(color.R - 250 / DrawCount, color.G - 250 / DrawCount, color.B - 250 / DrawCount, color.A + 250 / (OldPositionsLeft.Count * 2));
-				spriteBatch.Draw(Main.projectileTexture[projectile.type], OldPositionsLeft[i], null, color, OldRotations[i], new Vector2(2, 2), 1, SpriteEffects.None, 0);
-				spriteBatch.Draw(Main.projectileTexture[projectile.type], OldPositionsRight[i], null, color, -OldRotations[i], new Vector2(2, 2), 1, SpriteEffects.None, 0);
+				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, OldPositionsLeft[i], null, color, OldRotations[i], new Vector2(2, 2), 1, SpriteEffects.None, 0);
+				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, OldPositionsRight[i], null, color, -OldRotations[i], new Vector2(2, 2), 1, SpriteEffects.None, 0);
 			}
 			return false;
 		}

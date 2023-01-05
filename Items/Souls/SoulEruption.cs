@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Souls
 {
-	public class SoulEruption : ModItem
+	public class SoulEruption:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -23,7 +23,7 @@ namespace Tremor.Items.Souls
 			item.shootSpeed = 6f;
 			item.knockBack = 6f;
 			item.value = Item.sellPrice(0, 12, 0, 0);
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.noMelee = true;
 			item.rare = 10;
 		}
@@ -38,9 +38,9 @@ namespace Tremor.Items.Souls
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
 			{
-				Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX - 1, speedY - 1, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX - 1, speedY - 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
 			}
 			return false;
 		}

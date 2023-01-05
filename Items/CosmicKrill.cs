@@ -5,7 +5,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class CosmicKrill : ModItem
+	public class CosmicKrill:TremorModItem
 	{
 		const int XOffset = -400;
 		const int YOffset = -400;
@@ -35,13 +35,13 @@ namespace Tremor.Items
 			return NPC.downedMoonlord && !NPC.AnyNPCs(ModContent.NPCType<SpaceWhale>());
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			Main.NewText("Space Whale has awoken!", 175, 75, 255);
-			Main.PlaySound(15, (int)player.position.X, (int)player.position.Y, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[15], player.position);//Variant 0
 			if (Main.netMode != 1)
 			{
-				NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<SpaceWhale>());
+				NPC.NewNPC(null, (int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<SpaceWhale>());
 			}
 			return true;
 		}

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Crystal
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class CrystalChestplate : ModItem
+	public class CrystalChestplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items.Crystal
 
 		public override void UpdateEquip(Player p)
 		{
-			p.thrownVelocity += 0.3f;
+			p.ThrownVelocity += 0.3f;
 		}
 
 		public override void AddRecipes()

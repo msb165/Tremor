@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PharaohBlade : ModItem
+	public class PharaohBlade:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 25;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 50;
 			item.height = 55;
 			item.useTime = 25;

@@ -11,7 +11,7 @@ using Tremor.Items;
 namespace Tremor.NPCs
 {
 
-	public class ElderObserver : ModNPC
+	public class ElderObserver:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -61,7 +61,7 @@ namespace Tremor.NPCs
 		void Shoot()
 		{
 			Vector2 velocity = Vector2.Normalize(Main.player[npc.target].Center - npc.Center) * ShootSpeed; 
-			Projectile.NewProjectile(npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, ShootType, ShootDamage, ShootKN);
+			Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, ShootType, ShootDamage, ShootKN);
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -79,7 +79,7 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
 				for(int i = 0; i < 4; ++i)
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot($"Gores/ElderObserverGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/ElderObserverGore{i+1}"), 1f);
 			}
 			else
 			{
@@ -101,6 +101,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && Main.hardMode && Main.expertMode && Main.bloodMoon && spawnInfo.spawnTileY < Main.worldSurface ? 0.002f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && Main.hardMode && Main.expertMode && Main.bloodMoon && spawnInfo.SpawnTileY < Main.worldSurface ? 0.002f : 0f;
 	}
 }

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Ice.Items
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class FrostGuardian : ModItem
+	public class FrostGuardian:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -31,8 +31,8 @@ namespace Tremor.Ice.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.meleeDamage += 0.05f;
-			player.meleeSpeed += 0.05f;
+			player.GetDamage(DamageClass.Melee) += 0.05f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.05f;
 			player.buffImmune[44] = true;
 			player.buffImmune[45] = true;
 			player.buffImmune[46] = true;

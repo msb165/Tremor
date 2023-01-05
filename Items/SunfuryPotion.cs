@@ -6,7 +6,7 @@ using Tremor.Items.Alien;
 namespace Tremor.Items
 {
 
-	public class SunfuryPotion : ModItem
+	public class SunfuryPotion:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -29,7 +29,7 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Increases all stats during daytime");
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			player.AddBuff(ModContent.BuffType<Buffs.DayHunting>(), 14400);
 			return true;

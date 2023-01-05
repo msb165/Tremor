@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Bone
 {
-	public class Bonecrusher : ModItem
+	public class Bonecrusher:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -24,7 +24,7 @@ namespace Tremor.Items.Bone
 			item.value = 6000;
 			item.knockBack = 4f;
 			item.rare = 3;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 		}
 
 		public override void SetStaticDefaults()

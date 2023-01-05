@@ -10,7 +10,7 @@ using Tremor.Items.Souls;
 namespace Tremor.NPCs.Bosses.AndasBoss
 {
 	[AutoloadBossHead]
-	public class TrueAndas : ModNPC
+	public class TrueAndas:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -136,7 +136,7 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 					int dust = Dust.NewDust(npc.position, npc.width, npc.height, 57);
 					Main.dust[dust].scale = 1.5f;
 				}
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<MoltenSpirit>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<MoltenSpirit>());
 				DoAndasShoot();
 				npc.position.X = (Main.player[npc.target].position.X - 500) + Main.rand.Next(1000);
 				npc.position.Y = (Main.player[npc.target].position.Y - 500) + Main.rand.Next(1000);
@@ -161,7 +161,7 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 					int dust = Dust.NewDust(npc.position, npc.width, npc.height, 57);
 					Main.dust[dust].scale = 1.5f;
 				}
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<UndeadWyrmHead>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<UndeadWyrmHead>());
 				npc.position.X = (Main.player[npc.target].position.X - 500) + Main.rand.Next(1000);
 				npc.position.Y = (Main.player[npc.target].position.Y - 500) + Main.rand.Next(1000);
 			}
@@ -174,20 +174,20 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 
 		void DoAndasShoot()
 		{
-			Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, -ShootDirection, 0, ModContent.ProjectileType<InfernoSkull>(), ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
-			Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, ShootDirection, 0, ModContent.ProjectileType<InfernoSkull>(), ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
-			Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, 0, ShootDirection, ModContent.ProjectileType<InfernoSkull>(), ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
-			Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, 0, -ShootDirection, ModContent.ProjectileType<InfernoSkull>(), ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, -ShootDirection, 0, ModContent.ProjectileType<InfernoSkull>(), ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, ShootDirection, 0, ModContent.ProjectileType<InfernoSkull>(), ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, 0, ShootDirection, ModContent.ProjectileType<InfernoSkull>(), ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, 0, -ShootDirection, ModContent.ProjectileType<InfernoSkull>(), ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
-			Texture2D drawTexture = Main.npcTexture[npc.type];
+			Texture2D drawTexture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2((drawTexture.Width / 2) * 0.5F, (drawTexture.Height / Main.npcFrameCount[npc.type]) * 0.5F);
 
 			Vector2 drawPos = new Vector2(
-				npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Main.npcTexture[npc.type].Width / 2) * npc.scale / 2f + origin.X * npc.scale,
-				npc.position.Y - Main.screenPosition.Y + npc.height - Main.npcTexture[npc.type].Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
+				npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Width / 2) * npc.scale / 2f + origin.X * npc.scale,
+				npc.position.Y - Main.screenPosition.Y + npc.height - Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
 
 			SpriteEffects effects = npc.spriteDirection == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
 			spriteBatch.Draw(drawTexture, drawPos, npc.frame, Color.White, npc.rotation, origin, npc.scale, effects, 0);
@@ -201,23 +201,23 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 
 			if (Main.expertMode)
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 			else
 			{
 				Helper.DropItems(npc.position, npc.Size, new Drop(ModContent.ItemType<Inferno>(), 1, 1), new Drop(ModContent.ItemType<GehennaStaff>(), 1, 1), new Drop(ModContent.ItemType<Pandemonium>(), 1, 1), new Drop(ModContent.ItemType<VulcanBlade>(), 1, 1), new Drop(ModContent.ItemType<HellStorm>(), 1, 1));
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 3544, Main.rand.Next(10, 25));
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 3544, Main.rand.Next(10, 25));
 
 				if (Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AndasMask>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AndasMask>());
 				}
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<InfernoSoul>(), Main.rand.Next(8, 15));
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<InfernoSoul>(), Main.rand.Next(8, 15));
 			}
 
 			if (Main.rand.Next(10) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AndasTrophy>());
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AndasTrophy>());
 			}
 
 			if (Main.netMode != 1)
@@ -229,13 +229,14 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 				{
 					for (int index3 = num2 - num5; index3 <= num2 + num5; ++index3)
 					{
+						var tile = Main.tile[index2, index3];
 						if ((index2 == num1 - num5 || index2 == num1 + num5 || (index3 == num2 - num5 || index3 == num2 + num5)) && !Main.tile[index2, index3].active())
 						{
-							Main.tile[index2, index3].type = 76;
-							Main.tile[index2, index3].active(true);
+							tile.TileType = 76;
+							tile.active(true);
 						}
-						Main.tile[index2, index3].lava(false);
-						Main.tile[index2, index3].liquid = 0;
+						tile.LiquidType = LiquidID.Water;//was tile.lava(false)
+						tile.LiquidAmount = 0;
 						if (Main.netMode == 2)
 							NetMessage.SendTileSquare(-1, index2, index3, 1);
 						else

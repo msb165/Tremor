@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class CrimstonePlatform : ModTile
+	public class CrimstonePlatform:TremorModTile
 	{
 		public override void SetDefaults()
 		{

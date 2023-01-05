@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SpectreFlower : ModItem
+	public class SpectreFlower:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 60;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 46;
 			item.height = 48;
 			item.mana = 15;

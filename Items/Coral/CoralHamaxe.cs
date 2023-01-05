@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Coral
 {
-	public class CoralHamaxe : ModItem
+	public class CoralHamaxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 8;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 36;
 			item.height = 34;
 			item.useTime = 20;

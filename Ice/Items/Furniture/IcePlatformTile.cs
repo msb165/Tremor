@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Ice.Items.Furniture
 {
-	public class IcePlatformTile : ModTile
+	public class IcePlatformTile:TremorModTile
 	{
 		public override void SetDefaults()
 		{

@@ -5,12 +5,12 @@ using Tremor.Items.Dark;
 
 namespace Tremor.Items
 {
-	public class VoidKnife : ModItem
+	public class VoidKnife:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 			item.damage = 666;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 56;
 			item.height = 56;
 			item.useTime = 21;
@@ -34,7 +34,7 @@ namespace Tremor.Items
 
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
-			Projectile.NewProjectile(target.Center.X, target.Center.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.VoidKnifeExplosion>(), damage, knockback, Main.myPlayer);
+			Projectile.NewProjectile(null, target.Center.X, target.Center.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.VoidKnifeExplosion>(), damage, knockback, Main.myPlayer);
 			if (player.statLife < (player.statLifeMax2 * 0.5f) && Main.rand.NextBool(4))
 			{
 				int NewLife = Main.rand.Next(19, 41);

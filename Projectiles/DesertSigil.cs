@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class DesertSigil : ModProjectile
+	public class DesertSigil:TremorModProjectile
 	{
 		const int ShootRate = 22; 
 		const float ShootDistance = 300f; 
@@ -63,7 +63,7 @@ namespace Tremor.Projectiles
 				if (NearestNPC == -1)
 					return;
 				Vector2 Velocity = Helper.VelocityToPoint(projectile.Center, Main.npc[NearestNPC].Center, ShootSpeed);
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, Velocity.X, Velocity.Y, ShootType, ShootDamage, ShootKnockback, projectile.owner);
+				Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, Velocity.X, Velocity.Y, ShootType, ShootDamage, ShootKnockback, projectile.owner);
 			}
 		}
 
@@ -74,7 +74,7 @@ namespace Tremor.Projectiles
 			base.AI();
 			if (projectile.localAI[0] == 0f)
 			{
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 20);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item20, projectile.position);
 			}
 			projectile.localAI[0] += 1f;
 			if (projectile.localAI[0] > 3f)

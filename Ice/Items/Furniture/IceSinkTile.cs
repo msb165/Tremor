@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Ice.Items.Furniture
 {
-	public class IceSinkTile : ModTile
+	public class IceSinkTile:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -23,7 +23,7 @@ namespace Tremor.Ice.Items.Furniture
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<IceSink>());
+			Item.NewItem(null, i * 16, j * 16, 32, 16, ModContent.ItemType<IceSink>());
 		}
 	}
 }

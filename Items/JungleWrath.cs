@@ -4,11 +4,10 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class JungleWrath : ModItem
+	public class JungleWrath:TremorModItem
 	{
 		public override void SetDefaults()
 		{
-
 			item.width = 22;
 			item.height = 44;
 
@@ -25,8 +24,8 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.magicDamage += 0.06f;
-			player.minionDamage += 0.06f;
+			player.GetDamage(DamageClass.Magic) += 0.06f;
+			player.GetDamage(DamageClass.Summon) += 0.06f;
 		}
 
 		public override void AddRecipes()

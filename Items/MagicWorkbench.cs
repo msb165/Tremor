@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MagicWorkbench : ModItem
+	public class MagicWorkbench:TremorModItem
 	{
 		public override void SetDefaults()
 		{

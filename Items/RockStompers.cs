@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class RockStompers : ModItem
+	public class RockStompers:TremorModItem
 	{
 
 		public override void SetDefaults()

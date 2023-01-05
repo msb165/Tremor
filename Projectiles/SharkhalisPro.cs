@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class SharkhalisPro : ModProjectile
+	public class SharkhalisPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

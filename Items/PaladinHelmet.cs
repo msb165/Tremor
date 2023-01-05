@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class PaladinHelmet : ModItem
+	public class PaladinHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeSpeed += 0.30f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.30f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

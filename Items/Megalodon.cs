@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Megalodon : ModItem
+	public class Megalodon:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,7 +26,7 @@ namespace Tremor.Items
 			item.rare = 10;
 
 			item.knockBack = 1.75f;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 		}
 
 		public override void SetStaticDefaults()
@@ -40,7 +40,7 @@ namespace Tremor.Items
 			return new Vector2(-20, 0);
 		}
 
-		public override bool ConsumeAmmo(Player p)
+		public override bool CanConsumeAmmo(Item ammo, Player p)
 		{
 			return Main.rand.NextBool(3);
 		}
@@ -49,9 +49,9 @@ namespace Tremor.Items
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
 			{
-				Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX - 1, speedY - 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX - 1, speedY - 1, type, damage, knockBack, Main.myPlayer);
 			}
 			return false;
 		}

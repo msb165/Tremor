@@ -2,52 +2,52 @@ using Terraria.ModLoader;
 
 namespace Tremor.Mounts
 {
-	public class DripplerMount : ModMountData
+	public class DripplerMount : ModMount
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			mountData.spawnDust = 5;
-			mountData.buff = ModContent.BuffType<Buffs.DripplerBuff>();
-			mountData.heightBoost = 20;
-			mountData.flightTimeMax = 30;
-			mountData.fatigueMax = 10;
-			mountData.acceleration = 1f;
-			mountData.jumpSpeed = 6f;
-			mountData.fallDamage = 1f;
-			mountData.runSpeed = 2f;
-			mountData.blockExtraJumps = true;
-			mountData.totalFrames = 8;
-			mountData.constantJump = true;
-			mountData.jumpHeight = 100;
-			int[] array = new int[mountData.totalFrames];
+			MountData.spawnDust = 5;
+			MountData.buff = ModContent.BuffType<Buffs.DripplerBuff>();
+			MountData.heightBoost = 20;
+			MountData.flightTimeMax = 30;
+			MountData.fatigueMax = 10;
+			MountData.acceleration = 1f;
+			MountData.jumpSpeed = 6f;
+			MountData.fallDamage = 1f;
+			MountData.runSpeed = 2f;
+			MountData.blockExtraJumps = true;
+			MountData.totalFrames = 8;
+			MountData.constantJump = true;
+			MountData.jumpHeight = 100;
+			int[] array = new int[MountData.totalFrames];
 			for (int l = 0; l < array.Length; l++)
 			{
 				array[l] = 12;
 			}
-			mountData.playerYOffsets = array;
-			mountData.xOffset = 10;
-			mountData.bodyFrame = 3;
-			mountData.yOffset = 19;
-			mountData.inAirFrameStart = 0;
-			mountData.idleFrameCount = 8;
-			mountData.idleFrameDelay = 12;
-			mountData.idleFrameStart = 0;
-			mountData.runningFrameStart = 0;
-			mountData.flyingFrameCount = 8;
-			mountData.flyingFrameDelay = 10;
-			mountData.flyingFrameStart = 0;
-			mountData.playerHeadOffset = 22;
-			mountData.standingFrameStart = 0;
-			mountData.runningFrameCount = 8;
-			mountData.swimFrameCount = mountData.inAirFrameCount;
-			mountData.swimFrameDelay = mountData.inAirFrameDelay;
-			mountData.swimFrameStart = mountData.inAirFrameStart;
-			mountData.standingFrameCount = 8;
-			mountData.runningFrameDelay = 8;
-			mountData.inAirFrameCount = 8;
-			mountData.inAirFrameDelay = 10;
-			mountData.idleFrameLoop = true;
-			mountData.standingFrameDelay = 8;
+			MountData.playerYOffsets = array;
+			MountData.xOffset = 10;
+			MountData.bodyFrame = 3;
+			MountData.yOffset = 19;
+			MountData.inAirFrameStart = 0;
+			MountData.idleFrameCount = 8;
+			MountData.idleFrameDelay = 12;
+			MountData.idleFrameStart = 0;
+			MountData.runningFrameStart = 0;
+			MountData.flyingFrameCount = 8;
+			MountData.flyingFrameDelay = 10;
+			MountData.flyingFrameStart = 0;
+			MountData.playerHeadOffset = 22;
+			MountData.standingFrameStart = 0;
+			MountData.runningFrameCount = 8;
+			MountData.swimFrameCount = MountData.inAirFrameCount;
+			MountData.swimFrameDelay = MountData.inAirFrameDelay;
+			MountData.swimFrameStart = MountData.inAirFrameStart;
+			MountData.standingFrameCount = 8;
+			MountData.runningFrameDelay = 8;
+			MountData.inAirFrameCount = 8;
+			MountData.inAirFrameDelay = 10;
+			MountData.idleFrameLoop = true;
+			MountData.standingFrameDelay = 8;
 		}
 
 	}

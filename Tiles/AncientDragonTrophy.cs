@@ -5,7 +5,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class AncientDragonTrophy : ModTile
+	public class AncientDragonTrophy:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -23,7 +23,7 @@ namespace Tremor.Tiles
     {
         if(frameX == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<Items.Ancient.AncientDragonTrophy>());
+            Item.NewItem(null, i * 16, j * 16, 48, 48, ModContent.ItemType<Items.Ancient.AncientDragonTrophy>());
         }
     }
 }}

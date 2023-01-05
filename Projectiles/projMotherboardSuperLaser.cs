@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class projMotherboardSuperLaser : ModProjectile
+	public class projMotherboardSuperLaser:TremorModProjectile
 	{
 		const int XOffsetMax = 300;
 		const int XOffsetStep = 10;
@@ -37,7 +37,7 @@ namespace Tremor.Projectiles
 			projectile.timeLeft = 2;
 			projectile.penetrate = -1;
 			projectile.hostile = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
 			projectile.alpha = 100;
@@ -98,8 +98,12 @@ namespace Tremor.Projectiles
 
 		private void PlayCollidingSound()
 		{
-			var zapSound = new LegacySoundStyle(SoundID.Trackable, TremorUtils.GetIdForSoundName($"dd2_sky_dragons_fury_circle_{Main.rand.Next(3)}"));
-			Main.PlayTrackedSound(zapSound.WithPitchVariance(Main.rand.NextFloat()).WithVolume(Main.soundVolume * 1.5f));
+			var zapSound = TremorUtils.GetIdForSoundName($"dd2_sky_dragons_fury_circle_{Main.rand.Next(3)}");
+			zapSound.PitchVariance = Main.rand.NextFloat();
+			zapSound.Volume = Main.soundVolume * 1.5f;
+			SoundEngine.PlaySound(zapSound);
+			//var zapSound = new LegacySoundStyle(SoundID.Trackable, TremorUtils.GetIdForSoundName($"dd2_sky_dragons_fury_circle_{Main.rand.Next(3)}"));
+			//Main.PlayTrackedSound(zapSound.WithPitchVariance(Main.rand.NextFloat()).WithVolume(Main.soundVolume * 1.5f));
 		}
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
@@ -110,7 +114,7 @@ namespace Tremor.Projectiles
 			for (float k = 0; k <= length; k += 1f)
 			{
 				Vector2 drawPos = projectile.Center + unit * k - Main.screenPosition;
-				spriteBatch.Draw(Main.projectileTexture[projectile.type], drawPos, null, new Color(LaserColor.R, LaserColor.G, LaserColor.B, projectile.alpha), Helper.rotateBetween2Points(Main.npc[(int)projectile.ai[0]].Center, endPoint), new Vector2(2, 2), 1f, SpriteEffects.None, 0f);
+				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, new Color(LaserColor.R, LaserColor.G, LaserColor.B, projectile.alpha), Helper.rotateBetween2Points(Main.npc[(int)projectile.ai[0]].Center, endPoint), new Vector2(2, 2), 1f, SpriteEffects.None, 0f);
 			}
 			return false;
 		}

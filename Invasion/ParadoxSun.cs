@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class ParadoxSun : ModNPC
+	public class ParadoxSun:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -35,12 +35,14 @@ namespace Tremor.Invasion
 			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
 			float spawn = 20f;
 			if (InvasionWorld.CyberWrath)
+			{
 				return 10000f;
+			}
 			return 0f;
 
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
+			int x = spawnInfo.SpawnTileX;
+			int y = spawnInfo.SpawnTileY;
+			int tile = Main.tile[x, y].TileType;
 			return InvasionWorld.CyberWrath && y > Main.worldSurface ? 1f : 0f;
 		}
 
@@ -195,7 +197,7 @@ namespace Tremor.Invasion
 					{
 						return;
 					}
-					if (Main.tile[l, num29].active() && Main.tileSolid[Main.tile[l, num29].type])
+					if (Main.tile[l, num29].active() && Main.tileSolid[Main.tile[l, num29].TileType])
 					{
 						flag4 = true;
 						break;
@@ -207,36 +209,36 @@ namespace Tremor.Invasion
 			{
 				int num32 = (int)((npc.position.X + npc.width / 2 + (npc.width / 2 + 6) * npc.direction) / 16f);
 				int num33 = (int)((npc.position.Y + npc.height - 15f) / 16f);
-				if (Main.tile[num32, num33] == null)
-				{
-					Main.tile[num32, num33] = new Tile();
-				}
-				if (Main.tile[num32, num33 - 1] == null)
-				{
-					Main.tile[num32, num33 - 1] = new Tile();
-				}
-				if (Main.tile[num32, num33 - 2] == null)
-				{
-					Main.tile[num32, num33 - 2] = new Tile();
-				}
-				if (Main.tile[num32, num33 - 3] == null)
-				{
-					Main.tile[num32, num33 - 3] = new Tile();
-				}
-				if (Main.tile[num32, num33 + 1] == null)
-				{
-					Main.tile[num32, num33 + 1] = new Tile();
-				}
-				if (Main.tile[num32 + npc.direction, num33 - 1] == null)
-				{
-					Main.tile[num32 + npc.direction, num33 - 1] = new Tile();
-				}
-				if (Main.tile[num32 + npc.direction, num33 + 1] == null)
-				{
-					Main.tile[num32 + npc.direction, num33 + 1] = new Tile();
-				}
+				//if (Main.tile[num32, num33] == null)
+				//{
+				//	Main.tile[num32, num33] = new Tile();
+				//}
+				//if (Main.tile[num32, num33 - 1] == null)
+				//{
+				//	Main.tile[num32, num33 - 1] = new Tile();
+				//}
+				//if (Main.tile[num32, num33 - 2] == null)
+				//{
+				//	Main.tile[num32, num33 - 2] = new Tile();
+				//}
+				//if (Main.tile[num32, num33 - 3] == null)
+				//{
+				//	Main.tile[num32, num33 - 3] = new Tile();
+				//}
+				//if (Main.tile[num32, num33 + 1] == null)
+				//{
+				//	Main.tile[num32, num33 + 1] = new Tile();
+				//}
+				//if (Main.tile[num32 + npc.direction, num33 - 1] == null)
+				//{
+				//	Main.tile[num32 + npc.direction, num33 - 1] = new Tile();
+				//}
+				//if (Main.tile[num32 + npc.direction, num33 + 1] == null)
+				//{
+				//	Main.tile[num32 + npc.direction, num33 + 1] = new Tile();
+				//}
 
-				if (Main.tile[num32, num33 - 1].active() && Main.tile[num32, num33 - 1].type == 10 && flag3)
+				if (Main.tile[num32, num33 - 1].active() && Main.tile[num32, num33 - 1].TileType == 10 && flag3)
 				{
 					npc.ai[2] += 1f;
 					npc.ai[3] = 0f;
@@ -270,9 +272,9 @@ namespace Tremor.Invasion
 
 				if ((npc.velocity.X < 0f && npc.spriteDirection == -1) || (npc.velocity.X > 0f && npc.spriteDirection == 1))
 				{
-					if (Main.tile[num32, num33 - 2].active() && Main.tileSolid[Main.tile[num32, num33 - 2].type])
+					if (Main.tile[num32, num33 - 2].active() && Main.tileSolid[Main.tile[num32, num33 - 2].TileType])
 					{
-						if ((Main.tile[num32, num33 - 3].active() && Main.tileSolid[Main.tile[num32, num33 - 3].type]))
+						if ((Main.tile[num32, num33 - 3].active() && Main.tileSolid[Main.tile[num32, num33 - 3].TileType]))
 						{
 							npc.velocity.Y = -8f;
 							npc.netUpdate = true;
@@ -285,21 +287,21 @@ namespace Tremor.Invasion
 					}
 					else
 					{
-						if (Main.tile[num32, num33 - 1].active() && Main.tileSolid[Main.tile[num32, num33 - 1].type])
+						if (Main.tile[num32, num33 - 1].active() && Main.tileSolid[Main.tile[num32, num33 - 1].TileType])
 						{
 							npc.velocity.Y = -6f;
 							npc.netUpdate = true;
 						}
 						else
 						{
-							if (Main.tile[num32, num33].active() && Main.tileSolid[Main.tile[num32, num33].type])
+							if (Main.tile[num32, num33].active() && Main.tileSolid[Main.tile[num32, num33].TileType])
 							{
 								npc.velocity.Y = -5f;
 								npc.netUpdate = true;
 							}
 							else
 							{
-								if (npc.directionY < 0 && (!Main.tile[num32, num33 + 1].active() || !Main.tileSolid[Main.tile[num32, num33 + 1].type]) && (!Main.tile[num32 + npc.direction, num33 + 1].active() || !Main.tileSolid[Main.tile[num32 + npc.direction, num33 + 1].type]))
+								if (npc.directionY < 0 && (!Main.tile[num32, num33 + 1].active() || !Main.tileSolid[Main.tile[num32, num33 + 1].TileType]) && (!Main.tile[num32 + npc.direction, num33 + 1].active() || !Main.tileSolid[Main.tile[num32 + npc.direction, num33 + 1].TileType]))
 								{
 									npc.velocity.Y = -8f;
 									npc.velocity.X = npc.velocity.X * 1.5f;
@@ -332,7 +334,7 @@ namespace Tremor.Invasion
 		{
 			if (Main.rand.Next(20) == 0)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ClockofTime>());
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ClockofTime>());
 			}
 		}
 	}

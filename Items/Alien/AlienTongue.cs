@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Alien
 {
-	public class AlienTongue : ModItem
+	public class AlienTongue:TremorModItem
 	{
 		public override void SetDefaults()
 		{

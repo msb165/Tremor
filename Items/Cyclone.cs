@@ -4,7 +4,7 @@ using Tremor.Items.Ancient;
 
 namespace Tremor.Items
 {
-	public class Cyclone : ModItem
+	public class Cyclone:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.damage = 84;
 			item.width = 14;
 			item.height = 84;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 16;
 			item.useTime = 12;
 			item.useAnimation = 12;

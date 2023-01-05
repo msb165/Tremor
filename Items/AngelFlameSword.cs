@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class AngelFlameSword : ModItem
+	public class AngelFlameSword:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 59;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 35;
 			item.height = 20;
 

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class DeadBranch : ModItem
+	public class DeadBranch:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -16,7 +16,7 @@ namespace Tremor.ZombieEvent.Items
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.useStyle = 5;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 7;
 			item.noMelee = true;
 
@@ -38,7 +38,7 @@ namespace Tremor.ZombieEvent.Items
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			int proj = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, 671, damage, knockBack, Main.myPlayer);
+			int proj = Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, 671, damage, knockBack, Main.myPlayer);
 			Main.projectile[proj].hostile = false;
 			Main.projectile[proj].friendly = true;
 			return false;

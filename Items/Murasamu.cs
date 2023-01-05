@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Murasamu : ModItem
+	public class Murasamu:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 24;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 40;
 			item.height = 40;
 			item.useTime = 20;

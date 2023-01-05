@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Destructor : ModItem
+	public class Destructor:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 40;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 40;
 			item.height = 40;
 
@@ -34,7 +34,7 @@ namespace Tremor.Items
 			Tooltip.SetDefault("'Exterminate!'");
 		}
 
-		public override bool ConsumeAmmo(Player p)
+		public override bool CanConsumeAmmo(Item ammo, Player p)
 		{
 			return Main.rand.NextBool(2);
 		}

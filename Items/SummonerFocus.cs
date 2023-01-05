@@ -6,7 +6,7 @@ using Tremor.Items.Sparks;
 
 namespace Tremor.Items
 {
-	public class SummonerFocus : ModItem
+	public class SummonerFocus:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -31,7 +31,7 @@ namespace Tremor.Items
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.maxMinions += 1;
-			player.minionDamage += 0.08f;
+			player.GetDamage(DamageClass.Summon) += 0.08f;
 		}
 
 		public override void AddRecipes()

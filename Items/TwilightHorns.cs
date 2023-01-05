@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TwilightHorns : ModItem
+	public class TwilightHorns:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,11 +28,7 @@ namespace Tremor.Items
 		{
 			if (!Main.dayTime)
 			{
-				player.meleeDamage += 0.1f;
-				player.rangedDamage += 0.1f;
-				player.thrownDamage += 0.1f;
-				player.minionDamage += 0.1f;
-				player.magicDamage += 0.1f;
+				player.GetDamage(DamageClass.Generic) += 0.1f;
 			}
 		}
 	}

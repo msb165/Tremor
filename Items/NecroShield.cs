@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class NecroShield : ModItem
+	public class NecroShield:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -25,8 +25,8 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.magicCrit += 10;
-			player.minionDamage += 0.1f;
+			player.GetCritChance(DamageClass.Magic) += 10;
+			player.GetDamage(DamageClass.Summon) += 0.1f;
 		}
 	}
 }

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items
 {
-	public class IceCross : ModItem
+	public class IceCross:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -11,7 +11,7 @@ namespace Tremor.Ice.Items
 			item.damage = 21;
 			item.width = 26;
 			item.height = 24;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 40;
 			item.useTime = 35;
 			item.shoot = ModContent.ProjectileType<Icoj>();

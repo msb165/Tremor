@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Angelite
 {
-	public class AngeliteBar : ModItem
+	public class AngeliteBar:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -31,7 +31,7 @@ namespace Tremor.Items.Angelite
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 		public override void AddRecipes()

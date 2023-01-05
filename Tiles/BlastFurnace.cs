@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class BlastFurnace : ModTile
+	public class BlastFurnace:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -16,7 +16,7 @@ namespace Tremor.Tiles
         TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
         //TileObjectData.newTile.CoordinateHeights = new int[]{16};
         TileObjectData.addTile(Type);
-        animationFrameHeight = 54;
+        AnimationFrameHeight = 54;
  Main.tileLighted[Type] = true; 
         AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
 		ModTranslation name = CreateMapEntryName();
@@ -45,6 +45,6 @@ public override void AnimateTile(ref int frame, ref int frameCounter)
 
     public override void KillMultiTile(int i, int j, int frameX, int frameY)
     {
-        Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<Items.BlastFurnace>());
+        Item.NewItem(null, i * 16, j * 16, 32, 16, ModContent.ItemType<Items.BlastFurnace>());
     }
 }}

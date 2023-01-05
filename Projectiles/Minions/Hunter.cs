@@ -49,7 +49,7 @@ namespace Tremor.Projectiles.Minions
 
         public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
         {
-            Texture2D texture = ModContent.GetTexture("Tremor/Projectiles/Hunter_Chain");
+            Texture2D texture = Mod.GetTexture("Tremor/Projectiles/Hunter_Chain");
 
             Vector2 position = projectile.Center;
             Vector2 mountedCenter = Main.player[projectile.owner].MountedCenter;

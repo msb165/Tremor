@@ -4,7 +4,7 @@ using Tremor.Items.Crystal;
 
 namespace Tremor.Items.Ancient
 {
-	public class AncientBanner : ModItem
+	public class AncientBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class TitaniumHeader : ModItem
+	public class TitaniumHeader:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.thrownDamage += 0.24f;
+			player.GetDamage(DamageClass.Throwing) += 0.24f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -38,7 +38,7 @@ namespace Tremor.Items
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Increases thrown weapon velocity and briefly become invulnerable after striking an enemy";
-			player.thrownVelocity += 0.25f;
+			player.ThrownVelocity += 0.25f;
 			player.onHitDodge = true;
 		}
 

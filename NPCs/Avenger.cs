@@ -6,7 +6,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class Avenger : ModNPC
+	public class Avenger:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -45,12 +45,12 @@ namespace Tremor.NPCs
 				{
 					Main.dust[Dust.NewDust(npc.position, npc.width, npc.height, 71, hitDirection, 0f, 200)].velocity *= 1.5f;
 
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore1"), 1f);
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore1"), 1f);
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore2"), 1f);
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore2"), 1f);
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore3"), 1f);
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore4"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore1"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore1"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore2"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore2"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore3"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore4"), 1f);
 				}
 			}
 		}
@@ -67,7 +67,7 @@ namespace Tremor.NPCs
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			return Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && NPC.downedMoonlord && Main.hardMode && !Main.dayTime && spawnInfo.spawnTileY < Main.worldSurface ? 0.03f : 0f;
+			return Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && NPC.downedMoonlord && Main.hardMode && !Main.dayTime && spawnInfo.SpawnTileY < Main.worldSurface ? 0.03f : 0f;
 		}
 	}
 }

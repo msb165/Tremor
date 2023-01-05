@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Wolf
 {
-	public class WolfToothNecklace : ModItem
+	public class WolfToothNecklace:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs
 {
-	public class DesertPrincess2 : ModNPC
+	public class DesertPrincess2:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -470,7 +470,7 @@ namespace Tremor.NPCs
 								npc.ai[3] += 1f;
 								if (npc.ai[3] == num1325)
 								{
-									NPC.NewNPC(num1321 * 16 + 8, num1322 * 16, ModContent.NPCType<DesertPrincess2>(), npc.whoAmI, 0f, 0f, 0f, 0f, 255);
+									NPC.NewNPC(null, num1321 * 16 + 8, num1322 * 16, ModContent.NPCType<DesertPrincess2>(), npc.whoAmI, 0f, 0f, 0f, 0f, 255);
 								}
 								else if (npc.ai[3] == num1325 * 2)
 								{

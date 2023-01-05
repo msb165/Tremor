@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TheSpike : ModItem
+	public class TheSpike:TremorModItem
 	{
 		public override void SetDefaults()
 		{

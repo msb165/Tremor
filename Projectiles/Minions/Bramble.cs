@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.Projectiles.Minions
 
 {
-	public class Bramble : ModProjectile
+	public class Bramble:TremorModProjectile
     {
  
         public override void SetDefaults()
@@ -51,7 +51,7 @@ namespace Tremor.Projectiles.Minions
                         shootToX *= distance * 3;
                         shootToY *= distance * 3;
                         int damage = 30; 
-                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX, shootToY, 374, damage, 0, Main.myPlayer, 0f, 0f);
+                        Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, shootToX, shootToY, 374, damage, 0, Main.myPlayer, 0f, 0f);
                         projectile.ai[0] = 0f;
                     }
                 }

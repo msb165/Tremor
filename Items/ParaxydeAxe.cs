@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ParaxydeAxe : ModItem
+	public class ParaxydeAxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 66;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 36;
 			item.height = 36;
 			item.useTime = 16;

@@ -4,7 +4,7 @@ using Tremor.Projectiles;
 
 namespace Tremor.Buffs
 {
-	public class WarkeeBuff : ModBuff
+	public class WarkeeBuff:TremorModBuff
 	{
 		public override void SetDefaults()
 		{
@@ -26,7 +26,7 @@ namespace Tremor.Buffs
 			}
 			if (petProjectileNotSpawned && player.whoAmI == Main.myPlayer)
 			{
-				Projectile.NewProjectile(player.position.X + player.width / 2, player.position.Y + player.height / 2, 0f, 0f, ModContent.ProjectileType<Warkee>(), 0, 0f, player.whoAmI, 0f, 0f);
+				Projectile.NewProjectile(null, player.position.X + player.width / 2, player.position.Y + player.height / 2, 0f, 0f, ModContent.ProjectileType<Warkee>(), 0, 0f, player.whoAmI, 0f, 0f);
 			}
 		}
 	}

@@ -5,7 +5,7 @@ using Tremor.Items.Steel;
 namespace Tremor.Items.Berserker
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class BerserkerHelmet : ModItem
+	public class BerserkerHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items.Berserker
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeSpeed += 0.15f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.15f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

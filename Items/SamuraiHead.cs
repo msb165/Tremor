@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class SamuraiHead : ModItem
+	public class SamuraiHead:TremorModItem
 	{
 
 		public override bool AltFunctionUse(Player player)
@@ -31,11 +31,7 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.09f;
-			player.rangedDamage += 0.09f;
-			player.thrownDamage += 0.09f;
-			player.minionDamage += 0.09f;
-			player.magicDamage += 0.09f;
+			player.GetDamage(DamageClass.Generic) += 0.09f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

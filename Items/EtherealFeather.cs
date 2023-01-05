@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class EtherealFeather : ModItem
+	public class EtherealFeather:TremorModItem
 	{
 		public override void SetDefaults()
 		{

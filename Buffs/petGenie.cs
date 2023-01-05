@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class petGenie : ModBuff
+	public class petGenie:TremorModBuff
 	{
 		public int MyDzhin = -1;
 
@@ -24,9 +24,9 @@ namespace Tremor.Buffs
 				Lighting.AddLight(npc.Center, new Vector3(0, 0, 1));
 			}
 			if (MyDzhin == -1)
-				MyDzhin = Projectile.NewProjectile(player.Center.X, player.Center.Y, 0, 0, ModContent.ProjectileType<Projectiles.projGenie>(), 0, 0, 0);
+				MyDzhin = Projectile.NewProjectile(null, player.Center.X, player.Center.Y, 0, 0, ModContent.ProjectileType<Projectiles.projGenie>(), 0, 0, 0);
 			if (!Main.projectile[MyDzhin].active || Main.projectile[MyDzhin].type != ModContent.ProjectileType<Projectiles.projGenie>())
-				MyDzhin = Projectile.NewProjectile(player.Center.X, player.Center.Y, 0, 0, ModContent.ProjectileType<Projectiles.projGenie>(), 0, 0, 0);
+				MyDzhin = Projectile.NewProjectile(null, player.Center.X, player.Center.Y, 0, 0, ModContent.ProjectileType<Projectiles.projGenie>(), 0, 0, 0);
 			Main.projectile[MyDzhin].timeLeft = 2;
 			player.buffTime[buffIndex] = 2;
 		}

@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class MineralTransmutator : ModTile
+	public class MineralTransmutator:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -16,7 +16,7 @@ namespace Tremor.Tiles
         TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
         //TileObjectData.newTile.CoordinateHeights = new int[]{16};
         TileObjectData.addTile(Type);
-        animationFrameHeight = 54;
+        AnimationFrameHeight = 54;
         AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
 	AddMapEntry(new Color(169, 169, 169));
     }
@@ -34,6 +34,6 @@ public override void AnimateTile(ref int frame, ref int frameCounter)
 
     public override void KillMultiTile(int i, int j, int frameX, int frameY)
     {
-        Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<Items.MineralTransmutator>());
+        Item.NewItem(null, i * 16, j * 16, 32, 16, ModContent.ItemType<Items.MineralTransmutator>());
     }
 }}

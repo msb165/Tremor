@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class GloomstonePlatform : ModTile
+	public class GloomstonePlatform:TremorModTile
 	{
 		public override void SetDefaults()
 		{

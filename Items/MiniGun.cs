@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MiniGun : ModItem
+	public class MiniGun:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 8;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 40;
 			item.height = 20;
 			item.useTime = 12;

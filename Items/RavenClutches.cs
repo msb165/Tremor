@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class RavenClutches : ModItem
+	public class RavenClutches:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 29;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 28;
 			item.height = 18;
 			item.useTime = 9;

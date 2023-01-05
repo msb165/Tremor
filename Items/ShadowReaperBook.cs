@@ -3,14 +3,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ShadowReaperBook : ModItem
+	public class ShadowReaperBook:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(165);
 
 			item.damage = 39;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 26;
 			item.maxStack = 1;
 			item.height = 30;

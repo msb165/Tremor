@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class BrilliantBehemoth : ModItem
+	public class BrilliantBehemoth:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 70;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 40;
 			item.height = 40;
 			item.useTime = 40;

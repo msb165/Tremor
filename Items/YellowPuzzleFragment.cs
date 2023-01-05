@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class YellowPuzzleFragment : ModItem
+	public class YellowPuzzleFragment:TremorModItem
 	{
 		public override void SetDefaults()
 		{

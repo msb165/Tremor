@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Crimstone
 {
-	public class CrimstoneDresser : ModItem
+	public class CrimstoneDresser:TremorModItem
 	{
 		public override void SetDefaults()
 		{

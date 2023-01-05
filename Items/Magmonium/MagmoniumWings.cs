@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Magmonium
 {
 	[AutoloadEquip(EquipType.Wings)]
-	public class MagmoniumWings : ModItem
+	public class MagmoniumWings:TremorModItem
 	{
 
 		public override void SetDefaults()

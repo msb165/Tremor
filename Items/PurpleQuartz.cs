@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PurpleQuartz : ModItem
+	public class PurpleQuartz:TremorModItem
 	{
 		public override void SetDefaults()
 		{

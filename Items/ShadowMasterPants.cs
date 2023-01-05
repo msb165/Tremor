@@ -7,7 +7,7 @@ using Tremor.Items.Souls;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class ShadowMasterPants : ModItem
+	public class ShadowMasterPants:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -31,7 +31,7 @@ namespace Tremor.Items
 		public override void UpdateEquip(Player player)
 		{
 			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.25f;
-			player.thrownDamage += 0.15f;
+			player.GetDamage(DamageClass.Throwing) += 0.15f;
 		}
 
 		public override void AddRecipes()

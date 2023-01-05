@@ -16,50 +16,51 @@ namespace Tremor.ZombieEvent
 
 		}
 
-		public static readonly PlayerLayer MiscEffects = new PlayerLayer("Tremor", "MiscEffects", PlayerLayer.MiscEffectsFront, delegate (PlayerDrawInfo drawInfo)
-		{
-			Player drawPlayer = drawInfo.drawPlayer;
-			Mod mod = Tremor.instance;
-			CyberWrathInvasion modPlayer = drawPlayer.GetModPlayer<CyberWrathInvasion>();
+		//public static readonly PlayerLayer MiscEffects = new PlayerLayer("Tremor", "MiscEffects", PlayerLayer.MiscEffectsFront, delegate (PlayerDrawInfo drawInfo)
+		//{
+		//	Player drawPlayer = drawInfo.drawPlayer;
+		//	Mod mod = Tremor.instance;
+		//	CyberWrathInvasion modPlayer = drawPlayer.GetModPlayer<CyberWrathInvasion>();
 
-			Texture2D CyberWrathI = mod.GetTexture("Invasion/System/System1");
-			Texture2D CyberWrathI1 = mod.GetTexture("Invasion/System/System2");
-			Texture2D CyberWrathI2 = mod.GetTexture("Invasion/System/System3");
-			Texture2D CyberWrathI3 = mod.GetTexture("Invasion/System/System4");
-			Texture2D CyberWrathI4 = mod.GetTexture("Invasion/System/System5");
-			Texture2D CyberWrathI5 = mod.GetTexture("Invasion/System/System6");
-			Texture2D CyberWrathI6 = mod.GetTexture("Invasion/System/System7");
-			Texture2D CyberWrathI7 = mod.GetTexture("Invasion/System/System8");
-			Texture2D CyberWrathI8 = mod.GetTexture("Invasion/System/System9");
-			Texture2D CyberWrathI9 = mod.GetTexture("Invasion/System/System10");
-			Texture2D texture1 = mod.GetTexture("Invasion/System/System");
-			SpriteBatch sb1 = Main.spriteBatch;
+		//	Texture2D CyberWrathI = mod.GetTexture("Invasion/System/System1");
+		//	Texture2D CyberWrathI1 = mod.GetTexture("Invasion/System/System2");
+		//	Texture2D CyberWrathI2 = mod.GetTexture("Invasion/System/System3");
+		//	Texture2D CyberWrathI3 = mod.GetTexture("Invasion/System/System4");
+		//	Texture2D CyberWrathI4 = mod.GetTexture("Invasion/System/System5");
+		//	Texture2D CyberWrathI5 = mod.GetTexture("Invasion/System/System6");
+		//	Texture2D CyberWrathI6 = mod.GetTexture("Invasion/System/System7");
+		//	Texture2D CyberWrathI7 = mod.GetTexture("Invasion/System/System8");
+		//	Texture2D CyberWrathI8 = mod.GetTexture("Invasion/System/System9");
+		//	Texture2D CyberWrathI9 = mod.GetTexture("Invasion/System/System10");
+		//	Texture2D texture1 = mod.GetTexture("Invasion/System/System");
+		//	SpriteBatch sb1 = Main.spriteBatch;
 
-			int iH1 = texture1.Height;
-			int iW1 = texture1.Width;
+		//	int iH1 = texture1.Height;
+		//	int iW1 = texture1.Width;
 
-			int sX1 = 37;
-			int sY1 = 30;
+		//	int sX1 = 37;
+		//	int sY1 = 30;
 
-			int eH = CyberWrathI.Height;
-			int eW = CyberWrathI.Width;
+		//	int eH = CyberWrathI.Height;
+		//	int eW = CyberWrathI.Width;
 
-			int XX1 = ((24 - iW1) / 2) + Main.screenWidth - sX1;
-			int YY1 = ((24 - iH1) / 2) + sY1 + (int)(280 * 1.4) + (24 - iW1) * (-1) + 20;
+		//	int XX1 = ((24 - iW1) / 2) + Main.screenWidth - sX1;
+		//	int YY1 = ((24 - iH1) / 2) + sY1 + (int)(280 * 1.4) + (24 - iW1) * (-1) + 20;
 
-			int eX = XX1 - 333;
-			int eY = YY1 - 430 + (24 - eW) * (-1);
+		//	int eX = XX1 - 333;
+		//	int eY = YY1 - 430 + (24 - eW) * (-1);
 
-			bool _number = true;
-			int number = 1;
-		});
+		//	bool _number = true;
+		//	int number = 1;
+		//});
 
-		public override void ModifyDrawLayers(List<PlayerLayer> layers)
-		{
-			MiscEffects.visible = true;
-			layers.Add(MiscEffects);
-			layers.Insert(0, MiscEffects);
-		}
+		//TODO: [Skipped for 1.4] Replace with PlayerDrawLayer
+		//public override void ModifyDrawLayers(List<PlayerLayer> layers)
+		//{
+		//	MiscEffects.visible = true;
+		//	layers.Add(MiscEffects);
+		//	layers.Insert(0, MiscEffects);
+		//}
 
 		public override void PostUpdateBuffs()
 		{
@@ -72,7 +73,7 @@ namespace Tremor.ZombieEvent
 			const int XOffset = 1200;
 			const int YOffset = 1200;
 
-			CyberWrathInvasion modPlayer = player.GetModPlayer<CyberWrathInvasion>();
+			CyberWrathInvasion modPlayer = Player.GetModPlayer<CyberWrathInvasion>();
 			if (!ZWorld.ZInvasion)
 			{
 				ZWorld.ZPoints = 0;
@@ -97,110 +98,110 @@ namespace Tremor.ZombieEvent
 			{
 				//Always
 				if (Main.rand.Next(3000) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<Arsonist>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<Arsonist>());
 				if (Main.rand.Next(700) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<Deadling1>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<Deadling1>());
 				if (Main.rand.Next(700) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<Deadling2>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<Deadling2>());
 				if (Main.rand.Next(700) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<Deadling3>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<Deadling3>());
 				if (Main.rand.Next(2250) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<FatSack>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<FatSack>());
 
 				if (Main.rand.Next(3000) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<Arsonist>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<Arsonist>());
 				if (Main.rand.Next(700) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<Deadling1>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<Deadling1>());
 				if (Main.rand.Next(700) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<Deadling2>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<Deadling2>());
 				if (Main.rand.Next(700) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<Deadling3>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<Deadling3>());
 				if (Main.rand.Next(2250) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<FatSack>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<FatSack>());
 				//EoC defeated
 				if (NPC.downedBoss1 && Main.rand.Next(4000) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<FarmerZombie>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<FarmerZombie>());
 
 				if (NPC.downedBoss1 && Main.rand.Next(4000) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<FarmerZombie>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<FarmerZombie>());
 				//EoW/BoC defeated
 				if (NPC.downedBoss2 && Main.rand.Next(3000) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<Zombat>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<Zombat>());
 				if (NPC.downedBoss2 && Main.rand.Next(8000) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<DiceZombie>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<DiceZombie>());
 				if (NPC.downedBoss2 && Main.rand.Next(5000) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<Zombeast>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<Zombeast>());
 				if (NPC.downedBoss2 && Main.rand.Next(1000) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<PetrifiedZombie1>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<PetrifiedZombie1>());
 				if (NPC.downedBoss2 && Main.rand.Next(1000) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<PetrifiedZombie2>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<PetrifiedZombie2>());
 				if (NPC.downedBoss2 && Main.rand.Next(1000) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<PetrifiedZombie3>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<PetrifiedZombie3>());
 
 				if (NPC.downedBoss2 && Main.rand.Next(3000) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<Zombat>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<Zombat>());
 				if (NPC.downedBoss2 && Main.rand.Next(8000) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<DiceZombie>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<DiceZombie>());
 				if (NPC.downedBoss2 && Main.rand.Next(5000) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<Zombeast>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<Zombeast>());
 				if (NPC.downedBoss2 && Main.rand.Next(1000) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<PetrifiedZombie1>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<PetrifiedZombie1>());
 				if (NPC.downedBoss2 && Main.rand.Next(1000) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<PetrifiedZombie2>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<PetrifiedZombie2>());
 				if (NPC.downedBoss2 && Main.rand.Next(1000) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<PetrifiedZombie3>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<PetrifiedZombie3>());
 				//Skeletron defeated
 				if (NPC.downedBoss3 && Main.rand.Next(10000) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<Painmaker>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<Painmaker>());
 				if (NPC.downedBoss3 && Main.rand.Next(6000) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<SpearZombie>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<SpearZombie>());
 				if (NPC.downedBoss3 && Main.rand.Next(6000) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<Zombomber>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<Zombomber>());
 
 				if (NPC.downedBoss3 && Main.rand.Next(10000) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<Painmaker>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<Painmaker>());
 				if (NPC.downedBoss3 && Main.rand.Next(6000) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<SpearZombie>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<SpearZombie>());
 				if (NPC.downedBoss3 && Main.rand.Next(6000) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<Zombomber>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<Zombomber>());
 				//Hardmode
 				if (NPC.downedMechBossAny && Main.rand.Next(20000) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<Almagron>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<Almagron>());
 				if (Main.hardMode && Main.rand.Next(15000) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<Cryptomage>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<Cryptomage>());
 				if (Main.hardMode && Main.rand.Next(12500) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<Dapperblook>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<Dapperblook>());
 				if (Main.hardMode && Main.rand.Next(10000) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<Scourge>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<Scourge>());
 				if (Main.hardMode && Main.rand.Next(8550) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<Bonecing>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<Bonecing>());
 				if (Main.hardMode && Main.rand.Next(6000) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<TheHaunt>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<TheHaunt>());
 				if (Main.hardMode && Main.rand.Next(4375) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<GhoulOfficer>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<GhoulOfficer>());
 				if (Main.hardMode && Main.rand.Next(1055) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<Corpse1>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<Corpse1>());
 				if (Main.hardMode && Main.rand.Next(1055) == 1)
-					NPC.NewNPC((int)player.Center.X + XOffset, (int)player.Center.Y, ModContent.NPCType<Corpse2>());
+					NPC.NewNPC(null, (int)Player.Center.X + XOffset, (int)Player.Center.Y, ModContent.NPCType<Corpse2>());
 
 				if (NPC.downedMechBossAny && Main.rand.Next(20000) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<Almagron>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<Almagron>());
 				if (Main.hardMode && Main.rand.Next(15000) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<Cryptomage>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<Cryptomage>());
 				if (Main.hardMode && Main.rand.Next(12500) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<Dapperblook>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<Dapperblook>());
 				if (Main.hardMode && Main.rand.Next(10000) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<Scourge>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<Scourge>());
 				if (Main.hardMode && Main.rand.Next(8550) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<Bonecing>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<Bonecing>());
 				if (Main.hardMode && Main.rand.Next(6000) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<TheHaunt>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<TheHaunt>());
 				if (Main.hardMode && Main.rand.Next(4375) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<GhoulOfficer>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<GhoulOfficer>());
 				if (Main.hardMode && Main.rand.Next(1055) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<Corpse1>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<Corpse1>());
 				if (Main.hardMode && Main.rand.Next(1055) == 1)
-					NPC.NewNPC((int)player.Center.X - XOffset, (int)player.Center.Y, ModContent.NPCType<Corpse2>());
+					NPC.NewNPC(null, (int)Player.Center.X - XOffset, (int)Player.Center.Y, ModContent.NPCType<Corpse2>());
 			}
 
 			if (Main.dayTime && ZWorld.ZInvasion)
@@ -211,8 +212,14 @@ namespace Tremor.ZombieEvent
 				ZWorld.ZInvasion = false;
 			}
 		}
+	}
 
-		public override void UpdateBiomeVisuals()
+	public class ZombieEventI_SceneEffect:ModSceneEffect
+	{
+		//was from UpdateBiomeVisuals
+		public override bool IsSceneEffectActive(Player player) => ZWorld.ZInvasion;
+
+		public override void SpecialVisuals(Player player, bool isActive)
 		{
 			bool usePurity = ZWorld.ZInvasion;
 			player.ManageSpecialBiomeVisuals("Tremor:Zombie", usePurity);

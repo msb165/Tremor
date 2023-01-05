@@ -5,15 +5,15 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class LasCannon : ModItem
+	public class LasCannon:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 500;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.expert = true;
-			item.melee = false;
+			//item.melee = false;
 			item.width = 90;
 			item.height = 36;
 			item.useTime = 60;

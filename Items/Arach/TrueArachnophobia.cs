@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Arach
 {
-	public class TrueArachnophobia : ModItem
+	public class TrueArachnophobia:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 49;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 66;
 			item.height = 66;
 			item.useTime = 35;
@@ -36,9 +36,9 @@ namespace Tremor.Items.Arach
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
 			{
-				Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX - 1, speedY - 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX - 1, speedY - 1, type, damage, knockBack, Main.myPlayer);
 			}
 			return false;
 		}

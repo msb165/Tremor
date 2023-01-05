@@ -31,7 +31,7 @@ namespace Tremor
 		internal static int[] VanillaWoFWeapons;
 		internal static int[] VanillaWoFEmblems;
 
-		public override void NPCLoot(NPC npc)
+		public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
 		{
 			switch (npc.type)
 			{
@@ -41,15 +41,15 @@ namespace Tremor
 					{
 						if (Main.rand.NextBool(1, 7))
 						{
-							Item.NewItem(npc.position, npc.width, npc.height, ItemID.FleshMask);
+							Item.NewItem(null, npc.position, npc.width, npc.height, ItemID.FleshMask);
 						}
 						if (Main.rand.NextBool(1, 7))
 						{
-							Item.NewItem(npc.position, npc.width, npc.height, 1365);
+							Item.NewItem(null, npc.position, npc.width, npc.height, 1365);
 						}
-						Item.NewItem(npc.position, npc.width, npc.height, Utils.SelectRandom(Main.rand, VanillaWoFEmblems));
-						Item.NewItem(npc.position, npc.width, npc.height, Utils.SelectRandom(Main.rand, VanillaWoFWeapons));
-						Item.NewItem(npc.position, npc.width, npc.height, ItemID.GoldCoin, Main.rand.Next(6, 10));
+						Item.NewItem(null, npc.position, npc.width, npc.height, Utils.SelectRandom(Main.rand, VanillaWoFEmblems));
+						Item.NewItem(null, npc.position, npc.width, npc.height, Utils.SelectRandom(Main.rand, VanillaWoFWeapons));
+						Item.NewItem(null, npc.position, npc.width, npc.height, ItemID.GoldCoin, Main.rand.Next(6, 10));
 					}
 					break;
 			}
@@ -70,15 +70,15 @@ namespace Tremor
 						{
 							if (!player.extraAccessory)
 							{
-								player.QuickSpawnItem(ItemID.DemonHeart);
+								player.QuickSpawnItem(null, ItemID.DemonHeart);
 							}
 							if (Main.rand.NextBool(1, 7))
 							{
-								player.QuickSpawnItem(ItemID.FleshMask);
+								player.QuickSpawnItem(null, ItemID.FleshMask);
 							}
-							player.QuickSpawnItem(Utils.SelectRandom(Main.rand, NPCDrops.VanillaWoFEmblems));
-							player.QuickSpawnItem(Utils.SelectRandom(Main.rand, NPCDrops.VanillaWoFWeapons));
-							player.QuickSpawnItem(ItemID.GoldCoin, Main.rand.Next(6, 10));
+							player.QuickSpawnItem(null, Utils.SelectRandom(Main.rand, NPCDrops.VanillaWoFEmblems));
+							player.QuickSpawnItem(null, Utils.SelectRandom(Main.rand, NPCDrops.VanillaWoFWeapons));
+							player.QuickSpawnItem(null, ItemID.GoldCoin, Main.rand.Next(6, 10));
 							return false;
 						}
 						break;

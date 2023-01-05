@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GlorianaWrath : ModItem
+	public class GlorianaWrath:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 54;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 40;
 			item.height = 40;
 

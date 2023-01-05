@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Desert
 {
-	public class DesertClaymore : ModItem
+	public class DesertClaymore:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -15,7 +15,7 @@ namespace Tremor.Items.Desert
 			item.rare = 9;
 			item.expert = true;
 			item.damage = 23;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 20;
 
 			item.useTime = 8;
@@ -39,7 +39,7 @@ namespace Tremor.Items.Desert
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			Projectile.NewProjectile(position.X, position.Y, 0, 0, type, damage, knockBack, player.whoAmI, player.direction);
+			Projectile.NewProjectile(null, position.X, position.Y, 0, 0, type, damage, knockBack, player.whoAmI, player.direction);
 			return false;
 		}
 
@@ -47,7 +47,7 @@ namespace Tremor.Items.Desert
 		{
 			for (int i = 0; i < Main.projectile.Length; i++)
 			{
-				if (Main.projectile[i].type == ModContent.ProjectileType<Projectiles.DesertClaymorePro>() && Main.projectile[i].owner == item.owner && Main.projectile[i].active)
+				if (Main.projectile[i].type == ModContent.ProjectileType<Projectiles.DesertClaymorePro>() && Main.projectile[i].owner == item.playerIndexTheItemIsReservedFor && Main.projectile[i].active)
 				{
 					Main.projectile[i].aiStyle = 3;
 					return false;

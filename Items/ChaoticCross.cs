@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ChaoticCross : ModItem
+	public class ChaoticCross:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -30,39 +30,23 @@ namespace Tremor.Items
 		{
 			if (player.statLife < 50)
 			{
-				player.magicCrit += 20;
-				player.meleeCrit += 20;
-				player.rangedCrit += 20;
-				player.magicDamage += 0.20f;
-				player.meleeDamage += 0.20f;
-				player.rangedDamage += 0.20f;
+				player.GetCritChance(DamageClass.Generic) += 20;
+				player.GetDamage(DamageClass.Generic) += 0.20f;
 			}
 			if (player.statLife < 100)
 			{
-				player.magicCrit += 15;
-				player.meleeCrit += 15;
-				player.rangedCrit += 15;
-				player.magicDamage += 0.15f;
-				player.meleeDamage += 0.15f;
-				player.rangedDamage += 0.15f;
+				player.GetCritChance(DamageClass.Generic) += 15;
+				player.GetDamage(DamageClass.Generic) += 0.15f;
 			}
 			if (player.statLife < 200)
 			{
-				player.magicCrit += 10;
-				player.meleeCrit += 10;
-				player.rangedCrit += 10;
-				player.magicDamage += 0.10f;
-				player.meleeDamage += 0.10f;
-				player.rangedDamage += 0.10f;
+				player.GetCritChance(DamageClass.Generic) += 10;
+				player.GetDamage(DamageClass.Generic) += 0.10f;
 			}
 			if (player.statLife < 300)
 			{
-				player.magicCrit += 5;
-				player.meleeCrit += 5;
-				player.rangedCrit += 5;
-				player.magicDamage += 0.05f;
-				player.meleeDamage += 0.05f;
-				player.rangedDamage += 0.05f;
+				player.GetCritChance(DamageClass.Generic) += 5;
+				player.GetDamage(DamageClass.Generic) += 0.05f;
 			}
 		}
 

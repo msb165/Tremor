@@ -1,10 +1,9 @@
 using Terraria;
-using Terraria.ModLoader;
-using Tremor.NPCs;
+using Terraria.ID;
 
 namespace Tremor.Buffs
 {
-	public class DeathFear : ModBuff
+	public class DeathFear:TremorModBuff
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +12,7 @@ namespace Tremor.Buffs
 			Main.debuff[Type] = true;
 			Main.pvpBuff[Type] = true;
 			Main.buffNoSave[Type] = true;
-			longerExpertDebuff = true;
+			BuffID.Sets.LongerExpertDebuff[Type] = true;
 		}
 
 		public override void Update(Player player, ref int buffIndex)

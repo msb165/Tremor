@@ -6,13 +6,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class HonestBlade : ModItem
+	public class HonestBlade:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 140;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 32;
 			item.height = 32;
 			item.useTime = 11;
@@ -33,7 +33,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)

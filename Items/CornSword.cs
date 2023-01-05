@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class CornSword : ModItem
+	public class CornSword:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 22;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 46;
 			item.height = 46;
 			item.useTime = 30;

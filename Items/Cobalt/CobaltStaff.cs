@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Cobalt
 {
-	public class CobaltStaff : ModItem
+	public class CobaltStaff:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 32;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 9;
 			item.width = 40;
 			item.height = 40;

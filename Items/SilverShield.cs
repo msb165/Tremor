@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class SilverShield : ModItem
+	public class SilverShield:TremorModItem
 	{
 		public override void SetDefaults()
 		{

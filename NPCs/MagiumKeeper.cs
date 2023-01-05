@@ -11,7 +11,7 @@ namespace Tremor.NPCs
 	/*
 	 * Rework AI into something more comprehensible and functional.
 	 */
-	public class MagiumKeeper : ModNPC
+	public class MagiumKeeper:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -62,14 +62,14 @@ namespace Tremor.NPCs
 						npc.localAI[3] = 0f;
 						Vector2 value3 = npc.position;
 						value3 += npc.velocity;
-						NPC.NewNPC((int)value3.X, (int)value3.Y, ModContent.NPCType<MagiumSword>(), 0, 0f, 0f, 0f, 0f, 255);
+						NPC.NewNPC(null, (int)value3.X, (int)value3.Y, ModContent.NPCType<MagiumSword>(), 0, 0f, 0f, 0f, 0f, 255);
 					}
 				}
 			}
 			else
 			{
 				npc.localAI[3] = 0f;
-				npc.knockBackResist = 0.35f * Main.knockBackMultiplier;
+				npc.knockBackResist = 0.35f * Main.GameModeInfo.KnockbackToEnemiesMultiplier;
 				npc.rotation *= 0.9f;
 				npc.defense = npc.defDefense;
 				npc.noGravity = false;
@@ -163,11 +163,11 @@ namespace Tremor.NPCs
 					bool flag4 = false;
 					for (int num52 = num50 - 1; num52 <= num50 + 1; num52++)
 					{
-						if (Main.tile[num52, num51] == null)
-						{
-							Main.tile[num50, num51] = new Tile();
-						}
-						if (Main.tile[num52, num51].active() && Main.tileSolid[Main.tile[num52, num51].type])
+						//if (Main.tile[num52, num51] == null)
+						//{
+						//	Main.tile[num50, num51] = new Tile();
+						//}
+						if (Main.tile[num52, num51].active() && Main.tileSolid[Main.tile[num52, num51].TileType])
 						{
 							flag4 = true;
 						}
@@ -195,7 +195,7 @@ namespace Tremor.NPCs
 						{
 							if (Main.netMode != 1)
 							{
-								NPC.NewNPC((int)center3.X, (int)center3.Y + 18, ModContent.NPCType<MagiumFlyer>(), 0, 0f, 0f, 0f, 0f, 255);
+								NPC.NewNPC(null, (int)center3.X, (int)center3.Y + 18, ModContent.NPCType<MagiumFlyer>(), 0, 0f, 0f, 0f, 0f, 255);
 							}
 						}
 						else if (npc.ai[2] >= 90f)
@@ -281,11 +281,11 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 59, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
 					Dust.NewDust(npc.position, npc.width, npc.height, 59, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/MagiumGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/MagiumGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/MagiumGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/MagiumGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/MagiumGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/MagiumGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/MagiumGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/MagiumGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/MagiumGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/MagiumGore3"), 1f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 59, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 59, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 59, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
@@ -296,6 +296,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NoZoneAllowWater(spawnInfo) && Main.hardMode && spawnInfo.spawnTileY > Main.rockLayer ? 0.0003f : 0f;
+			=> Helper.NoZoneAllowWater(spawnInfo) && Main.hardMode && spawnInfo.SpawnTileY > Main.rockLayer ? 0.0003f : 0f;
 	}
 }

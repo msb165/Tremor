@@ -6,7 +6,7 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class MagicWorkbenchTile : ModTile
+	public class MagicWorkbenchTile:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -26,7 +26,7 @@ namespace Tremor.Tiles
     {
         if(frameX == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<MagicWorkbench>());
+            Item.NewItem(null, i * 16, j * 16, 48, 48, ModContent.ItemType<MagicWorkbench>());
         }
     }
 }}

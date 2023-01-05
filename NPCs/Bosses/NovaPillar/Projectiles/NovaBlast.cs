@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 {
-	public class NovaBlast : ModProjectile
+	public class NovaBlast:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

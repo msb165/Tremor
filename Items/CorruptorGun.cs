@@ -6,13 +6,13 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 
-	public class CorruptorGun : ModItem
+	public class CorruptorGun:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 26;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 42;
 			item.height = 30;
 

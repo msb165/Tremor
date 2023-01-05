@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Crusher : ModItem
+	public class Crusher:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 32;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 60;
 			item.height = 60;
 			item.useTime = 40;

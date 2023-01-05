@@ -5,7 +5,7 @@ using Tremor.Items.Steel;
 namespace Tremor.Items.Berserker
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class BerserkerChestplate : ModItem
+	public class BerserkerChestplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items.Berserker
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeCrit += 7;
+			player.GetCritChance(DamageClass.Melee) += 7;
 		}
 
 		public override void AddRecipes()

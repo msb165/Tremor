@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class RecyclerofMatter : ModItem
+	public class RecyclerofMatter:TremorModItem
 	{
 		public override void SetDefaults()
 		{

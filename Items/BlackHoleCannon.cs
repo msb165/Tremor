@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class BlackHoleCannon : ModItem
+	public class BlackHoleCannon:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 250;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 15;
 			item.width = 68;
 			item.height = 28;

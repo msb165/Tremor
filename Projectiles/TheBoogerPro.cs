@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class TheBoogerPro : ModProjectile
+	public class TheBoogerPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -15,7 +15,7 @@ namespace Tremor.Projectiles
 			projectile.height = 34;
 			projectile.friendly = true;
 			projectile.penetrate = -1; // Penetrates NPCs infinitely.
-			projectile.melee = true; // Deals melee dmg.
+			projectile.DamageType = DamageClass.Melee; // Deals melee dmg.
 
 			projectile.aiStyle = 15; // Set the aiStyle to that of a flail.
 		}
@@ -77,13 +77,13 @@ namespace Tremor.Projectiles
 				vector64.Normalize();
 				vector64 *= Main.rand.Next(5, 25) * 0.9f;
 
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector64.X, vector64.Y, ModContent.ProjectileType<Projectiles.TheBoogerBallPro>(), projectile.damage / 4, projectile.knockBack, projectile.owner, -10f, 0f);
+				Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, vector64.X, vector64.Y, ModContent.ProjectileType<Projectiles.TheBoogerBallPro>(), projectile.damage / 4, projectile.knockBack, projectile.owner, -10f, 0f);
 			}
 		}
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D texture = ModContent.GetTexture("Tremor/Projectiles/TheBooger_Chain");
+			Texture2D texture = Mod.GetTexture("Tremor/Projectiles/TheBooger_Chain");
 
 			Vector2 position = projectile.Center;
 			Vector2 mountedCenter = Main.player[projectile.owner].MountedCenter;

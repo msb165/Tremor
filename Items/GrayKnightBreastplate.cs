@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class GrayKnightBreastplate : ModItem
+	public class GrayKnightBreastplate:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GlowingRod : ModItem
+	public class GlowingRod:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 20;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 11;
 			item.width = 40;
 			item.height = 40;

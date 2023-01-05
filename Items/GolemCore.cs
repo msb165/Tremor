@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GolemCore : ModItem
+	public class GolemCore:TremorModItem
 	{
 		public override void SetDefaults()
 		{

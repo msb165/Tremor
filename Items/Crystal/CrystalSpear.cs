@@ -3,14 +3,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Crystal
 {
-	public class CrystalSpear : ModItem
+	public class CrystalSpear:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(165);
 
 			item.damage = 49;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 26;
 
 			item.height = 30;

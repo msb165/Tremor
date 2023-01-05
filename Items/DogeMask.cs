@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class DogeMask : ModItem
+	public class DogeMask:TremorModItem
 	{
 
 		public override void SetDefaults()

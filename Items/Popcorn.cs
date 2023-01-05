@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Popcorn : ModItem
+	public class Popcorn:TremorModItem
 	{
 		const int Heal = 1; // Хилл в 1 хп
 		const float grabRangeMulti = 0.0f; // Множитель дистанции подбирания предмета (1.0f - 100%)

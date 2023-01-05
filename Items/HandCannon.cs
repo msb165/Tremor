@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class HandCannon : ModItem
+	public class HandCannon:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 60;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 58;
 			item.height = 30;
 			item.useTime = 40;

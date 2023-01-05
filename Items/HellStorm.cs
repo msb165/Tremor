@@ -6,13 +6,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class HellStorm : ModItem
+	public class HellStorm:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 220;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 32;
 			item.height = 78;
 			item.useTime = 20;
@@ -40,12 +40,12 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 		/*
 				public override bool Shoot(Player player, ref Microsoft.Xna.Framework.Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 				{
-					Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ModContent.ProjectileType<Projectiles.HellStormProj>(), damage, knockBack, player.whoAmI, 0.0f, 0.0f);
+					Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, ModContent.ProjectileType<Projectiles.HellStormProj>(), damage, knockBack, player.whoAmI, 0.0f, 0.0f);
 					return false;
 				}
 		*/

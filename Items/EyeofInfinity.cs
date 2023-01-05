@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class EyeofInfinity : ModItem
+	public class EyeofInfinity:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 68;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 42;
 			item.height = 42;
 			item.useTime = 16;

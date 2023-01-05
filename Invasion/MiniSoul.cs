@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class MiniSoul : ModNPC
+	public class MiniSoul:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{

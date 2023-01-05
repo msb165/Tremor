@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Spearaxe : ModItem
+	public class Spearaxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 66;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 56;
 			item.height = 56;
 			item.useTime = 26;

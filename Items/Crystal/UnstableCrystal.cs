@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Crystal
 {
-	class UnstableCrystal : ModItem
+	class UnstableCrystal:TremorModItem
 	{
 		public override void SetDefaults()
 		{

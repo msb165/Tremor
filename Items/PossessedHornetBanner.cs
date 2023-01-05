@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PossessedHornetBanner : ModItem
+	public class PossessedHornetBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

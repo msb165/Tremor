@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Granite
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class GraniteHelmet : ModItem
+	public class GraniteHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()

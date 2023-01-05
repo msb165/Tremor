@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MultidimensionalFragment : ModItem
+	public class MultidimensionalFragment:TremorModItem
 	{
 
 		public override void SetDefaults()

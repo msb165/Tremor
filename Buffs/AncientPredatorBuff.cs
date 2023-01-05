@@ -3,12 +3,12 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class AncientPredatorBuff : ModBuff
+	public class AncientPredatorBuff:TremorModBuff
 	{
 		int MinionType = -1;
 		int MinionID = -1;
 
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("The Ancient Predator");
 			Description.SetDefault("The ancient predator defends you");
@@ -24,7 +24,7 @@ namespace Tremor.Buffs
 			{
 				Projectile proj = new Projectile();
 				proj.SetDefaults(MinionType);
-				MinionID = Projectile.NewProjectile(player.Center.X, player.Center.Y, 0, 0, MinionType, 300, 3, player.whoAmI);
+				MinionID = Projectile.NewProjectile(null, player.Center.X, player.Center.Y, 0, 0, MinionType, 300, 3, player.whoAmI);
 			}
 			else
 			{

@@ -4,7 +4,7 @@ using Tremor.Items.Ancient;
 
 namespace Tremor.Items
 {
-	public class StarNest : ModItem
+	public class StarNest:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.damage = 69;
 			item.width = 14;
 			item.height = 84;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 4;
 			item.useTime = 30;
 			item.shoot = ModContent.ProjectileType<Projectiles.StarNestPro>();

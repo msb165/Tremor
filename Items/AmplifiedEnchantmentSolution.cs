@@ -5,9 +5,9 @@ using Tremor.Items.Alchemist.Flasks;
 
 namespace Tremor.Items
 {
-	public class AmplifiedEnchantmentSolution : ModItem
+	public class AmplifiedEnchantmentSolution:TremorModItem
 	{
-		public override bool CanEquipAccessory(Player player, int slot)
+		public override bool CanEquipAccessory(Player player, int slot, bool modded)
 		{
 			for (int i = 0; i < player.armor.Length; i++)
 			{

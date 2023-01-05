@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 {
-	public class NovaAlchemistProjectile : ModProjectile
+	public class NovaAlchemistProjectile:TremorModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
@@ -88,7 +88,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 					Vector2 vector113 = projectile.ai[1].ToRotationVector2() * 8f;
 					float ai2 = Main.rand.Next(80);
 					//was NovaAlchemistFlask
-					Projectile.NewProjectile(projectile.Center.X - vector113.X, projectile.Center.Y - vector113.Y, vector113.X, vector113.Y, ModContent.ProjectileType<NovaFlask_Proj>(), 15, 1f, Main.myPlayer, projectile.ai[1], ai2);
+					Projectile.NewProjectile(null, projectile.Center.X - vector113.X, projectile.Center.Y - vector113.Y, vector113.X, vector113.Y, ModContent.ProjectileType<NovaFlask_Proj>(), 15, 1f, Main.myPlayer, projectile.ai[1], ai2);
 				}
 			}
 			else

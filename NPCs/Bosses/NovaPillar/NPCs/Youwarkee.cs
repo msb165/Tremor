@@ -8,7 +8,7 @@ using Tremor.Projectiles;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 {
-	public class Youwarkee : ModNPC
+	public class Youwarkee:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -103,13 +103,13 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			}
 			if (NPC.CountNPCS(k) < 3 && Timer % 200 == 0)
 			{
-				k = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<Varki>(), 0, npc.whoAmI, 0, 200);
+				k = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<Varki>(), 0, npc.whoAmI, 0, 200);
 			}
 			npc.rotation = npc.velocity.X * 0.1f;
 			NovaAnimation();
 		}
 
-		public override void PostDraw(SpriteBatch spriteBatch, Color drawColor)
+		public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{
 			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/Youwarkee_GlowMask"));
 		}
@@ -122,7 +122,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				{
 					NPC parent = Main.npc[NPC.FindFirstNPC(ModContent.NPCType<NovaPillar>())];
 					Vector2 Velocity = Helper.VelocityToPoint(npc.Center, parent.Center, 20);
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CogLordLaser>(), 1, 1f);
+					Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CogLordLaser>(), 1, 1f);
 				}
 				for (int i = 0; i < 5; i++)
 				{
@@ -130,11 +130,11 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				}
 				for (int i = 0; i < 2; i++)
 				{
-					Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot("Gores/YouwarkeeGore1"));
-					Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot("Gores/YouwarkeeGore2"));
+					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/YouwarkeeGore1"));
+					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/YouwarkeeGore2"));
 				}
-				Gore.NewGore(npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/YouwarkeeGore3"));
-				Gore.NewGore(npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/YouwarkeeGore3"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/YouwarkeeGore3"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/YouwarkeeGore3"));
 			}
 		}
 
@@ -156,7 +156,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			if (spawnInfo.player.GetModPlayer<TremorPlayer>().ZoneTowerNova)
+			if (spawnInfo.Player.GetModPlayer<TremorPlayer>().ZoneTowerNova)
 				return 1f;
 			return 0;
 		}

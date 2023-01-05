@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TrueTrident : ModItem
+	public class TrueTrident:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.width = 50;
 			item.height = 50;
 			item.noUseGraphic = true;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.useTime = 30;
 			item.shoot = ModContent.ProjectileType<Projectiles.TrueTridentProjectile>();
 			item.shootSpeed = 3f;

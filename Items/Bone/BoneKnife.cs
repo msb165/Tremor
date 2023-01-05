@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Bone
 {
-	public class BoneKnife : ModItem
+	public class BoneKnife:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 83;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 26;
 			item.noUseGraphic = true;
 			item.maxStack = 999;

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ParatrooperLens : ModItem
+	public class ParatrooperLens:TremorModItem
 	{
 
 		public override void SetDefaults()

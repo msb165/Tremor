@@ -4,13 +4,13 @@ using Tremor.Items.Magmonium;
 
 namespace Tremor.Items
 {
-	public class Magminer : ModItem
+	public class Magminer:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 40;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 60;
 			item.height = 52;
 			item.useTime = 12;

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class FarmerShovel : ModItem
+	public class FarmerShovel:TremorModItem
 	{
 
 		public override void SetStaticDefaults()
@@ -16,7 +16,7 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 			item.damage = 8;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 42;
 			item.height = 42;
 			item.useTime = 17;

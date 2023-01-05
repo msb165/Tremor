@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GuardianHammer : ModItem
+	public class GuardianHammer:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -24,7 +24,7 @@ namespace Tremor.Items
 			item.noUseGraphic = true;
 			item.rare = 11;
 			item.value = Item.sellPrice(0, 20, 0, 0);
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()
@@ -37,9 +37,9 @@ namespace Tremor.Items
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
 			{
-				Projectile.NewProjectile(position.X, position.Y, speedX + 3, speedY + 3, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX - 3, speedY - 3, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 3, speedY + 3, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX - 3, speedY - 3, type, damage, knockBack, Main.myPlayer);
 			}
 			return false;
 		}

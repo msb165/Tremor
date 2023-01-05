@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Cyber
 {
-	public class CyberCutter : ModItem
+	public class CyberCutter:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 76;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 38;
 			item.height = 38;
 			item.scale = 1.1f;

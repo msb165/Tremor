@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items
 {
-	public class FrostLance : ModItem
+	public class FrostLance:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.Ice.Items
 			item.width = 76;
 			item.height = 76;
 			item.noUseGraphic = true;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.useTime = 35;
 			item.shoot = ModContent.ProjectileType<FrostLancePro>();
 			item.shootSpeed = 3f;

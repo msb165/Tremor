@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Projectiles
 {
 
-	public class NanoSawPro : ModProjectile
+	public class NanoSawPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -17,7 +17,7 @@ namespace Tremor.Projectiles
 			projectile.tileCollide = false;
 			projectile.hide = true;
 			projectile.ownerHitCheck = true;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 			Main.projFrames[projectile.type] = 2;
 		}
 

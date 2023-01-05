@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class NightHunting : ModBuff
+	public class NightHunting:TremorModBuff
 	{
 		public override void SetDefaults()
 		{
@@ -16,14 +16,8 @@ namespace Tremor.Buffs
 
 			if (!Main.dayTime)
 			{
-				player.meleeDamage += 0.15f;
-				player.meleeCrit += 12;
-				player.magicDamage += 0.15f;
-				player.magicCrit += 12;
-				player.rangedDamage += 0.15f;
-				player.rangedCrit += 12;
-				player.minionDamage += 0.15f;
-				player.thrownDamage += 0.15f;
+				player.GetDamage(DamageClass.Generic) += 0.15f;
+				player.GetCritChance(DamageClass.Generic) += 12;
 				player.moveSpeed += 0.25f;
 			}
 		}

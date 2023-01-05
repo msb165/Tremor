@@ -8,7 +8,7 @@ namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
 
-	public class HappySoul : ModNPC
+	public class HappySoul:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{

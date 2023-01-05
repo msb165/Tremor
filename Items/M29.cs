@@ -6,13 +6,13 @@ using Tremor.Items.Doom;
 
 namespace Tremor.Items
 {
-	public class M29 : ModItem
+	public class M29:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 313;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 98;
 			item.height = 28;
 			item.useTime = 60;

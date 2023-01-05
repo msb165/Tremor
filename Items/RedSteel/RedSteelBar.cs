@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.RedSteel
 {
-	public class RedSteelBar : ModItem
+	public class RedSteelBar:TremorModItem
 	{
 		public override void SetDefaults()
 		{

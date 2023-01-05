@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Blasticyde : ModItem
+	public class Blasticyde:TremorModItem
 	{
 		public override void SetDefaults()
 		{

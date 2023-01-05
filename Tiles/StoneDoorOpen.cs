@@ -9,7 +9,7 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class StoneDoorOpen : ModTile
+	public class StoneDoorOpen:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -61,7 +61,7 @@ namespace Tremor.Tiles
 			AddMapEntry(new Color(162,162,162));
 			disableSmartCursor = true;
 			adjTiles = new int[]{ TileID.OpenDoor };
-			closeDoorID = ModContent.TileType<Tiles.StoneDoorClosed>();
+			CloseDoorID = ModContent.TileType<Tiles.StoneDoorClosed>();
 		}
 
 		public override void NumDust(int i, int j, bool fail, ref int num)
@@ -71,7 +71,7 @@ namespace Tremor.Tiles
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 48, ModContent.ItemType<StoneDoor>());
+			Item.NewItem(null, i * 16, j * 16, 32, 48, ModContent.ItemType<StoneDoor>());
 		}
 	}
 }

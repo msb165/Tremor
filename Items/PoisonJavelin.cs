@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PoisonJavelin : ModItem
+	public class PoisonJavelin:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 23;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 18;
 			item.noUseGraphic = true;
 			item.maxStack = 999;

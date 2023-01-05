@@ -4,7 +4,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class SpaceWhaleTreasureBag : ModItem
+	public class SpaceWhaleTreasureBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

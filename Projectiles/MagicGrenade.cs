@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class MagicGrenade : ModProjectile
+	public class MagicGrenade:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

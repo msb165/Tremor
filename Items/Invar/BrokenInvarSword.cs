@@ -6,21 +6,21 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Invar
 {
 	// for legacy loading
-	public class MeltedInvarSword : ModItem
-	{
-		public override string Texture => typeof(BrokenInvarSword).FullNameToPath();
+	//public class MeltedInvarSword:ModItem
+	//{
+	//	public override string Texture => typeof(BrokenInvarSword).FullNameToPath();
 
-		public override void SetDefaults()
-		{
-			item.CloneDefaults(ModContent.ItemType<BrokenInvarSword>());
-			item.type = ModContent.ItemType<BrokenInvarSword>();
-			item.netID = item.type;
-			typeof(Item).GetField("modItem", BindingFlags.Instance | BindingFlags.NonPublic)?.SetValue(item, new BrokenInvarSword());
-			typeof(ModItem).GetField("item", BindingFlags.Instance | BindingFlags.NonPublic)?.SetValue(item.modItem, item);
-		}
-	}
+	//	public override void SetDefaults()
+	//	{
+	//		Item.CloneDefaults(ModContent.ItemType<BrokenInvarSword>());
+	//		Item.type = ModContent.ItemType<BrokenInvarSword>();
+	//		Item.netID = Item.type;
+	//		typeof(Item).GetField("ModItem", BindingFlags.Instance | BindingFlags.NonPublic)?.SetValue(Item, new BrokenInvarSword());
+	//		typeof(ModItem).GetField("Item", BindingFlags.Instance | BindingFlags.NonPublic)?.SetValue(Item.ModItem, item);
+	//	}
+	//}
 
-	public class BrokenInvarSword : ModItem
+	public class BrokenInvarSword:TremorModItem
 	{
 		//public override string Texture => $"{typeof(BrokenInvarSword).NamespaceToPath()}/BrokenInvarSword";
 
@@ -47,7 +47,7 @@ namespace Tremor.Items.Invar
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe(Mod);
 			recipe.AddIngredient(this);
 			recipe.SetResult(ModContent.ItemType<InvarBar>());
 			recipe.AddTile(TileID.Furnaces);

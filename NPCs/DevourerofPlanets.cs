@@ -8,7 +8,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class DevourerofPlanets : ModNPC
+	public class DevourerofPlanets:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -63,7 +63,7 @@ namespace Tremor.NPCs
 				}
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot($"Gores/DevourerofPlanetsGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/DevourerofPlanetsGore{i+1}"), 1f);
 			}
 			else
 			{
@@ -77,6 +77,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Main.hardMode && TremorWorld.Boss.Trinity.IsDowned() && !spawnInfo.player.ZoneDungeon && spawnInfo.spawnTileY > Main.rockLayer ? 0.005f : 0f;
+			=> Main.hardMode && TremorWorld.Boss.Trinity.IsDowned() && !spawnInfo.Player.ZoneDungeon && spawnInfo.SpawnTileY > Main.rockLayer ? 0.005f : 0f;
 	}
 }

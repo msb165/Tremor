@@ -6,7 +6,7 @@ using Tremor.Projectiles.Minions;
 
 namespace Tremor.Items
 {
-	public class AntiqueStave : ModItem
+	public class AntiqueStave:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item44;
 			item.autoReuse = true;
 			item.shoot = ModContent.ProjectileType<AntiqueStavePro>();
-			item.summon = true;
+			item.DamageType = DamageClass.Summon;
 			item.sentry = true;
 		}
 
@@ -41,11 +41,11 @@ namespace Tremor.Items
 			return true;
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			if (player.altFunctionUse == 2)
 			{
-				player.MinionNPCTargetAim();
+				player.MinionNPCTargetAim(false);
 			}
 			return base.UseItem(player);
 		}

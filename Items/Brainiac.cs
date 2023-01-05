@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Brainiac : ModItem
+	public class Brainiac:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 17;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 68;
 			item.height = 28;
 			item.useTime = 30;

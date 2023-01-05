@@ -2,7 +2,7 @@
 
 namespace Tremor
 {
-	public abstract class TremorAbstractItem : ModItem
+	public abstract class TremorAbstractItem:TremorModItem
 	{
 		protected abstract void Defaults();
 

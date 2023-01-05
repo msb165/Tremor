@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Coral
 {
-	public class CoralSlasher : ModItem
+	public class CoralSlasher:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 12;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 48;
 			item.height = 48;
 			item.useTime = 100;

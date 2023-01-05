@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MinersLamp : ModItem
+	public class MinersLamp:TremorModItem
 	{
 		public override void SetDefaults()
 		{

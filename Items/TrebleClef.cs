@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TrebleClef : ModItem
+	public class TrebleClef:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -23,7 +23,7 @@ namespace Tremor.Items
 			item.shootSpeed = 6f;
 			item.knockBack = 6f;
 			item.value = Item.sellPrice(0, 40, 0, 0);
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.noMelee = true;
 			item.rare = 0;
 		}
@@ -36,7 +36,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 		public override Vector2? HoldoutOffset()

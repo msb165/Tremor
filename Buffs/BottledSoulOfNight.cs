@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class BottledSoulOfNight : ModBuff
+	public class BottledSoulOfNight:TremorModBuff
 	{
 		public override void SetDefaults()
 		{
@@ -14,7 +14,7 @@ namespace Tremor.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.meleeSpeed += 0.08f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.08f;
 		}
 	}
 }

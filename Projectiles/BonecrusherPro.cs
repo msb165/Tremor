@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class BonecrusherPro : ModProjectile
+	public class BonecrusherPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

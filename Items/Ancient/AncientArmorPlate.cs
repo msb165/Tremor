@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Ancient
 {
-	public class AncientArmorPlate : ModItem
+	public class AncientArmorPlate:TremorModItem
 	{
 		public override void SetDefaults()
 		{

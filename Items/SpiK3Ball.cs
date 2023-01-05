@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SpiK3Ball : ModItem
+	public class SpiK3Ball:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 38;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 18;
 			item.height = 18;
 			item.maxStack = 999;

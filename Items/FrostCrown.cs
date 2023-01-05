@@ -5,7 +5,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class FrostCrown : ModItem
+	public class FrostCrown:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -34,10 +34,10 @@ namespace Tremor.Items
 			return NPC.downedMechBossAny && !NPC.AnyNPCs(ModContent.NPCType<FrostKing>()) && player.ZoneSnow;
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<FrostKing>());
-			Main.PlaySound(SoundID.Roar, player.position, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.Roar, player.position);//Variant 0
 			return true;
 		}
 

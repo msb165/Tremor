@@ -7,7 +7,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class RuinAltar : ModTile
+	public class RuinAltar:TremorModTile
     {
         public override void SetDefaults()
         {
@@ -16,7 +16,7 @@ namespace Tremor.Tiles
             Main.tileMergeDirt[Type] = true;
             Main.tileBlockLight[Type] = true;
             Main.tileLighted[Type] = true;
-            minPick = 999;
+            MinPick = 999;
             TileObjectData.newTile.Width = 3;
             TileObjectData.newTile.Height = 2;
             TileObjectData.newTile.Origin = new Point16(0, 1);
@@ -35,9 +35,10 @@ namespace Tremor.Tiles
             return false;
         }
 
-        public override void RightClick(int i, int j)
+        public override bool RightClick(int i, int j)
         {
             Main.player[Main.myPlayer].AddBuff(ModContent.BuffType<Buffs.RuinAltarBuff>(), 1200);
+			return true;
         }
     }
 }

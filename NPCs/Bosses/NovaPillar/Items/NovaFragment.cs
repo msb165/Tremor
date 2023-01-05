@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.Items
 {
-	public class NovaFragment : ModItem
+	public class NovaFragment:TremorModItem
 	{
 		public override void SetDefaults()
 		{

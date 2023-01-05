@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TreasureGlaive : ModItem
+	public class TreasureGlaive:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.width = 18;
 			item.height = 66;
 			item.noUseGraphic = true;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.useTime = 30;
 			item.shoot = ModContent.ProjectileType<Projectiles.TreasureGlaive>();
 			item.shootSpeed = 15f;

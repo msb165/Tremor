@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.RedSteel
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class RedSteelGuardian : ModItem
+	public class RedSteelGuardian:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -27,7 +27,7 @@ namespace Tremor.Items.RedSteel
 			player.moveSpeed += 0.2f;
 		}
 		/*
-		public override bool CanEquipAccessory(Player player, int slot)
+		public override bool CanEquipAccessory(Player player, int slot, bool modded)
 				{
 					bool canequip = true;
 					for (int l = 3; l < 8 + player.extraAccessorySlots; l++)

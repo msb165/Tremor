@@ -5,7 +5,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class WolfPelt : ModTile
+	public class WolfPelt:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -23,7 +23,7 @@ namespace Tremor.Tiles
     {
         if(frameX == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<Items.Wolf.WolfPelt>());
+            Item.NewItem(null, i * 16, j * 16, 48, 48, ModContent.ItemType<Items.Wolf.WolfPelt>());
         }
     }
 }}

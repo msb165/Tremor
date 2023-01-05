@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class FlyingJelly : ModNPC
+	public class FlyingJelly:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{

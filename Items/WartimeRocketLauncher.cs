@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class WartimeRocketLauncher : ModItem
+	public class WartimeRocketLauncher:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 220;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 58;
 			item.height = 34;
 			item.useTime = 25;

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class StrongBelt : ModItem
+	public class StrongBelt:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -25,7 +25,7 @@ namespace Tremor.Items
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
 		{
-			player.minionKB += 0.15f;
+			player.GetKnockback(DamageClass.Summon) += 0.15f;
 		}
 	}
 }

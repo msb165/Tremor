@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class FlyingDutchman : ModBuff
+	public class FlyingDutchman:TremorModBuff
 	{
 		public override void SetDefaults()
 		{

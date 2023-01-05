@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class Crystyle : ModItem
+	public class Crystyle:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 266;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 50;
 			item.height = 52;
 			item.useTime = 15;

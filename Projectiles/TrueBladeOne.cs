@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class TrueBladeOne : ModProjectile
+	public class TrueBladeOne:TremorModProjectile
 	{
 		const float RotationSpeed = 0.05f;
 		const float Distanse = 50;
@@ -16,7 +16,7 @@ namespace Tremor.Projectiles
 			projectile.width = 22;
 			projectile.height = 44;
 			projectile.timeLeft = 6;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 			projectile.aiStyle = -1;
 			projectile.penetrate = -1;
 			projectile.tileCollide = false;

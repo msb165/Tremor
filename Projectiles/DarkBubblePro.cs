@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class DarkBubblePro : ModProjectile
+	public class DarkBubblePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -71,7 +71,7 @@ namespace Tremor.Projectiles
 					}
 					value12.Normalize();
 					value12 *= Main.rand.Next(70, 101) * 0.1f;
-					Projectile.NewProjectile(projectile.oldPosition.X + projectile.width / 2, projectile.oldPosition.Y + projectile.height / 2, value12.X, value12.Y, 400, (int)(projectile.damage * 0.8), projectile.knockBack * 2.8f, projectile.owner, 0f, 0f);
+					Projectile.NewProjectile(null, projectile.oldPosition.X + projectile.width / 2, projectile.oldPosition.Y + projectile.height / 2, value12.X, value12.Y, 400, (int)(projectile.damage * 0.8), projectile.knockBack * 2.8f, projectile.owner, 0f, 0f);
 				}
 			}
 		}

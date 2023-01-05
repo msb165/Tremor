@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class KeyofTwilight : ModItem
+	public class KeyofTwilight:TremorModItem
 	{
 
 		public override void SetDefaults()

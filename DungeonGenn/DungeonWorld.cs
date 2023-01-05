@@ -1,14 +1,15 @@
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.Generation;
+using Terraria.IO;
 using Terraria.ModLoader;
-using Terraria.World.Generation;
+using Terraria.WorldBuilding;
 using Tremor.Ice;
 using Tremor.Tiles;
 
 namespace Tremor.DungeonGenn
 {
-	public class DungeonWorld : ModWorld
+	public class DungeonWorld : ModSystem
 	{
 		private const int saveVersion = 0;
 
@@ -35,7 +36,7 @@ namespace Tremor.DungeonGenn
 				// Shinies pass removed by some other mod.
 				return;
 			}
-			tasks.Insert(ShiniesIndex + 1, new PassLegacy("Generating dungeon", delegate (GenerationProgress progress)
+			tasks.Insert(ShiniesIndex + 1, new PassLegacy("Generating dungeon", delegate (GenerationProgress progress, GameConfiguration configuration)
 			{
 				progress.Message = "Generating ruines...";
 				SetVars();
@@ -589,7 +590,7 @@ namespace Tremor.DungeonGenn
 				//find ocean level
 				for (int i = 0; i <= Main.rockLayer; i++)
 				{
-					if (Main.tile[0, i].liquid == 255)
+					if (Main.tile[0, i].LiquidAmount == 255)
 					{
 						oceanLevel = i;
 						break;
@@ -598,7 +599,7 @@ namespace Tremor.DungeonGenn
 				//find ocean size
 				for (int i = 0; i < Main.maxTilesX / 2; i++)
 				{
-					if (Main.tile[i, oceanLevel].liquid != 255)
+					if (Main.tile[i, oceanLevel].LiquidAmount != 255)
 					{
 						oceanEndX = i;
 						break;
@@ -611,7 +612,7 @@ namespace Tremor.DungeonGenn
 				//find ocean level
 				for (int i = 0; i <= Main.rockLayer; i++)
 				{
-					if (Main.tile[Main.maxTilesX - 1, i].liquid == 255)
+					if (Main.tile[Main.maxTilesX - 1, i].LiquidAmount == 255)
 					{
 						oceanLevel = i;
 						break;
@@ -620,7 +621,7 @@ namespace Tremor.DungeonGenn
 				//find ocean size
 				for (int i = Main.maxTilesX - 1; i > Main.maxTilesX / 2; i--)
 				{
-					if (Main.tile[i, oceanLevel].liquid != 255)
+					if (Main.tile[i, oceanLevel].LiquidAmount != 255)
 					{
 						oceanEndX = i;
 						break;
@@ -632,7 +633,7 @@ namespace Tremor.DungeonGenn
 			//find ocean bootom
 			for (int i = oceanLevel; i < Main.rockLayer; i++)
 			{
-				if (Main.tile[offsetX, i].type == 53)
+				if (Main.tile[offsetX, i].TileType == 53)
 				{
 					offsetY = i - 5;
 					break;
@@ -663,18 +664,18 @@ namespace Tremor.DungeonGenn
 					//jei nuejo i sona tada offset netinka
 					if (i < 0 || j < 0 || i >= Main.maxTilesX || j >= Main.maxTilesY) return false;
 					//jei rastas dungeon tile arba mushroom biome tada offset netinka
-					if (Main.tile[i, j].type == 41//dungeon brick
-|| Main.tile[i, j].type == 43//dungeon brick
-|| Main.tile[i, j].type == 44//dungeon brick
-|| Main.tile[i, j].type == 57//underworld
-|| Main.tile[i, j].type == 225//bees?
-|| Main.tile[i, j].type == 229//bees?
-|| Main.tile[i, j].type == 226)//jungle temple?
-							   //|| Main.tile[i,j].wall==15)//jungle
-							   //|| AmountOfTilesFound(59, 200))
-							   //|| Main.tile[i,j].type==70//mushroom world
-							   //|| Main.tile[i,j].type==71//mushroom world
-							   //|| Main.tile[i,j].type==72)//mushroom world
+					if (Main.tile[i, j].TileType == 41//dungeon brick
+						|| Main.tile[i, j].TileType == 43//dungeon brick
+						|| Main.tile[i, j].TileType == 44//dungeon brick
+						|| Main.tile[i, j].TileType == 57//underworld
+						|| Main.tile[i, j].TileType == 225//bees?
+						|| Main.tile[i, j].TileType == 229//bees?
+						|| Main.tile[i, j].TileType == 226)//jungle temple?
+						//|| Main.tile[i,j].wall==15)//jungle
+						//|| AmountOfTilesFound(59, 200))
+						//|| Main.tile[i,j].type==70//mushroom world
+						//|| Main.tile[i,j].type==71//mushroom world
+						//|| Main.tile[i,j].type==72)//mushroom world
 					{
 						//Log.WriteLine("Main.tile[i,j].type", Main.tile[i,j].type);
 						return false;
@@ -689,7 +690,7 @@ namespace Tremor.DungeonGenn
 				for (int j = offsetY + dungeonSizeY1; j <= offsetY + dungeonSizeY2; j += 10)
 				{
 					if (i < 0 || j < 0 || i >= Main.maxTilesX || j >= Main.maxTilesY) continue;
-					if (Main.tile[i, j].type == tile)
+					if (Main.tile[i, j].TileType == tile)
 					{
 						if (n++ > minTileNum) return true;
 					}
@@ -1257,32 +1258,32 @@ namespace Tremor.DungeonGenn
 					if (isDestroyed)
 						active =
 							Main.tile[i, j].active()
-							&& Main.tile[i, j].type != 5
-							&& Main.tile[i, j].type != 30
-							&& Main.tile[i, j].type != 53
-							&& Main.tile[i, j].type != 52
-							&& Main.tile[i, j].type != 51
-							&& Main.tile[i, j].type != 62
-							&& Main.tile[i, j].type != 72;
+							&& Main.tile[i, j].TileType != 5
+							&& Main.tile[i, j].TileType != 30
+							&& Main.tile[i, j].TileType != 53
+							&& Main.tile[i, j].TileType != 52
+							&& Main.tile[i, j].TileType != 51
+							&& Main.tile[i, j].TileType != 62
+							&& Main.tile[i, j].TileType != 72;
 					if (active)
 					{
 						Main.tile[i, j].active(true);
-						Main.tile[i, j].type = type;
+						Main.tile[i, j].TileType = type;
 					}
 
 					//avoid background wall outside box
 					if (i != x - wallSize - 1 + offsetX && i != i + w + wallSize + 1 + offsetX && j != y - wallSize - 1 + offsetY && j != y + h + wallSize + 1 + offsetY)
 					{
-						if (wallState == 0) Main.tile[i, j].wall = wall;
+						if (wallState == 0) Main.tile[i, j].WallType = wall;
 						else if (wallState == 1)
 						{
 							if (lowDensWall)
 							{
-								if (HitChance(20)) Main.tile[i, j].wall = wall;
+								if (HitChance(20)) Main.tile[i, j].WallType = wall;
 							}
 							else
 							{
-								if (HitChance(50)) Main.tile[i, j].wall = wall;
+								if (HitChance(50)) Main.tile[i, j].WallType = wall;
 							}
 						}
 					}
@@ -1309,9 +1310,10 @@ namespace Tremor.DungeonGenn
 				{
 					//prieiti prie kito x ir y jei dabartiniai uz mapo ribu
 					if (i < 0 || j < 0 || i >= Main.maxTilesX || j >= Main.maxTilesY) continue;
-					Main.tile[i, j].active(false);
-					Main.tile[i, j].slope(0);
-					if (isFlooded) Main.tile[i, j].liquid = 255;
+					var tile = Main.tile[i, j];
+					tile.active(false);
+					tile.Slope = Terraria.ID.SlopeType.Solid;
+					if (isFlooded) tile.LiquidAmount = 255;
 					if (j - 5 > y + offsetY && placeCandle && !candleIsPlaced)
 					{
 						if (HitChance(2))

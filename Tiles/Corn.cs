@@ -6,7 +6,7 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class Corn : ModTile
+	public class Corn:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -30,23 +30,23 @@ namespace Tremor.Tiles
 
 		public override bool Drop(int i, int j)
 		{
-			int stage = Main.tile[i, j].frameX / 18;
+			int stage = Main.tile[i, j].TileFrameX / 18;
 			if (stage == 2)
 			{
-				Item.NewItem(i * 16, j * 16, 0, 0, ModContent.ItemType<CornSeed>());
+				Item.NewItem(null, i * 16, j * 16, 0, 0, ModContent.ItemType<CornSeed>());
 			}
 			return false;
 		}
 
 		public override void RandomUpdate(int i, int j)
 		{
-			if (Main.tile[i, j].frameX == 0)
+			if (Main.tile[i, j].TileFrameX == 0)
 			{
-				Main.tile[i, j].frameX += 18;
+				Main.tile[i, j].TileFrameX += 18;
 			}
-			else if (Main.tile[i, j].frameX == 18)
+			else if (Main.tile[i, j].TileFrameX == 18)
 			{
-				Main.tile[i, j].frameX += 18;
+				Main.tile[i, j].TileFrameX += 18;
 			}
 		}
 	}

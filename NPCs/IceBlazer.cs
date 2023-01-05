@@ -9,7 +9,7 @@ using Tremor.Items.Souls;
 
 namespace Tremor.NPCs
 {
-	public class IceBlazer : ModNPC
+	public class IceBlazer:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -67,6 +67,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && NPC.downedMoonlord && Main.hardMode && spawnInfo.player.ZoneSnow && spawnInfo.spawnTileY < Main.worldSurface ? 0.004f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && NPC.downedMoonlord && Main.hardMode && spawnInfo.Player.ZoneSnow && spawnInfo.SpawnTileY < Main.worldSurface ? 0.004f : 0f;
 	}
 }

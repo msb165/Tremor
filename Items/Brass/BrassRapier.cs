@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Brass
 {
-	public class BrassRapier : ModItem
+	public class BrassRapier:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 69;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 52;
 			item.height = 54;
 			item.useTime = 25;

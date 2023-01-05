@@ -5,7 +5,7 @@ using Tremor.Items.Flesh;
 
 namespace Tremor.Items
 {
-	public class DeadHead : ModItem
+	public class DeadHead:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -27,19 +27,8 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.meleeDamage += 0.04f;
-			player.meleeCrit += 4;
-
-			player.magicDamage += 0.04f;
-			player.magicCrit += 4;
-
-			player.rangedDamage += 0.04f;
-			player.rangedCrit += 4;
-
-			player.thrownDamage += 0.04f;
-			player.thrownCrit += 4;
-
-			player.minionDamage += 0.04f;
+			player.GetDamage(DamageClass.Generic) += 0.04f;
+			player.GetCritChance(DamageClass.Generic) += 4;
 
 			player.moveSpeed += 0.15f;
 			player.maxRunSpeed += 0.15f;

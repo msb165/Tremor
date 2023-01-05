@@ -4,9 +4,9 @@ using Tremor.Projectiles;
 
 namespace Tremor.Buffs
 {
-	public class AnnoyingDogBuff : ModBuff
+	public class AnnoyingDogBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Annoying Dog");
 			Description.SetDefault("It wants to absorb your artifact");
@@ -26,7 +26,7 @@ namespace Tremor.Buffs
 			}
 			if (petProjectileNotSpawned && player.whoAmI == Main.myPlayer)
 			{
-				Projectile.NewProjectile(player.position.X + player.width / 2, player.position.Y + player.height / 2, 0f, 0f, ModContent.ProjectileType<AnnoyingDog>(), 0, 0f, player.whoAmI, 0f, 0f);
+				Projectile.NewProjectile(null, player.position.X + player.width / 2, player.position.Y + player.height / 2, 0f, 0f, ModContent.ProjectileType<AnnoyingDog>(), 0, 0f, player.whoAmI, 0f, 0f);
 			}
 		}
 	}

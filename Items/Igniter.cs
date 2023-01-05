@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Igniter : ModItem
+	public class Igniter:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -21,7 +21,7 @@ namespace Tremor.Items
 			item.shootSpeed = 13f;
 			item.knockBack = 4.4f;
 			Item.staff[item.type] = true;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.autoReuse = true;
 			item.value = Item.sellPrice(0, 4, 0, 0);
 			item.rare = 5;

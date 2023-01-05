@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Infector : ModItem
+	public class Infector:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 12;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 9;
 			item.width = 40;
 			item.height = 40;

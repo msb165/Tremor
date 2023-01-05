@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Antlion
 {
-	public class AntlionFury : ModItem
+	public class AntlionFury:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 28;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 48;
 			item.height = 24;
 			item.useTime = 15;

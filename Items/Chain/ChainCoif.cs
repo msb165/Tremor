@@ -6,7 +6,7 @@ using Tremor.Items.Invar;
 namespace Tremor.Items.Chain
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class ChainCoif : ModItem
+	public class ChainCoif:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -36,13 +36,12 @@ namespace Tremor.Items.Chain
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.IronBar, 15);
+			var recipe = CreateRecipe();
+			recipe.AddRecipeGroup(RecipeGroupID.IronBar, 15);
 			recipe.AddIngredient(ModContent.ItemType<InvarBar>());
 			recipe.AddIngredient(ItemID.Chain);
 			recipe.AddTile(TileID.Anvils);
-			recipe.anyIronBar = true;
-			recipe.SetResult(this);
+			recipe.Register();//Was missing this
 		}
 	}
 }

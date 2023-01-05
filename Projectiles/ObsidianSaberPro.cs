@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class ObsidianSaberPro : ModProjectile
+	public class ObsidianSaberPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

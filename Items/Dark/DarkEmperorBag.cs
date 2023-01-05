@@ -5,7 +5,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items.Dark
 {
-	public class DarkEmperorBag : ModItem
+	public class DarkEmperorBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

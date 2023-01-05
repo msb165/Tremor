@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class ParadoxCohortMusicBox : ModItem
+	public class ParadoxCohortMusicBox:TremorModItem
 	{
 		public override void SetDefaults()
 		{

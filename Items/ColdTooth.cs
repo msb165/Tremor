@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ColdTooth : ModItem
+	public class ColdTooth:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 18;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 42;
 			item.height = 46;
 			item.useTime = 20;

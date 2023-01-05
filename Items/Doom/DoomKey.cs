@@ -5,7 +5,7 @@ using Tremor.Items.Souls;
 
 namespace Tremor.Items.Doom
 {
-	public class DoomKey : ModItem
+	public class DoomKey:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -34,10 +34,10 @@ namespace Tremor.Items.Doom
 			return !Main.dayTime && !NPC.AnyNPCs(35);
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			NPC.SpawnOnPlayer(player.whoAmI, 35);
-			Main.PlaySound(SoundID.Roar, player.position, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.Roar, player.position);//Variant 0
 			return true;
 		}
 

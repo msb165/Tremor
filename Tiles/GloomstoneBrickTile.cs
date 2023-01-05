@@ -5,7 +5,7 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class GloomstoneBrickTile : ModTile
+	public class GloomstoneBrickTile:TremorModTile
 	{
 		public override void SetDefaults()
 		{

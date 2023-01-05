@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class FrozenTurtleShield : ModItem
+	public class FrozenTurtleShield:TremorModItem
 	{
 
 		public override void SetDefaults()

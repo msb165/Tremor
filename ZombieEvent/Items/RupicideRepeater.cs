@@ -6,12 +6,12 @@ using Tremor.Items;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class RupicideRepeater : ModItem
+	public class RupicideRepeater:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 36;
 			item.height = 24;
 
@@ -59,7 +59,7 @@ namespace Tremor.ZombieEvent.Items
 
 			if (Main.rand.NextBool(5))
 			{
-				int proj = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, 686, damage, knockBack, Main.myPlayer);
+				int proj = Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, 686, damage, knockBack, Main.myPlayer);
 				Main.projectile[proj].hostile = false;
 				Main.projectile[proj].friendly = true;
 				return false;

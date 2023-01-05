@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Invasion
 {
 	[AutoloadEquip(EquipType.Wings)]
-	public class VioleumWings : ModItem
+	public class VioleumWings:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -3,12 +3,13 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Ice.Mobs
 {
-	public class ColdtrapChain : ModProjectile
+	public class ColdtrapChain:TremorModProjectile
 	{
 		public float width
 		{
@@ -252,10 +253,9 @@ namespace Tremor.Ice.Mobs
 				projectile.direction = target.Center.X < x ? -1 : 1;
 			}
 		}
-
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
-			Texture2D unit = Main.projectileTexture[projectile.type];
+			Texture2D unit = TextureAssets.Projectile[projectile.type].Value;
 			int unitLength = unit.Width;
 			int numUnits = (int)Math.Ceiling(length / unitLength);
 			float increment = 0f;
@@ -283,7 +283,7 @@ namespace Tremor.Ice.Mobs
 			return false;
 		}
 
-		public override void PostDraw(SpriteBatch sb, Color lightColor)
+		public override void PostDraw(Color lightColor)
 		{
 			Main.instance.DrawNPC(arm, false);
 		}

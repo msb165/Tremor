@@ -6,7 +6,7 @@ using Tremor.Items.Alien;
 
 namespace Tremor.Items
 {
-	public class GlassPotion : ModItem
+	public class GlassPotion:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -27,7 +27,7 @@ namespace Tremor.Items
 			Tooltip.SetDefault("You deal three times more damage, but your defense is reduced to zero.");
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			player.AddBuff(ModContent.BuffType<FragileCondition>(), 14400);
 			return true;

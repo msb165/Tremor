@@ -7,7 +7,7 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class LifeMachineTile : ModTile
+	public class LifeMachineTile:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -17,7 +17,7 @@ namespace Tremor.Tiles
         TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
         //TileObjectData.newTile.CoordinateHeights = new int[]{16};
         TileObjectData.addTile(Type);
-        animationFrameHeight = 54;
+        AnimationFrameHeight = 54;
         AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
 	AddMapEntry(new Color(169, 169, 169));
     }
@@ -38,7 +38,7 @@ public override void AnimateTile(ref int frame, ref int frameCounter)
         if(closer)
         {
             Player player = Main.player[Main.myPlayer];
-            int style = Main.tile[i, j].frameX / 100;
+            int style = Main.tile[i, j].TileFrameX / 100;
             string type;
             player.AddBuff(ModContent.BuffType<Buffs.ReinforcedHeart>(), 60, true);
         }
@@ -46,6 +46,6 @@ public override void AnimateTile(ref int frame, ref int frameCounter)
 
     public override void KillMultiTile(int i, int j, int frameX, int frameY)
     {
-        Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<LifeMachine>());
+        Item.NewItem(null, i * 16, j * 16, 32, 16, ModContent.ItemType<LifeMachine>());
     }
 }}

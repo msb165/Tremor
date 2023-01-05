@@ -5,7 +5,7 @@ using Tremor.Items.Brass;
 
 namespace Tremor.NPCs.Bosses.CogLord.Items
 {
-	public class CogLordBag : ModItem
+	public class CogLordBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

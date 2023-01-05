@@ -7,7 +7,7 @@ using Tremor.ZombieEvent.Items;
 
 namespace Tremor.Items
 {
-	public class StoneofKnowledge : ModItem
+	public class StoneofKnowledge:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -36,15 +36,15 @@ namespace Tremor.Items
 		{
 			return !Main.dayTime && Main.hardMode && NPC.downedMechBossAny && !NPC.AnyNPCs(ModContent.NPCType<SoulofHope>()) && !NPC.AnyNPCs(ModContent.NPCType<SoulofTrust>()) && !NPC.AnyNPCs(ModContent.NPCType<SoulofTruth>());
 		}
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			Main.NewText("The Trinity has awoken!", 175, 75, 255);
-			Main.PlaySound(15, (int)player.position.X, (int)player.position.Y, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[15], player.position);//Variant 0
 			if (Main.netMode != 1)
 			{
-				int b1ID = NPC.NewNPC((int)player.Center.X - 300, (int)player.Center.Y - 800, ModContent.NPCType<SoulofHope>());
-				int b2ID = NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - 300, ModContent.NPCType<SoulofTrust>());
-				int b3ID = NPC.NewNPC((int)player.Center.X + 100, (int)player.Center.Y - 500, ModContent.NPCType<SoulofTruth>());
+				int b1ID = NPC.NewNPC(null, (int)player.Center.X - 300, (int)player.Center.Y - 800, ModContent.NPCType<SoulofHope>());
+				int b2ID = NPC.NewNPC(null, (int)player.Center.X, (int)player.Center.Y - 300, ModContent.NPCType<SoulofTrust>());
+				int b3ID = NPC.NewNPC(null, (int)player.Center.X + 100, (int)player.Center.Y - 500, ModContent.NPCType<SoulofTruth>());
 				Main.npc[b1ID].ai[2] = b2ID;
 				Main.npc[b1ID].ai[3] = b3ID;
 				Main.npc[b2ID].ai[2] = b1ID;

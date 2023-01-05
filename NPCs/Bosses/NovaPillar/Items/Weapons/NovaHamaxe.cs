@@ -3,12 +3,12 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.Items.Weapons
 {
-	public class NovaHamaxe : ModItem
+	public class NovaHamaxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 			item.damage = 60;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 38;
 			item.height = 38;
 			item.useTime = 9;

@@ -8,7 +8,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class CrimstoneDresser : ModTile
+	public class CrimstoneDresser:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -21,7 +21,7 @@ namespace Tremor.Tiles
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
 			TileObjectData.newTile.Origin = new Point16(1, 1);
 			TileObjectData.newTile.CoordinateHeights = new[] { 16, 16 };
-			TileObjectData.newTile.HookCheck = new PlacementHook(Chest.FindEmptyChest, -1, 0, true);
+			TileObjectData.newTile.HookCheckIfCanPlace = new PlacementHook(Chest.FindEmptyChest, -1, 0, true);
 			TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(Chest.AfterPlacement_Hook, -1, 0, false);
 			TileObjectData.newTile.AnchorInvalidTiles = new[] { 127 };
 			TileObjectData.newTile.StyleHorizontal = true;
@@ -36,27 +36,27 @@ namespace Tremor.Tiles
 			dresserDrop = ModContent.ItemType<Items.Crimstone.CrimstoneDresser>();
 		}
 
-		public override void RightClick(int i, int j)
+		public override bool RightClick(int i, int j)
 		{
 			Player player = Main.LocalPlayer;
-			if (Main.tile[Player.tileTargetX, Player.tileTargetY].frameY == 0)
+			if (Main.tile[Player.tileTargetX, Player.tileTargetY].TileFrameY == 0)
 			{
 				Main.CancelClothesWindow(true);
 				Main.mouseRightRelease = false;
-				int left = Main.tile[Player.tileTargetX, Player.tileTargetY].frameX / 18;
+				int left = Main.tile[Player.tileTargetX, Player.tileTargetY].TileFrameX / 18;
 				left %= 3;
 				left = Player.tileTargetX - left;
-				int top = Player.tileTargetY - Main.tile[Player.tileTargetX, Player.tileTargetY].frameY / 18;
+				int top = Player.tileTargetY - Main.tile[Player.tileTargetX, Player.tileTargetY].TileFrameY / 18;
 				if (player.sign > -1)
 				{
-					Main.PlaySound(SoundID.MenuClose);
+					Terraria.Audio.SoundEngine.PlaySound(SoundID.MenuClose);
 					player.sign = -1;
 					Main.editSign = false;
 					Main.npcChatText = string.Empty;
 				}
 				if (Main.editChest)
 				{
-					Main.PlaySound(SoundID.MenuTick);
+					Terraria.Audio.SoundEngine.PlaySound(SoundID.MenuTick);
 					Main.editChest = false;
 					Main.npcChatText = string.Empty;
 				}
@@ -71,7 +71,7 @@ namespace Tremor.Tiles
 					{
 						player.chest = -1;
 						Recipe.FindRecipes();
-						Main.PlaySound(SoundID.MenuClose);
+						Terraria.Audio.SoundEngine.PlaySound(SoundID.MenuClose);
 					}
 					else
 					{
@@ -81,7 +81,9 @@ namespace Tremor.Tiles
 				}
 				else
 				{
-					player.flyingPigChest = -1;
+					//TODO: [Skipped for 1.4] player.flyingPigChest
+					//Could this be player.piggyBankProjTracker?
+					//player.flyingPigChest = -1;
 					int num213 = Chest.FindChest(left, top);
 					if (num213 != -1)
 					{
@@ -90,14 +92,14 @@ namespace Tremor.Tiles
 						{
 							player.chest = -1;
 							Recipe.FindRecipes();
-							Main.PlaySound(SoundID.MenuClose);
+							Terraria.Audio.SoundEngine.PlaySound(SoundID.MenuClose);
 						}
 						else if (num213 != player.chest && player.chest == -1)
 						{
 							player.chest = num213;
 							Main.playerInventory = true;
 							Main.recBigList = false;
-							Main.PlaySound(SoundID.MenuOpen);
+							Terraria.Audio.SoundEngine.PlaySound(SoundID.MenuOpen);
 							player.chestX = left;
 							player.chestY = top;
 						}
@@ -106,7 +108,7 @@ namespace Tremor.Tiles
 							player.chest = num213;
 							Main.playerInventory = true;
 							Main.recBigList = false;
-							Main.PlaySound(SoundID.MenuTick);
+							Terraria.Audio.SoundEngine.PlaySound(SoundID.MenuTick);
 							player.chestX = left;
 							player.chestY = top;
 						}
@@ -119,10 +121,11 @@ namespace Tremor.Tiles
 				Main.playerInventory = false;
 				player.chest = -1;
 				Recipe.FindRecipes();
-				Main.dresserX = Player.tileTargetX;
-				Main.dresserY = Player.tileTargetY;
+				Main.interactedDresserTopLeftX = Player.tileTargetX;
+				Main.interactedDresserTopLeftY = Player.tileTargetY;
 				Main.OpenClothesWindow();
 			}
+			return true;
 		}
 
 		public override void MouseOverFar(int i, int j)
@@ -131,39 +134,39 @@ namespace Tremor.Tiles
 			Tile tile = Main.tile[Player.tileTargetX, Player.tileTargetY];
 			int left = Player.tileTargetX;
 			int top = Player.tileTargetY;
-			left -= tile.frameX % 54 / 18;
-			if (tile.frameY % 36 != 0)
+			left -= tile.TileFrameX % 54 / 18;
+			if (tile.TileFrameY % 36 != 0)
 			{
 				top--;
 			}
 			int chestIndex = Chest.FindChest(left, top);
-			player.showItemIcon2 = -1;
+			player.cursorItemIconID = -1;
 			if (chestIndex < 0)
 			{
-				player.showItemIconText = Lang.dresserType[0].Value;
+				player.cursorItemIconText = Lang.dresserType[0].Value;
 			}
 			else
 			{
 				if (Main.chest[chestIndex].name != "")
 				{
-					player.showItemIconText = Main.chest[chestIndex].name;
+					player.cursorItemIconText = Main.chest[chestIndex].name;
 				}
 				else
 				{
-					player.showItemIconText = chest;
+					player.cursorItemIconText = chest;
 				}
-				if (player.showItemIconText == chest)
+				if (player.cursorItemIconText == chest)
 				{
-					player.showItemIcon2 = ModContent.ItemType<Items.Crimstone.CrimstoneDresser>();
-					player.showItemIconText = "";
+					player.cursorItemIconID = ModContent.ItemType<Items.Crimstone.CrimstoneDresser>();
+					player.cursorItemIconText = "";
 				}
 			}
 			player.noThrow = 2;
-			player.showItemIcon = true;
-			if (player.showItemIconText == "")
+			player.cursorItemIconEnabled = true;
+			if (player.cursorItemIconText == "")
 			{
-				player.showItemIcon = false;
-				player.showItemIcon2 = 0;
+				player.cursorItemIconEnabled = false;
+				player.cursorItemIconID = 0;
 			}
 		}
 
@@ -173,38 +176,38 @@ namespace Tremor.Tiles
 			Tile tile = Main.tile[Player.tileTargetX, Player.tileTargetY];
 			int left = Player.tileTargetX;
 			int top = Player.tileTargetY;
-			left -= tile.frameX % 54 / 18;
-			if (tile.frameY % 36 != 0)
+			left -= tile.TileFrameX % 54 / 18;
+			if (tile.TileFrameY % 36 != 0)
 			{
 				top--;
 			}
 			int num138 = Chest.FindChest(left, top);
-			player.showItemIcon2 = -1;
+			player.cursorItemIconID = -1;
 			if (num138 < 0)
 			{
-				player.showItemIconText = Lang.dresserType[0].Value;
+				player.cursorItemIconText = Lang.dresserType[0].Value;
 			}
 			else
 			{
 				if (Main.chest[num138].name != "")
 				{
-					player.showItemIconText = Main.chest[num138].name;
+					player.cursorItemIconText = Main.chest[num138].name;
 				}
 				else
 				{
-					player.showItemIconText = chest;
+					player.cursorItemIconText = chest;
 				}
-				if (player.showItemIconText == chest)
+				if (player.cursorItemIconText == chest)
 				{
-					player.showItemIcon2 = ModContent.ItemType<Items.Crimstone.CrimstoneDresser>();
-					player.showItemIconText = "";
+					player.cursorItemIconID = ModContent.ItemType<Items.Crimstone.CrimstoneDresser>();
+					player.cursorItemIconText = "";
 				}
 			}
 			player.noThrow = 2;
-			player.showItemIcon = true;
-			if (Main.tile[Player.tileTargetX, Player.tileTargetY].frameY > 0)
+			player.cursorItemIconEnabled = true;
+			if (Main.tile[Player.tileTargetX, Player.tileTargetY].TileFrameY > 0)
 			{
-				player.showItemIcon2 = ItemID.FamiliarShirt;
+				player.cursorItemIconID = ItemID.FamiliarShirt;
 			}
 		}
 
@@ -215,7 +218,7 @@ namespace Tremor.Tiles
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 48, 32, dresserDrop);
+			Item.NewItem(null, i * 16, j * 16, 48, 32, dresserDrop);
 			Chest.DestroyChest(i, j);
 		}
 	}

@@ -7,7 +7,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class CoreBug : ModNPC
+	public class CoreBug:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -57,6 +57,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.player.ZoneMeteor ? 0.005f : 0f;
+			=> Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.Player.ZoneMeteor ? 0.005f : 0f;
 	}
 }

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class VortexBee : ModProjectile
+	public class VortexBee:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

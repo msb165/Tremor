@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ParrotFish : ModItem
+	public class ParrotFish:TremorModItem
 	{
 		public override void SetDefaults()
 		{

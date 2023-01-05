@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Poseidon : ModItem
+	public class Poseidon:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.width = 16;
 			item.height = 32;
 			item.useTime = 27;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.shoot = 1;
 			item.shootSpeed = 15f;
 			item.useAnimation = 27;

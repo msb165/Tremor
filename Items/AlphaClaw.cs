@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class AlphaClaw : ModItem
+	public class AlphaClaw:TremorModItem
 	{
 		public override void SetDefaults()
 		{

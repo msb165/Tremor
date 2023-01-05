@@ -4,7 +4,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Projectiles
 {
-	public class FallingDarkServant : ModProjectile
+	public class FallingDarkServant:TremorModProjectile
 	{
 
 		public override void SetDefaults()
@@ -14,7 +14,7 @@ namespace Tremor.Projectiles
 			projectile.height = 64;
 			projectile.hostile = true;
 			projectile.light = 0.8f;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.penetrate = 6;
 			Main.projFrames[projectile.type] = 4;
 			projectile.aiStyle = 1;
@@ -43,7 +43,7 @@ namespace Tremor.Projectiles
 		}
 		public override void Kill(int timeLeft)
 		{
-			NPC.NewNPC((int)projectile.Center.X, (int)projectile.Center.Y, ModContent.NPCType<DarkServant>());
+			NPC.NewNPC(null, (int)projectile.Center.X, (int)projectile.Center.Y, ModContent.NPCType<DarkServant>());
 		}
 	}
 }

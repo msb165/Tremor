@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TurtleSickle : ModItem
+	public class TurtleSickle:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 85;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 68;
 			item.height = 68;
 			item.useTime = 25;

@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MeteorBlade : ModItem
+	public class MeteorBlade:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 25;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 50;
 			item.height = 50;
 			item.useTime = 30;

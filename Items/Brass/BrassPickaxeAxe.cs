@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Brass
 {
 
-	public class BrassPickaxeAxe : ModItem
+	public class BrassPickaxeAxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 40;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 42;
 			item.height = 40;
 			item.useTime = 5;

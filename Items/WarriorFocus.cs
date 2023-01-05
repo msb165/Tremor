@@ -6,7 +6,7 @@ using Tremor.Items.Sparks;
 
 namespace Tremor.Items
 {
-	public class WarriorFocus : ModItem
+	public class WarriorFocus:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -31,8 +31,8 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.meleeDamage += 0.06f;
-			player.meleeCrit += 11;
+			player.GetDamage(DamageClass.Melee) += 0.06f;
+			player.GetCritChance(DamageClass.Melee) += 11;
 		}
 
 		public override void AddRecipes()

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs
 {
-	public class InfectedZombie : ModNPC
+	public class InfectedZombie:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -31,6 +31,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && !Main.dayTime && NPC.downedBoss2 && spawnInfo.player.ZoneCrimson && spawnInfo.spawnTileY < Main.worldSurface ? 0.02f : 0;
+			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && !Main.dayTime && NPC.downedBoss2 && spawnInfo.Player.ZoneCrimson && spawnInfo.SpawnTileY < Main.worldSurface ? 0.02f : 0;
 	}
 }

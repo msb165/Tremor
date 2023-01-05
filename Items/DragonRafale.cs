@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class DragonRafale : ModItem
+	public class DragonRafale:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 236;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 50;
 			item.maxStack = 1;
 			item.height = 30;

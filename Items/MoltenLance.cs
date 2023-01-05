@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MoltenLance : ModItem
+	public class MoltenLance:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 15;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 32;
 			item.height = 32;
 			item.useTime = 11;

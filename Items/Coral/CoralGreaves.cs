@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Coral
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class CoralGreaves : ModItem
+	public class CoralGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()

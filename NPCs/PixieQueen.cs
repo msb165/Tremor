@@ -10,7 +10,7 @@ using Tremor.Items.Chaos;
 namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
-	public class PixieQueen : ModNPC
+	public class PixieQueen:TremorModNPC
 	{
 		#region "Константы"
 		const int AnimationRate = 8; // Частота смены кадров (То, сколько кадров не будет сменятся кадр)
@@ -143,7 +143,7 @@ namespace Tremor.NPCs
 				}
 				if (Main.rand.Next(300) == 0)
 				{
-					Main.PlaySound(29, (int)npc.position.X, (int)npc.position.Y, 35);
+					Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[29], npc.position);//Variant 35
 				}
 				//Player player = Main.player[npc.target];
 				bool playerWet = player.wet;
@@ -260,7 +260,7 @@ namespace Tremor.NPCs
 							npc.velocity.X = num1045 * num1047;
 							npc.velocity.Y = num1046 * num1047;
 							npc.spriteDirection = npc.direction;
-							Main.PlaySound(29, (int)npc.position.X, (int)npc.position.Y, 34);
+							Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[29], npc.position);//Variant 34
 							return;
 						}
 						npc.localAI[0] = 0f;
@@ -489,7 +489,7 @@ namespace Tremor.NPCs
 					}
 					//if (Collision.CanHit(vector119, 1, 1, Main.player[npc.target].position, Main.player[npc.target].width, Main.player[npc.target].height) && flag103)
 					//{
-					//	Main.PlaySound(3, (int)npc.position.X, (int)npc.position.Y, 25);
+					//	Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[3], npc.position);//Variant 25
 					//	if (Main.netMode != 1)
 					//	{
 					//		int npcType;
@@ -501,7 +501,7 @@ namespace Tremor.NPCs
 					//		{
 					//			npcType = ModContent.NPCType<Parasea>();
 					//		}
-					//		NPC npc = Main.npc[NPC.NewNPC((int)vector119.X, (int)vector119.Y, npcType, 0, 0f, 0f, 0f, 0f, 255)];
+					//		NPC npc = Main.npc[NPC.NewNPC(null, (int)vector119.X, (int)vector119.Y, npcType, 0, 0f, 0f, 0f, 0f, 255)];
 					//		npc.velocity.X = Main.rand.Next(-200, 201) * 0.01f;
 					//		npc.velocity.Y = Main.rand.Next(-200, 201) * 0.01f;
 					//		npc.localAI[0] = 60f;
@@ -614,7 +614,7 @@ namespace Tremor.NPCs
 				npc.rotation = 0f;
 				if (Main.rand.Next(70) == 0)
 				{
-					NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<PixieQueenGuardian>());
+					NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<PixieQueenGuardian>());
 				}
 			}
 		}
@@ -657,11 +657,11 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 57, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 57, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 57, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("NPCs/PixieQueenGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("NPCs/PixieQueenGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("NPCs/PixieQueenGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("NPCs/PixieQueenGore4"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("NPCs/PixieQueenGore5"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("NPCs/PixieQueenGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("NPCs/PixieQueenGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("NPCs/PixieQueenGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("NPCs/PixieQueenGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("NPCs/PixieQueenGore5"), 1f);
 			}
 		}
 
@@ -709,12 +709,12 @@ namespace Tremor.NPCs
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D drawTexture = Main.npcTexture[npc.type];
+			Texture2D drawTexture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2((drawTexture.Width / 2) * 0.5F, (drawTexture.Height / Main.npcFrameCount[npc.type]) * 0.5F);
 
 			Vector2 drawPos = new Vector2(
-			npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Main.npcTexture[npc.type].Width / 2) * npc.scale / 2f + origin.X * npc.scale,
-			npc.position.Y - Main.screenPosition.Y + npc.height - Main.npcTexture[npc.type].Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
+			npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Width / 2) * npc.scale / 2f + origin.X * npc.scale,
+			npc.position.Y - Main.screenPosition.Y + npc.height - Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
 
 			SpriteEffects effects = npc.spriteDirection == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
 			spriteBatch.Draw(drawTexture, drawPos, npc.frame, Color.White, 0f, origin, npc.scale, effects, 0);
@@ -735,7 +735,7 @@ namespace Tremor.NPCs
 				Vector2 position1 = player.Center;
 				Vector2 vector2 = new Vector2(player.position.X + 75f * (float)Math.Cos(12), player.position.Y + 1075f * (float)Math.Sin(12));
 				Vector2 Velocity = Helper.VelocityToPoint(vector2, Helper.RandomPointInArea(new Vector2(Main.player[npc.target].Center.X - 10, Main.player[npc.target].Center.Y - 10), new Vector2(Main.player[npc.target].Center.X + 20, Main.player[npc.target].Center.Y + 20)), ShootSpeed); //здесь устанавливаем позиции (здесь от перса в плеера)
-				int Proj = Projectile.NewProjectile(vector2.X, vector2.Y, Velocity.X, Velocity.Y, 671, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent)); //подтверждаем все выше действие: от перса к мобу, от моба к персу (второе выстрел)
+				int Proj = Projectile.NewProjectile(null, vector2.X, vector2.Y, Velocity.X, Velocity.Y, 671, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent)); //подтверждаем все выше действие: от перса к мобу, от моба к персу (второе выстрел)
 																																																					//Main.projectile[Proj].Center = npc.Center;
 				Main.projectile[Proj].friendly = false;
 				Main.projectile[Proj].damage = npc.damage;
@@ -752,7 +752,7 @@ namespace Tremor.NPCs
 		{
 			if (Main.expertMode)
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 			if (Main.netMode != 1)
 			{
@@ -762,31 +762,31 @@ namespace Tremor.NPCs
 
 				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PixieQueenMask>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PixieQueenMask>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(6))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<EtherealFeather>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<EtherealFeather>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(6))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PixiePulse>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PixiePulse>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(6))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<HeartMagnet>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<HeartMagnet>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(6))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DopelgangerCandle>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DopelgangerCandle>());
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PixieQueenTrophy>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PixieQueenTrophy>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ChaosBar>(), Main.rand.Next(25, 30));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ChaosBar>(), Main.rand.Next(25, 30));
 				}
 				TremorWorld.Boss.PixieQueen.Downed();
 			}

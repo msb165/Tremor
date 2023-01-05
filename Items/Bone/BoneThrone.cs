@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Bone
 {
-	public class BoneThrone : ModItem
+	public class BoneThrone:TremorModItem
 	{
 		public override void SetDefaults()
 		{

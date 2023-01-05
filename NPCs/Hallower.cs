@@ -7,7 +7,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class Hallower : ModNPC
+	public class Hallower:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -35,8 +35,8 @@ namespace Tremor.NPCs
 			npc.buffImmune[31] = false;
 			npc.DeathSound = SoundID.NPCDeath7;
 			npc.value = Item.buyPrice(0, 0, 5, 0);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<HallowerBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<HallowerBanner>();
 		}
 
 		public override void NPCLoot()
@@ -63,10 +63,10 @@ namespace Tremor.NPCs
 			if (Main.rand.NextBool(6))
 				Main.dust[Dust.NewDust(npc.position, npc.width, npc.height, 55, 0f, 0f, 200, npc.color)].velocity *= 0.3f;
 			if (Main.rand.Next(40) == 0)
-				Main.PlaySound(27, (int)npc.position.X, (int)npc.position.Y, 1);
+				Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[27], npc.position);//Variant 1
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && NPC.downedMoonlord && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.player.ZoneHoly && spawnInfo.spawnTileY < Main.worldSurface ? 0.01f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && NPC.downedMoonlord && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.Player.ZoneHallow && spawnInfo.SpawnTileY < Main.worldSurface ? 0.01f : 0f;
 	}
 }

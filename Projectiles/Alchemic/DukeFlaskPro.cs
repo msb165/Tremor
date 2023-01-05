@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -80,7 +81,7 @@ namespace Tremor.Projectiles.Alchemic
 						num439 *= num440;
 						if (Main.rand.NextBool(2))
 						{
-							Projectile.NewProjectile(value10.X, value10.Y, num438, num439, ModContent.ProjectileType<Projectiles.TheCadenceProj>(), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
+							Projectile.NewProjectile(null, value10.X, value10.Y, num438, num439, ModContent.ProjectileType<Projectiles.TheCadenceProj>(), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
 						}
 					}
 				}
@@ -106,7 +107,7 @@ namespace Tremor.Projectiles.Alchemic
 					{
 						projectile.velocity.Y = -oldVelocity.Y;
 					}
-					Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 10);
+					Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item10, projectile.position);
 				}
 			}
 			else
@@ -126,17 +127,17 @@ namespace Tremor.Projectiles.Alchemic
 		{
 			Player player = Main.player[projectile.owner];
 			MPlayer modPlayer = player.GetModPlayer<MPlayer>();
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 107);
-			Main.PlaySound(29, (int)projectile.position.X, (int)projectile.position.Y, 20);
-			Gore.NewGore(projectile.position, -projectile.oldVelocity * 0.2f, 704, 1f);
-			Gore.NewGore(projectile.position, -projectile.oldVelocity * 0.2f, 705, 1f);
+			SoundEngine.PlaySound(SoundID.Item107, projectile.position);
+			SoundEngine.PlaySound(SoundID.Zombie20, projectile.position);
+			Gore.NewGore(null, projectile.position, -projectile.oldVelocity * 0.2f, 704, 1f);
+			Gore.NewGore(null, projectile.position, -projectile.oldVelocity * 0.2f, 705, 1f);
 			if (player.HasBuffSafe(ModContent.BuffType<Buffs.BrassChipBuff>()))
 			{
 				for (int i = 0; i < 5; i++)
 				{
 					Vector2 vector2 = new Vector2(player.position.X + 75f * (float)Math.Cos(12), player.position.Y + 1075f * (float)Math.Sin(12));
 					Vector2 Velocity = Helper.VelocityToPoint(vector2, Helper.RandomPointInArea(new Vector2(projectile.Center.X - 10, projectile.Center.Y - 10), new Vector2(projectile.Center.X + 20, projectile.Center.Y + 20)), 24);
-					int a = Projectile.NewProjectile(vector2.X, vector2.Y, Velocity.X, Velocity.Y, 134, projectile.damage, 1f);
+					int a = Projectile.NewProjectile(null, vector2.X, vector2.Y, Velocity.X, Velocity.Y, 134, projectile.damage, 1f);
 					Main.projectile[a].friendly = true;
 				}
 			}
@@ -148,7 +149,7 @@ namespace Tremor.Projectiles.Alchemic
 					Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 					value17.Normalize();
 					value17 *= Main.rand.Next(10, 201) * 0.01f;
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<Projectiles.Shatter1>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
+					Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, value17.X, value17.Y, ModContent.ProjectileType<Projectiles.Shatter1>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
 				}
 			}
 			if (projectile.owner == Main.myPlayer)
@@ -175,14 +176,14 @@ namespace Tremor.Projectiles.Alchemic
 				for (int num234 = num231; num234 < num231 + num233; num234++)
 				{
 					Tile tile = Main.tile[num232, num234];
-					if (tile.active() && (Main.tileSolid[tile.type] || tile.liquid != 0))
+					if (tile.active() && (Main.tileSolid[tile.TileType] || tile.LiquidAmount != 0))
 					{
 						num231 = num234;
 						break;
 					}
 				}
-				int num236 = Projectile.NewProjectile(num232 * 16 + 8, num231 * 16 - 24, 0f, 0f, ModContent.ProjectileType<Projectiles.Dukado>(), 80, 4f, Main.myPlayer, 16f, 15f);
-				int num237 = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.Dukado>(), 80, 4f, Main.myPlayer, 16f, 15f);
+				int num236 = Projectile.NewProjectile(null, num232 * 16 + 8, num231 * 16 - 24, 0f, 0f, ModContent.ProjectileType<Projectiles.Dukado>(), 80, 4f, Main.myPlayer, 16f, 15f);
+				int num237 = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.Dukado>(), 80, 4f, Main.myPlayer, 16f, 15f);
 				Main.projectile[num236].netUpdate = true;
 				Main.projectile[num237].netUpdate = true;
 			}

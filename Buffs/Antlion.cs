@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class Antlion : ModBuff
+	public class Antlion:TremorModBuff
 	{
 		public override void SetDefaults()
 		{

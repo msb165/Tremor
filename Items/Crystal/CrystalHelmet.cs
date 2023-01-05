@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Crystal
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class CrystalHelmet : ModItem
+	public class CrystalHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items.Crystal
 
 		public override void UpdateEquip(Player p)
 		{
-			p.thrownDamage += 0.2f;
+			p.GetDamage(DamageClass.Throwing) += 0.2f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

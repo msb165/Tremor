@@ -88,7 +88,7 @@ namespace Tremor.Invasion
 				{
 					Player player = Main.player[Main.myPlayer];
 					Vector2 Velocity = Helper.VelocityToPoint(projectile.Center, Main.npc[NearestNPC].Center, ShootSpeed);
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CyberLaser>(), ShootDamage, ShootKnockback, projectile.owner);
+					Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CyberLaser>(), ShootDamage, ShootKnockback, projectile.owner);
 				}
 		}
 

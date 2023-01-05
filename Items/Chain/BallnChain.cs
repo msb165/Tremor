@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Chain
 {
-	public class BallnChain : ModItem
+	public class BallnChain:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TikiSkull : ModItem
+	public class TikiSkull:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -25,7 +25,7 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.minionDamage += 0.1f;
+			player.GetDamage(DamageClass.Summon) += 0.1f;
 		}
 	}
 }

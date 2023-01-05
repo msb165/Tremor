@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class VoidBladePro : ModProjectile
+	public class VoidBladePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -15,7 +15,7 @@ namespace Tremor.Projectiles
 			projectile.height = 54;
 			projectile.aiStyle = 27;
 			projectile.friendly = true;
-			projectile.ranged = true;
+			projectile.DamageType = DamageClass.Ranged;
 			projectile.penetrate = 5;
 			projectile.timeLeft = 600;
 			projectile.light = 0.8f;
@@ -62,7 +62,7 @@ namespace Tremor.Projectiles
 					}
 					value12.Normalize();
 					value12 *= Main.rand.Next(70, 101) * 0.1f;
-					Projectile.NewProjectile(projectile.oldPosition.X + projectile.width / 2, projectile.oldPosition.Y + projectile.height / 2, value12.X, value12.Y, 400, (int)(projectile.damage * 0.8), projectile.knockBack * 2.8f, projectile.owner, 0f, 0f);
+					Projectile.NewProjectile(null, projectile.oldPosition.X + projectile.width / 2, projectile.oldPosition.Y + projectile.height / 2, value12.X, value12.Y, 400, (int)(projectile.damage * 0.8), projectile.knockBack * 2.8f, projectile.owner, 0f, 0f);
 				}
 			}
 		}
@@ -115,18 +115,18 @@ namespace Tremor.Projectiles
 				vector64.Normalize();
 				vector64 *= Main.rand.Next(5, 25) * 0.9f;
 
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector64.X, vector64.Y, ModContent.ProjectileType<Projectiles.VoidRingPro>(), projectile.damage / 2, projectile.knockBack, projectile.owner, -10f, 0f);
+				Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, vector64.X, vector64.Y, ModContent.ProjectileType<Projectiles.VoidRingPro>(), projectile.damage / 2, projectile.knockBack, projectile.owner, -10f, 0f);
 			}
 		}
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Vector2 drawOrigin = new Vector2(Main.projectileTexture[projectile.type].Width * 0.5f, projectile.height * 0.5f);
+			Vector2 drawOrigin = new Vector2(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value.Width * 0.5f, projectile.height * 0.5f);
 			for (int k = 0; k < projectile.oldPos.Length; k++)
 			{
 				Vector2 drawPos = projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, projectile.gfxOffY);
 				Color color = projectile.GetAlpha(lightColor) * ((projectile.oldPos.Length - k) / (float)projectile.oldPos.Length);
-				spriteBatch.Draw(Main.projectileTexture[projectile.type], drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
+				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
 			}
 			return true;
 		}

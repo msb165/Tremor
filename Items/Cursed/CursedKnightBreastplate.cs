@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Cursed
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class CursedKnightBreastplate : ModItem
+	public class CursedKnightBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()

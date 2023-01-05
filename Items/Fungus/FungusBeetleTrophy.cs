@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Fungus
 {
-	public class FungusBeetleTrophy : ModItem
+	public class FungusBeetleTrophy:TremorModItem
 	{
 		public override void SetDefaults()
 		{

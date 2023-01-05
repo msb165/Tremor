@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class BlastFurnace : ModItem
+	public class BlastFurnace:TremorModItem
 	{
 		public override void SetDefaults()
 		{

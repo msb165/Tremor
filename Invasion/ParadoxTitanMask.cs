@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Invasion
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class ParadoxTitanMask : ModItem
+	public class ParadoxTitanMask:TremorModItem
 	{
 		public override void SetDefaults()
 		{

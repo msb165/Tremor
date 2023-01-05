@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Archer
 {
-	public class ArcherGlove : ModItem
+	public class ArcherGlove:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items.Archer
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
 		{
-			player.rangedDamage += 0.05f;
+			player.GetDamage(DamageClass.Ranged) += 0.05f;
 		}
 	}
 }

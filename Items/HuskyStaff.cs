@@ -6,13 +6,13 @@ using Tremor.Items.Wolf;
 
 namespace Tremor.Items
 {
-	public class HuskyStaff : ModItem
+	public class HuskyStaff:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 16;
-			item.summon = true;
+			item.DamageType = DamageClass.Summon;
 			item.mana = 10;
 			item.width = 34;
 			item.height = 28;
@@ -47,11 +47,11 @@ namespace Tremor.Items
 			return player.altFunctionUse != 2;
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			if (player.altFunctionUse == 2)
 			{
-				player.MinionNPCTargetAim();
+				player.MinionNPCTargetAim(false);
 			}
 			return base.UseItem(player);
 		}

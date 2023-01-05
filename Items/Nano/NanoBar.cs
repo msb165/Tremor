@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Nano
 {
-	public class NanoBar : ModItem
+	public class NanoBar:TremorModItem
 	{
 		public override void SetDefaults()
 		{

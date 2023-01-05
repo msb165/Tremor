@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Desert
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class DesertExplorerBreastplate : ModItem
+	public class DesertExplorerBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,7 +28,7 @@ namespace Tremor.Items.Desert
 		public override void UpdateEquip(Player player)
 		{
 			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.5f;
-			player.thrownDamage += 0.35f;
+			player.GetDamage(DamageClass.Throwing) += 0.35f;
 		}
 	}
 }

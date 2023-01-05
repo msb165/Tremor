@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class RubyBlade : ModItem
+	public class RubyBlade:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 17;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 46;
 			item.height = 48;
 			item.useTime = 25;

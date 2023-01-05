@@ -6,7 +6,7 @@ using Tremor.Items.Souls;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Wings)]
-	public class ColdMetalWings : ModItem
+	public class ColdMetalWings:TremorModItem
 	{
 
 		public override void SetDefaults()

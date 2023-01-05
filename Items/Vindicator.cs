@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 
-	public class Vindicator : ModItem
+	public class Vindicator:TremorModItem
 	{
 
 		public override void SetStaticDefaults()
@@ -18,7 +18,7 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 			item.damage = 200;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 76;
 			item.height = 26;
 			item.useTime = 9;
@@ -57,7 +57,7 @@ namespace Tremor.Items
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI, 0.0f, 0.0f);
+			Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI, 0.0f, 0.0f);
 			return false;
 		}
 	}

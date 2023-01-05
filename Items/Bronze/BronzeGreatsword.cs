@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Bronze
 {
-	public class BronzeGreatsword : ModItem
+	public class BronzeGreatsword:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 11;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 42;
 			item.height = 42;
 			item.useTime = 21;

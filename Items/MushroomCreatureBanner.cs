@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MushroomCreatureBanner : ModItem
+	public class MushroomCreatureBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

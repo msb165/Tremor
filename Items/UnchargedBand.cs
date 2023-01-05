@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class UnchargedBand : ModItem
+	public class UnchargedBand:TremorModItem
 	{
 		public override void SetDefaults()
 		{

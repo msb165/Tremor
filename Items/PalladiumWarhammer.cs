@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PalladiumWarhammer : ModItem
+	public class PalladiumWarhammer:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 41;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 38;
 			item.height = 38;
 			item.useTime = 39;

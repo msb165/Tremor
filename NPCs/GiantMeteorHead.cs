@@ -8,7 +8,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class GiantMeteorHead : ModNPC
+	public class GiantMeteorHead:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -70,6 +70,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> spawnInfo.spawnTileY < Main.rockLayer && spawnInfo.player.ZoneMeteor && NPC.downedBoss3 && Main.dayTime ? 0.01f : 0f;
+			=> spawnInfo.SpawnTileY < Main.rockLayer && spawnInfo.Player.ZoneMeteor && NPC.downedBoss3 && Main.dayTime ? 0.01f : 0f;
 	}
 }

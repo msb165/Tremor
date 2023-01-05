@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SpiderPie : ModItem
+	public class SpiderPie:TremorModItem
 	{
 		public override void SetDefaults()
 		{

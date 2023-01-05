@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items.Furniture
 {
-	public class IceSink : ModItem
+	public class IceSink:TremorModItem
 	{
 		public override void SetStaticDefaults()
 		{

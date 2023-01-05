@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ThrowingWrench : ModItem
+	public class ThrowingWrench:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 25;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 28;
 			item.noUseGraphic = true;
 			item.maxStack = 999;

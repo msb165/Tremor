@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Ancient
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class AncientDragonMask : ModItem
+	public class AncientDragonMask:TremorModItem
 	{
 
 		public override void SetDefaults()

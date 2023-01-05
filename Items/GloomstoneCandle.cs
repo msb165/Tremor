@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GloomstoneCandle : ModItem
+	public class GloomstoneCandle:TremorModItem
 	{
 		public override void SetDefaults()
 		{

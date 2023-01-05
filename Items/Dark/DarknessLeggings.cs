@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Dark
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class DarknessLeggings : ModItem
+	public class DarknessLeggings:TremorModItem
 	{
 
 		public override void SetDefaults()

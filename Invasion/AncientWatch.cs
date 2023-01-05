@@ -1,4 +1,5 @@
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.Items;
@@ -6,7 +7,7 @@ using Tremor.Items.Souls;
 
 namespace Tremor.Invasion
 {
-	public class AncientWatch : ModItem
+	public class AncientWatch:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -37,15 +38,15 @@ namespace Tremor.Invasion
 			return true;
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
 			Main.NewText("Paradox Cohort is striking from nowhere!", 39, 86, 134);
-			Main.PlaySound(mod.GetSoundSlot(SoundType.Music, "Sounds/Music/Wrath1"), (int)player.position.X, (int)player.position.Y, 0);
-			Main.PlaySound(15, (int)player.position.X, (int)player.position.Y, 0);
+			SoundEngine.PlaySound(SoundID.SoundByIndex[(ushort)MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Wrath1")], player.position);//Variant 0
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[15], player.position);//Variant 0
 			if (Main.netMode != 1)
 			{
-				NPC.NewNPC((int)player.Center.X, (int)player.Center.Y - 200, ModContent.NPCType<Titan_>());
+				NPC.NewNPC(null, (int)player.Center.X, (int)player.Center.Y - 200, ModContent.NPCType<Titan_>());
 			}
 			InvasionWorld.CyberWrath = true;
 			return true;

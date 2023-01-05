@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class CyclonePro : ModProjectile
+	public class CyclonePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

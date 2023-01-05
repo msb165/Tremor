@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Nano
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class NanoBreastplate : ModItem
+	public class NanoBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,12 +27,8 @@ namespace Tremor.Items.Nano
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.08f;
-			player.magicDamage += 0.08f;
-			player.minionDamage += 0.08f;
-			player.thrownDamage += 0.08f;
-			player.rangedDamage += 0.08f;
-			player.meleeSpeed += 0.10f;
+			player.GetDamage(DamageClass.Generic) += 0.08f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.10f;
 		}
 		public override void AddRecipes()
 		{

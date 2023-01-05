@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ConcentratedTincture : ModItem
+	public class ConcentratedTincture:TremorModItem
 	{
 		public override void SetDefaults()
 		{

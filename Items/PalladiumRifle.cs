@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PalladiumRifle : ModItem
+	public class PalladiumRifle:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 38;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 40;
 			item.height = 20;
 			item.useTime = 15;

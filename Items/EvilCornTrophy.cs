@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class EvilCornTrophy : ModItem
+	public class EvilCornTrophy:TremorModItem
 	{
 		public override void SetDefaults()
 		{

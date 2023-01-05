@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class AncientShield : ModProjectile
+	public class AncientShield:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -14,7 +14,7 @@ namespace Tremor.Projectiles
 			projectile.width = 28;
 			projectile.height = 36;
 			projectile.friendly = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.penetrate = 2;
 			projectile.tileCollide = false;
 			projectile.timeLeft = 660;

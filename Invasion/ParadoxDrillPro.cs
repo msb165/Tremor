@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Invasion
 {
 
-	public class ParadoxDrillPro : ModProjectile
+	public class ParadoxDrillPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -17,7 +17,7 @@ namespace Tremor.Invasion
 			projectile.tileCollide = false;
 			projectile.hide = true;
 			projectile.ownerHitCheck = true;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 		}
 
 		public override void AI()

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Candy
 {
-	public class CandyBar : ModItem
+	public class CandyBar:TremorModItem
 	{
 		public override void SetDefaults()
 		{

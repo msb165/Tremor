@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class Bounce : ModProjectile
+	public class Bounce:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -12,7 +12,7 @@ namespace Tremor.Projectiles
 			projectile.width = 16;
 			projectile.height = 16;
 			projectile.friendly = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.penetrate = 5;
 			projectile.timeLeft = 99999;
 			projectile.aiStyle = 1;
@@ -45,7 +45,7 @@ namespace Tremor.Projectiles
 				{
 					projectile.velocity.Y = -oldVelocity.Y;
 				}
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 10);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item10, projectile.position);
 			}
 			return false;
 		}

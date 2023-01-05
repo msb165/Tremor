@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Cobalt
 {
-	public class CobaltDisc : ModItem
+	public class CobaltDisc:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 35;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 48;
 			item.height = 48;
 			item.useTime = 20;

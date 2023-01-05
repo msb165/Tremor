@@ -5,7 +5,7 @@ using Tremor.Items.Dark;
 
 namespace Tremor.Items
 {
-	public class EternalAgony : ModItem
+	public class EternalAgony:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,7 +26,7 @@ namespace Tremor.Items
 			item.shoot = ModContent.ProjectileType<Projectiles.EternalAgonyPro>();
 			item.shootSpeed = 20.9F;
 			item.UseSound = SoundID.Item1;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.channel = true;
 		}
 

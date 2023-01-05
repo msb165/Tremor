@@ -3,7 +3,7 @@ using Tremor.Items.Wood;
 
 namespace Tremor.Items
 {
-	public class HardArmor : ModItem
+	public class HardArmor:TremorModItem
 	{
 
 		public override void SetDefaults()

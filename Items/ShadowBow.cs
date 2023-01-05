@@ -4,7 +4,7 @@ using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
-	public class ShadowBow : ModItem
+	public class ShadowBow:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.width = 16;
 			item.height = 32;
 			item.useTime = 25;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.shoot = 1;
 			item.shootSpeed = 10f;
 			item.useAnimation = 25;

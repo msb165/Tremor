@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class OrangeShelmet : ModItem
+	public class OrangeShelmet:TremorModItem
 	{
 
 		public override void SetDefaults()

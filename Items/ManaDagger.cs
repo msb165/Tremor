@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ManaDagger : ModItem
+	public class ManaDagger:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.height = 28;
 			item.rare = 7;
 			item.damage = 30;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 12;
 
 			item.useTime = 8;

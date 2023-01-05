@@ -3,9 +3,9 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class AlchemistGloveBuff : ModBuff
+	public class AlchemistGloveBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Master Alchemist Glove");
 			Description.SetDefault("Alchemic weapons throw two flasks");

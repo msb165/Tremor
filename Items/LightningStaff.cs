@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class LightningStaff : ModItem
+	public class LightningStaff:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -23,7 +23,7 @@ namespace Tremor.Items
 
 			item.knockBack = 4.4f;
 			Item.staff[item.type] = true;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.autoReuse = true;
 			item.value = 100000;
 			item.rare = 11;
@@ -41,7 +41,7 @@ namespace Tremor.Items
 			Vector2 vector82 = -Main.player[Main.myPlayer].Center + Main.MouseWorld;
 			float ai = Main.rand.Next(100);
 			Vector2 vector83 = Vector2.Normalize(vector82) * item.shootSpeed;
-			Projectile.NewProjectile(player.Center.X, player.Center.Y, vector83.X, vector83.Y, type, damage, .490f, player.whoAmI, vector82.ToRotation(), ai);
+			Projectile.NewProjectile(null, player.Center.X, player.Center.Y, vector83.X, vector83.Y, type, damage, .490f, player.whoAmI, vector82.ToRotation(), ai);
 			return false;
 		}
 

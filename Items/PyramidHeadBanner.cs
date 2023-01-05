@@ -4,7 +4,7 @@ using Tremor.Tiles;
 
 namespace Tremor.Items
 {
-	public class PyramidHeadBanner : ModItem
+	public class PyramidHeadBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

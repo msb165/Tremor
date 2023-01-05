@@ -4,13 +4,13 @@ using Tremor.Items.Doom;
 
 namespace Tremor.Items
 {
-	public class Voltager : ModItem
+	public class Voltager:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 212;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 28;
 			item.height = 30;
 			item.useTime = 30;

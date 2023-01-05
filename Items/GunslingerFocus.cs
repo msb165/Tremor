@@ -6,7 +6,7 @@ using Tremor.Items.Sparks;
 
 namespace Tremor.Items
 {
-	public class GunslingerFocus : ModItem
+	public class GunslingerFocus:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -30,8 +30,8 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.rangedDamage += 0.06f;
-			player.rangedCrit += 12;
+			player.GetDamage(DamageClass.Ranged) += 0.06f;
+			player.GetCritChance(DamageClass.Ranged) += 12;
 		}
 
 		public override void AddRecipes()

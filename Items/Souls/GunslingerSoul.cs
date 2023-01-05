@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Souls
 {
-	public class GunslingerSoul : ModItem
+	public class GunslingerSoul:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -29,8 +29,8 @@ namespace Tremor.Items.Souls
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.rangedDamage += 0.1f;
-			player.rangedCrit += 15;
+			player.GetDamage(DamageClass.Ranged) += 0.1f;
+			player.GetCritChance(DamageClass.Ranged) += 15;
 		}
 
 		public override void AddRecipes()

@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Chain
 {
-	public class SnowballChaingun : ModItem
+	public class SnowballChaingun:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 30;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 40;
 			item.height = 20;
 			item.useTime = 7;

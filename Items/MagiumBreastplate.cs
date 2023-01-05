@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class MagiumBreastplate : ModItem
+	public class MagiumBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,7 +28,7 @@ namespace Tremor.Items
 		public override void UpdateEquip(Player player)
 		{
 			player.statManaMax2 += 40;
-			player.magicDamage += 0.1f;
+			player.GetDamage(DamageClass.Magic) += 0.1f;
 		}
 
 		public override void AddRecipes()

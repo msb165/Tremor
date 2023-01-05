@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class DeathHooksPro : ModProjectile
+	public class DeathHooksPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -25,7 +25,7 @@ namespace Tremor.Projectiles
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D texture = ModContent.GetTexture("Tremor/Projectiles/DeathHooks_Chain");
+			Texture2D texture = Mod.GetTexture("Tremor/Projectiles/DeathHooks_Chain");
 
 			Vector2 position = projectile.Center;
 			Vector2 mountedCenter = Main.player[projectile.owner].MountedCenter;
@@ -73,7 +73,7 @@ namespace Tremor.Projectiles
 			{
 				Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, ModContent.DustType<Dusts.NightmareFlame>(), projectile.oldVelocity.X * 0.5f, projectile.oldVelocity.Y * 2f, 100, default(Color), 2f);
 			}
-			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y, 0);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Dig, projectile.position);//Variant 0
 		}
 
 		public override void OnHitPvp(Player target, int damage, bool crit)

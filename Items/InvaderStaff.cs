@@ -4,12 +4,12 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class InvaderStaff : ModItem
+	public class InvaderStaff:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 			item.damage = 85;
-			item.summon = true;
+			item.DamageType = DamageClass.Summon;
 			item.mana = 12;
 			item.width = 26;
 			item.height = 28;

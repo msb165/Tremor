@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PalladiumDisc : ModItem
+	public class PalladiumDisc:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 36;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 48;
 			item.height = 48;
 			item.useTime = 20;

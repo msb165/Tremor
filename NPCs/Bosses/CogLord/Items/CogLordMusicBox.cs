@@ -1,13 +1,13 @@
 using Terraria.ModLoader;
+using Terraria.ID;
 
 namespace Tremor.NPCs.Bosses.CogLord.Items
 {
-	public class CogLordMusicBox : ModItem
+	public class CogLordMusicBox:TremorModItem
 	{
 		public override void SetDefaults()
 		{
-
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.Swing;
 			item.useTurn = true;
 			item.useAnimation = 15;
 			item.useTime = 10;
@@ -16,7 +16,7 @@ namespace Tremor.NPCs.Bosses.CogLord.Items
 			item.createTile = ModContent.TileType<Tiles.CogLordMusicBox>();
 			item.width = 24;
 			item.height = 24;
-			item.rare = 4;
+			item.rare = ItemRarityID.LightRed;
 			item.value = 100000;
 			item.accessory = true;
 		}

@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class VulcanBlade : ModItem
+	public class VulcanBlade:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 545;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 46;
 			item.height = 48;
 			item.useTime = 45;
@@ -36,7 +36,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 	}
 }

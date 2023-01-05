@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Bronze
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class BronzeGreaves : ModItem
+	public class BronzeGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items.Bronze
 
 		public override void UpdateEquip(Player player)
 		{
-			player.magicCrit += 6;
+			player.GetCritChance(DamageClass.Magic) += 6;
 		}
 		public override void AddRecipes()
 		{

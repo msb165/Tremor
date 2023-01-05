@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class LivingTombstonePro : ModProjectile
+	public class LivingTombstonePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

@@ -4,7 +4,7 @@ using Tremor.Items.Ancient;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class GuardianGreaves : ModItem
+	public class GuardianGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()

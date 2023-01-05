@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.ZombieEvent.Mobs
 {
 
-	public class Bonecing : ModNPC
+	public class Bonecing:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{

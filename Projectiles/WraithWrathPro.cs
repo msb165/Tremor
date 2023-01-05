@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class WraithWrathPro : ModProjectile
+	public class WraithWrathPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -24,7 +24,7 @@ namespace Tremor.Projectiles
 		{
 			if (projectile.localAI[0] == 0f)
 			{
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 20);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item20, projectile.position);
 			}
 			projectile.localAI[0] += 1f;
 			if (projectile.localAI[0] > 3f)
@@ -53,7 +53,7 @@ namespace Tremor.Projectiles
 
 		public override void Kill(int timeLeft)
 		{
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 110);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item110, projectile.position);
 			for (int num158 = 0; num158 < 20; num158++)
 			{
 				int num159 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 54, projectile.velocity.X * 0.1f, projectile.velocity.Y * 0.1f, 0, default(Color), 0.5f);
@@ -83,7 +83,7 @@ namespace Tremor.Projectiles
 					}
 					value12.Normalize();
 					value12 *= Main.rand.Next(70, 101) * 0.1f;
-					Projectile.NewProjectile(projectile.oldPosition.X + projectile.width / 2, projectile.oldPosition.Y + projectile.height / 2, value12.X, value12.Y, ModContent.ProjectileType<Projectiles.WraithCloud>(), (int)(projectile.damage * 0.8), projectile.knockBack * 0.8f, projectile.owner, 0f, 0f);
+					Projectile.NewProjectile(null, projectile.oldPosition.X + projectile.width / 2, projectile.oldPosition.Y + projectile.height / 2, value12.X, value12.Y, ModContent.ProjectileType<Projectiles.WraithCloud>(), (int)(projectile.damage * 0.8), projectile.knockBack * 0.8f, projectile.owner, 0f, 0f);
 				}
 			}
 		}

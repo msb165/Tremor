@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Crystal
 {
-	public class ChargedCrystal : ModItem
+	public class ChargedCrystal:TremorModItem
 	{
 		public override void SetDefaults()
 		{

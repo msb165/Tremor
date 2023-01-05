@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class EyeMonolithBuff : ModBuff
+	public class EyeMonolithBuff:TremorModBuff
 	{
 		public override void SetDefaults()
 		{
@@ -14,7 +14,7 @@ namespace Tremor.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.minionDamage += 0.15f;
+			player.GetDamage(DamageClass.Summon) += 0.15f;
 		}
 	}
 }

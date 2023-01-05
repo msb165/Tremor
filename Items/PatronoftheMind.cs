@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class PatronoftheMind : ModItem
+	public class PatronoftheMind:TremorModItem
 	{
 		public override void SetDefaults()
 		{

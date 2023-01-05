@@ -7,7 +7,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class GiantGastropod : ModNPC
+	public class GiantGastropod:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -60,7 +60,7 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 72, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for(int i = 0; i < 2; ++i)
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot($"Gores/GGGore{i+1}"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/GGGore{i+1}"), 1f);
 
 				for (int k = 0; k < 20; k++)
 				{
@@ -71,6 +71,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && !Main.dayTime && NPC.downedMoonlord && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.player.ZoneHoly && spawnInfo.spawnTileY < Main.worldSurface ? 0.01f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && !Main.dayTime && NPC.downedMoonlord && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.Player.ZoneHallow && spawnInfo.SpawnTileY < Main.worldSurface ? 0.01f : 0f;
 	}
 }

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class DreadLancePro : ModProjectile
+	public class DreadLancePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class WhiteGoldHelmet : ModItem
+	public class WhiteGoldHelmet:TremorModItem
 	{
 		const int ShootType = ProjectileID.HeatRay; 
 		const float ShootRange = 600.0f; 
@@ -39,8 +39,8 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.rangedDamage += 0.2f;
-			player.meleeDamage += 0.2f;
+			player.GetDamage(DamageClass.Ranged) += 0.2f;
+			player.GetDamage(DamageClass.Melee) += 0.2f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -65,7 +65,7 @@ namespace Tremor.Items
 			int Target = -1;
 			for (int k = 0; k < Main.npc.Length; k++)
 			{
-				if (Main.npc[k].active && Main.npc[k].lifeMax > 5 && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].Distance(Main.player[item.owner].Center) <= ShootRange && Collision.CanHitLine(Main.player[item.owner].Center, 4, 4, Main.npc[k].Center, 4, 4))
+				if (Main.npc[k].active && Main.npc[k].lifeMax > 5 && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].Distance(Main.player[item.playerIndexTheItemIsReservedFor].Center) <= ShootRange && Collision.CanHitLine(Main.player[item.playerIndexTheItemIsReservedFor].Center, 4, 4, Main.npc[k].Center, 4, 4))
 				{
 					Target = k;
 					break;
@@ -76,17 +76,17 @@ namespace Tremor.Items
 
 		int GetDamage()
 		{
-			return (10 * ((int)Main.player[item.owner].magicDamage + (int)Main.player[item.owner].meleeDamage + (int)Main.player[item.owner].minionDamage + (int)Main.player[item.owner].rangedDamage + (int)Main.player[item.owner].thrownDamage)) + 15;
+			return Main.player[item.playerIndexTheItemIsReservedFor].GetSpecialProjectileDamage(10, 15);
 		}
 
 		void Shoot(int Target, int Damage)
 		{
-			Vector2 velocity = Helper.VelocityToPoint(Main.player[item.owner].Center, Main.npc[Target].Center, ShootSpeed);
+			Vector2 velocity = Helper.VelocityToPoint(Main.player[item.playerIndexTheItemIsReservedFor].Center, Main.npc[Target].Center, ShootSpeed);
 			for (int l = 0; l < ShootCount; l++)
 			{
 				velocity.X = velocity.X + Main.rand.Next(-spread, spread + 1) * spreadMult;
 				velocity.Y = velocity.Y + Main.rand.Next(-spread, spread + 1) * spreadMult;
-				int i = Projectile.NewProjectile(Main.player[item.owner].Center.X, Main.player[item.owner].Center.Y, velocity.X, velocity.Y, ModContent.ProjectileType<Projectiles.WhiteGoldKnife>(), 100, ShootKN, item.owner);
+				int i = Projectile.NewProjectile(null, Main.player[item.playerIndexTheItemIsReservedFor].Center.X, Main.player[item.playerIndexTheItemIsReservedFor].Center.Y, velocity.X, velocity.Y, ModContent.ProjectileType<Projectiles.WhiteGoldKnife>(), 100, ShootKN, item.playerIndexTheItemIsReservedFor);
 			}
 		}
 

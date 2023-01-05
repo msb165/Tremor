@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Souls
 {
-	public class SorcererSoul : ModItem
+	public class SorcererSoul:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -30,8 +30,8 @@ namespace Tremor.Items.Souls
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.statManaMax2 += 60;
-			player.magicDamage += 0.1f;
-			player.magicCrit += 15;
+			player.GetDamage(DamageClass.Magic) += 0.1f;
+			player.GetCritChance(DamageClass.Magic) += 15;
 		}
 
 		public override void AddRecipes()

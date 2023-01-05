@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Dungeon
 {
-	public class IceChestItem : ModItem
+	public class IceChestItem:TremorModItem
 	{
 		public override void SetDefaults()
 		{

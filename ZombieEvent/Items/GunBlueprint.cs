@@ -3,7 +3,7 @@ using Tremor.Items;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class GunBlueprint : ModItem
+	public class GunBlueprint:TremorModItem
 	{
 		public override void SetDefaults()
 		{

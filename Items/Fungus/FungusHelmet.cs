@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Fungus
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class FungusHelmet : ModItem
+	public class FungusHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()

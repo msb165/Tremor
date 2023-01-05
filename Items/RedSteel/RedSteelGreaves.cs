@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.RedSteel
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class RedSteelGreaves : ModItem
+	public class RedSteelGreaves:TremorModItem
 	{
 		public override void SetDefaults()
 		{

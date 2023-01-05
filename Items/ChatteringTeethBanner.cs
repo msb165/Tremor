@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ChatteringTeethBanner : ModItem
+	public class ChatteringTeethBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

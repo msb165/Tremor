@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class HallowedVisage : ModItem
+	public class HallowedVisage:TremorModItem
 	{
 
 		public override void SetDefaults()

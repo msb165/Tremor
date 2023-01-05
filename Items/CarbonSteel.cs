@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class CarbonSteel : ModItem
+	public class CarbonSteel:TremorModItem
 	{
 		public override void SetDefaults()
 		{

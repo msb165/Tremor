@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class Warkee : ModProjectile
+	public class Warkee:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

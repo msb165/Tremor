@@ -5,7 +5,7 @@ using Tremor.Items.Doom;
 
 namespace Tremor.Tiles
 {
-	public class DoombrickTile : ModTile
+	public class DoombrickTile:TremorModTile
 	{
 		public override void SetDefaults()
 		{

@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class AmethystBlade : ModItem
+	public class AmethystBlade:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 13;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 46;
 			item.height = 48;
 			item.useTime = 25;

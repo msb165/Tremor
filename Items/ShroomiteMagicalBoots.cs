@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ShroomiteMagicalBoots : ModItem
+	public class ShroomiteMagicalBoots:TremorModItem
 	{
 
 		public override void SetDefaults()

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Cobalt
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class CobaltVisage : ModItem
+	public class CobaltVisage:TremorModItem
 	{
 
 		public override void SetDefaults()

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Candent : ModItem
+	public class Candent:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,8 +26,8 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.meleeDamage += 0.07f;
-			player.meleeCrit += 7;
+			player.GetDamage(DamageClass.Melee) += 0.07f;
+			player.GetCritChance(DamageClass.Melee) += 7;
 		}
 
 		public override void AddRecipes()

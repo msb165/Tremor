@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Projectiles
 {
 
-	public class ChainjawPro : ModProjectile
+	public class ChainjawPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -16,7 +16,7 @@ namespace Tremor.Projectiles
 			projectile.tileCollide = false;
 			projectile.hide = true;
 			projectile.ownerHitCheck = true;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()

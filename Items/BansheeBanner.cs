@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class BansheeBanner : ModItem
+	public class BansheeBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

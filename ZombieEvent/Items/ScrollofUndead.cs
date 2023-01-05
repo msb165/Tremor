@@ -8,7 +8,7 @@ using Tremor.Tiles;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class ScrollofUndead : ModItem
+	public class ScrollofUndead:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -46,7 +46,7 @@ namespace Tremor.ZombieEvent.Items
 			return true;
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
 			Main.NewText("Undead creatures are rising from ground!", 175, 75, 255);

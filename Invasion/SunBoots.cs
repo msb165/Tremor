@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class SunBoots : ModItem
+	public class SunBoots:TremorModItem
 	{
 
 		public override void SetDefaults()

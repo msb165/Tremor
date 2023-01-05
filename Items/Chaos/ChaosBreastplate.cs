@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Chaos
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class ChaosBreastplate : ModItem
+	public class ChaosBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()

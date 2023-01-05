@@ -6,13 +6,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GehennaStaff : ModItem
+	public class GehennaStaff:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 455;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 15;
 			item.width = 46;
 			item.height = 48;
@@ -44,7 +44,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 	}
 }

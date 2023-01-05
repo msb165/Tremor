@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.ArchDemon
 {
-	public class ArchDemonBanner : ModItem
+	public class ArchDemonBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TheGhostClaymore : ModItem
+	public class TheGhostClaymore:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -21,7 +21,7 @@ namespace Tremor.Items
 			item.autoReuse = false;
 			item.shoot = ModContent.ProjectileType<Projectiles.TheGhostClaymorePro>();
 			item.shootSpeed = 16f;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()

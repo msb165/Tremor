@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Granite
 {
-	public class GraniteBeetleBanner : ModItem
+	public class GraniteBeetleBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

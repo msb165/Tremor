@@ -4,7 +4,7 @@ using Tremor.Items.Dark;
 
 namespace Tremor.Items.Alchemist
 {
-	public class Alchemator : ModItem
+	public class Alchemator:TremorModItem
 	{
 		public override void SetDefaults()
 		{

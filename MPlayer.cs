@@ -27,12 +27,12 @@ namespace Tremor
 	// Todo: transfer more to a general class
 	public class MPlayer : ModPlayer
 	{
-		public static MPlayer GetModPlayer(Player player)
-			=> player.GetModPlayer<MPlayer>();
+		public static MPlayer GetModPlayer(Player player) => player.GetModPlayer<MPlayer>();
 
 		// Buffs and debuffs
 		public bool fragileContiion;
 
+		//TODO: [Skipped for 1.4] Add proper custom damage type for this
 		// Alchemist
 		public float alchemicalDamage;
 		public float alchemicalKbAddition;
@@ -79,7 +79,7 @@ namespace Tremor
 		{
 			// Reset conditions
 			if (fragileContiion)
-				player.statDefense = 0;
+				Player.statDefense = 0;
 		}
 
 		public override void OnEnterWorld(Player player)
@@ -201,13 +201,13 @@ namespace Tremor
 				{
 					Item item = new Item(); // item used for initializing
 
-					mod.Logger.Info("==========");
-					mod.Logger.Info("Combined recipe for: " + string.Join(", ", armor.Select(x =>
+					Mod.Logger.Info("==========");
+					Mod.Logger.Info("Combined recipe for: " + string.Join(", ", armor.Select(x =>
 					{
 						item.SetDefaults(x);
 						return item.Name;
 					})));
-					mod.Logger.Info("==========");
+					Mod.Logger.Info("==========");
 
 					var reqItems = new List<Item>();
 					var reqTiles = new List<int>();
@@ -271,8 +271,8 @@ namespace Tremor
 					// make strings, log
 					string items = "* " + string.Join(" + ", reqItems.Select(x => $"{x.stack} {{{{item link|{x.Name}}}}}"));
 					string tiles = "* Crafted at " + string.Join(" / ", reqTileNames.Select(x => $"{{{{item link|{x}}}}}"));
-					mod.Logger.Info($"{items}\n{tiles}");
-					mod.Logger.Info("==========\n");
+					Mod.Logger.Info($"{items}\n{tiles}");
+					Mod.Logger.Info("==========\n");
 				}
 			}
 		}

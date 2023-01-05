@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items.Furniture
 {
-	public class IceGrandfatherClock : ModItem
+	public class IceGrandfatherClock:TremorModItem
 	{
 		public override void SetStaticDefaults()
 		{

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class ElectricBolt : ModProjectile
+	public class ElectricBolt:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -45,7 +45,7 @@ namespace Tremor.Projectiles
 
 		public override void Kill(int timeLeft)
 		{
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
 		}
 
 		public override Color? GetAlpha(Color lightColor)

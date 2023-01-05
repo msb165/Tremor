@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class ChainedRocketPro : ModProjectile
+	public class ChainedRocketPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -15,7 +15,7 @@ namespace Tremor.Projectiles
 			projectile.height = 34;
 			projectile.friendly = true;
 			projectile.penetrate = -5; // Penetrates NPCs infinitely.
-			projectile.melee = true; // Deals melee dmg.
+			projectile.DamageType = DamageClass.Melee; // Deals melee dmg.
 
 			projectile.aiStyle = 15; // Set the aiStyle to that of a flail.
 			projectile.timeLeft = 500;
@@ -93,13 +93,13 @@ namespace Tremor.Projectiles
 				vector64 *= Main.rand.Next(45, 65) * 0.1f;
 				vector64 = vector64.RotatedBy((Main.rand.NextDouble() - 0.5) * 1.5707963705062866, default(Vector2));
 				//"nichego" is "nothing" in Russian
-				//Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector64.X, vector64.Y, ModContent.ProjectileType<nichego>(), projectile.damage, projectile.knockBack, projectile.owner, -10f, 0f);
+				//Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, vector64.X, vector64.Y, ModContent.ProjectileType<nichego>(), projectile.damage, projectile.knockBack, projectile.owner, -10f, 0f);
 			}
 		}
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D texture = ModContent.GetTexture("Tremor/Projectiles/ChainedRocket_Chain");
+			Texture2D texture = Mod.GetTexture("Tremor/Projectiles/ChainedRocket_Chain");
 
 			Vector2 position = projectile.Center;
 			Vector2 mountedCenter = Main.player[projectile.owner].MountedCenter;

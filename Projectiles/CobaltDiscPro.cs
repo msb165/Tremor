@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class CobaltDiscPro : ModProjectile
+	public class CobaltDiscPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

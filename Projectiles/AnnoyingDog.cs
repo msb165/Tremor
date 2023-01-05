@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class AnnoyingDog : ModProjectile
+	public class AnnoyingDog:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Invasion
 {
-	class ParadoxCohortMusicBoxTile : ModTile
+	class ParadoxCohortMusicBoxTile:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -23,15 +23,15 @@ namespace Tremor.Invasion
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 16, 48, ModContent.ItemType<ParadoxCohortMusicBox>());
+			Item.NewItem(null, i * 16, j * 16, 16, 48, ModContent.ItemType<ParadoxCohortMusicBox>());
 		}
 
 		public override void MouseOver(int i, int j)
 		{
 			Player player = Main.player[Main.myPlayer];
 			player.noThrow = 2;
-			player.showItemIcon = true;
-			player.showItemIcon2 = ModContent.ItemType<ParadoxCohortMusicBox>();
+			player.cursorItemIconEnabled = true;
+			player.cursorItemIconID = ModContent.ItemType<ParadoxCohortMusicBox>();
 		}
 	}
 }

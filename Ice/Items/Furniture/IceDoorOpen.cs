@@ -8,7 +8,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Ice.Items.Furniture
 {
-	public class IceDoorOpen : ModTile
+	public class IceDoorOpen:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -59,12 +59,12 @@ namespace Tremor.Ice.Items.Furniture
 			TileID.Sets.HousingWalls[Type] = true; //needed for non-solid blocks to count as walls
 			AddMapEntry(new Color(87, 144, 165));
 			adjTiles = new int[] { TileID.OpenDoor };
-			closeDoorID = ModContent.TileType<IceDoorClosed>();
+			CloseDoorID = ModContent.TileType<IceDoorClosed>();
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 48, ModContent.ItemType<IceDoor>());
+			Item.NewItem(null, i * 16, j * 16, 32, 48, ModContent.ItemType<IceDoor>());
 		}
 	}
 }

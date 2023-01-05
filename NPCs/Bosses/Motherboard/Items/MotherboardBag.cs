@@ -5,7 +5,7 @@ using Tremor.Items.Souls;
 
 namespace Tremor.NPCs.Bosses.Motherboard.Items
 {
-	public class MotherboardBag : ModItem
+	public class MotherboardBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

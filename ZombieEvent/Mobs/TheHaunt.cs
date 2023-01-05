@@ -6,7 +6,7 @@ using Tremor.ZombieEvent.Items;
 namespace Tremor.ZombieEvent.Mobs
 {
 
-	public class TheHaunt : ModNPC
+	public class TheHaunt:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -54,7 +54,7 @@ namespace Tremor.ZombieEvent.Mobs
 				int halfLength = npc.width / 2 / 16 + 1;
 				if (Main.rand.NextBool(4))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CursedInk>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CursedInk>());
 				}
 			}
 		}
@@ -69,12 +69,12 @@ namespace Tremor.ZombieEvent.Mobs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, 61, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 61, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 62, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 62, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 63, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 63, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 61, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 61, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 62, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 62, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 63, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 63, 1f);
 			}
 		}
 

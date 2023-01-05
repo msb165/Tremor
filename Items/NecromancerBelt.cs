@@ -5,7 +5,7 @@ using Tremor.Items.Flesh;
 
 namespace Tremor.Items
 {
-	public class NecromancerBelt : ModItem
+	public class NecromancerBelt:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,7 +28,7 @@ namespace Tremor.Items
 		public override void UpdateAccessory(Player player, bool hideVisual)
 
 		{
-			player.minionKB += 0.2f;
+			player.GetKnockback(DamageClass.Summon) += 0.2f;
 			player.maxMinions += 1;
 		}
 

@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	//ported from my tAPI mod because I don't want to make more artwork
-	public class Eyezor : ModItem
+	public class Eyezor:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 37;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 20;
 			item.height = 12;
 			item.useTime = 6;

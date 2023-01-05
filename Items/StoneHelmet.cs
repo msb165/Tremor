@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class StoneHelmet : ModItem
+	public class StoneHelmet:TremorModItem
 	{
 		public override void SetDefaults()
 		{

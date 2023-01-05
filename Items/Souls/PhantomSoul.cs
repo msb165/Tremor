@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Souls
 {
-	public class PhantomSoul : ModItem
+	public class PhantomSoul:TremorModItem
 	{
 		public override void SetDefaults()
 		{

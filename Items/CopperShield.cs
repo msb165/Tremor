@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class CopperShield : ModItem
+	public class CopperShield:TremorModItem
 	{
 		public override void SetDefaults()
 		{

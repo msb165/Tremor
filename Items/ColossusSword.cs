@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ColossusSword : ModItem
+	public class ColossusSword:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 22;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 56;
 			item.height = 56;
 			item.useTime = 30;

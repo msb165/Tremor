@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class AtisBlood : ModItem
+	public class AtisBlood:TremorModItem
 	{
 		public override void SetDefaults()
 		{

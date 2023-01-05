@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class TitanCrystal : ModNPC
+	public class TitanCrystal:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{

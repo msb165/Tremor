@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ShadowCutter : ModItem
+	public class ShadowCutter:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 60;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 48;
 			item.height = 48;
 			item.useTime = 25;

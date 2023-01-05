@@ -6,9 +6,10 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.GameContent.Generation;
 using Terraria.ID;
+using Terraria.IO;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using Terraria.World.Generation;
+using Terraria.WorldBuilding;
 using Tremor.Ice;
 using Tremor.Ice.Dungeon;
 using Tremor.Ice.Items;
@@ -21,7 +22,7 @@ using SteelBar = Tremor.Items.Steel.SteelBar;
 
 namespace Tremor
 {
-	public class TremorWorld : ModWorld
+	public class TremorWorld : Terraria.ModLoader.ModSystem
 	{
 		public enum Boss
 		{
@@ -50,8 +51,7 @@ namespace Tremor
 			WallOfShadow
 		}
 
-		private Boss FindBossMatch(string boss)
-			=> (Boss)Enum.Parse(typeof(Boss), boss, true);
+		private Boss FindBossMatch(string boss) => (Boss)Enum.Parse(typeof(Boss), boss, true);
 
 		public static Dictionary<Boss, bool> downedBoss;
 
@@ -66,13 +66,11 @@ namespace Tremor
 				downedBoss[boss] = false;
 			}
 		}
-
-		public override void Initialize()
+		public override void OnWorldLoad()
 		{
 			Init();
 		}
-
-		public override TagCompound Save()
+		public override void SaveWorldData(TagCompound tag)
 		{
 			var downed = new List<string>();
 
@@ -82,13 +80,10 @@ namespace Tremor
 				downed.Add(char.ToLowerInvariant(boss[0]) + boss.Substring(1));
 			}
 
-			return new TagCompound
-			{
-				["downed"] = downed
-			};
+			tag["downed"] = downed;
 		}
 
-		public override void Load(TagCompound tag)
+		public override void LoadWorldData(TagCompound tag)
 		{
 			var downed = tag.GetList<string>("downed");
 			foreach (string boss in downed)
@@ -101,23 +96,23 @@ namespace Tremor
 			}
 		}
 
-		public override void LoadLegacy(BinaryReader reader)
-		{
-			int loadVersion = reader.ReadInt32();
-			if (loadVersion == 0)
-			{
-				BitsByte flags = reader.ReadByte();
+		//public override void LoadLegacy(BinaryReader reader)
+		//{
+		//	int loadVersion = reader.ReadInt32();
+		//	if (loadVersion == 0)
+		//	{
+		//		BitsByte flags = reader.ReadByte();
 
-				foreach (Boss boss in Enum.GetValues(typeof(Boss)).Cast<Boss>())
-				{
-					downedBoss[boss] = flags[(int)boss];
-				}
-			}
-			else
-			{
-				mod.Logger.Info("Tremor: Unknown loadVersion: " + loadVersion);
-			}
-		}
+		//		foreach (Boss boss in Enum.GetValues(typeof(Boss)).Cast<Boss>())
+		//		{
+		//			downedBoss[boss] = flags[(int)boss];
+		//		}
+		//	}
+		//	else
+		//	{
+		//		mod.Logger.Info("Tremor: Unknown loadVersion: " + loadVersion);
+		//	}
+		//}
 
 		public override void NetSend(BinaryWriter writer)
 		{
@@ -172,7 +167,7 @@ namespace Tremor
 		public static int IceTiles;
 		public static int RuinsTiles;
 
-		private void GenArgite(GenerationProgress progress)
+		private void GenArgite(GenerationProgress progress, GameConfiguration configuration)
 		{
 			progress.Message = "Generating argite";
 
@@ -184,7 +179,7 @@ namespace Tremor
 			}
 		}
 
-		private void GenGlacier(GenerationProgress progress)
+		private void GenGlacier(GenerationProgress progress, GameConfiguration configuration)
 		{
 			progress.Message = "Generating glacier...";
 			IL_19:
@@ -206,7 +201,7 @@ namespace Tremor
 			{
 				size = 270;
 			}
-			if (Main.tile[startPositionX, startPositionY].type == TileID.SnowBlock)
+			if (Main.tile[startPositionX, startPositionY].TileType == TileID.SnowBlock)
 			{
 				var startX = startPositionX;
 				var startY = startPositionY;
@@ -219,21 +214,21 @@ namespace Tremor
 					{
 						if (Vector2.Distance(new Vector2(startX, startY), new Vector2(x, y)) <= size)
 						{
-							if (Main.tile[x, y].wall == 40 || Main.tile[x, y].wall == 71)
+							if (Main.tile[x, y].WallType == 40 || Main.tile[x, y].WallType == 71)
 							{
-								Main.tile[x, y].wall = (ushort)ModContent.WallType<IceWall>();
+								Main.tile[x, y].WallType = (ushort)ModContent.WallType<IceWall>();
 							}
-							if (Main.tile[x, y].type == 23 || Main.tile[x, y].type == 147 || Main.tile[x, y].type == 161 || Main.tile[x, y].type == 25 || Main.tile[x, y].type == 163 || Main.tile[x, y].type == 164 || Main.tile[x, y].type == 200 || Main.tile[x, y].type == 0 || Main.tile[x, y].type == 2 || Main.tile[x, y].type == TileID.Stone || Main.tile[x, y].type == TileID.Sand)
+							if (Main.tile[x, y].TileType == 23 || Main.tile[x, y].TileType == 147 || Main.tile[x, y].TileType == 161 || Main.tile[x, y].TileType == 25 || Main.tile[x, y].TileType == 163 || Main.tile[x, y].TileType == 164 || Main.tile[x, y].TileType == 200 || Main.tile[x, y].TileType == 0 || Main.tile[x, y].TileType == 2 || Main.tile[x, y].TileType == TileID.Stone || Main.tile[x, y].TileType == TileID.Sand)
 							{
-								Main.tile[x, y].type = (ushort)ModContent.TileType<IceBlock>();
+								Main.tile[x, y].TileType = (ushort)ModContent.TileType<IceBlock>();
 							}
-							if (Main.tile[x, y].liquid == 3)
+							if (Main.tile[x, y].LiquidAmount == 3)
 							{
 								WorldGen.PlaceTile(x, y, 162);
 							}
-							if (Main.tile[x, y].type == 6 || Main.tile[x, y].type == 7 || Main.tile[x, y].type == 8 || Main.tile[x, y].type == 9 || Main.tile[x, y].type == 221 || Main.tile[x, y].type == 222 || Main.tile[x, y].type == 223 || Main.tile[x, y].type == 204 || Main.tile[x, y].type == 166 || Main.tile[x, y].type == 167 || Main.tile[x, y].type == 168 || Main.tile[x, y].type == 169 || Main.tile[x, y].type == 221 || Main.tile[x, y].type == 107 || Main.tile[x, y].type == 108 || Main.tile[x, y].type == 22 || Main.tile[x, y].type == 111 || Main.tile[x, y].type == 123 || Main.tile[x, y].type == 224 || Main.tile[x, y].type == 40 || Main.tile[x, y].type == 59)
+							if (Main.tile[x, y].TileType == 6 || Main.tile[x, y].TileType == 7 || Main.tile[x, y].TileType == 8 || Main.tile[x, y].TileType == 9 || Main.tile[x, y].TileType == 221 || Main.tile[x, y].TileType == 222 || Main.tile[x, y].TileType == 223 || Main.tile[x, y].TileType == 204 || Main.tile[x, y].TileType == 166 || Main.tile[x, y].TileType == 167 || Main.tile[x, y].TileType == 168 || Main.tile[x, y].TileType == 169 || Main.tile[x, y].TileType == 221 || Main.tile[x, y].TileType == 107 || Main.tile[x, y].TileType == 108 || Main.tile[x, y].TileType == 22 || Main.tile[x, y].TileType == 111 || Main.tile[x, y].TileType == 123 || Main.tile[x, y].TileType == 224 || Main.tile[x, y].TileType == 40 || Main.tile[x, y].TileType == 59)
 							{
-								Main.tile[x, y].type = (ushort)ModContent.TileType<IceOre>();
+								Main.tile[x, y].TileType = (ushort)ModContent.TileType<IceOre>();
 							}
 						}
 					}
@@ -242,7 +237,7 @@ namespace Tremor
 				{
 					int positionX = WorldGen.genRand.Next(0, Main.maxTilesX);
 					int positionY = WorldGen.genRand.Next(0, Main.maxTilesY);
-					if (Main.tile[positionX, positionY].type == ModContent.TileType<IceBlock>())
+					if (Main.tile[positionX, positionY].TileType == ModContent.TileType<IceBlock>())
 					{
 						WorldGen.TileRunner(positionX, positionY, WorldGen.genRand.Next(2, 8), WorldGen.genRand.Next(2, 8), (ushort)ModContent.TileType<IceOre>(), false, 0f, 0f, false, true);
 					}
@@ -251,20 +246,20 @@ namespace Tremor
 				{
 					for (int i = 0; i < Main.maxTilesY; i++)
 					{
-						if (Main.tile[k, i].type == ModContent.TileType<IceBlock>())
+						if (Main.tile[k, i].TileType == ModContent.TileType<IceBlock>())
 						{
-							if (Main.tile[k + 1, i].active() && Main.tile[k, i - 1].active() && Main.tile[k - 1, i].active() && Main.tile[k, i + 1].active())
+							if (Main.tile[k + 1, i].HasTile && Main.tile[k, i - 1].HasTile && Main.tile[k - 1, i].HasTile && Main.tile[k, i + 1].HasTile)
 							{
 							}
 							else
 							{
-								Main.tile[k, i].type = (ushort)ModContent.TileType<VeryVeryIce>();
+								Main.tile[k, i].TileType = (ushort)ModContent.TileType<VeryVeryIce>();
 							}
 						}
 					}
 				}
 
-				while (!Main.tile[startX, startY].active() && startY < Main.worldSurface)
+				while (!Main.tile[startX, startY].HasTile && startY < Main.worldSurface)
 				{
 					startY++;
 				}
@@ -408,7 +403,7 @@ namespace Tremor
 				goto IL_19;
 		}
 
-		private void GenChests(GenerationProgress progress)
+		private void GenChests(GenerationProgress progress, GameConfiguration configuration)
 		{
 			progress.Message = "Placing dungeon chest";
 
@@ -466,8 +461,8 @@ namespace Tremor
 				var tile = Main.tile[chest.x, chest.y]; // the chest tile
 
 				// ??
-				if (tile.type == TileID.Containers
-					&& (tile.frameX == 3 * 36 || tile.frameX == 4 * 36)
+				if (tile.TileType == TileID.Containers
+					&& (tile.TileFrameX == 3 * 36 || tile.TileFrameX == 4 * 36)
 					&& WorldGen.genRand.NextBool(4))
 				{
 					foreach (var item in chest.item.Where(x => x != null))
@@ -485,7 +480,7 @@ namespace Tremor
 						}
 					}
 				}
-				else if (tile.type == ModContent.TileType<Tiles.RuinChest>())
+				else if (tile.TileType == ModContent.TileType<Tiles.RuinChest>())
 				{
 					// fixed: ruin chest replacing
 					chest.AddItem(Utils.SelectRandom(WorldGen.genRand, ModContent.ItemType<RustySlasher>(), ModContent.ItemType<FirebenderTome>(),
@@ -501,7 +496,7 @@ namespace Tremor
 					chest.AddItem(ItemID.Bomb, WorldGen.genRand.Next(8, 16));
 					chest.AddItem(ItemID.GoldCoin, WorldGen.genRand.Next(1, 4));
 				}
-				else if (tile.type == ModContent.TileType<IceChest>())
+				else if (tile.TileType == ModContent.TileType<IceChest>())
 				{
 					// fixed: ice chest replacing
 					chest.AddItem(Utils.SelectRandom(WorldGen.genRand, ModContent.ItemType<FrostLance>(), ModContent.ItemType<FrozenPaxe>(),
@@ -519,7 +514,7 @@ namespace Tremor
 			int k = j;
 			while (k < Main.maxTilesY)
 			{
-				if (Main.tile[i, k].active() && Main.tileSolid[Main.tile[i, k].type])
+				if (Main.tile[i, k].HasTile && Main.tileSolid[Main.tile[i, k].TileType])
 				{
 					int num = k - 1;
 					if (Main.tile[i, num - 1].lava() || Main.tile[i - 1, num - 1].lava())
@@ -530,46 +525,50 @@ namespace Tremor
 					{
 						return false;
 					}
-					if (Main.wallDungeon[Main.tile[i, num].wall])
+					if (Main.wallDungeon[Main.tile[i, num].WallType])
 					{
 						return false;
 					}
 					Tile tile = Main.tile[i - 1, num + 1];
 					Tile tile2 = Main.tile[i, num + 1];
-					if (!tile.nactive() || !Main.tileSolid[tile.type])
+					if (!tile.HasTile || !Main.tileSolid[tile.TileType])
 					{
 						return false;
 					}
-					if (!tile2.nactive() || !Main.tileSolid[tile2.type])
+					if (!tile2.HasTile || !Main.tileSolid[tile2.TileType])
 					{
 						return false;
 					}
-					if (tile.blockType() != 0)
+					if (tile.BlockType != 0)
 					{
-						tile.slope(0);
-						tile.halfBrick(false);
+						tile.Slope = 0;
+						tile.IsHalfBlock = false;
 					}
-					if (tile2.blockType() != 0)
+					if (tile2.BlockType != 0)
 					{
-						tile2.slope(0);
-						tile2.halfBrick(false);
+						tile2.Slope = 0;
+						tile2.IsHalfBlock = false;
 					}
-					Main.tile[i - 1, num - 1].active(true);
-					Main.tile[i - 1, num - 1].type = (ushort)ModContent.TileType<LunarRootTile>();
-					Main.tile[i - 1, num - 1].frameX = 0;
-					Main.tile[i - 1, num - 1].frameY = 0;
-					Main.tile[i, num - 1].active(true);
-					Main.tile[i, num - 1].type = (ushort)ModContent.TileType<LunarRootTile>();
-					Main.tile[i, num - 1].frameX = 18;
-					Main.tile[i, num - 1].frameY = 0;
-					Main.tile[i - 1, num].active(true);
-					Main.tile[i - 1, num].type = (ushort)ModContent.TileType<LunarRootTile>();
-					Main.tile[i - 1, num].frameX = 0;
-					Main.tile[i - 1, num].frameY = 18;
-					Main.tile[i, num].active(true);
-					Main.tile[i, num].type = (ushort)ModContent.TileType<LunarRootTile>();
-					Main.tile[i, num].frameX = 18;
-					Main.tile[i, num].frameY = 18;
+					var tileUL = Main.tile[i - 1, num - 1];
+					var tileU = Main.tile[i, num - 1];
+					var tileL = Main.tile[i - 1, num];
+					var tileC = Main.tile[i, num];
+					tileUL.HasTile = true;
+					tileUL.TileType = (ushort)ModContent.TileType<LunarRootTile>();
+					tileUL.TileFrameX = 0;
+					tileUL.TileFrameY = 0;
+					tileU.HasTile = true;
+					tileU.TileType = (ushort)ModContent.TileType<LunarRootTile>();
+					tileU.TileFrameX = 18;
+					tileU.TileFrameY = 0;
+					tileL.HasTile = true;
+					tileL.TileType = (ushort)ModContent.TileType<LunarRootTile>();
+					tileL.TileFrameX = 0;
+					tileL.TileFrameY = 18;
+					tileC.HasTile = true;
+					tileC.TileType = (ushort)ModContent.TileType<LunarRootTile>();
+					tileC.TileFrameX = 18;
+					tileC.TileFrameY = 18;
 					return true;
 				}
 				k++;
@@ -601,7 +600,7 @@ namespace Tremor
 				int num4 = 5;
 				while (num4 < Main.worldSurface)
 				{
-					if (Main.tile[j, num4].active() && Main.tile[j, num4].type == (ushort)ModContent.TileType<CometiteOreTile>())
+					if (Main.tile[j, num4].active() && Main.tile[j, num4].TileType == (ushort)ModContent.TileType<CometiteOreTile>())
 					{
 						num++;
 						if (num > num3)
@@ -624,7 +623,7 @@ namespace Tremor
 				int k = (int)(Main.worldSurface * 0.3);
 				while (k < Main.maxTilesY)
 				{
-					if (Main.tile[num7, k].active() && Main.tileSolid[Main.tile[num7, k].type])
+					if (Main.tile[num7, k].active() && Main.tileSolid[Main.tile[num7, k].TileType])
 					{
 						int num8 = 0;
 						int num9 = 15;
@@ -635,12 +634,12 @@ namespace Tremor
 								if (WorldGen.SolidTile(l, m))
 								{
 									num8++;
-									if (Main.tile[l, m].type == 189 || Main.tile[l, m].type == 202)
+									if (Main.tile[l, m].TileType == 189 || Main.tile[l, m].TileType == 202)
 									{
 										num8 -= 100;
 									}
 								}
-								else if (Main.tile[l, m].liquid > 0)
+								else if (Main.tile[l, m].LiquidAmount > 0)
 								{
 									num8--;
 								}
@@ -705,7 +704,7 @@ namespace Tremor
 			{
 				for (int n = j - num; n < j + num; n++)
 				{
-					if (Main.tile[m, n].active() && Main.tile[m, n].type == 21)
+					if (Main.tile[m, n].active() && Main.tile[m, n].TileType == 21)
 					{
 						return false;
 					}
@@ -723,11 +722,11 @@ namespace Tremor
 						float num6 = (float)Math.Sqrt(num4 * num4 + num5 * num5);
 						if (num6 < num * 0.9 + Main.rand.Next(-4, 5))
 						{
-							if (!Main.tileSolid[Main.tile[num2, num3].type])
+							if (!Main.tileSolid[Main.tile[num2, num3].TileType])
 							{
 								Main.tile[num2, num3].active(false);
 							}
-							Main.tile[num2, num3].type = (ushort)ModContent.TileType<CometiteOreTile>();
+							Main.tile[num2, num3].TileType = (ushort)ModContent.TileType<CometiteOreTile>();
 						}
 					}
 				}
@@ -759,13 +758,13 @@ namespace Tremor
 					float num16 = (float)Math.Sqrt(num14 * num14 + num15 * num15);
 					if (num16 < num * 0.7)
 					{
-						if (Main.tile[num12, num13].type == 5 || Main.tile[num12, num13].type == 32 || Main.tile[num12, num13].type == 352)
+						if (Main.tile[num12, num13].TileType == 5 || Main.tile[num12, num13].TileType == 32 || Main.tile[num12, num13].TileType == 352)
 						{
 							WorldGen.KillTile(num12, num13, false, false, false);
 						}
-						Main.tile[num12, num13].liquid = 0;
+						Main.tile[num12, num13].LiquidAmount = 0;
 					}
-					if (Main.tile[num12, num13].type == (ushort)ModContent.TileType<HardCometiteOreTile>())
+					if (Main.tile[num12, num13].TileType == (ushort)ModContent.TileType<HardCometiteOreTile>())
 					{
 						if (!WorldGen.SolidTile(num12 - 1, num13) && !WorldGen.SolidTile(num12 + 1, num13) && !WorldGen.SolidTile(num12, num13 - 1) && !WorldGen.SolidTile(num12, num13 + 1))
 						{
@@ -792,11 +791,11 @@ namespace Tremor
 						float num21 = (float)Math.Sqrt(num19 * num19 + num20 * num20);
 						if (num21 < num * 0.8)
 						{
-							if (Main.tile[num17, num18].type == 5 || Main.tile[num17, num18].type == 32 || Main.tile[num17, num18].type == 352)
+							if (Main.tile[num17, num18].TileType == 5 || Main.tile[num17, num18].TileType == 32 || Main.tile[num17, num18].TileType == 352)
 							{
 								WorldGen.KillTile(num17, num18, false, false, false);
 							}
-							Main.tile[num17, num18].type = (ushort)ModContent.TileType<CometiteOreTile>();
+							Main.tile[num17, num18].TileType = (ushort)ModContent.TileType<CometiteOreTile>();
 							WorldGen.SquareTileFrame(num17, num18, true);
 						}
 					}
@@ -814,11 +813,11 @@ namespace Tremor
 						float num26 = (float)Math.Sqrt(num24 * num24 + num25 * num25);
 						if (num26 < num * 0.85)
 						{
-							if (Main.tile[num22, num23].type == 5 || Main.tile[num22, num23].type == 32 || Main.tile[num22, num23].type == 352)
+							if (Main.tile[num22, num23].TileType == 5 || Main.tile[num22, num23].TileType == 32 || Main.tile[num22, num23].TileType == 352)
 							{
 								WorldGen.KillTile(num22, num23, false, false, false);
 							}
-							Main.tile[num22, num23].type = (ushort)ModContent.TileType<HardCometiteOreTile>();
+							Main.tile[num22, num23].TileType = (ushort)ModContent.TileType<HardCometiteOreTile>();
 							WorldGen.SquareTileFrame(num22, num23, true);
 						}
 					}
@@ -832,12 +831,11 @@ namespace Tremor
 			TremorPlayer modPlayer = Main.player[Main.myPlayer].GetModPlayer<TremorPlayer>();
 			modPlayer.NovaMonolith = false;
 		}
-
-		public override void TileCountsAvailable(int[] tileCounts)
+		public override void TileCountsAvailable(ReadOnlySpan<int> tileCounts)
 		{
 			CometTiles = tileCounts[ModContent.TileType<Tiles.CometiteOreTile>()] + tileCounts[ModContent.TileType<Tiles.HardCometiteOreTile>()];
-			GraniteTiles = tileCounts[368] + tileCounts[180];
-			RuinsTiles = tileCounts[120];
+			GraniteTiles = tileCounts[TileID.Granite] + tileCounts[TileID.BrownMoss];
+			RuinsTiles = tileCounts[TileID.Mudstone];
 			IceTiles = tileCounts[ModContent.TileType<IceBlock>()] + tileCounts[ModContent.TileType<IceOre>()] + tileCounts[ModContent.TileType<VeryVeryIce>()] + tileCounts[ModContent.TileType<DungeonBlock>()];
 		}
 	}

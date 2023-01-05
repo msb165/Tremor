@@ -6,13 +6,12 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items
 {
-	public class GlacierKnives : ModItem
+	public class GlacierKnives:TremorModItem
 	{
 		public override void SetDefaults()
 		{
-
 			item.damage = 32;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 36;
 			item.mana = 11;
 			item.height = 46;
@@ -58,7 +57,7 @@ namespace Tremor.Ice.Items
 					vector2 = new Vector2(position.X - 75f * (float)Math.Cos(angle), position.Y - 75f * (float)Math.Sin(angle));
 				}
 
-				Projectile.NewProjectile(vector2.X, vector2.Y, vX, vY, ModContent.ProjectileType<GlacierKnivesProj>(), damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, vector2.X, vector2.Y, vX, vY, ModContent.ProjectileType<GlacierKnivesProj>(), damage, knockBack, Main.myPlayer);
 
 			}
 			return false;

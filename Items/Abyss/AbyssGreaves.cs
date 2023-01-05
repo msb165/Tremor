@@ -7,7 +7,7 @@ using Tremor.Items.Souls;
 namespace Tremor.Items.Abyss
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class AbyssGreaves : ModItem
+	public class AbyssGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -31,7 +31,7 @@ namespace Tremor.Items.Abyss
 		public override void UpdateEquip(Player player)
 		{
 			player.maxMinions += 2;
-			player.minionDamage += 0.14f;
+			player.GetDamage(DamageClass.Summon) += 0.14f;
 		}
 
 		public override void AddRecipes()

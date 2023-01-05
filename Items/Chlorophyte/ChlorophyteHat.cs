@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Chlorophyte
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class ChlorophyteHat : ModItem
+	public class ChlorophyteHat:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items.Chlorophyte
 
 		public override void UpdateEquip(Player player)
 		{
-			player.minionDamage += 0.25f;
+			player.GetDamage(DamageClass.Summon) += 0.25f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MineralTransmutator : ModItem
+	public class MineralTransmutator:TremorModItem
 	{
 		public override void SetDefaults()
 		{

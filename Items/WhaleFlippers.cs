@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Wings)]
-	public class WhaleFlippers : ModItem
+	public class WhaleFlippers:TremorModItem
 	{
 
 		public override void SetDefaults()

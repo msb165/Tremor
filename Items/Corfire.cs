@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Corfire : ModItem
+	public class Corfire:TremorModItem
 	{
 		public override void SetDefaults()
 		{

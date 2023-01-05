@@ -11,7 +11,7 @@ using Tremor.Items.Alchemist.Flasks;
 namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
-	public class Alchemaster : ModNPC
+	public class Alchemaster:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -99,12 +99,12 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 74, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 					Dust.NewDust(npc.position, npc.width, npc.height, 74, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AlchemasterGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AlchemasterGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AlchemasterGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AlchemasterGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AlchemasterGore4"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/AlchemasterGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AlchemasterGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AlchemasterGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AlchemasterGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AlchemasterGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AlchemasterGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AlchemasterGore4"), 1f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 74, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 74, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 74, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
@@ -150,7 +150,7 @@ namespace Tremor.NPCs
 																										  // 1 аргумент - позиция из которой будет вылетать выстрел
 																										  // 2 аргумент - позиция в которую он должен полететь 
 																										  // 3 аргумент - скорость выстрела
-			Projectile.NewProjectile(npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, ModContent.ProjectileType<Projectiles.SparkingFlaskEvil>(), FlameShootDamage, FlameShootKN);
+			Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, ModContent.ProjectileType<Projectiles.SparkingFlaskEvil>(), FlameShootDamage, FlameShootKN);
 		}
 
 		bool CheckRunConditions()
@@ -202,7 +202,7 @@ namespace Tremor.NPCs
 			for (int i = 0; i < ((Main.expertMode) ? 3 : 1); i++)
 			{
 				Vector2 Velocity = Helper.VelocityToPoint(npc.Center, Helper.RandomPointInArea(new Vector2(Main.player[npc.target].Center.X - 10, Main.player[npc.target].Center.Y - 10), new Vector2(Main.player[npc.target].Center.X + 20, Main.player[npc.target].Center.Y + 20)), ShootSpeed);
-				int Proj = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ShootType, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent));
+				int Proj = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ShootType, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent));
 				Main.projectile[Proj].Center = npc.Center;
 			}
 		}
@@ -218,7 +218,7 @@ namespace Tremor.NPCs
 					if (TimeToState % StateTime_Minions / MinionsCount == 0)
 					{
 						Vector2 Position = Helper.RandomPointInArea(npc.Hitbox);
-						int index = NPC.NewNPC((int)Position.X, (int)Position.Y, ModContent.NPCType<PlagueSoul>());
+						int index = NPC.NewNPC(null, (int)Position.X, (int)Position.Y, ModContent.NPCType<PlagueSoul>());
 						Main.npc[index].Center = Position;
 					}
 					break;
@@ -228,7 +228,7 @@ namespace Tremor.NPCs
 		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
 			SpriteEffects Direction = (npc.target == -1) ? SpriteEffects.None : ((Main.player[npc.target].position.X < npc.position.X) ? SpriteEffects.None : SpriteEffects.FlipHorizontally);
-			spriteBatch.Draw(Main.npcTexture[npc.type], new Rectangle((int)(npc.position.X - Main.screenPosition.X), (int)(npc.position.Y - Main.screenPosition.Y), 248, 240), new Rectangle(0, Frame * 240, 248, 240), drawColor, 0, new Vector2(0, 0), Direction, 0);
+			spriteBatch.Draw(Terraria.GameContent.TextureAssets.Npc[npc.type].Value, new Rectangle((int)(npc.position.X - Main.screenPosition.X), (int)(npc.position.Y - Main.screenPosition.Y), 248, 240), new Rectangle(0, Frame * 240, 248, 240), drawColor, 0, new Vector2(0, 0), Direction, 0);
 			return false;
 		}
 
@@ -237,7 +237,7 @@ namespace Tremor.NPCs
 
 			if (Main.expertMode)
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 
 			if (Main.netMode != 1)
@@ -248,31 +248,31 @@ namespace Tremor.NPCs
 
 				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AlchemasterMask>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AlchemasterMask>());
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AlchemasterTrophy>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AlchemasterTrophy>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PlagueFlask>(), Main.rand.Next(30, 78));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PlagueFlask>(), Main.rand.Next(30, 78));
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PlagueFlask>(), Main.rand.Next(30, 78));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PlagueFlask>(), Main.rand.Next(30, 78));
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<LongFuse>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<LongFuse>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TheGlorch>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TheGlorch>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BadApple>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<BadApple>());
 				}
 				TremorWorld.Boss.Alchemaster.Downed();
 

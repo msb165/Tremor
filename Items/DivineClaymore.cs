@@ -7,13 +7,13 @@ using Tremor.Items.Doom;
 
 namespace Tremor.Items
 {
-	public class DivineClaymore : ModItem
+	public class DivineClaymore:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 232;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 46;
 			item.height = 48;
 			item.useTime = 30;
@@ -37,7 +37,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 		public override void AddRecipes()

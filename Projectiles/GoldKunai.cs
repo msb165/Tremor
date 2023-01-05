@@ -1,9 +1,10 @@
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class GoldKunai : ModProjectile
+	public class GoldKunai:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -27,7 +28,7 @@ namespace Tremor.Projectiles
 			{
 				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 73, projectile.oldVelocity.X * 0.7f, projectile.oldVelocity.Y * 0.7f);
 			}
-			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y, 1);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[0], projectile.position);//Variant 1
 		}
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

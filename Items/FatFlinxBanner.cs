@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class FatFlinxBanner : ModItem
+	public class FatFlinxBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

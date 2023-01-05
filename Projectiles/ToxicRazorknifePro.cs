@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Projectiles
 {
 	//ported from my tAPI mod because I don't want to make artwork
-	public class ToxicRazorknifePro : ModProjectile
+	public class ToxicRazorknifePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -16,7 +16,7 @@ namespace Tremor.Projectiles
 			projectile.friendly = true;
 			projectile.penetrate = -2;
 			projectile.tileCollide = true;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()

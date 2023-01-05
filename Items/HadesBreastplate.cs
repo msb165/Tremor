@@ -9,7 +9,7 @@ using Tremor.Items.Souls;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class HadesBreastplate : ModItem
+	public class HadesBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -46,7 +46,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 		public override void UpdateEquip(Player player)
@@ -57,11 +57,7 @@ namespace Tremor.Items
 			{
 				player.statDefense += 35;
 			}
-			player.meleeDamage += 0.45f;
-			player.thrownDamage += 0.45f;
-			player.rangedDamage += 0.45f;
-			player.magicDamage += 0.45f;
-			player.minionDamage += 0.45f;
+			player.GetDamage(DamageClass.Generic) += 0.45f;
 			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.45f;
 		}
 	}

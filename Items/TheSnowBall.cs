@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TheSnowBall : ModItem
+	public class TheSnowBall:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 27;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 9;
 			item.width = 40;
 			item.height = 40;

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Nano
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class NanoGreaves : ModItem
+	public class NanoGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Ancient
 {
-	public class AncientTablet : ModItem
+	public class AncientTablet:TremorModItem
 	{
 		public override void SetDefaults()
 		{

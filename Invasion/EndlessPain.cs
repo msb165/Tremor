@@ -7,7 +7,7 @@ using Tremor.Items.Souls;
 
 namespace Tremor.Invasion
 {
-	public class EndlessPain : ModItem
+	public class EndlessPain:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -16,7 +16,7 @@ namespace Tremor.Invasion
 			item.width = 18;
 			item.height = 56;
 			item.useTime = 18;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 25;
 			item.shoot = ModContent.ProjectileType<EndlessPainPro>();
 			item.shootSpeed = 4f;

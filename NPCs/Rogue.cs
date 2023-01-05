@@ -7,7 +7,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class Rogue : ModNPC
+	public class Rogue:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -67,11 +67,11 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot($"Gores/RogueGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/RogueGore{i+1}"), 1f);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> spawnInfo.spawnTileY < Main.rockLayer && !Main.dayTime ? 0.01f : 0f;
+			=> spawnInfo.SpawnTileY < Main.rockLayer && !Main.dayTime ? 0.01f : 0f;
 	}
 }

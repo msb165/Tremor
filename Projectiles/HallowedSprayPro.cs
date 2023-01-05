@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class HallowedSprayPro : ModProjectile
+	public class HallowedSprayPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

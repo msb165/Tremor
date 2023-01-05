@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class TatteredBannerBuff : ModBuff
+	public class TatteredBannerBuff:TremorModBuff
 	{
 		public override void SetDefaults()
 		{
@@ -15,11 +15,7 @@ namespace Tremor.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.meleeDamage += 0.25f;
-			player.rangedDamage += 0.25f;
-			player.minionDamage += 0.25f;
-			player.magicDamage += 0.25f;
-			player.thrownDamage += 0.25f;
+			player.GetDamage(DamageClass.Generic) += 0.25f;
 			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.25f;
 		}
 	}

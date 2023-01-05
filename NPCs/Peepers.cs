@@ -8,7 +8,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class Peepers : ModNPC
+	public class Peepers:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -50,7 +50,7 @@ namespace Tremor.NPCs
 			if (Main.netMode != 1 && TimeToShoot++ >= ShootRate && npc.target != -1)
 			{
 				Vector2 velocity = Vector2.Normalize(Main.player[npc.target].Center - npc.Center) * ShootSpeed;
-				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, ProjectileID.DeathLaser, ShootDamage, ShootKN);
+				Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, ProjectileID.DeathLaser, ShootDamage, ShootKN);
 
 				TimeToShoot = 0;
 			}
@@ -78,7 +78,7 @@ namespace Tremor.NPCs
 				}
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot($"Gores/PeepersGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/PeepersGore{i+1}"), 1f);
 			}
 			else
 			{
@@ -92,6 +92,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.player.ZoneDungeon && spawnInfo.spawnTileY > Main.rockLayer ? 0.01f : 0f;
+			=> Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.Player.ZoneDungeon && spawnInfo.SpawnTileY > Main.rockLayer ? 0.01f : 0f;
 	}
 }

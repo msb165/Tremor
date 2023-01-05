@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class NecromancerArmor : ModItem
+	public class NecromancerArmor:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,8 +27,8 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.minionDamage += 0.18f;
-			player.minionKB += 0.2f;
+			player.GetDamage(DamageClass.Summon) += 0.18f;
+			player.GetKnockback(DamageClass.Summon) += 0.2f;
 		}
 		public override void AddRecipes()
 		{

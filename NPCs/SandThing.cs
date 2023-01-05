@@ -7,7 +7,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class SandThing : ModNPC
+	public class SandThing:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -57,13 +57,13 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 19, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 19, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
 
-				Gore.NewGore(npc.position, npc.velocity, 220, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 221, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 222, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 220, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 221, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 222, 1f);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.player.ZoneDesert && NPC.downedBoss1 && Main.dayTime && spawnInfo.spawnTileY < Main.worldSurface ? 0.01f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.Player.ZoneDesert && NPC.downedBoss1 && Main.dayTime && spawnInfo.SpawnTileY < Main.worldSurface ? 0.01f : 0f;
 	}
 }

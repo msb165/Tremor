@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class StartrooperFlameburstPistol : ModItem
+	public class StartrooperFlameburstPistol:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.damage = 248;
 			item.width = 30;
 			item.height = 20;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.useTime = 30;
 			item.shoot = 666;
 

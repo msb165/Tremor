@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Fungus
 {
-	public class FungusSpear : ModItem
+	public class FungusSpear:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -12,7 +12,7 @@ namespace Tremor.Items.Fungus
 			item.width = 54;
 			item.height = 54;
 			item.noUseGraphic = true;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.useTime = 30;
 			item.shoot = ModContent.ProjectileType<Projectiles.FungusSpear>();
 			item.shootSpeed = 3f;

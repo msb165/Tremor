@@ -5,7 +5,7 @@ using Tremor.Items.Steel;
 namespace Tremor.Items.Afterlife
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class AfterlifeLeggings : ModItem
+	public class AfterlifeLeggings:TremorModItem
 	{
 
 		public override void SetDefaults()

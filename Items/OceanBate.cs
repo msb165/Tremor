@@ -5,14 +5,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class OceanBate : ModItem
+	public class OceanBate:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 168;
-			item.ranged = true;
-			item.melee = false;
+			item.DamageType = DamageClass.Ranged;
+			//item.melee = false;
 			item.width = 28;
 			item.height = 52;
 			item.useTime = 15;

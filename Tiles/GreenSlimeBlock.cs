@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Tiles
 {
-	public class GreenSlimeBlock : ModTile
+	public class GreenSlimeBlock:TremorModTile
 {
     public override void SetDefaults()
     {

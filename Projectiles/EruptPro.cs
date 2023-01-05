@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class EruptPro : ModProjectile
+	public class EruptPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -15,7 +15,7 @@ namespace Tremor.Projectiles
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
 			projectile.penetrate = 2;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.ignoreWater = true;
 			aiType = 598;
 		}
@@ -37,7 +37,7 @@ namespace Tremor.Projectiles
 			{
 				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 60, projectile.oldVelocity.X * 0.7f, projectile.oldVelocity.Y * 0.7f);
 			}
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 109);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item109, projectile.position);
 			if (projectile.owner == Main.myPlayer)
 			{
 				int num220 = Main.rand.Next(3, 5);
@@ -46,7 +46,7 @@ namespace Tremor.Projectiles
 					Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 					value17.Normalize();
 					value17 *= Main.rand.Next(10, 201) * 0.01f;
-					Projectile.NewProjectile(projectile.position.X, projectile.position.Y, value17.X, value17.Y, 297, projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
+					Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, value17.X, value17.Y, 297, projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
 				}
 			}
 		}
@@ -55,7 +55,7 @@ namespace Tremor.Projectiles
 		{
 			if (projectile.localAI[0] == 0f)
 			{
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 20);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item20, projectile.position);
 			}
 			projectile.localAI[0] += 1f;
 			if (projectile.localAI[0] > 3f)

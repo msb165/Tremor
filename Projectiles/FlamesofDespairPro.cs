@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class FlamesofDespairPro : ModProjectile
+	public class FlamesofDespairPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -38,19 +38,19 @@ namespace Tremor.Projectiles
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Vector2 drawOrigin = new Vector2(Main.projectileTexture[projectile.type].Width * 0.5f, projectile.height * 0.5f);
+			Vector2 drawOrigin = new Vector2(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value.Width * 0.5f, projectile.height * 0.5f);
 			for (int k = 0; k < projectile.oldPos.Length; k++)
 			{
 				Vector2 drawPos = projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, projectile.gfxOffY);
 				Color color = projectile.GetAlpha(lightColor) * ((projectile.oldPos.Length - k) / (float)projectile.oldPos.Length);
-				spriteBatch.Draw(Main.projectileTexture[projectile.type], drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
+				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
 			}
 			return true;
 		}
 
 		public override void Kill(int timeLeft)
 		{
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
 			projectile.position.X = projectile.position.X + projectile.width / 2;
 			projectile.position.Y = projectile.position.Y + projectile.height / 2;
 			projectile.width = 80;
@@ -86,25 +86,25 @@ namespace Tremor.Projectiles
 				{
 					scaleFactor10 = 1f;
 				}
-				int num633 = Gore.NewGore(new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 1.5f);
+				int num633 = Gore.NewGore(null, new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 1.5f);
 				Main.gore[num633].velocity *= scaleFactor10;
 				Gore expr_13E6D_cp_0 = Main.gore[num633];
 				expr_13E6D_cp_0.velocity.X = expr_13E6D_cp_0.velocity.X + 1f;
 				Gore expr_13E8D_cp_0 = Main.gore[num633];
 				expr_13E8D_cp_0.velocity.Y = expr_13E8D_cp_0.velocity.Y + 1f;
-				num633 = Gore.NewGore(new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 0.5f);
+				num633 = Gore.NewGore(null, new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 0.5f);
 				Main.gore[num633].velocity *= scaleFactor10;
 				Gore expr_13F30_cp_0 = Main.gore[num633];
 				expr_13F30_cp_0.velocity.X = expr_13F30_cp_0.velocity.X - 1f;
 				Gore expr_13F50_cp_0 = Main.gore[num633];
 				expr_13F50_cp_0.velocity.Y = expr_13F50_cp_0.velocity.Y + 1f;
-				num633 = Gore.NewGore(new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 1.5f);
+				num633 = Gore.NewGore(null, new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 1.5f);
 				Main.gore[num633].velocity *= scaleFactor10;
 				Gore expr_13FF3_cp_0 = Main.gore[num633];
 				expr_13FF3_cp_0.velocity.X = expr_13FF3_cp_0.velocity.X + 1f;
 				Gore expr_14013_cp_0 = Main.gore[num633];
 				expr_14013_cp_0.velocity.Y = expr_14013_cp_0.velocity.Y - 1f;
-				num633 = Gore.NewGore(new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 0.5f);
+				num633 = Gore.NewGore(null, new Vector2(projectile.position.X + projectile.width / 2 - 24f, projectile.position.Y + projectile.height / 2 - 24f), default(Vector2), Main.rand.Next(61, 64), 0.5f);
 				Main.gore[num633].velocity *= scaleFactor10;
 				Gore expr_140B6_cp_0 = Main.gore[num633];
 				expr_140B6_cp_0.velocity.X = expr_140B6_cp_0.velocity.X - 1f;

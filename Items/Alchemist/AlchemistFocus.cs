@@ -6,7 +6,7 @@ using Tremor.Items.Sparks;
 
 namespace Tremor.Items.Alchemist
 {
-	public class AlchemistFocus : ModItem
+	public class AlchemistFocus:TremorModItem
 	{
 
 		public override void SetDefaults()

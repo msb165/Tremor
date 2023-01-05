@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class RedBrickChimney : ModTile
+	public class RedBrickChimney:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -15,7 +15,7 @@ namespace Tremor.Tiles
         Main.tileLavaDeath[Type] = true;
         TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
         TileObjectData.addTile(Type);
-        animationFrameHeight = 56;
+        AnimationFrameHeight = 56;
         TileObjectData.newTile.CoordinateHeights = new[]{ 16, 16, 18};
         AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
 	AddMapEntry(new Color(117, 117, 117));
@@ -34,6 +34,6 @@ public override void AnimateTile(ref int frame, ref int frameCounter)
 
     public override void KillMultiTile(int i, int j, int frameX, int frameY)
     {
-        Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<Items.RedBrickChimney>());
+        Item.NewItem(null, i * 16, j * 16, 32, 16, ModContent.ItemType<Items.RedBrickChimney>());
     }
 }}

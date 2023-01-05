@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MoltenStaff : ModItem
+	public class MoltenStaff:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 26;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 8;
 			item.width = 48;
 			item.height = 48;

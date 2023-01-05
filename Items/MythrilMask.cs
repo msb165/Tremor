@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class MythrilMask : ModItem
+	public class MythrilMask:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.minionDamage += 0.20f;
+			player.GetDamage(DamageClass.Summon) += 0.20f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

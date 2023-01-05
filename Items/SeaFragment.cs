@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SeaFragment : ModItem
+	public class SeaFragment:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class SpectreFlower : ModProjectile
+	public class SpectreFlower:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -17,7 +17,7 @@ namespace Tremor.Projectiles
 			projectile.penetrate = 5;
 			projectile.timeLeft = 9000;
 			projectile.extraUpdates = 1;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 2;
 			aiType = ProjectileID.Bullet;
@@ -48,7 +48,7 @@ namespace Tremor.Projectiles
 					projectile.velocity.Y = -oldVelocity.Y;
 				}
 				projectile.velocity *= 0.75f;
-				Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y, 0);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Dig, projectile.position);//Variant 0
 			}
 			return false;
 		}
@@ -59,7 +59,7 @@ namespace Tremor.Projectiles
 			{
 				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 176, projectile.oldVelocity.X * 0.1f, projectile.oldVelocity.Y * 0.1f);
 			}
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 78);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item78, projectile.position);
 		}
 
 		public override void AI()

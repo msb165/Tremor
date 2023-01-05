@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.RedSteel
 {
-	public class ChippyRedSteelSword : ModItem
+	public class ChippyRedSteelSword:TremorModItem
 	{
 		public override void SetDefaults()
 		{

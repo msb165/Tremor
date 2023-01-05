@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class BrambleStaff : ModItem
+	public class BrambleStaff:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -25,7 +25,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item44;
 			item.autoReuse = true;
 			item.shoot = ModContent.ProjectileType<Projectiles.Minions.Bramble>();
-			item.summon = true;
+			item.DamageType = DamageClass.Summon;
 			item.sentry = true;
 		}
 
@@ -40,11 +40,11 @@ namespace Tremor.Items
 			return true;
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			if (player.altFunctionUse == 2)
 			{
-				player.MinionNPCTargetAim();
+				player.MinionNPCTargetAim(false);
 			}
 			return base.UseItem(player);
 		}

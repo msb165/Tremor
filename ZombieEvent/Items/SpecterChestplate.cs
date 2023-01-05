@@ -5,7 +5,7 @@ using Tremor.Tiles;
 namespace Tremor.ZombieEvent.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class SpecterChestplate : ModItem
+	public class SpecterChestplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -29,7 +29,7 @@ namespace Tremor.ZombieEvent.Items
 		public override void UpdateEquip(Player player)
 		{
 			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.2f;
-			player.meleeDamage += 0.12f;
+			player.GetDamage(DamageClass.Melee) += 0.12f;
 			player.maxMinions += 2;
 		}
 

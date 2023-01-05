@@ -4,10 +4,11 @@ using Terraria.ModLoader;
 
 using Microsoft.Xna.Framework;
 using Tremor.Items;
+using Terraria.Audio;
 
 namespace Tremor.NPCs
 {
-	public class MightyNimbus : ModNPC
+	public class MightyNimbus:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -35,8 +36,8 @@ namespace Tremor.NPCs
 			npc.buffImmune[31] = false;
 			npc.DeathSound = SoundID.NPCDeath33;
 			npc.value = Item.buyPrice(0, 0, 7, 0);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<MightyNimbusBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<MightyNimbusBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -48,12 +49,12 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 2f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 2f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 3f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 2f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 2f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 3f);
 
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 76, 0f, 0f, 200, npc.color, 1f);
@@ -64,15 +65,15 @@ namespace Tremor.NPCs
 		{
 			if (Main.netMode != 1 && Main.rand.Next(1000) == 0)
 			{
-				NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y, NPCID.AngryNimbus);
-				NPC.NewNPC((int)npc.position.X + 50, (int)npc.position.Y, NPCID.AngryNimbus);
+				NPC.NewNPC(null, (int)npc.position.X - 50, (int)npc.position.Y, NPCID.AngryNimbus);
+				NPC.NewNPC(null, (int)npc.position.X + 50, (int)npc.position.Y, NPCID.AngryNimbus);
 			}
 
 			if (Main.rand.Next(700) == 0)
-				Main.PlaySound(29, (int)npc.position.X, (int)npc.position.Y, Main.rand.Next(41, 44));
+				SoundEngine.PlaySound(SoundID.Zombie1, npc.position);//Variant Main.rand.Next(41, 44)
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && NPC.downedMoonlord && Helper.NoZoneAllowWater(spawnInfo) && Main.raining && spawnInfo.spawnTileY < Main.worldSurface ? 0.01f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && NPC.downedMoonlord && Helper.NoZoneAllowWater(spawnInfo) && Main.raining && spawnInfo.SpawnTileY < Main.worldSurface ? 0.01f : 0f;
 	}
 }

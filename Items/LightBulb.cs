@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class LightBulb : ModItem
+	public class LightBulb:TremorModItem
 	{
 		public override void SetDefaults()
 		{

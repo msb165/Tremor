@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class DragonSpear : ModItem
+	public class DragonSpear:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -12,7 +12,7 @@ namespace Tremor.Items
 			item.width = 44;
 			item.height = 44;
 			item.noUseGraphic = true;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.useTime = 16;
 			item.shoot = ModContent.ProjectileType<Projectiles.DragonSpearPro>();
 			item.shootSpeed = 3f;

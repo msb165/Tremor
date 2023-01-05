@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class ProfessorGlasses : ModItem
+	public class ProfessorGlasses:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -22,9 +22,10 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)
-		{
-			drawHair = true;
-		}
+		//TODO: [Skipped for 1.4] DrawHair
+		//public override void DrawHair(ref bool drawHair, ref bool drawAltHair)
+		//{
+		//	drawHair = true;
+		//}
 	}
 }

@@ -7,7 +7,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class Crimer : ModNPC
+	public class Crimer:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -42,11 +42,11 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				if(Main.netMode != 1)
-					NPC.NewNPC((int)npc.position.X, (int)npc.position.Y - 48, NPCID.Crimslime);
+					NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y - 48, NPCID.Crimslime);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.player.ZoneCrimson && Main.hardMode && spawnInfo.spawnTileY < Main.worldSurface ? 0.02f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.Player.ZoneCrimson && Main.hardMode && spawnInfo.SpawnTileY < Main.worldSurface ? 0.02f : 0f;
 	}
 }

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Adamantite
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class AdamantiteVisage : ModItem
+	public class AdamantiteVisage:TremorModItem
 	{
 		public override void SetDefaults()
 		{

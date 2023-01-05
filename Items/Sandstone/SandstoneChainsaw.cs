@@ -5,13 +5,13 @@ using Tremor.Items.Antlion;
 namespace Tremor.Items.Sandstone
 {
 
-	public class SandstoneChainsaw : ModItem
+	public class SandstoneChainsaw:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 16;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 20;
 			item.height = 12;
 			item.useTime = 15;

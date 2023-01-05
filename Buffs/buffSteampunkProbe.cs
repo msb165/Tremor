@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class buffSteampunkProbe : ModBuff
+	public class buffSteampunkProbe:TremorModBuff
 	{
 		int Probe = -1;
 
@@ -19,10 +19,10 @@ namespace Tremor.Buffs
 			if (player.buffTime[buffIndex] >= 2)
 			{
 				if (Probe == -1)
-					Probe = Projectile.NewProjectile(player.position.X, player.position.Y, 0, 0, ModContent.ProjectileType<Projectiles.projSteampunkProbe>(), 0, 0, player.whoAmI);
+					Probe = Projectile.NewProjectile(null, player.position.X, player.position.Y, 0, 0, ModContent.ProjectileType<Projectiles.projSteampunkProbe>(), 0, 0, player.whoAmI);
 				if (!Main.projectile[Probe].active || Main.projectile[Probe].type != ModContent.ProjectileType<Projectiles.projSteampunkProbe>())
 				{
-					Probe = Projectile.NewProjectile(player.position.X, player.position.Y, 0, 0, ModContent.ProjectileType<Projectiles.projSteampunkProbe>(), 0, 0, player.whoAmI);
+					Probe = Projectile.NewProjectile(null, player.position.X, player.position.Y, 0, 0, ModContent.ProjectileType<Projectiles.projSteampunkProbe>(), 0, 0, player.whoAmI);
 				}
 				Main.projectile[Probe].timeLeft = 6;
 			}

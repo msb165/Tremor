@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Marble
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class MarbleBreastplate : ModItem
+	public class MarbleBreastplate:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -25,7 +25,7 @@ namespace Tremor.Items.Marble
 
 		public override void UpdateEquip(Player p)
 		{
-			p.thrownDamage += 0.1f;
+			p.GetDamage(DamageClass.Throwing) += 0.1f;
 		}
 
 		public override void AddRecipes()

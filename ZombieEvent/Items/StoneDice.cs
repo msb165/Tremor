@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class StoneDice : ModItem
+	public class StoneDice:TremorModItem
 	{
 		public override void SetDefaults()
 		{

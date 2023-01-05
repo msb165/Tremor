@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class FlaskCoreBuff : ModBuff
+	public class FlaskCoreBuff:TremorModBuff
 	{
 		public override void SetDefaults()
 		{

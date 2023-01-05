@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class EnchantedBreastplate : ModItem
+	public class EnchantedBreastplate:TremorModItem
 	{
 		public override void SetDefaults()
 		{

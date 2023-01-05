@@ -5,7 +5,7 @@ using Tremor.Items.Doom;
 
 namespace Tremor.Items
 {
-	public class SpineBlade : ModItem
+	public class SpineBlade:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -24,7 +24,7 @@ namespace Tremor.Items
 			item.rare = 9;
 			item.autoReuse = true;
 			item.value = Item.sellPrice(0, 5, 0, 0);
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()

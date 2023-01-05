@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items
 {
-	public class GlacierWoodSword : ModItem
+	public class GlacierWoodSword:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 10;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 32;
 			item.height = 32;
 			item.useTime = 24;

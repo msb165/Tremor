@@ -4,7 +4,7 @@ using Tremor.Items.Crystal;
 
 namespace Tremor.Items
 {
-	public class TatteredBanner : ModItem
+	public class TatteredBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

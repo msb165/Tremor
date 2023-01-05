@@ -3,14 +3,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Blizzard : ModItem
+	public class Blizzard:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 35;
-			item.melee = false;
-			item.magic = true;
+			//item.melee = false;
+			item.DamageType = DamageClass.Magic;
 			item.width = 50;
 			item.height = 55;
 			item.useTime = 12;

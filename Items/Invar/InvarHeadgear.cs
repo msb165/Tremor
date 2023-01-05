@@ -25,7 +25,7 @@ namespace Tremor.Items.Invar
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.06f;
+			player.GetDamage(DamageClass.Melee) += 0.06f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -36,7 +36,7 @@ namespace Tremor.Items.Invar
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "6% increased melee damage";
-			player.meleeDamage += 0.06f;
+			player.GetDamage(DamageClass.Melee) += 0.06f;
 		}
 	}
 

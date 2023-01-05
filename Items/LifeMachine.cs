@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class LifeMachine : ModItem
+	public class LifeMachine:TremorModItem
 	{
 		public override void SetDefaults()
 		{

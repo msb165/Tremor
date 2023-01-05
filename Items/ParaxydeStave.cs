@@ -5,15 +5,15 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ParaxydeStave : ModItem
+	public class ParaxydeStave:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Starfury);
 
 			item.damage = 68;
-			item.melee = false;
-			item.magic = true;
+			//item.melee = false;
+			item.DamageType = DamageClass.Magic;
 			item.width = 42;
 			item.height = 46;
 			item.useTime = 20;

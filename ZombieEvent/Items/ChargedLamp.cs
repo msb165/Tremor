@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class ChargedLamp : ModItem
+	public class ChargedLamp:TremorModItem
 	{
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -19,8 +19,8 @@ namespace Tremor.ZombieEvent.Items
 			for (i = 0; i < 4; i++)
 			{
 				offsetAngle = (startAngle + deltaAngle * (i + i * i) / 2f) + 32f * i;
-				Projectile.NewProjectile(position.X, position.Y, (float)(Math.Sin(offsetAngle) * 5f), (float)(Math.Cos(offsetAngle) * 5f), item.shoot, damage, knockBack, item.owner);
-				Projectile.NewProjectile(position.X, position.Y, (float)(-Math.Sin(offsetAngle) * 5f), (float)(-Math.Cos(offsetAngle) * 5f), item.shoot, damage, knockBack, item.owner);
+				Projectile.NewProjectile(null, position.X, position.Y, (float)(Math.Sin(offsetAngle) * 5f), (float)(Math.Cos(offsetAngle) * 5f), item.shoot, damage, knockBack, item.playerIndexTheItemIsReservedFor);
+				Projectile.NewProjectile(null, position.X, position.Y, (float)(-Math.Sin(offsetAngle) * 5f), (float)(-Math.Cos(offsetAngle) * 5f), item.shoot, damage, knockBack, item.playerIndexTheItemIsReservedFor);
 			}
 			return false;
 		}
@@ -29,7 +29,7 @@ namespace Tremor.ZombieEvent.Items
 		{
 
 			item.damage = 60;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 26;
 			item.useTime = 60;
 			item.useAnimation = 60;

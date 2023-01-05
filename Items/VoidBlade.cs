@@ -4,13 +4,13 @@ using Tremor.Items.Dark;
 
 namespace Tremor.Items
 {
-	public class VoidBlade : ModItem
+	public class VoidBlade:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 72;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 46;
 			item.height = 48;
 			item.useTime = 44;

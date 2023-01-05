@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TheRib : ModItem
+	public class TheRib:TremorModItem
 	{
 		public override void SetDefaults()
 		{

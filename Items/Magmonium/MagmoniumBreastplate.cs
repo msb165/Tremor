@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Magmonium
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class MagmoniumBreastplate : ModItem
+	public class MagmoniumBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -25,11 +25,7 @@ namespace Tremor.Items.Magmonium
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.12f;
-			player.thrownDamage += 0.12f;
-			player.rangedDamage += 0.12f;
-			player.magicDamage += 0.12f;
-			player.minionDamage += 0.12f;
+			player.GetDamage(DamageClass.Generic) += 0.12f;
 			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.12f;
 		}
 

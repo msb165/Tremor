@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Bone
 {
-	public class itemBoneHook : ModItem
+	public class itemBoneHook:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 32;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 42;
 			item.height = 38;
 

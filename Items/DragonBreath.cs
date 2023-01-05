@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class DragonBreath : ModItem
+	public class DragonBreath:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 46;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 18;
 			item.height = 18;
 			item.useTime = 14;

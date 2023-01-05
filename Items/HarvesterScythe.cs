@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class HarvesterScythe : ModItem
+	public class HarvesterScythe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 30;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 66;
 			item.height = 50;
 			item.useTime = 24;
@@ -32,8 +32,8 @@ namespace Tremor.Items
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
 			int newLife = Main.rand.Next(damage / 4) + 3;
-			Main.player[item.owner].statLife += newLife;
-			Main.player[item.owner].HealEffect(newLife);
+			Main.player[item.playerIndexTheItemIsReservedFor].statLife += newLife;
+			Main.player[item.playerIndexTheItemIsReservedFor].HealEffect(newLife);
 		}
 
 	}

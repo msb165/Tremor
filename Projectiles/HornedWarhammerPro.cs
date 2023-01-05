@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class HornedWarhammerPro : ModProjectile
+	public class HornedWarhammerPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

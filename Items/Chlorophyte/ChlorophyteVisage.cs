@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Chlorophyte
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class ChlorophyteVisage : ModItem
+	public class ChlorophyteVisage:TremorModItem
 	{
 
 		public override void SetDefaults()

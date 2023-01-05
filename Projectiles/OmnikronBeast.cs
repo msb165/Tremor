@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class OmnikronBeast : ModProjectile
+	public class OmnikronBeast:TremorModProjectile
 	{
 		const int ShootRate = 15; // Частота выстрела (1 секунда = 60ед.)
 		const float ShootDistance = 300f; // Дальность стрельбы
@@ -64,7 +64,7 @@ namespace Tremor.Projectiles
 				if (NearestNPC == -1)
 					return;
 				Vector2 Velocity = Helper.VelocityToPoint(projectile.Center, Main.npc[NearestNPC].Center, ShootSpeed);
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, Velocity.X, Velocity.Y, ShootType, ShootDamage, ShootKnockback, projectile.owner);
+				Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, Velocity.X, Velocity.Y, ShootType, ShootDamage, ShootKnockback, projectile.owner);
 			}
 		}
 
@@ -75,7 +75,7 @@ namespace Tremor.Projectiles
 			base.AI();
 			if (projectile.localAI[0] == 0f)
 			{
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 20);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item20, projectile.position);
 			}
 			projectile.localAI[0] += 1f;
 			if (projectile.localAI[0] > 3f)

@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Nano
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class NanoHelmet : ModItem
+	public class NanoHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -30,10 +30,7 @@ namespace Tremor.Items.Nano
 		public override void UpdateEquip(Player player)
 		{
 			player.statManaMax2 += 60;
-			player.meleeCrit += 8;
-			player.rangedCrit += 8;
-			player.magicCrit += 8;
-			player.thrownCrit += 8;
+			player.GetCritChance(DamageClass.Generic) += 8;
 			player.GetModPlayer<MPlayer>().alchemicalCrit += 8;
 		}
 

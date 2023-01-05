@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class Cybermite : ModNPC
+	public class Cybermite:TremorModNPC
 	{
 		public Vector2 bossCenter
 		{
@@ -49,7 +49,7 @@ namespace Tremor.NPCs
 		public override void HitEffect(int hitDirection, double damage)
 		{
 			if (npc.life <= 0)
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CybermiteGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CybermiteGore"), 1f);
 		}
 	}
 }

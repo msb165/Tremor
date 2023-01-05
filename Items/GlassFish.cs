@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GlassFish : ModItem
+	public class GlassFish:TremorModItem
 	{
 		public override void SetDefaults()
 		{

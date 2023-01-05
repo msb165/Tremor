@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SandShuriken : ModItem
+	public class SandShuriken:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 27;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 26;
 			item.noUseGraphic = true;
 			item.maxStack = 1;

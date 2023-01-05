@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class HazardousChemicals : ModItem
+	public class HazardousChemicals:TremorModItem
 	{
 		public override void SetDefaults()
 		{

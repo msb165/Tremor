@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class BulbTorch : ModItem
+	public class BulbTorch:TremorModItem
 	{
 		public override void SetDefaults()
 		{

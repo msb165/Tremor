@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class RainStaff : ModItem
+	public class RainStaff:TremorModItem
 	{
 		const float RainTimeInMinuts = 15; // Кол-во минут
 		const float DistortPercent = 0.1f; // Процент отклонения времени (разброса)

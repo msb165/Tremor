@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class IceBlazerBanner : ModItem
+	public class IceBlazerBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class Sad : ModBuff
+	public class Sad:TremorModBuff
 	{
 		public override void SetDefaults()
 		{

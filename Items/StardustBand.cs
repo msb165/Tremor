@@ -1,10 +1,11 @@
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class StardustBand : ModItem
+	public class StardustBand:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -25,7 +26,7 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Summons a stardust squid");
 		}
 
-		public override void UseStyle(Player player)
+		public override void UseStyle(Player player, Rectangle heldItemFrame)
 		{
 			if (player.whoAmI == Main.myPlayer && player.itemTime == 0)
 			{

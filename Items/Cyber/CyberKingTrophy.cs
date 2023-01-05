@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Cyber
 {
-	public class CyberKingTrophy : ModItem
+	public class CyberKingTrophy:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Souls
 {
-	public class CursedSoul : ModItem
+	public class CursedSoul:TremorModItem
 	{
 
 		public override void SetDefaults()

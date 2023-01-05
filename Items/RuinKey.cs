@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class RuinKey : ModItem
+	public class RuinKey:TremorModItem
 	{
 		public override void SetDefaults()
 		{

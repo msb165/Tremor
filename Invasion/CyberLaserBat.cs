@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class CyberLaserBat : ModProjectile
+	public class CyberLaserBat:TremorModProjectile
 	{
 
 		public override void SetStaticDefaults()

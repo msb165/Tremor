@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class WrathofWraith : ModItem
+	public class WrathofWraith:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 40;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 8;
 			item.width = 40;
 			item.height = 40;

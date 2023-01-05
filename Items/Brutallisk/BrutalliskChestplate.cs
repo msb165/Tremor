@@ -5,7 +5,7 @@ using Tremor.Items.Steel;
 namespace Tremor.Items.Brutallisk
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class BrutalliskChestplate : ModItem
+	public class BrutalliskChestplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -29,12 +29,8 @@ namespace Tremor.Items.Brutallisk
 		public override void UpdateEquip(Player player)
 		{
 			player.statLifeMax2 += 40;
-			player.meleeSpeed += 0.15f;
-			player.meleeDamage += 0.25f;
-			player.minionDamage += 0.25f;
-			player.rangedDamage += 0.25f;
-			player.magicDamage += 0.25f;
-			player.thrownDamage += 0.25f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.15f;
+			player.GetDamage(DamageClass.Generic) += 0.25f;
 			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.25f;
 		}
 

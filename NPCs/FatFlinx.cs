@@ -9,7 +9,7 @@ using Tremor.Items.Souls;
 
 namespace Tremor.NPCs
 {
-	public class FatFlinx : ModNPC
+	public class FatFlinx:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -50,9 +50,9 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 76, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
 				}
 
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FFGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FFGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/FFGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FFGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FFGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FFGore1"), 1f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 76, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 76, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 76, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
@@ -61,6 +61,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Main.hardMode && NPC.downedMoonlord && spawnInfo.player.ZoneSnow && spawnInfo.spawnTileY > Main.rockLayer ? 0.1f : 0f;
+			=> Main.hardMode && NPC.downedMoonlord && spawnInfo.Player.ZoneSnow && spawnInfo.SpawnTileY > Main.rockLayer ? 0.1f : 0f;
 	}
 }

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TheBrain : ModItem
+	public class TheBrain:TremorModItem
 	{
 		public override void SetDefaults()
 		{

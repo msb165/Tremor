@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Cursed
 {
-	public class CursedBreath : ModItem
+	public class CursedBreath:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 56;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 18;
 			item.height = 18;
 			item.useTime = 14;

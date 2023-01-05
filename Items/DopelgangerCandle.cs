@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class DopelgangerCandle : ModItem
+	public class DopelgangerCandle:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -28,7 +28,7 @@ namespace Tremor.Items
 		{
 			player.statLifeMax2 -= 25;
 			player.maxMinions += 1;
-			player.minionDamage += 0.06f;
+			player.GetDamage(DamageClass.Summon) += 0.06f;
 		}
 	}
 }

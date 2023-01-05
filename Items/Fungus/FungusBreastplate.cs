@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Fungus
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class FungusBreastplate : ModItem
+	public class FungusBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,11 +27,7 @@ namespace Tremor.Items.Fungus
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.13f;
-			player.magicDamage += 0.13f;
-			player.rangedDamage += 0.13f;
-			player.thrownDamage += 0.13f;
-			player.minionDamage += 0.13f;
+			player.GetDamage(DamageClass.Generic) += 0.13f;
 			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.13f;
 		}
 

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class OceanAmulet : ModItem
+	public class OceanAmulet:TremorModItem
 	{
 
 		public override void SetDefaults()

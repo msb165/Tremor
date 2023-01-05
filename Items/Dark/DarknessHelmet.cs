@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Dark
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class DarknessHelmet : ModItem
+	public class DarknessHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -41,7 +41,7 @@ namespace Tremor.Items.Dark
 		public override void UpdateEquip(Player player)
 		{
 			player.lifeRegen += 5;
-			player.meleeSpeed += 0.25f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.25f;
 		}
 
 		public override void UpdateArmorSet(Player player)
@@ -63,8 +63,8 @@ namespace Tremor.Items.Dark
 			player.setBonus = "Your melee stats are increased during the night!";
 			if (!Main.dayTime)
 			{
-				player.meleeCrit += 25;
-				player.meleeDamage += 0.30f;
+				player.GetCritChance(DamageClass.Melee) += 25;
+				player.GetDamage(DamageClass.Melee) += 0.30f;
 			}
 		}
 

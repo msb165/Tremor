@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Marble
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class MarbleLeggings : ModItem
+	public class MarbleLeggings:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items.Marble
 
 		public override void UpdateEquip(Player p)
 		{
-			p.thrownCrit += 10;
+			p.GetCritChance(DamageClass.Throwing) += 10;
 		}
 
 		public override void AddRecipes()

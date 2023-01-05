@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PixiePulse : ModItem
+	public class PixiePulse:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 46;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 46;
 			item.height = 26;
 			item.useTime = 20;

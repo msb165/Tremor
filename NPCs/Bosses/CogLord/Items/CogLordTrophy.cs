@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.CogLord.Items
 {
-	public class CogLordTrophy : ModItem
+	public class CogLordTrophy:TremorModItem
 	{
 		public override void SetDefaults()
 		{

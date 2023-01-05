@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Souls
 {
-	public class SummonerSoul : ModItem
+	public class SummonerSoul:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -30,7 +30,7 @@ namespace Tremor.Items.Souls
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.maxMinions += 2;
-			player.minionDamage += 0.12f;
+			player.GetDamage(DamageClass.Summon) += 0.12f;
 		}
 
 		public override void AddRecipes()

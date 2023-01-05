@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Steel
 {
-	public class SteelBow : ModItem
+	public class SteelBow:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 12;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 16;
 			item.height = 32;
 			item.useTime = 30;

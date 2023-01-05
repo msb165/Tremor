@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class CreepyThrone : ModItem
+	public class CreepyThrone:TremorModItem
 	{
 		public override void SetDefaults()
 		{

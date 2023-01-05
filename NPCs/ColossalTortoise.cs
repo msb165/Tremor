@@ -8,7 +8,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class ColossalTortoise : ModNPC
+	public class ColossalTortoise:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -38,7 +38,7 @@ namespace Tremor.NPCs
 			Lighting.AddLight(npc.position, 1f, 0.3f, 0.3f);
 
 			if (Main.netMode != 1 && Main.rand.Next(750) == 0)
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, NPCID.GiantTortoise);
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, NPCID.GiantTortoise);
 		}
 
 		public override void NPCLoot()
@@ -59,12 +59,12 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 3, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore3"), 1f);
 			}
 			else
 			{
@@ -77,6 +77,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.player.ZoneJungle && NPC.downedMoonlord && Main.hardMode && spawnInfo.spawnTileY < Main.worldSurface ? 0.0002f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.Player.ZoneJungle && NPC.downedMoonlord && Main.hardMode && spawnInfo.SpawnTileY < Main.worldSurface ? 0.0002f : 0f;
 	}
 }

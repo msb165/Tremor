@@ -7,7 +7,7 @@ using Tremor.Projectiles;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 {
-	public class Varki : ModNPC
+	public class Varki:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -59,7 +59,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			NovaAnimation();
 		}
 
-		public override void PostDraw(SpriteBatch spriteBatch, Color drawColor)
+		public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{
 			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/Varki_GlowMask"));
 		}
@@ -72,7 +72,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				{
 					NPC parent = Main.npc[NPC.FindFirstNPC(ModContent.NPCType<NovaPillar>())];
 					Vector2 Velocity = Helper.VelocityToPoint(npc.Center, parent.Center, 20);
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CogLordLaser>(), 1, 1f);
+					Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CogLordLaser>(), 1, 1f);
 				}
 				for (int i = 0; i < 5; i++)
 				{
@@ -80,16 +80,16 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				}
 				for (int i = 0; i < 2; i++)
 				{
-					Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot("Gores/VarkiGore1"));
-					Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot("Gores/VarkiGore2"));
+					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/VarkiGore1"));
+					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/VarkiGore2"));
 				}
-				Gore.NewGore(npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/VarkiGore3"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/VarkiGore3"));
 				for (int k = 0; k < 7; k++)
 				{
 					Vector2 Vector = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 					Vector.Normalize();
 					Vector *= Main.rand.Next(10, 201) * 0.01f;
-					int i = Projectile.NewProjectile(npc.position.X, npc.position.Y, Vector.X, Vector.Y, ModContent.ProjectileType<Projectiles.NovaAlchemistCloud>(), 20, 1f, Main.myPlayer, 0f, Main.rand.Next(-45, 1));
+					int i = Projectile.NewProjectile(null, npc.position.X, npc.position.Y, Vector.X, Vector.Y, ModContent.ProjectileType<Projectiles.NovaAlchemistCloud>(), 20, 1f, Main.myPlayer, 0f, Main.rand.Next(-45, 1));
 					Main.projectile[i].friendly = false;
 				}
 			}

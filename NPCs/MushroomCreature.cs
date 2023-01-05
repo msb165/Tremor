@@ -7,7 +7,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class MushroomCreature : ModNPC
+	public class MushroomCreature:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -29,15 +29,15 @@ namespace Tremor.NPCs
 			npc.HitSound = SoundID.NPCHit40;
 			npc.DeathSound = SoundID.NPCDeath24;
 			npc.value = Item.buyPrice(0, 0, 3, 20);
-			banner = npc.type;
+			Banner = npc.type;
 			aiType = 21;
-			bannerItem = ModContent.ItemType<MushroomCreatureBanner>();
+			BannerItem = ModContent.ItemType<MushroomCreatureBanner>();
 		}
 
 		public override void AI()
 		{ 
 			if (Main.rand.Next(1000) == 0)
-				Main.PlaySound(22, (int)npc.position.X, (int)npc.position.Y, 1);
+				Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[22], npc.position);//Variant 1
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -49,6 +49,6 @@ namespace Tremor.NPCs
 			}
 		}
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && spawnInfo.spawnTileType == TileID.MushroomGrass && spawnInfo.spawnTileY < Main.rockLayer ? 0.03f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && spawnInfo.SpawnTileType == TileID.MushroomGrass && spawnInfo.SpawnTileY < Main.rockLayer ? 0.03f : 0f;
 	}
 }

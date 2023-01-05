@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Wolf
 {
-	public class WolfClaws : ModItem
+	public class WolfClaws:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 9;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 28;
 			item.height = 30;
 			item.useTime = 10;

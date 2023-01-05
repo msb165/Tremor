@@ -6,7 +6,7 @@ using Tremor.Items.Sparks;
 
 namespace Tremor.Items
 {
-	public class SorcererFocus : ModItem
+	public class SorcererFocus:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -14,7 +14,7 @@ namespace Tremor.Items
 
 			item.width = 22;
 			item.height = 22;
-			item.rare = 2;
+			item.rare = ItemRarityID.Green;
 			item.accessory = true;
 			item.value = 50000;
 		}
@@ -31,8 +31,8 @@ namespace Tremor.Items
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.statManaMax2 += 40;
-			player.magicDamage += 0.06f;
-			player.magicCrit += 12;
+			player.GetDamage(DamageClass.Magic) += 0.06f;
+			player.GetCritChance(DamageClass.Magic) += 12;
 		}
 
 		public override void AddRecipes()

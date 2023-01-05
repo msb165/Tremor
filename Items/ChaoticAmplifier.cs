@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ChaoticAmplifier : ModItem
+	public class ChaoticAmplifier:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -29,27 +29,19 @@ namespace Tremor.Items
 		{
 			if (player.statLife < 50)
 			{
-				player.magicCrit += 20;
-				player.meleeCrit += 20;
-				player.rangedCrit += 20;
+				player.GetCritChance(DamageClass.Generic) += 20;
 			}
 			if (player.statLife < 100)
 			{
-				player.magicCrit += 15;
-				player.meleeCrit += 15;
-				player.rangedCrit += 15;
+				player.GetCritChance(DamageClass.Generic) += 15;
 			}
 			if (player.statLife < 200)
 			{
-				player.magicCrit += 10;
-				player.meleeCrit += 10;
-				player.rangedCrit += 10;
+				player.GetCritChance(DamageClass.Generic) += 10;
 			}
 			if (player.statLife < 300)
 			{
-				player.magicCrit += 5;
-				player.meleeCrit += 5;
-				player.rangedCrit += 5;
+				player.GetCritChance(DamageClass.Generic) += 5;
 			}
 		}
 	}

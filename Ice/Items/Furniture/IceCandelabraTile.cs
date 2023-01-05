@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Ice.Items.Furniture
 {
-	public class IceCandelabraTile : ModTile
+	public class IceCandelabraTile:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -34,7 +34,7 @@ namespace Tremor.Ice.Items.Furniture
 		{
 			if (frameX == 0)
 			{
-				Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<IceCandelabra>());
+				Item.NewItem(null, i * 16, j * 16, 48, 48, ModContent.ItemType<IceCandelabra>());
 			}
 		}
 	}

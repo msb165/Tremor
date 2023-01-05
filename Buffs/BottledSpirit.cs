@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class BottledSpirit : ModBuff
+	public class BottledSpirit:TremorModBuff
 	{
 		public override void SetDefaults()
 		{

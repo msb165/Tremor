@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class TurtlePitchfork : ModProjectile
+	public class TurtlePitchfork:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

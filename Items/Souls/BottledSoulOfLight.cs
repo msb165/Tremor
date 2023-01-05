@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Souls
 {
-	public class BottledSoulOfLight : ModItem
+	public class BottledSoulOfLight:TremorModItem
 	{
 		public override void SetDefaults()
 		{

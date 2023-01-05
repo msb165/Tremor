@@ -1,10 +1,12 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class RedPulsePro : ModProjectile
+	public class RedPulsePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -26,13 +28,13 @@ namespace Tremor.Projectiles
 
 		public override void Kill(int timeLeft)
 		{
-			Main.PlaySound(2, projectile.position, 62);
+			SoundEngine.PlaySound(SoundID.Item62, projectile.position);
 			//if (projectile.owner == Main.myPlayer)
 			//{
 			//	Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 			//	value17.Normalize();
 			//	value17 *= Main.rand.Next(10, 201) * 0.01f;
-			//	Projectile.NewProjectile(projectile.position, value17, ModContent.ProjectileType<RedBoomPro>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
+			//	Projectile.NewProjectile(null, projectile.position, value17, ModContent.ProjectileType<RedBoomPro>(), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-45, 1));
 			//}
 		}
 
@@ -40,7 +42,7 @@ namespace Tremor.Projectiles
 		{
 			if (projectile.localAI[0] == 0f)
 			{
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 91);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item91, projectile.position);
 			}
 			projectile.localAI[0] += 1f;
 			if (projectile.localAI[0] > 3f)

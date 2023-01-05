@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 
-	public class EvolvedUndertaker : ModItem
+	public class EvolvedUndertaker:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -24,7 +24,7 @@ namespace Tremor.Items
 			item.value = 100000;
 			item.knockBack = 5.25f;
 			item.rare = 11;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.crit = 7;
 		}
 

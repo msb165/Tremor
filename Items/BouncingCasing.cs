@@ -5,7 +5,7 @@ using Tremor.Buffs;
 
 namespace Tremor.Items
 {
-	public class BouncingCasing : ModItem
+	public class BouncingCasing:TremorModItem
 	{
 		public override void SetDefaults()
 		{

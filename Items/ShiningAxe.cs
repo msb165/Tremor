@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ShiningAxe : ModItem
+	public class ShiningAxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -24,7 +24,7 @@ namespace Tremor.Items
 			item.value = 6000;
 
 			item.knockBack = 4f;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.rare = 3;
 		}
 

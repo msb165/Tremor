@@ -5,15 +5,15 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GoldfishStaff : ModItem
+	public class GoldfishStaff:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Starfury);
 
 			item.damage = 10;
-			item.melee = false;
-			item.magic = true;
+			//item.melee = false;
+			item.DamageType = DamageClass.Magic;
 			item.width = 50;
 			item.height = 55;
 			item.useTime = 20;

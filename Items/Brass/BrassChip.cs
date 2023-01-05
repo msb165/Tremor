@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Brass
 {
-	public class BrassChip : ModItem
+	public class BrassChip:TremorModItem
 	{
 		public override void SetStaticDefaults()
 		{

@@ -6,7 +6,7 @@ using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
-	public class Obscuritron : ModItem
+	public class Obscuritron:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -23,7 +23,7 @@ namespace Tremor.Items
 			item.UseSound = SoundID.Item1;
 			item.rare = 11;
 			item.value = 430000;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()

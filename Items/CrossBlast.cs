@@ -5,9 +5,9 @@ using Tremor.Items.Souls;
 
 namespace Tremor.Items
 {
-	public class CrossBlast : ModItem
+	public class CrossBlast:TremorModItem
 	{
-		public override bool CanEquipAccessory(Player player, int slot)
+		public override bool CanEquipAccessory(Player player, int slot, bool modded)
 		{
 			for (int i = 0; i < player.armor.Length; i++)
 			{

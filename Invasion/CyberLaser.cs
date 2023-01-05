@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class CyberLaser : ModProjectile
+	public class CyberLaser:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -16,7 +16,7 @@ namespace Tremor.Invasion
 			projectile.damage = 50;
 			projectile.friendly = true;
 			projectile.penetrate = 2;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.ignoreWater = true;
 			projectile.tileCollide = false;
 			aiType = 598;
@@ -33,7 +33,7 @@ namespace Tremor.Invasion
 		{
 			if (projectile.localAI[0] == 0f)
 			{
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 20);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item20, projectile.position);
 			}
 			projectile.localAI[0] += 1f;
 			if (projectile.localAI[0] > 3f)

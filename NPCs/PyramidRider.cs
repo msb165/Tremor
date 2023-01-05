@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class PyramidRider : ModNPC
+	public class PyramidRider:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -38,12 +38,12 @@ namespace Tremor.NPCs
 
 				if (Main.netMode == 1) return;
 
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y + 55, NPCID.WalkingAntlion);
-				NPC.NewNPC((int)npc.position.X - 22, (int)npc.position.Y + 55, ModContent.NPCType<PyramidHead>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y + 55, NPCID.WalkingAntlion);
+				NPC.NewNPC(null, (int)npc.position.X - 22, (int)npc.position.Y + 55, ModContent.NPCType<PyramidHead>());
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.player.ZoneDesert && NPC.downedBoss1 && !Main.dayTime && spawnInfo.spawnTileY < Main.worldSurface ? 0.03f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.Player.ZoneDesert && NPC.downedBoss1 && !Main.dayTime && spawnInfo.SpawnTileY < Main.worldSurface ? 0.03f : 0f;
 	}
 }

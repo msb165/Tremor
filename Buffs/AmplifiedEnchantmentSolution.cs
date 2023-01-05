@@ -3,9 +3,9 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class AmplifiedEnchantmentSolution : ModBuff
+	public class AmplifiedEnchantmentSolution:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Amplified Enchantment Solution");
 			Description.SetDefault("45% chance not to consume flask");

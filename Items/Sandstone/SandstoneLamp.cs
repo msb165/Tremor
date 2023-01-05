@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Sandstone
 {
-	public class SandstoneLamp : ModItem
+	public class SandstoneLamp:TremorModItem
 	{
 		public override void SetDefaults()
 		{

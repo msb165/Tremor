@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class WhiteTurban : ModItem
+	public class WhiteTurban:TremorModItem
 	{
 
 		public override void SetDefaults()

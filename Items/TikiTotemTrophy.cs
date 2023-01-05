@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TikiTotemTrophy : ModItem
+	public class TikiTotemTrophy:TremorModItem
 	{
 		public override void SetDefaults()
 		{

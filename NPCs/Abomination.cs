@@ -5,7 +5,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class Abomination : ModNPC
+	public class Abomination:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -28,20 +28,20 @@ namespace Tremor.NPCs
 			aiType = 77;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 4, 0);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<AbominationBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<AbominationBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
 		{
 			if (Main.netMode != 1 && npc.life <= 0)
-				NPC.NewNPC((int)npc.position.X - 22, (int)npc.position.Y + 55, NPCID.Skeleton);
+				NPC.NewNPC(null, (int)npc.position.X - 22, (int)npc.position.Y + 55, NPCID.Skeleton);
 		}
 
 		public override void AI()
 		{
 			if (Main.rand.Next(1000) == 0)
-				Main.PlaySound(22, (int)npc.position.X, (int)npc.position.Y, 1);
+				Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[22], npc.position);//Variant 1
 		}
 
 		public override void NPCLoot()
@@ -52,7 +52,7 @@ namespace Tremor.NPCs
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			return (Helper.NoZoneAllowWater(spawnInfo)) && spawnInfo.player.ZoneJungle && spawnInfo.spawnTileY > Main.rockLayer ? 0.01f : 0f;
+			return (Helper.NoZoneAllowWater(spawnInfo)) && spawnInfo.Player.ZoneJungle && spawnInfo.SpawnTileY > Main.rockLayer ? 0.01f : 0f;
 		}
 	}
 }

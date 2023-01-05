@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class StoneLeggings : ModItem
+	public class StoneLeggings:TremorModItem
 	{
 		public override void SetDefaults()
 		{

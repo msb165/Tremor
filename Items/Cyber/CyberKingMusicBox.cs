@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Cyber
 {
-	public class CyberKingMusicBox : ModItem
+	public class CyberKingMusicBox:TremorModItem
 	{
 		public override void SetDefaults()
 		{

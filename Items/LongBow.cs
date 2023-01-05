@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class LongBow : ModItem
+	public class LongBow:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -11,7 +11,7 @@ namespace Tremor.Items
 			item.damage = 14;
 			item.width = 16;
 			item.height = 32;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.useTime = 30;
 			item.shoot = 1;
 			item.shootSpeed = 8f;

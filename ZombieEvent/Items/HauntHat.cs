@@ -1,10 +1,11 @@
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class HauntHat : ModItem
+	public class HauntHat:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -23,7 +24,7 @@ namespace Tremor.ZombieEvent.Items
 			Tooltip.SetDefault("Summons a friendly ghost");
 		}
 
-		public override void UseStyle(Player player)
+		public override void UseStyle(Player player, Rectangle heldItemFrame)
 		{
 			if (player.whoAmI == Main.myPlayer && player.itemTime == 0)
 			{

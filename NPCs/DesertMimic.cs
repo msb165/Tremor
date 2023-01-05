@@ -6,7 +6,7 @@ using Tremor.Items.Antlion;
 
 namespace Tremor.NPCs
 {
-	public class DesertMimic : ModNPC
+	public class DesertMimic:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -40,6 +40,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NoZoneAllowWater(spawnInfo) && Main.hardMode && spawnInfo.player.ZoneDesert && spawnInfo.spawnTileY > Main.rockLayer ? 0.01f : 0f;
+			=> Helper.NoZoneAllowWater(spawnInfo) && Main.hardMode && spawnInfo.Player.ZoneDesert && spawnInfo.SpawnTileY > Main.rockLayer ? 0.01f : 0f;
 	}
 }

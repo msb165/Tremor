@@ -5,7 +5,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Invasion
 {
-	public class ParadoxTitanTrophyTile : ModTile
+	public class ParadoxTitanTrophyTile:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -23,7 +23,7 @@ namespace Tremor.Invasion
 		{
 			if (frameX == 0)
 			{
-				Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<ParadoxTitanTrophy>());
+				Item.NewItem(null, i * 16, j * 16, 48, 48, ModContent.ItemType<ParadoxTitanTrophy>());
 			}
 		}
 	}

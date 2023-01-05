@@ -4,7 +4,7 @@ using Tremor.Items.Ancient;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class GuardianBreastplate : ModItem
+	public class GuardianBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()

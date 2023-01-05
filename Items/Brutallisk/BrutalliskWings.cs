@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Brutallisk
 {
 	[AutoloadEquip(EquipType.Wings)]
-	public class BrutalliskWings : ModItem
+	public class BrutalliskWings:TremorModItem
 	{
 
 		public override void SetDefaults()

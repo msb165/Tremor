@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.Projectiles
 {
 	//ported from my tAPI mod because I don't want to make artwork
-	public class BlackRosePro : ModProjectile
+	public class BlackRosePro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -17,7 +17,7 @@ namespace Tremor.Projectiles
 			projectile.friendly = true;
 			projectile.penetrate = -1;
 			projectile.tileCollide = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 		}
 
 		public override void SetStaticDefaults()

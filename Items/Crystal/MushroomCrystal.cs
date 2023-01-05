@@ -5,7 +5,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items.Crystal
 {
-	public class MushroomCrystal : ModItem
+	public class MushroomCrystal:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -47,10 +47,10 @@ namespace Tremor.Items.Crystal
 			recipe.AddRecipe();
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<FungusBeetle>());
-			Main.PlaySound(SoundID.Roar, player.position, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.Roar, player.position);//Variant 0
 			return true;
 		}
 	}

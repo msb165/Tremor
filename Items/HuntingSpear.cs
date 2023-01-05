@@ -4,7 +4,7 @@ using Tremor.Items.Wolf;
 
 namespace Tremor.Items
 {
-	public class HuntingSpear : ModItem
+	public class HuntingSpear:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.width = 14;
 			item.height = 84;
 			item.noUseGraphic = true;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.useTime = 30;
 			item.shoot = ModContent.ProjectileType<Projectiles.HuntingSpearPro>();
 			item.shootSpeed = 3f;

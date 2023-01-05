@@ -4,7 +4,7 @@ using Tremor.Items.Chain;
 
 namespace Tremor.Items
 {
-	public class BrainSmasher : ModItem
+	public class BrainSmasher:TremorModItem
 	{
 		public override void SetDefaults()
 		{

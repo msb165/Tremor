@@ -10,21 +10,22 @@ using Tremor;
 using Tremor.Items;
 using Tremor.Items.Cursed;
 using Tremor.NPCs.TownNPCs;
+using Terraria.GameContent;
 
 namespace Tremor.NPCs.TownNPCs
 {
 	[AutoloadHead]
-	public class Chef : ModNPC
+	public class Chef:TremorModNPC
 	{
 		public override string Texture => $"{typeof(Chef).NamespaceToPath()}/Chef";
 
-		public override string[] AltTextures => new[] { $"{typeof(Chef).NamespaceToPath()}/Chef" };
+		//public override string[] AltTextures => new[] { $"{typeof(Chef).NamespaceToPath()}/Chef" };
 
-		public override bool Autoload(ref string name)
-		{
-			name = "Chef";
-			return mod.Properties.Autoload;
-		}
+		//public override bool Autoload(ref string name)
+		//{
+		//	name = "Chef";
+		//	return mod.Properties.Autoload;
+		//}
 
 		public override void SetStaticDefaults()
 		{
@@ -127,7 +128,7 @@ namespace Tremor.NPCs.TownNPCs
 		public override void DrawTownAttackSwing(ref Texture2D item, ref int itemSize, ref float scale, ref Vector2 offset)//Allows you to customize how this town NPC's weapon is drawn when this NPC is swinging it (this NPC must have an attack type of 3). ItemType is the Texture2D instance of the item to be drawn (use Main.itemTexture[id of item]), itemSize is the width and height of the item's hitbox
 		{
 			scale = 1f;
-			item = Main.itemTexture[ModContent.ItemType<ButcherAxe>()]; //this defines the item that this npc will use
+			item = TextureAssets.Item[ModContent.ItemType<ButcherAxe>()].Value; //this defines the item that this npc will use
 			itemSize = 40;
 		}
 
@@ -145,7 +146,7 @@ namespace Tremor.NPCs.TownNPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot($"Gores/ChefGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/ChefGore{i+1}"), 1f);
 			}
 		}
 	}

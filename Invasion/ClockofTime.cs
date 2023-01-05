@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class ClockofTime : ModItem
+	public class ClockofTime:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -30,7 +30,7 @@ namespace Tremor.Invasion
 			Tooltip.SetDefault("Allows you to control the time");
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			if (player.altFunctionUse == 2)
 			{

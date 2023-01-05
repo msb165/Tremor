@@ -9,7 +9,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class BulbTorch : ModTile
+	public class BulbTorch:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -39,7 +39,7 @@ namespace Tremor.Tiles
 			drop = ModContent.ItemType<Items.BulbTorch>();
 			disableSmartCursor = true;
 			adjTiles = new int[]{ TileID.Torches };
-			torch = true;
+			TileID.Sets.Torch[Type] = true;
 		}
 
 		public override void NumDust(int i, int j, bool fail, ref int num)
@@ -50,15 +50,14 @@ namespace Tremor.Tiles
 		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
 		{
 			Tile tile = Main.tile[i, j];
-			if (tile.frameX < 66)
+			if (tile.TileFrameX < 66)
 			{
 				r = 0.9f;
 				g = 0.9f;
 				b = 0.9f;
 			}
 		}
-
-		public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height)
+		public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY)
 		{
 			offsetY = 0;
 			if (WorldGen.SolidTile(i, j - 1))
@@ -75,8 +74,8 @@ namespace Tremor.Tiles
 		{
 			ulong randSeed = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (long)((ulong)i));
 			Color color = new Color(100, 100, 100, 0);
-			int frameX = Main.tile[i, j].frameX;
-			int frameY = Main.tile[i, j].frameY;
+			int frameX = Main.tile[i, j].TileFrameX;
+			int frameY = Main.tile[i, j].TileFrameY;
 			int width = 20;
 			int offsetY = 0;
 			int height = 20;
@@ -97,7 +96,7 @@ namespace Tremor.Tiles
 			{
 				float x = Utils.RandomInt(ref randSeed, -10, 11) * 0.15f;
 				float y = Utils.RandomInt(ref randSeed, -10, 1) * 0.35f;
-				Main.spriteBatch.Draw(mod.GetTexture("Tiles/BulbTorch_Flame"), new Vector2(i * 16 - (int)Main.screenPosition.X - (width - 16f) / 2f + x, j * 16 - (int)Main.screenPosition.Y + offsetY + y) + zero, new Rectangle(frameX, frameY, width, height), color, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
+				Main.spriteBatch.Draw(Mod.GetTexture("Tiles/BulbTorch_Flame"), new Vector2(i * 16 - (int)Main.screenPosition.X - (width - 16f) / 2f + x, j * 16 - (int)Main.screenPosition.Y + offsetY + y) + zero, new Rectangle(frameX, frameY, width, height), color, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
 			}
 		}
 	}

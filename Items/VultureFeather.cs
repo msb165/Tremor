@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class VultureFeather : ModItem
+	public class VultureFeather:TremorModItem
 	{
 		public override void SetDefaults()
 		{

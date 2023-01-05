@@ -7,7 +7,7 @@ using Tremor.Items.Steel;
 namespace Tremor.Items.Nightingale
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class NightingaleHood : ModItem
+	public class NightingaleHood:TremorModItem
 	{
 
 		public override void SetDefaults()

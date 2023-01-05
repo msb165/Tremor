@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Argite
 {
-	public class ArgiteBroadsword : ModItem
+	public class ArgiteBroadsword:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 22;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 48;
 			item.height = 48;
 			item.useTime = 30;

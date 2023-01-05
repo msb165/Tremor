@@ -2,7 +2,7 @@
 
 namespace Tremor.Items
 {
-	public class MeatChunk : ModItem
+	public class MeatChunk:TremorModItem
 	{
 		public override void SetDefaults()
 		{

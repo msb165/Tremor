@@ -5,7 +5,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class Zarprite : ModNPC
+	public class Zarprite:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -36,17 +36,17 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZarpriteGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZarpriteGore"), 1f);
 
 				if (Main.netMode == 1) return;
 
-				NPC.NewNPC((int)npc.position.X - 6, (int)npc.position.Y + 6, ModContent.NPCType<Parasprite>());
-				NPC.NewNPC((int)npc.position.X + 6, (int)npc.position.Y, ModContent.NPCType<Parasprite>());
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y - 6, ModContent.NPCType<Parasprite>());
+				NPC.NewNPC(null, (int)npc.position.X - 6, (int)npc.position.Y + 6, ModContent.NPCType<Parasprite>());
+				NPC.NewNPC(null, (int)npc.position.X + 6, (int)npc.position.Y, ModContent.NPCType<Parasprite>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y - 6, ModContent.NPCType<Parasprite>());
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> (Helper.NoZoneAllowWater(spawnInfo)) && spawnInfo.spawnTileY > Main.rockLayer ? 0.01f : 0f;
+			=> (Helper.NoZoneAllowWater(spawnInfo)) && spawnInfo.SpawnTileY > Main.rockLayer ? 0.01f : 0f;
 	}
 }

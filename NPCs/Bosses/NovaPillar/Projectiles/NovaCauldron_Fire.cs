@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 {
-	public class NovaCauldron_Fire : ModProjectile
+	public class NovaCauldron_Fire:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -100,7 +100,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 
 		public override void Kill(int timeLeft)
 		{
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 14);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item14, projectile.position);
 			Helper.Explode(projectile.whoAmI, 120, 120, delegate
 			{
 				for (int i = 0; i < 40; i++)

@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Chain
 {
-	public class Chainsword : ModItem
+	public class Chainsword:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 55;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 56;
 			item.height = 64;
 			item.useTime = 25;

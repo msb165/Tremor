@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class SandstoneCandle : ModTile
+	public class SandstoneCandle:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -31,9 +31,9 @@ namespace Tremor.Tiles
 
 public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
     {
-        if(Main.tile[i, j].frameX == 0 && Main.tile[i, j].frameY == 0)
+        if(Main.tile[i, j].TileFrameX == 0 && Main.tile[i, j].TileFrameY == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, ModContent.ItemType<Items.Sandstone.SandstoneCandle>());
+            Item.NewItem(null, i * 16, j * 16, 48, 48, ModContent.ItemType<Items.Sandstone.SandstoneCandle>());
         }
     }
 }}

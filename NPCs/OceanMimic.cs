@@ -5,7 +5,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class OceanMimic : ModNPC
+	public class OceanMimic:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -37,6 +37,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && (spawnInfo.spawnTileType == 53 || spawnInfo.spawnTileType == 112 || spawnInfo.spawnTileType == 116 || spawnInfo.spawnTileType == 234) && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.water && Main.hardMode && spawnInfo.spawnTileY < Main.rockLayer && (spawnInfo.spawnTileX < 250 || spawnInfo.spawnTileX > Main.maxTilesX - 250) && !spawnInfo.playerSafe ? 0.01f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && (spawnInfo.SpawnTileType == 53 || spawnInfo.SpawnTileType == 112 || spawnInfo.SpawnTileType == 116 || spawnInfo.SpawnTileType == 234) && Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.Water && Main.hardMode && spawnInfo.SpawnTileY < Main.rockLayer && (spawnInfo.SpawnTileX < 250 || spawnInfo.SpawnTileX > Main.maxTilesX - 250) && !spawnInfo.PlayerSafe ? 0.01f : 0f;
 	}
 }

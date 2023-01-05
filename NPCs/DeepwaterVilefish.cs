@@ -8,7 +8,7 @@ using Tremor.Items;
 namespace Tremor.NPCs
 {
 
-	public class DeepwaterVilefish : ModNPC
+	public class DeepwaterVilefish:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -48,6 +48,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> spawnInfo.player.ZoneCorrupt && spawnInfo.spawnTileY > Main.rockLayer ? 0.05f : 0f;
+			=> spawnInfo.Player.ZoneCorrupt && spawnInfo.SpawnTileY > Main.rockLayer ? 0.05f : 0f;
 	}
 }

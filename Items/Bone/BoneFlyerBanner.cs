@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Bone
 {
-	public class BoneFlyerBanner : ModItem
+	public class BoneFlyerBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

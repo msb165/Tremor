@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items
 {
-	public class Icoj : ModProjectile
+	public class Icoj:TremorModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
@@ -17,7 +17,7 @@ namespace Tremor.Ice.Items
 			projectile.height = 102;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.penetrate = -1;
 			projectile.timeLeft = 3600;
 			//projectile.alpha = 255;
@@ -47,14 +47,14 @@ namespace Tremor.Ice.Items
 
 			if (projectile.alpha >= 255)
 			{
-				Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 40, -7, 0, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
-				Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 40, 7, 0, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
-				Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 40, 0, 7, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
-				Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 40, 0, -7, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
-				Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 40, -7, -7, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
-				Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 40, 7, -7, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
-				Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 40, -7, 7, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
-				Projectile.NewProjectile(projectile.position.X + 40, projectile.position.Y + 40, 7, 7, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
+				Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, -7, 0, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
+				Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, 7, 0, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
+				Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, 0, 7, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
+				Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, 0, -7, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
+				Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, -7, -7, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
+				Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, 7, -7, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
+				Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, -7, 7, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
+				Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, 7, 7, 119, projectile.damage, 0, Main.myPlayer, 0f, 0f);
 				projectile.Kill();
 			}
 		}

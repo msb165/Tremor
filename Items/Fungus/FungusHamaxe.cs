@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Fungus
 {
-	public class FungusHamaxe : ModItem
+	public class FungusHamaxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 16;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 32;
 			item.height = 32;
 			item.useTime = 22;

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class EnchantedHelmet : ModItem
+	public class EnchantedHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -39,7 +39,7 @@ namespace Tremor.Items
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "8% increased magic damage, increases power of enchanted weapons";
-			player.magicDamage += 0.08f;
+			player.GetDamage(DamageClass.Magic) += 0.08f;
 			player.AddBuff(ModContent.BuffType<Buffs.EnchantedBuff>(), 2);
 		}
 

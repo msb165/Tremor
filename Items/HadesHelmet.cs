@@ -10,7 +10,7 @@ using Tremor.Items.Souls;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class HadesHelmet : ModItem
+	public class HadesHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -45,7 +45,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 		public override void UpdateEquip(Player player)

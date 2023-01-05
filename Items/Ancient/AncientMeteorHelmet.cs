@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Ancient
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class AncientMeteorHelmet : ModItem
+	public class AncientMeteorHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items.Ancient
 
 		public override void UpdateEquip(Player player)
 		{
-			player.magicDamage += 0.07f;
+			player.GetDamage(DamageClass.Magic) += 0.07f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

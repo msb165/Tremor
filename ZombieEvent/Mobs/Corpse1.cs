@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.ZombieEvent.Mobs
 {
 
-	public class Corpse1 : ModNPC
+	public class Corpse1:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -41,11 +41,11 @@ namespace Tremor.ZombieEvent.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CorpseGore1"), 0.8f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CorpseGore2"), 0.8f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CorpseGore2"), 0.8f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CorpseGore3"), 0.8f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CorpseGore3"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CorpseGore1"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CorpseGore2"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CorpseGore2"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CorpseGore3"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CorpseGore3"), 0.8f);
 			}
 		}
 

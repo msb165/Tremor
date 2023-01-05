@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class PossessedChestplate : ModItem
+	public class PossessedChestplate:TremorModItem
 	{
 
 		public override void SetDefaults()

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class EnforcerShield : ModItem
+	public class EnforcerShield:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -31,23 +31,23 @@ namespace Tremor.Items
 			player.longInvince = true;
 			if (player.statLife <= (player.statLifeMax2 * 0.8f))
 			{
-				player.meleeSpeed *= 1.2f;
-				player.meleeDamage *= 1.05f;
+				player.GetAttackSpeed(DamageClass.Melee) *= 1.2f;
+				player.GetDamage(DamageClass.Melee) *= 1.05f;
 			}
 			else if (player.statLife <= (player.statLifeMax2 * 0.6f))
 			{
-				player.meleeSpeed *= 1.4f;
-				player.meleeDamage *= 1.1f;
+				player.GetAttackSpeed(DamageClass.Melee) *= 1.4f;
+				player.GetDamage(DamageClass.Melee) *= 1.1f;
 			}
 			else if (player.statLife <= (player.statLifeMax2 * 0.4f))
 			{
-				player.meleeSpeed *= 1.6f;
-				player.meleeDamage *= 1.15f;
+				player.GetAttackSpeed(DamageClass.Melee) *= 1.6f;
+				player.GetDamage(DamageClass.Melee) *= 1.15f;
 			}
 			else if (player.statLife <= (player.statLifeMax2 * 0.2f))
 			{
-				player.meleeSpeed *= 1.8f;
-				player.meleeDamage *= 1.2f;
+				player.GetAttackSpeed(DamageClass.Melee) *= 1.8f;
+				player.GetDamage(DamageClass.Melee) *= 1.2f;
 			}
 		}
 

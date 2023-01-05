@@ -3,14 +3,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PlatinumKunai : ModItem
+	public class PlatinumKunai:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 19;
 			item.height = 32;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 18;
 			item.noUseGraphic = true;
 			item.maxStack = 999;

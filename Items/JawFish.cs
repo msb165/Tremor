@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class JawFish : ModItem
+	public class JawFish:TremorModItem
 	{
 		public override void SetDefaults()
 		{

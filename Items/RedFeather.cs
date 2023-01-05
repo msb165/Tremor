@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class RedFeather : ModItem
+	public class RedFeather:TremorModItem
 	{
 		public override void SetDefaults()
 		{

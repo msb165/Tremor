@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Opal : ModItem
+	public class Opal:TremorModItem
 	{
 
 		public override void SetDefaults()

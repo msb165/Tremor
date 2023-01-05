@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TrueBeamSword : ModItem
+	public class TrueBeamSword:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 92;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 50;
 			item.height = 52;
 			item.useTime = 45;

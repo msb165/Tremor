@@ -5,7 +5,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class NanoBar : ModTile
+	public class NanoBar:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -26,7 +26,7 @@ namespace Tremor.Tiles
 
         public override bool Drop(int i, int j)
         {
-            Item.NewItem(i * 16, j * 16, 32, 32, ModContent.ItemType<Items.Nano.NanoBar>());
+            Item.NewItem(null, i * 16, j * 16, 32, 32, ModContent.ItemType<Items.Nano.NanoBar>());
             return true;
         }
 }}

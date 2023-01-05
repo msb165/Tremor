@@ -6,13 +6,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class RoyalDaggers : ModItem
+	public class RoyalDaggers:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 257;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 26;
 			item.noUseGraphic = true;
 			item.maxStack = 999;
@@ -97,7 +97,7 @@ namespace Tremor.Items
 				num149 *= num80;
 				float x4 = vector2.X;
 				float y4 = vector2.Y;
-				Projectile.NewProjectile(x4, y4, num148, num149, ModContent.ProjectileType<Projectiles.WhiteGoldKnife>(), num73, num74, i, 0f, 0f);
+				Projectile.NewProjectile(null, x4, y4, num148, num149, ModContent.ProjectileType<Projectiles.WhiteGoldKnife>(), num73, num74, i, 0f, 0f);
 			}
 			return false;
 		}

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public abstract class Minion : ModProjectile
+	public abstract class Minion:TremorModProjectile
 	{
 		public override void AI()
 		{

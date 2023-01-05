@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Inferno : ModItem
+	public class Inferno:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -14,7 +14,7 @@ namespace Tremor.Items
 			item.width = 62;
 			item.height = 62;
 			item.noUseGraphic = true;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.useTime = 20;
 			item.shoot = ModContent.ProjectileType<Projectiles.InfernoPro>();
 			item.shootSpeed = 12f;
@@ -35,7 +35,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 	}
 }

@@ -4,7 +4,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class EvilCornBag : ModItem
+	public class EvilCornBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

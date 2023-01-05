@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SDL : ModItem
+	public class SDL:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 70;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 40;
 			item.height = 40;
 

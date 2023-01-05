@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Shovel : ModItem
+	public class Shovel:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 24;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 46;
 			item.height = 50;
 			item.useTime = 15;

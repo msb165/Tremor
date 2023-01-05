@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class RockspearPro : ModProjectile
+	public class RockspearPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

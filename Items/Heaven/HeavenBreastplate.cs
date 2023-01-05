@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Heaven
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class HeavenBreastplate : ModItem
+	public class HeavenBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items.Heaven
 
 		public override void UpdateEquip(Player player)
 		{
-			player.rangedDamage += 0.12f;
+			player.GetDamage(DamageClass.Ranged) += 0.12f;
 		}
 
 	}

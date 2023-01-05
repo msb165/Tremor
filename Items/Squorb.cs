@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Squorb : ModItem
+	public class Squorb:TremorModItem
 	{
 		public override void SetDefaults()
 		{

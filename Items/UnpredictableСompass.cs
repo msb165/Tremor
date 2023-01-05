@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	class UnpredictableСompass : ModItem
+	class UnpredictableСompass:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TheCadence : ModItem
+	public class TheCadence:TremorModItem
 	{
 
 		public override void SetStaticDefaults()

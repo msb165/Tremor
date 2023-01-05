@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Adamantite
 {
-	public class AdamantiteWarhammer : ModItem
+	public class AdamantiteWarhammer:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 49;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 48;
 			item.height = 48;
 			item.useTime = 35;

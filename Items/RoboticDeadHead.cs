@@ -4,7 +4,7 @@ using Tremor.Items.Doom;
 
 namespace Tremor.Items
 {
-	public class RoboticDeadHead : ModItem
+	public class RoboticDeadHead:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -27,19 +27,8 @@ namespace Tremor.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.meleeDamage += 0.15f;
-			player.meleeCrit += 12;
-
-			player.magicDamage += 0.15f;
-			player.magicCrit += 12;
-
-			player.rangedDamage += 0.15f;
-			player.rangedCrit += 12;
-
-			player.thrownDamage += 0.15f;
-			player.thrownCrit += 12;
-
-			player.minionDamage += 0.15f;
+			player.GetDamage(DamageClass.Generic) += 0.15f;
+			player.GetCritChance(DamageClass.Generic) += 12;
 
 			player.moveSpeed += 0.25f;
 			player.maxRunSpeed += 0.25f;

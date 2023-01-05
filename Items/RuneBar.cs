@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class RuneBar : ModItem
+	public class RuneBar:TremorModItem
 	{
 		public override void SetDefaults()
 		{

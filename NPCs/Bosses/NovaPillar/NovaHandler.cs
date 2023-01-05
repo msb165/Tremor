@@ -1,6 +1,8 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.GameContent.UI.Chat;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -8,7 +10,7 @@ using Terraria.UI.Chat;
 
 namespace Tremor.NPCs.Bosses.NovaPillar
 {
-	public class NovaHandler : ModWorld
+	public class NovaHandler : ModSystem
 	{
 		public static int TowerX = -1;
 		public static int TowerY = -1;
@@ -17,7 +19,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 
 		public static bool LunarApocalypseLastTick;
 
-		public override void Initialize()
+		public override void OnWorldLoad()
 		{
 			LunarApocalypseLastTick = NPC.LunarApocalypseIsUp;
 			ShieldStrength = NPC.ShieldStrengthTowerMax;
@@ -25,37 +27,33 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 			TowerY = -1;
 		}
 
-		public override void PreUpdate()
+		public override void PreUpdateWorld()
 		{
 			TowerActive = NPC.AnyNPCs(ModContent.NPCType<NovaPillar>());
 		}
 
-		public override TagCompound Save()
+		public override void SaveWorldData(TagCompound tag)
 		{
-			var tag = new TagCompound
-			{
-				{"NovaActive", TowerActive}
-			};
+			tag.Add("NovaActive", TowerActive);
 			if (TowerX != -1)
 			{
 				tag.Add("NovaX", TowerX);
 				tag.Add("NovaY", TowerY);
 			}
-			return tag;
 		}
 
-		public override void Load(TagCompound tag)
+		public override void LoadWorldData(TagCompound tag)
 		{
 			TowerActive = tag.GetBool("NovaActive");
 			if (tag.ContainsKey("NovaX"))
 			{
 				TowerX = tag.GetInt("NovaX");
 				TowerY = tag.GetInt("NovaY");
-				NPC.NewNPC(TowerX, TowerY, ModContent.NPCType<NovaPillar>());
+				NPC.NewNPC(null, TowerX, TowerY, ModContent.NPCType<NovaPillar>());
 			}
 		}
 
-		public override void PostUpdate()
+		public override void PostUpdateWorld()
 		{
 			if (NPC.LunarApocalypseIsUp && !LunarApocalypseLastTick)
 			{
@@ -80,16 +78,24 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 			}
 			else if (!NPC.LunarApocalypseIsUp && LunarApocalypseLastTick && TowerActive)
 			{
-				for (int i = Main.chatLine.Length - 1; i >= 0; i--)
+				const string newText = "Your hands are shaking...";
+				var newColor = new Color(175, 75, 255);
+				//TODO: Chat manipulation
+				if(Main.chatMonitor is RemadeChatMonitor chatMonitor)
 				{
-					if (Main.chatLine[i].text.StartsWith("Impending doom"))
+					var chatLine = (List<ChatMessageContainer>)typeof(RemadeChatMonitor).GetField("_messages", System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance).GetValue(chatMonitor);
+					for (int i = chatLine.Count - 1; i >= 0; i--)
 					{
-						Main.chatLine[i].parsedText = new[]
+						if (chatLine[i].OriginalText.StartsWith("Impending doom"))
 						{
-							new TextSnippet("Your hands are shaking...", new Color(175, 75, 255))
-						};
-						break;
+							chatLine[i].SetContents(newText, newColor, -1);
+							break;
+						}
 					}
+				}
+				else
+				{
+					Main.NewText(newText, newColor);
 				}
 				NPC.MoonLordCountdown = 0;
 			}
@@ -132,7 +138,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 
 			if (whoAmI == -1)
 			{
-				whoAmI = NPC.NewNPC((int)spawnPos.X, (int)spawnPos.Y, ModContent.NPCType<NovaPillar>());
+				whoAmI = NPC.NewNPC(null, (int)spawnPos.X, (int)spawnPos.Y, ModContent.NPCType<NovaPillar>());
 				TowerX = (int)spawnPos.X;
 				TowerY = (int)spawnPos.Y;
 			}

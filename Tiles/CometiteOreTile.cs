@@ -6,7 +6,7 @@ using Tremor.Items.Crystal;
 
 namespace Tremor.Tiles
 {
-	public class CometiteOreTile : ModTile
+	public class CometiteOreTile:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -19,13 +19,13 @@ namespace Tremor.Tiles
 			dustType = 27;
 			drop = ModContent.ItemType<CometiteOre>();
 			AddMapEntry(new Color(0, 191, 255));
-			mineResist = 8f;
-			minPick = 225;
+			MineResist = 8f;
+			MinPick = 225;
 		}
 
   public override bool CanExplode(int i, int j)
   {
-   if (Main.tile[i, j].type == ModContent.TileType<Tiles.CometiteOreTile>())
+   if (Main.tile[i, j].TileType == ModContent.TileType<Tiles.CometiteOreTile>())
    {
     return false;
    }
@@ -36,7 +36,7 @@ namespace Tremor.Tiles
     {
         if(Main.rand.Next(10) == 0)
         {
-            Item.NewItem(i * 16, j * 16, 16, 16, ModContent.ItemType<ChargedCrystal>());
+            Item.NewItem(null, i * 16, j * 16, 16, 16, ModContent.ItemType<ChargedCrystal>());
             
         }
     }

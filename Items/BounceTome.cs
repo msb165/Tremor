@@ -3,14 +3,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class BounceTome : ModItem
+	public class BounceTome:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(165);
 
 			item.damage = 20;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 26;
 			item.maxStack = 1;
 

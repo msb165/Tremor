@@ -4,7 +4,7 @@ using Tremor.Items.Antlion;
 
 namespace Tremor.Items.Sandstone
 {
-	public class SandstoneHammer : ModItem
+	public class SandstoneHammer:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -22,7 +22,7 @@ namespace Tremor.Items.Sandstone
 			item.UseSound = SoundID.Item1;
 			item.rare = 1;
 			item.value = 13500;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()

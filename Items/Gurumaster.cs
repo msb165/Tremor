@@ -4,14 +4,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Gurumaster : ModItem
+	public class Gurumaster:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 			item.damage = 240;
 			item.width = 58;
 			item.height = 30;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.useTime = 35;
 			item.shoot = ModContent.ProjectileType<Projectiles.Gurumaster>();
 			item.shootSpeed = 15f;

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class EyeMonolith : ModItem
+	public class EyeMonolith:TremorModItem
 	{
 		public override void SetDefaults()
 		{

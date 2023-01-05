@@ -3,14 +3,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Hurricane : ModItem
+	public class Hurricane:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 38;
 
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 28;
 			item.height = 30;
 			item.useTime = 36;

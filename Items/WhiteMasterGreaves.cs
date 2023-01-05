@@ -8,7 +8,7 @@ using Tremor.NPCs.Bosses.NovaPillar.Items.Armor;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class WhiteMasterGreaves : ModItem
+	public class WhiteMasterGreaves:TremorModItem
 	{
 		public override void SetDefaults()
 		{

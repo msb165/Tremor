@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class GoblinStandardBearer : ModNPC
+	public class GoblinStandardBearer:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -118,6 +118,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Main.invasionType == InvasionID.GoblinArmy && NPC.downedBoss3 && spawnInfo.spawnTileY < Main.worldSurface ? 0.3f : 0f;
+			=> Main.invasionType == InvasionID.GoblinArmy && NPC.downedBoss3 && spawnInfo.SpawnTileY < Main.worldSurface ? 0.3f : 0f;
 	}
 }

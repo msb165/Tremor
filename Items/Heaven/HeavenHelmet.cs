@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Heaven
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class HeavenHelmet : ModItem
+	public class HeavenHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items.Heaven
 
 		public override void UpdateEquip(Player player)
 		{
-			player.rangedCrit += 12;
+			player.GetCritChance(DamageClass.Ranged) += 12;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Bolter : ModItem
+	public class Bolter:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 43;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 46;
 			item.height = 32;
 

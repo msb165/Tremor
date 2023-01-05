@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Orcish
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class OrcishShield : ModItem
+	public class OrcishShield:TremorModItem
 	{
 		public override void SetDefaults()
 		{

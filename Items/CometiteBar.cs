@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class CometiteBar : ModItem
+	public class CometiteBar:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -4,7 +4,7 @@ using Tremor.Items.Crystal;
 
 namespace Tremor.Items.Brutallisk
 {
-	public class BrutalliskBag : ModItem
+	public class BrutalliskBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Swordstorm : ModItem
+	public class Swordstorm:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 19;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 5;
 			item.width = 40;
 			item.height = 40;

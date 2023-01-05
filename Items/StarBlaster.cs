@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class StarBlaster : ModItem
+	public class StarBlaster:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 110;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.width = 68;
 			item.height = 28;
 			item.useTime = 6;

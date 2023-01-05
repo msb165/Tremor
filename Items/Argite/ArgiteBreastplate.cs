@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Argite
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class ArgiteBreastplate : ModItem
+	public class ArgiteBreastplate:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -25,7 +25,7 @@ namespace Tremor.Items.Argite
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.12f;
+			player.GetDamage(DamageClass.Melee) += 0.12f;
 		}
 
 		public override void AddRecipes()

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class LunarRoot : ModItem
+	public class LunarRoot:TremorModItem
 	{
 		public override void SetDefaults()
 		{

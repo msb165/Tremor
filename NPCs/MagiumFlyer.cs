@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class MagiumFlyer : ModNPC
+	public class MagiumFlyer:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{

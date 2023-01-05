@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Bronze
 {
-	public class BronzeBow : ModItem
+	public class BronzeBow:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -12,7 +12,7 @@ namespace Tremor.Items.Bronze
 			item.width = 16;
 			item.height = 32;
 			item.useTime = 30;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.shoot = 1;
 			item.shootSpeed = 12f;
 			item.useAnimation = 30;

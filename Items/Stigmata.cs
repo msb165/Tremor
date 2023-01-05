@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Stigmata : ModItem
+	public class Stigmata:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -29,27 +29,19 @@ namespace Tremor.Items
 		{
 			if (player.statLife < 50)
 			{
-				player.magicDamage += 0.20f;
-				player.meleeDamage += 0.20f;
-				player.rangedDamage += 0.20f;
+				player.GetDamage(DamageClass.Generic) += 0.20f;
 			}
 			if (player.statLife < 100)
 			{
-				player.magicDamage += 0.15f;
-				player.meleeDamage += 0.15f;
-				player.rangedDamage += 0.15f;
+				player.GetDamage(DamageClass.Generic) += 0.15f;
 			}
 			if (player.statLife < 200)
 			{
-				player.magicDamage += 0.10f;
-				player.meleeDamage += 0.10f;
-				player.rangedDamage += 0.10f;
+				player.GetDamage(DamageClass.Generic) += 0.10f;
 			}
 			if (player.statLife < 300)
 			{
-				player.magicDamage += 0.05f;
-				player.meleeDamage += 0.05f;
-				player.rangedDamage += 0.05f;
+				player.GetDamage(DamageClass.Generic) += 0.05f;
 			}
 		}
 	}

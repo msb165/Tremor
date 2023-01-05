@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ShroomiteMechanicalBoots : ModItem
+	public class ShroomiteMechanicalBoots:TremorModItem
 	{
 
 		public override void SetDefaults()

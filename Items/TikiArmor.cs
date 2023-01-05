@@ -5,7 +5,7 @@ using Tremor.Items.Wood;
 
 namespace Tremor.Items
 {
-	public class TikiArmor : ModItem
+	public class TikiArmor:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,7 +28,7 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.minionDamage += 0.15f;
+			player.GetDamage(DamageClass.Summon) += 0.15f;
 		}
 		public override void AddRecipes()
 		{

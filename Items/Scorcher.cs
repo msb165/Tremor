@@ -4,7 +4,7 @@ using Tremor.Items.Ancient;
 
 namespace Tremor.Items
 {
-	public class Scorcher : ModItem
+	public class Scorcher:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.Items
 			item.width = 14;
 			item.height = 84;
 			item.noUseGraphic = true;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.useTime = 30;
 			item.shoot = ModContent.ProjectileType<Projectiles.ScorcherPro>();
 			item.shootSpeed = 4f;

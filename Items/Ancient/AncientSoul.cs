@@ -6,7 +6,7 @@ using Tremor.Projectiles;
 
 namespace Tremor.Items.Ancient
 {
-	public class AncientSoul : ModItem
+	public class AncientSoul:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -34,7 +34,7 @@ namespace Tremor.Items.Ancient
 			{
 				if (player.ownedProjectileCounts[ModContent.ProjectileType<AncientShield>()] <= 4)
 				{
-					Projectile.NewProjectile(player.position, Vector2.Zero, ModContent.ProjectileType<AncientShield>(), 20, 0, player.whoAmI);
+					Projectile.NewProjectile(null, player.position, Vector2.Zero, ModContent.ProjectileType<AncientShield>(), 20, 0, player.whoAmI);
 				}
 			}
 		}

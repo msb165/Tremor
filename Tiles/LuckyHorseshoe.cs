@@ -5,7 +5,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class LuckyHorseshoe : ModTile
+	public class LuckyHorseshoe:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -24,9 +24,9 @@ namespace Tremor.Tiles
 
     public override void KillMultiTile(int i, int j, int frameX, int frameY)
     {
-        if(Main.tile[i, j].frameX == 0 && Main.tile[i, j].frameY == 0)
+        if(Main.tile[i, j].TileFrameX == 0 && Main.tile[i, j].TileFrameY == 0)
         {
-            Item.NewItem(i * 16, j * 16, 48, 48, 158);
+            Item.NewItem(null, i * 16, j * 16, 48, 48, 158);
         }
     }
 }}

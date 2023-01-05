@@ -7,7 +7,7 @@ using Tremor.ZombieEvent.Items;
 
 namespace Tremor.ZombieEvent.Tiles
 {
-	public class NecromaniacWorkbenchTile : ModTile
+	public class NecromaniacWorkbenchTile:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -25,7 +25,7 @@ namespace Tremor.ZombieEvent.Tiles
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<NecromaniacWorkbench>());
+			Item.NewItem(null, i * 16, j * 16, 32, 16, ModContent.ItemType<NecromaniacWorkbench>());
 		}
 	}
 }

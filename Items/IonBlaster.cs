@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class IonBlaster : ModItem
+	public class IonBlaster:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 20;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 68;
 			item.height = 28;
 			item.useTime = 30;

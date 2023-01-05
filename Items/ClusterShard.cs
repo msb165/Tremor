@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ClusterShard : ModItem
+	public class ClusterShard:TremorModItem
 	{
 		public override void SetDefaults()
 		{

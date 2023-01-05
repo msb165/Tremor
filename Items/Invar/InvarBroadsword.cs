@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Invar
 {
-	public class InvarBroadsword : ModItem
+	public class InvarBroadsword:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 11;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 36;
 			item.height = 36;
 			item.useTime = 21;

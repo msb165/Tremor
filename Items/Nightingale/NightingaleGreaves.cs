@@ -6,7 +6,7 @@ using Tremor.Items.Steel;
 namespace Tremor.Items.Nightingale
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class NightingaleGreaves : ModItem
+	public class NightingaleGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()

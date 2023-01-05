@@ -7,7 +7,7 @@ using Tremor.Items.Ancient;
 
 namespace Tremor.NPCs
 {
-	public class AncientCursedSkull : ModNPC
+	public class AncientCursedSkull:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -61,7 +61,7 @@ namespace Tremor.NPCs
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			return Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.player.ZoneDungeon && NPC.downedMoonlord && Main.hardMode && spawnInfo.spawnTileY > Main.rockLayer ? 0.008f : 0f;
+			return Helper.NoZoneAllowWater(spawnInfo) && spawnInfo.Player.ZoneDungeon && NPC.downedMoonlord && Main.hardMode && spawnInfo.SpawnTileY > Main.rockLayer ? 0.008f : 0f;
 		}
 	}
 }

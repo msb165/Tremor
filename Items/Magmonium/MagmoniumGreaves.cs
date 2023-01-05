@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Magmonium
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class MagmoniumGreaves : ModItem
+	public class MagmoniumGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace Tremor.Items.Magmonium
 		public override void UpdateEquip(Player player)
 		{
 			player.manaCost -= 0.1f;
-			player.meleeSpeed += 0.1f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.1f;
 		}
 
 		public override void AddRecipes()

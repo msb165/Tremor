@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 
-	public class HeroPotion : ModItem
+	public class HeroPotion:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -32,7 +32,7 @@ namespace Tremor.Items
 "'Feel like a real hero! At least for 15 seconds.'");
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			player.AddBuff(ModContent.BuffType<Buffs.HeroBuff>(), 900);
 			return true;
@@ -40,7 +40,7 @@ namespace Tremor.Items
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips[0].overrideColor = new Color(238, 194, 73);
+			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
 		public override void AddRecipes()

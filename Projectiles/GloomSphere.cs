@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class GloomSphere : ModProjectile
+	public class GloomSphere:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.Projectiles
 			projectile.height = 32;
 			projectile.aiStyle = 91;
 			projectile.friendly = true;
-			projectile.ranged = true;
+			projectile.DamageType = DamageClass.Ranged;
 			projectile.penetrate = 6;
 			projectile.timeLeft = 600;
 			projectile.light = 0.5f;

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class DungeonGuardianPro : ModProjectile
+	public class DungeonGuardianPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

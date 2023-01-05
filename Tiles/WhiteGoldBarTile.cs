@@ -6,7 +6,7 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class WhiteGoldBarTile : ModTile
+	public class WhiteGoldBarTile:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -27,7 +27,7 @@ namespace Tremor.Tiles
 
         public override bool Drop(int i, int j)
         {
-            Item.NewItem(i * 16, j * 16, 32, 32, ModContent.ItemType<WhiteGoldBar>());
+            Item.NewItem(null, i * 16, j * 16, 32, 32, ModContent.ItemType<WhiteGoldBar>());
             return true;
         }
 }}

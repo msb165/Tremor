@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.Motherboard.Items
 {
-	public class MechanicalBrain : ModItem
+	public class MechanicalBrain:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -31,23 +31,21 @@ namespace Tremor.NPCs.Bosses.Motherboard.Items
 			return Main.hardMode && !Main.dayTime && !NPC.AnyNPCs(ModContent.NPCType<Bosses.Motherboard.Motherboard>());
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<Bosses.Motherboard.Motherboard>());
-			Main.PlaySound(SoundID.Roar, player.position, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.Roar, player.position);//Variant 0
 			return true;
 		}
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			var recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.Vertebrae, 6);
-			recipe.AddIngredient(ItemID.IronBar, 6);
+			recipe.AddRecipeGroup(RecipeGroupID.IronBar, 6);
 			recipe.AddIngredient(ItemID.SoulofNight, 6);
-			recipe.anyIronBar = true;
-			recipe.AddTile(134);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.Register();
 		}
 	}
 }

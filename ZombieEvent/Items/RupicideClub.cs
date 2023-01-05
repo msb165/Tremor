@@ -2,16 +2,17 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items;
 
 namespace Tremor.ZombieEvent.Items
 {
-	public class RupicideClub : ModItem
+	public class RupicideClub:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 22;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 50;
 			item.height = 50;
 			item.useTime = 35;

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Dark
 {
-	public class DarkDruidBanner : ModItem
+	public class DarkDruidBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

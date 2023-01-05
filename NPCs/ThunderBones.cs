@@ -7,7 +7,7 @@ using Tremor.Items.Bone;
 
 namespace Tremor.NPCs
 {
-	public class ThunderBones : ModNPC
+	public class ThunderBones:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -52,24 +52,24 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TBGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TBGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TBGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TBGore4"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TBGore4"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TBGore5"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TBGore5"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TBGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TBGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TBGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TBGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TBGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TBGore5"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TBGore5"), 1f);
 
 				if (Main.netMode == 1) return;
 
-				NPC.NewNPC((int)npc.position.X + 32, (int)npc.position.Y - 48, ModContent.NPCType<BoneFish>());
-				NPC.NewNPC((int)npc.position.X + 16, (int)npc.position.Y - 48, ModContent.NPCType<BoneFish>());
-				NPC.NewNPC((int)npc.position.X - 32, (int)npc.position.Y - 48, ModContent.NPCType<BoneFish>());
-				NPC.NewNPC((int)npc.position.X - 16, (int)npc.position.Y - 48, ModContent.NPCType<BoneFish>());
+				NPC.NewNPC(null, (int)npc.position.X + 32, (int)npc.position.Y - 48, ModContent.NPCType<BoneFish>());
+				NPC.NewNPC(null, (int)npc.position.X + 16, (int)npc.position.Y - 48, ModContent.NPCType<BoneFish>());
+				NPC.NewNPC(null, (int)npc.position.X - 32, (int)npc.position.Y - 48, ModContent.NPCType<BoneFish>());
+				NPC.NewNPC(null, (int)npc.position.X - 16, (int)npc.position.Y - 48, ModContent.NPCType<BoneFish>());
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NoZoneAllowWater(spawnInfo) && NPC.downedBoss3 && Main.bloodMoon && spawnInfo.spawnTileY < Main.worldSurface ? 0.01f : 0f;
+			=> Helper.NoZoneAllowWater(spawnInfo) && NPC.downedBoss3 && Main.bloodMoon && spawnInfo.SpawnTileY < Main.worldSurface ? 0.01f : 0f;
 	}
 }

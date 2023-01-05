@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tremor.NPCs
 {
-	public class UndeadWarlock : ModNPC
+	public class UndeadWarlock:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -44,13 +44,13 @@ namespace Tremor.NPCs
 			if (Main.netMode != 1 && TimeToShoot++ >= ShootRate && npc.target != -1)
 			{
 				Vector2 velocity = Vector2.Normalize(Main.player[npc.target].Center - npc.Center) * ShootSpeed;
-				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, ProjectileID.CursedFlameHostile, ShootDamage, ShootKN);
+				Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, ProjectileID.CursedFlameHostile, ShootDamage, ShootKN);
 
 				TimeToShoot = 0;
 			}
 
 			if (Main.netMode != 1 && Main.rand.Next(210) == 0)
-				NPC.NewNPC((int)npc.position.X + 50, (int)npc.position.Y, NPCID.CursedSkull);
+				NPC.NewNPC(null, (int)npc.position.X + 50, (int)npc.position.Y, NPCID.CursedSkull);
 
 			for (int i = npc.oldPos.Length - 1; i > 0; i--)
 				npc.oldPos[i] = npc.oldPos[i - 1];
@@ -67,15 +67,15 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/UWGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/UWGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/UWGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/UWGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/UWGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UWGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UWGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UWGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UWGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UWGore3"), 1f);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && NPC.downedBoss3 && !Main.dayTime && spawnInfo.spawnTileY < Main.worldSurface ? 0.008f : 0f;
+			=> Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && NPC.downedBoss3 && !Main.dayTime && spawnInfo.SpawnTileY < Main.worldSurface ? 0.008f : 0f;
 	}
 }

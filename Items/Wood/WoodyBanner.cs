@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Wood
 {
-	public class WoodyBanner : ModItem
+	public class WoodyBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

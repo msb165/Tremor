@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MythrilStaff : ModItem
+	public class MythrilStaff:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 37;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 8;
 			item.width = 40;
 			item.height = 40;

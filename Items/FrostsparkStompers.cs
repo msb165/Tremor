@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class FrostsparkStompers : ModItem
+	public class FrostsparkStompers:TremorModItem
 	{
 
 		public override void SetDefaults()

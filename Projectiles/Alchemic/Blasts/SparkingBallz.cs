@@ -44,7 +44,7 @@ namespace Tremor.Projectiles.Alchemic.Blasts
 
 		public override void Kill(int timeLeft)
 		{
-			int ses = Projectile.NewProjectile(projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<SparkingBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
+			int ses = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<SparkingBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
 			Main.projectile[ses].scale = projectile.scale;
 		}
 	}

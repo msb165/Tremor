@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PalladiumStaff : ModItem
+	public class PalladiumStaff:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 35;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 8;
 			item.width = 40;
 			item.height = 40;

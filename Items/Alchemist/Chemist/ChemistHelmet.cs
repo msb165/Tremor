@@ -6,7 +6,7 @@ using Tremor.Items.Chain;
 namespace Tremor.Items.Alchemist.Chemist
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class ChemistHelmet : ModItem
+	public class ChemistHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()

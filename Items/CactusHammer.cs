@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class CactusHammer : ModItem
+	public class CactusHammer:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -21,7 +21,7 @@ namespace Tremor.Items
 			item.scale = 1.2f;
 			item.UseSound = SoundID.Item1;
 			item.value = 1600;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()

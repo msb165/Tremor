@@ -6,13 +6,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs
 {
-	public class Dragon_BodyB : ModNPC
+	public class Dragon_BodyB:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Ancient Dragon");
 			Main.npcFrameCount[npc.type] = 2;
-			NPCID.Sets.TechnicallyABoss[npc.type] = true;
+			NPCID.Sets.ShouldBeCountedAsBoss[npc.type] = true;//TechnicallyABoss
 		}
 
 		public override void SetDefaults()
@@ -65,7 +65,7 @@ namespace Tremor.NPCs
 			if (npc.life < npc.lifeMax / 2 && Main.netMode != 1 && time == 0 && Main.rand.Next(9000) == 0)
 			{
 				time = 1;
-				int i = NPC.NewNPC((int)(npc.position.X + npc.width / 2), (int)(npc.position.Y + npc.height), ModContent.NPCType<DragonMini>(), 0, 0f, 0f, 0f, 0f, 255);
+				int i = NPC.NewNPC(null, (int)(npc.position.X + npc.width / 2), (int)(npc.position.Y + npc.height), ModContent.NPCType<DragonMini>(), 0, 0f, 0f, 0f, 0f, 255);
 				npc.frame = GetFrame(2);
 				if (Main.netMode == 2 && i < 200)
 				{
@@ -98,11 +98,11 @@ namespace Tremor.NPCs
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D drawTexture = Main.npcTexture[npc.type];
+			Texture2D drawTexture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2((drawTexture.Width / 2) * 0.5F, (drawTexture.Height / Main.npcFrameCount[npc.type]) * 0.5F);
 			Vector2 drawPos = new Vector2(
-				npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Main.npcTexture[npc.type].Width / 2) * npc.scale / 2f + origin.X * npc.scale,
-				npc.position.Y - Main.screenPosition.Y + npc.height - Main.npcTexture[npc.type].Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
+				npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Width / 2) * npc.scale / 2f + origin.X * npc.scale,
+				npc.position.Y - Main.screenPosition.Y + npc.height - Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
 			SpriteEffects effects = npc.spriteDirection == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
 			spriteBatch.Draw(drawTexture, drawPos, npc.frame, Color.White, npc.rotation, origin, npc.scale, effects, 0);
 			return false;

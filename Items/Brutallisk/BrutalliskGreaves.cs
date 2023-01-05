@@ -5,7 +5,7 @@ using Tremor.Items.Steel;
 namespace Tremor.Items.Brutallisk
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class BrutalliskGreaves : ModItem
+	public class BrutalliskGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -30,7 +30,7 @@ namespace Tremor.Items.Brutallisk
 		public override void UpdateEquip(Player player)
 		{
 			player.statLifeMax2 += 40;
-			player.meleeSpeed += 0.15f;
+			player.GetAttackSpeed(DamageClass.Melee) += 0.15f;
 			player.moveSpeed += 0.9f;
 			player.jumpBoost = true;
 			player.jumpSpeedBoost += 0.9f;

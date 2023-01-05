@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.Projectiles
 {
 
-	public class VindicatorProj : ModProjectile
+	public class VindicatorProj:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -20,7 +20,7 @@ namespace Tremor.Projectiles
 			projectile.tileCollide = false;
 			projectile.hide = true;
 			projectile.ownerHitCheck = true;
-			projectile.ranged = true;
+			projectile.DamageType = DamageClass.Ranged;
 		}
 
 		public override void SetStaticDefaults()
@@ -187,7 +187,7 @@ namespace Tremor.Projectiles
 						{
 							spinningpoint = -Vector2.UnitY;
 						}
-						Projectile.NewProjectile(value2.X + 10, value2.Y + 10, spinningpoint.X, spinningpoint.Y, num6, projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
+						Projectile.NewProjectile(null, value2.X + 10, value2.Y + 10, spinningpoint.X, spinningpoint.Y, num6, projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
 					}
 				}
 				else

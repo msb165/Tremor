@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Dark
 {
-	public class DarkEmperorTrophy : ModItem
+	public class DarkEmperorTrophy:TremorModItem
 	{
 		public override void SetDefaults()
 		{

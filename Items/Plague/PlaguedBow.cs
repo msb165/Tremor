@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Plague
 {
-	public class PlaguedBow : ModItem
+	public class PlaguedBow:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +13,7 @@ namespace Tremor.Items.Plague
 			item.damage = 56;
 			item.width = 18;
 			item.height = 56;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.useTime = 30;
 			item.shoot = 1;
 			item.shootSpeed = 12f;

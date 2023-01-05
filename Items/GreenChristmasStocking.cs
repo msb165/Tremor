@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GreenChristmasStocking : ModItem
+	public class GreenChristmasStocking:TremorModItem
 	{
 		public override void SetDefaults()
 		{

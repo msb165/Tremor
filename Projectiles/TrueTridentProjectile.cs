@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class TrueTridentProjectile : ModProjectile
+	public class TrueTridentProjectile:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

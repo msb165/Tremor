@@ -8,7 +8,7 @@ using Tremor.Items;
 
 namespace Tremor.Tiles
 {
-	public class LunarRootTile : ModTile
+	public class LunarRootTile:TremorModTile
 {
     public override void SetDefaults()
     {
@@ -21,23 +21,23 @@ namespace Tremor.Tiles
         dustType = 7;
         TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.Table, TileObjectData.newTile.Width, 0);
 	AddMapEntry(new Color(120, 85, 60));
-			mineResist = 8f;
-			minPick = 200;
+			MineResist = 8f;
+			MinPick = 200;
     }
 
     public override void KillMultiTile(int i, int j, int frameX, int frameY)
     {
         if(Main.rand.NextBool())
         {
-            Item.NewItem(i * 16, j * 16, 16, 16, 3460, Main.rand.Next(1,3));
+            Item.NewItem(null, i * 16, j * 16, 16, 16, 3460, Main.rand.Next(1,3));
         }
         if(Main.rand.NextBool(2))
         {
-            Item.NewItem(i * 16, j * 16, 16, 16, ModContent.ItemType<LunarRoot>(), Main.rand.Next(1,5));
+            Item.NewItem(null, i * 16, j * 16, 16, 16, ModContent.ItemType<LunarRoot>(), Main.rand.Next(1,5));
         }
         if(Main.rand.NextBool(4))
         {
-            Item.NewItem(i * 16, j * 16, 16, 16, ModContent.ItemType<NightCore>(), Main.rand.Next(1,2));
+            Item.NewItem(null, i * 16, j * 16, 16, 16, ModContent.ItemType<NightCore>(), Main.rand.Next(1,2));
             
         }
     }

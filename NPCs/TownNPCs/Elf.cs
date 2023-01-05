@@ -9,17 +9,17 @@ using Tremor.Items.Candy;
 namespace Tremor.NPCs.TownNPCs
 {
 	[AutoloadHead]
-	public class Elf : ModNPC
+	public class Elf:TremorModNPC
 	{
 		public override string Texture => $"{typeof(Elf).NamespaceToPath()}/Elf";
 
-		public override string[] AltTextures => new[] { $"{typeof(Elf).NamespaceToPath()}/Elf" };
+		//public override string[] AltTextures => new[] { $"{typeof(Elf).NamespaceToPath()}/Elf" };
 
-		public override bool Autoload(ref string name)
-		{
-			name = "Elf";
-			return mod.Properties.Autoload;
-		}
+		//public override bool Autoload(ref string name)
+		//{
+		//	name = "Elf";
+		//	return mod.Properties.Autoload;
+		//}
 
 		public override void SetStaticDefaults()
 		{

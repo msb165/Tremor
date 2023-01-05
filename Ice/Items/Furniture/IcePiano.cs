@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items.Furniture
 {
-	public class IcePiano : ModItem
+	public class IcePiano:TremorModItem
 	{
 		public override void SetStaticDefaults()
 		{

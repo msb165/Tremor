@@ -2,13 +2,14 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.AndasBoss
 {
 	[AutoloadBossHead]
-	public class Andas : ModNPC
+	public class Andas:TremorModNPC
 	{
 
 		public override void SetStaticDefaults()
@@ -70,7 +71,7 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 					float SpreadMult = 0.05f;
 					Velocity.X = Velocity.X + Main.rand.Next(-Spread, Spread + 1) * SpreadMult;
 					Velocity.Y = Velocity.Y + Main.rand.Next(-Spread, Spread + 1) * SpreadMult;
-					int i = Projectile.NewProjectile(npc.Center.X, npc.Center.Y + 20, Velocity.X, Velocity.Y, 258, ShootDamage, ShootKnockback);
+					int i = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y + 20, Velocity.X, Velocity.Y, 258, ShootDamage, ShootKnockback);
 					Main.projectile[i].hostile = true;
 					Main.projectile[i].friendly = true;
 					Main.projectile[i].tileCollide = false;
@@ -202,14 +203,14 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 
 		void DoAndasShoot()
 		{
-			Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, -ShootDirection, 0, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
-			Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, ShootDirection, 0, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
-			Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, 0, ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
-			Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, 0, -ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
-			Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, -ShootDirection, -ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
-			Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, ShootDirection, -ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
-			Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, -ShootDirection, ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
-			Projectile.NewProjectile(npc.position.X + 40, npc.position.Y + 40, ShootDirection, ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, -ShootDirection, 0, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, ShootDirection, 0, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, 0, ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, 0, -ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, -ShootDirection, -ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, ShootDirection, -ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, -ShootDirection, ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
+			Projectile.NewProjectile(null, npc.position.X + 40, npc.position.Y + 40, ShootDirection, ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
 		}
 
 		public override bool PreNPCLoot()
@@ -221,8 +222,8 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 		{
 			if (npc.life <= 0)
 			{
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<TrueAndas>());
-				Main.PlaySound(15, 0);
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<TrueAndas>());
+				SoundEngine.PlaySound(SoundID.Roar);
 			}
 		}
 
@@ -236,12 +237,12 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D drawTexture = Main.npcTexture[npc.type];
+			Texture2D drawTexture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2((drawTexture.Width / 2) * 0.5F, (drawTexture.Height / Main.npcFrameCount[npc.type]) * 0.5F);
 
 			Vector2 drawPos = new Vector2(
-				npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Main.npcTexture[npc.type].Width / 2) * npc.scale / 2f + origin.X * npc.scale,
-				npc.position.Y - Main.screenPosition.Y + npc.height - Main.npcTexture[npc.type].Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
+				npc.position.X - Main.screenPosition.X + (npc.width / 2) - (Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Width / 2) * npc.scale / 2f + origin.X * npc.scale,
+				npc.position.Y - Main.screenPosition.Y + npc.height - Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
 
 			SpriteEffects effects = npc.spriteDirection == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
 			spriteBatch.Draw(drawTexture, drawPos, npc.frame, Color.White, npc.rotation, origin, npc.scale, effects, 0);

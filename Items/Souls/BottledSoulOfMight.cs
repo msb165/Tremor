@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Souls
 {
-	public class BottledSoulOfMight : ModItem
+	public class BottledSoulOfMight:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -44,11 +44,7 @@ namespace Tremor.Items.Souls
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.meleeDamage += 0.12f;
-			player.rangedDamage += 0.12f;
-			player.thrownDamage += 0.12f;
-			player.minionDamage += 0.12f;
-			player.magicDamage += 0.12f;
+			player.GetDamage(DamageClass.Generic) += 0.12f;
 		}
 	}
 }

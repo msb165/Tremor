@@ -5,7 +5,7 @@ using Tremor.Items.Dark;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Shield)]
-	public class OrganicShield : ModItem
+	public class OrganicShield:TremorModItem
 	{
 		public override void SetDefaults()
 		{

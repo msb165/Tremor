@@ -7,7 +7,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class SnowmanWarrior : ModNPC
+	public class SnowmanWarrior:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -48,6 +48,6 @@ namespace Tremor.NPCs
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-			=> NPC.AnyNPCs(NPCID.MisterStabby) && Main.hardMode && spawnInfo.spawnTileY < Main.worldSurface ? 0.08f : 0f;
+			=> NPC.AnyNPCs(NPCID.MisterStabby) && Main.hardMode && spawnInfo.SpawnTileY < Main.worldSurface ? 0.08f : 0f;
 	}
 }

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Ancient
 {
-	public class AncientDragonTrophy : ModItem
+	public class AncientDragonTrophy:TremorModItem
 	{
 		public override void SetDefaults()
 		{

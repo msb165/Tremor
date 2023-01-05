@@ -4,14 +4,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class VoidKnifeExplosion : ModProjectile
+	public class VoidKnifeExplosion:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
 			projectile.timeLeft = 420;
 			projectile.width = 52;
 			projectile.height = 52;
-			projectile.melee = true;
+			projectile.DamageType = DamageClass.Melee;
 			projectile.friendly = true;
 			Main.projFrames[projectile.type] = 5;
 			projectile.tileCollide = false;

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class FrostKingTrophy : ModItem
+	public class FrostKingTrophy:TremorModItem
 	{
 		public override void SetDefaults()
 		{

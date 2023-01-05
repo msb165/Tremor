@@ -6,7 +6,7 @@ using Tremor.Items;
 
 namespace Tremor.Projectiles
 {
-	public class NastyJavelinPro : ModProjectile
+	public class NastyJavelinPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -37,11 +37,11 @@ namespace Tremor.Projectiles
 			{
 				Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, ModContent.DustType<Dusts.NightmareFlame>(), projectile.oldVelocity.X * 0.5f, projectile.oldVelocity.Y * 2f, 100, default(Color), 2f);
 			}
-			Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y, 0);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Dig, projectile.position);//Variant 0
 
 			if (Main.rand.NextBool(3))
 			{
-				Item.NewItem((int)projectile.position.X, (int)projectile.position.Y, projectile.width, projectile.height, ModContent.ItemType<NastyJavelin>());
+				Item.NewItem(null, (int)projectile.position.X, (int)projectile.position.Y, projectile.width, projectile.height, ModContent.ItemType<NastyJavelin>());
 			};
 		}
 

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class WhiteGoldGreaves : ModItem
+	public class WhiteGoldGreaves:TremorModItem
 	{
 
 		public override void SetDefaults()

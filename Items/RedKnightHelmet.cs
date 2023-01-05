@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class RedKnightHelmet : ModItem
+	public class RedKnightHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()

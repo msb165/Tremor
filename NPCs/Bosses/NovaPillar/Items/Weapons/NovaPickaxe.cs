@@ -3,12 +3,12 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.Items.Weapons
 {
-	public class NovaPickaxe : ModItem
+	public class NovaPickaxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 			item.damage = 80;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 38;
 			item.height = 38;
 			item.useTime = 7;

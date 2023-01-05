@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GoldenClaw : ModItem
+	public class GoldenClaw:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Cobalt
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class CobaltHeader : ModItem
+	public class CobaltHeader:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items.Cobalt
 
 		public override void UpdateEquip(Player player)
 		{
-			player.thrownDamage += 0.18f;
+			player.GetDamage(DamageClass.Throwing) += 0.18f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -38,7 +38,7 @@ namespace Tremor.Items.Cobalt
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Increases thrown weapon velocity";
-			player.thrownVelocity += 0.25f;
+			player.ThrownVelocity += 0.25f;
 		}
 
 		public override void ArmorSetShadows(Player player)

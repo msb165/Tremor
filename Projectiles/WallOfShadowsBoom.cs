@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class WallOfShadowsBoom : ModProjectile
+	public class WallOfShadowsBoom:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

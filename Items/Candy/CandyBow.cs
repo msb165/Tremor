@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Candy
 {
-	public class CandyBow : ModItem
+	public class CandyBow:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 18;
-			item.ranged = true;
+			item.DamageType = DamageClass.Ranged;
 			item.width = 24;
 			item.height = 46;
 			item.useTime = 30;

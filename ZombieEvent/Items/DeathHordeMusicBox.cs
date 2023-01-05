@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 namespace Tremor.ZombieEvent.Items
 {
 
-	public class DeathHordeMusicBox : ModItem
+	public class DeathHordeMusicBox:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -4,7 +4,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class StormJellyfishBag : ModItem
+	public class StormJellyfishBag:TremorModItem
 	{
 		public override void SetDefaults()
 		{

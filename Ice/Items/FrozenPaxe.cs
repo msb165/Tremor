@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items
 {
-	public class FrozenPaxe : ModItem
+	public class FrozenPaxe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 22;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 48;
 			item.height = 40;
 			item.useTime = 13;

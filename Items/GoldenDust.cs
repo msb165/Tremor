@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GoldenDust : ModItem
+	public class GoldenDust:TremorModItem
 	{
 		public override void SetDefaults()
 		{

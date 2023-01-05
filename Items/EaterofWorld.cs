@@ -6,13 +6,13 @@ using Tremor.Items.Doom;
 
 namespace Tremor.Items
 {
-	public class EaterofWorld : ModItem
+	public class EaterofWorld:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 139;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.width = 40;
 			item.height = 20;
 			item.noUseGraphic = true;
@@ -21,7 +21,7 @@ namespace Tremor.Items
 			item.useStyle = 5;
 			item.noMelee = true;
 			item.knockBack = 6;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.value = 50000;
 			item.rare = 9;
 			item.UseSound = SoundID.Item11;
@@ -40,8 +40,8 @@ namespace Tremor.Items
 		{
 			for (int i = 0; i < 1; ++i) // Will shoot 3 bullets.
 			{
-				Projectile.NewProjectile(position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(position.X, position.Y, speedX - 1, speedY - 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 1, type, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX - 1, speedY - 1, type, damage, knockBack, Main.myPlayer);
 			}
 			return false;
 		}

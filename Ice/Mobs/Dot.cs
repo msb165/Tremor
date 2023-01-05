@@ -9,7 +9,7 @@ using Tremor.Ice.Tree;
 
 namespace Tremor.Ice.Mobs
 {
-	public class Dot : ModNPC
+	public class Dot:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -42,7 +42,7 @@ namespace Tremor.Ice.Mobs
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
 			int[] TileArray2 = { ModContent.TileType<IceOre>(), ModContent.TileType<IceBlock>(), ModContent.TileType<VeryVeryIce>(), ModContent.TileType<DungeonBlock>() };
-			return TileArray2.Contains(Main.tile[spawnInfo.spawnTileX, spawnInfo.spawnTileY].type)
+			return TileArray2.Contains(Main.tile[spawnInfo.SpawnTileX, spawnInfo.SpawnTileY].TileType)
 				&& !NPC.AnyNPCs(NPCID.LunarTowerVortex)
 			    && !NPC.AnyNPCs(NPCID.LunarTowerStardust)
 			    && !NPC.AnyNPCs(NPCID.LunarTowerNebula)
@@ -58,14 +58,14 @@ namespace Tremor.Ice.Mobs
 
 				for (int k = 1; k < 5; k++)
 				{
-					int proj = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, 0f, 0f, ModContent.ProjectileType<ColdtrapChain>(), damage, 0, Main.myPlayer);
+					int proj = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, 0f, 0f, ModContent.ProjectileType<ColdtrapChain>(), damage, 0, Main.myPlayer);
 
 					if (proj == 100)
 					{
 						npc.active = false;
 						return;
 					}
-					ColdtrapChain arm = Main.projectile[proj].modProjectile as ColdtrapChain;
+					ColdtrapChain arm = Main.projectile[proj].ModProjectile as ColdtrapChain;
 					arm.arm = npc.whoAmI;
 					arm.width = 16f;
 					arm.length = ColdtrapChain.minLength;
@@ -82,7 +82,7 @@ namespace Tremor.Ice.Mobs
 		public override void NPCLoot()
 		{
 			if (Main.rand.Next(25) == 0)
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, 12, 12, ModContent.ItemType<IceKey>(), 1);
+				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, 12, 12, ModContent.ItemType<IceKey>(), 1);
 
 			// 20% chance to drop a few ice blocks
 			if (Main.rand.NextBool(5))
@@ -99,7 +99,7 @@ namespace Tremor.Ice.Mobs
 			int num = 2 + Main.rand.Next(2);
 			for (int i = 0; i < num; i++)
 			{
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<Glacier>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<Glacier>());
 			}
 		}
 

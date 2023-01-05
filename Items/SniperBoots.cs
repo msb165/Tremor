@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class SniperBoots : ModItem
+	public class SniperBoots:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -27,7 +27,7 @@ namespace Tremor.Items
 
 		public override void UpdateEquip(Player player)
 		{
-			player.rangedDamage *= 1.15f;
+			player.GetDamage(DamageClass.Ranged) *= 1.15f;
 			player.moveSpeed -= 0.20f;
 		}
 

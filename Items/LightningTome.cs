@@ -3,14 +3,14 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class LightningTome : ModItem
+	public class LightningTome:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 15;
-			item.melee = false;
-			item.magic = true;
+			//item.melee = false;
+			item.DamageType = DamageClass.Magic;
 			item.width = 50;
 			item.height = 55;
 			item.useTime = 14;

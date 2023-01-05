@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class EdgeofFrostKing : ModItem
+	public class EdgeofFrostKing:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 94;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 40;
 			item.height = 40;
 			item.useTime = 25;

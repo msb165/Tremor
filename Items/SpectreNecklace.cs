@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Neck)]
-	public class SpectreNecklace : ModItem
+	public class SpectreNecklace:TremorModItem
 	{
 
 		public override void SetDefaults()

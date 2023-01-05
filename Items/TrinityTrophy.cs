@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TrinityTrophy : ModItem
+	public class TrinityTrophy:TremorModItem
 	{
 		public override void SetDefaults()
 		{

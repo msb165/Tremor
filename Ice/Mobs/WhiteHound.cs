@@ -9,7 +9,7 @@ using Tremor.Ice.Tree;
 
 namespace Tremor.Ice.Mobs
 {
-	public class WhiteHound : ModNPC
+	public class WhiteHound:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -41,13 +41,13 @@ namespace Tremor.Ice.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteHoundGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteHoundGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteHoundGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteHoundGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteHoundGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteHoundGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteHoundGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteHoundGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteHoundGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteHoundGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteHoundGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteHoundGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteHoundGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteHoundGore3"), 1f);
 			}
 		}
 
@@ -76,7 +76,7 @@ namespace Tremor.Ice.Mobs
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
 			int[] TileArray2 = { ModContent.TileType<IceOre>(), ModContent.TileType<IceBlock>(), ModContent.TileType<VeryVeryIce>(), ModContent.TileType<DungeonBlock>() };
-			return TileArray2.Contains(Main.tile[spawnInfo.spawnTileX, spawnInfo.spawnTileY].type) 
+			return TileArray2.Contains(Main.tile[spawnInfo.SpawnTileX, spawnInfo.SpawnTileY].TileType) 
 				&& Main.hardMode
 				&& !NPC.AnyNPCs(NPCID.LunarTowerVortex)
 			    && !NPC.AnyNPCs(NPCID.LunarTowerStardust)

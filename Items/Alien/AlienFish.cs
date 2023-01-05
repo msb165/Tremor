@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Alien
 {
-	public class AlienFish : ModItem
+	public class AlienFish:TremorModItem
 	{
 		public override void SetDefaults()
 		{

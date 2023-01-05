@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class BouncingCasingBuff : ModBuff
+	public class BouncingCasingBuff:TremorModBuff
 	{
 		public override void SetDefaults()
 		{

@@ -1,11 +1,12 @@
 using System;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class ShadowR : ModProjectile
+	public class ShadowR:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -13,7 +14,7 @@ namespace Tremor.Projectiles
 			projectile.width = 12;
 			projectile.height = 12;
 			projectile.friendly = true;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 			projectile.penetrate = 25;
 			projectile.timeLeft = 120;
 			projectile.aiStyle = 1;
@@ -73,7 +74,7 @@ namespace Tremor.Projectiles
 			{
 				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, ModContent.DustType<Dusts.DustV>(), projectile.oldVelocity.X * 0.7f, projectile.oldVelocity.Y * 0.7f);
 			}
-			Main.PlaySound(4, (int)projectile.position.X, (int)projectile.position.Y, 7);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[4], projectile.position);//Variant 7
 		}
 
 		public void CreateDust()

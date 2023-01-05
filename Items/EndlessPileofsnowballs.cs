@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class EndlessPileofsnowballs : ModItem
+	public class EndlessPileofsnowballs:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -23,7 +23,7 @@ namespace Tremor.Items
 			item.useTime = 19;
 			item.noUseGraphic = true;
 			item.noMelee = true;
-			item.thrown = true;
+			item.DamageType = DamageClass.Throwing;
 			item.knockBack = 5.75f;
 		}
 

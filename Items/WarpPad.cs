@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class WarpPad : ModItem
+	public class WarpPad:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,7 +28,7 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Teleports you to your last death point upon use");
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			if (player.lastDeathPostion != player.position && player.showLastDeath)
 			{

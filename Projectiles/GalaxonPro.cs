@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class GalaxonPro : ModProjectile
+	public class GalaxonPro:TremorModProjectile
 	{
 
 		public override void SetDefaults()
@@ -17,7 +17,7 @@ namespace Tremor.Projectiles
 			projectile.penetrate = -1;
 			projectile.extraUpdates = 5;
 			projectile.tileCollide = false;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 		}
 
 		public override void SetStaticDefaults()
@@ -100,7 +100,7 @@ namespace Tremor.Projectiles
 
 		public override void Kill(int timeLeft)
 		{
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 14);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item14, projectile.position);
 			bool flag = WorldGen.SolidTile(Framing.GetTileSafely((int)projectile.position.X / 16, (int)projectile.position.Y / 16));
 			for (int m = 0; m < 4; m++)
 			{

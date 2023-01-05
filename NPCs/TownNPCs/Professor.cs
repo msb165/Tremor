@@ -12,17 +12,17 @@ using Tremor.Items.Ancient;
 namespace Tremor.NPCs.TownNPCs
 {
 	[AutoloadHead]
-	public class Professor : ModNPC
+	public class Professor:TremorModNPC
 	{
 		public override string Texture => $"{typeof(Professor).NamespaceToPath()}/Professor";
 
-		public override string[] AltTextures => new[] { $"{typeof(Professor).NamespaceToPath()}/Professor" };
+		//public override string[] AltTextures => new[] { $"{typeof(Professor).NamespaceToPath()}/Professor" };
 
-		public override bool Autoload(ref string name)
-		{
-			name = "Professor";
-			return mod.Properties.Autoload;
-		}
+		//public override bool Autoload(ref string name)
+		//{
+		//	name = "Professor";
+		//	return mod.Properties.Autoload;
+		//}
 
 		public override void SetStaticDefaults()
 		{
@@ -144,7 +144,7 @@ namespace Tremor.NPCs.TownNPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for (int i = 0; i < 3; ++i)
-					Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot($"Gores/ProfessorGore{i + 1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/ProfessorGore{i + 1}"), 1f);
 			}
 		}
 	}

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class DevilForge : ModItem
+	public class DevilForge:TremorModItem
 	{
 		public override void SetDefaults()
 		{

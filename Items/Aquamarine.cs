@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Aquamarine : ModItem
+	public class Aquamarine:TremorModItem
 	{
 		public override void SetDefaults()
 		{

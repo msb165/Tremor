@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class ShadowForkPro : ModProjectile
+	public class ShadowForkPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.Motherboard.Items
 {
-	public class Motherboard : ModItem
+	public class Motherboard:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,7 +26,7 @@ namespace Tremor.NPCs.Bosses.Motherboard.Items
 			Tooltip.SetDefault("You shouldn't have this");
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			Main.dayTime = false;
 			//summonWallOfShadows(player);
@@ -48,7 +48,7 @@ namespace Tremor.NPCs.Bosses.Motherboard.Items
 				spawnPos = new Vector2(player.Center.X - Main.screenWidth / 2 - 25, player.Center.Y + 1050);
 				dir = 1;
 			}
-			int newWall = NPC.NewNPC((int)spawnPos.X, (int)spawnPos.Y, ModContent.NPCType<WallOfShadow>(), 0, dir, 0, 0, 0, player.whoAmI);
+			int newWall = NPC.NewNPC(null, (int)spawnPos.X, (int)spawnPos.Y, ModContent.NPCType<WallOfShadow>(), 0, dir, 0, 0, 0, player.whoAmI);
 		}
 	}
 }

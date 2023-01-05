@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class BottledGlue : ModItem
+	public class BottledGlue:TremorModItem
 	{
 		public override void SetDefaults()
 		{

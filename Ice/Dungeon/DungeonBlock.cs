@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Dungeon
 {
-	public class DungeonBlock : ModTile
+	public class DungeonBlock:TremorModTile
 	{
 		public override void SetDefaults()
 		{

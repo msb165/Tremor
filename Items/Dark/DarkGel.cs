@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Dark
 {
-	public class DarkGel : ModItem
+	public class DarkGel:TremorModItem
 	{
 		public override void SetDefaults()
 		{

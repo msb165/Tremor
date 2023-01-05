@@ -7,7 +7,7 @@ using Tremor.Projectiles;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 {
-	public class Deadling : ModNPC
+	public class Deadling:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -39,7 +39,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			if (spawnInfo.player.GetModPlayer<TremorPlayer>().ZoneTowerNova)
+			if (spawnInfo.Player.GetModPlayer<TremorPlayer>().ZoneTowerNova)
 				return 1f;
 			return 0;
 		}
@@ -56,7 +56,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			return true;
 		}
 
-		public override void PostDraw(SpriteBatch spriteBatch, Color drawColor)
+		public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{
 			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/Deadling_GlowMask"));
 		}
@@ -70,7 +70,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			{
 				NPC parent = Main.npc[NPC.FindFirstNPC(ModContent.NPCType<NovaPillar>())];
 				Vector2 Velocity = Helper.VelocityToPoint(npc.Center, parent.Center, 20);
-				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CogLordLaser>(), 1, 1f);
+				Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CogLordLaser>(), 1, 1f);
 			}
 			for (int i = 0; i < 5; i++)
 			{
@@ -81,7 +81,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				Vector2 Vector = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 				Vector.Normalize();
 				Vector *= Main.rand.Next(10, 201) * 0.01f;
-				int i = Projectile.NewProjectile(npc.position.X, npc.position.Y, Vector.X, Vector.Y, ModContent.ProjectileType<Projectiles.NovaAlchemistCloud>(), 20, 1f, Main.myPlayer, 0f, Main.rand.Next(-45, 1));
+				int i = Projectile.NewProjectile(null, npc.position.X, npc.position.Y, Vector.X, Vector.Y, ModContent.ProjectileType<Projectiles.NovaAlchemistCloud>(), 20, 1f, Main.myPlayer, 0f, Main.rand.Next(-45, 1));
 				Main.projectile[i].friendly = false;
 			}
 		}
@@ -94,7 +94,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				{
 					NPC parent = Main.npc[NPC.FindFirstNPC(ModContent.NPCType<NovaPillar>())];
 					Vector2 Velocity = Helper.VelocityToPoint(npc.Center, parent.Center, 20);
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CogLordLaser>(), 1, 1f);
+					Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CogLordLaser>(), 1, 1f);
 				}
 				for (int i = 0; i < 5; i++)
 				{
@@ -105,7 +105,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 					Vector2 Vector = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 					Vector.Normalize();
 					Vector *= Main.rand.Next(10, 201) * 0.01f;
-					int i = Projectile.NewProjectile(npc.position.X, npc.position.Y, Vector.X, Vector.Y, ModContent.ProjectileType<Projectiles.NovaAlchemistCloud>(), 20, 1f, Main.myPlayer, 0f, Main.rand.Next(-45, 1));
+					int i = Projectile.NewProjectile(null, npc.position.X, npc.position.Y, Vector.X, Vector.Y, ModContent.ProjectileType<Projectiles.NovaAlchemistCloud>(), 20, 1f, Main.myPlayer, 0f, Main.rand.Next(-45, 1));
 					Main.projectile[i].friendly = false;
 				}
 			}

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class MechanicalFirefly : ModItem
+	public class MechanicalFirefly:TremorModItem
 	{
 		public override void SetDefaults()
 		{

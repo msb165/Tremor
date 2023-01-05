@@ -3,7 +3,7 @@ using Tremor.Items.Crystal;
 
 namespace Tremor.Items
 {
-	public class HardCometiteBar : ModItem
+	public class HardCometiteBar:TremorModItem
 	{
 		public override void SetDefaults()
 		{

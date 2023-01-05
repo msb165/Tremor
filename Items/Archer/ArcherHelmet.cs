@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Archer
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class ArcherHelmet : ModItem
+	public class ArcherHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()

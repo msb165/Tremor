@@ -7,7 +7,7 @@ using Tremor.Projectiles;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 {
-	public class NovaFlier : ModNPC
+	public class NovaFlier:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -68,11 +68,11 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			if (Main.time % 200 == 0)
 			{
 				Vector2 Velocity = Helper.VelocityToPoint(npc.Center, Helper.RandomPointInArea(new Vector2(player.Center.X - 10, player.Center.Y - 10), new Vector2(player.Center.X + 20, player.Center.Y + 20)), 7);
-				int i = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<Projectiles.NovaFlierProj>(), 20, 1f);
+				int i = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<Projectiles.NovaFlierProj>(), 20, 1f);
 			}
 		}
 
-		public override void PostDraw(SpriteBatch spriteBatch, Color drawColor)
+		public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{
 			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/NovaFlier_GlowMask"));
 		}
@@ -85,7 +85,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				{
 					NPC parent = Main.npc[NPC.FindFirstNPC(ModContent.NPCType<NovaPillar>())];
 					Vector2 Velocity = Helper.VelocityToPoint(npc.Center, parent.Center, 20);
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CogLordLaser>(), 1, 1f);
+					Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CogLordLaser>(), 1, 1f);
 				}
 				for (int i = 0; i < 5; i++)
 				{
@@ -93,11 +93,11 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				}
 				for (int i = 0; i < 2; i++)
 				{
-					Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot("Gores/NovaFlierGore1"));
-					Gore.NewGore(npc.Center, npc.velocity, mod.GetGoreSlot("Gores/NovaFlierGore2"));
+					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/NovaFlierGore1"));
+					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/NovaFlierGore2"));
 				}
-				Gore.NewGore(npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/NovaFlierGore3"));
-				Gore.NewGore(npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/NovaFlierGore3"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/NovaFlierGore3"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/NovaFlierGore3"));
 			}
 		}
 
@@ -119,7 +119,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			if (spawnInfo.player.GetModPlayer<TremorPlayer>().ZoneTowerNova)
+			if (spawnInfo.Player.GetModPlayer<TremorPlayer>().ZoneTowerNova)
 				return 1f;
 			return 0;
 		}

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class EbonstoneChest : ModItem
+	public class EbonstoneChest:TremorModItem
 	{
 		public override void SetDefaults()
 		{

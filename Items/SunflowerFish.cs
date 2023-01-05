@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class SunflowerFish : ModItem
+	public class SunflowerFish:TremorModItem
 	{
 		public override void SetDefaults()
 		{

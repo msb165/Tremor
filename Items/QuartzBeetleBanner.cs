@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class QuartzBeetleBanner : ModItem
+	public class QuartzBeetleBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

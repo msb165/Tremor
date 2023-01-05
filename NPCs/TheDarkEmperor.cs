@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -7,7 +8,7 @@ namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
 
-	public class TheDarkEmperor : ModNPC
+	public class TheDarkEmperor:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -40,11 +41,11 @@ namespace Tremor.NPCs
 		{
 			if (Main.rand.Next(500) == 0)
 			{
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
 			}
 			if (Main.rand.Next(150) == 0)
 			{
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkSlime>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkSlime>());
 			}
 
 		}
@@ -65,23 +66,23 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 191, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 					Dust.NewDust(npc.position, npc.width, npc.height, 191, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Main.PlaySound(15, 0);
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<TheDarkEmperorTwo>());
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
-				Gore.NewGore(npc.position, npc.velocity, 99, 3f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 2f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 3f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 2f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 2f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 4f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 2f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 2f);
+				SoundEngine.PlaySound(SoundID.Roar);
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<TheDarkEmperorTwo>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<DarkServant>());
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 3f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 2f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 3f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 2f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 2f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 4f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 2f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 2f);
 			}
 			else
 			{

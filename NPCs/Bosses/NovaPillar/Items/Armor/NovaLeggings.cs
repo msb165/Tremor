@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.NPCs.Bosses.NovaPillar.Items.Armor
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class NovaLeggings : ModItem
+	public class NovaLeggings:TremorModItem
 	{
 		public override void SetDefaults()
 		{

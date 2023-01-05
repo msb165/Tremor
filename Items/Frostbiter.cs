@@ -6,13 +6,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class Frostbiter : ModItem
+	public class Frostbiter:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 86;
-			item.magic = true;
+			item.DamageType = DamageClass.Magic;
 			item.mana = 6;
 			item.width = 40;
 			item.height = 40;
@@ -68,7 +68,7 @@ namespace Tremor.Items
 					vector2 = new Vector2(position.X - 75f * (float)Math.Cos(angle), position.Y - 75f * (float)Math.Sin(angle));
 				}
 
-				Projectile.NewProjectile(vector2.X, vector2.Y, vX, vY, 118, damage, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, vector2.X, vector2.Y, vX, vY, 118, damage, knockBack, Main.myPlayer);
 
 			}
 			return false;

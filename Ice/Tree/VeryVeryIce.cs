@@ -1,12 +1,13 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Ice.Tree
 {
-	public class VeryVeryIce : ModTile
+	public class VeryVeryIce:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -26,7 +27,10 @@ namespace Tremor.Ice.Tree
 			soundStyle = 2;
 			Main.tileLighted[Type] = true;
 			AddMapEntry(new Color(104, 155, 195));
-			SetModTree(new TremorTree());
+
+			//TODO: [Skipped for 1.4] Fix Trees
+			//SetModTree(new TremorTree());
+			
 			drop = ModContent.ItemType<IceBlockB>();
 		}
 
@@ -34,33 +38,33 @@ namespace Tremor.Ice.Tree
 		{
 			Vector2 zero = new Vector2(Main.offScreenRange, Main.offScreenRange);
 			Tile tile = Main.tile[i, j];
-			int height = tile.frameY == 36 ? 18 : 16;
+			int height = tile.TileFrameY == 36 ? 18 : 16;
 			int animate = 0;
-			if (tile.frameY >= 56)
+			if (tile.TileFrameY >= 56)
 			{
-				animate = Main.tileFrame[Type] * animationFrameHeight;
+				animate = Main.tileFrame[Type] * AnimationFrameHeight;
 			}
-			Texture2D texture = Main.tileTexture[Type];
-			Main.spriteBatch.Draw(texture, new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - (int)Main.screenPosition.Y) + zero, new Rectangle(tile.frameX, tile.frameY + animate, 16, height), Lighting.GetColor(i, j), 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
+			Texture2D texture = TextureAssets.Tile[Type].Value;
+			Main.spriteBatch.Draw(texture, new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - (int)Main.screenPosition.Y) + zero, new Rectangle(tile.TileFrameX, tile.TileFrameY + animate, 16, height), Lighting.GetColor(i, j), 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
 			return false;
 		}
 		public override void RandomUpdate(int i, int j)
 		{
-			if (Main.tile[i - 1, j].type == TileID.SnowBlock && CanGrow(i - 1, j))
+			if (Main.tile[i - 1, j].TileType == TileID.SnowBlock && CanGrow(i - 1, j))
 			{
-				Main.tile[i - 1, j].type = (ushort)ModContent.TileType<IceBlock>();
+				Main.tile[i - 1, j].TileType = (ushort)ModContent.TileType<IceBlock>();
 			}
-			if (Main.tile[i + 1, j].type == TileID.SnowBlock && CanGrow(i + 1, j))
+			if (Main.tile[i + 1, j].TileType == TileID.SnowBlock && CanGrow(i + 1, j))
 			{
-				Main.tile[i + 1, j].type = (ushort)ModContent.TileType<IceBlock>();
+				Main.tile[i + 1, j].TileType = (ushort)ModContent.TileType<IceBlock>();
 			}
-			if (Main.tile[i, j - 1].type == TileID.SnowBlock && CanGrow(i, j - 1))
+			if (Main.tile[i, j - 1].TileType == TileID.SnowBlock && CanGrow(i, j - 1))
 			{
-				Main.tile[i, j - 1].type = (ushort)ModContent.TileType<IceBlock>();
+				Main.tile[i, j - 1].TileType = (ushort)ModContent.TileType<IceBlock>();
 			}
-			if (Main.tile[i, j + 1].type == TileID.SnowBlock && CanGrow(i, j + 1))
+			if (Main.tile[i, j + 1].TileType == TileID.SnowBlock && CanGrow(i, j + 1))
 			{
-				Main.tile[i, j + 1].type = (ushort)ModContent.TileType<IceBlock>();
+				Main.tile[i, j + 1].TileType = (ushort)ModContent.TileType<IceBlock>();
 			}
 		}
 
@@ -76,10 +80,12 @@ namespace Tremor.Ice.Tree
 			return flag;
 		}
 
-		public override int SaplingGrowthType(ref int style)
-		{
-			style = 0;
-			return ModContent.TileType<TremorSapling>();
-		}
+
+		//TODO: [Skipped for 1.4] Fix Trees
+		//public override int SaplingGrowthType(ref int style)
+		//{
+		//	style = 0;
+		//	return ModContent.TileType<TremorSapling>();
+		//}
 	}
 }

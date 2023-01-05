@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 {
-	public class NovaSkullburst : ModProjectile
+	public class NovaSkullburst:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

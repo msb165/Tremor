@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class FallenSnake : ModItem
+	public class FallenSnake:TremorModItem
 	{
 		public override void SetDefaults()
 		{

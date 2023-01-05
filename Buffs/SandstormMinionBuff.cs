@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class SandstormMinionBuff : ModBuff
+	public class SandstormMinionBuff:TremorModBuff
 	{
 		int MinionType = -1;
 		int MinionID = -1;
@@ -22,7 +22,7 @@ namespace Tremor.Buffs
 			{
 				Projectile proj = new Projectile();
 				proj.SetDefaults(MinionType);
-				MinionID = Projectile.NewProjectile(player.Center.X, player.Center.Y, 0, 0, MinionType, proj.damage, proj.knockBack, player.whoAmI);
+				MinionID = Projectile.NewProjectile(null, player.Center.X, player.Center.Y, 0, 0, MinionType, proj.damage, proj.knockBack, player.whoAmI);
 			}
 			else
 			{

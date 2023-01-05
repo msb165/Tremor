@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 namespace Tremor.Items
 {
 
-	public class Toothpick : ModItem
+	public class Toothpick:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 8;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 20;
 			item.height = 12;
 			item.useTime = 15;

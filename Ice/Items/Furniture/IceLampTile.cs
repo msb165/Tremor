@@ -6,7 +6,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Ice.Items.Furniture
 {
-	public class IceLampTile : ModTile
+	public class IceLampTile:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -33,7 +33,7 @@ namespace Tremor.Ice.Items.Furniture
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<IceLamp>());
+			Item.NewItem(null, i * 16, j * 16, 32, 16, ModContent.ItemType<IceLamp>());
 		}
 	}
 }

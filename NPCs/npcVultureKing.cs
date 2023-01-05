@@ -9,7 +9,7 @@ using Tremor.Items.Sandstone;
 namespace Tremor.NPCs
 {
 	[AutoloadBossHead]
-	public class npcVultureKing : ModNPC
+	public class npcVultureKing:TremorModNPC
 	{
 		#region "Константы"
 		const int AnimationRate = 8; // Частота смены кадров (То, сколько кадров не будет сменятся кадр)
@@ -157,7 +157,7 @@ namespace Tremor.NPCs
 			for (int i = 0; i < ((Main.expertMode) ? 3 : 1); i++)
 			{
 				Vector2 Velocity = Helper.VelocityToPoint(npc.Center, Helper.RandomPointInArea(new Vector2(Main.player[npc.target].Center.X - 10, Main.player[npc.target].Center.Y - 10), new Vector2(Main.player[npc.target].Center.X + 20, Main.player[npc.target].Center.Y + 20)), ShootSpeed);
-				int Proj = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ShootType, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent));
+				int Proj = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ShootType, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent));
 				Main.projectile[Proj].Center = npc.Center;
 			}
 		}
@@ -172,7 +172,7 @@ namespace Tremor.NPCs
 			for (int i = 0; i < ((Main.expertMode) ? 3 : 1); i++)
 			{
 				Vector2 Velocity = Helper.VelocityToPoint(npc.Center, Helper.RandomPointInArea(new Vector2(Main.player[npc.target].Center.X - 10, Main.player[npc.target].Center.Y - 10), new Vector2(Main.player[npc.target].Center.X + 20, Main.player[npc.target].Center.Y + 20)), ShootSpeed2);
-				int Proj = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ShootType2, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent));
+				int Proj = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, Velocity.X, Velocity.Y, ShootType2, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent));
 				Main.projectile[Proj].Center = npc.Center;
 			}
 		}
@@ -188,7 +188,7 @@ namespace Tremor.NPCs
 					if (TimeToState % StateTime_Minions / MinionsCount == 0)
 					{
 						Vector2 Position = Helper.RandomPointInArea(npc.Hitbox);
-						int index = NPC.NewNPC((int)Position.X, (int)Position.Y, MinionsID);
+						int index = NPC.NewNPC(null, (int)Position.X, (int)Position.Y, MinionsID);
 						Main.npc[index].Center = Position;
 					}
 					break;
@@ -198,7 +198,7 @@ namespace Tremor.NPCs
 		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
 			SpriteEffects Direction = (npc.target == -1) ? SpriteEffects.None : ((Main.player[npc.target].position.X < npc.position.X) ? SpriteEffects.None : SpriteEffects.FlipHorizontally);
-			spriteBatch.Draw(Main.npcTexture[npc.type], new Rectangle((int)(npc.position.X - Main.screenPosition.X), (int)(npc.position.Y - Main.screenPosition.Y), 240, 160), new Rectangle(0, Frame * 160, 240, 160), drawColor, 0, new Vector2(0, 0), Direction, 0);
+			spriteBatch.Draw(Terraria.GameContent.TextureAssets.Npc[npc.type].Value, new Rectangle((int)(npc.position.X - Main.screenPosition.X), (int)(npc.position.Y - Main.screenPosition.Y), 240, 160), new Rectangle(0, Frame * 160, 240, 160), drawColor, 0, new Vector2(0, 0), Direction, 0);
 			return false;
 		}
 
@@ -206,10 +206,10 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TRGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TRGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TRGore3"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/TRGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TRGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TRGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TRGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/TRGore2"), 1f);
 			}
 		}
 
@@ -217,7 +217,7 @@ namespace Tremor.NPCs
 		{
 			if (Main.expertMode)
 			{
-				npc.DropBossBags();
+				DropBossBags();
 			}
 			if (Main.netMode != 1)
 			{
@@ -227,27 +227,27 @@ namespace Tremor.NPCs
 
 				if (!Main.expertMode && Main.rand.NextBool(7))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<VultureKingMask>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<VultureKingMask>());
 				}
 				if (Main.rand.Next(10) == 0)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<VultureKingTrophy>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<VultureKingTrophy>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CactusBow>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CactusBow>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SandKnife>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SandKnife>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool(4))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<VultureFeather>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<VultureFeather>());
 				}
 				if (!Main.expertMode && Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SandstoneBar>(), Main.rand.Next(10, 18));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SandstoneBar>(), Main.rand.Next(10, 18));
 				}
 
 				TremorWorld.Boss.Rukh.Downed();

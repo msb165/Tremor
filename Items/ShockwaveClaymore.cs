@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ShockwaveClaymore : ModItem
+	public class ShockwaveClaymore:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 86;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 50;
 			item.height = 52;
 			item.useTime = 25;

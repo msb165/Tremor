@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class PhilosophersFlower : ModItem
+	public class PhilosophersFlower:TremorModItem
 	{
 		public override void SetDefaults()
 		{

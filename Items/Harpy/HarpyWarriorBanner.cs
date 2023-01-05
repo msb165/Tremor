@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Harpy
 {
-	public class HarpyWarriorBanner : ModItem
+	public class HarpyWarriorBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

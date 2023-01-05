@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class ScarredReaperPro : ModProjectile
+	public class ScarredReaperPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{

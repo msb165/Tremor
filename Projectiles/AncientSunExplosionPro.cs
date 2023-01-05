@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class AncientSunExplosionPro : ModProjectile
+	public class AncientSunExplosionPro:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -18,7 +18,7 @@ namespace Tremor.Projectiles
 			projectile.tileCollide = false;
 			projectile.penetrate = -1;
 			projectile.timeLeft = 150;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 		}
 
 		public override void SetStaticDefaults()
@@ -36,7 +36,7 @@ namespace Tremor.Projectiles
 			}
 			if (projectile.localAI[0] == 0f)
 			{
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 20);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item20, projectile.position);
 				projectile.localAI[0] += 1f;
 			}
 			bool flag15 = false;

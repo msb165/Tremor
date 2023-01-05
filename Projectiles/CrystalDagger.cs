@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class CrystalDagger : ModProjectile
+	public class CrystalDagger:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -30,7 +30,7 @@ namespace Tremor.Projectiles
 			{
 				int dust = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 73, projectile.oldVelocity.X * 0.7f, projectile.oldVelocity.Y * 0.7f);
 			}
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 27);
+			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item27, projectile.position);
 		}
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

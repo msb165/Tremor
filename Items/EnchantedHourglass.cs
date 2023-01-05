@@ -4,13 +4,12 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class EnchantedHourglass : ModItem
+	public class EnchantedHourglass:TremorModItem
 	{
 		public override void SetDefaults()
 		{
-
-			item.melee = false;
-			item.magic = true;
+			//item.melee = false;
+			item.DamageType = DamageClass.Magic;
 			item.width = 50;
 			item.height = 55;
 			item.useTime = 30;
@@ -30,7 +29,7 @@ namespace Tremor.Items
 			Tooltip.SetDefault("");
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			if (Main.player[Main.myPlayer].active && Main.player[Main.myPlayer].FindBuffIndex(ModContent.BuffType<Buffs.HealthRecharging>()) != -1)
 			{

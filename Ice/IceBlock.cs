@@ -7,7 +7,7 @@ using Tremor.Ice.Tree;
 
 namespace Tremor.Ice
 {
-	public class IceBlock : ModTile
+	public class IceBlock:TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -47,7 +47,7 @@ namespace Tremor.Ice
             if (closer)
             {
                 Player player = Main.player[Main.myPlayer];
-                int style = Main.tile[i, j].frameX / 15;
+                int style = Main.tile[i, j].TileFrameX / 15;
                 string type;
                 Main.player[Main.myPlayer].GetModPlayer<TremorPlayer>().ZoneIce = true;
                 TremorPlayer modPlayer = Main.player[Main.myPlayer].GetModPlayer<TremorPlayer>();

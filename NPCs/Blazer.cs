@@ -7,7 +7,7 @@ using Tremor.Items;
 
 namespace Tremor.NPCs
 {
-	public class Blazer : ModNPC
+	public class Blazer:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -42,13 +42,13 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				if(Main.netMode != 1)
-					NPC.NewNPC((int)npc.position.X, (int)npc.position.Y - 48, NPCID.LavaSlime);
+					NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y - 48, NPCID.LavaSlime);
 			}
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{ 
-			return Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && Main.hardMode && spawnInfo.spawnTileY > Main.maxTilesY - 200 ? 0.02f : 0;
+			return Helper.NormalSpawn(spawnInfo) && Helper.NoZoneAllowWater(spawnInfo) && Main.hardMode && spawnInfo.SpawnTileY > Main.maxTilesY - 200 ? 0.02f : 0;
 		}
 	}
 }

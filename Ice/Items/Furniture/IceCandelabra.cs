@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Ice.Items.Furniture
 {
-	public class IceCandelabra : ModItem
+	public class IceCandelabra:TremorModItem
 	{
 		public override void SetStaticDefaults()
 		{

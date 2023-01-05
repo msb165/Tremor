@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Ancient
 {
-	public class AncientFlail : ModItem
+	public class AncientFlail:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -22,7 +22,7 @@ namespace Tremor.Items.Ancient
 			item.shoot = ModContent.ProjectileType<Projectiles.AncientFlailPro>();
 			item.shootSpeed = 13f;
 			item.UseSound = SoundID.Item1;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.channel = true;
 		}
 

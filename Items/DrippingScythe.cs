@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class DrippingScythe : ModItem
+	public class DrippingScythe:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -20,7 +20,7 @@ namespace Tremor.Items
 			item.rare = 11;
 			item.shootSpeed = 15f;
 			item.value = 450000;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()

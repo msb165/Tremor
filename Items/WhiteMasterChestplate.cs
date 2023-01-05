@@ -7,7 +7,7 @@ using Tremor.NPCs.Bosses.NovaPillar.Items.Armor;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class WhiteMasterChestplate : ModItem
+	public class WhiteMasterChestplate:TremorModItem
 	{
 		public override void SetDefaults()
 		{

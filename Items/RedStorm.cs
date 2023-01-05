@@ -6,15 +6,15 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class RedStorm : ModItem
+	public class RedStorm:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Starfury);
 
 			item.damage = 64;
-			item.ranged = true;
-			item.melee = false;
+			item.DamageType = DamageClass.Ranged;
+			//item.melee = false;
 			item.width = 22;
 			item.height = 46;
 
@@ -37,7 +37,7 @@ namespace Tremor.Items
 			Tooltip.SetDefault("Causes red lasers to fall from sky\n");
 		}
 
-		public override bool ConsumeAmmo(Player p)
+		public override bool CanConsumeAmmo(Item ammo, Player p)
 		{
 			return Main.rand.NextBool(2);
 		}
@@ -95,9 +95,9 @@ namespace Tremor.Items
 				num79 *= num80;
 				float speedX4 = num78 + Main.rand.Next(-40, 41) * 0.02f;
 				float speedY5 = num79 + Main.rand.Next(-40, 41) * 0.02f;
-				Projectile.NewProjectile(vector2.X, vector2.Y, speedX4, speedY5, 606, num73, num74, i, 0f, Main.rand.Next(5));
-				Projectile.NewProjectile(vector2.X, vector2.Y, speedX4, speedY5, 606, num73, num74, i, 0f, Main.rand.Next(3));
-				Projectile.NewProjectile(vector2.X, vector2.Y, speedX4, speedY5, 606, num73, num74, i, 0f, Main.rand.Next(1));
+				Projectile.NewProjectile(null, vector2.X, vector2.Y, speedX4, speedY5, 606, num73, num74, i, 0f, Main.rand.Next(5));
+				Projectile.NewProjectile(null, vector2.X, vector2.Y, speedX4, speedY5, 606, num73, num74, i, 0f, Main.rand.Next(3));
+				Projectile.NewProjectile(null, vector2.X, vector2.Y, speedX4, speedY5, 606, num73, num74, i, 0f, Main.rand.Next(1));
 			}
 			return false;
 		}

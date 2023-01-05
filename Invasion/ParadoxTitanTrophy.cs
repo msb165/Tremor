@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Invasion
 {
-	public class ParadoxTitanTrophy : ModItem
+	public class ParadoxTitanTrophy:TremorModItem
 	{
 		public override void SetDefaults()
 		{

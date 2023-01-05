@@ -3,9 +3,9 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class AncientBannerBuff : ModBuff
+	public class AncientBannerBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("The Ancient Banner");
 			Description.SetDefault("Increased life regeneration");

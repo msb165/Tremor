@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class CosmicFuel : ModItem
+	public class CosmicFuel:TremorModItem
 	{
 		public override void SetDefaults()
 		{

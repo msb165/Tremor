@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class FlowerofAntimony : ModProjectile
+	public class FlowerofAntimony:TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -14,7 +14,7 @@ namespace Tremor.Projectiles
 			projectile.friendly = true;
 			projectile.penetrate = 1;
 			projectile.timeLeft = 600;
-			projectile.magic = true;
+			projectile.DamageType = DamageClass.Magic;
 		}
 
 		public override void SetStaticDefaults()
@@ -32,7 +32,7 @@ namespace Tremor.Projectiles
 			}
 			if (projectile.localAI[0] == 0f)
 			{
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 20);
+				Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item20, projectile.position);
 				projectile.localAI[0] += 1f;
 			}
 			for (int num457 = 0; num457 < 10; num457++)
@@ -68,7 +68,7 @@ namespace Tremor.Projectiles
 
 		public override void Kill(int timeLeft)
 		{
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.GhostlyExplosion>(), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
+			Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.GhostlyExplosion>(), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
 		}
 
 	}

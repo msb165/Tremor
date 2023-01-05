@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Flesh
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class FleshBreastplate : ModItem
+	public class FleshBreastplate:TremorModItem
 	{
 
 		public override void SetDefaults()
@@ -28,7 +28,7 @@ namespace Tremor.Items.Flesh
 		public override void UpdateEquip(Player player)
 		{
 			player.maxMinions += 1;
-			player.minionDamage += 0.05f;
+			player.GetDamage(DamageClass.Summon) += 0.05f;
 		}
 
 		public override void AddRecipes()

@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class TrinityMusicBox : ModItem
+	public class TrinityMusicBox:TremorModItem
 	{
 		public override void SetDefaults()
 		{

@@ -4,7 +4,7 @@ using Tremor.ZombieEvent.Items;
 
 namespace Tremor.Items.Cursed
 {
-	public class CursedBanner : ModItem
+	public class CursedBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

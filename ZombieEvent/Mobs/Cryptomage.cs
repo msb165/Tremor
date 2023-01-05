@@ -7,7 +7,7 @@ using Tremor.ZombieEvent.Items;
 namespace Tremor.ZombieEvent.Mobs
 {
 
-	public class Cryptomage : ModNPC
+	public class Cryptomage:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -44,8 +44,8 @@ namespace Tremor.ZombieEvent.Mobs
 				int halfLength = npc.width / 2 / 16 + 1;
 				if (Main.rand.NextBool())
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CryptStone>(), Main.rand.Next(5, 15));
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CursedCloth>(), Main.rand.Next(5, 15));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CryptStone>(), Main.rand.Next(5, 15));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CursedCloth>(), Main.rand.Next(5, 15));
 				}
 			}
 		}
@@ -58,15 +58,15 @@ namespace Tremor.ZombieEvent.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CryptomageGore1"), 0.8f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CryptomageGore2"), 0.8f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CryptomageGore2"), 0.8f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CryptomageGore3"), 0.8f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CryptomageGore3"), 0.8f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CryptomageGore4"), 0.8f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/CryptomageGore4"), 0.8f);
-				NPC.NewNPC((int)npc.Center.X + 30, (int)npc.Center.Y, ModContent.NPCType<Corpse2>());
-				NPC.NewNPC((int)npc.Center.X - 30, (int)npc.Center.Y, ModContent.NPCType<Corpse2>());
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CryptomageGore1"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CryptomageGore2"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CryptomageGore2"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CryptomageGore3"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CryptomageGore3"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CryptomageGore4"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CryptomageGore4"), 0.8f);
+				NPC.NewNPC(null, (int)npc.Center.X + 30, (int)npc.Center.Y, ModContent.NPCType<Corpse2>());
+				NPC.NewNPC(null, (int)npc.Center.X - 30, (int)npc.Center.Y, ModContent.NPCType<Corpse2>());
 			}
 		}
 

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class AirFragment : ModItem
+	public class AirFragment:TremorModItem
 	{
 		public override void SetDefaults()
 		{

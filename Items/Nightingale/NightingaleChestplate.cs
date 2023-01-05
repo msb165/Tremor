@@ -6,7 +6,7 @@ using Tremor.Items.Steel;
 namespace Tremor.Items.Nightingale
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class NightingaleChestplate : ModItem
+	public class NightingaleChestplate:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,11 +26,7 @@ namespace Tremor.Items.Nightingale
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeDamage += 0.05f;
-			player.thrownDamage += 0.05f;
-			player.rangedDamage += 0.05f;
-			player.magicDamage += 0.05f;
-			player.minionDamage += 0.05f;
+			player.GetDamage(DamageClass.Generic) += 0.05f;
 		}
 
 		public override void AddRecipes()

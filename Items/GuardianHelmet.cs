@@ -5,7 +5,7 @@ using Tremor.Items.Ancient;
 namespace Tremor.Items
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class GuardianHelmet : ModItem
+	public class GuardianHelmet:TremorModItem
 	{
 
 		public override void SetDefaults()

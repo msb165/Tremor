@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class BrokenHeroArmorplate : ModItem
+	public class BrokenHeroArmorplate:TremorModItem
 	{
 		public override void SetDefaults()
 		{

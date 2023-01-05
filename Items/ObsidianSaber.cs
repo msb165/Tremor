@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ObsidianSaber : ModItem
+	public class ObsidianSaber:TremorModItem
 	{
 		public override void SetDefaults()
 		{

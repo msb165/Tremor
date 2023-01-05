@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class NightCore : ModItem
+	public class NightCore:TremorModItem
 	{
 		public override void SetDefaults()
 		{

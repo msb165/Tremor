@@ -3,13 +3,13 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Cobalt
 {
-	public class CobaltWarhammer : ModItem
+	public class CobaltWarhammer:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 38;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 44;
 			item.height = 40;
 			item.useTime = 39;

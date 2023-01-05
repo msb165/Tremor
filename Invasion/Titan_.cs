@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace Tremor.Invasion
 {
 	[AutoloadBossHead]
-	public class Titan_ : ModNPC
+	public class Titan_:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -75,7 +75,7 @@ namespace Tremor.Invasion
 			{
 				npc.dontTakeDamage = false;
 				npc.life = 0;
-				NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<Titan>());
+				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<Titan>());
 				InvasionWorld.CyberWrathPoints1 = 98;
 			}
 
@@ -113,9 +113,9 @@ namespace Tremor.Invasion
 				int damage = 80;
 				if (Main.expertMode)
 				{
-					damage = (int)(100 / Main.expertDamage);
+					damage = (int)(100 / 2);//2 was Main.expertDamage
 				}
-				int proj = Projectile.NewProjectile(pos.X, pos.Y, 0f, 0f, ModContent.ProjectileType<TitanCrystal_>(), damage, 0f, Main.myPlayer, npc.whoAmI, angle);
+				int proj = Projectile.NewProjectile(null, pos.X, pos.Y, 0f, 0f, ModContent.ProjectileType<TitanCrystal_>(), damage, 0f, Main.myPlayer, npc.whoAmI, angle);
 				Main.projectile[proj].localAI[0] = radius;
 				Main.projectile[proj].localAI[1] = clockwise ? 1 : -1;
 				//NetMessage.SendData(27, -1, -1, "", proj);

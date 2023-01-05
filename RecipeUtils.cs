@@ -405,46 +405,47 @@ namespace Tremor
 			//Night's Edge can't be crafted with Blood Butcherer
 			//Mechanical Worm can't be crafted with Vertebrae
 
-			// Search night's edge
-			var rFinder = new RecipeFinder();
-			rFinder.SetResult(ItemID.NightsEdge);
-			rFinder.AddIngredient(ItemID.BloodButcherer);
-			// Add to found recipes
-			var foundRecipes = rFinder.SearchRecipes();
+			//TODO: [Skipped for 1.4] Nova fragment recipes
+			//// Search night's edge
+			//var rFinder = new RecipeFinder();
+			//rFinder.SetResult(ItemID.NightsEdge);
+			//rFinder.AddIngredient(ItemID.BloodButcherer);
+			//// Add to found recipes
+			//var foundRecipes = rFinder.SearchRecipes();
 
-			// Search mech worm
-			rFinder = new RecipeFinder();
-			rFinder.SetResult(ItemID.MechanicalWorm);
-			rFinder.AddIngredient(ItemID.Vertebrae);
-			// Add to found recipes
-			foundRecipes = foundRecipes.Concat(rFinder.SearchRecipes()).ToList();
+			//// Search mech worm
+			//rFinder = new RecipeFinder();
+			//rFinder.SetResult(ItemID.MechanicalWorm);
+			//rFinder.AddIngredient(ItemID.Vertebrae);
+			//// Add to found recipes
+			//foundRecipes = foundRecipes.Concat(rFinder.SearchRecipes()).ToList();
 
-			// For all found recipes, delete them
-			foundRecipes.ForEach(recipe =>
-			{
-				var rEditor = new RecipeEditor(recipe);
-				rEditor.DeleteRecipe();
-			});
-
-			//The following recipes (with result of this type) require Nova Fragments for crafting
-			foreach (short resultType in new short[]
-			{
-				ItemID.SuperHealingPotion,
-				ItemID.CelestialSigil,
-				ItemID.FragmentVortex,
-				ItemID.FragmentNebula,
-				ItemID.FragmentSolar,
-				ItemID.FragmentStardust
-			})
-			{
-				rFinder = new RecipeFinder();
-				rFinder.SetResult(resultType);
-				rFinder.SearchRecipes().ForEach(recipe =>
-				{
-					var rEditor = new RecipeEditor(recipe);
-					rEditor.AddIngredient(ModContent.ItemType<NovaFragment>(), resultType == ItemID.CelestialSigil ? 20 : 1); // 20 frags for sigil, 1 for others
-				});
-			}
+			//// For all found recipes, delete them
+			//foundRecipes.ForEach(recipe =>
+			//{
+			//	var rEditor = new RecipeEditor(recipe);
+			//	rEditor.DeleteRecipe();
+			//});
+			
+			////The following recipes (with result of this type) require Nova Fragments for crafting
+			//foreach (short resultType in new short[]
+			//{
+			//	ItemID.SuperHealingPotion,
+			//	ItemID.CelestialSigil,
+			//	ItemID.FragmentVortex,
+			//	ItemID.FragmentNebula,
+			//	ItemID.FragmentSolar,
+			//	ItemID.FragmentStardust
+			//})
+			//{
+			//	rFinder = new RecipeFinder();
+			//	rFinder.SetResult(resultType);
+			//	rFinder.SearchRecipes().ForEach(recipe =>
+			//	{
+			//		var rEditor = new RecipeEditor(recipe);
+			//		rEditor.AddIngredient(ModContent.ItemType<NovaFragment>(), resultType == ItemID.CelestialSigil ? 20 : 1); // 20 frags for sigil, 1 for others
+			//	});
+			//}
 		}
 	}
 }

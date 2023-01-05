@@ -7,7 +7,7 @@ using Tremor.Items.ArchDemon;
 
 namespace Tremor.NPCs
 {
-	public class ArchDemon : ModNPC
+	public class ArchDemon:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -36,7 +36,7 @@ namespace Tremor.NPCs
 		public override void AI()
 		{
 			if (Main.netMode != 1 && Main.rand.Next(125) == 0)
-				NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<FlamingReaper>());
+				NPC.NewNPC(null, (int)npc.position.X - 50, (int)npc.position.Y, ModContent.NPCType<FlamingReaper>());
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -46,11 +46,11 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArchdemonGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArchdemonGore1"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArchdemonGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArchdemonGore2"), 1f);
-				Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArchdemonGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArchdemonGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArchdemonGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArchdemonGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArchdemonGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArchdemonGore3"), 1f);
 			}
 		}
 	}

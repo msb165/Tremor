@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class ParaxydeShard : ModItem
+	public class ParaxydeShard:TremorModItem
 	{
 		public override void SetDefaults()
 		{

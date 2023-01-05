@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Tremor.Items.Adamantite
 {
 	[AutoloadEquip(EquipType.Head)]
-	public class AdamantiteHeader : ModItem
+	public class AdamantiteHeader:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -26,7 +26,8 @@ namespace Tremor.Items.Adamantite
 
 		public override void UpdateEquip(Player player)
 		{
-			player.minionDamage += 0.24f;
+			//This was originally minion damage
+			player.GetDamage(DamageClass.Throwing) += 0.24f;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -37,7 +38,7 @@ namespace Tremor.Items.Adamantite
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Increases thrown weapon velocity";
-			player.thrownVelocity += 0.25f;
+			player.ThrownVelocity += 0.25f;
 		}
 
 		public override void ArmorSetShadows(Player player)

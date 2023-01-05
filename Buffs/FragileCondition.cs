@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Buffs
 {
-	public class FragileCondition : ModBuff
+	public class FragileCondition:TremorModBuff
 	{
 		public override void SetDefaults()
 		{
@@ -13,11 +13,7 @@ namespace Tremor.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.magicDamage *= 3f;
-			player.minionDamage *= 3f;
-			player.meleeDamage *= 3f;
-			player.rangedDamage *= 3f;
-			player.thrownDamage *= 3f;
+			player.GetDamage(DamageClass.Generic) *= 3f;
 			MPlayer.GetModPlayer(player).alchemicalDamage *= 3f;
 			MPlayer.GetModPlayer(player).fragileContiion = true; // Handles defense reset
 		}

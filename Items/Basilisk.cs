@@ -4,13 +4,13 @@ using Tremor.Items.Steel;
 
 namespace Tremor.Items
 {
-	public class Basilisk : ModItem
+	public class Basilisk:TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
 			item.damage = 68;
-			item.melee = true;
+			item.DamageType = DamageClass.Melee;
 			item.width = 48;
 			item.height = 48;
 			item.useTime = 35;

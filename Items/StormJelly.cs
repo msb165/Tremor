@@ -5,7 +5,7 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class StormJelly : ModItem
+	public class StormJelly:TremorModItem
 	{
 		public override void SetDefaults()
 		{
@@ -34,10 +34,10 @@ namespace Tremor.Items
 			return NPC.downedBoss1 && !NPC.AnyNPCs(ModContent.NPCType<StormJellyfish>());
 		}
 
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<StormJellyfish>());
-			Main.PlaySound(SoundID.Roar, player.position, 0);
+			Terraria.Audio.SoundEngine.PlaySound(SoundID.Roar, player.position);//Variant 0
 			return true;
 		}
 

@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items.Ancient
 {
-	public class AncientCursedSkullBanner : ModItem
+	public class AncientCursedSkullBanner:TremorModItem
 	{
 		public override void SetDefaults()
 		{

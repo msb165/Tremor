@@ -7,7 +7,7 @@ using Tremor.ZombieEvent.Items;
 namespace Tremor.ZombieEvent.Mobs
 {
 
-	public class SuperScourge : ModNPC
+	public class SuperScourge:TremorModNPC
 	{
 		public override void SetStaticDefaults()
 		{
@@ -52,15 +52,15 @@ namespace Tremor.ZombieEvent.Mobs
 				int halfLength = npc.width / 2 / 16 + 1;
 				if (Main.rand.Next(30) == 0 && !WorldGen.crimson)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CursedCleaver>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CursedCleaver>());
 				};
 				if (Main.rand.Next(30) == 0 && WorldGen.crimson)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IchorCleaver>());
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IchorCleaver>());
 				};
 				if (Main.rand.NextBool(3))
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CursedCloth>(), Main.rand.Next(1, 3));
+					Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CursedCloth>(), Main.rand.Next(1, 3));
 				};
 			}
 		}
@@ -81,16 +81,16 @@ namespace Tremor.ZombieEvent.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(npc.position, npc.velocity, 99, 0.8f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 0.8f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 0.8f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 0.8f);
-				Gore.NewGore(npc.position, npc.velocity, 99, 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, 99, 0.8f);
 
-				NPC.NewNPC((int)npc.position.X + 50, (int)npc.position.Y - 48, ModContent.NPCType<Dopelganger>());
-				NPC.NewNPC((int)npc.position.X + 25, (int)npc.position.Y - 48, ModContent.NPCType<Dopelganger>());
-				NPC.NewNPC((int)npc.position.X - 50, (int)npc.position.Y - 48, ModContent.NPCType<Dopelganger>());
-				NPC.NewNPC((int)npc.position.X - 25, (int)npc.position.Y - 48, ModContent.NPCType<Dopelganger>());
+				NPC.NewNPC(null, (int)npc.position.X + 50, (int)npc.position.Y - 48, ModContent.NPCType<Dopelganger>());
+				NPC.NewNPC(null, (int)npc.position.X + 25, (int)npc.position.Y - 48, ModContent.NPCType<Dopelganger>());
+				NPC.NewNPC(null, (int)npc.position.X - 50, (int)npc.position.Y - 48, ModContent.NPCType<Dopelganger>());
+				NPC.NewNPC(null, (int)npc.position.X - 25, (int)npc.position.Y - 48, ModContent.NPCType<Dopelganger>());
 			}
 		}
 

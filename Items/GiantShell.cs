@@ -2,7 +2,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	public class GiantShell : ModItem
+	public class GiantShell:TremorModItem
 	{
 		public override void SetDefaults()
 		{

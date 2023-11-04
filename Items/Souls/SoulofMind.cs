@@ -36,7 +36,7 @@ namespace Tremor.Items.Souls
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.SoulofMight, 2);
 			recipe.SetResult(this);
 			recipe.AddTile(ModContent.TileType<Tiles.RecyclerofMatterTile>());

@@ -47,7 +47,7 @@ namespace Tremor.Items.Bronze
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BronzeBar>(), 13);
 			recipe.SetResult(this);
 			recipe.AddTile(16);

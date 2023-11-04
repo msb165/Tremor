@@ -22,8 +22,8 @@ namespace Tremor.Ice.Tree
 			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = false;
 			//Main.tileMinPick[Type] = 200;
-			dustType = 80;
-			soundType = 21;
+			DustType = DustID.Ice;
+			HitSound = SoundID.Tink;
 			soundStyle = 2;
 			Main.tileLighted[Type] = true;
 			AddMapEntry(new Color(104, 155, 195));
@@ -31,7 +31,7 @@ namespace Tremor.Ice.Tree
 			//TODO: [Skipped for 1.4] Fix Trees
 			//SetModTree(new TremorTree());
 			
-			drop = ModContent.ItemType<IceBlockB>();
+			ItemDrop = ModContent.ItemType<IceBlockB>();
 		}
 
 		public override bool PreDraw(int i, int j, SpriteBatch spriteBatch)

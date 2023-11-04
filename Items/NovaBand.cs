@@ -37,7 +37,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<UnchargedBand>());
 			recipe.AddIngredient(ModContent.ItemType<NovaFragment>(), 10);
 			recipe.SetResult(this);

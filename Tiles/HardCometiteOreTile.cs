@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.Items;
 
@@ -10,13 +11,13 @@ namespace Tremor.Tiles
 		public override void SetDefaults()
 		{
 			Main.tileSolid[Type] = true;
-			soundType = 21;
+			HitSound = SoundID.Tink;
 			soundStyle = 2;
 			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
-			dustType = 27;
-			drop = ModContent.ItemType<HardCometiteOre>();
+			DustType = DustID.Shadowflame;
+			ItemDrop = ModContent.ItemType<HardCometiteOre>();
 			AddMapEntry(new Color(255, 20, 147));
 			MineResist = 12f;
 			MinPick = 225;
@@ -47,7 +48,7 @@ namespace Tremor.Tiles
 		{
 			if(closer)
 			{
-				Player player = Main.player[Main.myPlayer];
+				Player player = Main.LocalPlayer;
 				int style = Main.tile[i, j].TileFrameX / 100;
 				string type;
 				player.AddBuff(44, 60, true);

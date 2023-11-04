@@ -28,7 +28,7 @@ namespace Tremor.Tiles
 			TileObjectData.newTile.StyleHorizontal = true;
 			TileObjectData.newTile.StyleWrapLimit = 111;
 			TileObjectData.addTile(Type);
-			dustType = -1;
+			DustType = -1;
 			AddMapEntry(new Color(13, 88, 130));
 		}
 
@@ -349,7 +349,7 @@ namespace Tremor.Tiles
 			//TODO: I think this is handled automatically now so long as the Banner and BannerItem fields are set on ModNPC
 			//if(closer)
 			//{
-			//	Player player = Main.player[Main.myPlayer];
+			//	Player player = Main.LocalPlayer;
 			//	int style = Main.tile[i, j].TileFrameX / 18;
 			//	switch(style)
 			//	{

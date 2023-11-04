@@ -39,7 +39,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BloodCarnage>(), 1);
 			recipe.AddIngredient(ItemID.BrokenHeroSword, 1);
 			recipe.SetResult(this);

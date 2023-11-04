@@ -64,13 +64,13 @@ namespace Tremor.Invasion
 
 		public override void AI()
 		{
-			Player player = Main.player[Main.myPlayer];
+			Player player = Main.LocalPlayer;
 			if (npc.Distance(Main.player[npc.target].position) > 5000)
 			{
 				player.position = npc.Center;
 			}
 			Animation();
-			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
+			CyberWrathInvasion modPlayer = Main.LocalPlayer.GetModPlayer<CyberWrathInvasion>();
 			if (InvasionWorld.CyberWrath && InvasionWorld.CyberWrathPoints1 == 97)
 			{
 				npc.dontTakeDamage = false;

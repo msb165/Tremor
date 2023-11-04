@@ -35,7 +35,7 @@ namespace Tremor.NPCs
 			npc.noTileCollide = true;
 			npc.HitSound = SoundID.NPCHit4;
 			npc.DeathSound = SoundID.NPCDeath6;
-			music = MusicID.Boss2;
+			Music = MusicID.Boss2;
 		}
 
 		public float timeToShoot = 2;
@@ -59,10 +59,10 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CKMotherGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CKMotherGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CKMotherGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CKMotherGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CKMotherGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CKMotherGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CKMotherGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CKMotherGore3"), 1f);
 			}
 		}
 

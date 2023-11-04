@@ -32,14 +32,14 @@ namespace Tremor.Items
 		}
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.FleshKnuckles, 1);
 			recipe.AddIngredient(ModContent.ItemType<HardBulwark>(), 1);
 			recipe.SetResult(this);
 			recipe.AddTile(114);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.PutridScent, 1);
 			recipe.AddIngredient(ModContent.ItemType<HardBulwark>(), 1);
 			recipe.SetResult(this);

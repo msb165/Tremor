@@ -47,12 +47,12 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath28;
 			npc.boss = true;
 			npc.knockBackResist = 0.1f;
-			aiType = 472;
+			AIType = 472;
 			npc.noGravity = true;
 			npc.noGravity = true;
-			music = 39;
+			Music = 39;
 			npc.aiStyle = 86;
-			animationType = 472;
+			AnimationType = 472;
 			bossBag = ModContent.ItemType<StormJellyfishBag>();
 		}
 
@@ -79,13 +79,13 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 226, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 					Dust.NewDust(npc.position, npc.width, npc.height, 226, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/StormGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/StormGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/StormGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/StormGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/StormGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/StormGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/StormGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/StormGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/StormGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/StormGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/StormGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/StormGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/StormGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/StormGore4"), 1f);
 			}
 			else
 			{

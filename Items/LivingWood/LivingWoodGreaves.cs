@@ -32,7 +32,7 @@ namespace Tremor.Items.LivingWood
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Wood, 25);
 			recipe.SetResult(this);
 			recipe.AddTile(304);

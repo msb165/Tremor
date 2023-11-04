@@ -26,13 +26,13 @@ namespace Tremor.ZombieEvent.Mobs
 			npc.value = Item.buyPrice(0, 0, 28, 7);
 			npc.knockBackResist = 0.3f;
 			npc.aiStyle = 3;
-			aiType = 343;
-			animationType = 343;
+			AIType = 343;
+			AnimationType = 343;
 			npc.buffImmune[20] = true;
 			npc.buffImmune[31] = false;
 			npc.buffImmune[24] = true;
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<AlmagronBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<AlmagronBanner>();
 		}
 
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
@@ -74,12 +74,12 @@ namespace Tremor.ZombieEvent.Mobs
 				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
 				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
 				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore4"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/IGGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/IGGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/IGGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/IGGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/IGGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/IGGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/IGGore4"), 1f);
 			}
 		}
 	}

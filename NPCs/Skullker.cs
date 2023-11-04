@@ -23,17 +23,17 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.2f;
 			npc.width = 75;
 			npc.height = 95;
-			animationType = 82;
+			AnimationType = 82;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
 			npc.aiStyle = 22;
-			aiType = 82;
+			AIType = 82;
 			npc.npcSlots = 5f;
 			npc.HitSound = SoundID.NPCHit2;
 			npc.DeathSound = SoundID.NPCDeath52;
 			npc.value = Item.buyPrice(0, 0, 8, 0);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<SkullkerBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<SkullkerBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -51,7 +51,7 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 226, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/SkullkerGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/SkullkerGore{i+1}"), 1f);
 			}
 			else
 			{

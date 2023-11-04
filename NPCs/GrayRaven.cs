@@ -28,8 +28,8 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.85f;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.value = 50f;
-			animationType = 301;
-			//bannerItem = ModContent.ItemType<GrayRavenBanner>();
+			AnimationType = 301;
+			//BannerItem = ModContent.ItemType<GrayRavenBanner>();
 		}
 
 		public override void OnHitPlayer(Player player, int damage, bool crit)
@@ -50,10 +50,10 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GrayRavenGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GrayRavenGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GrayRavenGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GrayRavenGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GrayRavenGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GrayRavenGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GrayRavenGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GrayRavenGore3"), 1f);
 			}
 		}
 

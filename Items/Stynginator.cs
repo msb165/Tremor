@@ -56,7 +56,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<GolemCore>(), 1);
 			recipe.AddIngredient(ItemID.Stynger, 1);
 			recipe.AddIngredient(ItemID.Ectoplasm, 18);

@@ -23,8 +23,8 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 56;
 			npc.height = 48;
-			aiType = 429;
-			animationType = 429;
+			AIType = 429;
+			AnimationType = 429;
 			npc.aiStyle = 3;
 			npc.npcSlots = 0.2f;
 			npc.HitSound = SoundID.NPCHit1;
@@ -53,11 +53,11 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 74, 2.5f * hitDirection, -2.5f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DranixGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DranixGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DranixGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DranixGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DranixGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DranixGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DranixGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DranixGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DranixGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DranixGore3"), 1f);
 
 			}
 		}

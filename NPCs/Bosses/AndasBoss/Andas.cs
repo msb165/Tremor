@@ -32,7 +32,7 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 			npc.noTileCollide = true;
 			npc.noGravity = true;
 			npc.boss = true;
-			music = MusicID.Boss3;
+			Music = MusicID.Boss3;
 			npc.buffImmune[24] = true;
 			npc.buffImmune[67] = true;
 			npc.lavaImmune = true;

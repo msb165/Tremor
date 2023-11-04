@@ -23,7 +23,7 @@ namespace Tremor.Projectiles
 			projectile.height = 34;
 			projectile.timeLeft = 5;
 			projectile.aiStyle = 62;
-			aiType = 226;
+			AIType = 226;
 			projectile.penetrate = -1;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;

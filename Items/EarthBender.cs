@@ -30,7 +30,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<ColossusSword>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<EarthFragment>(), 12);
 			recipe.AddIngredient(ItemID.SoulofLight, 8);

@@ -93,7 +93,7 @@ namespace Tremor.Invasion
 			for (int k = 2; k <= 24; k += 2)
 			{
 				float scale = 2f * k / 48f;
-				Main.spriteBatch.Draw(mod.GetTexture("Invasion/TitanCrystalRing"), drawPos, null, Color.White * ShieldTransparency(k), 0f, drawCenter, scale, SpriteEffects.None, 0f);
+				Main.spriteBatch.Draw(Mod.GetTexture("Invasion/TitanCrystalRing"), drawPos, null, Color.White * ShieldTransparency(k), 0f, drawCenter, scale, SpriteEffects.None, 0f);
 			}
 		}
 

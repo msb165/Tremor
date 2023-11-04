@@ -24,15 +24,15 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.2f;
 			npc.width = 34;
 			npc.height = 48;
-			animationType = 48;
+			AnimationType = 48;
 			npc.aiStyle = 14;
 			npc.scale = 1.3f;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit35;
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath57;
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<ZootalooMatriarchBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<ZootalooMatriarchBanner>();
 		}
 
 		public override void NPCLoot()
@@ -52,9 +52,9 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 44, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZootalooGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZootalooGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZootalooGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZootalooGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZootalooGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZootalooGore2"), 1f);
 			}
 			else
 			{

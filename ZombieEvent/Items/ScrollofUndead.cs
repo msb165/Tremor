@@ -33,7 +33,7 @@ namespace Tremor.ZombieEvent.Items
 
 		public override bool CanUseItem(Player player)
 		{
-			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
+			CyberWrathInvasion modPlayer = Main.LocalPlayer.GetModPlayer<CyberWrathInvasion>();
 			if (ZWorld.ZInvasion)
 			{
 				return false;
@@ -48,7 +48,7 @@ namespace Tremor.ZombieEvent.Items
 
 		public override bool? UseItem(Player player)
 		{
-			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
+			CyberWrathInvasion modPlayer = Main.LocalPlayer.GetModPlayer<CyberWrathInvasion>();
 			Main.NewText("Undead creatures are rising from ground!", 175, 75, 255);
 			Main.NewText("The Night of Undead has begun...", 135, 17, 17);
 			ZWorld.ZInvasion = true;
@@ -57,7 +57,7 @@ namespace Tremor.ZombieEvent.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<TornPapyrus>(), 3);
 			recipe.AddIngredient(ModContent.ItemType<BottledGlue>(), 2);
 			recipe.AddIngredient(ModContent.ItemType<UntreatedFlesh>(), 5);

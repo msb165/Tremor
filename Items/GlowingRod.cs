@@ -36,7 +36,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.AmethystStaff, 1);
 			recipe.AddIngredient(ModContent.ItemType<LightBulb>(), 8);
 			recipe.AddIngredient(ModContent.ItemType<RockHorn>(), 3);
@@ -44,7 +44,7 @@ namespace Tremor.Items
 			recipe.AddTile(16);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.TopazStaff, 1);
 			recipe.AddIngredient(ModContent.ItemType<LightBulb>(), 8);
 			recipe.AddIngredient(ModContent.ItemType<RockHorn>(), 3);
@@ -52,7 +52,7 @@ namespace Tremor.Items
 			recipe.AddTile(16);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.SapphireStaff, 1);
 			recipe.AddIngredient(ModContent.ItemType<LightBulb>(), 8);
 			recipe.AddIngredient(ModContent.ItemType<RockHorn>(), 3);
@@ -60,7 +60,7 @@ namespace Tremor.Items
 			recipe.AddTile(16);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.EmeraldStaff, 1);
 			recipe.AddIngredient(ModContent.ItemType<LightBulb>(), 8);
 			recipe.AddIngredient(ModContent.ItemType<RockHorn>(), 3);
@@ -68,7 +68,7 @@ namespace Tremor.Items
 			recipe.AddTile(16);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.DiamondStaff, 1);
 			recipe.AddIngredient(ModContent.ItemType<LightBulb>(), 8);
 			recipe.AddIngredient(ModContent.ItemType<RockHorn>(), 3);
@@ -76,7 +76,7 @@ namespace Tremor.Items
 			recipe.AddTile(16);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.RubyStaff, 1);
 			recipe.AddIngredient(ModContent.ItemType<LightBulb>(), 8);
 			recipe.AddIngredient(ModContent.ItemType<RockHorn>(), 3);

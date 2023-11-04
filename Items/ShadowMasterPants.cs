@@ -36,7 +36,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BrokenHeroArmorplate>(), 1);
 			recipe.AddIngredient(ItemID.Silk, 10);
 			recipe.AddIngredient(ModContent.ItemType<SoulofFight>(), 10);

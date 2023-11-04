@@ -137,8 +137,8 @@ namespace Tremor.Projectiles
 			for (int i = 0; i < OldPositionsLeft.Count; i++)
 			{
 				color = new Color(color.R - 250 / DrawCount, color.G - 250 / DrawCount, color.B - 250 / DrawCount, color.A + 250 / (OldPositionsLeft.Count * 2));
-				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, OldPositionsLeft[i], null, color, OldRotations[i], new Vector2(2, 2), 1, SpriteEffects.None, 0);
-				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, OldPositionsRight[i], null, color, -OldRotations[i], new Vector2(2, 2), 1, SpriteEffects.None, 0);
+				Main.spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, OldPositionsLeft[i], null, color, OldRotations[i], new Vector2(2, 2), 1, SpriteEffects.None, 0);
+				Main.spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, OldPositionsRight[i], null, color, -OldRotations[i], new Vector2(2, 2), 1, SpriteEffects.None, 0);
 			}
 			return false;
 		}

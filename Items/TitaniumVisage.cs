@@ -42,7 +42,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.TitaniumBar, 10);
 			recipe.SetResult(this);
 			recipe.AddTile(134);

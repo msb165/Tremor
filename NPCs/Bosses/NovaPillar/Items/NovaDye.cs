@@ -24,7 +24,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items
 
 		public override void AddRecipes()
 		{
-			var recipe = new ModRecipe(mod);
+			var recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.BottledWater, 1);
 			recipe.AddIngredient(ModContent.ItemType<NovaFragment>(), 10);
 			recipe.AddTile(TileID.DyeVat);

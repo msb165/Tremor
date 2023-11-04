@@ -9,6 +9,7 @@ using Tremor.Items;
 using Tremor.Items.Desert;
 using Tremor.Items.Sandstone;
 using Tremor.Projectiles;
+using System.Collections.Generic;
 
 namespace Tremor.NPCs.TownNPCs
 {
@@ -52,13 +53,13 @@ namespace Tremor.NPCs.TownNPCs
 			npc.knockBackResist = 0.5f;
 			//npc.homeless = true;
 			//npc.active = false;
-			animationType = NPCID.Guide;
+			AnimationType = NPCID.Guide;
 		}
 
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 			=> TremorWorld.Boss.Rukh.IsDowned() && Main.player.Any(player => !player.dead);
 
-		private readonly WeightedRandom<string> _names = new[]
+		private readonly List<string> _names = new List<string>
 		{
 			"Badruddin:2",
 			"Galib",
@@ -67,10 +68,9 @@ namespace Tremor.NPCs.TownNPCs
 			"Valid",
 			"Tunak",
 			"Nadim:3"
-		}.ToWeightedCollectionWithWeight();
+		};
 
-		public override string TownNPCName()
-			=> _names.Get();
+		public override List<string> SetNPCNameList() => _names;
 
 		private readonly WeightedRandom<string> _chats = new[]
 		{
@@ -150,7 +150,7 @@ namespace Tremor.NPCs.TownNPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for (int i = 0; i < 3; i++)
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/ArabianMerchantGore{i + 1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/ArabianMerchantGore{i + 1}"), 1f);
 			}
 		}
 

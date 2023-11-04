@@ -56,7 +56,7 @@ namespace Tremor.ZombieEvent.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<RupicideBar>(), 3);
 			recipe.AddIngredient(ItemID.DemoniteBar, 12);
 			recipe.AddIngredient(ItemID.ShadowScale, 12);
@@ -65,7 +65,7 @@ namespace Tremor.ZombieEvent.Items
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<RupicideBar>(), 3);
 			recipe.AddIngredient(ItemID.CrimtaneBar, 12);
 			recipe.AddIngredient(ItemID.TissueSample, 12);

@@ -43,7 +43,7 @@ namespace Tremor.Items.Desert
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.GoldCrown);
 			recipe.AddIngredient(ItemID.AntlionMandible, 5);
 			recipe.AddIngredient(ModContent.ItemType<AntlionShell>(), 3);
@@ -52,7 +52,7 @@ namespace Tremor.Items.Desert
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.PlatinumCrown);
 			recipe.AddIngredient(ItemID.AntlionMandible, 5);
 			recipe.AddIngredient(ModContent.ItemType<AntlionShell>(), 3);

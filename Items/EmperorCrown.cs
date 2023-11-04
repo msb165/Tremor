@@ -36,7 +36,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.SlimeCrown, 1);
 			recipe.AddIngredient(ModContent.ItemType<Doomstone>(), 9);
 			recipe.AddIngredient(ModContent.ItemType<DarkMass>(), 3);

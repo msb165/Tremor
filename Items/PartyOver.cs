@@ -54,7 +54,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.SoulofFlight, 20);
 			recipe.AddIngredient(ModContent.ItemType<ConcentratedEther>(), 8);
 			recipe.AddIngredient(ModContent.ItemType<CandyBar>(), 15);

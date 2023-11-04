@@ -50,7 +50,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Wood, 12);
 			recipe.AddIngredient(ItemID.RainCloud, 9);
 			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 10);

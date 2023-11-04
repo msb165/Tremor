@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
@@ -46,13 +47,13 @@ namespace Tremor.NPCs.TownNPCs
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.knockBackResist = 0.5f;
-			animationType = NPCID.Guide;
+			AnimationType = NPCID.Guide;
 		}
 
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 			=> Main.player.Any(player => !player.dead && player.inventory.Any(item => item != null && item.type == ModContent.ItemType<SuspiciousLookingPresent>()));
 
-		private readonly WeightedRandom<string> _names = new[]
+		private readonly List<string> _names = new List<string>
 		{
 			"Nick",
 			"Elfie:2",
@@ -62,10 +63,9 @@ namespace Tremor.NPCs.TownNPCs
 			"Elvis",
 			"Peppermint",
 			"Snowflake:2"
-		}.ToWeightedCollectionWithWeight();
+		};
 
-		public override string TownNPCName()
-			=> _names.Get();
+		public override List<string> SetNPCNameList() => _names;
 
 		private readonly WeightedRandom<string> _chats = new[]
 		{

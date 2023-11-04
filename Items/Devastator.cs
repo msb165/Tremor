@@ -49,7 +49,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<VoidBar>(), 20);
 			recipe.AddIngredient(ModContent.ItemType<Doomstone>(), 10);
 			recipe.AddIngredient(ModContent.ItemType<DarkMatter>(), 100);

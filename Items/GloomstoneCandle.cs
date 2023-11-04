@@ -30,7 +30,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<Gloomstone>(), 4);
 			recipe.AddIngredient(ItemID.Torch, 1);
 			recipe.SetResult(this);

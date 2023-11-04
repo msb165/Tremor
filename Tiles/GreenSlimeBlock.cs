@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Tremor.Tiles
@@ -11,9 +12,8 @@ namespace Tremor.Tiles
         Main.tileSolid[Type] = true;
         Main.tileMergeDirt[Type] = true;
         Main.tileBlockLight[Type] = true;
-        soundType = 4;
-        soundStyle = 1;
+		HitSound = SoundID.NPCDeath1;
         AddMapEntry(new Color(75, 192, 126));
-        //drop = ModContent.ItemType<GreenSlimeBlock>();
+        //ItemDrop = ModContent.ItemType<GreenSlimeBlock>();
     }
 }}

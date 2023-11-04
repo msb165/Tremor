@@ -44,7 +44,7 @@ namespace Tremor.Items.Crystal
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.CrystalStorm, 1);
 			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 10);
 			recipe.AddIngredient(ModContent.ItemType<Phantaplasm>(), 6);

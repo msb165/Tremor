@@ -23,14 +23,14 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 38;
 			npc.height = 26;
-			animationType = 241;
+			AnimationType = 241;
 			npc.aiStyle = 16;
 			npc.npcSlots = 1f;
 			npc.HitSound = SoundID.NPCHit2;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 0, 3);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<BoneFishBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<BoneFishBanner>();
 			NPCID.Sets.TrailCacheLength[npc.type] = 5;
 		}
 
@@ -64,7 +64,7 @@ namespace Tremor.NPCs
 		public override void HitEffect(int hitDirection, double damage)
 		{
 			if (npc.life <= 0)
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BoneFishGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BoneFishGore"), 1f);
 		}
 	}
 }

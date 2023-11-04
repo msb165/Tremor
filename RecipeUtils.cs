@@ -18,7 +18,7 @@ namespace Tremor
 		// A helper method we can use in the future
 		private static void QuickRecipe(Mod mod, short resultType, int[,] ingredients, short? reqTileType = null)
 		{
-			var recipe = new ModRecipe(mod);
+			var recipe = new ModRecipe();
 			recipe.SetResult(resultType);
 			for (int i = 0; i < ingredients.GetUpperBound(0); i++)
 			{
@@ -43,124 +43,124 @@ namespace Tremor
 					{ItemID.ManaCrystal, 2},
 				});
 
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Wood, 8);
 			recipe.AddIngredient(ItemID.GoldBar, 2);
 			recipe.SetResult(ItemID.GoldChest);
 			recipe.AddTile(18);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Wood, 8);
 			recipe.AddIngredient(ItemID.PlatinumBar, 2);
 			recipe.SetResult(ItemID.GoldChest);
 			recipe.AddTile(18);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<Band>());
 			recipe.AddIngredient(ItemID.ManaCrystal, 2);
 			recipe.SetResult(111);
-			recipe.AddTile(16);
+			recipe.AddTile(TileID.Anvils);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<Band>());
 			recipe.AddIngredient(ItemID.LifeCrystal, 2);
 			recipe.SetResult(49);
-			recipe.AddTile(16);
+			recipe.AddTile(TileID.Anvils);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.TinBar, 5);
 			recipe.AddIngredient(ItemID.Wood);
 			recipe.SetResult(ItemID.Aglet);
-			recipe.AddTile(16);
+			recipe.AddTile(TileID.Anvils);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.CopperBar, 5);
 			recipe.AddIngredient(ItemID.Wood);
 			recipe.SetResult(ItemID.Aglet);
-			recipe.AddTile(16);
+			recipe.AddTile(TileID.Anvils);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Wood, 10);
 			recipe.AddIngredient(ItemID.Gel, 25);
 			recipe.SetResult(ItemID.SlimeStaff);
 			recipe.AddTile(304);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.CopperOre, 3);
 			recipe.SetResult(ItemID.TinOre, 2);
 			recipe.AddTile(ModContent.TileType<Tiles.MineralTransmutator>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.TinOre, 3);
 			recipe.SetResult(ItemID.CopperOre, 2);
 			recipe.AddTile(ModContent.TileType<Tiles.MineralTransmutator>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.IronOre, 3);
 			recipe.SetResult(ItemID.LeadOre, 2);
 			recipe.AddTile(ModContent.TileType<Tiles.MineralTransmutator>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.LeadOre, 3);
 			recipe.SetResult(ItemID.IronOre, 2);
 			recipe.AddTile(ModContent.TileType<Tiles.MineralTransmutator>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.SilverOre, 3);
 			recipe.SetResult(ItemID.TungstenOre, 2);
 			recipe.AddTile(ModContent.TileType<Tiles.MineralTransmutator>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.TungstenOre, 3);
 			recipe.SetResult(ItemID.SilverOre, 2);
 			recipe.AddTile(ModContent.TileType<Tiles.MineralTransmutator>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.GoldOre, 3);
 			recipe.SetResult(ItemID.PlatinumOre, 2);
 			recipe.AddTile(ModContent.TileType<Tiles.MineralTransmutator>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.PlatinumOre, 3);
 			recipe.SetResult(ItemID.GoldOre, 2);
 			recipe.AddTile(ModContent.TileType<Tiles.MineralTransmutator>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.DemoniteOre, 5);
 			recipe.SetResult(ItemID.CrimtaneOre, 3);
 			recipe.AddTile(ModContent.TileType<Tiles.MineralTransmutator>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.CrimtaneOre, 5);
 			recipe.SetResult(ItemID.DemoniteOre, 3);
 			recipe.AddTile(ModContent.TileType<Tiles.MineralTransmutator>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<TrueBloodCarnage>());
 			recipe.AddIngredient(674);
 			recipe.AddTile(134);
 			recipe.SetResult(757);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<SoulofMind>(), 20);
 			recipe.AddIngredient(ItemID.SharkFin, 5);
 			recipe.AddIngredient(ItemID.IllegalGunParts);
@@ -169,7 +169,7 @@ namespace Tremor
 			recipe.AddTile(134);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.HallowedBar, 4);
 			recipe.AddIngredient(ItemID.SoulofLight, 3);
 			recipe.AddIngredient(ModContent.ItemType<SoulofMind>(), 5);
@@ -177,7 +177,7 @@ namespace Tremor
 			recipe.AddTile(134);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.HallowedBar, 18);
 			recipe.AddIngredient(ItemID.SoulofFright);
 			recipe.AddIngredient(ModContent.ItemType<SoulofMind>());
@@ -186,7 +186,7 @@ namespace Tremor
 			recipe.AddTile(134);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.HallowedBar, 18);
 			recipe.AddIngredient(ItemID.SoulofFright);
 			recipe.AddIngredient(ModContent.ItemType<SoulofMind>());
@@ -195,7 +195,7 @@ namespace Tremor
 			recipe.AddTile(134);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.WarriorEmblem);
 			recipe.AddIngredient(ItemID.SoulofFright, 5);
 			recipe.AddIngredient(ModContent.ItemType<SoulofMind>(), 5);
@@ -204,7 +204,7 @@ namespace Tremor
 			recipe.AddTile(134);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.SummonerEmblem);
 			recipe.AddIngredient(ItemID.SoulofFright, 5);
 			recipe.AddIngredient(ModContent.ItemType<SoulofMind>(), 5);
@@ -213,7 +213,7 @@ namespace Tremor
 			recipe.AddTile(134);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.RangerEmblem);
 			recipe.AddIngredient(ItemID.SoulofFright, 5);
 			recipe.AddIngredient(ModContent.ItemType<SoulofMind>(), 5);
@@ -222,7 +222,7 @@ namespace Tremor
 			recipe.AddTile(134);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.SorcererEmblem);
 			recipe.AddIngredient(ItemID.SoulofFright, 5);
 			recipe.AddIngredient(ModContent.ItemType<SoulofMind>(), 5);
@@ -231,62 +231,62 @@ namespace Tremor
 			recipe.AddTile(134);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<SharpenedTooth>(), 5);
 			recipe.AddIngredient(ItemID.TissueSample, 5);
 			recipe.AddIngredient(ItemID.Chain, 2);
 			recipe.SetResult(3212);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<SharpenedTooth>(), 5);
 			recipe.AddIngredient(ItemID.ShadowScale, 5);
 			recipe.AddIngredient(ItemID.Chain, 2);
 			recipe.SetResult(3212);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<SandstonePlatform>(), 2);
 			recipe.SetResult(607);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.PalladiumOre, 3);
 			recipe.SetResult(ItemID.CobaltOre, 2);
 			recipe.AddTile(ModContent.TileType<RecyclerofMatterTile>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.CobaltOre, 3);
 			recipe.SetResult(ItemID.PalladiumOre, 2);
 			recipe.AddTile(ModContent.TileType<RecyclerofMatterTile>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.MythrilOre, 3);
 			recipe.SetResult(ItemID.OrichalcumOre, 2);
 			recipe.AddTile(ModContent.TileType<RecyclerofMatterTile>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.OrichalcumOre, 3);
 			recipe.SetResult(ItemID.MythrilOre, 2);
 			recipe.AddTile(ModContent.TileType<RecyclerofMatterTile>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.TitaniumOre, 3);
 			recipe.SetResult(ItemID.AdamantiteOre, 2);
 			recipe.AddTile(ModContent.TileType<RecyclerofMatterTile>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.AdamantiteOre, 3);
 			recipe.SetResult(ItemID.TitaniumOre, 2);
 			recipe.AddTile(ModContent.TileType<RecyclerofMatterTile>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.TurtleShell);
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 15);
 			recipe.AddIngredient(ItemID.JungleSpores, 20);
@@ -296,7 +296,7 @@ namespace Tremor
 			recipe.AddTile(ModContent.TileType<MagicWorkbenchTile>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.DemoniteBar, 25);
 			recipe.AddIngredient(ItemID.ShadowScale, 25);
 			recipe.AddIngredient(ItemID.EbonstoneBlock, 25);
@@ -306,7 +306,7 @@ namespace Tremor
 			recipe.AddTile(ModContent.TileType<MagicWorkbenchTile>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.CrimtaneBar, 25);
 			recipe.AddIngredient(ItemID.TissueSample, 25);
 			recipe.AddIngredient(ItemID.CrimstoneBlock, 25);
@@ -316,7 +316,7 @@ namespace Tremor
 			recipe.AddTile(ModContent.TileType<MagicWorkbenchTile>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.HallowedBar, 15);
 			recipe.AddIngredient(ItemID.SoulofLight, 10);
 			recipe.AddIngredient(ItemID.SoulofNight, 10);
@@ -326,7 +326,7 @@ namespace Tremor
 			recipe.AddTile(ModContent.TileType<MagicWorkbenchTile>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.FrostCore, 2);
 			recipe.AddIngredient(ItemID.SnowBlock, 30);
 			recipe.AddIngredient(ItemID.IceBlock, 30);
@@ -335,20 +335,20 @@ namespace Tremor
 			recipe.AddTile(ModContent.TileType<MagicWorkbenchTile>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Bone, 80);
 			recipe.SetResult(1320);
 			recipe.AddTile(300);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Wood, 10);
 			recipe.AddIngredient(ItemID.Torch, 5);
 			recipe.SetResult(3069);
-			recipe.AddTile(16);
+			recipe.AddTile(TileID.Anvils);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.CobaltBar, 12);
 			recipe.AddIngredient(ItemID.SnowBlock, 25);
 			recipe.AddIngredient(ItemID.IceBlock, 25);
@@ -359,7 +359,7 @@ namespace Tremor
 			recipe.AddTile(26);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.PalladiumBar, 12);
 			recipe.AddIngredient(ItemID.SnowBlock, 25);
 			recipe.AddIngredient(ItemID.IceBlock, 25);
@@ -370,25 +370,25 @@ namespace Tremor
 			recipe.AddTile(26);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Wood, 30);
 			recipe.SetResult(2196);
 			recipe.AddTile(191);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(2766);
 			recipe.SetResult(1261, 75);
 			recipe.AddTile(134);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(2766);
 			recipe.SetResult(1261, 75);
 			recipe.AddTile(134);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(2766, 15);
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 3);
 			recipe.AddIngredient(ModContent.ItemType<EssenseofJungle>());

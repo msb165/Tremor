@@ -30,7 +30,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<FrostoneOre>(), 2);
 			recipe.AddIngredient(ItemID.Ectoplasm, 1);
 			recipe.SetResult(this);

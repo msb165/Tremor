@@ -26,7 +26,7 @@ namespace Tremor.NPCs.Bosses.Motherboard
 			npc.aiStyle = 2;
 			npc.HitSound = SoundID.NPCHit4;
 			npc.DeathSound = SoundID.NPCDeath14;
-			animationType = 2;
+			AnimationType = 2;
 		}
 
 		public override void AI()

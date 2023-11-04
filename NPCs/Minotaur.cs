@@ -28,9 +28,9 @@ namespace Tremor.NPCs
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath42;
 			npc.value = Item.buyPrice(0, 3, 0, 0);
-			animationType = NPCID.BigMimicHallow;
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<MinotaurBanner>();
+			AnimationType = NPCID.BigMimicHallow;
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<MinotaurBanner>();
 		}
 
 		public override void NPCLoot()
@@ -48,11 +48,11 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/MinotaurGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/MinotaurGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/MinotaurGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/MinotaurGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/MinotaurGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/MinotaurGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/MinotaurGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/MinotaurGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/MinotaurGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/MinotaurGore3"), 1f);
 			}
 		}
 

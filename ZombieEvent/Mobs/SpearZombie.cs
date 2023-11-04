@@ -22,14 +22,14 @@ namespace Tremor.ZombieEvent.Mobs
 			npc.knockBackResist = 0.3f;
 			npc.width = 36;
 			npc.height = 44;
-			animationType = 21;
+			AnimationType = 21;
 			npc.aiStyle = 26;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit2;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 4, 7);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<SpearZombieBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<SpearZombieBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -40,12 +40,12 @@ namespace Tremor.ZombieEvent.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombieSpearHead"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingArm"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingArm"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingLeg"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeadlingLeg"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombieSpearGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZombieSpearHead"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeadlingArm"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeadlingArm"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeadlingLeg"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeadlingLeg"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZombieSpearGore"), 1f);
 			}
 		}
 

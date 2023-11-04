@@ -22,14 +22,14 @@ namespace Tremor.ZombieEvent.Mobs
 			npc.knockBackResist = 0.3f;
 			npc.width = 48;
 			npc.height = 54;
-			animationType = 482;
+			AnimationType = 482;
 			npc.aiStyle = 3;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath40;
 			npc.value = Item.buyPrice(0, 0, 30, 7);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<GhoulOfficerBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<GhoulOfficerBanner>();
 		}
 
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
@@ -46,13 +46,13 @@ namespace Tremor.ZombieEvent.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GhoulOfficerGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GhoulOfficerGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GhoulOfficerGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GhoulOfficerGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GhoulOfficerGore4"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GhoulOfficerGore5"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GhoulOfficerGore5"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GhoulOfficerGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GhoulOfficerGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GhoulOfficerGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GhoulOfficerGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GhoulOfficerGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GhoulOfficerGore5"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GhoulOfficerGore5"), 1f);
 			}
 		}
 

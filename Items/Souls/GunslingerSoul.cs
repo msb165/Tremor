@@ -35,7 +35,7 @@ namespace Tremor.Items.Souls
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<GunslingerFocus>());
 			recipe.AddIngredient(ModContent.ItemType<Opal>(), 3);
 			recipe.AddIngredient(ItemID.RangerEmblem, 1);

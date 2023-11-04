@@ -35,7 +35,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<AtisBlood>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<DrippingRoot>(), 1);
 			recipe.SetResult(this, 75);

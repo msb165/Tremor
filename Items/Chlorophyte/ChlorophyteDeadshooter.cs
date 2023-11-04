@@ -47,7 +47,7 @@ namespace Tremor.Items.Chlorophyte
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 15);
 			recipe.AddIngredient(ItemID.ShroomiteBar, 10);
 			recipe.SetResult(this);

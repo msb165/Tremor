@@ -23,14 +23,14 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 38;
 			npc.height = 50;
-			animationType = 75;
+			AnimationType = 75;
 			npc.aiStyle = 3;
 			npc.npcSlots = 1f;
 			npc.HitSound = SoundID.NPCHit40;
 			npc.DeathSound = SoundID.NPCDeath24;
 			npc.value = Item.buyPrice(0, 0, 3, 20);
 			Banner = npc.type;
-			aiType = 21;
+			AIType = 21;
 			BannerItem = ModContent.ItemType<MushroomCreatureBanner>();
 		}
 

@@ -35,7 +35,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.ThrowingKnife, 50);
 			recipe.AddIngredient(ModContent.ItemType<ConcentratedEther>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 1);

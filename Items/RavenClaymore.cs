@@ -46,7 +46,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.FieryGreatsword);
 			recipe.AddIngredient(ModContent.ItemType<RavenFeather>(), 15);
 			recipe.SetResult(this);

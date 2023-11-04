@@ -29,14 +29,14 @@ namespace Tremor.NPCs
 			npc.value = Item.buyPrice(0, 0, 2, 7);
 			npc.knockBackResist = 0.4f;
 			npc.aiStyle = 3;
-			aiType = 258;
+			AIType = 258;
 			//npc.noGravity = false;
-			animationType = 258;
+			AnimationType = 258;
 			npc.buffImmune[20] = true;
 			npc.buffImmune[31] = false;
 			npc.buffImmune[24] = true;
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<GraniteBeetleBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<GraniteBeetleBanner>();
 		}
 
 		public override void NPCLoot()
@@ -54,12 +54,12 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 31, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GBeetleGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GBeetleGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GBeetleGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GBeetleGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GBeetleGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GBeetleGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GBeetleGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GBeetleGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GBeetleGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GBeetleGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GBeetleGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GBeetleGore3"), 1f);
 			}
 		}
 

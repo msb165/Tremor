@@ -61,7 +61,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 
 		public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{
-			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/Varki_GlowMask"));
+			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, Mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/Varki_GlowMask"));
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -80,10 +80,10 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				}
 				for (int i = 0; i < 2; i++)
 				{
-					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/VarkiGore1"));
-					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/VarkiGore2"));
+					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/VarkiGore1"));
+					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/VarkiGore2"));
 				}
-				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/VarkiGore3"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, Mod.GetGoreSlot("Gores/VarkiGore3"));
 				for (int k = 0; k < 7; k++)
 				{
 					Vector2 Vector = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));

@@ -31,7 +31,7 @@ namespace Tremor.Items.Chaos
 		}
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<ChaosBar>(), 22);
 			recipe.AddIngredient(ItemID.CrystalShard, 15);
 			recipe.SetResult(this);

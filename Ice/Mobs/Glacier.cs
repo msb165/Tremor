@@ -25,9 +25,9 @@ namespace Tremor.Ice.Mobs
 			npc.knockBackResist = 0f;
 			npc.width = 68;
 			npc.height = 78;
-			//animationType = 156;
+			//AnimationType = 156;
 			npc.aiStyle = 2;
-			aiType = 180;
+			AIType = 180;
 			npc.npcSlots = 15f;
 			npc.noTileCollide = true;
 			npc.noGravity = true;
@@ -92,7 +92,7 @@ namespace Tremor.Ice.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GlacierGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GlacierGore"), 1f);
 			}
 		}
 	}

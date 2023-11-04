@@ -22,7 +22,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 40;
 			npc.height = 20;
-			animationType = 75;
+			AnimationType = 75;
 			npc.aiStyle = 14;
 			npc.npcSlots = 0.5f;
 			npc.noGravity = true;
@@ -37,7 +37,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 
 		public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{
-			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/NovaBat_GlowMask"));
+			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, Mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/NovaBat_GlowMask"));
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -64,11 +64,11 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				}
 				for (int i = 0; i < 2; i++)
 				{
-					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/NovaBatGore2"));
-					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/NovaBatGore2"));
+					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/NovaBatGore2"));
+					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/NovaBatGore2"));
 				}
-				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/NovaBatGore3"));
-				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/NovaBatGore1"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, Mod.GetGoreSlot("Gores/NovaBatGore3"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, Mod.GetGoreSlot("Gores/NovaBatGore1"));
 			}
 		}
 

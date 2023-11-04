@@ -47,7 +47,7 @@ namespace Tremor.Projectiles
 			if (Charge == MAX_CHARGE)
 			{
 				Vector2 unit = projectile.velocity;
-				DrawLaser(spriteBatch, Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value,
+				DrawLaser(Main.spriteBatch, Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value,
 					Main.player[projectile.owner].Center, unit, 10, projectile.damage,
 					-1.57f, 1f, 1000f, Color.White, (int)MOVE_DISTANCE);
 			}

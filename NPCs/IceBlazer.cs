@@ -25,17 +25,17 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.6f;
 			npc.width = 45;
 			npc.height = 75;
-			animationType = 169;
+			AnimationType = 169;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
 			npc.aiStyle = 22;
-			aiType = 169;
+			AIType = 169;
 			npc.npcSlots = 5f;
 			npc.HitSound = SoundID.NPCHit5;
 			npc.DeathSound = SoundID.NPCDeath7;
 			npc.value = Item.buyPrice(0, 0, 5, 0);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<IceBlazerBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<IceBlazerBanner>();
 		}
 
 		public override void NPCLoot()

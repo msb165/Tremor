@@ -23,7 +23,7 @@ namespace Tremor.Ice.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<GlacierWood>(), 30);
 			recipe.SetResult(this);
 			recipe.AddTile(18);

@@ -32,7 +32,7 @@ namespace Tremor.Items.Alchemist.Chemist
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<LeatherShirt>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<Chainmail>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<HazardousChemicals>(), 1);

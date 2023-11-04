@@ -32,7 +32,7 @@ namespace Tremor.Items
 		}
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<HeartofAtis>(), 1);
 			recipe.AddIngredient(ItemID.ObsidianSkull, 1);
 			recipe.SetResult(this);

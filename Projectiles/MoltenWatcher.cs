@@ -24,7 +24,7 @@ namespace Tremor.Projectiles
 			projectile.height = 38;
 			projectile.timeLeft = 5;
 			projectile.aiStyle = 62;
-			aiType = ProjectileID.ZephyrFish;
+			AIType = ProjectileID.ZephyrFish;
 			projectile.penetrate = -1;
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;

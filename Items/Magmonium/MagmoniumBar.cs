@@ -30,7 +30,7 @@ namespace Tremor.Items.Magmonium
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.HellstoneBar, 1);
 			recipe.AddIngredient(ItemID.Ectoplasm, 2);
 			recipe.SetResult(this);

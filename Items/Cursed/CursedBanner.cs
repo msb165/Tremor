@@ -32,7 +32,7 @@ namespace Tremor.Items.Cursed
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<Gloomstone>(), 10);
 			recipe.AddIngredient(ModContent.ItemType<UnstableCrystal>(), 2);
 			recipe.AddIngredient(ModContent.ItemType<CursedCloth>(), 25);

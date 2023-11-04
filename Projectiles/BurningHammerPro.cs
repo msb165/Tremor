@@ -12,7 +12,7 @@ namespace Tremor.Projectiles
 
 			projectile.width = 26;
 			projectile.height = 36;
-			aiType = 3;
+			AIType = 3;
 		}
 
 		public override void SetStaticDefaults()

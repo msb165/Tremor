@@ -31,7 +31,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.PhilosophersStone, 1);
 			recipe.AddIngredient(ItemID.ManaFlower, 1);
 			recipe.SetResult(this);

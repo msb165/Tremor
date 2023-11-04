@@ -39,7 +39,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.ExplosivePowder, 25);
 			recipe.AddIngredient(ModContent.ItemType<Pyro>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<MoltenParts>(), 1);

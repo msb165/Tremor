@@ -32,7 +32,7 @@ namespace Tremor.Items.Alchemist
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.HallowedBar, 1);
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 1);
 			recipe.AddIngredient(ModContent.ItemType<DarkBulb>(), 10);

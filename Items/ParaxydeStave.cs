@@ -38,7 +38,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<ParaxydeShard>(), 11);
 			recipe.AddIngredient(ItemID.FallenStar, 5);
 			recipe.SetResult(this);

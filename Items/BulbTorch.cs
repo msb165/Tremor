@@ -57,7 +57,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Torch, 9);
 			recipe.AddIngredient(ModContent.ItemType<LightBulb>());
 			recipe.SetResult(this, 9);

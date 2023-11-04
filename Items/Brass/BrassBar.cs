@@ -29,7 +29,7 @@ namespace Tremor.Items.Brass
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BrassNugget>(), 2);
 			recipe.AddIngredient(ModContent.ItemType<Charcoal>(), 1);
 			recipe.SetResult(this);

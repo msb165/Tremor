@@ -20,7 +20,7 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.6f;
 			npc.width = 42;
 			npc.height = 22;
-			animationType = 102;
+			AnimationType = 102;
 			npc.aiStyle = 26;
 			npc.npcSlots = 15f;
 			npc.HitSound = SoundID.NPCHit1;
@@ -32,8 +32,8 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/LizardGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/LizardGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/LizardGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/LizardGore2"), 1f);
 			}
 		}
 	}

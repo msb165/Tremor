@@ -24,7 +24,7 @@ namespace Tremor.NPCs
 			npc.lifeMax = 12000;
 			npc.damage = 160;
 			npc.defense = 135;
-			animationType = 82;
+			AnimationType = 82;
 			npc.knockBackResist = 0f;
 			npc.width = 130;
 			npc.height = 140;
@@ -93,10 +93,10 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ScreamerGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ScreamerGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ScreamerGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ScreamerGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ScreamerGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ScreamerGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ScreamerGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ScreamerGore3"), 1f);
 			}
 		}
 

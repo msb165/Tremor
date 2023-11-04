@@ -53,7 +53,7 @@ namespace Tremor.Items.Candy
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.SoulofLight, 20);
 			recipe.AddIngredient(ItemID.SoulofNight, 20);
 			recipe.AddIngredient(ModContent.ItemType<CarbonSteel>(), 8);

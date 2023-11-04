@@ -23,14 +23,14 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 62;
 			npc.height = 46;
-			animationType = 242;
+			AnimationType = 242;
 			npc.aiStyle = 18;
 			npc.npcSlots = 0.7f;
 			npc.HitSound = SoundID.NPCHit47;
 			npc.DeathSound = SoundID.NPCDeath23;
 			npc.value = Item.buyPrice(0, 0, 6, 3);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<ArmoredJellyfishBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<ArmoredJellyfishBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -40,7 +40,7 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArmoredGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ArmoredGore"), 1f);
 			}
 		}
 

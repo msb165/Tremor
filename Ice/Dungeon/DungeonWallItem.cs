@@ -29,7 +29,7 @@ namespace Tremor.Ice.Dungeon
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(null, nameof(DungeonBlockItem));
 			recipe.SetResult(this, 4);
 			recipe.AddTile(18);

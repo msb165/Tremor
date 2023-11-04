@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.Items;
 
@@ -13,13 +14,13 @@ namespace Tremor.Tiles
 			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
-			dustType = 62;
-			soundType = 21;
+			DustType = DustID.PurpleTorch;
+			HitSound = SoundID.Tink;
 			soundStyle = 2;
 			MineResist = 15f;
 			MinPick = 250;
 			AddMapEntry(new Color(255, 20, 147));
-			drop = ModContent.ItemType<CollapsiumOre>();
+			ItemDrop = ModContent.ItemType<CollapsiumOre>();
 
 		}
 		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

@@ -44,7 +44,7 @@ namespace Tremor.NPCs
 			npc.buffImmune[BuffID.OnFire] = true;
 			npc.buffImmune[BuffID.Burning] = true;
 			
-			music = MusicID.Boss2;
+			Music = MusicID.Boss2;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			bossBag = ModContent.ItemType<AncientDragonBag>();

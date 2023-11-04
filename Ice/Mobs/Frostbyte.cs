@@ -26,7 +26,7 @@ namespace Tremor.Ice.Mobs
 			npc.knockBackResist = 0.2f;
 			npc.width = 25;
 			npc.height = 20;
-			animationType = 3;
+			AnimationType = 3;
 			npc.aiStyle = -1;
 			npc.npcSlots = 1f;
 			npc.value = Item.buyPrice(silver: 10, copper : 5);

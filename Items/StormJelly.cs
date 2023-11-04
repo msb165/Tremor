@@ -43,7 +43,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Gel, 25);
 			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 12);
 			recipe.AddIngredient(ItemID.Glowstick, 15);

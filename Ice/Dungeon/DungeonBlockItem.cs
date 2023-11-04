@@ -29,13 +29,13 @@ namespace Tremor.Ice.Dungeon
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<IceBlockB>(), 2);
 			recipe.SetResult(this);
 			recipe.AddTile(18);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<DungeonWallItem>(), 4);
 			recipe.SetResult(this);
 			recipe.AddTile(18);

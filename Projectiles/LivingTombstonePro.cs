@@ -9,7 +9,7 @@ namespace Tremor.Projectiles
 		{
 			projectile.CloneDefaults(198);
 
-			aiType = 198;
+			AIType = 198;
 			Main.projFrames[projectile.type] = 4;
 			projectile.width = 24;
 			projectile.height = 36;
@@ -25,7 +25,7 @@ namespace Tremor.Projectiles
 		public override bool PreAI()
 		{
 			Player player = Main.player[projectile.owner];
-			player.bunny = false; // Relic from aiType
+			player.bunny = false; // Relic from AIType
 			return true;
 		}
 

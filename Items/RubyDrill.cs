@@ -38,7 +38,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Obsidian, 25);
 			recipe.AddIngredient(ItemID.MeteoriteBar, 16);
 			recipe.AddIngredient(ItemID.Ruby, 12);

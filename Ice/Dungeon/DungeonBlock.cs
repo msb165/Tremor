@@ -13,8 +13,8 @@ namespace Tremor.Ice.Dungeon
 			Main.tileMerge[Type][ModContent.TileType<IceBlock>()] = true;
 			Main.tileMerge[Type][ModContent.TileType<Ice.Tree.VeryVeryIce>()] = true;
 			Main.tileMerge[Type][147] = true;
-			dustType = ModContent.DustType<IceDust>();
-			drop = ModContent.ItemType<DungeonBlockItem>();
+			DustType = ModContent.DustType<IceDust>();
+			ItemDrop = ModContent.ItemType<DungeonBlockItem>();
 			AddMapEntry(new Color(70, 156, 213));
 		}
 

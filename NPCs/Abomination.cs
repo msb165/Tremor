@@ -21,11 +21,11 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.6f;
 			npc.width = 38;
 			npc.height = 44;
-			animationType = 489;
+			AnimationType = 489;
 			npc.aiStyle = 3;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit31;
-			aiType = 77;
+			AIType = 77;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 4, 0);
 			Banner = npc.type;

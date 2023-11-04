@@ -40,7 +40,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<CollapsiumOre>(), 30);
 			recipe.AddIngredient(ModContent.ItemType<AngeliteOre>(), 30);
 			recipe.AddIngredient(ModContent.ItemType<OmnikronBar>(), 5);
@@ -52,7 +52,7 @@ namespace Tremor.Items
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<CollapsiumOre>(), 30);
 			recipe.AddIngredient(ModContent.ItemType<AngeliteOre>(), 30);
 			recipe.AddIngredient(ModContent.ItemType<OmnikronBar>(), 5);
@@ -64,7 +64,7 @@ namespace Tremor.Items
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<CollapsiumOre>(), 30);
 			recipe.AddIngredient(ModContent.ItemType<AngeliteOre>(), 30);
 			recipe.AddIngredient(ModContent.ItemType<OmnikronBar>(), 5);
@@ -76,7 +76,7 @@ namespace Tremor.Items
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<CollapsiumOre>(), 30);
 			recipe.AddIngredient(ModContent.ItemType<AngeliteOre>(), 30);
 			recipe.AddIngredient(ModContent.ItemType<OmnikronBar>(), 5);

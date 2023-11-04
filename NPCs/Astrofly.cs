@@ -26,7 +26,7 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.2f;
 			npc.width = 56;
 			npc.height = 12;
-			animationType = 156;
+			AnimationType = 156;
 			npc.aiStyle = 22;
 			npc.npcSlots = 15f;
 			npc.noTileCollide = true;
@@ -35,8 +35,8 @@ namespace Tremor.NPCs
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath5;
 			npc.value = Item.buyPrice(0, 2, 4, 9);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<AstroflyBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<AstroflyBanner>();
 		}
 
 		public override void NPCLoot()
@@ -61,10 +61,10 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 					Dust.NewDust(npc.position, npc.width, npc.height, 59, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AstroflyGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AstroflyGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AstroflyGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AstroflyGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AstroflyGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AstroflyGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AstroflyGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AstroflyGore3"), 1f);
 			}
 			else
 			{

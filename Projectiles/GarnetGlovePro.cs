@@ -11,7 +11,7 @@ namespace Tremor.Projectiles
 			projectile.CloneDefaults(303);
 			projectile.width = 28;
 			projectile.height = 38;
-			aiType = 303;
+			AIType = 303;
 			projectile.timeLeft = 400;
 		}
 

@@ -30,7 +30,7 @@ namespace Tremor.Items.Dark
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Arkhalis, 1);
 			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 22);
 			recipe.AddIngredient(ModContent.ItemType<Doomstone>(), 15);

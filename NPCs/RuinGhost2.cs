@@ -32,8 +32,8 @@ namespace Tremor.NPCs
 			npc.noGravity = true;
 			npc.noTileCollide = true;
 			npc.aiStyle = 22;
-			aiType = NPCID.Wraith;
-			animationType = NPCID.Wraith;
+			AIType = NPCID.Wraith;
+			AnimationType = NPCID.Wraith;
 			npc.stepSpeed = .5f;
 			npc.lavaImmune = true;
 		}

@@ -67,7 +67,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 			npc.HitSound = SoundID.NPCHit4;
 			npc.DeathSound = SoundID.NPCDeath10;
 			npc.boss = true;
-			music = MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Boss6");
+			Music = MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Boss6");
 			bossBag = ModContent.ItemType<CogLordBag>();
 		}
 
@@ -85,7 +85,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
-			spriteBatch.Draw(mod.GetTexture("NPCs/Bosses/CogLord/CogLordBody"), npc.Center - Main.screenPosition, null, Color.White, 0f, new Vector2(44, -18), 1f, SpriteEffects.None, 0f);
+			spriteBatch.Draw(Mod.GetTexture("NPCs/Bosses/CogLord/CogLordBody"), npc.Center - Main.screenPosition, null, Color.White, 0f, new Vector2(44, -18), 1f, SpriteEffects.None, 0f);
 			Texture2D drawTexture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2((drawTexture.Width / 2) * 0.5F, (drawTexture.Height / Main.npcFrameCount[npc.type]) * 0.5F);
 			Vector2 drawPos = new Vector2(
@@ -208,7 +208,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 				{
 					for (int k = 0; k < ((Main.expertMode) ? 2 : 1); k++)
 					{
-						Vector2 velocity = Helper.VelocityToPoint(npc.Center, Helper.RandomPointInArea(new Vector2(Main.player[Main.myPlayer].Center.X - 10, Main.player[Main.myPlayer].Center.Y - 10), new Vector2(Main.player[Main.myPlayer].Center.X + 20, Main.player[Main.myPlayer].Center.Y + 20)), 20);
+						Vector2 velocity = Helper.VelocityToPoint(npc.Center, Helper.RandomPointInArea(new Vector2(Main.LocalPlayer.Center.X - 10, Main.LocalPlayer.Center.Y - 10), new Vector2(Main.LocalPlayer.Center.X + 20, Main.LocalPlayer.Center.Y + 20)), 20);
 						int i = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, 134, GetLaserDamage * ((Main.expertMode) ? 3 : 2), 1f);
 						Main.projectile[i].hostile = true;
 						Main.projectile[i].tileCollide = true;
@@ -298,17 +298,17 @@ namespace Tremor.NPCs.Bosses.CogLord
 		public void CheckHands()
 		{
 			if (_cogHands.X != -1)
-				if (!((Main.npc[(int)_cogHands.X].type == mod.NPCType(_leftHandName) && Main.npc[(int)_cogHands.X].ai[1] == npc.whoAmI) && Main.npc[(int)_cogHands.X].active))
+				if (!((Main.npc[(int)_cogHands.X].type == Mod.NPCType(_leftHandName) && Main.npc[(int)_cogHands.X].ai[1] == npc.whoAmI) && Main.npc[(int)_cogHands.X].active))
 					_cogHands.X = -1;
 			if (_cogHands.Y != -1)
-				if (!((Main.npc[(int)_cogHands.Y].type == mod.NPCType(_rightHandName) && Main.npc[(int)_cogHands.Y].ai[1] == npc.whoAmI) && Main.npc[(int)_cogHands.Y].active))
+				if (!((Main.npc[(int)_cogHands.Y].type == Mod.NPCType(_rightHandName) && Main.npc[(int)_cogHands.Y].ai[1] == npc.whoAmI) && Main.npc[(int)_cogHands.Y].active))
 					_cogHands.Y = -1;
 		}
 
 		public void MakeHands()
 		{
-			_cogHands.X = NPC.NewNPC(null, (int)npc.Center.X - 50, (int)npc.Center.Y, mod.NPCType(_leftHandName), 0, 1, npc.whoAmI);
-			_cogHands.Y = NPC.NewNPC(null, (int)npc.Center.X + 50, (int)npc.Center.Y, mod.NPCType(_rightHandName), 0, -1, npc.whoAmI);
+			_cogHands.X = NPC.NewNPC(null, (int)npc.Center.X - 50, (int)npc.Center.Y, Mod.NPCType(_leftHandName), 0, 1, npc.whoAmI);
+			_cogHands.Y = NPC.NewNPC(null, (int)npc.Center.X + 50, (int)npc.Center.Y, Mod.NPCType(_rightHandName), 0, -1, npc.whoAmI);
 		}
 
 		public void Animation()

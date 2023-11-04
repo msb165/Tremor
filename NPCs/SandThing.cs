@@ -27,11 +27,11 @@ namespace Tremor.NPCs
 			npc.value = Item.buyPrice(0, 0, 3, 7);
 			npc.knockBackResist = 0.5f;
 			npc.aiStyle = 3;
-			aiType = 73;
+			AIType = 73;
 			npc.aiStyle = 3;
-			animationType = 166;
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<SandThingBanner>();
+			AnimationType = 166;
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<SandThingBanner>();
 		}
 
 		public override void NPCLoot()

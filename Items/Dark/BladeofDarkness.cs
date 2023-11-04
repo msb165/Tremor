@@ -34,7 +34,7 @@ namespace Tremor.Items.Dark
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.SoulofNight, 12);
 			recipe.AddIngredient(ItemID.Amethyst, 10);
 			recipe.AddIngredient(ItemID.BoneSword);

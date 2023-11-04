@@ -356,7 +356,7 @@ namespace Tremor
 			const int XOffset = 400;
 			const int YOffset = 400;
 
-			//CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
+			//CyberWrathInvasion modPlayer = Main.LocalPlayer.GetModPlayer<CyberWrathInvasion>();
 			if (ZoneIce)
 			{
 				player.ZoneSnow = true;

@@ -63,7 +63,7 @@ namespace Tremor.Items.Dark
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<DarkGel>(), 32);
 			recipe.AddIngredient(ModContent.ItemType<DarkMatter>(), 32);
 			recipe.AddIngredient(ModContent.ItemType<DarkMass>(), 1);

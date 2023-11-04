@@ -16,7 +16,7 @@ namespace Tremor.Invasion
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(38);
-			aiType = 38;
+			AIType = 38;
 			projectile.width = 20;
 			projectile.height = 38;
 			projectile.scale = 1f;

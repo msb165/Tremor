@@ -59,7 +59,7 @@ namespace Tremor.Items
 			{
 				player.QuickSpawnItem(ModContent.ItemType<CornSword>());
 			}
-			if (!Main.player[Main.myPlayer].HasItem(ModContent.ItemType<FarmerShovel>()))
+			if (!Main.LocalPlayer.HasItem(ModContent.ItemType<FarmerShovel>()))
 			{
 				player.QuickSpawnItem(ModContent.ItemType<FarmerShovel>());
 			}

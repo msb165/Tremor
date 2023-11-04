@@ -11,7 +11,7 @@ namespace Tremor.Projectiles
 		{
 			projectile.CloneDefaults(566);
 
-			aiType = 566;
+			AIType = 566;
 			projectile.tileCollide = false;
 			Main.projFrames[projectile.type] = 4;
 			projectile.width = 40;

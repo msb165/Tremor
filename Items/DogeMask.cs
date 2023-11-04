@@ -24,7 +24,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Silk, 8);
 			recipe.SetResult(this);
 			recipe.AddTile(86);

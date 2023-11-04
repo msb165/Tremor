@@ -29,10 +29,10 @@ namespace Tremor.NPCs
 			npc.value = Item.buyPrice(0, 1, 5, 7);
 			npc.knockBackResist = 0.5f;
 			npc.aiStyle = 8;
-			aiType = 29;
-			animationType = 29;
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<ConjurerSkeletonBanner>();
+			AIType = 29;
+			AnimationType = 29;
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<ConjurerSkeletonBanner>();
 		}
 
 		public override void NPCLoot()
@@ -50,11 +50,11 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadWarrior2Gore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/UndeadGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/UndeadGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/UndeadWarrior2Gore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/UndeadGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/UndeadGore2"), 1f);
 			}
 		}
 

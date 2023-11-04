@@ -42,7 +42,7 @@ namespace Tremor.Invasion
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<EyeofOblivion>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<PhantomSoul>(), 20);
 			recipe.AddIngredient(ModContent.ItemType<TimeTissue>(), 10);

@@ -10,7 +10,7 @@ namespace Tremor.Projectiles
 		{
 			projectile.CloneDefaults(47);
 
-			aiType = 47;
+			AIType = 47;
 		}
 
 		public override void SetStaticDefaults()

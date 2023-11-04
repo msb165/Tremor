@@ -41,8 +41,8 @@ namespace Tremor.Projectiles
 
 			if (Main.rand.NextBool(3))
 			{
-				Item.NewItem(null, (int)projectile.position.X, (int)projectile.position.Y, projectile.width, projectile.height, ModContent.ItemType<NastyJavelin>());
-			};
+				Item.NewItem(null, projectile.position, projectile.width, projectile.height, ModContent.ItemType<NastyJavelin>());
+			}
 		}
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

@@ -20,15 +20,15 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.5f;
 			npc.width = 74;
 			npc.height = 42;
-			animationType = 2;
+			AnimationType = 2;
 			npc.aiStyle = 2;
 			npc.noGravity = true;
 			npc.npcSlots = 1f;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.value = Item.buyPrice(0, 0, 32, 20);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<FlyingLeechBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<FlyingLeechBanner>();
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)

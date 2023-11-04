@@ -22,9 +22,9 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.1f;
 			npc.width = 40;
 			npc.height = 40;
-			animationType = 482;
+			AnimationType = 482;
 			npc.aiStyle = 3;
-			aiType = 482;
+			AIType = 482;
 			npc.npcSlots = 0.8f;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.buffImmune[20] = true;
@@ -33,8 +33,8 @@ namespace Tremor.NPCs
 			npc.buffImmune[31] = false;
 			npc.DeathSound = SoundID.NPCDeath27;
 			npc.value = Item.buyPrice(0, 0, 25, 0);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<OrcChampionBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<OrcChampionBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -45,12 +45,12 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/OCGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/OCGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/OCGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/OCGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/OCGore4"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/OCGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/OCGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/OCGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/OCGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/OCGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/OCGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/OCGore4"), 1f);
 
 				for (int k = 0; k < 20; k++)
 				{

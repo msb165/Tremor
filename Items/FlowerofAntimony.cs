@@ -36,7 +36,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<RuneBar>(), 12);
 			recipe.AddIngredient(ModContent.ItemType<Gloomstone>(), 15);
 			recipe.AddIngredient(ModContent.ItemType<Jellyxir>(), 6);

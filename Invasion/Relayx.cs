@@ -67,7 +67,7 @@ namespace Tremor.Invasion
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			TooltipLine tip = new TooltipLine(mod, "Tremor:Tooltip", "-Donator Items-");
+			TooltipLine tip = new TooltipLine(Mod, "Tremor:Tooltip", "-Donator Items-");
 			tip.OverrideColor = new Color(119, 200, 203);
 			tooltips.Insert(3, tip);
 		}

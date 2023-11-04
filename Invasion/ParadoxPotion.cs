@@ -45,14 +45,14 @@ namespace Tremor.Invasion
 		public override bool? UseItem(Player player)
 		{
 			SoundEngine.PlaySound(SoundID.Item3, player.position);
-			Main.player[Main.myPlayer].HealEffect(300);
+			Main.LocalPlayer.HealEffect(300);
 			player.statLife += 300;
 			return true;
 		}
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<ParadoxElement>(), 2);
 			recipe.AddIngredient(ItemID.BottledWater);
 			recipe.SetResult(this);

@@ -22,11 +22,11 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 36;
 			npc.height = 44;
-			animationType = 21;
+			AnimationType = 21;
 			npc.aiStyle = 3;
 			//npc.npcSlots = 1f;
 			npc.HitSound = SoundID.NPCHit2;
-			aiType = 77;
+			AIType = 77;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 0, 0);
 		}
@@ -46,8 +46,8 @@ namespace Tremor.NPCs
 
 				for (int i = 0; i < 2; ++i)
 				{
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore1"), 1f);
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/UndeadGore2"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/UndeadGore1"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/UndeadGore2"), 1f);
 				}
 			}
 		}

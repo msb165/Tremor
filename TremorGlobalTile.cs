@@ -10,7 +10,7 @@ namespace Tremor
 		{
 			if (type == TileID.Emerald)
 			{
-				if (Main.rand.Next(20) == 1)
+				if (Main.rand.NextBool(20))
 				{
 					Item.NewItem(null, i * 16, j * 16, 48, 32, ModContent.ItemType<Items.EmeraldStone>());
 					return false;

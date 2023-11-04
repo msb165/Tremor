@@ -47,7 +47,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.SpellTome, 1);
 			recipe.AddIngredient(ModContent.ItemType<LunarRoot>(), 6);
 			recipe.AddIngredient(3467, 30);

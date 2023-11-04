@@ -59,7 +59,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<PieceofFlesh>(), 9);
 			recipe.AddTile(16);
 			recipe.SetResult(this);

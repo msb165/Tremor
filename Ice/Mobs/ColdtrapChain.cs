@@ -274,11 +274,11 @@ namespace Tremor.Ice.Mobs
 				Texture2D image = unit;
 				if (k == numUnits)
 				{
-					image = mod.GetTexture("Ice/Mobs/Coldtrap");
+					image = Mod.GetTexture("Ice/Mobs/Coldtrap");
 				}
 				Vector2 pos = projectile.position + direction * (increment * (k - 1) + unitLength / 2f);
 				Color color = Lighting.GetColor((int)(pos.X / 16f), (int)(pos.Y / 16f));
-				spriteBatch.Draw(image, pos - Main.screenPosition, null, projectile.GetAlpha(color), projectile.rotation, new Vector2(unit.Width / 2, unit.Height / 2), 1f, effects, 0f);
+				Main.spriteBatch.Draw(image, pos - Main.screenPosition, null, projectile.GetAlpha(color), projectile.rotation, new Vector2(unit.Width / 2, unit.Height / 2), 1f, effects, 0f);
 			}
 			return false;
 		}

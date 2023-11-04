@@ -31,7 +31,7 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0f;
 			npc.width = 136;
 			npc.height = 175;
-			animationType = 82;
+			AnimationType = 82;
 			npc.aiStyle = 22;
 			npc.npcSlots = 0.5f;
 			npc.noTileCollide = true;
@@ -39,8 +39,8 @@ namespace Tremor.NPCs
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath6;
 			npc.value = Item.buyPrice(0, 0, 8, 9);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<PeepersBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<PeepersBanner>();
 
 			TimeToShoot = 0;
 		}
@@ -78,7 +78,7 @@ namespace Tremor.NPCs
 				}
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/PeepersGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/PeepersGore{i+1}"), 1f);
 			}
 			else
 			{

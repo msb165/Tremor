@@ -25,7 +25,7 @@ namespace Tremor.Ice.Mobs
 			npc.knockBackResist = 0.3f;
 			npc.width = 56;
 			npc.height = 48;
-			animationType = 3;
+			AnimationType = 3;
 			npc.aiStyle = 3;
 			npc.npcSlots = 1f;
 			npc.HitSound = SoundID.NPCHit1;
@@ -88,12 +88,12 @@ namespace Tremor.Ice.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteWalkerGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteWalkerGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteWalkerGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteWalkerGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteWalkerGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WhiteWalkerGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WhiteWalkerGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WhiteWalkerGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WhiteWalkerGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WhiteWalkerGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WhiteWalkerGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WhiteWalkerGore3"), 1f);
 			}
 		}
 	}

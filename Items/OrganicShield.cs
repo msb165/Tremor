@@ -36,14 +36,14 @@ namespace Tremor.Items
 		}
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<MeatShield>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<DarkAbsorber>(), 1);
 			recipe.SetResult(this);
 			recipe.AddTile(114);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<MeatShield>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<PatronoftheMind>(), 1);
 			recipe.SetResult(this);

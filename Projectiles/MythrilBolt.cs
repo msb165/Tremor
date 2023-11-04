@@ -20,7 +20,7 @@ namespace Tremor.Projectiles
 			projectile.timeLeft = 1200;
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 0;
-			aiType = ProjectileID.Bullet;
+			AIType = ProjectileID.Bullet;
 		}
 
 		public override void SetStaticDefaults()

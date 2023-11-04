@@ -103,7 +103,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<CometiteBar>(), 12);
 			recipe.AddIngredient(ItemID.MartianConduitPlating, 30);
 			recipe.AddIngredient(ModContent.ItemType<LunarRoot>(), 12);

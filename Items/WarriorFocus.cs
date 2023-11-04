@@ -37,7 +37,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<WarriorSpark>());
 			recipe.AddIngredient(ModContent.ItemType<AirFragment>(), 1);
 			recipe.AddIngredient(ItemID.Ruby, 16);

@@ -34,7 +34,7 @@ namespace Tremor.Items.Invar
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<InvarBar>(), 7);
 			recipe.AddTile(16);
 			recipe.SetResult(this);

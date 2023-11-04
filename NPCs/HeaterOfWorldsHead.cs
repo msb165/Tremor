@@ -41,7 +41,7 @@ namespace Tremor.NPCs
 			npc.aiStyle = 6;
 			npc.npcSlots = 5f;
 			npc.knockBackResist = 0f;
-			music = 17;
+			Music = 17;
 
 			npc.noTileCollide = true;
 			npc.behindTiles = true;

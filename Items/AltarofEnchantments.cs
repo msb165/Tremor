@@ -30,7 +30,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.StoneBlock, 30);
 			recipe.AddIngredient(ModContent.ItemType<StoneofLife>(), 2);
 			recipe.AddIngredient(ModContent.ItemType<Gloomstone>(), 30);

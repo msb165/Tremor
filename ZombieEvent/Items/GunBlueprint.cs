@@ -23,7 +23,7 @@ namespace Tremor.ZombieEvent.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<TornPapyrus>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<TearsofDeath>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<CursedInk>(), 1);

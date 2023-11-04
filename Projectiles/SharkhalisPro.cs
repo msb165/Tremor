@@ -11,7 +11,7 @@ namespace Tremor.Projectiles
 
 			projectile.width = 100;
 			projectile.height = 70;
-			aiType = 595;
+			AIType = 595;
 			Main.projFrames[projectile.type] = 28;
 		}
 

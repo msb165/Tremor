@@ -21,8 +21,8 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Tiles
 			Main.tileMerge[TileID.LunarBlockNebula][Type] = true;
 			Main.tileMerge[TileID.LunarBlockStardust][Type] = true;
 			Main.tileLighted[Type] = true;
-			dustType = 57;
-			drop = ModContent.ItemType<NovaFragmentBlock>();
+			DustType = DustID.Enchanted_Gold;
+			ItemDrop = ModContent.ItemType<NovaFragmentBlock>();
 			AddMapEntry(Color.Yellow);
 		}
 

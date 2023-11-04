@@ -73,7 +73,7 @@ namespace Tremor.Items.Alchemist.Flasks
 		}
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<LesserManaFlask>(), 25);
 			recipe.AddIngredient(ItemID.FallenStar, 3);
 			recipe.AddIngredient(ItemID.SoulofLight, 1);

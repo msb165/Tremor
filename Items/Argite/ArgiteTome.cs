@@ -33,7 +33,7 @@ namespace Tremor.Items.Argite
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Book, 1);
 			recipe.AddIngredient(ModContent.ItemType<ArgiteBar>(), 20);
 			recipe.SetResult(this);

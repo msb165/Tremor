@@ -56,7 +56,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<GolemCore>(), 1);
 			recipe.AddIngredient(ItemID.HeatRay, 1);
 			recipe.AddIngredient(ItemID.SoulofMight, 16);
@@ -66,7 +66,7 @@ namespace Tremor.Items
 			recipe.AddTile(134);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<GolemCore>(), 1);
 			recipe.AddIngredient(ItemID.HeatRay, 1);
 			recipe.AddIngredient(ModContent.ItemType<SoulofMind>(), 16);

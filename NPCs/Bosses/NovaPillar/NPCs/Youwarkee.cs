@@ -111,7 +111,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 
 		public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{
-			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/Youwarkee_GlowMask"));
+			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, Mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/Youwarkee_GlowMask"));
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -130,11 +130,11 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				}
 				for (int i = 0; i < 2; i++)
 				{
-					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/YouwarkeeGore1"));
-					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/YouwarkeeGore2"));
+					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/YouwarkeeGore1"));
+					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/YouwarkeeGore2"));
 				}
-				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/YouwarkeeGore3"));
-				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/YouwarkeeGore3"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, Mod.GetGoreSlot("Gores/YouwarkeeGore3"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, Mod.GetGoreSlot("Gores/YouwarkeeGore3"));
 			}
 		}
 

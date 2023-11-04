@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
@@ -15,7 +16,7 @@ namespace Tremor.Invasion
 			TileObjectData.newTile.StyleHorizontal = true;
 			TileObjectData.newTile.StyleWrapLimit = 36;
 			TileObjectData.addTile(Type);
-			dustType = 7;
+			DustType = DustID.WoodFurniture;
 			AddMapEntry(new Color(120, 85, 60));
 		}
 

@@ -14,7 +14,7 @@ namespace Tremor.Projectiles
 			projectile.width = 8;
 			projectile.height = 8;
 			projectile.alpha = 80;
-			aiType = ProjectileID.Grenade;
+			AIType = ProjectileID.Grenade;
 			projectile.light = 0.5f;
 		}
 

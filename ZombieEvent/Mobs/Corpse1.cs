@@ -22,15 +22,15 @@ namespace Tremor.ZombieEvent.Mobs
 			npc.knockBackResist = 0.3f;
 			npc.width = 34;
 			npc.height = 34;
-			animationType = 462;
-			aiType = 462;
+			AnimationType = 462;
+			AIType = 462;
 			npc.aiStyle = 3;
 			npc.npcSlots = 0.2f;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 8, 7);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<LittleCorpseBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<LittleCorpseBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -41,11 +41,11 @@ namespace Tremor.ZombieEvent.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CorpseGore1"), 0.8f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CorpseGore2"), 0.8f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CorpseGore2"), 0.8f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CorpseGore3"), 0.8f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CorpseGore3"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CorpseGore1"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CorpseGore2"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CorpseGore2"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CorpseGore3"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CorpseGore3"), 0.8f);
 			}
 		}
 

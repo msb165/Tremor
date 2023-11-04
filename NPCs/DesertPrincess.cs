@@ -20,7 +20,7 @@ namespace Tremor.NPCs
 		{
 			npc.npcSlots = 5f;
 			npc.aiStyle = -1;
-			aiType = -1;
+			AIType = -1;
 			npc.damage = 65;
 			npc.width = 77;
 			npc.height = 72;

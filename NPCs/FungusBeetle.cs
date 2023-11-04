@@ -22,7 +22,7 @@ namespace Tremor.NPCs
 			npc.lifeMax = 4200;
 			npc.width = 214;
 			npc.height = 114;
-			animationType = 82;
+			AnimationType = 82;
 			npc.damage = 30;
 			npc.defense = 25;
 			npc.knockBackResist = 0f;
@@ -69,12 +69,12 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore4"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungusBeetleGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FungusBeetleGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FungusBeetleGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FungusBeetleGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FungusBeetleGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FungusBeetleGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FungusBeetleGore4"), 1f);
 				for (int k = 0; k < 10; k++)
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 67, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
@@ -100,25 +100,25 @@ namespace Tremor.NPCs
 
 		void MakeHands()
 		{
-			Hands.X = NPC.NewNPC(null, (int)npc.Center.X - 50, (int)npc.Center.Y, mod.NPCType(Boss_Left_Hand_Type), 0, 1, npc.whoAmI);
-			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X + 50, (int)npc.Center.Y, mod.NPCType(Boss_Right_Hand_Type), 0, -1, npc.whoAmI);
-			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y - 1000, mod.NPCType(Boss_Down_Hand_Type), 0, -1, npc.whoAmI);
-			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y + 1000, mod.NPCType(Boss_Up_Hand_Type), 0, -1, npc.whoAmI);
+			Hands.X = NPC.NewNPC(null, (int)npc.Center.X - 50, (int)npc.Center.Y, Mod.NPCType(Boss_Left_Hand_Type), 0, 1, npc.whoAmI);
+			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X + 50, (int)npc.Center.Y, Mod.NPCType(Boss_Right_Hand_Type), 0, -1, npc.whoAmI);
+			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y - 1000, Mod.NPCType(Boss_Down_Hand_Type), 0, -1, npc.whoAmI);
+			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y + 1000, Mod.NPCType(Boss_Up_Hand_Type), 0, -1, npc.whoAmI);
 		}
 
 		void CheckHands()
 		{
 			if (Hands.X != -1)
-				if (!((Main.npc[(int)Hands.X].type == mod.NPCType(Boss_Left_Hand_Type) && Main.npc[(int)Hands.X].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.X].active))
+				if (!((Main.npc[(int)Hands.X].type == Mod.NPCType(Boss_Left_Hand_Type) && Main.npc[(int)Hands.X].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.X].active))
 					Hands.X = -1;
 			if (Hands.Y != -1)
-				if (!((Main.npc[(int)Hands.Y].type == mod.NPCType(Boss_Right_Hand_Type) && Main.npc[(int)Hands.Y].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.Y].active))
+				if (!((Main.npc[(int)Hands.Y].type == Mod.NPCType(Boss_Right_Hand_Type) && Main.npc[(int)Hands.Y].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.Y].active))
 					Hands.Y = -1;
 			if (Hands.X != -1)
-				if (!((Main.npc[(int)Hands.X].type == mod.NPCType(Boss_Up_Hand_Type) && Main.npc[(int)Hands.X].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.X].active))
+				if (!((Main.npc[(int)Hands.X].type == Mod.NPCType(Boss_Up_Hand_Type) && Main.npc[(int)Hands.X].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.X].active))
 					Hands.X = -1;
 			if (Hands.Y != -1)
-				if (!((Main.npc[(int)Hands.Y].type == mod.NPCType(Boss_Down_Hand_Type) && Main.npc[(int)Hands.Y].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.Y].active))
+				if (!((Main.npc[(int)Hands.Y].type == Mod.NPCType(Boss_Down_Hand_Type) && Main.npc[(int)Hands.Y].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.Y].active))
 					Hands.Y = -1;
 		}
 

@@ -30,13 +30,13 @@ namespace Tremor.Projectiles
 		{
 			for (int k = 0; k < 5; k++)
 			{
-				Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 1, projectile.oldVelocity.X * 0.5f, projectile.oldVelocity.Y * 2f, 100, default(Color), 2f);
+				Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, DustID.Stone, projectile.oldVelocity.X * 0.5f, projectile.oldVelocity.Y * 2f, 100, default(Color), 2f);
 			}
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Dig, projectile.position);//Variant 0
 
 			if (Main.rand.NextBool(5))
 			{
-				Item.NewItem(null, (int)projectile.position.X, (int)projectile.position.Y, projectile.width, projectile.height, ModContent.ItemType<CornJavelin>());
+				Item.NewItem(null, projectile.position, projectile.width, projectile.height, ModContent.ItemType<CornJavelin>());
 			};
 		}
 

@@ -17,9 +17,9 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DEGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DETGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DETGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DEGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DETGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DETGore2"), 1f);
 			}
 		}
 
@@ -35,7 +35,7 @@ namespace Tremor.NPCs
 			npc.lifeMax = 95000;
 			npc.damage = 180;
 			npc.defense = 220;
-			animationType = 345;
+			AnimationType = 345;
 			npc.knockBackResist = 0f;
 			npc.width = 130;
 			npc.height = 140;
@@ -46,7 +46,7 @@ namespace Tremor.NPCs
 			npc.noTileCollide = true;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath10;
-			music = 17;
+			Music = 17;
 			bossBag = ModContent.ItemType<DarkEmperorBag>();
 			npc.buffImmune[20] = true;
 			npc.buffImmune[24] = true;

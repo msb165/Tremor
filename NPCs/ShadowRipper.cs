@@ -26,8 +26,8 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0f;
 			npc.width = 50;
 			npc.height = 78;
-			animationType = 6;
-			aiType = 6;
+			AnimationType = 6;
+			AIType = 6;
 			npc.aiStyle = 5;
 			npc.npcSlots = 0.5f;
 			npc.noTileCollide = true;
@@ -35,8 +35,8 @@ namespace Tremor.NPCs
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath6;
 			npc.value = Item.buyPrice(0, 0, 25, 9);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<ShadowRipperBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<ShadowRipperBanner>();
 		}
 
 		public override void NPCLoot()
@@ -61,7 +61,7 @@ namespace Tremor.NPCs
 				}
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/RipperGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/RipperGore{i+1}"), 1f);
 			}
 			else
 			{

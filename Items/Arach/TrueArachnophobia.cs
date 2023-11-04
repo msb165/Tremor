@@ -45,7 +45,7 @@ namespace Tremor.Items.Arach
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<Arachnophobia>(), 1);
 			recipe.AddIngredient(ItemID.BrokenHeroSword, 1);
 			recipe.SetResult(this);

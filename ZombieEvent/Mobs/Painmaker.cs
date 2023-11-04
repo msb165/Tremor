@@ -25,7 +25,7 @@ namespace Tremor.ZombieEvent.Mobs
 			npc.width = 42;
 			npc.height = 62;
 			npc.alpha = 100;
-			animationType = 82;
+			AnimationType = 82;
 			npc.aiStyle = 22;
 			npc.npcSlots = 0.5f;
 			npc.noTileCollide = true;
@@ -33,8 +33,8 @@ namespace Tremor.ZombieEvent.Mobs
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath6;
 			npc.value = Item.buyPrice(0, 0, 4, 9);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<Painmaker>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<Painmaker>();
 		}
 
 		public override void NPCLoot()

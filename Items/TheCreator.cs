@@ -36,14 +36,14 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<TrueBloodshed>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<TrueSanctifier>(), 1);
 			recipe.SetResult(this);
 			recipe.AddTile(ModContent.TileType<Tiles.GreatAnvilTile>());
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<TrueNightsWatch>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<TrueSanctifier>(), 1);
 			recipe.SetResult(this);

@@ -22,9 +22,9 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.7f;
 			npc.width = 44;
 			npc.height = 36;
-			animationType = 180;
+			AnimationType = 180;
 			npc.aiStyle = 2;
-			aiType = 180;
+			AIType = 180;
 			npc.npcSlots = 0.8f;
 			npc.noTileCollide = true;
 			npc.buffImmune[20] = true;
@@ -34,8 +34,8 @@ namespace Tremor.NPCs
 			npc.HitSound = SoundID.NPCHit27;
 			npc.DeathSound = SoundID.NPCDeath30;
 			npc.value = Item.buyPrice(0, 0, 25, 0);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<HellgronBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<HellgronBanner>();
 		}
 
 		public override void AI()
@@ -51,10 +51,10 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/HellgronGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/HellgronGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/HellgronGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/HellgronGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/HellgronGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/HellgronGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/HellgronGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/HellgronGore3"), 1f);
 				for (int k = 0; k < 20; k++)
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);

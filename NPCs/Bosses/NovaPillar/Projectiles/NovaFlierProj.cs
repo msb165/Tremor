@@ -15,7 +15,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 		{
 			projectile.CloneDefaults(348);
 			projectile.timeLeft = 500;
-			aiType = 348;
+			AIType = 348;
 			projectile.friendly = false;
 			projectile.tileCollide = true;
 		}

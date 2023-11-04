@@ -42,7 +42,7 @@ namespace Tremor.Items.Wolf
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<WolfPelt>(), 8);
 			recipe.AddIngredient(ModContent.ItemType<AlphaClaw>(), 1);
 			recipe.SetResult(this);

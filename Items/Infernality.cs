@@ -34,7 +34,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.HellstoneBar, 10);
 			recipe.AddIngredient(ModContent.ItemType<PhantomSoul>(), 5);
 			recipe.AddIngredient(ModContent.ItemType<DemonBlood>(), 12);

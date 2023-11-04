@@ -38,7 +38,7 @@ namespace Tremor.Items.Diamond
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Diamond, 12);
 			recipe.SetResult(this);
 			recipe.AddTile(16);

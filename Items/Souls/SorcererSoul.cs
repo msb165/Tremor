@@ -36,7 +36,7 @@ namespace Tremor.Items.Souls
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<SorcererFocus>());
 			recipe.AddIngredient(ModContent.ItemType<Opal>(), 3);
 			recipe.AddIngredient(ItemID.SorcererEmblem, 1);

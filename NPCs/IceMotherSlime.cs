@@ -22,15 +22,15 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.6f;
 			npc.width = 32;
 			npc.height = 22;
-			animationType = 1;
+			AnimationType = 1;
 			npc.aiStyle = 1;
-			aiType = 141;
+			AIType = 141;
 			npc.npcSlots = 0.1f;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.value = Item.buyPrice(0, 0, 6, 50);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<IceMotherSlimeBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<IceMotherSlimeBanner>();
 		}
 
 		public override void AI()

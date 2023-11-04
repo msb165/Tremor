@@ -12,7 +12,7 @@ namespace Tremor.Projectiles
 
 			projectile.width = 90;
 			projectile.height = 90;
-			aiType = 348;
+			AIType = 348;
 			projectile.hostile = true;
 			projectile.timeLeft = 500;
 			projectile.light = 0.8f;

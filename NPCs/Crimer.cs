@@ -23,15 +23,15 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.5f;
 			npc.width = 40;
 			npc.height = 40;
-			animationType = 121;
+			AnimationType = 121;
 			npc.aiStyle = 14;
 			npc.noGravity = true;
 			npc.npcSlots = 0.7f;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath6;
 			npc.value = Item.buyPrice(0, 0, 5, 0);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<CrimerBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<CrimerBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)

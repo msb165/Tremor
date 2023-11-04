@@ -24,14 +24,14 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.6f;
 			npc.width = 90;
 			npc.height = 62;
-			animationType = 141;
+			AnimationType = 141;
 			npc.aiStyle = 1;
 			npc.npcSlots = 1f;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.value = Item.buyPrice(0, 0, 12, 24);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<GelateenBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<GelateenBanner>();
 		}
 
 		public override void NPCLoot()
@@ -50,7 +50,7 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 4, 2.5f * hitDirection, -2.5f, 0, Color.Green, 0.7f);
 				}
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/GelateenGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/GelateenGore{i+1}"), 1f);
 
 				Dust.NewDust(npc.position, npc.width, npc.height, 4, 2.5f * hitDirection, -2.5f, 0, Color.Green, 0.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 4, 2.5f * hitDirection, -2.5f, 0, Color.Green, 0.7f);

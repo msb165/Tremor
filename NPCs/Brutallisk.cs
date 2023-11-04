@@ -52,7 +52,7 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0f;
 			npc.width = 276;
 			npc.height = 366;
-			animationType = 82;
+			AnimationType = 82;
 			npc.aiStyle = 2;
 			npc.npcSlots = 1f;
 			//npc.soundHit = 7;
@@ -60,7 +60,7 @@ namespace Tremor.NPCs
 			npc.boss = true;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
-			music = 17;
+			Music = 17;
 			npc.value = Item.buyPrice(3, 50, 0, 0);
 			bossBag = ModContent.ItemType<BrutalliskBag>();
 		}
@@ -79,12 +79,12 @@ namespace Tremor.NPCs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskGore4"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskGore4"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BrutalliskCrystal"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BrutalliskGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BrutalliskGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BrutalliskGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BrutalliskGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BrutalliskGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BrutalliskCrystal"), 1f);
 			}
 			else
 			{

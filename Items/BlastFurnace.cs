@@ -29,7 +29,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.GrayBrick, 25);
 			recipe.AddIngredient(ModContent.ItemType<Charcoal>(), 15);
 			recipe.AddIngredient(ItemID.LavaBucket, 1);

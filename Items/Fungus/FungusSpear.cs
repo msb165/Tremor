@@ -34,7 +34,7 @@ namespace Tremor.Items.Fungus
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<FungusElement>(), 11);
 			recipe.AddIngredient(ItemID.GlowingMushroom, 10);
 			recipe.AddIngredient(ModContent.ItemType<GoldSpear>(), 1);
@@ -42,7 +42,7 @@ namespace Tremor.Items.Fungus
 			recipe.AddTile(16);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<FungusElement>(), 11);
 			recipe.AddIngredient(ItemID.GlowingMushroom, 10);
 			recipe.AddIngredient(ModContent.ItemType<PlatinumSpear>(), 1);

@@ -23,15 +23,15 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 18;
 			npc.height = 44;
-			animationType = 21;
+			AnimationType = 21;
 			npc.aiStyle = 3;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit1;
-			aiType = 140;
+			AIType = 140;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 6, 7);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<PyramidHeadBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<PyramidHeadBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -41,12 +41,12 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PyramidGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PyramidGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PyramidGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PyramidGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PyramidGore4"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PyramidGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PyramidGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PyramidGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PyramidGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PyramidGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PyramidGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PyramidGore4"), 1f);
 			}
 		}
 		

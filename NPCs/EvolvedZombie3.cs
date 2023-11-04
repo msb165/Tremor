@@ -24,15 +24,15 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 34;
 			npc.height = 46;
-			animationType = 525;
+			AnimationType = 525;
 			npc.aiStyle = 3;
-			aiType = 525;
+			AIType = 525;
 			npc.npcSlots = 0.3f;
 			npc.HitSound = SoundID.NPCHit37;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 6, 7);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<EvolvedZombieBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<EvolvedZombieBanner>();
 		}
 
 		public override void NPCLoot()
@@ -48,11 +48,11 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 226, 2.5f * hitDirection, -2.5f, 0, default(Color), 1f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/EvolvGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/EvolvGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/EvolvGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/EvolvGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/EvolvGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/EvolvGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/EvolvGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/EvolvGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/EvolvGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/EvolvGore3"), 1f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, Color.White, 3f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, Color.White, 2f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, Color.White, 3f);

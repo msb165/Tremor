@@ -31,7 +31,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<FrostoneBar>(), 15);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);

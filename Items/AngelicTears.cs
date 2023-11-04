@@ -41,7 +41,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<AngeliteBar>(), 12);
 			recipe.AddIngredient(ModContent.ItemType<LapisLazuli>(), 7);
 			recipe.AddIngredient(ItemID.FallenStar, 10);

@@ -50,7 +50,7 @@ namespace Tremor.Items.Chaos
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<ChaosBar>(), 15);
 			recipe.AddIngredient(ItemID.SoulofFlight, 20);
 			recipe.AddIngredient(ItemID.CrystalShard, 25);

@@ -25,17 +25,17 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.0f;
 			npc.width = 145;
 			npc.height = 145;
-			animationType = 82;
+			AnimationType = 82;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
 			npc.aiStyle = 22;
-			aiType = 226;
+			AIType = 226;
 			npc.npcSlots = 5f;
 			npc.HitSound = SoundID.NPCHit54;
 			npc.DeathSound = SoundID.NPCDeath52;
 			npc.value = Item.buyPrice(0, 10, 15, 12);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<DeimosBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<DeimosBanner>();
 		}
 
 		public override void AI()
@@ -74,10 +74,10 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 70, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 3.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeimosGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeimosGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeimosGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DeimosGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeimosGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeimosGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeimosGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeimosGore3"), 1f);
 			}
 			else
 			{

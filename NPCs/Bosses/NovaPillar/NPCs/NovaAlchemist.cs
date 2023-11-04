@@ -28,7 +28,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			npc.width = 34;
 			npc.height = 56;
 			npc.aiStyle = 3;
-			aiType = NPCID.AngryBones;
+			AIType = NPCID.AngryBones;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit55;
 			npc.DeathSound = SoundID.NPCDeath51;
@@ -62,11 +62,11 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				}
 				for (int i = 0; i < 2; i++)
 				{
-					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/NovaAlchemistGore3"));
-					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/NovaAlchemistGore4"));
+					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/NovaAlchemistGore3"));
+					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/NovaAlchemistGore4"));
 				}
-				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/NovaAlchemistGore2"));
-				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, mod.GetGoreSlot("Gores/NovaAlchemistGore1"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, Mod.GetGoreSlot("Gores/NovaAlchemistGore2"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, Mod.GetGoreSlot("Gores/NovaAlchemistGore1"));
 			}
 		}
 
@@ -118,7 +118,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 
 		public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{
-			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/NovaAlchemist_GlowMask"));
+			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, Mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/NovaAlchemist_GlowMask"));
 		}
 
 		public void NovaAnimation()

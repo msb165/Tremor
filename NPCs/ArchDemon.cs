@@ -23,14 +23,14 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 66;
 			npc.height = 58;
-			animationType = 62;
+			AnimationType = 62;
 			npc.aiStyle = 14;
 			npc.npcSlots = 15f;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 2, 50);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<ArchDemonBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<ArchDemonBanner>();
 		}
 
 		public override void AI()
@@ -46,11 +46,11 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArchdemonGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArchdemonGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArchdemonGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArchdemonGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ArchdemonGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ArchdemonGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ArchdemonGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ArchdemonGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ArchdemonGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ArchdemonGore3"), 1f);
 			}
 		}
 	}

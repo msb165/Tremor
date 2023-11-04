@@ -58,7 +58,7 @@ namespace Tremor.Items.Alchemist.Flasks
 		}
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Bottle, 1);
 			recipe.AddIngredient(3460, 3);
 			recipe.AddIngredient(ModContent.ItemType<GelCube>(), 1);

@@ -12,7 +12,7 @@ namespace Tremor.Projectiles
 			projectile.scale = 1.6f;
 			projectile.timeLeft = 120;
 			projectile.penetrate = 3;
-			aiType = 638;
+			AIType = 638;
 			projectile.aiStyle = 1;
 		}
 

@@ -33,7 +33,7 @@ namespace Tremor.Tiles
 
 		public override bool RightClick(int i, int j)
 		{
-			Player player = Main.player[Main.myPlayer];
+			Player player = Main.LocalPlayer;
 			Tile tile = Main.tile[i, j];
 			int spawnX = i - tile.TileFrameX / 18;
 			int spawnY = j + 2;

@@ -44,7 +44,7 @@ namespace Tremor.Items.Ancient
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<RedPuzzleFragment>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<GreenPuzzleFragment>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<YellowPuzzleFragment>(), 1);

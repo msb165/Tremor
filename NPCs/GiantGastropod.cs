@@ -23,9 +23,9 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.1f;
 			npc.width = 40;
 			npc.height = 40;
-			animationType = 122;
+			AnimationType = 122;
 			npc.aiStyle = 22;
-			aiType = 122;
+			AIType = 122;
 			npc.noGravity = true;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit1;
@@ -35,8 +35,8 @@ namespace Tremor.NPCs
 			npc.buffImmune[31] = false;
 			npc.DeathSound = SoundID.NPCDeath7;
 			npc.value = Item.buyPrice(0, 0, 12, 0);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<GiantGastropodBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<GiantGastropodBanner>();
 		}
 
 		public override void AI()
@@ -60,7 +60,7 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 72, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for(int i = 0; i < 2; ++i)
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/GGGore{i+1}"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/GGGore{i+1}"), 1f);
 
 				for (int k = 0; k < 20; k++)
 				{

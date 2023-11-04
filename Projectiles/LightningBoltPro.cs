@@ -9,7 +9,7 @@ namespace Tremor.Projectiles
 		{
 			projectile.CloneDefaults(443);
 
-			aiType = 443;
+			AIType = 443;
 			projectile.DamageType = DamageClass.Magic;
 
 			projectile.timeLeft = 500;

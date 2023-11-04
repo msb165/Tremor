@@ -39,14 +39,14 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.GoldBroadsword, 1);
 			recipe.AddIngredient(ModContent.ItemType<FireFragment>(), 8);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.PlatinumBroadsword, 1);
 			recipe.AddIngredient(ModContent.ItemType<FireFragment>(), 8);
 			recipe.SetResult(this);

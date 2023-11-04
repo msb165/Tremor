@@ -58,7 +58,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.BorealWood, 25);
 			recipe.AddIngredient(ModContent.ItemType<WolfPelt>(), 7);
 			recipe.AddIngredient(ModContent.ItemType<AlphaClaw>(), 2);

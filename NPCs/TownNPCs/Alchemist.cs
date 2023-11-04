@@ -9,6 +9,7 @@ using Tremor.Items;
 using Tremor.Items.Alchemist;
 using Tremor.Items.Alchemist.Flasks;
 using Tremor.Projectiles.Alchemic;
+using System.Collections.Generic;
 
 namespace Tremor.NPCs.TownNPCs
 {
@@ -46,13 +47,13 @@ namespace Tremor.NPCs.TownNPCs
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.knockBackResist = 0.5f;
-			animationType = NPCID.GoblinTinkerer;
+			AnimationType = NPCID.GoblinTinkerer;
 		}
 
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money) 
 			=> NPC.downedBoss1 && Main.player.Any(player => !player.dead);
 
-		private readonly WeightedRandom<string> _names = new[]
+		private readonly List<string> _names = new List<string>
 		{
 			"Rizo:2",
 			"Albert",
@@ -61,10 +62,9 @@ namespace Tremor.NPCs.TownNPCs
 			"Raymond",
 			"Paracelsus:3",
 			"Nerxius:2"
-		}.ToWeightedCollectionWithWeight();
+		};
 
-		public override string TownNPCName()
-			=> _names.Get();
+		public override List<string> SetNPCNameList() => _names;
 
 		private readonly WeightedRandom<string> _chats = new WeightedRandom<string>(
 			"Love is just a chain of chemical reactions. So that you know.".ToWeightedTuple(2),
@@ -121,9 +121,9 @@ namespace Tremor.NPCs.TownNPCs
 			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<HealthSupportFlask>());
 			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ManaSupportFlask>());
 
-			if (Main.player[Main.myPlayer].ZoneSnow)
+			if (Main.LocalPlayer.ZoneSnow)
 				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<FreezeFlask>());
-			if (Main.player[Main.myPlayer].ZoneJungle)
+			if (Main.LocalPlayer.ZoneJungle)
 				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<LesserPoisonFlask>());
 
 			if (NPC.downedBoss1)
@@ -175,7 +175,7 @@ namespace Tremor.NPCs.TownNPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/AlchemistGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/AlchemistGore{i+1}"), 1f);
 			}
 		}
 	}

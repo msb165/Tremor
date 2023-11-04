@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using Terraria.Utilities;
 using Tremor.Items;
 using Tremor.Items.Archer;
+using System.Collections.Generic;
 
 namespace Tremor.NPCs.TownNPCs
 {
@@ -51,13 +52,13 @@ namespace Tremor.NPCs.TownNPCs
 
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
-			animationType = NPCID.Guide;
+			AnimationType = NPCID.Guide;
 		}
 
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 			=> Main.player.Any(player => !player.dead);
 
-		private readonly WeightedRandom<string> _names = new[]
+		private readonly List<string> _names = new List<string>
 		{
 			"Richard",
 			"Arthur:2",
@@ -65,10 +66,9 @@ namespace Tremor.NPCs.TownNPCs
 			"William:2",
 			"Robin",
 			"Wales"
-		}.ToWeightedCollectionWithWeight();
+		};
 
-		public override string TownNPCName()
-			=> _names.Get();
+		public override List<string> SetNPCNameList() => _names;
 
 		private readonly WeightedRandom<string> _chats = new WeightedRandom<string>(
 			"You'd have to be a very good archer in order to shoot an arrow into a knee.".ToWeightedTuple(2),
@@ -162,7 +162,7 @@ namespace Tremor.NPCs.TownNPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/ArcherGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/ArcherGore{i+1}"), 1f);
 			}
 		}
 	}

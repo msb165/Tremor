@@ -30,7 +30,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.SilverBar, 25);
 			recipe.AddIngredient(ModContent.ItemType<MinotaurHorn>(), 2);
 			recipe.AddIngredient(ItemID.Silk, 15);
@@ -38,7 +38,7 @@ namespace Tremor.Items
 			recipe.AddTile(106);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.TungstenBar, 25);
 			recipe.AddIngredient(ModContent.ItemType<MinotaurHorn>(), 2);
 			recipe.AddIngredient(ItemID.Silk, 15);

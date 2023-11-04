@@ -30,7 +30,7 @@ namespace Tremor.ZombieEvent.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<FleshWorkstation>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<RupicideBar>(), 5);
 			recipe.AddIngredient(ModContent.ItemType<WickedHeart>(), 1);

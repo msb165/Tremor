@@ -24,15 +24,15 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 34;
 			npc.height = 54;
-			animationType = 529;
+			AnimationType = 529;
 			npc.aiStyle = 3;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit1;
-			aiType = 529;
+			AIType = 529;
 			npc.DeathSound = SoundID.NPCDeath52;
 			npc.value = Item.buyPrice(0, 3, 1, 0);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<TheGirlBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<TheGirlBanner>();
 		}
 
 		public override void NPCLoot()

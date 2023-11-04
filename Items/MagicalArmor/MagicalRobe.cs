@@ -33,14 +33,14 @@ namespace Tremor.Items.MagicalArmor
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Silk, 14);
 			recipe.AddIngredient(ItemID.LeadBar, 6);
 			recipe.SetResult(this);
 			recipe.AddTile(18);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Silk, 14);
 			recipe.AddIngredient(ItemID.IronBar, 6);
 			recipe.SetResult(this);

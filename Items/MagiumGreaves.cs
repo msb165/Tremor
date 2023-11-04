@@ -34,7 +34,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<RuneBar>(), 10);
 			recipe.AddIngredient(ModContent.ItemType<MagiumShard>(), 8);
 			recipe.SetResult(this);

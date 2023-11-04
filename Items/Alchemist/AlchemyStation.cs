@@ -30,7 +30,7 @@ namespace Tremor.Items.Alchemist
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Wood, 12);
 			recipe.AddIngredient(ModContent.ItemType<CarbonSteel>(), 12);
 			recipe.AddIngredient(ItemID.SoulofLight, 12);

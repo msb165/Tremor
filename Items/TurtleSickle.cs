@@ -33,7 +33,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.TurtleShell);
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 17);
 			recipe.SetResult(this);

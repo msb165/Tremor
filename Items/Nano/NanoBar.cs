@@ -31,7 +31,7 @@ namespace Tremor.Items.Nano
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.TitaniumBar, 1);
 			recipe.AddIngredient(ItemID.SoulofNight, 1);
 			recipe.AddIngredient(ItemID.SoulofLight, 1);
@@ -40,7 +40,7 @@ namespace Tremor.Items.Nano
 			recipe.AddTile(134);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.AdamantiteBar, 1);
 			recipe.AddIngredient(ItemID.SoulofNight, 1);
 			recipe.AddIngredient(ItemID.SoulofLight, 1);

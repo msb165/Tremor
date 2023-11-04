@@ -26,11 +26,11 @@ namespace Tremor.NPCs
 			npc.value = Item.buyPrice(0, 0, 3, 12);
 			npc.knockBackResist = 0.3f;
 			npc.aiStyle = 3;
-			aiType = 73;
+			AIType = 73;
 			npc.aiStyle = 3;
-			animationType = 31;
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<SpacemanBanner>();
+			AnimationType = 31;
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<SpacemanBanner>();
 		}
 
 		public override void AI()
@@ -58,12 +58,12 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceManGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SpaceManGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SpaceManGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SpaceManGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SpaceManGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SpaceManGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SpaceManGore4"), 1f);
 			}
 		}
 

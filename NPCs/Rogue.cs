@@ -27,10 +27,10 @@ namespace Tremor.NPCs
 			npc.value = Item.buyPrice(0, 0, 4, 7);
 			npc.knockBackResist = 0.5f;
 			npc.aiStyle = 3;
-			aiType = 111;
-			animationType = 379;
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<RogueBanner>();
+			AIType = 111;
+			AnimationType = 379;
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<RogueBanner>();
 		}
 
 		public override void NPCLoot()
@@ -67,7 +67,7 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/RogueGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/RogueGore{i+1}"), 1f);
 			}
 		}
 

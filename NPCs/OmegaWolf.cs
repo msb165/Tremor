@@ -25,7 +25,7 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.6f;
 			npc.width = 62;
 			npc.height = 32;
-			animationType = 155;
+			AnimationType = 155;
 			npc.aiStyle = 26;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit6;
@@ -48,10 +48,10 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/OmegaWolfGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/OmegaWolfGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WolfGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WolfGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/OmegaWolfGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/OmegaWolfGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WolfGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WolfGore1"), 1f);
 			}
 		}
 

@@ -34,7 +34,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.SoulofNight, 8);
 			recipe.AddIngredient(ItemID.SoulofSight, 8);
 			recipe.AddIngredient(ModContent.ItemType<ColdTooth>(), 1);
@@ -42,7 +42,7 @@ namespace Tremor.Items
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.SoulofNight, 8);
 			recipe.AddIngredient(ItemID.SoulofSight, 8);
 			recipe.AddIngredient(ModContent.ItemType<FlamingTooth>(), 1);

@@ -18,7 +18,7 @@ namespace Tremor.Tiles
         //TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.Table, TileObjectData.newTile.Width, 0);
         TileObjectData.newTile.StyleWrapLimit = 36;
         TileObjectData.addTile(Type);
-        dustType = 7;
+        DustType = DustID.WoodFurniture;
         Main.tileLighted[Type] = true; 
         AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
 	AddMapEntry(new Color(82, 82, 82));

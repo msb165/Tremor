@@ -40,7 +40,7 @@ namespace Tremor.Items.Chain
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Minishark, 1);
 			recipe.AddIngredient(ItemID.SnowballCannon, 1);
 			recipe.AddIngredient(ItemID.IceBlock, 25);

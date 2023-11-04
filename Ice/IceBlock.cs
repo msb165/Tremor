@@ -15,9 +15,9 @@ namespace Tremor.Ice
 			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = false;
 			Main.tileLighted[Type] = false;
-			dustType = 80;
-			drop = 664;
-			soundType = 21;
+			DustType = 80;
+			ItemDrop = ItemID.IceBlock;
+			HitSound = SoundID.Tink;
 			soundStyle = 2;
 			AddMapEntry(new Color(84, 166, 229));
 			Main.tileMerge[Type][ModContent.TileType<IceOre>()] = true;
@@ -46,11 +46,11 @@ namespace Tremor.Ice
         {
             if (closer)
             {
-                Player player = Main.player[Main.myPlayer];
+                Player player = Main.LocalPlayer;
                 int style = Main.tile[i, j].TileFrameX / 15;
                 string type;
-                Main.player[Main.myPlayer].GetModPlayer<TremorPlayer>().ZoneIce = true;
-                TremorPlayer modPlayer = Main.player[Main.myPlayer].GetModPlayer<TremorPlayer>();
+                Main.LocalPlayer.GetModPlayer<TremorPlayer>().ZoneIce = true;
+                TremorPlayer modPlayer = Main.LocalPlayer.GetModPlayer<TremorPlayer>();
                 modPlayer.ZoneIce = true;
             } 
         } */

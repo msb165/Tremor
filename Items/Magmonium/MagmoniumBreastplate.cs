@@ -31,7 +31,7 @@ namespace Tremor.Items.Magmonium
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<MagmoniumBar>(), 25);
 			recipe.SetResult(this);
 			recipe.AddTile(134);

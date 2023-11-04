@@ -74,28 +74,28 @@ namespace Tremor.Items.Alchemist.Flasks
 		}
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BigManaFlask>(), 20);
 			recipe.AddIngredient(3456);
 			recipe.AddIngredient(ModContent.ItemType<LapisLazuli>(), 1);
 			recipe.SetResult(this, 20);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BigManaFlask>(), 20);
 			recipe.AddIngredient(3457);
 			recipe.AddIngredient(ModContent.ItemType<LapisLazuli>(), 1);
 			recipe.SetResult(this, 20);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BigManaFlask>(), 20);
 			recipe.AddIngredient(3458);
 			recipe.AddIngredient(ModContent.ItemType<LapisLazuli>(), 1);
 			recipe.SetResult(this, 20);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BigManaFlask>(), 20);
 			recipe.AddIngredient(3459);
 			recipe.AddIngredient(ModContent.ItemType<LapisLazuli>(), 1);

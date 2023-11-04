@@ -49,7 +49,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Feather, 15);
 			recipe.AddIngredient(ItemID.Cloud, 5);
 			recipe.AddIngredient(ModContent.ItemType<AirFragment>(), 14);

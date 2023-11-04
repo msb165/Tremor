@@ -34,7 +34,7 @@ namespace Tremor.Items.Bone
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(153, 1);
 			recipe.AddIngredient(3376, 1);
 			recipe.AddIngredient(ModContent.ItemType<CursedSoul>(), 1);

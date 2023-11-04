@@ -38,7 +38,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(3456, 1);
 			recipe.AddIngredient(3457, 1);
 			recipe.AddIngredient(3458, 1);

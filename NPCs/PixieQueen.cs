@@ -70,7 +70,7 @@ namespace Tremor.NPCs
 			npc.damage = 80;
 			npc.defense = 35;
 			npc.knockBackResist = 0f;
-			//animationType = 75;
+			//AnimationType = 75;
 			npc.width = 122;
 			npc.height = 122;
 			npc.value = Item.buyPrice(0, 10, 0, 0);
@@ -82,7 +82,7 @@ namespace Tremor.NPCs
 			npc.HitSound = SoundID.NPCHit5;
 			npc.DeathSound = SoundID.NPCDeath7;
 			npc.buffImmune[24] = true;
-			music = 12;
+			Music = 12;
 			bossBag = ModContent.ItemType<PixieQueenBag>();
 		}
 
@@ -657,11 +657,11 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 57, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 57, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 57, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("NPCs/PixieQueenGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("NPCs/PixieQueenGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("NPCs/PixieQueenGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("NPCs/PixieQueenGore4"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("NPCs/PixieQueenGore5"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("NPCs/PixieQueenGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("NPCs/PixieQueenGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("NPCs/PixieQueenGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("NPCs/PixieQueenGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("NPCs/PixieQueenGore5"), 1f);
 			}
 		}
 
@@ -731,7 +731,7 @@ namespace Tremor.NPCs
 			TimeToShoot = (int)Helper.DistortFloat(ShootRate, DistortPercent); //устанавливаем частоту выстрела
 			for (int i = 0; i < ((Main.expertMode) ? 4 : 2); i++) //в цикле указываем кол-во перьев при выстреле
 			{
-				Player player = Main.player[Main.myPlayer];
+				Player player = Main.LocalPlayer;
 				Vector2 position1 = player.Center;
 				Vector2 vector2 = new Vector2(player.position.X + 75f * (float)Math.Cos(12), player.position.Y + 1075f * (float)Math.Sin(12));
 				Vector2 Velocity = Helper.VelocityToPoint(vector2, Helper.RandomPointInArea(new Vector2(Main.player[npc.target].Center.X - 10, Main.player[npc.target].Center.Y - 10), new Vector2(Main.player[npc.target].Center.X + 20, Main.player[npc.target].Center.Y + 20)), ShootSpeed); //здесь устанавливаем позиции (здесь от перса в плеера)

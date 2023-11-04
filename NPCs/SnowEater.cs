@@ -31,15 +31,15 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.0f;
 			npc.width = 24;
 			npc.height = 24;
-			animationType = 69;
+			AnimationType = 69;
 			npc.aiStyle = -1;
 			npc.behindTiles = true;
 			npc.npcSlots = 0.1f;
 			npc.HitSound = SoundID.NPCHit31;
 			npc.DeathSound = SoundID.NPCDeath34;
 			npc.value = Item.buyPrice(0, 0, 12, 0);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<SnowEaterBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<SnowEaterBanner>();
 		}
 
 		public override void AI()
@@ -165,9 +165,9 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 80, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 80, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SEGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SEGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SEGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SEGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SEGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SEGore2"), 1f);
 
 				for (int k = 0; k < 20; k++)
 				{

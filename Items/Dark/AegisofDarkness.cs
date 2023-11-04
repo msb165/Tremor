@@ -37,7 +37,7 @@ namespace Tremor.Items.Dark
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<EnchantedShield>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<NecroShield>(), 1);
 			recipe.SetResult(this);

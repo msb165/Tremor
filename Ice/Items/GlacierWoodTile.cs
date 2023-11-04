@@ -13,9 +13,9 @@ namespace Tremor.Ice.Items
 			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
-			dustType = 80;
+			DustType = 80;
 			AddMapEntry(new Color(0, 191, 255));
-			drop = ModContent.ItemType<GlacierWood>();
+			ItemDrop = ModContent.ItemType<GlacierWood>();
 			Main.tileMerge[Type][ModContent.TileType<IceBlock>()] = true;
 			Main.tileMerge[Type][TileID.IceBlock] = true; // normal ice
 			Main.tileMerge[Type][TileID.BreakableIce] = true; // thin ice

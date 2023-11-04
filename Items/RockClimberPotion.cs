@@ -36,7 +36,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.BottledWater, 1);
 			recipe.AddIngredient(ItemID.StoneBlock, 15);
 			recipe.AddIngredient(ItemID.Blinkroot, 1);

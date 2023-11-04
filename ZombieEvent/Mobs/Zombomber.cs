@@ -22,15 +22,15 @@ namespace Tremor.ZombieEvent.Mobs
 			npc.knockBackResist = 0.3f;
 			npc.width = 36;
 			npc.height = 44;
-			animationType = 555;
+			AnimationType = 555;
 			npc.aiStyle = 107;
 			npc.npcSlots = 0.5f;
-			aiType = 555;
+			AIType = 555;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 4, 7);
-			// banner = npc.type;
-			// TODO: bannerItem = ModContent.ItemType<ZombomberBanner>();
+			// Banner = npc.type;
+			// TODO: BannerItem = ModContent.ItemType<ZombomberBanner>();
 		}
 
 		public override void NPCLoot()
@@ -59,11 +59,11 @@ namespace Tremor.ZombieEvent.Mobs
 				{
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombomberGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombomberGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombomberGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FarmGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZombomberGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZombomberGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZombomberGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FarmGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FarmGore3"), 1f);
 			}
 		}
 

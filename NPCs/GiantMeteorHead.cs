@@ -31,10 +31,10 @@ namespace Tremor.NPCs
 			npc.value = Item.buyPrice(0, 0, 3, 12);
 			npc.knockBackResist = 0.1f;
 			npc.aiStyle = 5;
-			aiType = 23;
-			animationType = 23;
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<GiantMeteorHeadBanner>();
+			AIType = 23;
+			AnimationType = 23;
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<GiantMeteorHeadBanner>();
 		}
 
 		public override void AI()

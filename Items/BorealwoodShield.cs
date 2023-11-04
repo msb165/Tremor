@@ -26,7 +26,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.BorealWood, 15);
 			recipe.SetResult(this);
 			recipe.AddTile(18);

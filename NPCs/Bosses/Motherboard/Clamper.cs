@@ -26,11 +26,11 @@ namespace Tremor.NPCs.Bosses.Motherboard
 			npc.knockBackResist = 0f;
 			npc.width = 36;
 			npc.height = 33;
-			//aiType = 6;
+			//AIType = 6;
 			npc.aiStyle = -1; //5
 			npc.HitSound = SoundID.NPCHit4;
 			npc.DeathSound = SoundID.NPCDeath14;
-			animationType = 2;
+			AnimationType = 2;
 		}
 
 		public override void HitEffect(int hitDirection, double damage)

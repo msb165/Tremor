@@ -52,7 +52,7 @@ namespace Tremor.Items.Afterlife
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<SkullTeeth>(), 2);
 			recipe.AddIngredient(ModContent.ItemType<SteelBar>(), 12);
 			recipe.SetResult(this);

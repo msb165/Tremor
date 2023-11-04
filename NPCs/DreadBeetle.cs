@@ -23,16 +23,16 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.6f;
 			npc.width = 38;
 			npc.height = 44;
-			animationType = 258;
+			AnimationType = 258;
 			npc.aiStyle = 3;
-			aiType = 258;
+			AIType = 258;
 			npc.npcSlots = 0.2f;
 			npc.HitSound = SoundID.NPCHit45;
 			npc.DeathSound = SoundID.NPCDeath47;
 			npc.value = Item.buyPrice(0, 0, 8, 24);
-			banner = npc.type;
+			Banner = npc.type;
 			npc.noGravity = false;
-			bannerItem = ModContent.ItemType<DreadBeetleBanner>();
+			BannerItem = ModContent.ItemType<DreadBeetleBanner>();
 		}
 
 		public override void NPCLoot()
@@ -45,7 +45,7 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 				for(int i = 0; i < 2; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/DreadGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/DreadGore{i+1}"), 1f);
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)

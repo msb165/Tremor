@@ -44,7 +44,7 @@ namespace Tremor.Items.Nano
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<NanoBar>(), 15);
 			recipe.AddIngredient(ItemID.HallowedBar, 5);
 			recipe.SetResult(this);

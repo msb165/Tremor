@@ -24,10 +24,10 @@ namespace Tremor.NPCs
 			npc.HitSound = SoundID.NPCHit52;
 			npc.DeathSound = SoundID.NPCDeath55;
 			npc.knockBackResist = 0f;
-			aiType = 472;
+			AIType = 472;
 			npc.noGravity = true;
 			npc.aiStyle = 86;
-			animationType = 472;
+			AnimationType = 472;
 		}
 
 		public override void HitEffect(int hitDirection, double damage)

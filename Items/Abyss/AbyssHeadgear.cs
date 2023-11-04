@@ -120,7 +120,7 @@ namespace Tremor.Items.Abyss
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<DarknessCloth>(), 11);
 			recipe.AddIngredient(ItemID.SoulofNight, 9);
 			recipe.AddIngredient(ItemID.Amethyst, 7);

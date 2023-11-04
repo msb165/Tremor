@@ -40,7 +40,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<DeadHead>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<CarbonSteel>(), 15);
 			recipe.AddIngredient(ModContent.ItemType<Doomstone>(), 5);

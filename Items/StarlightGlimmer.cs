@@ -48,7 +48,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.StarCannon, 1);
 			recipe.AddIngredient(ModContent.ItemType<Doomstone>(), 16);
 			recipe.AddIngredient(3467, 20);

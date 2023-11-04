@@ -16,7 +16,7 @@ namespace Tremor.Invasion
 
 		public override void SetDefaults()
 		{
-			animationType = 523;
+			AnimationType = 523;
 			npc.npcSlots = 0.3f;
 			npc.damage = 150;
 			npc.width = 36;

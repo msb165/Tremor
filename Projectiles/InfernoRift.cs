@@ -25,7 +25,7 @@ namespace Tremor.Projectiles
 			projectile.height = 38;
 			projectile.scale = 1.1f;
 			projectile.aiStyle = 0;
-			aiType = 16;
+			AIType = 16;
 			projectile.friendly = true;
 			projectile.hostile = false;
 			projectile.tileCollide = true;
@@ -48,7 +48,7 @@ namespace Tremor.Projectiles
 			for (int k = 0; k < projectile.oldPos.Length; k++)
 			{
 				Vector2 drawPos = projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, projectile.gfxOffY);
-				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, Color.White, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
+				Main.spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, Color.White, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
 			}
 			return true;
 		}

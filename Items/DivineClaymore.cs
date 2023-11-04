@@ -42,7 +42,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<VoidBlade>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<AngeliteBar>(), 30);
 			recipe.AddIngredient(ModContent.ItemType<Aquamarine>(), 8);

@@ -828,7 +828,7 @@ namespace Tremor
 
 		public override void ResetNearbyTileEffects()
 		{
-			TremorPlayer modPlayer = Main.player[Main.myPlayer].GetModPlayer<TremorPlayer>();
+			TremorPlayer modPlayer = Main.LocalPlayer.GetModPlayer<TremorPlayer>();
 			modPlayer.NovaMonolith = false;
 		}
 		public override void TileCountsAvailable(ReadOnlySpan<int> tileCounts)

@@ -10,7 +10,7 @@ namespace Tremor.Projectiles
 		{
 			projectile.CloneDefaults(ProjectileID.Bunny);
 
-			aiType = ProjectileID.Bunny;
+			AIType = ProjectileID.Bunny;
 			Main.projFrames[projectile.type] = 8;
 			projectile.width = 46;
 			projectile.height = 38;
@@ -26,7 +26,7 @@ namespace Tremor.Projectiles
 		public override bool PreAI()
 		{
 			Player player = Main.player[projectile.owner];
-			player.bunny = false; // Relic from aiType
+			player.bunny = false; // Relic from AIType
 			return true;
 		}
 

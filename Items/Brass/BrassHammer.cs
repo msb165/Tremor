@@ -34,7 +34,7 @@ namespace Tremor.Items.Brass
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BrassBar>(), 10);
 			recipe.AddIngredient(ItemID.Cog, 10);
 			recipe.SetResult(this);

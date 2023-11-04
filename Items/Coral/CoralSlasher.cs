@@ -30,7 +30,7 @@ namespace Tremor.Items.Coral
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Coral, 15);
 			recipe.SetResult(this);
 			recipe.AddTile(18);

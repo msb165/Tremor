@@ -27,7 +27,7 @@ namespace Tremor.Ice.Items
 			//Main.projFrames[projectile.type] = 7;
 			//ProjectileID.Sets.TrailCacheLength[projectile.type] = 7;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 0;
-			//aiType = ProjectileID.Bullet;
+			//AIType = ProjectileID.Bullet;
 		}
 
 		int timer;

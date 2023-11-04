@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.Items.Doom;
 
@@ -13,10 +14,10 @@ namespace Tremor.Tiles
 			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
-			dustType = ModContent.DustType<Dusts.DoomFlame>();
-			drop = ModContent.ItemType<Doombrick>();
-                                   soundType = 21;
-                                   soundStyle = 2;
+			DustType = ModContent.DustType<Dusts.DoomFlame>();
+			ItemDrop = ModContent.ItemType<Doombrick>();
+			HitSound = SoundID.Tink;
+			soundStyle = 2;
 			AddMapEntry(new Color(204, 255, 0));
 		}
 

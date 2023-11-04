@@ -47,12 +47,6 @@ namespace Tremor
 			instance.Logger.Info($"[Tremor][{DateTime.Now:yyyy-MM-dd hh:mm:ss}] {string.Format(format, args)}");
 		}
 
-		public override void AddRecipeGroups()
-		{
-			RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Lang.GetItemNameValue(ItemID.AmethystStaff), ItemID.AmethystStaff, ItemID.DiamondStaff, ItemID.RubyStaff, ItemID.TopazStaff, ItemID.SapphireStaff, ItemID.AmberStaff, ItemID.EmeraldStaff);
-			RecipeGroup.RegisterGroup("Tremor:GemStaves", group);
-		}
-
 		public Texture2D GetTexture(string path) => Assets.Request<Texture2D>(path, AssetRequestMode.ImmediateLoad).Value;
 		public Asset<Texture2D> GetTextureAssert(string path) => Assets.Request<Texture2D>(path, AssetRequestMode.ImmediateLoad);
 		
@@ -167,16 +161,22 @@ namespace Tremor
 				}
 			}
 		}
+	}
+	public class TremorSystem:ModSystem
+	{
+		public override void AddRecipeGroups()
+		{
+			RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Lang.GetItemNameValue(ItemID.AmethystStaff), ItemID.AmethystStaff, ItemID.DiamondStaff, ItemID.RubyStaff, ItemID.TopazStaff, ItemID.SapphireStaff, ItemID.AmberStaff, ItemID.EmeraldStaff);
+			RecipeGroup.RegisterGroup("Tremor:GemStaves", group);
+		}
 
 		public override void AddRecipes()
 		{
 			// Recipe wrapper
-			RecipeUtils.AddRecipes(this);
-			RecipeUtils.AdaptToNovaRecipes(this);
+			RecipeUtils.AddRecipes(Mod);
+			RecipeUtils.AdaptToNovaRecipes(Mod);
 		}
-	}
-	public class TremorSystem:ModSystem
-	{
+
 		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
 		{
 			if (InvasionWorld.CyberWrath)

@@ -24,9 +24,9 @@ namespace Tremor.NPCs
 			npc.alpha = 175;
 			npc.color = new Color(255, 255, 0, 100);
 			npc.height = 46;
-			animationType = 244;
+			AnimationType = 244;
 			npc.aiStyle = 1;
-			aiType = 138;
+			AIType = 138;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath23;

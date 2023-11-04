@@ -29,13 +29,13 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<GloomstoneBrickWall>(), 4);
 			recipe.SetResult(this, 1);
 			recipe.AddTile(17);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<Gloomstone>(), 1);
 			recipe.SetResult(this, 1);
 			recipe.AddTile(17);

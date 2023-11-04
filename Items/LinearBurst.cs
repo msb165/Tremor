@@ -38,7 +38,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.ExplosivePowder, 15);
 			recipe.AddIngredient(ModContent.ItemType<ReinforcedBurst>(), 1);
 			recipe.AddIngredient(ItemID.SoulofLight, 10);

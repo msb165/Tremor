@@ -30,7 +30,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Wood, 5);
 			recipe.AddIngredient(ItemID.Rope, 5);
 			recipe.AddIngredient(ModContent.ItemType<MeatChunk>(), 15);

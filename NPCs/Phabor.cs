@@ -33,7 +33,7 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0f;
 			npc.width = 75;
 			npc.height = 75;
-			animationType = 82;
+			AnimationType = 82;
 			npc.aiStyle = 22;
 			npc.npcSlots = 0.5f;
 			npc.noTileCollide = true;
@@ -41,8 +41,8 @@ namespace Tremor.NPCs
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath6;
 			npc.value = Item.buyPrice(0, 0, 55, 9);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<PhaborBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<PhaborBanner>();
 
 			TimeToShoot = 0;
 		}
@@ -78,12 +78,12 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PhaborGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PhaborGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PhaborGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PhaborGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PhaborGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PhaborGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PhaborGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PhaborGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PhaborGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PhaborGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PhaborGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PhaborGore3"), 1f);
 			}
 			else
 			{

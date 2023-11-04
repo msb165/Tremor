@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.Items.Angelite;
 
@@ -13,13 +14,13 @@ namespace Tremor.Tiles
 			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
-			dustType = 57;
-			soundType = 21;
+			DustType = DustID.Enchanted_Gold;
+			HitSound = SoundID.Tink;
 			soundStyle = 2;
 			MineResist = 15f;
 			MinPick = 250;
 			AddMapEntry(new Color(0, 191, 255));
-			drop = ModContent.ItemType<AngeliteOre>();
+			ItemDrop = ModContent.ItemType<AngeliteOre>();
 		}
 		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
 		{

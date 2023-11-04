@@ -20,7 +20,7 @@ namespace Tremor.Tiles
         TileObjectData.newTile.StyleHorizontal = true;
         TileObjectData.newTile.StyleWrapLimit = 111;
         TileObjectData.addTile(Type);
-        dustType = -1;
+        DustType = -1;
         AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
         Main.tileLighted[Type] = true; 
 	AddMapEntry(new Color(233, 211, 123));

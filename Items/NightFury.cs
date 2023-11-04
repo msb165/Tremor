@@ -36,7 +36,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Sunfury, 1);
 			recipe.AddIngredient(ModContent.ItemType<LeafBall>(), 1);
 			recipe.AddIngredient(ItemID.BallOHurt, 1);

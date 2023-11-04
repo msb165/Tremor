@@ -34,7 +34,7 @@ namespace Tremor.Items.Souls
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(547, 5);
 			recipe.AddIngredient(ItemID.Bottle, 1);
 			recipe.SetResult(this);

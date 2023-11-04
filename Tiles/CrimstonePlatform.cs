@@ -28,7 +28,7 @@ namespace Tremor.Tiles
 			TileObjectData.addTile(19);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
 			AddMapEntry(new Color(111, 22, 22)); 
-			drop = ModContent.ItemType<Items.Crimstone.CrimstonePlatform>();
+			ItemDrop = ModContent.ItemType<Items.Crimstone.CrimstonePlatform>();
 			adjTiles = new int[]{ TileID.Platforms };
 			TileID.Sets.Platforms[Type] = true;
 		}

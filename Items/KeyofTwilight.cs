@@ -24,7 +24,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.GoldenKey, 1);
 			recipe.AddIngredient(ItemID.SoulofLight, 6);
 			recipe.AddIngredient(ItemID.SoulofNight, 6);

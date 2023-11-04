@@ -20,7 +20,7 @@ namespace Tremor.Projectiles
 			projectile.penetrate = -1;
 			projectile.timeLeft = 240;
 			projectile.ignoreWater = true;
-			aiType = 274;
+			AIType = 274;
 		}
 	}
 }

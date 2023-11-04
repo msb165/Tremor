@@ -22,11 +22,11 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.2f;
 			npc.width = 33;
 			npc.height = 33;
-			animationType = 34;
+			AnimationType = 34;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
 			npc.aiStyle = 14;
-			aiType = 34;
+			AIType = 34;
 			npc.npcSlots = 5f;
 			npc.HitSound = SoundID.NPCHit35;
 			npc.DeathSound = SoundID.NPCDeath57;
@@ -36,10 +36,10 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungalBugGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungalBugGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungalBugGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FungalBugGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FungalBugGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FungalBugGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FungalBugGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FungalBugGore3"), 1f);
 				for (int k = 0; k < 60; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 67, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				for (int k = 0; k < 20; k++)

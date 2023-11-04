@@ -36,7 +36,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<Kunai>(), 50);
 			recipe.AddIngredient(ModContent.ItemType<FireFragment>());
 			recipe.SetResult(this, 50);

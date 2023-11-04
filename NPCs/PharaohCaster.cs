@@ -27,10 +27,10 @@ namespace Tremor.NPCs
 			npc.value = Item.buyPrice(0, 1, 5, 7);
 			npc.knockBackResist = 0.5f;
 			npc.aiStyle = 8;
-			aiType = 32;
-			animationType = 32;
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<PharaohCasterBanner>();
+			AIType = 32;
+			AnimationType = 32;
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<PharaohCasterBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -40,11 +40,11 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PharaonGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PharaonGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PharaonGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PharaonGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/PharaonGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PharaonGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PharaonGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PharaonGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PharaonGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PharaonGore3"), 1f);
 			}
 		}
 

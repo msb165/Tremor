@@ -31,7 +31,7 @@ namespace Tremor.Items.Marble
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.MarbleBlock, 45);
 			recipe.AddIngredient(ModContent.ItemType<StoneofLife>(), 1);
 			recipe.SetResult(this);

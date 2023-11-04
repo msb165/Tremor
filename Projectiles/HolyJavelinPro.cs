@@ -16,7 +16,7 @@ namespace Tremor.Projectiles
 			projectile.penetrate = 2;
 			projectile.DamageType = DamageClass.Magic;
 			projectile.ignoreWater = true;
-			aiType = 598;
+			AIType = 598;
 		}
 
 		public override void SetStaticDefaults()

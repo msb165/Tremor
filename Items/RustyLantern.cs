@@ -45,7 +45,7 @@ namespace Tremor.Items
 			Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[15], player.position);//Variant 0
 			//if(Main.netMode !=1)
 			//{
-			NPC.NewNPC(null, (int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, mod.NPCType(""), 0, NPC.NewNPC(null, (int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<Dragon_HeadB>()));
+			NPC.NewNPC(null, (int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, Mod.NPCType(""), 0, NPC.NewNPC(null, (int)player.Center.X + XOffset, (int)player.Center.Y + YOffset, ModContent.NPCType<Dragon_HeadB>()));
 			//}
 			return true;
 		}

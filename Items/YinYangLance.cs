@@ -36,7 +36,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<RipperKnife>());
 			recipe.AddIngredient(ItemID.DarkShard, 1);
 			recipe.AddIngredient(ItemID.LightShard, 1);

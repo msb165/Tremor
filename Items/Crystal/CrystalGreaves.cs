@@ -31,7 +31,7 @@ namespace Tremor.Items.Crystal
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.CrystalShard, 25);
 			recipe.AddIngredient(ItemID.SoulofLight, 6);
 			recipe.SetResult(this);

@@ -39,7 +39,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.ExplosivePowder, 25);
 			recipe.AddIngredient(ModContent.ItemType<Chemikaze>(), 1);
 			recipe.AddIngredient(ItemID.HellstoneBar, 25);
@@ -48,7 +48,7 @@ namespace Tremor.Items
 			recipe.AddTile(114);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.ExplosivePowder, 25);
 			recipe.AddIngredient(ModContent.ItemType<Chemikaze>(), 1);
 			recipe.AddIngredient(ItemID.HellstoneBar, 25);

@@ -42,7 +42,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 30);
 			recipe.AddIngredient(ModContent.ItemType<PhantomSoul>(), 15);
 			recipe.AddIngredient(ModContent.ItemType<Phantaplasm>(), 20);

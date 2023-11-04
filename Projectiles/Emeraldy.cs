@@ -17,7 +17,7 @@ namespace Tremor.Projectiles
 			projectile.netImportant = true;
 			projectile.friendly = true;
 			projectile.ignoreWater = true;
-			aiType = 380;
+			AIType = 380;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 2;
 
 			//TODO: I don't think they intended this

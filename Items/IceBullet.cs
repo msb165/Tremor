@@ -31,7 +31,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.MusketBall, 100);
 			recipe.AddIngredient(ItemID.IceBlock, 30);
 			recipe.AddTile(16);

@@ -75,7 +75,7 @@ namespace Tremor.Items.Alchemist.Flasks
 		}
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<LesserPoisonFlask>(), 45);
 			recipe.AddIngredient(ItemID.Vine, 2);
 			recipe.AddIngredient(ItemID.SoulofLight, 3);

@@ -24,7 +24,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			npc.defense = 50;
 			npc.lifeMax = 1000;
 			npc.knockBackResist = 0f;
-			animationType = 81;
+			AnimationType = 81;
 			npc.noGravity = false;
 			npc.noTileCollide = false;
 			npc.HitSound = SoundID.NPCHit55;
@@ -58,7 +58,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 
 		public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{
-			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/Deadling_GlowMask"));
+			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, Mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/Deadling_GlowMask"));
 		}
 
 		public override void OnHitPlayer(Player player, int damage, bool crit)

@@ -25,8 +25,8 @@ namespace Tremor.NPCs
 			npc.width = 100;
 			npc.height = 100;
 			npc.aiStyle = 2;
-			aiType = 180;
-			animationType = 48;
+			AIType = 180;
+			AnimationType = 48;
 			npc.aiStyle = 2;
 			npc.npcSlots = 0.5f;
 			npc.noTileCollide = true;
@@ -37,8 +37,8 @@ namespace Tremor.NPCs
 			npc.HitSound = SoundID.NPCHit1;
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath57;
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<BarmadilloBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<BarmadilloBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -48,16 +48,16 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 44, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BarmadilloGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BarmadilloGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BarmadilloGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BarmadilloGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BarmadilloGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BarmadilloGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BarmadilloGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BarmadilloGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BarmadilloGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BarmadilloGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BarmadilloGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BarmadilloGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BarmadilloGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BarmadilloGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BarmadilloGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BarmadilloGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BarmadilloGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BarmadilloGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BarmadilloGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BarmadilloGore4"), 1f);
 			}
 			else
 			{

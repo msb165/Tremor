@@ -33,7 +33,7 @@ namespace Tremor.NPCs
 			npc.HitSound = SoundID.NPCHit8;
 			npc.DeathSound = SoundID.NPCDeath10;
 
-			music = MusicID.Boss2;
+			Music = MusicID.Boss2;
 		}
 
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)

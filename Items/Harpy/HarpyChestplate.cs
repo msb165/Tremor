@@ -31,7 +31,7 @@ namespace Tremor.Items.Harpy
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Silk, 10);
 			recipe.AddIngredient(ItemID.Feather, 13);
 			recipe.SetResult(this);

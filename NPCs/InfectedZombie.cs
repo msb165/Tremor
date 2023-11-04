@@ -21,13 +21,13 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 34;
 			npc.height = 46;
-			animationType = 3;
+			AnimationType = 3;
 			npc.aiStyle = 3;
 			npc.npcSlots = 1f;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 15, 9);
-			//bannerItem = ModContent.ItemType<InfectedZombieBanner>();
+			//BannerItem = ModContent.ItemType<InfectedZombieBanner>();
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)

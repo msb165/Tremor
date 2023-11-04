@@ -9,7 +9,7 @@ namespace Tremor.Waters
 		//TODO: [Skipped for 1.4] Use WaterStyle
         public /*override*/ bool ChooseWaterStyle()
         {
-            TremorPlayer modPlayer = Main.player[Main.myPlayer].GetModPlayer<TremorPlayer>();
+            TremorPlayer modPlayer = Main.LocalPlayer.GetModPlayer<TremorPlayer>();
             return modPlayer.ZoneIce;
         }
 

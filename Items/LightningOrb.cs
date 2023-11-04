@@ -37,7 +37,7 @@ namespace Tremor.Items
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			Vector2 vector82 = -Main.player[Main.myPlayer].Center + Main.MouseWorld;
+			Vector2 vector82 = -Main.LocalPlayer.Center + Main.MouseWorld;
 			float ai = Main.rand.Next(100);
 			Vector2 vector83 = Vector2.Normalize(vector82) * item.shootSpeed;
 			Projectile.NewProjectile(null, player.Center.X, player.Center.Y, vector83.X, vector83.Y, type, damage, .5f, player.whoAmI, vector82.ToRotation(), ai);
@@ -46,7 +46,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Glass, 30);
 			recipe.AddIngredient(ModContent.ItemType<AirFragment>(), 16);
 			recipe.AddIngredient(ItemID.SoulofLight, 12);

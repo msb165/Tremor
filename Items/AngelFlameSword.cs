@@ -32,7 +32,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Excalibur, 1);
 			recipe.AddIngredient(ItemID.FieryGreatsword, 1);
 			recipe.AddTile(TileID.MythrilAnvil);

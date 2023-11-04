@@ -47,7 +47,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<VultureFeather>(), 1);
 			recipe.AddIngredient(ItemID.SoulofFlight, 20);
 			recipe.AddTile(134);

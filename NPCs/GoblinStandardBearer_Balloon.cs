@@ -27,7 +27,7 @@ namespace Tremor.NPCs
 			npc.width = 34;
 			npc.height = 70;
 			npc.aiStyle = 3;
-			aiType = 77;
+			AIType = 77;
 			npc.npcSlots = 3f;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;

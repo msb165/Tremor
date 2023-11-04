@@ -9,7 +9,7 @@ namespace Tremor.Projectiles
 		{
 			projectile.CloneDefaults(595);
 
-			aiType = 595;
+			AIType = 595;
 			Main.projFrames[projectile.type] = 28;
 		}
 

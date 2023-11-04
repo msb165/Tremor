@@ -39,14 +39,14 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.CrimtaneBar, 10);
 			recipe.AddIngredient(ModContent.ItemType<SharpenedTooth>(), 5);
 			recipe.SetResult(this);
 			recipe.AddTile(16);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.DemoniteBar, 10);
 			recipe.AddIngredient(ModContent.ItemType<SharpenedTooth>(), 5);
 			recipe.SetResult(this);

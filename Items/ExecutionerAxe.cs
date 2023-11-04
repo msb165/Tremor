@@ -37,7 +37,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<NightCore>(), 1);
 			recipe.AddIngredient(3467, 6);
 			recipe.AddIngredient(ModContent.ItemType<MultidimensionalFragment>(), 8);

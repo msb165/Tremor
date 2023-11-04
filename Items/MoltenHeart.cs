@@ -39,7 +39,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Hellstone, 25);
 			recipe.AddIngredient(ItemID.LifeCrystal, 1);
 			recipe.AddIngredient(ModContent.ItemType<FireFragment>(), 12);

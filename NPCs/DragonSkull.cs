@@ -25,7 +25,7 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0f;
 			npc.width = 64;
 			npc.height = 48;
-			animationType = 34;
+			AnimationType = 34;
 			npc.aiStyle = 10;
 			npc.npcSlots = 0.5f;
 			npc.noTileCollide = true;
@@ -33,8 +33,8 @@ namespace Tremor.NPCs
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 15, 9);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<DragonSkullBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<DragonSkullBanner>();
 		}
 
 		public override void NPCLoot()
@@ -57,8 +57,8 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DragonSkullGore"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DragonSkullGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DragonSkullGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DragonSkullGore2"), 1f);
 			}
 			else
 			{

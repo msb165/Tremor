@@ -33,7 +33,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.EnchantedSword, 1);
 			recipe.AddIngredient(ItemID.BeamSword, 1);
 			recipe.AddIngredient(ModContent.ItemType<MagiumShard>(), 25);

@@ -7,7 +7,7 @@ namespace Tremor.Ice.Items
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(66);
-			aiType = 66;
+			AIType = 66;
 		}
 
 		public override void SetStaticDefaults()

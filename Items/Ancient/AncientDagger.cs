@@ -36,7 +36,7 @@ namespace Tremor.Items.Ancient
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<AncientTablet>());
 			recipe.AddIngredient(ItemID.ThrowingKnife, 25);
 			recipe.SetResult(this, 25);

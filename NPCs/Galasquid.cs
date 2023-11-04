@@ -24,7 +24,7 @@ namespace Tremor.NPCs
 			npc.lifeMax = 4250;
 			npc.damage = 125;
 			npc.defense = 75;
-			animationType = 82;
+			AnimationType = 82;
 			npc.knockBackResist = 0.03f;
 			npc.width = 40;
 			npc.height = 60;
@@ -96,10 +96,10 @@ namespace Tremor.NPCs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GalasquidGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GalasquidGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GalasquidGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/GalasquidGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GalasquidGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GalasquidGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GalasquidGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GalasquidGore2"), 1f);
 			}
 		}
 

@@ -12,7 +12,7 @@ namespace Tremor.Projectiles
 			projectile.CloneDefaults(668);
 			projectile.width = 28;
 			projectile.height = 38;
-			aiType = 668;
+			AIType = 668;
 			projectile.timeLeft = 400;
 			projectile.penetrate = 1;
 			projectile.friendly = true;

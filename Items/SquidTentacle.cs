@@ -127,7 +127,7 @@ namespace Tremor.Items
 				Color drawColor = lightColor;
 
 				//Draw chain
-				spriteBatch.Draw(mod.GetTexture("Items/SquidTentacleChain"), new Vector2(center.X - Main.screenPosition.X, center.Y - Main.screenPosition.Y),
+				Main.spriteBatch.Draw(Mod.GetTexture("Items/SquidTentacleChain"), new Vector2(center.X - Main.screenPosition.X, center.Y - Main.screenPosition.Y),
 				new Rectangle(0, 0, TextureAssets.Chain30.Width(), TextureAssets.Chain30.Height()), drawColor, projRotation,
 				new Vector2(TextureAssets.Chain30.Width() * 0.5f, TextureAssets.Chain30.Height() * 0.5f), 1f, SpriteEffects.None, 0f);
 			}

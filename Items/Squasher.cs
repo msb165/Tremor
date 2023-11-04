@@ -34,7 +34,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Pwnhammer, 1);
 			recipe.AddIngredient(ModContent.ItemType<DarkBulb>(), 15);
 			recipe.AddIngredient(ItemID.Bone, 100);
@@ -42,7 +42,7 @@ namespace Tremor.Items
 			recipe.AddTile(134);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<Doomhammer>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<DarkBulb>(), 15);
 			recipe.AddIngredient(ItemID.Bone, 100);

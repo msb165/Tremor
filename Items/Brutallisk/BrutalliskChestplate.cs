@@ -36,7 +36,7 @@ namespace Tremor.Items.Brutallisk
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<Aquamarine>(), 10);
 			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 6);
 			recipe.AddIngredient(ModContent.ItemType<EvershinyBar>(), 8);

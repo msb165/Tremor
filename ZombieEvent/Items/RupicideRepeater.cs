@@ -38,7 +38,7 @@ namespace Tremor.ZombieEvent.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BowBlueprint>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<RupicideBar>(), 8);
 			recipe.AddIngredient(ModContent.ItemType<RuneBar>(), 8);

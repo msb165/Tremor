@@ -8,6 +8,7 @@ using Terraria.Utilities;
 using Tremor;
 using Tremor.Items;
 using Tremor.Items.Chain;
+using System.Collections.Generic;
 
 namespace Tremor.NPCs.TownNPCs
 {
@@ -49,13 +50,13 @@ namespace Tremor.NPCs.TownNPCs
 			npc.HitSound = SoundID.NPCHit2;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.knockBackResist = 0.5f;
-			animationType = NPCID.Guide;
+			AnimationType = NPCID.Guide;
 		}
 
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 			=> NPC.downedBoss2 && Main.player.Any(player => !player.dead);
 
-		private readonly WeightedRandom<string> _names = new[]
+		private readonly List<string> _names = new List<string>
 		{
 			"Azazel:2",
 			"Baphomet",
@@ -63,10 +64,9 @@ namespace Tremor.NPCs.TownNPCs
 			"Dis",
 			"Nisroke",
 			"Sabnak"
-		}.ToWeightedCollectionWithWeight();
+		};
 
-		public override string TownNPCName()
-			=> _names.Get();
+		public override List<string> SetNPCNameList() => _names;
 
 		private readonly WeightedRandom<string> _chats = new[]
 		{
@@ -148,7 +148,7 @@ namespace Tremor.NPCs.TownNPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for (int i = 0; i < 3; i++)
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/WarlockGore{i + 1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/WarlockGore{i + 1}"), 1f);
 			}
 		}
 	}

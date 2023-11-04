@@ -23,15 +23,15 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.6f;
 			npc.width = 38;
 			npc.height = 44;
-			animationType = 258;
+			AnimationType = 258;
 			npc.aiStyle = 3;
-			aiType = 258;
+			AIType = 258;
 			npc.npcSlots = 0.2f;
 			npc.HitSound = SoundID.NPCHit45;
 			npc.DeathSound = SoundID.NPCDeath47;
 			npc.value = Item.buyPrice(0, 0, 2, 24);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<CoreBugBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<CoreBugBanner>();
 		}
 
 		public override void AI()

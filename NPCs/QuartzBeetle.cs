@@ -24,15 +24,15 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.05f;
 			npc.width = 32;
 			npc.height = 50;
-			animationType = 185;
+			AnimationType = 185;
 			npc.aiStyle = 3;
-			aiType = 525;
+			AIType = 525;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit41;
 			npc.DeathSound = SoundID.NPCDeath44;
 			npc.value = Item.buyPrice(0, 0, 8, 0);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<QuartzBeetleBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<QuartzBeetleBanner>();
 		}
 
 		public override void NPCLoot()
@@ -48,7 +48,7 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<Dusts.NightmareFlame>(), 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/QBGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/QBGore1"), 1f);
 			}
 		}
 

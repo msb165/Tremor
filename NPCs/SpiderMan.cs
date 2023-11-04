@@ -23,14 +23,14 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 1f;
 			npc.width = 46;
 			npc.height = 50;
-			animationType = 21;
+			AnimationType = 21;
 			npc.aiStyle = 26;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit47;
 			npc.DeathSound = SoundID.NPCDeath23;
 			npc.value = Item.buyPrice(0, 0, 25, 0);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<SpiderManBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<SpiderManBanner>();
 		}
 
 		public override void NPCLoot()
@@ -46,10 +46,10 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpiderManGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpiderManGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpiderManGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpiderManGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SpiderManGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SpiderManGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SpiderManGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SpiderManGore2"), 1f);
 			}
 		}
 

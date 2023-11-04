@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.Enums;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Tremor.Items;
@@ -18,7 +19,7 @@ namespace Tremor.Tiles
         //TileObjectData.newTile.StyleHorizontal = true;
         TileObjectData.newTile.StyleWrapLimit = 36;
         TileObjectData.addTile(Type);
-        dustType = 7;
+        DustType = DustID.WoodFurniture;
         TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.Table, TileObjectData.newTile.Width, 0);
 	AddMapEntry(new Color(120, 85, 60));
 			MineResist = 8f;

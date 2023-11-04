@@ -42,7 +42,7 @@ namespace Tremor.Invasion
 			npc.noTileCollide = true;
 			npc.width = 180;
 			npc.height = 200;
-			animationType = 82;
+			AnimationType = 82;
 			npc.aiStyle = 14;
 			npc.npcSlots = 50f;
 			npc.HitSound = SoundID.NPCHit31;
@@ -58,8 +58,8 @@ namespace Tremor.Invasion
 		public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{
 			//spriteBatch.Draw(mod.GetTexture("NPCs/CogLordBody"), npc.Center - Main.screenPosition, null, Color.White, 0f, new Vector2(74, -18), 1f, SpriteEffects.None, 0f);
-			spriteBatch.Draw(mod.GetTexture("Invasion/Hand_"), npc.Center - Main.screenPosition, null, Color.White, 0.0f, new Vector2(draw, -10), 1f, SpriteEffects.None, 1);
-			spriteBatch.Draw(mod.GetTexture("Invasion/Hand"), npc.Center - Main.screenPosition, null, Color.White, 0.0f, new Vector2(draw_, -10), 1f, SpriteEffects.None, 1);
+			spriteBatch.Draw(Mod.GetTexture("Invasion/Hand_"), npc.Center - Main.screenPosition, null, Color.White, 0.0f, new Vector2(draw, -10), 1f, SpriteEffects.None, 1);
+			spriteBatch.Draw(Mod.GetTexture("Invasion/Hand"), npc.Center - Main.screenPosition, null, Color.White, 0.0f, new Vector2(draw_, -10), 1f, SpriteEffects.None, 1);
 			//spriteBatch.Draw(mod.GetTexture("Invasion/Titan"), new Vector2(npc.Center.X, npc.Center.Y), null, Color.White, 0.0f, new Vector2(-10, -25), 1f, SpriteEffects.None, 1);				
 		}
 

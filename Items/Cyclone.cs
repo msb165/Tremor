@@ -34,7 +34,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<AncientTechnology>(), 1);
 			recipe.AddIngredient(3457, 30);
 			recipe.AddIngredient(ModContent.ItemType<SeaFragment>(), 25);

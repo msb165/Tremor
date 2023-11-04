@@ -50,7 +50,7 @@ namespace Tremor.Items.Alchemist.Flasks
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BoomFlask>(), 25);
 			recipe.AddIngredient(1347, 1);
 			recipe.AddIngredient(ItemID.SoulofNight, 1);

@@ -11,7 +11,7 @@ namespace Tremor.Projectiles.Alchemic
             projectile.height = 32;
             projectile.penetrate = 8;
             projectile.aiStyle = 92;
-            aiType = 511;
+            AIType = 511;
             projectile.friendly = true;
             projectile.timeLeft = 600;
         }

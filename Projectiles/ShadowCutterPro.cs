@@ -22,7 +22,7 @@ namespace Tremor.Projectiles
 			projectile.extraUpdates = 1;
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 0;
-			aiType = ProjectileID.Bullet;
+			AIType = ProjectileID.Bullet;
 		}
 
 		public override void SetStaticDefaults()
@@ -56,7 +56,7 @@ namespace Tremor.Projectiles
 			{
 				Vector2 drawPos = projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, projectile.gfxOffY);
 				Color color = projectile.GetAlpha(lightColor) * ((projectile.oldPos.Length - k) / (float)projectile.oldPos.Length);
-				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
+				Main.spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
 			}
 			return true;
 		}

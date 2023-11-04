@@ -23,7 +23,7 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 34;
 			npc.height = 48;
-			animationType = 93;
+			AnimationType = 93;
 			npc.aiStyle = 14;
 			npc.npcSlots = 1f;
 			npc.noTileCollide = true;
@@ -31,8 +31,8 @@ namespace Tremor.NPCs
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath4;
 			npc.value = Item.buyPrice(0, 0, 6, 9);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<ScaryBatBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<ScaryBatBanner>();
 			npc.behindTiles = true;
 		}
 

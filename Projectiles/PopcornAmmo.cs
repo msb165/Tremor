@@ -17,7 +17,7 @@ namespace Tremor.Projectiles
 			projectile.penetrate = 5;
 			projectile.timeLeft = 600;
 			projectile.extraUpdates = 1;
-			aiType = ProjectileID.Bullet;
+			AIType = ProjectileID.Bullet;
 		}
 
 		public override void SetStaticDefaults()

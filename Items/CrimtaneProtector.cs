@@ -31,7 +31,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.CrimtaneBar, 25);
 			recipe.AddIngredient(ItemID.TissueSample, 20);
 			recipe.SetResult(this);

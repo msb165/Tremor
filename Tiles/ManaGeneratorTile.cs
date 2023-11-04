@@ -37,7 +37,7 @@ public override void AnimateTile(ref int frame, ref int frameCounter)
     {
         if(closer)
         {
-            Player player = Main.player[Main.myPlayer];
+            Player player = Main.LocalPlayer;
             int style = Main.tile[i, j].TileFrameX / 100;
             string type;
             player.AddBuff(ModContent.BuffType<Buffs.ManaGeneration>(), 60, true);

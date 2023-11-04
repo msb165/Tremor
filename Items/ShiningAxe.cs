@@ -48,7 +48,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.PossessedHatchet, 1);
 			recipe.AddIngredient(ModContent.ItemType<WhiteGoldBar>(), 15);
 			recipe.SetResult(this);

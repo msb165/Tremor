@@ -50,7 +50,7 @@ namespace Tremor
 	{
 		private readonly Recipe recipe;
 
-		public ModRecipe(Mod mod)
+		public ModRecipe()
 		{
 			recipe = Recipe.Create(ItemID.None);
 		}
@@ -106,14 +106,16 @@ namespace Tremor
 			SetDefaults();
 		}
 
+		[Obsolete]
 		public virtual void SetDefaults(){}
 	}
 	public abstract class TremorModItem:ModItem
 	{
-		public Mod mod => Mod;
 		public Item item => Item;
 
 		private bool canShoot;
+
+		public virtual bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) => true;
 
 		public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
 		{
@@ -125,42 +127,10 @@ namespace Tremor
 			return canShoot;
 		}
 
-		public virtual bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) => true;
 	}
 	public abstract class TremorModNPC:ModNPC
 	{
-		public Mod mod => Mod;
 		public NPC npc => NPC;
-
-		public int aiType
-		{
-			get => AIType;
-			set => AIType = value;
-		}
-
-		public int animationType
-		{
-			get => AnimationType;
-			set => AnimationType = value;
-		}
-
-		public int banner
-		{
-			get => Banner;
-			set => Banner = value;
-		}
-
-		public int bannerItem
-		{
-			get => BannerItem;
-			set => BannerItem = value;
-		}
-
-		public int music
-		{
-			get => Music;
-			set => Music = value;
-		}
 
 		public int bossBag{private get;set;}
 
@@ -178,7 +148,12 @@ namespace Tremor
 		//TODO: Doesn't fully work in 1.4
 		public virtual bool PreNPCLoot() => true;
 
-		//Was part of npc in 1.3.5
+		//Was part of npc in 1.3.5 as DropBossBags
+		public override void BossLoot(ref string name, ref int potionType)
+		{
+			DropBossBags();
+		}
+
 		public void DropBossBags()
 		{
 			if(bossBag!=0)
@@ -191,32 +166,19 @@ namespace Tremor
 		{
 			return PreDraw(spriteBatch, drawColor);
 		}
+		[Obsolete]
 		public virtual bool PreDraw(SpriteBatch spriteBatch, Color lightColor) => true;
-
-
-		public override List<string> SetNPCNameList()
-		{
-			return new List<string>{TownNPCName()};
-		}
-
-		public virtual string TownNPCName() => Name;
 	}
 	public abstract class TremorModProjectile:ModProjectile
 	{
-		public Mod mod => Mod;
 		public Projectile projectile => Projectile;
-
-		public int aiType
-		{
-			get => AIType;
-			set => AIType = value;
-		}
 
 		public override bool PreDraw(ref Color drawColor)
 		{
 			return PreDraw(Main.spriteBatch, drawColor);
 		}
 
+		[Obsolete]
 		public virtual bool PreDraw(SpriteBatch spriteBatch, Color drawColor) => true;
 	}
 	public abstract class TremorModTile:ModTile
@@ -246,22 +208,12 @@ namespace Tremor
 			get => DresserDrop;
 			set => DresserDrop = value;
 		}
-		public int drop
-		{
-			get => ItemDrop;
-			set => ItemDrop = value;
-		}
-		public int dustType
-		{
-			get => DustType;
-			set => DustType = value;
-		}
 		public int soundType//Sound type is actually SoundStyle now
 		{
 			set => HitSound = SoundID.SoundByIndex[(ushort)value];
 		}
 		//TODO: [Skipped for 1.4] Do we even need this anymore
-		public int soundStyle{get;set;}//Sound style is now SoundType
+		public int soundStyle{get;set;}//Sound style is now SoundType?
 
 		//TODO: [Skipped for 1.4] disableSmartCursor
 		public bool disableSmartCursor{get;set;}

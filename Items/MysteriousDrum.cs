@@ -44,7 +44,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.RichMahogany, 45);
 			recipe.AddIngredient(ItemID.Stinger, 2);
 			recipe.AddIngredient(ItemID.Rope, 25);
@@ -53,7 +53,7 @@ namespace Tremor.Items
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.RichMahogany, 45);
 			recipe.AddIngredient(ItemID.Stinger, 2);
 			recipe.AddIngredient(ItemID.Rope, 25);

@@ -11,7 +11,7 @@ namespace Tremor.Projectiles.Alchemic
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(405);
-			aiType = 405;
+			AIType = 405;
 			projectile.friendly = true;
 			projectile.timeLeft = 150;
 			projectile.light = 0.8f;
@@ -31,7 +31,7 @@ namespace Tremor.Projectiles.Alchemic
 			{
 				Vector2 drawPos = projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, projectile.gfxOffY);
 				Color color = projectile.GetAlpha(lightColor) * ((projectile.oldPos.Length - k) / (float)projectile.oldPos.Length);
-				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
+				Main.spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
 			}
 			return true;
 		}

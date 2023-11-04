@@ -58,7 +58,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<EyeofOblivion>(), 1);
 			recipe.AddIngredient(ItemID.Megashark, 1);
 			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 20);

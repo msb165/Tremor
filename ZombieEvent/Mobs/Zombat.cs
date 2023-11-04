@@ -22,15 +22,15 @@ namespace Tremor.ZombieEvent.Mobs
 			npc.knockBackResist = 0.3f;
 			npc.width = 34;
 			npc.height = 48;
-			animationType = 75;
+			AnimationType = 75;
 			npc.aiStyle = 14;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit35;
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath57;
 			npc.value = Item.buyPrice(0, 0, 15, 0);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<ZombatBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<ZombatBanner>();
 		}
 
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
@@ -43,9 +43,9 @@ namespace Tremor.ZombieEvent.Mobs
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombatGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombatGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZombatGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZombatGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZombatGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZombatGore3"), 1f);
 			}
 		}
 

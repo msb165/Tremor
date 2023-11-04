@@ -39,7 +39,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<StarBar>(), 20);
 			recipe.AddIngredient(ModContent.ItemType<Phantaplasm>(), 6);
 			recipe.AddIngredient(ModContent.ItemType<CarbonSteel>(), 6);

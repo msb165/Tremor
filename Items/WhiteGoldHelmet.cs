@@ -92,7 +92,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<WhiteGoldBar>(), 12);
 			recipe.SetResult(this);
 			recipe.AddTile(ModContent.TileType<Tiles.DivineForgeTile>());

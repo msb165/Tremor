@@ -31,7 +31,7 @@ namespace Tremor.Items.Berserker
 		}
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<SteelBar>(), 16);
 			recipe.AddIngredient(ModContent.ItemType<MinotaurHorn>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<EarthFragment>(), 8);

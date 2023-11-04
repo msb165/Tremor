@@ -29,7 +29,7 @@ namespace Tremor.Items.Crimstone
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(836, 16);
 			recipe.AddIngredient(1257, 1);
 			recipe.SetResult(this);

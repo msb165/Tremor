@@ -32,7 +32,7 @@ namespace Tremor.Invasion
 
 		public override bool CanUseItem(Player player)
 		{
-			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
+			CyberWrathInvasion modPlayer = Main.LocalPlayer.GetModPlayer<CyberWrathInvasion>();
 			if (InvasionWorld.CyberWrath)
 				return false;
 			return true;
@@ -40,7 +40,7 @@ namespace Tremor.Invasion
 
 		public override bool? UseItem(Player player)
 		{
-			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
+			CyberWrathInvasion modPlayer = Main.LocalPlayer.GetModPlayer<CyberWrathInvasion>();
 			Main.NewText("Paradox Cohort is striking from nowhere!", 39, 86, 134);
 			SoundEngine.PlaySound(SoundID.SoundByIndex[(ushort)MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Wrath1")], player.position);//Variant 0
 			Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[15], player.position);//Variant 0
@@ -54,7 +54,7 @@ namespace Tremor.Invasion
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 5);
 			recipe.AddIngredient(ModContent.ItemType<SoulofFight>(), 3);
 			recipe.AddIngredient(ItemID.Glass, 5);

@@ -35,7 +35,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.StoneBlock, 15);
 			recipe.AddIngredient(ModContent.ItemType<RockHorn>(), 3);
 			recipe.SetResult(this, 25);

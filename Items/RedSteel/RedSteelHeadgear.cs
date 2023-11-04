@@ -39,7 +39,7 @@ namespace Tremor.Items.RedSteel
 
 		public override void AddRecipes()
 		{
-			//ModRecipe recipe = new ModRecipe(mod);
+			//ModRecipe recipe = new ModRecipe();
 			//recipe.AddIngredient(ModContent.ItemType<RedSteelArmorPiece>(), 5);
 			//recipe.AddIngredient(ModContent.ItemType<RedSteelBar>(), 7);
 			//recipe.SetResult(this);

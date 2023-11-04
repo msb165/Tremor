@@ -25,7 +25,7 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.7f;
 			npc.width = 24;
 			npc.height = 44;
-			animationType = 82;
+			AnimationType = 82;
 			npc.aiStyle = 22;
 			npc.npcSlots = 0.4f;
 			npc.noTileCollide = true;
@@ -34,8 +34,8 @@ namespace Tremor.NPCs
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath6;
 			npc.value = Item.buyPrice(0, 0, 7, 15);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<NorthWindBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<NorthWindBanner>();
 		}
 
 		public override void NPCLoot()

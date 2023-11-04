@@ -12,7 +12,7 @@ namespace Tremor.Projectiles
 			projectile.CloneDefaults(348);
 
 			projectile.timeLeft = 120;
-			aiType = 348;
+			AIType = 348;
 		}
 
 		public override void SetStaticDefaults()

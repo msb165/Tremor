@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Tremor.Items;
@@ -7,30 +8,26 @@ using Tremor.Items;
 namespace Tremor.Tiles
 {
 	public class FrostoneBarTile:TremorModTile
-{
-    public override void SetDefaults()
-    {
-        Main.tileFrameImportant[Type] = true;
-        Main.tileNoAttach[Type] = true;
-        Main.tileSolidTop[Type] = true;
-        Main.tileLavaDeath[Type] = true;
-                                   soundType = 21;
-                                   soundStyle = 2;
-        TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
-        TileObjectData.newTile.Height = 1;
-        TileObjectData.newTile.CoordinateHeights = new[]{16};
-        TileObjectData.newTile.StyleHorizontal = true;
-        TileObjectData.newTile.StyleWrapLimit = 111;
-        TileObjectData.addTile(Type);
-        dustType = 59;
-	AddMapEntry(new Color(90, 0, 150));
-        Main.tileShine[Type] = 1100;
-        Main.tileSolid[Type] = true;
-    }
-
-        public override bool Drop(int i, int j)
-        {
-            Item.NewItem(null, i * 16, j * 16, 32, 32, ModContent.ItemType<FrostoneBar>());
-            return true;
-        }
-}}
+	{
+		public override void SetDefaults()
+		{
+			Main.tileFrameImportant[Type] = true;
+			Main.tileNoAttach[Type] = true;
+			Main.tileSolidTop[Type] = true;
+			Main.tileLavaDeath[Type] = true;
+			HitSound = SoundID.Tink;
+			soundStyle = 2;
+			TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
+			TileObjectData.newTile.Height = 1;
+			TileObjectData.newTile.CoordinateHeights = new[] { 16 };
+			TileObjectData.newTile.StyleHorizontal = true;
+			TileObjectData.newTile.StyleWrapLimit = 111;
+			TileObjectData.addTile(Type);
+			DustType = DustID.BlueTorch;
+			AddMapEntry(new Color(90, 0, 150));
+			Main.tileShine[Type] = 1100;
+			Main.tileSolid[Type] = true;
+			ItemDrop = ModContent.ItemType<FrostoneBar>();
+		}
+	}
+}

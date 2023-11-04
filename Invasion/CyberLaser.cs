@@ -19,12 +19,12 @@ namespace Tremor.Invasion
 			projectile.DamageType = DamageClass.Magic;
 			projectile.ignoreWater = true;
 			projectile.tileCollide = false;
-			aiType = 598;
+			AIType = 598;
 		}
 
 		public override void OnHitNPC(NPC target1, int damage, float knockback, bool crit)
 		{
-			Player target = Main.player[Main.myPlayer];
+			Player target = Main.LocalPlayer;
 			if (Main.rand.NextBool(2))
 				target.AddBuff(ModContent.BuffType<Light>(), 300);
 		}

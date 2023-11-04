@@ -31,7 +31,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BallnChain>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<GolemCore>(), 1);
 			recipe.AddIngredient(2766, 25);

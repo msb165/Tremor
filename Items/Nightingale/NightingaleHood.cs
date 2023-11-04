@@ -49,7 +49,7 @@ namespace Tremor.Items.Nightingale
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<SteelBar>(), 5);
 			recipe.AddIngredient(ItemID.Silk, 15);
 			recipe.AddIngredient(ModContent.ItemType<PhantomSoul>(), 3);

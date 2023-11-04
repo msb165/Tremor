@@ -34,7 +34,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.MoltenGreaves);
 			recipe.AddIngredient(ItemID.IronBar, 7);
 			recipe.AddIngredient(ModContent.ItemType<RavenFeather>(), 10);
@@ -42,7 +42,7 @@ namespace Tremor.Items
 			recipe.AddTile(16);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.MoltenGreaves);
 			recipe.AddIngredient(ItemID.LeadBar, 7);
 			recipe.AddIngredient(ModContent.ItemType<RavenFeather>(), 10);

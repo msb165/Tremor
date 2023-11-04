@@ -25,7 +25,7 @@ namespace Tremor.Ice.Mobs
 			npc.knockBackResist = 0.3f;
 			npc.width = 78;
 			npc.height = 54;
-			//animationType = 3;
+			//AnimationType = 3;
 			npc.aiStyle = 0;
 			npc.npcSlots = 1f;
 			npc.HitSound = SoundID.NPCHit1;

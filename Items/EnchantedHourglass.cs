@@ -31,7 +31,7 @@ namespace Tremor.Items
 
 		public override bool? UseItem(Player player)
 		{
-			if (Main.player[Main.myPlayer].active && Main.player[Main.myPlayer].FindBuffIndex(ModContent.BuffType<Buffs.HealthRecharging>()) != -1)
+			if (Main.LocalPlayer.active && Main.LocalPlayer.FindBuffIndex(ModContent.BuffType<Buffs.HealthRecharging>()) != -1)
 			{
 				item.mana = 0;
 				item.healLife = 0;

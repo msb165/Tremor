@@ -24,9 +24,9 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.1f;
 			npc.width = 40;
 			npc.height = 40;
-			animationType = 508;
+			AnimationType = 508;
 			npc.aiStyle = 3;
-			aiType = 508;
+			AIType = 508;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit41;
 			npc.buffImmune[20] = true;
@@ -35,8 +35,8 @@ namespace Tremor.NPCs
 			npc.buffImmune[31] = false;
 			npc.DeathSound = SoundID.NPCDeath44;
 			npc.value = Item.buyPrice(0, 0, 12, 0);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<FireBeetleBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<FireBeetleBanner>();
 		}
 
 		public override void NPCLoot()
@@ -54,11 +54,11 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FBGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FBGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FBGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FBGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FBGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FBGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FBGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FBGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FBGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FBGore2"), 1f);
 
 				for (int k = 0; k < 20; k++)
 				{

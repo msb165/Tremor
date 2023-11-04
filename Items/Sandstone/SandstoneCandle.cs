@@ -30,7 +30,7 @@ namespace Tremor.Items.Sandstone
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(607, 4);
 			recipe.AddIngredient(ItemID.Torch, 1);
 			recipe.SetResult(this);

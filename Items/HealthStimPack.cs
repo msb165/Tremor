@@ -45,7 +45,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BrassBar>(), 2);
 			recipe.AddIngredient(ItemID.SuperHealingPotion);
 			recipe.AddIngredient(ItemID.BottledWater);

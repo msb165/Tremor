@@ -30,7 +30,7 @@ namespace Tremor.Items.Steel
 		}
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<SteelBar>(), 15);
 			recipe.AddIngredient(ModContent.ItemType<LeatherGreaves>(), 1);
 			recipe.SetResult(this);

@@ -49,7 +49,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<DragonCapsule>(), 9);
 			recipe.AddIngredient(ModContent.ItemType<EarthFragment>(), 14);
 			recipe.AddIngredient(ItemID.IllegalGunParts, 1);

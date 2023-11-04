@@ -24,14 +24,14 @@ namespace Tremor.NPCs
 			npc.width = 64;
 			npc.height = 48;
 			npc.lavaImmune = true;
-			animationType = 153;
+			AnimationType = 153;
 			npc.aiStyle = 39;
 			npc.npcSlots = 2f;
 			npc.HitSound = SoundID.NPCHit2;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 8, 9);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<DevilishTortoiseBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<DevilishTortoiseBanner>();
 		}
 		
 		public override void HitEffect(int hitDirection, double damage)
@@ -48,7 +48,7 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/DevilishTortoiseGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DevilishTortoiseGore"), 1f);
 			}
 			else
 			{

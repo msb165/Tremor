@@ -24,9 +24,9 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.0f;
 			npc.width = 146;
 			npc.height = 86;
-			animationType = 21;
+			AnimationType = 21;
 			npc.aiStyle = 3;
-			aiType = 28;
+			AIType = 28;
 			npc.npcSlots = 0.3f;
 			npc.HitSound = SoundID.NPCHit24;
 			npc.DeathSound = SoundID.NPCDeath10;
@@ -59,12 +59,12 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 3, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 					Dust.NewDust(npc.position, npc.width, npc.height, 5, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ColossusTortoiseGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ColossusTortoiseGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ColossusTortoiseGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ColossusTortoiseGore3"), 1f);
 			}
 			else
 			{

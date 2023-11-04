@@ -22,15 +22,15 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 22;
 			npc.height = 18;
-			animationType = 49;
+			AnimationType = 49;
 			npc.aiStyle = 14;
 			npc.npcSlots = 0.2f;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath4;
 			npc.value = Item.buyPrice(0, 0, 2, 9);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<SnowBatBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<SnowBatBanner>();
 		}
 
 		public override void NPCLoot()

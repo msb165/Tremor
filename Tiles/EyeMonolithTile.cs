@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Tremor.Items;
@@ -17,7 +18,7 @@ namespace Tremor.Tiles
         TileObjectData.newTile.StyleHorizontal = true;
         TileObjectData.newTile.StyleWrapLimit = 36;
         TileObjectData.addTile(Type);
-        dustType = 7;
+        DustType = DustID.WoodFurniture;
 	AddMapEntry(new Color(120, 85, 60));
     }
 
@@ -32,7 +33,7 @@ public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, 
     {
         if(closer)
         {
-            Player player = Main.player[Main.myPlayer];
+            Player player = Main.LocalPlayer;
             int style = Main.tile[i, j].TileFrameX / 15;
             string type;
             player.AddBuff(ModContent.BuffType<Buffs.EyeMonolithBuff>(), 60, true);

@@ -20,7 +20,7 @@ namespace Tremor.Projectiles
 			projectile.DamageType = DamageClass.Magic;
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 2;
-			aiType = ProjectileID.Bullet;
+			AIType = ProjectileID.Bullet;
 		}
 
 		public override void SetStaticDefaults()

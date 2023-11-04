@@ -88,7 +88,7 @@ namespace Tremor.NPCs
 			npc.noTileCollide = true;
 			npc.HitSound = SoundID.NPCHit8;
 			npc.DeathSound = SoundID.NPCDeath10;
-			music = MusicID.Boss4;
+			Music = MusicID.Boss4;
 			bossBag = ModContent.ItemType<WallofShadowBag>();
 		}
 
@@ -191,7 +191,7 @@ namespace Tremor.NPCs
 			if (npc.life < npc.lifeMax * 0.5f)
 			{
 				//TODO: Fix this trash assignment
-				TextureAssets.NpcHeadBoss[NPCID.Sets.BossHeadTextures[npc.type]] = mod.Assets.Request<Texture2D>("NPCs/WallOfShadow_Head_Boss1", ReLogic.Content.AssetRequestMode.ImmediateLoad);
+				TextureAssets.NpcHeadBoss[NPCID.Sets.BossHeadTextures[npc.type]] = Mod.Assets.Request<Texture2D>("NPCs/WallOfShadow_Head_Boss1", ReLogic.Content.AssetRequestMode.ImmediateLoad);
 				Shoot();
 
 				if ((int)(Main.time % 360) == 0)
@@ -419,7 +419,7 @@ namespace Tremor.NPCs
 			if (npc.life > npc.lifeMax * 0.5f)
 			{
 				//TODO: Fix this trash assignment
-				TextureAssets.NpcHeadBoss[NPCID.Sets.BossHeadTextures[npc.type]] =  mod.Assets.Request<Texture2D>("NPCs/WallOfShadow_Head_Boss", ReLogic.Content.AssetRequestMode.ImmediateLoad);
+				TextureAssets.NpcHeadBoss[NPCID.Sets.BossHeadTextures[npc.type]] =  Mod.Assets.Request<Texture2D>("NPCs/WallOfShadow_Head_Boss", ReLogic.Content.AssetRequestMode.ImmediateLoad);
 				Shoot();
 				if (npc.position.X < 160 || npc.position.X > (Main.maxTilesX - 10) * 16)
 					npc.active = false;
@@ -754,7 +754,7 @@ namespace Tremor.NPCs
 				for (int i = 1; i <= 13; i++)
 				{
 					int x = i <= 2 ? 1 : 2;
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/WallOfShadowGore" + x));
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WallOfShadowGore" + x));
 				}
 			}
 		}
@@ -813,8 +813,8 @@ namespace Tremor.NPCs
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
-			Texture2D shadowChain = mod.GetTexture("NPCs/WallOfShadowChain");
-			Texture2D shadowWall = mod.GetTexture("NPCs/WallOfShadow_Wall");
+			Texture2D shadowChain = Mod.GetTexture("NPCs/WallOfShadowChain");
+			Texture2D shadowWall = Mod.GetTexture("NPCs/WallOfShadow_Wall");
 			for (int i = 0; i < 255; i++)
 			{
 				if (Main.player[i].active && Main.player[i].tongued && !Main.player[i].dead)

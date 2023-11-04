@@ -31,7 +31,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.EmptyBullet, 50);
 			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 1);
 			recipe.AddTile(412);

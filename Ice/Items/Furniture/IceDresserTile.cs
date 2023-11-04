@@ -39,7 +39,7 @@ namespace Tremor.Ice.Items.Furniture
 
 		public override bool RightClick(int i, int j)
 		{
-			Player player = Main.player[Main.myPlayer];
+			Player player = Main.LocalPlayer;
 			if (Main.tile[Player.tileTargetX, Player.tileTargetY].TileFrameY == 0)
 			{
 				Main.CancelClothesWindow(true);
@@ -129,7 +129,7 @@ namespace Tremor.Ice.Items.Furniture
 
 		public override void MouseOverFar(int i, int j)
 		{
-			Player player = Main.player[Main.myPlayer];
+			Player player = Main.LocalPlayer;
 			Tile tile = Main.tile[Player.tileTargetX, Player.tileTargetY];
 			int left = Player.tileTargetX;
 			int top = Player.tileTargetY;
@@ -171,7 +171,7 @@ namespace Tremor.Ice.Items.Furniture
 
 		public override void MouseOver(int i, int j)
 		{
-			Player player = Main.player[Main.myPlayer];
+			Player player = Main.LocalPlayer;
 			Tile tile = Main.tile[Player.tileTargetX, Player.tileTargetY];
 			int left = Player.tileTargetX;
 			int top = Player.tileTargetY;

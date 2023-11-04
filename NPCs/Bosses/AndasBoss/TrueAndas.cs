@@ -31,7 +31,7 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 			npc.noTileCollide = true;
 			npc.noGravity = true;
 			npc.boss = true;
-			music = MusicID.Boss5;
+			Music = MusicID.Boss5;
 			bossBag = ModContent.ItemType<AndasBag>();
 			npc.buffImmune[24] = true;
 			npc.buffImmune[67] = true;

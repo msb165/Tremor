@@ -31,7 +31,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.DemoniteBar, 12);
 			recipe.AddIngredient(ItemID.ShadowScale, 25);
 			recipe.SetResult(this);

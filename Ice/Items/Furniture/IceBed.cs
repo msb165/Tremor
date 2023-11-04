@@ -28,7 +28,7 @@ namespace Tremor.Ice.Items.Furniture
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<GlacierWood>(), 15);
 			recipe.AddIngredient(ItemID.Silk, 5);
 			recipe.SetResult(this);

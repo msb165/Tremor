@@ -30,9 +30,9 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.02f;
 			npc.width = 86;
 			npc.height = 162;
-			animationType = 325;
-			music = 39;
-			aiType = 77;
+			AnimationType = 325;
+			Music = 39;
+			AIType = 77;
 			npc.aiStyle = -1;
 			npc.npcSlots = 15f;
 
@@ -417,7 +417,7 @@ namespace Tremor.NPCs
 				_timer = 0;
 				for (int i = 0; i < 3; i++)
 				{
-					Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot($"Gores/TikiTotemGore{i + 1}"), 1f);
+					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot($"Gores/TikiTotemGore{i + 1}"), 1f);
 				}
 			}
 		}

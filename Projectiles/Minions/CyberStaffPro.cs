@@ -10,7 +10,7 @@ namespace Tremor.Projectiles.Minions
 		{
 			projectile.netImportant = true;
 			projectile.CloneDefaults(533);
-			aiType = 533;
+			AIType = 533;
 
 			projectile.width =50;
 			projectile.height = 50;

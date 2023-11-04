@@ -36,7 +36,7 @@ namespace Tremor.Items.Angelite
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<AngeliteOre>(), 6);
 			recipe.SetResult(this);
 			recipe.AddTile(412);

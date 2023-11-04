@@ -29,7 +29,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Arkhalis, 1);
 			recipe.AddIngredient(ItemID.SharkFin, 3);
 			recipe.AddIngredient(ModContent.ItemType<SharpenedTooth>(), 6);

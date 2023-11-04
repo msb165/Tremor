@@ -22,17 +22,17 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.0f;
 			npc.width = 80;
 			npc.height = 80;
-			animationType = 82;
+			AnimationType = 82;
 			npc.aiStyle = 97;
-			aiType = 420;
+			AIType = 420;
 			npc.npcSlots = 0.4f;
 			npc.noTileCollide = true;
 			npc.HitSound = SoundID.NPCHit4;
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath6;
 			npc.value = Item.buyPrice(0, 0, 4, 15);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<AvengerBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<AvengerBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
@@ -45,12 +45,12 @@ namespace Tremor.NPCs
 				{
 					Main.dust[Dust.NewDust(npc.position, npc.width, npc.height, 71, hitDirection, 0f, 200)].velocity *= 1.5f;
 
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore1"), 1f);
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore1"), 1f);
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore2"), 1f);
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore2"), 1f);
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore3"), 1f);
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/AvengerGore4"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AvengerGore1"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AvengerGore1"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AvengerGore2"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AvengerGore2"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AvengerGore3"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AvengerGore4"), 1f);
 				}
 			}
 		}

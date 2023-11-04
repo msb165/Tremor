@@ -42,7 +42,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.MoltenPickaxe, 1);
 			recipe.AddIngredient(ItemID.BonePickaxe, 1);
 			recipe.AddIngredient(ModContent.ItemType<PickaxeofBloom>(), 1);

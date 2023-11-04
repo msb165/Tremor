@@ -11,7 +11,7 @@ namespace Tremor.Projectiles
 		{
 			projectile.netImportant = true;
 			projectile.CloneDefaults(388);
-			aiType = 388;
+			AIType = 388;
 
 			projectile.width = 40;
 			projectile.height = 36;

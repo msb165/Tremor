@@ -74,28 +74,28 @@ namespace Tremor.Items.Alchemist.Flasks
 		}
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BigHealingFlack>(), 20);
 			recipe.AddIngredient(3456, 1);
 			recipe.AddIngredient(ModContent.ItemType<AngryShard>(), 1);
 			recipe.SetResult(this, 20);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BigHealingFlack>(), 20);
 			recipe.AddIngredient(3457, 1);
 			recipe.AddIngredient(ModContent.ItemType<AngryShard>(), 1);
 			recipe.SetResult(this, 20);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BigHealingFlack>(), 20);
 			recipe.AddIngredient(3458, 1);
 			recipe.AddIngredient(ModContent.ItemType<AngryShard>(), 1);
 			recipe.SetResult(this, 20);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<BigHealingFlack>(), 20);
 			recipe.AddIngredient(3459, 1);
 			recipe.AddIngredient(ModContent.ItemType<AngryShard>(), 1);

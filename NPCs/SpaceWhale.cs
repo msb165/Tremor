@@ -30,9 +30,9 @@ namespace Tremor.NPCs
 			npc.boss = true;
 			npc.knockBackResist = 0f;
 			npc.noGravity = true;
-			music = 39;
+			Music = 39;
 			npc.aiStyle = -1;
-			animationType = 370;
+			AnimationType = 370;
 			bossBag = ModContent.ItemType<SpaceWhaleTreasureBag>();
 		}
 
@@ -46,12 +46,12 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.Center, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 					Dust.NewDust(npc.Center, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore1"), 1f);
-				Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore2"), 1f);
-				Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore2"), 1f);
-				Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore3"), 1f);
-				Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore3"), 1f);
-				Gore.NewGore(null, npc.Center, npc.velocity, mod.GetGoreSlot("Gores/SWGore4"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/SWGore1"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/SWGore2"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/SWGore2"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/SWGore3"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/SWGore3"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/SWGore4"), 1f);
 			}
 			else
 			{

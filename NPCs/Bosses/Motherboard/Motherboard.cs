@@ -485,7 +485,7 @@ namespace Tremor.NPCs.Bosses.Motherboard
 			npc.height = 160;
 			npc.aiStyle = 2;
 			npc.npcSlots = 50f;
-			music = MusicID.Boss3;
+			Music = MusicID.Boss3;
 
 			npc.dontTakeDamage = true;
 			npc.noTileCollide = true;
@@ -520,7 +520,7 @@ namespace Tremor.NPCs.Bosses.Motherboard
 				const int goreAmount = 4;
 				for (int i = 0; i < goreAmount; i++)
 				{
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/MotherboardGore{i + 1}"));
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/MotherboardGore{i + 1}"));
 				}
 			}
 		}

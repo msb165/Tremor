@@ -91,7 +91,7 @@ namespace Tremor.Tiles
 		const int YOffset = 400;
 		public override bool RightClick(int i, int j)
 		{
-			Player player = Main.player[Main.myPlayer];
+			Player player = Main.LocalPlayer;
 			if (player.cursorItemIconID == ModContent.ItemType<RuinKey>())
 			{
 				for (int num66 = 0; num66 < 58; num66++)
@@ -185,7 +185,7 @@ namespace Tremor.Tiles
 
 		public override void MouseOver(int i, int j)
 		{
-			Player player = Main.player[Main.myPlayer];
+			Player player = Main.LocalPlayer;
 			Tile tile = Main.tile[i, j];
 			int left = i;
 			int top = j;
@@ -226,7 +226,7 @@ namespace Tremor.Tiles
 		public override void MouseOverFar(int i, int j)
 		{
 			MouseOver(i, j);
-			Player player = Main.player[Main.myPlayer];
+			Player player = Main.LocalPlayer;
 			if (player.cursorItemIconText == "")
 			{
 				player.cursorItemIconEnabled = false;

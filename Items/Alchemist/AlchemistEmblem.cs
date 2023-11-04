@@ -29,7 +29,7 @@ namespace Tremor.Items.Alchemist
 
 		public override void AddRecipes()
 		{
-			var recipe = new ModRecipe(mod);
+			var recipe = new ModRecipe();
 			recipe.AddIngredient(this);
 			recipe.AddIngredient(ItemID.SoulofMight, 5);
 			recipe.AddIngredient(ItemID.SoulofSight, 5);

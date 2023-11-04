@@ -21,22 +21,22 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 34;
 			npc.height = 48;
-			animationType = 75;
+			AnimationType = 75;
 			npc.aiStyle = 14;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit35;
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath57;
 			npc.value = Item.buyPrice(0, 0, 15, 0);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<ZarpriteBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<ZarpriteBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZarpriteGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZarpriteGore"), 1f);
 
 				if (Main.netMode == 1) return;
 

@@ -33,7 +33,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<EyeofOblivion>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<CarbonSteel>(), 12);
 			recipe.AddIngredient(ModContent.ItemType<ToothofAbraxas>(), 15);

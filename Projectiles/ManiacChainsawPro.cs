@@ -11,7 +11,7 @@ namespace Tremor.Projectiles
 		{
 			//projectile.CloneDefaults(509);
 
-			//aiType = 509;
+			//AIType = 509;
 			projectile.DamageType = DamageClass.Melee;
 			projectile.friendly = true;
 			projectile.penetrate = -1;

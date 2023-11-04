@@ -29,10 +29,10 @@ namespace Tremor.NPCs
 			npc.value = Item.buyPrice(0, 0, 5, 7);
 			npc.knockBackResist = 0.5f;
 			npc.aiStyle = 3;
-			aiType = 434;
-			animationType = 434;
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<SkeletonKnightBanner>();
+			AIType = 434;
+			AnimationType = 434;
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<SkeletonKnightBanner>();
 		}
 
 		public override void NPCLoot()
@@ -53,12 +53,12 @@ namespace Tremor.NPCs
 				for (int k = 0; k < 20; k++)
 					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SkelKnightGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SkelKnightGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SkelKnightGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SkelKnightGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SkelKnightGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SkelKnightGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SkelKnightGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SkelKnightGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SkelKnightGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SkelKnightGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SkelKnightGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SkelKnightGore4"), 1f);
 			}
 		}
 

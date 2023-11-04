@@ -48,7 +48,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 20);
 			recipe.AddIngredient(ItemID.TurtleShell, 2);
 			recipe.SetResult(this);

@@ -22,7 +22,7 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 34;
 			npc.height = 48;
-			animationType = 316;
+			AnimationType = 316;
 			npc.aiStyle = 22;
 			npc.npcSlots = 0.4f;
 			npc.noTileCollide = true;
@@ -30,8 +30,8 @@ namespace Tremor.NPCs
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath58;
 			npc.value = Item.buyPrice(0, 0, 4, 15);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<ForestSpiritBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<ForestSpiritBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)

@@ -40,7 +40,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Wood, 45);
 			recipe.AddIngredient(ModContent.ItemType<BasicFlask>(), 8);
 			recipe.AddIngredient(ItemID.ShadowScale, 15);
@@ -49,7 +49,7 @@ namespace Tremor.Items
 			recipe.AddTile(16);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Wood, 45);
 			recipe.AddIngredient(ModContent.ItemType<BasicFlask>(), 8);
 			recipe.AddIngredient(ItemID.TissueSample, 15);
@@ -58,7 +58,7 @@ namespace Tremor.Items
 			recipe.AddTile(16);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Wood, 45);
 			recipe.AddIngredient(ModContent.ItemType<BasicFlask>(), 8);
 			recipe.AddIngredient(ItemID.ShadowScale, 15);
@@ -67,7 +67,7 @@ namespace Tremor.Items
 			recipe.AddTile(16);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Wood, 45);
 			recipe.AddIngredient(ModContent.ItemType<BasicFlask>(), 8);
 			recipe.AddIngredient(ItemID.TissueSample, 15);

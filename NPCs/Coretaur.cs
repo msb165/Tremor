@@ -28,9 +28,9 @@ namespace Tremor.NPCs
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath42;
 			npc.value = Item.buyPrice(0, 3, 0, 0);
-			animationType = NPCID.BigMimicHallow;
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<CoretaurBanner>();
+			AnimationType = NPCID.BigMimicHallow;
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<CoretaurBanner>();
 		}
 
 		public override void AI()
@@ -52,11 +52,11 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CoretaurGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CoretaurGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CoretaurGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CoretaurGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CoretaurGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CoretaurGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CoretaurGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CoretaurGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CoretaurGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CoretaurGore3"), 1f);
 				for (int k = 0; k < 20; k++)
 				{
 					for (int i = 0; i < 3; ++i)

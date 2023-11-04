@@ -59,7 +59,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.SoulofNight, 8);
 			recipe.AddIngredient(ItemID.SpookyWood, 15);
 			recipe.AddIngredient(ModContent.ItemType<DarknessCloth>(), 9);

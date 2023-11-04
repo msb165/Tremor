@@ -30,8 +30,8 @@ namespace Tremor.NPCs
 			npc.value = Item.buyPrice(0, 0, 5, 7);
 			npc.knockBackResist = 0.3f;
 			npc.aiStyle = 3;
-			aiType = 529;
-			animationType = 529;
+			AIType = 529;
+			AnimationType = 529;
 			npc.buffImmune[20] = true;
 			npc.buffImmune[31] = false;
 			npc.buffImmune[24] = true;
@@ -103,10 +103,10 @@ namespace Tremor.NPCs
 				Dust.NewDust(npc.position, npc.width, npc.height, 59, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 59, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BansheeGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BansheeGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BansheeGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/BansheeGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BansheeGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BansheeGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BansheeGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/BansheeGore3"), 1f);
 			}
 		}
 

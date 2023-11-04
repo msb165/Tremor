@@ -34,7 +34,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(3458, 10);
 			recipe.AddIngredient(3467, 15);
 			recipe.AddIngredient(ModContent.ItemType<Band>());

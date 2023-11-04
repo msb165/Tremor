@@ -32,7 +32,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<Gloomstone>(), 10);
 			recipe.AddIngredient(ModContent.ItemType<UnstableCrystal>(), 2);
 			recipe.AddIngredient(ItemID.Silk, 25);

@@ -35,7 +35,7 @@ namespace Tremor.ZombieEvent.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<CryptStone>(), 8);
 			recipe.AddIngredient(ModContent.ItemType<CursedCloth>(), 10);
 			recipe.SetResult(this);

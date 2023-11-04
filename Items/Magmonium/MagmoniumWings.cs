@@ -50,7 +50,7 @@ namespace Tremor.Items.Magmonium
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<MagmoniumBar>(), 20);
 			recipe.AddIngredient(ItemID.SoulofFlight, 20);
 			recipe.AddTile(134);

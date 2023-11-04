@@ -38,7 +38,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 			npc.noTileCollide = true;
 			npc.alpha = 0;
 			NPCID.Sets.MustAlwaysDraw[npc.type] = true;
-			music = MusicID.TheTowers;
+			Music = MusicID.TheTowers;
 		}
 
 		int Timer;
@@ -231,7 +231,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 
 		public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{
-			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, mod.GetTexture("NPCs/Bosses/NovaPillar/NovaPillar_GlowMask"));
+			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, Mod.GetTexture("NPCs/Bosses/NovaPillar/NovaPillar_GlowMask"));
 			float num88 = NovaHandler.ShieldStrength / (float)NPC.ShieldStrengthTowerMax;
 			if (NovaHandler.ShieldStrength > 0)
 			{

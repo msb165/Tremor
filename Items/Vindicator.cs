@@ -38,7 +38,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<CarbonSteel>(), 15);
 			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 18);
 			recipe.AddIngredient(ItemID.IllegalGunParts, 3);

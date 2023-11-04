@@ -124,7 +124,7 @@ namespace Tremor.Projectiles
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, new Rectangle((int)(projectile.position.X - Main.screenPosition.X), (int)(projectile.position.Y - Main.screenPosition.Y), projectile.width, projectile.height), FrameRect, lightColor, projectile.rotation, new Vector2(), (projectile.spriteDirection < 0) ? SpriteEffects.None : SpriteEffects.FlipHorizontally, 0);
+			Main.spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, new Rectangle((int)(projectile.position.X - Main.screenPosition.X), (int)(projectile.position.Y - Main.screenPosition.Y), projectile.width, projectile.height), FrameRect, lightColor, projectile.rotation, new Vector2(), (projectile.spriteDirection < 0) ? SpriteEffects.None : SpriteEffects.FlipHorizontally, 0);
 			return false;
 		}
 	}

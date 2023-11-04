@@ -10,7 +10,7 @@ namespace Tremor.Projectiles
 		{
 			projectile.CloneDefaults(566);
 
-			aiType = 566;
+			AIType = 566;
 			projectile.tileCollide = false;
 		}
 

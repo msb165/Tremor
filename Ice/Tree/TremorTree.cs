@@ -30,7 +30,7 @@
 //		//TODO: Tree Gore
 //		public /*override*/ int GrowthFXGore()
 //		{
-//			return mod.GetGoreSlot("Ice/Tree/TremorTreeFX");
+//			return Mod.GetGoreSlot("Ice/Tree/TremorTreeFX");
 //		}
 
 //		public override int DropWood()

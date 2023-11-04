@@ -38,7 +38,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<JungleWrath>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<DemoniteProtector>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<WaterStorm>(), 1);

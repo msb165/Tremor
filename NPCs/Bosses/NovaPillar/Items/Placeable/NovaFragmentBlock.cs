@@ -29,7 +29,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items.Placeable
 
 		public override void AddRecipes()
 		{
-			var recipe = new ModRecipe(mod);
+			var recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<NovaFragment>(), 1);
 			recipe.AddIngredient(ItemID.StoneBlock, 5);
 			recipe.AddTile(TileID.LunarCraftingStation);

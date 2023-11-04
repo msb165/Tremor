@@ -24,7 +24,7 @@ namespace Tremor.Invasion
 		{
 			projectile.netImportant = true;
 			projectile.CloneDefaults(388);
-			aiType = 388;
+			AIType = 388;
 			projectile.light = 2f;
 			projectile.width = 26;
 			projectile.height = 30;
@@ -86,7 +86,7 @@ namespace Tremor.Invasion
 			if (Main.mouseLeft)
 				if ((int)(Main.time % 60) == 0)
 				{
-					Player player = Main.player[Main.myPlayer];
+					Player player = Main.LocalPlayer;
 					Vector2 Velocity = Helper.VelocityToPoint(projectile.Center, Main.npc[NearestNPC].Center, ShootSpeed);
 					Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, Velocity.X, Velocity.Y, ModContent.ProjectileType<CyberLaser>(), ShootDamage, ShootKnockback, projectile.owner);
 				}

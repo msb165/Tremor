@@ -21,24 +21,24 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 92;
 			npc.height = 54;
-			animationType = 75;
+			AnimationType = 75;
 			npc.aiStyle = 14;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit35;
 			npc.noGravity = true;
 			npc.DeathSound = SoundID.NPCDeath57;
 			npc.value = Item.buyPrice(0, 0, 20, 80);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<ZarpruteBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<ZarpruteBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZarpruteGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZarpruteGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/ZarpruteGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZarpruteGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZarpruteGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZarpruteGore2"), 1f);
 
 				if (Main.netMode == 1) return;
 

@@ -36,7 +36,7 @@ namespace Tremor.Items.Alchemist
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<AlchemistSpark>());
 			recipe.AddIngredient(ModContent.ItemType<GelCube>(), 25);
 			recipe.AddIngredient(ItemID.Amethyst, 16);

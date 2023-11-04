@@ -33,7 +33,7 @@ namespace Tremor.Items.Sandstone
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<AntlionShell>(), 1);
 			recipe.AddIngredient(ItemID.Topaz, 3);
 			recipe.AddIngredient(ItemID.AntlionMandible, 5);

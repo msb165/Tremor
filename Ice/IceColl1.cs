@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.Enums;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
@@ -36,19 +37,19 @@ namespace Tremor.Ice
 			//TileObjectData.newTile.LavaPlacement = LiquidPlacement.NotAllowed;
 			//TileObjectData.addBaseTile(out TileObjectData.StyleAlch);
 			Main.tileWaterDeath[Type] = false;
-			dustType = 3;
+			DustType = DustID.GrassBlades;
 			TileObjectData.newTile.LavaPlacement = LiquidPlacement.NotAllowed;
 			TileObjectData.newTile.CopyFrom(TileObjectData.StyleAlch);
 			TileObjectData.newTile.AnchorValidTiles = new[]
 			{
 				ModContent.TileType<IceBlock>()
 			};
-			dustType = ModContent.DustType<IceDust>();
-			soundType = 21;
+			DustType = ModContent.DustType<IceDust>();
+			HitSound = SoundID.Tink;
 			soundStyle = 2;
 			TileObjectData.newTile.WaterDeath = false;
 			TileObjectData.addTile(Type);
-			//drop = ModContent.ItemType()
+			//ItemDrop = ModContent.ItemType()
 		}
 		public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
 		{

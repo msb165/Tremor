@@ -36,7 +36,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<SummonerSpark>());
 			recipe.AddIngredient(ModContent.ItemType<EarthFragment>(), 1);
 			recipe.AddIngredient(ItemID.Emerald, 16);

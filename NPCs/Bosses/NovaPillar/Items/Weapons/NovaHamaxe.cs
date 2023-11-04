@@ -34,7 +34,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items.Weapons
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<NovaFragment>(), 14);
 			recipe.AddIngredient(3467, 12);
 			recipe.AddTile(412);

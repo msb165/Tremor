@@ -9,7 +9,7 @@ namespace Tremor.ZombieEvent.Items
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.ZephyrFish);
-			aiType = ProjectileID.ZephyrFish;
+			AIType = ProjectileID.ZephyrFish;
 			Main.projFrames[projectile.type] = 4;
 			projectile.width = 72;
 			//projectile.noGravity = true;
@@ -20,7 +20,7 @@ namespace Tremor.ZombieEvent.Items
 		public override bool PreAI()
 		{
 			Player player = Main.player[projectile.owner];
-			player.bunny = false; // Relic from aiType
+			player.bunny = false; // Relic from AIType
 			return true;
 		}
 

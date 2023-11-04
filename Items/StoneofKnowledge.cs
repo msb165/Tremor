@@ -57,7 +57,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(3467, 20);
 			recipe.AddIngredient(ModContent.ItemType<StoneDice>(), 1);
 			recipe.AddIngredient(ItemID.CelestialSigil, 1);

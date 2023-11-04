@@ -35,7 +35,7 @@ namespace Tremor.Items.Crystal
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.ThrowingKnife, 50);
 			recipe.AddIngredient(ItemID.CrystalShard, 1);
 			recipe.SetResult(this, 50);

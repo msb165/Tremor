@@ -25,7 +25,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<GrayKnightHelmet>(), 3);
 			recipe.AddIngredient(ItemID.Amethyst, 1);
 			recipe.SetResult(this);

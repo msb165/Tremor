@@ -16,7 +16,7 @@ namespace Tremor.Ice.Items.Furniture
 			TileObjectData.newTile.StyleHorizontal = true;
 			TileObjectData.newTile.StyleWrapLimit = 36;
 			TileObjectData.addTile(Type);
-			dustType = 7;
+			DustType = DustID.WoodFurniture;
 			Main.tileLighted[Type] = true;
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
 			AddMapEntry(new Color(87, 144, 165));

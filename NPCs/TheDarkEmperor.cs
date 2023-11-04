@@ -27,10 +27,10 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.value = 80000f;
 			npc.knockBackResist = 0.0f;
-			music = 17;
+			Music = 17;
 			npc.aiStyle = 87;
-			aiType = 475;
-			animationType = 473;
+			AIType = 475;
+			AnimationType = 473;
 			npc.npcSlots = 10f;
 			npc.buffImmune[20] = true;
 			npc.buffImmune[24] = true;

@@ -21,7 +21,7 @@ namespace Tremor.Projectiles.Minions
 			projectile.penetrate = -1;
 			projectile.timeLeft *= 5;
 			projectile.minion = true;
-			aiType = 266;
+			AIType = 266;
 			projectile.tileCollide = false;
 			ProjectileID.Sets.MinionTargettingFeature[projectile.type] = true;
 		}

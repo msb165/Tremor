@@ -39,7 +39,7 @@ namespace Tremor.Items.Cobalt
 		}
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.CobaltBar, 15);
 			recipe.SetResult(this);
 			recipe.AddTile(16);

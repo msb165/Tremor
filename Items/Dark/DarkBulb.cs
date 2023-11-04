@@ -23,7 +23,7 @@ namespace Tremor.Items.Dark
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<LightBulb>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<TearsofDeath>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<Charcoal>(), 1);

@@ -21,15 +21,15 @@ namespace Tremor.ZombieEvent.Mobs
 			npc.knockBackResist = 0.0f;
 			npc.width = 58;
 			npc.height = 44;
-			animationType = 177;
-			aiType = 177;
+			AnimationType = 177;
+			AIType = 177;
 			npc.aiStyle = 41;
 			npc.npcSlots = 0.2f;
 			npc.HitSound = SoundID.NPCHit2;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 9, 9);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<BigCorpseBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<BigCorpseBanner>();
 		}
 
 		public override void AI()

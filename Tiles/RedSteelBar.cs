@@ -22,12 +22,7 @@ namespace Tremor.Tiles
 			AddMapEntry(new Color(13, 88, 130));
 			Main.tileShine[Type] = 1100;
 			Main.tileSolid[Type] = true;
-		}
-
-		public override bool Drop(int i, int j)
-		{
-			Item.NewItem(null, i * 16, j * 16, 32, 32, ModContent.ItemType<Items.RedSteel.RedSteelBar>());
-			return true;
+			ItemDrop = ModContent.ItemType<Items.RedSteel.RedSteelBar>();
 		}
 	}
 }

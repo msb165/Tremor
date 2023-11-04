@@ -34,7 +34,7 @@ namespace Tremor.Items.Souls
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<ThrowerFocus>());
 			recipe.AddIngredient(ModContent.ItemType<Opal>(), 3);
 			recipe.AddIngredient(ModContent.ItemType<ThrowerEmblem>(), 1);

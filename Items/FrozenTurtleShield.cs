@@ -53,7 +53,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<TurtleShield>(), 1);
 			recipe.AddIngredient(ItemID.FrozenTurtleShell, 1);
 			recipe.SetResult(this);

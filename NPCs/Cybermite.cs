@@ -49,7 +49,7 @@ namespace Tremor.NPCs
 		public override void HitEffect(int hitDirection, double damage)
 		{
 			if (npc.life <= 0)
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CybermiteGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CybermiteGore"), 1f);
 		}
 	}
 }

@@ -22,16 +22,16 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.1f;
 			npc.width = 58;
 			npc.height = 36;
-			animationType = 509;
+			AnimationType = 509;
 			npc.aiStyle = 44;
 			npc.noGravity = true;
-			aiType = 509;
+			AIType = 509;
 			npc.npcSlots = 0.4f;
 			npc.HitSound = SoundID.NPCHit4;
 			npc.DeathSound = SoundID.NPCDeath6;
 			npc.value = Item.buyPrice(0, 0, 40, 7);
-			// banner = npc.type;
-			// Todo: bannerItem = ModContent.ItemType<MechanicalFireflyBanner>();
+			// Banner = npc.type;
+			// Todo: BannerItem = ModContent.ItemType<MechanicalFireflyBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)

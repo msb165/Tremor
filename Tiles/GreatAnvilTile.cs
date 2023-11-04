@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Tremor.Items;
@@ -16,7 +17,7 @@ namespace Tremor.Tiles
         TileObjectData.newTile.StyleHorizontal = true;
         TileObjectData.newTile.StyleWrapLimit = 36;
         TileObjectData.addTile(Type);
-        dustType = 7;
+        DustType = DustID.WoodFurniture;
 		ModTranslation name = CreateMapEntryName();
 		name.SetDefault("Great Anvil");			
 	AddMapEntry(new Color(162, 162, 162), name);

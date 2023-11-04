@@ -24,16 +24,16 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.05f;
 			npc.width = 32;
 			npc.height = 40;
-			animationType = 176;
+			AnimationType = 176;
 			npc.aiStyle = 5;
-			aiType = 176;
+			AIType = 176;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath44;
 			npc.noGravity = true;
 			npc.value = Item.buyPrice(0, 0, 10, 0);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<PossessedHornetBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<PossessedHornetBanner>();
 		}
 
 		public override void NPCLoot()
@@ -50,7 +50,7 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<Dusts.NightmareFlame>(), 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot($"Gores/PHGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/PHGore{i+1}"), 1f);
 			}
 		}
 

@@ -114,7 +114,7 @@ namespace Tremor.Projectiles
 			for (float k = 0; k <= length; k += 1f)
 			{
 				Vector2 drawPos = projectile.Center + unit * k - Main.screenPosition;
-				spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, new Color(LaserColor.R, LaserColor.G, LaserColor.B, projectile.alpha), Helper.rotateBetween2Points(Main.npc[(int)projectile.ai[0]].Center, endPoint), new Vector2(2, 2), 1f, SpriteEffects.None, 0f);
+				Main.spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, new Color(LaserColor.R, LaserColor.G, LaserColor.B, projectile.alpha), Helper.rotateBetween2Points(Main.npc[(int)projectile.ai[0]].Center, endPoint), new Vector2(2, 2), 1f, SpriteEffects.None, 0f);
 			}
 			return false;
 		}

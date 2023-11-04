@@ -24,14 +24,14 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.3f;
 			npc.width = 62;
 			npc.height = 46;
-			animationType = 241;
+			AnimationType = 241;
 			npc.aiStyle = 16;
 			npc.npcSlots = 1f;
 			npc.HitSound = SoundID.NPCHit47;
 			npc.DeathSound = SoundID.NPCDeath23;
 			npc.value = Item.buyPrice(0, 0, 0, 3);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<DeepwaterVilefishBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<DeepwaterVilefishBanner>();
 		}
 
 		public override void HitEffect(int hitDirection, double damage)

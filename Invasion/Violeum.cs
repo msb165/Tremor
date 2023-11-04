@@ -21,7 +21,7 @@ namespace Tremor.Invasion
 			npc.lifeMax = 18000;
 			npc.width = 78;
 			npc.height = 88;
-			animationType = 82;
+			AnimationType = 82;
 			npc.damage = 250;
 			npc.defense = 70;
 			npc.knockBackResist = 0f;
@@ -63,7 +63,7 @@ namespace Tremor.Invasion
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
+			CyberWrathInvasion modPlayer = Main.LocalPlayer.GetModPlayer<CyberWrathInvasion>();
 			int x = spawnInfo.SpawnTileX;
 			int y = spawnInfo.SpawnTileY;
 			int tile = Main.tile[x, y].TileType;
@@ -79,7 +79,7 @@ namespace Tremor.Invasion
 					Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
 
-				CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
+				CyberWrathInvasion modPlayer = Main.LocalPlayer.GetModPlayer<CyberWrathInvasion>();
 				if (InvasionWorld.CyberWrath && InvasionWorld.CyberWrathPoints1 < 85)
 				{
 					InvasionWorld.CyberWrathPoints1 += 15;
@@ -106,25 +106,25 @@ namespace Tremor.Invasion
 
 		void MakeHands()
 		{
-			Hands.X = NPC.NewNPC(null, (int)npc.Center.X - 50, (int)npc.Center.Y, mod.NPCType(Boss_Left_Hand_Type), 0, 1, npc.whoAmI);
-			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X + 50, (int)npc.Center.Y, mod.NPCType(Boss_Right_Hand_Type), 0, -1, npc.whoAmI);
-			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y - 1000, mod.NPCType(Boss_Down_Hand_Type), 0, -1, npc.whoAmI);
-			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y + 1000, mod.NPCType(Boss_Up_Hand_Type), 0, -1, npc.whoAmI);
+			Hands.X = NPC.NewNPC(null, (int)npc.Center.X - 50, (int)npc.Center.Y, Mod.NPCType(Boss_Left_Hand_Type), 0, 1, npc.whoAmI);
+			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X + 50, (int)npc.Center.Y, Mod.NPCType(Boss_Right_Hand_Type), 0, -1, npc.whoAmI);
+			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y - 1000, Mod.NPCType(Boss_Down_Hand_Type), 0, -1, npc.whoAmI);
+			Hands.Y = NPC.NewNPC(null, (int)npc.Center.X, (int)npc.Center.Y + 1000, Mod.NPCType(Boss_Up_Hand_Type), 0, -1, npc.whoAmI);
 		}
 
 		void CheckHands()
 		{
 			if (Hands.X != -1)
-				if (!((Main.npc[(int)Hands.X].type == mod.NPCType(Boss_Left_Hand_Type) && Main.npc[(int)Hands.X].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.X].active))
+				if (!((Main.npc[(int)Hands.X].type == Mod.NPCType(Boss_Left_Hand_Type) && Main.npc[(int)Hands.X].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.X].active))
 					Hands.X = -1;
 			if (Hands.Y != -1)
-				if (!((Main.npc[(int)Hands.Y].type == mod.NPCType(Boss_Right_Hand_Type) && Main.npc[(int)Hands.Y].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.Y].active))
+				if (!((Main.npc[(int)Hands.Y].type == Mod.NPCType(Boss_Right_Hand_Type) && Main.npc[(int)Hands.Y].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.Y].active))
 					Hands.Y = -1;
 			if (Hands.X != -1)
-				if (!((Main.npc[(int)Hands.X].type == mod.NPCType(Boss_Up_Hand_Type) && Main.npc[(int)Hands.X].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.X].active))
+				if (!((Main.npc[(int)Hands.X].type == Mod.NPCType(Boss_Up_Hand_Type) && Main.npc[(int)Hands.X].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.X].active))
 					Hands.X = -1;
 			if (Hands.Y != -1)
-				if (!((Main.npc[(int)Hands.Y].type == mod.NPCType(Boss_Down_Hand_Type) && Main.npc[(int)Hands.Y].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.Y].active))
+				if (!((Main.npc[(int)Hands.Y].type == Mod.NPCType(Boss_Down_Hand_Type) && Main.npc[(int)Hands.Y].ai[1] == npc.whoAmI) && Main.npc[(int)Hands.Y].active))
 					Hands.Y = -1;
 		}
 

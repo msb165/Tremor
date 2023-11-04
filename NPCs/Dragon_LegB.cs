@@ -24,8 +24,8 @@ namespace Tremor.NPCs
 			npc.damage = 28;
 			npc.aiStyle = 6;
 			Main.npcFrameCount[npc.type] = 1;
-			aiType = -1;
-			animationType = 10;
+			AIType = -1;
+			AnimationType = 10;
 			npc.knockBackResist = 1f;
 			npc.value = Item.buyPrice(0, 25, 0, 0);
 			npc.alpha = 255;
@@ -35,7 +35,7 @@ namespace Tremor.NPCs
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.netAlways = true;
-			music = MusicID.Boss1;
+			Music = MusicID.Boss1;
 		}
 
 		public override bool? DrawHealthBar(byte hbPosition, ref float scale, ref Vector2 position)

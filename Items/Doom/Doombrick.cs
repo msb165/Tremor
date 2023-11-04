@@ -30,13 +30,13 @@ namespace Tremor.Items.Doom
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<DoombrickWall>(), 4);
 			recipe.SetResult(this, 1);
 			recipe.AddTile(17);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<Doomstone>(), 1);
 			recipe.AddIngredient(ItemID.StoneBlock, 50);
 			recipe.SetResult(this, 50);

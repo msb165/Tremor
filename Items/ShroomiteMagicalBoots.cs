@@ -63,7 +63,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<ShroomiteMechanicalBoots>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<SpectreNecklace>(), 1);
 			recipe.SetResult(this);

@@ -52,7 +52,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<ChaoticAmplifier>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<Stigmata>(), 1);
 			recipe.SetResult(this);

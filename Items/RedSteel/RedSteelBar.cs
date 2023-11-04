@@ -28,19 +28,19 @@ namespace Tremor.Items.RedSteel
 
 		public override void AddRecipes()
 		{
-			//ModRecipe recipe = new ModRecipe(mod);
+			//ModRecipe recipe = new ModRecipe();
 			//recipe.AddIngredient(ModContent.ItemType<ChippyRedSteelSword>());
 			//recipe.SetResult(this, 2);
 			//recipe.AddTile(17);
 			//recipe.AddRecipe();
 
-			//recipe = new ModRecipe(mod);
+			//recipe = new ModRecipe();
 			//recipe.AddIngredient(ModContent.ItemType<FaultyRedSteelShield>());
 			//recipe.SetResult(this, 3);
 			//recipe.AddTile(17);
 			//recipe.AddRecipe();
 
-			//recipe = new ModRecipe(mod);
+			//recipe = new ModRecipe();
 			//recipe.AddIngredient(ModContent.ItemType<RedSteelArmorPiece>());
 			//recipe.SetResult(this, 2);
 			//recipe.AddTile(17);

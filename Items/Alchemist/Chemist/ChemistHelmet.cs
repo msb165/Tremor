@@ -44,7 +44,7 @@ namespace Tremor.Items.Alchemist.Chemist
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<LeatherHat>(), 1);
 			recipe.AddIngredient(ModContent.ItemType<ChainCoif>(), 1);
 			recipe.AddIngredient(ItemID.Goggles, 1);

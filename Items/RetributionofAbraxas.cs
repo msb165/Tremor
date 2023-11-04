@@ -41,7 +41,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Obsidian, 50);
 			recipe.AddIngredient(ItemID.CrystalShard, 50);
 			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 25);

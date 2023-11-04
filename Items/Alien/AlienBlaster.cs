@@ -37,7 +37,7 @@ namespace Tremor.Items.Alien
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.SpaceGun, 1);
 			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 15);
 			recipe.AddIngredient(ItemID.MeteoriteBar, 25);

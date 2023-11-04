@@ -58,12 +58,12 @@ namespace Tremor.Items.Alchemist.Flasks
 
 		public override void AddRecipes()
 		{
-			var recipe = new ModRecipe(mod);
+			var recipe = new ModRecipe();
 			recipe.AddIngredient(this);
 			recipe.SetResult(3105);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(3105);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

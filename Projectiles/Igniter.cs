@@ -10,7 +10,7 @@ namespace Tremor.Projectiles
 		{
 			projectile.CloneDefaults(376);
 
-			aiType = 376;
+			AIType = 376;
 			projectile.penetrate = 1;
 		}
 

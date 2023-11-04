@@ -88,7 +88,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/CogLordHand"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CogLordHand"), 1f);
 			}
 		}
 

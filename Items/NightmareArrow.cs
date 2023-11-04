@@ -31,7 +31,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<NightmareBar>(), 1);
 			recipe.AddIngredient(ItemID.WoodenArrow, 150);
 			recipe.SetResult(this, 150);

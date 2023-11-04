@@ -22,7 +22,7 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.6f;
 			npc.width = 76;
 			npc.height = 38;
-			animationType = 508;
+			AnimationType = 508;
 			npc.aiStyle = 26;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit1;

@@ -48,7 +48,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.Shrimp, 1);
 			recipe.AddIngredient(ModContent.ItemType<StarBar>(), 16);
 			recipe.AddIngredient(ModContent.ItemType<Phantaplasm>(), 16);

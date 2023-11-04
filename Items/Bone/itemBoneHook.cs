@@ -35,7 +35,7 @@ namespace Tremor.Items.Bone
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<PetrifiedSpike>(), 25);
 			recipe.AddIngredient(ModContent.ItemType<SharpenedTooth>(), 6);
 			recipe.AddIngredient(ItemID.SoulofNight, 9);

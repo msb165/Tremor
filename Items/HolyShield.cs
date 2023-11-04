@@ -31,7 +31,7 @@ namespace Tremor.Items
 		}
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.PaladinsShield, 1);
 			recipe.AddIngredient(ItemID.CrossNecklace, 1);
 			recipe.SetResult(this);

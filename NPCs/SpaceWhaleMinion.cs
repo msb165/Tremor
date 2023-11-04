@@ -29,8 +29,8 @@ namespace Tremor.NPCs
 			npc.value = Item.buyPrice(0, 0, 3, 12);
 			npc.knockBackResist = 0.1f;
 			npc.aiStyle = 74;
-			aiType = 418;
-			animationType = 23;
+			AIType = 418;
+			AnimationType = 23;
 		}
 
 		public override void AI()
@@ -57,7 +57,7 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.6f);
 				}
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/SpaceWhaleMinionGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/SpaceWhaleMinionGore"), 1f);
 			}
 		}
 	}

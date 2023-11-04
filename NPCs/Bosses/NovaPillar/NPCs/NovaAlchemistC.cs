@@ -29,7 +29,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			npc.width = 34;
 			npc.height = 56;
 			npc.aiStyle = 3;
-			aiType = NPCID.AngryBones;
+			AIType = NPCID.AngryBones;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit55;
 			npc.DeathSound = SoundID.NPCDeath51;

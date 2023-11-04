@@ -9,7 +9,7 @@ namespace Tremor.Projectiles
 		{
 			projectile.CloneDefaults(595);
 
-			aiType = 595;
+			AIType = 595;
 			projectile.width = 70;
 			projectile.light = 0.8f;
 			projectile.height = 70;

@@ -22,7 +22,7 @@ namespace Tremor.Invasion
 			npc.knockBackResist = 0f;
 			npc.width = 34;
 			npc.height = 40;
-			animationType = 3;
+			AnimationType = 3;
 			npc.aiStyle = -1;
 			npc.npcSlots = 0.5f;
 			npc.HitSound = SoundID.NPCHit1;
@@ -32,7 +32,7 @@ namespace Tremor.Invasion
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
+			CyberWrathInvasion modPlayer = Main.LocalPlayer.GetModPlayer<CyberWrathInvasion>();
 			float spawn = 20f;
 			if (InvasionWorld.CyberWrath)
 			{
@@ -55,7 +55,7 @@ namespace Tremor.Invasion
 					Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
 
-				CyberWrathInvasion modPlayer = Main.player[Main.myPlayer].GetModPlayer<CyberWrathInvasion>();
+				CyberWrathInvasion modPlayer = Main.LocalPlayer.GetModPlayer<CyberWrathInvasion>();
 				if (InvasionWorld.CyberWrath && Main.rand.NextBool(2))
 				{
 					InvasionWorld.CyberWrathPoints1 += 2;

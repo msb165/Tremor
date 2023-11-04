@@ -25,9 +25,9 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.9f;
 			npc.width = 46;
 			npc.height = 46;
-			animationType = 185;
+			AnimationType = 185;
 			npc.aiStyle = 3;
-			aiType = 166;
+			AIType = 166;
 			npc.npcSlots = 0.3f;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath23;
@@ -50,9 +50,9 @@ namespace Tremor.NPCs
 					Dust.NewDust(npc.position, npc.width, npc.height, 76, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
 				}
 
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FFGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FFGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, mod.GetGoreSlot("Gores/FFGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FFGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FFGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FFGore1"), 1f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 76, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 76, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
 				Dust.NewDust(npc.position, npc.width, npc.height, 76, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);

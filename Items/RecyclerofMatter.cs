@@ -29,7 +29,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.StoneBlock, 50);
 			recipe.AddIngredient(ItemID.TitaniumBar, 1);
 			recipe.AddIngredient(ItemID.AdamantiteBar, 1);

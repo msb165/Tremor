@@ -23,17 +23,17 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0.2f;
 			npc.width = 80;
 			npc.height = 65;
-			animationType = 289;
+			AnimationType = 289;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
 			npc.aiStyle = 10;
-			aiType = 289;
+			AIType = 289;
 			npc.npcSlots = 5f;
 			npc.HitSound = SoundID.NPCHit2;
 			npc.DeathSound = SoundID.NPCDeath2;
 			npc.value = Item.buyPrice(0, 0, 8, 0);
-			banner = npc.type;
-			bannerItem = ModContent.ItemType<AncientCursedSkullBanner>();
+			Banner = npc.type;
+			BannerItem = ModContent.ItemType<AncientCursedSkullBanner>();
 		}
 		
 		public override void HitEffect(int hitDirection, double damage)

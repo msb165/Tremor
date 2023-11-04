@@ -39,7 +39,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<EnchantmentSolution>(), 2);
 			recipe.AddIngredient(ItemID.Bottle, 10);
 			recipe.AddIngredient(ItemID.SoulofLight, 14);

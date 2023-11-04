@@ -24,7 +24,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<PhantomSoul>(), 4);
 			recipe.AddIngredient(ItemID.Amethyst, 8);
 			recipe.AddIngredient(ItemID.SoulofNight, 2);

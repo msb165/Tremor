@@ -27,7 +27,7 @@ namespace Tremor.NPCs
 			npc.HitSound = SoundID.NPCHit4;
 			npc.DeathSound = SoundID.NPCDeath6;
 			npc.value = Item.buyPrice(0, 3, 0, 0);
-			animationType = NPCID.BigMimicHallow;
+			AnimationType = NPCID.BigMimicHallow;
 		}
 
 		public override void NPCLoot()

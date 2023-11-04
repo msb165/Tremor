@@ -28,7 +28,7 @@ namespace Tremor.Ice.Items.Furniture
 			TileObjectData.addTile(19);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
 			AddMapEntry(new Color(87, 144, 165));
-			drop = ModContent.ItemType<IcePlatform>();
+			ItemDrop = ModContent.ItemType<IcePlatform>();
 			adjTiles = new int[] { TileID.Platforms };
 			TileID.Sets.Platforms[Type] = true;
 		}

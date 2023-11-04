@@ -41,7 +41,7 @@ namespace Tremor.Items
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.DemoniteBar, 5);
 			recipe.AddIngredient(ModContent.ItemType<DrippingRoot>(), 12);
 			recipe.AddIngredient(ItemID.Lens, 6);
@@ -49,7 +49,7 @@ namespace Tremor.Items
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
-			recipe = new ModRecipe(mod);
+			recipe = new ModRecipe();
 			recipe.AddIngredient(ItemID.CrimtaneBar, 5);
 			recipe.AddIngredient(ModContent.ItemType<DrippingRoot>(), 12);
 			recipe.AddIngredient(ItemID.Lens, 6);

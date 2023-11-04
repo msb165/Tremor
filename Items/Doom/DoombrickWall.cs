@@ -28,7 +28,7 @@ namespace Tremor.Items.Doom
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			ModRecipe recipe = new ModRecipe();
 			recipe.AddIngredient(ModContent.ItemType<Doombrick>(), 1);
 			recipe.SetResult(this, 4);
 			recipe.AddTile(17);

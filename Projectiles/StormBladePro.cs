@@ -18,7 +18,7 @@ namespace Tremor.Projectiles
 			projectile.timeLeft = 600;
 			projectile.light = 0.7f;
 			projectile.extraUpdates = 1;
-			aiType = ProjectileID.Bullet;
+			AIType = ProjectileID.Bullet;
 		}
 
 		public override void SetStaticDefaults()

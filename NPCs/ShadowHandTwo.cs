@@ -21,8 +21,8 @@ namespace Tremor.NPCs
 			npc.knockBackResist = 0f;
 			npc.width = 50;
 			npc.height = 78;
-			animationType = 6;
-			aiType = 6;
+			AnimationType = 6;
+			AIType = 6;
 			npc.aiStyle = 5;
 			npc.npcSlots = 0.5f;
 			npc.noTileCollide = true;

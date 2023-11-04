@@ -19,6 +19,7 @@ namespace Tremor.Tiles
 				2 
 			};
 			TileObjectData.addTile(Type);
+			ItemDrop = ModContent.ItemType<CornSeed>();
 		}
 		public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
 		{
@@ -31,11 +32,7 @@ namespace Tremor.Tiles
 		public override bool Drop(int i, int j)
 		{
 			int stage = Main.tile[i, j].TileFrameX / 18;
-			if (stage == 2)
-			{
-				Item.NewItem(null, i * 16, j * 16, 0, 0, ModContent.ItemType<CornSeed>());
-			}
-			return false;
+			return stage == 2;
 		}
 
 		public override void RandomUpdate(int i, int j)

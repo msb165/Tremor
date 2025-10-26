@@ -13,9 +13,10 @@ namespace Tremor.Waters
             return modPlayer.ZoneIce;
         }
 
+
         public override int ChooseWaterfallStyle()
 		{
-			return Slot;//Mod.GetWaterfallStyleSlot<IceWaterfall>();
+			return ModContent.Find<ModWaterfallStyle>("Tremor/IceWaterfall").Slot;//Mod.GetWaterfallStyleSlot<IceWaterfall>();
 		}
 
 		public override int GetSplashDust()
@@ -25,7 +26,7 @@ namespace Tremor.Waters
 
 		public override int GetDropletGore()
 		{
-			return Mod.GetGoreSlot("Gores/IceDroplet");
+			return Mod.GetGoreSlot("IceDroplet");
 		}
 
 		public override void LightColorMultiplier(ref float r, ref float g, ref float b)

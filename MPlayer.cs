@@ -79,10 +79,10 @@ namespace Tremor
 		{
 			// Reset conditions
 			if (fragileContiion)
-				Player.statDefense = 0;
+				Player.statDefense *= 0;
 		}
 
-		public override void OnEnterWorld(Player player)
+		public override void OnEnterWorld()
 		{
 			// switch this bool to log
 			if (false)

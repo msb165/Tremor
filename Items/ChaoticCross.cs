@@ -9,20 +9,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 28;
+			Item.width = 24;
+			Item.height = 28;
 
-			item.value = 150000;
-			item.rare = 6;
-			item.accessory = true;
-			item.defense = 1;
+			Item.value = 150000;
+			Item.rare = 6;
+			Item.accessory = true;
+			Item.defense = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chaotic Cross");
-			Tooltip.SetDefault("The less health, the more critical strike chance...\n" +
-"The less health, the more damage...");
+			// DisplayName.SetDefault("Chaotic Cross");
+			/* Tooltip.SetDefault("The less health, the more critical strike chance...\n" +
+"The less health, the more damage..."); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

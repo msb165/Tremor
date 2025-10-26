@@ -14,7 +14,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Galasquid");
+			// DisplayName.SetDefault("Galasquid");
 			Main.npcFrameCount[npc.type] = 5;
 		}
 
@@ -39,9 +39,9 @@ namespace Tremor.NPCs
 			npc.npcSlots = 10f;
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
-			npc.lifeMax = (int)(npc.lifeMax * 0.625f * bossLifeScale);
+			npc.lifeMax = (int)(npc.lifeMax * 0.625f * balance);
 			npc.damage = (int)(npc.damage * 0.6f);
 		}
 
@@ -92,14 +92,14 @@ namespace Tremor.NPCs
 				npc.NewItem(ModContent.ItemType<Catalyst>(), Main.rand.Next(5, 12));
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GalasquidGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GalasquidGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GalasquidGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/GalasquidGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("GalasquidGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("GalasquidGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("GalasquidGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("GalasquidGore2"), 1f);
 			}
 		}
 

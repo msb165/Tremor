@@ -24,7 +24,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("StarDrillPro");
+			// DisplayName.SetDefault("StarDrillPro");
 
 		}
 

@@ -9,26 +9,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 189;
-			item.DamageType = DamageClass.Melee;
-			item.width = 30;
-			item.height = 38;
-			item.useTime = 26;
-			item.useAnimation = 26;
-			item.useStyle = 1;
-			item.knockBack = 7;
-			item.shoot = 160;
-			item.shootSpeed = 14f;
-			item.value = 150000;
-			item.rare = 11;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 189;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 30;
+			Item.height = 38;
+			Item.useTime = 26;
+			Item.useAnimation = 26;
+			Item.useStyle = 1;
+			Item.knockBack = 7;
+			Item.shoot = 160;
+			Item.shootSpeed = 14f;
+			Item.value = 150000;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Royal Strike");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Royal Strike");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

@@ -8,18 +8,18 @@ namespace Tremor.Items.Dark
 		public override void SetDefaults()
 		{
 
-			item.width = 20;
-			item.height = 20;
-			item.value = 100000;
-			item.rare = 11;
-			item.maxStack = 99;
-			ItemID.Sets.ItemNoGravity[item.type] = true;
+			Item.width = 20;
+			Item.height = 20;
+			Item.value = 100000;
+			Item.rare = 11;
+			Item.maxStack = 99;
+			ItemID.Sets.ItemNoGravity[Item.type] = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dark Mass");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Dark Mass");
+			// Tooltip.SetDefault("");
 		}
 
 	}

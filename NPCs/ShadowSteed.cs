@@ -11,7 +11,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Shadow Steed");
+			// DisplayName.SetDefault("Shadow Steed");
 			Main.npcFrameCount[npc.type] = 6;
 		}
 
@@ -28,13 +28,13 @@ namespace Tremor.NPCs
 			npc.noTileCollide = true;
 		}
 
-		public override void ModifyHitPlayer(Player target, ref int damage, ref bool crit)
+		public override void ModifyHitPlayer(Player target, ref Player.HurtModifiers modifiers)
 		{
 			if (Main.expertMode)
 				target.AddBuff(153, 180);
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{

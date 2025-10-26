@@ -8,26 +8,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 29;
-			item.width = 16;
-			item.height = 32;
-			item.DamageType = DamageClass.Melee;
-			item.useTime = 30;
-			item.shoot = ModContent.ProjectileType<Projectiles.ToxicRazorknifePro>();
-			item.shootSpeed = 12f;
-			item.useAnimation = 25;
-			item.useStyle = 5;
-			item.knockBack = 5;
-			item.value = 100000;
-			item.rare = 4;
-			item.UseSound = SoundID.Item10;
-			item.autoReuse = true;
+			Item.damage = 29;
+			Item.width = 16;
+			Item.height = 32;
+			Item.DamageType = DamageClass.Melee;
+			Item.useTime = 30;
+			Item.shoot = ModContent.ProjectileType<Projectiles.ToxicRazorknifePro>();
+			Item.shootSpeed = 12f;
+			Item.useAnimation = 25;
+			Item.useStyle = 5;
+			Item.knockBack = 5;
+			Item.value = 100000;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item10;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Toxic Razorknife");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Toxic Razorknife");
+			// Tooltip.SetDefault("");
 		}
 
 	}

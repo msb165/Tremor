@@ -10,32 +10,32 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 32;
-			item.DamageType = DamageClass.Melee;
-			item.width = 20;
-			item.height = 12;
-			item.useTime = 5;
-			item.useAnimation = 25;
-			item.channel = true;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.pick = 200;
-			item.axe = 24;
-			item.tileBoost++;
-			item.useStyle = 5;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(0, 20, 0, 0);
-			item.rare = 7;
-			item.UseSound = SoundID.Item23;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.IceDrillPro>();
-			item.shootSpeed = 40f;
+			Item.damage = 32;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 20;
+			Item.height = 12;
+			Item.useTime = 5;
+			Item.useAnimation = 25;
+			Item.channel = true;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.pick = 200;
+			Item.axe = 24;
+			Item.tileBoost++;
+			Item.useStyle = 5;
+			Item.knockBack = 6;
+			Item.value = Item.buyPrice(0, 20, 0, 0);
+			Item.rare = 7;
+			Item.UseSound = SoundID.Item23;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.IceDrillPro>();
+			Item.shootSpeed = 40f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ice Drill");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Ice Drill");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

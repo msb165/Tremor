@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class WarkeeBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Warkee");
-			Description.SetDefault("A warkee is following you");
+			// DisplayName.SetDefault("Warkee");
+			// Description.SetDefault("A warkee is following you");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

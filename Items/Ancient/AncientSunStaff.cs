@@ -10,30 +10,30 @@ namespace Tremor.Items.Ancient
 		public override void SetDefaults()
 		{
 
-			item.damage = 80;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 16;
-			item.width = 88;
-			item.height = 88;
-			item.useTime = 45;
-			item.useAnimation = 45;
-			item.useStyle = 5;
-			item.shoot = ModContent.ProjectileType<Projectiles.AncientSunPro>();
-			item.shootSpeed = 10f;
-			item.knockBack = 4;
-			item.value = 10000;
-			item.rare = 10;
-			item.UseSound = SoundID.Item75;
-			item.autoReuse = true;
-			item.useTurn = false;
-			Item.staff[item.type] = true;
+			Item.damage = 80;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 16;
+			Item.width = 88;
+			Item.height = 88;
+			Item.useTime = 45;
+			Item.useAnimation = 45;
+			Item.useStyle = 5;
+			Item.shoot = ModContent.ProjectileType<Projectiles.AncientSunPro>();
+			Item.shootSpeed = 10f;
+			Item.knockBack = 4;
+			Item.value = 10000;
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item75;
+			Item.autoReuse = true;
+			Item.useTurn = false;
+			Item.staff[Item.type] = true;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Sun Staff");
-			Tooltip.SetDefault("Summons an fiery exploding bolt");
+			// DisplayName.SetDefault("Ancient Sun Staff");
+			// Tooltip.SetDefault("Summons an fiery exploding bolt");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

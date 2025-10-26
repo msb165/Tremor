@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class SquareBlastBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Square Blast");
-			Description.SetDefault("Alchemical projectiles leave explosions in the shape of square");
+			// DisplayName.SetDefault("Square Blast");
+			// Description.SetDefault("Alchemical projectiles leave explosions in the shape of square");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class DayHunting:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Day Hunting");
-			Description.SetDefault("Increases all stats during daytime");
+			// DisplayName.SetDefault("Day Hunting");
+			// Description.SetDefault("Increases all stats during daytime");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

@@ -12,29 +12,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 246;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 12;
-			item.width = 42;
-			item.height = 30;
-			item.useTime = 40;
-			item.useAnimation = 40;
-			item.shoot = 632; //645
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 4f;
-			item.value = Item.sellPrice(0, 10, 0, 0);
-			item.rare = 0;
-			item.UseSound = SoundID.Item12;
+			Item.damage = 246;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 12;
+			Item.width = 42;
+			Item.height = 30;
+			Item.useTime = 40;
+			Item.useAnimation = 40;
+			Item.shoot = 632; //645
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 4f;
+			Item.value = Item.sellPrice(0, 10, 0, 0);
+			Item.rare = 0;
+			Item.UseSound = SoundID.Item12;
 
-			item.autoReuse = true;
-			item.shootSpeed = 25f;
+			Item.autoReuse = true;
+			Item.shootSpeed = 25f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Galaxon");
-			Tooltip.SetDefault("Shoots a cosmic beam");
+			// DisplayName.SetDefault("Galaxon");
+			// Tooltip.SetDefault("Shoots a cosmic beam");
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -45,11 +45,11 @@ namespace Tremor.Items
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			int i = Main.myPlayer;
-			float num72 = item.shootSpeed;
-			int num73 = item.damage;
-			float num74 = item.knockBack;
-			num74 = player.GetWeaponKnockback(item, num74);
-			player.itemTime = item.useTime;
+			float num72 = Item.shootSpeed;
+			int num73 = Item.damage;
+			float num74 = Item.knockBack;
+			num74 = player.GetWeaponKnockback(Item, num74);
+			player.itemTime = Item.useTime;
 			Vector2 vector2 = player.RotatedRelativePoint(player.MountedCenter, true);
 			Vector2 value = Vector2.UnitX.RotatedBy(player.fullRotation, default(Vector2));
 			Vector2 vector3 = Main.MouseWorld - vector2;

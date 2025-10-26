@@ -14,7 +14,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hellhound");
+			// DisplayName.SetDefault("Hellhound");
 			Main.npcFrameCount[npc.type] = 12;
 		}
 
@@ -115,29 +115,29 @@ namespace Tremor.NPCs
 				this.NewItem(ModContent.ItemType<FlamesofDespair>());
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 60; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 1.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 2.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 1.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/HellhoundGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/HellhoundGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/HellhoundGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/HellhoundGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/HellhoundGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("HellhoundGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("HellhoundGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("HellhoundGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("HellhoundGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("HellhoundGore3"), 1f);
 			}
 			else
 			{
 
-				for (int k = 0; k < damage / npc.lifeMax * 50.0; k++)
+				for (int k = 0; k < npc.damage / npc.lifeMax * 50.0; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 6, hitDirection, -2f, 0, default(Color), 1.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 6, hitDirection, -1f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 6, hit.HitDirection, -2f, 0, default(Color), 1.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 6, hit.HitDirection, -1f, 0, default(Color), 0.7f);
 				}
 			}
 		}

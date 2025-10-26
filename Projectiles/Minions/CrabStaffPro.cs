@@ -27,7 +27,7 @@ namespace Tremor.Projectiles.Minions
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crab Staff");
+			// DisplayName.SetDefault("Crab Staff");
 		}
 
 		public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough, ref Vector2 hitboxCenterFrac)

@@ -7,17 +7,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 30;
-			item.maxStack = 99;
-			item.value = 100;
-			item.rare = 4;
+			Item.width = 28;
+			Item.height = 30;
+			Item.maxStack = 99;
+			Item.value = 100;
+			Item.rare = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Rib");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("The Rib");
+			// Tooltip.SetDefault("");
 		}
 
 	}

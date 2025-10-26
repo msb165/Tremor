@@ -10,7 +10,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Woodling");
+			// DisplayName.SetDefault("Woodling");
 			Main.npcFrameCount[npc.type] = 10;
 		}
 		
@@ -39,18 +39,18 @@ namespace Tremor.NPCs
 				this.NewItem(ItemID.Wood, Main.rand.Next(1, 6));
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 74, 2.5f * hitDirection, -2.5f, 0, default(Color), 1f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 74, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 1f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WoodlingGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WoodlingGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WoodlingGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WoodlingGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WoodlingGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("WoodlingGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("WoodlingGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("WoodlingGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("WoodlingGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("WoodlingGore3"), 1f);
 
 			}
 		}

@@ -8,25 +8,25 @@ namespace Tremor.Items.Invar
 		public override void SetDefaults()
 		{
 
-			item.damage = 6;
-			item.DamageType = DamageClass.Melee;
-			item.width = 36;
-			item.height = 36;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.pick = 45;
-			item.useStyle = 1;
-			item.knockBack = 3;
-			item.value = 100;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 6;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 36;
+			Item.height = 36;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.pick = 45;
+			Item.useStyle = 1;
+			Item.knockBack = 3;
+			Item.value = 100;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Invar Pickaxe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Invar Pickaxe");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

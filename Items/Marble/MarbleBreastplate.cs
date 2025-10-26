@@ -10,17 +10,17 @@ namespace Tremor.Items.Marble
 		public override void SetDefaults()
 		{
 
-			item.defense = 6;
-			item.width = 22;
-			item.height = 30;
-			item.value = 5000;
-			item.rare = 1;
+			Item.defense = 6;
+			Item.width = 22;
+			Item.height = 30;
+			Item.value = 5000;
+			Item.rare = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Marble Breastplate");
-			Tooltip.SetDefault("10% increased throwing damage");
+			// DisplayName.SetDefault("Marble Breastplate");
+			// Tooltip.SetDefault("10% increased throwing damage");
 		}
 
 		public override void UpdateEquip(Player p)

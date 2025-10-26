@@ -10,29 +10,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 30;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 8;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 38;
-			item.useAnimation = 38;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = 18440;
-			item.rare = 4;
-			item.UseSound = SoundID.Item91;
-			item.autoReuse = true;
-			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
-			item.shoot = ModContent.ProjectileType<Projectiles.OrichalcumBolt>();
-			item.shootSpeed = 15f;
+			Item.damage = 30;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 8;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 38;
+			Item.useAnimation = 38;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = 18440;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item91;
+			Item.autoReuse = true;
+			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			Item.shoot = ModContent.ProjectileType<Projectiles.OrichalcumBolt>();
+			Item.shootSpeed = 15f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Orichalcum Staff");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Orichalcum Staff");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

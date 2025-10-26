@@ -7,17 +7,17 @@ namespace Tremor.Items.RedSteel
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 18;
-			item.maxStack = 99;
-			item.value = 50;
-			item.rare = 1;
+			Item.width = 24;
+			Item.height = 18;
+			Item.maxStack = 99;
+			Item.value = 50;
+			Item.rare = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Red Steel Armor Piece");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Red Steel Armor Piece");
+			// Tooltip.SetDefault("");
 		}
 
 	}

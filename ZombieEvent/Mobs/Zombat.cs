@@ -10,7 +10,7 @@ namespace Tremor.ZombieEvent.Mobs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Zombat");
+			// DisplayName.SetDefault("Zombat");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 
@@ -33,19 +33,19 @@ namespace Tremor.ZombieEvent.Mobs
 			// Todo: BannerItem = ModContent.ItemType<ZombatBanner>();
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
 			npc.lifeMax = npc.lifeMax * 1;
 			npc.damage = npc.damage * 1;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZombatGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZombatGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZombatGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("ZombatGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("ZombatGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("ZombatGore3"), 1f);
 			}
 		}
 

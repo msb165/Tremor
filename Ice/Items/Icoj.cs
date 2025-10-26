@@ -8,7 +8,7 @@ namespace Tremor.Ice.Items
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ice Proj");
+			// DisplayName.SetDefault("Ice Proj");
 		}
 		float rotationProj;
 		public override void SetDefaults()

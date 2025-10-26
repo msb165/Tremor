@@ -10,27 +10,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 42;
-			item.DamageType = DamageClass.Melee;
-			item.width = 48;
-			item.height = 48;
-			item.useTime = 45;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.knockBack = 3;
-			item.value = 6400;
-			item.rare = 4;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.useTurn = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.RavenFeather>();
-			item.shootSpeed = 8f;
+			Item.damage = 42;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 48;
+			Item.height = 48;
+			Item.useTime = 45;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.knockBack = 3;
+			Item.value = 6400;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
+			Item.useTurn = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.RavenFeather>();
+			Item.shootSpeed = 8f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Raven Claymore");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Raven Claymore");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

@@ -13,7 +13,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Heavy Zombie");
+			// DisplayName.SetDefault("Heavy Zombie");
 			Main.npcFrameCount[npc.type] = 3;
 		}
 
@@ -49,17 +49,17 @@ namespace Tremor.NPCs
 				npc.NewItem(ItemID.TungstenBar, Main.rand.Next(2, 4));
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/HeavyGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/HeavyGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/HeavyGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/HeavyGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("HeavyGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("HeavyGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("HeavyGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("HeavyGore3"), 1f);
 			}
 		}
 

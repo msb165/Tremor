@@ -11,18 +11,18 @@ namespace Tremor.Items.Coral
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 26;
+			Item.width = 24;
+			Item.height = 26;
 
-			item.value = 100;
-			item.rare = 1;
-			item.defense = 2;
+			Item.value = 100;
+			Item.rare = 1;
+			Item.defense = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Coral Helmet");
-			Tooltip.SetDefault("Allows you to swim");
+			// DisplayName.SetDefault("Coral Helmet");
+			// Tooltip.SetDefault("Allows you to swim");
 		}
 
 		public override void UpdateEquip(Player player)

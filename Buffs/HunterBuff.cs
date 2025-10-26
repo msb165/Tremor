@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class HunterBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Lil' Snatcher");
-			Description.SetDefault("The lil' snatcher will fight for you");
+			// DisplayName.SetDefault("Lil' Snatcher");
+			// Description.SetDefault("The lil' snatcher will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

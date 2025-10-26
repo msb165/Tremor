@@ -18,12 +18,12 @@ namespace Tremor
 		//TODO: [Skipped for 1.4] Fix glowmasks, replace these with multiple PlayerDrawLayer classes
 		public static void AddGlowMask(ModItem item, string texturePath = null)
 		{
-			//ItemGlowMask[item.Item.type]=item.Mod.Assets.Request<Texture2D>(texturePath??(item.Texture+"Glow"), AssetRequestMode.ImmediateLoad).Value;
+			//ItemGlowMask[Item.Item.type]=Item.Mod.Assets.Request<Texture2D>(texturePath??(Item.Texture+"Glow"), AssetRequestMode.ImmediateLoad).Value;
 		}
 
 		public static void AddGlowMask(ModItem item, EquipType equipType)
 		{
-			//ItemGlowMask[item.Item.type]=item.Mod.Assets.Request<Texture2D>($"{item.Texture}_{equipType}Glow", AssetRequestMode.ImmediateLoad).Value;
+			//ItemGlowMask[Item.Item.type]=Item.Mod.Assets.Request<Texture2D>($"{Item.Texture}_{equipType}Glow", AssetRequestMode.ImmediateLoad).Value;
 		}
 
 		//public override void ModifyDrawLayers(List<PlayerLayer> layers)

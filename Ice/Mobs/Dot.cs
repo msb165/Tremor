@@ -13,7 +13,7 @@ namespace Tremor.Ice.Mobs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Coldtrap");
+			// DisplayName.SetDefault("Coldtrap");
 		}
 
 		public override void SetDefaults()
@@ -33,7 +33,7 @@ namespace Tremor.Ice.Mobs
 			npc.value = Item.buyPrice(0, 0, 10, 5);
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
 			npc.lifeMax = npc.lifeMax * 1;
 			npc.damage = npc.damage * 1;
@@ -103,7 +103,7 @@ namespace Tremor.Ice.Mobs
 			}
 		}
 
-		public override void ModifyHitPlayer(Player target, ref int damage, ref bool crit)
+		public override void ModifyHitPlayer(Player target, ref Player.HurtModifiers modifiers)
 		{
 			if (Main.hardMode || Main.expertMode)
 			{

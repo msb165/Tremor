@@ -9,19 +9,19 @@ namespace Tremor.Invasion
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 20;
-			item.alpha = 100;
-			item.value = 110000;
-			item.rare = 10;
+			Item.width = 26;
+			Item.height = 20;
+			Item.alpha = 100;
+			Item.value = 110000;
+			Item.rare = 10;
 
-			item.accessory = true;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Second Hand");
-			Tooltip.SetDefault("Increases tile and wall placement range");
+			// DisplayName.SetDefault("Second Hand");
+			// Tooltip.SetDefault("Increases tile and wall placement range");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

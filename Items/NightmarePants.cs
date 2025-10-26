@@ -9,17 +9,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.defense = 22;
-			item.width = 22;
-			item.height = 18;
-			item.value = 25000;
-			item.rare = 10;
+			Item.defense = 22;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 25000;
+			Item.rare = 10;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nightmare Pants");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Nightmare Pants");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

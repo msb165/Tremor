@@ -11,30 +11,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 320;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 52;
-			item.height = 34;
-			item.useTime = 3;
-			item.useAnimation = 12;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 4f;
-			item.value = 600000;
-			item.rare = 0;
-			item.UseSound = SoundID.Item92;
-			item.autoReuse = false;
-			item.shootSpeed = 25f;
-			item.shoot = ModContent.ProjectileType<Projectiles.PandemoniumBullet>();
-			item.useAmmo = AmmoID.Bullet;
+			Item.damage = 320;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 52;
+			Item.height = 34;
+			Item.useTime = 3;
+			Item.useAnimation = 12;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 4f;
+			Item.value = 600000;
+			Item.rare = 0;
+			Item.UseSound = SoundID.Item92;
+			Item.autoReuse = false;
+			Item.shootSpeed = 25f;
+			Item.shoot = ModContent.ProjectileType<Projectiles.PandemoniumBullet>();
+			Item.useAmmo = AmmoID.Bullet;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pandemonium");
-			Tooltip.SetDefault("Shoots a burst of bullets\n" +
+			// DisplayName.SetDefault("Pandemonium");
+			/* Tooltip.SetDefault("Shoots a burst of bullets\n" +
 "Bullets explode into firebals\n" +
-"75% chance not to consume ammo");
+"75% chance not to consume ammo"); */
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

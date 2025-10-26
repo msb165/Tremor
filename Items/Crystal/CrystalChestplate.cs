@@ -11,18 +11,18 @@ namespace Tremor.Items.Crystal
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
+			Item.width = 22;
+			Item.height = 18;
 
-			item.value = 200;
-			item.rare = 4;
-			item.defense = 9;
+			Item.value = 200;
+			Item.rare = 4;
+			Item.defense = 9;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crystal Chestplate");
-			Tooltip.SetDefault("30% increased throwing velocity");
+			// DisplayName.SetDefault("Crystal Chestplate");
+			// Tooltip.SetDefault("30% increased throwing velocity");
 		}
 
 		public override void UpdateEquip(Player p)

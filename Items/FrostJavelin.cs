@@ -8,29 +8,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 12;
-			item.width = 14;
-			item.height = 84;
-			item.noUseGraphic = true;
-			item.DamageType = DamageClass.Throwing;
-			item.useTime = 30;
-			item.shoot = ModContent.ProjectileType<Projectiles.FrostJavelinPro>();
-			item.shootSpeed = 15f;
-			item.useAnimation = 30;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.value = 10;
-			item.rare = 1;
-			item.UseSound = SoundID.Item5;
-			item.autoReuse = false;
+			Item.damage = 12;
+			Item.width = 14;
+			Item.height = 84;
+			Item.noUseGraphic = true;
+			Item.DamageType = DamageClass.Throwing;
+			Item.useTime = 30;
+			Item.shoot = ModContent.ProjectileType<Projectiles.FrostJavelinPro>();
+			Item.shootSpeed = 15f;
+			Item.useAnimation = 30;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.value = 10;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item5;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frost Javelin");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Frost Javelin");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

@@ -23,7 +23,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Emerald Drill");
+			// DisplayName.SetDefault("Emerald Drill");
 
 		}
 

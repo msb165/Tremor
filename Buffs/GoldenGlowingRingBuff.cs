@@ -14,11 +14,11 @@ namespace Tremor.Buffs
 		const int Damage = 26;
 		const float KB = 1;
 
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Fungus Blades");
-			Description.SetDefault("Summons two blades to protect you");
+			// DisplayName.SetDefault("Fungus Blades");
+			// Description.SetDefault("Summons two blades to protect you");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

@@ -11,17 +11,17 @@ namespace Tremor.Items.Marble
 		public override void SetDefaults()
 		{
 
-			item.defense = 2;
-			item.width = 22;
-			item.height = 18;
-			item.value = 2500;
-			item.rare = 1;
+			Item.defense = 2;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 2500;
+			Item.rare = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Marble Leggings");
-			Tooltip.SetDefault("10% increased throwing critical strike chance");
+			// DisplayName.SetDefault("Marble Leggings");
+			// Tooltip.SetDefault("10% increased throwing critical strike chance");
 		}
 
 		public override void UpdateEquip(Player p)

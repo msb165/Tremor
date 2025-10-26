@@ -9,25 +9,25 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 16;
-			item.DamageType = DamageClass.Melee;
-			item.width = 48;
-			item.height = 48;
-			item.useTime = 30;
+			Item.damage = 16;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 48;
+			Item.height = 48;
+			Item.useTime = 30;
 
-			item.useAnimation = 30;
-			item.useStyle = 1;
-			item.knockBack = 9;
-			item.value = 100;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.useAnimation = 30;
+			Item.useStyle = 1;
+			Item.knockBack = 9;
+			Item.value = 100;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Rotten Bat");
-			Tooltip.SetDefault("'Sewn from pieces of flesh'");
+			// DisplayName.SetDefault("Rotten Bat");
+			// Tooltip.SetDefault("'Sewn from pieces of flesh'");
 		}
 
 		public override void AddRecipes()

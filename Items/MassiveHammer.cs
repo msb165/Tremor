@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 28;
-			item.DamageType = DamageClass.Melee;
-			item.width = 56;
-			item.height = 56;
-			item.useTime = 25;
-			item.useAnimation = 45;
-			item.useStyle = 1;
-			item.knockBack = 6;
-			item.value = 12000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 28;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 56;
+			Item.height = 56;
+			Item.useTime = 25;
+			Item.useAnimation = 45;
+			Item.useStyle = 1;
+			Item.knockBack = 6;
+			Item.value = 12000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Massive Hammer");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Massive Hammer");
+			// Tooltip.SetDefault("");
 		}
 
 	}

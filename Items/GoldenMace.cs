@@ -10,26 +10,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 34;
-			item.DamageType = DamageClass.Melee;
-			item.width = 50;
-			item.height = 52;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.shoot = ModContent.ProjectileType<Projectiles.GoldenMacePro>();
-			item.shootSpeed = 10f;
-			item.knockBack = 4;
-			item.value = 80000;
-			item.rare = 4;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 34;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 50;
+			Item.height = 52;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.shoot = ModContent.ProjectileType<Projectiles.GoldenMacePro>();
+			Item.shootSpeed = 10f;
+			Item.knockBack = 4;
+			Item.value = 80000;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Golden Mace");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Golden Mace");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

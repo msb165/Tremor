@@ -10,31 +10,31 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 65;
-			item.DamageType = DamageClass.Melee;
-			item.width = 35;
-			item.height = 20;
+			Item.damage = 65;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 35;
+			Item.height = 20;
 
-			item.useTime = 20;
-			item.useAnimation = 30;
-			item.useStyle = 1;
-			item.knockBack = 10;
-			item.value = 120000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.useTime = 20;
+			Item.useAnimation = 30;
+			Item.useStyle = 1;
+			Item.knockBack = 10;
+			Item.value = 120000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Prizmatic Fang");
-			Tooltip.SetDefault("Grants mana upon hitting an enemy");
+			// DisplayName.SetDefault("Prizmatic Fang");
+			// Tooltip.SetDefault("Grants mana upon hitting an enemy");
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
-			player.statMana += damage / 6;
-			player.ManaEffect(damage / 6);
+			player.statMana += damageDone / 6;
+			player.ManaEffect(damageDone / 6);
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

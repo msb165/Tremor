@@ -10,27 +10,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 15;
-			item.DamageType = DamageClass.Melee;
-			item.width = 32;
-			item.height = 32;
-			item.useTime = 11;
-			item.useAnimation = 9;
-			item.useStyle = 3;
-			item.knockBack = 2;
-			item.value = 800;
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 15;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 32;
+			Item.height = 32;
+			Item.useTime = 11;
+			Item.useAnimation = 9;
+			Item.useStyle = 3;
+			Item.knockBack = 2;
+			Item.value = 800;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Molten Lance");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Molten Lance");
+			// Tooltip.SetDefault("");
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(24, 60);
 		}

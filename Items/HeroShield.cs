@@ -11,20 +11,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 26;
-			item.value = 15000;
-			item.rare = 8;
-			item.accessory = true;
-			item.defense = 8;
+			Item.width = 26;
+			Item.height = 26;
+			Item.value = 15000;
+			Item.rare = 8;
+			Item.accessory = true;
+			Item.defense = 8;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hero Shield");
-			Tooltip.SetDefault("Grants immunity to most debuffs\n" +
+			// DisplayName.SetDefault("Hero Shield");
+			/* Tooltip.SetDefault("Grants immunity to most debuffs\n" +
 "Grants immunity to knockback and fire blocks\n" +
-"Prolonged after hit invicibility");
+"Prolonged after hit invicibility"); */
 		}
 
 		public override void UpdateEquip(Player p)

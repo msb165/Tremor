@@ -45,7 +45,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Motherboard Super Laser");
+			// DisplayName.SetDefault("Motherboard Super Laser");
 		}
 		
 		bool flag = true;
@@ -91,7 +91,7 @@ namespace Tremor.Projectiles
 			return base.OnTileCollide(oldVelocity);
 		}
 
-		public override void OnHitPlayer(Player target, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
 		{
 			PlayCollidingSound();
 		}
@@ -106,7 +106,7 @@ namespace Tremor.Projectiles
 			//Main.PlayTrackedSound(zapSound.WithPitchVariance(Main.rand.NextFloat()).WithVolume(Main.soundVolume * 1.5f));
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Vector2 unit = endPoint - projectile.Center;
 			float length = unit.Length();

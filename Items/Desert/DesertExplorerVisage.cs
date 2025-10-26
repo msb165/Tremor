@@ -9,17 +9,17 @@ namespace Tremor.Items.Desert
 	{
 		public override void SetDefaults()
 		{
-			item.width = 30;
-			item.height = 22;
-			item.value = 15000;
-			item.rare = 8;
-			item.defense = 11;
+			Item.width = 30;
+			Item.height = 22;
+			Item.value = 15000;
+			Item.rare = 8;
+			Item.defense = 11;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Desert Explorer Visage");
-			Tooltip.SetDefault("15% increased alchemical critical strike chance");
+			// DisplayName.SetDefault("Desert Explorer Visage");
+			// Tooltip.SetDefault("15% increased alchemical critical strike chance");
 			TremorGlowMask.AddGlowMask(this, EquipType.Head);
 		}
 

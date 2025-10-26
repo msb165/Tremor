@@ -7,24 +7,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 26;
-			item.maxStack = 99;
-			item.rare = 1;
-			item.createTile = ModContent.TileType<Tiles.GreenChristmasStocking>();
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.value = 100;
-			item.consumable = true;
+			Item.width = 22;
+			Item.height = 26;
+			Item.maxStack = 99;
+			Item.rare = 1;
+			Item.createTile = ModContent.TileType<Tiles.GreenChristmasStocking>();
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.value = 100;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Green Christmas Stocking");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Green Christmas Stocking");
+			// Tooltip.SetDefault("");
 		}
 
 	}

@@ -19,7 +19,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Zootaloo Rod Pro");
+			// DisplayName.SetDefault("Zootaloo Rod Pro");
 
 		}
 
@@ -66,7 +66,7 @@ namespace Tremor.Projectiles
 			return false;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Projectile.NewProjectile(null, projectile.Center, Vector2.Zero, ModContent.ProjectileType<Projectiles.SporeExplosion>(), projectile.damage, projectile.knockBack, projectile.owner);
 		}

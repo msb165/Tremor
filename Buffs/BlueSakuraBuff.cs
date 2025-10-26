@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class BlueSakuraBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Blue Wind");
-			Description.SetDefault("The blue wind will fight for you");
+			// DisplayName.SetDefault("Blue Wind");
+			// Description.SetDefault("The blue wind will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

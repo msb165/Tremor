@@ -34,7 +34,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Eye of Infinity");
+			// DisplayName.SetDefault("Eye of Infinity");
 
 		}
 
@@ -131,7 +131,7 @@ namespace Tremor.Projectiles
         }
         */
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Color color = new Color(250, 250, 250, 0);
 			for (int i = 0; i < OldPositionsLeft.Count; i++)

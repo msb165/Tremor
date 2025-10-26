@@ -11,18 +11,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 26;
+			Item.width = 22;
+			Item.height = 26;
 
-			item.value = 400;
-			item.rare = 4;
-			item.defense = 7;
+			Item.value = 400;
+			Item.rare = 4;
+			Item.defense = 7;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Orichalcum Visage");
-			Tooltip.SetDefault("20% increased alchemical damage");
+			// DisplayName.SetDefault("Orichalcum Visage");
+			// Tooltip.SetDefault("20% increased alchemical damage");
 		}
 
 		public override void UpdateEquip(Player player)

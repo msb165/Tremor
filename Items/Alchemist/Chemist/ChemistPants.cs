@@ -9,17 +9,17 @@ namespace Tremor.Items.Alchemist.Chemist
 	{
 		public override void SetDefaults()
 		{
-			item.width = 38;
-			item.height = 22;
-			item.value = 10000;
-			item.rare = 2;
-			item.defense = 2;
+			Item.width = 38;
+			Item.height = 22;
+			Item.value = 10000;
+			Item.rare = 2;
+			Item.defense = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chemist Pants");
-			Tooltip.SetDefault("6% increased alchemical damage");
+			// DisplayName.SetDefault("Chemist Pants");
+			// Tooltip.SetDefault("6% increased alchemical damage");
 		}
 
 		public override void UpdateEquip(Player player)

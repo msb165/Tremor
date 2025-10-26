@@ -9,7 +9,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Stinger");
+			// DisplayName.SetDefault("Nova Stinger");
 		}
 		public override void SetDefaults()
 		{
@@ -30,7 +30,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 			projectile.rotation = (float)Math.Atan2(projectile.velocity.Y, projectile.velocity.X) + 1.57f;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			for (int i = 0; i < 5; i++)
 			{
@@ -46,7 +46,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 			}
 		}
 
-		public override void OnHitPlayer(Player player, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
 		{
 			projectile.Kill();
 		}

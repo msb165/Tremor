@@ -8,22 +8,22 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 14;
-			item.height = 28;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.value = 150;
-			item.createTile = ModContent.TileType<Tiles.GlassDoorClosed>();
+			Item.width = 14;
+			Item.height = 28;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.value = 150;
+			Item.createTile = ModContent.TileType<Tiles.GlassDoorClosed>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Glass Door");
+			// DisplayName.SetDefault("Glass Door");
 		}
 
 		public override void AddRecipes()

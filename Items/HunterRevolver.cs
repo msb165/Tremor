@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 26;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 40;
-			item.height = 20;
-			item.useTime = 32;
-			item.useAnimation = 32;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 7;
-			item.value = 10000;
-			item.rare = 1;
-			item.UseSound = SoundID.Item36;
-			item.autoReuse = false;
-			item.shoot = 10;
-			item.shootSpeed = 5f;
-			item.useAmmo = AmmoID.Bullet;
+			Item.damage = 26;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 40;
+			Item.height = 20;
+			Item.useTime = 32;
+			Item.useAnimation = 32;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 7;
+			Item.value = 10000;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item36;
+			Item.autoReuse = false;
+			Item.shoot = 10;
+			Item.shootSpeed = 5f;
+			Item.useAmmo = AmmoID.Bullet;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hunter Revolver");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Hunter Revolver");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

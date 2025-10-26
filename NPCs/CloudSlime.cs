@@ -11,7 +11,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cloud Slime");
+			// DisplayName.SetDefault("Cloud Slime");
 			Main.npcFrameCount[npc.type] = 2;
 		}
 
@@ -34,28 +34,28 @@ namespace Tremor.NPCs
 			BannerItem = ModContent.ItemType<CloudSlimeBanner>();
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 60; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 15, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 15, 3.5f * hitDirection, -3.5f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 15, 4.5f * hitDirection, -4.5f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 15, 1.5f * hitDirection, -1.5f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 15, 0.5f * hitDirection, -0.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 15, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 15, 3.5f * hit.HitDirection, -3.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 15, 4.5f * hit.HitDirection, -4.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 15, 1.5f * hit.HitDirection, -1.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 15, 0.5f * hit.HitDirection, -0.5f, 0, default(Color), 0.7f);
 				}
 			}
 			else
 			{
-				for (int k = 0; k < damage / npc.lifeMax * 50.0; k++)
+				for (int k = 0; k < npc.damage / npc.lifeMax * 50.0; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 15, hitDirection, -2f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 15, hitDirection, -1f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 15, hitDirection, -1f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 15, hitDirection, -1f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 15, hitDirection, -2f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 15, hit.HitDirection, -2f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 15, hit.HitDirection, -1f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 15, hit.HitDirection, -1f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 15, hit.HitDirection, -1f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 15, hit.HitDirection, -2f, 0, default(Color), 0.7f);
 				}
 			}
 		}

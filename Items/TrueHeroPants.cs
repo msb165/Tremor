@@ -12,18 +12,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.value = 25000;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 25000;
 
-			item.rare = 0;
-			item.defense = 20;
+			Item.rare = 0;
+			Item.defense = 20;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("True Hero Pants");
-			Tooltip.SetDefault("Gives one of three true blades");
+			// DisplayName.SetDefault("True Hero Pants");
+			// Tooltip.SetDefault("Gives one of three true blades");
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

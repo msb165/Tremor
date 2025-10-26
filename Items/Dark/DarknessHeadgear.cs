@@ -12,19 +12,19 @@ namespace Tremor.Items.Dark
 		public override void SetDefaults()
 		{
 
-			item.defense = 22;
-			item.width = 26;
+			Item.defense = 22;
+			Item.width = 26;
 
-			item.height = 32;
-			item.value = 600000;
-			item.rare = 11;
+			Item.height = 32;
+			Item.value = 600000;
+			Item.rare = 11;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Headgear of Darkness");
-			Tooltip.SetDefault("Increases life regeneration\n" +
-"20% chance not consume ammo");
+			// DisplayName.SetDefault("Headgear of Darkness");
+			/* Tooltip.SetDefault("Increases life regeneration\n" +
+"20% chance not consume ammo"); */
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

@@ -24,7 +24,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dukado");
+			// DisplayName.SetDefault("Dukado");
 
 		}
 

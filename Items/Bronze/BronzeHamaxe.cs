@@ -8,26 +8,26 @@ namespace Tremor.Items.Bronze
 		public override void SetDefaults()
 		{
 
-			item.damage = 9;
-			item.DamageType = DamageClass.Melee;
-			item.width = 32;
-			item.height = 32;
-			item.useTime = 17;
-			item.useAnimation = 27;
-			item.axe = 9;
-			item.hammer = 45;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 600;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 9;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 32;
+			Item.height = 32;
+			Item.useTime = 17;
+			Item.useAnimation = 27;
+			Item.axe = 9;
+			Item.hammer = 45;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 600;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bronze Hamaxe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Bronze Hamaxe");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

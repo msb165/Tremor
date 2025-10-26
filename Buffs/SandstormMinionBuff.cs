@@ -8,10 +8,10 @@ namespace Tremor.Buffs
 		int MinionType = -1;
 		int MinionID = -1;
 
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Sandstorm Minion");
+			// DisplayName.SetDefault("Sandstorm Minion");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

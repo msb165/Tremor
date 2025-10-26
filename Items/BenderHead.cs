@@ -10,17 +10,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 32;
-			item.height = 26;
-			item.value = 10000;
-			item.rare = 5;
-			item.vanity = true;
+			Item.width = 32;
+			Item.height = 26;
+			Item.value = 10000;
+			Item.rare = 5;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bender Head");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Bender Head");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

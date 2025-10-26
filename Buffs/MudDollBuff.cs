@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class MudDollBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Mud Buddy");
-			Description.SetDefault("A very muddy friend.");
+			// DisplayName.SetDefault("Mud Buddy");
+			// Description.SetDefault("A very muddy friend.");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

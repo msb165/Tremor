@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
@@ -18,8 +19,8 @@ namespace Tremor.Tiles
         TileObjectData.addTile(Type);
         AnimationFrameHeight = 36;
         AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
-		ModTranslation name = CreateMapEntryName();
-		name.SetDefault("Devil Forge");		
+		LocalizedText name = CreateMapEntryName();
+		// name.SetDefault("Devil Forge");		
 	AddMapEntry(new Color(179, 146, 113), name);
     }
 

@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 18;
-			item.DamageType = DamageClass.Melee;
-			item.width = 48;
-			item.height = 48;
-			item.useTime = 35;
-			item.useAnimation = 35;
-			item.useStyle = 1;
-			item.knockBack = 7;
-			item.value = 2740;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 18;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 48;
+			Item.height = 48;
+			Item.useTime = 35;
+			Item.useAnimation = 35;
+			Item.useStyle = 1;
+			Item.knockBack = 7;
+			Item.value = 2740;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Shark Tooth Sword");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Shark Tooth Sword");
+			// Tooltip.SetDefault("");
 		}
 
 	}

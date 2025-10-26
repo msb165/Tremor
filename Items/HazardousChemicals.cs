@@ -7,19 +7,19 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 10000;
-			item.rare = 3;
-			item.maxStack = 1;
-			item.accessory = true;
+			Item.value = 10000;
+			Item.rare = 3;
+			Item.maxStack = 1;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hazardous Chemicals");
-			Tooltip.SetDefault("5% increased alchemical damage");
+			// DisplayName.SetDefault("Hazardous Chemicals");
+			// Tooltip.SetDefault("5% increased alchemical damage");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

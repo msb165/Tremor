@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class WhiteSakuraBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("White Wind");
-			Description.SetDefault("The white wind will fight for you");
+			// DisplayName.SetDefault("White Wind");
+			// Description.SetDefault("The white wind will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

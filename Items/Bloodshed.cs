@@ -8,21 +8,21 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 10000;
-			item.rare = 3;
-			item.defense = 6;
-			item.accessory = true;
+			Item.value = 10000;
+			Item.rare = 3;
+			Item.defense = 6;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bloodshed");
-			Tooltip.SetDefault("8% increased melee, magic and minion damage\n" +
+			// DisplayName.SetDefault("Bloodshed");
+			/* Tooltip.SetDefault("8% increased melee, magic and minion damage\n" +
 "Increases maximum mana and health by 60\n" +
-"10% increased melee and magic critical strike chance");
+"10% increased melee and magic critical strike chance"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

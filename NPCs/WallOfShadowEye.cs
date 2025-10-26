@@ -10,7 +10,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Wall of Shadows");
+			// DisplayName.SetDefault("Wall of Shadows");
 			NPCID.Sets.ShouldBeCountedAsBoss[npc.type] = true;//was TechnicallyABoss
 		}
 
@@ -36,9 +36,9 @@ namespace Tremor.NPCs
 			Music = MusicID.Boss2;
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
-			npc.lifeMax = (int)(npc.lifeMax * 0.625f * bossLifeScale);
+			npc.lifeMax = (int)(npc.lifeMax * 0.625f * balance);
 			npc.damage = (int)(npc.damage * 0.6f);
 		}
 

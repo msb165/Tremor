@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class CrabBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Little Crab");
-			Description.SetDefault("A little crab will fight for you");
+			// DisplayName.SetDefault("Little Crab");
+			// Description.SetDefault("A little crab will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

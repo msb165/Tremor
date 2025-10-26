@@ -20,7 +20,7 @@ namespace Tremor.ZombieEvent.Items
 			return Color.White;
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.rand.NextBool(6))
 			{
@@ -28,7 +28,7 @@ namespace Tremor.ZombieEvent.Items
 			}
 		}
 
-		public override void OnHitPvp(Player target, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
 		{
 			if (Main.rand.NextBool(6))
 			{

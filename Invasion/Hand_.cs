@@ -10,7 +10,7 @@ namespace Tremor.Invasion
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paradox Titan Hand");
+			// DisplayName.SetDefault("Paradox Titan Hand");
 		}
 
 		public override void SetDefaults()
@@ -29,7 +29,7 @@ namespace Tremor.Invasion
 			npc.value = Item.buyPrice(0, 0, 5, 0);
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{

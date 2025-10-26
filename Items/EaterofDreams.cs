@@ -10,28 +10,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 99;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 76;
-			item.height = 36;
-			item.useTime = 10;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 2f;
-			item.UseSound = SoundID.Item34;
-			item.value = 1253000;
-			item.rare = 11;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.EaterofDreamsPro>();
-			item.shootSpeed = 7.5f;
-			item.useAmmo = AmmoID.Gel;
+			Item.damage = 99;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 76;
+			Item.height = 36;
+			Item.useTime = 10;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 2f;
+			Item.UseSound = SoundID.Item34;
+			Item.value = 1253000;
+			Item.rare = 11;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.EaterofDreamsPro>();
+			Item.shootSpeed = 7.5f;
+			Item.useAmmo = AmmoID.Gel;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Eater of Dreams");
-			Tooltip.SetDefault("Consumes gel as ammo");
+			// DisplayName.SetDefault("Eater of Dreams");
+			// Tooltip.SetDefault("Consumes gel as ammo");
 		}
 
 		public override void AddRecipes()

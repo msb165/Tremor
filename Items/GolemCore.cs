@@ -9,11 +9,11 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.Size = new Vector2(38);
-			item.value = 100000;
-			item.rare = 8;
-			ItemID.Sets.ItemNoGravity[item.type] = true;
-			ItemID.Sets.ItemIconPulse[item.type] = true;
+			Item.Size = new Vector2(38);
+			Item.value = 100000;
+			Item.rare = 8;
+			ItemID.Sets.ItemNoGravity[Item.type] = true;
+			ItemID.Sets.ItemIconPulse[Item.type] = true;
 		}
 
 		public override void GrabRange(Player player, ref int grabRange)
@@ -23,8 +23,8 @@ namespace Tremor.Items
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Golem Core");
-			Tooltip.SetDefault("The ancient and mysterious mechanism");
+			// DisplayName.SetDefault("Golem Core");
+			// Tooltip.SetDefault("The ancient and mysterious mechanism");
 		}
 
 	}

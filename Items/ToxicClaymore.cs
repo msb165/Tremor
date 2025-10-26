@@ -9,24 +9,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 26;
-			item.DamageType = DamageClass.Melee;
-			item.width = 40;
-			item.height = 52;
-			item.useTime = 21;
-			item.useAnimation = 21;
-			item.useStyle = 1;
-			item.knockBack = 6;
-			item.value = 660;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 26;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 40;
+			Item.height = 52;
+			Item.useTime = 21;
+			Item.useAnimation = 21;
+			Item.useStyle = 1;
+			Item.knockBack = 6;
+			Item.value = 660;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Toxic Claymore");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Toxic Claymore");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()
@@ -40,7 +40,7 @@ namespace Tremor.Items
 			recipe.AddRecipe();
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.rand.NextBool(3))
 			{

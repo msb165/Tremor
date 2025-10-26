@@ -12,20 +12,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 22;
-			item.rare = ItemRarityID.Green;
-			item.accessory = true;
-			item.value = 50000;
+			Item.width = 22;
+			Item.height = 22;
+			Item.rare = ItemRarityID.Green;
+			Item.accessory = true;
+			Item.value = 50000;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sorcerer Focus");
-			Tooltip.SetDefault("6% increased magic damage\n" +
+			// DisplayName.SetDefault("Sorcerer Focus");
+			/* Tooltip.SetDefault("6% increased magic damage\n" +
 "Increases magic critical strike chance by 12\n" +
-"Increases maximum mana by 40");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 4));
+"Increases maximum mana by 40"); */
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(6, 4));
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

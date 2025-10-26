@@ -8,24 +8,24 @@ namespace Tremor.Items.Bone
 		public override void SetDefaults()
 		{
 
-			item.width = 48;
-			item.height = 64;
-			item.maxStack = 999;
-			item.value = 100;
-			item.rare = 1;
-			item.createTile = ModContent.TileType<Tiles.BoneThrone>();
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
+			Item.width = 48;
+			Item.height = 64;
+			Item.maxStack = 999;
+			Item.value = 100;
+			Item.rare = 1;
+			Item.createTile = ModContent.TileType<Tiles.BoneThrone>();
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bone Throne");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Bone Throne");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

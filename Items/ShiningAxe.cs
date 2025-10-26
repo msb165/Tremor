@@ -8,37 +8,37 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.autoReuse = true;
-			item.useStyle = 1;
+			Item.autoReuse = true;
+			Item.useStyle = 1;
 
-			item.shootSpeed = 8f;
-			item.shoot = ModContent.ProjectileType<Projectiles.ShiningAxePro>();
-			item.damage = 234;
-			item.width = 18;
-			item.height = 20;
-			item.UseSound = SoundID.Item1;
-			item.useAnimation = 14;
-			item.useTime = 17;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.value = 6000;
+			Item.shootSpeed = 8f;
+			Item.shoot = ModContent.ProjectileType<Projectiles.ShiningAxePro>();
+			Item.damage = 234;
+			Item.width = 18;
+			Item.height = 20;
+			Item.UseSound = SoundID.Item1;
+			Item.useAnimation = 14;
+			Item.useTime = 17;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.value = 6000;
 
-			item.knockBack = 4f;
-			item.DamageType = DamageClass.Melee;
-			item.rare = 3;
+			Item.knockBack = 4f;
+			Item.DamageType = DamageClass.Melee;
+			Item.rare = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Shining Axe");
-			Tooltip.SetDefault("Magical throwing axe!");
+			// DisplayName.SetDefault("Shining Axe");
+			// Tooltip.SetDefault("Magical throwing axe!");
 		}
 
 		public override bool CanUseItem(Player player)
 		{
 			for (int i = 0; i < 1000; ++i)
 			{
-				if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == item.shoot)
+				if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == Item.shoot)
 				{
 					return false;
 				}

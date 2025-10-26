@@ -10,18 +10,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 18;
-			item.height = 28;
+			Item.width = 18;
+			Item.height = 28;
 
-			item.value = 9000;
-			item.rare = 1;
-			item.defense = 4;
+			Item.value = 9000;
+			Item.rare = 1;
+			Item.defense = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Meteor Mask");
-			Tooltip.SetDefault("Increases magic critical strike chance by 9");
+			// DisplayName.SetDefault("Meteor Mask");
+			// Tooltip.SetDefault("Increases magic critical strike chance by 9");
 		}
 
 		public override void UpdateEquip(Player player)

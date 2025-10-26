@@ -20,11 +20,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Raven Feather");
+			// DisplayName.SetDefault("Raven Feather");
 
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			for (int k = 0; k < 5; k++)
 			{

@@ -8,18 +8,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 18;
-			item.height = 22;
+			Item.width = 18;
+			Item.height = 22;
 
-			item.value = 10000;
-			item.rare = 2;
-			item.vanity = true;
+			Item.value = 10000;
+			Item.rare = 2;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Gray Knight Helmet");
-			Tooltip.SetDefault("Can be colored with gems");
+			// DisplayName.SetDefault("Gray Knight Helmet");
+			// Tooltip.SetDefault("Can be colored with gems");
 		}
 
 	}

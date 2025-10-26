@@ -13,7 +13,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Goblin Bomber");
+			// DisplayName.SetDefault("Goblin Bomber");
 			Main.npcFrameCount[npc.type] = 3;
 		}
 
@@ -287,14 +287,14 @@ namespace Tremor.NPCs
 			npc.spriteDirection = npc.direction;
 		}
 
-		public override void OnHitPlayer(Player player, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
 		{
 			npc.life = -1;
-			HitEffect(-1, 0);
+			npc.HitEffect(-1, 0);
 			npc.checkDead();
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{

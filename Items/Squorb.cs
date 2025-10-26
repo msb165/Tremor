@@ -10,21 +10,21 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 22;
-			item.maxStack = 999;
-			item.value = 100;
-			item.rare = 10;
-			ItemID.Sets.ItemNoGravity[item.type] = true;
-			ItemID.Sets.AnimatesAsSoul[item.type] = true;
-			ItemID.Sets.ItemIconPulse[item.type] = true;
+			Item.width = 22;
+			Item.height = 22;
+			Item.maxStack = 999;
+			Item.value = 100;
+			Item.rare = 10;
+			ItemID.Sets.ItemNoGravity[Item.type] = true;
+			ItemID.Sets.AnimatesAsSoul[Item.type] = true;
+			ItemID.Sets.ItemIconPulse[Item.type] = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Squorb");
-			Tooltip.SetDefault("");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 4));
+			// DisplayName.SetDefault("Squorb");
+			// Tooltip.SetDefault("");
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 4));
 		}
 
 	}

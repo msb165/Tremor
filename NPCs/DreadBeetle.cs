@@ -11,7 +11,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dread Beetle");
+			// DisplayName.SetDefault("Dread Beetle");
 			Main.npcFrameCount[npc.type] = 6;
 		}
 
@@ -41,11 +41,11 @@ namespace Tremor.NPCs
 				npc.NewItem(ModContent.ItemType<Doomstone>());
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 				for(int i = 0; i < 2; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/DreadGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"DreadGore{i+1}"), 1f);
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)

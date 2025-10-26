@@ -20,7 +20,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Golden Whale");
+			// DisplayName.SetDefault("Golden Whale");
 
 		}
 

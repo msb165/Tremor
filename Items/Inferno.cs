@@ -10,27 +10,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 520;
-			item.width = 62;
-			item.height = 62;
-			item.noUseGraphic = true;
-			item.DamageType = DamageClass.Melee;
-			item.useTime = 20;
-			item.shoot = ModContent.ProjectileType<Projectiles.InfernoPro>();
-			item.shootSpeed = 12f;
-			item.useAnimation = 20;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 600000;
-			item.rare = 0;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 520;
+			Item.width = 62;
+			Item.height = 62;
+			Item.noUseGraphic = true;
+			Item.DamageType = DamageClass.Melee;
+			Item.useTime = 20;
+			Item.shoot = ModContent.ProjectileType<Projectiles.InfernoPro>();
+			Item.shootSpeed = 12f;
+			Item.useAnimation = 20;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 600000;
+			Item.rare = 0;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Inferno");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Inferno");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

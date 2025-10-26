@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 15;
-			//item.melee = false;
-			item.DamageType = DamageClass.Magic;
-			item.width = 50;
-			item.height = 55;
-			item.useTime = 14;
-			item.mana = 7;
-			item.useAnimation = 14;
-			item.useStyle = 5;
-			item.shoot = ModContent.ProjectileType<Projectiles.LightningTome>();
-			item.shootSpeed = 12f;
-			item.knockBack = 4;
-			item.value = 50000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item9;
-			item.autoReuse = false;
+			Item.damage = 15;
+			//Item.melee = false;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 50;
+			Item.height = 55;
+			Item.useTime = 14;
+			Item.mana = 7;
+			Item.useAnimation = 14;
+			Item.useStyle = 5;
+			Item.shoot = ModContent.ProjectileType<Projectiles.LightningTome>();
+			Item.shootSpeed = 12f;
+			Item.knockBack = 4;
+			Item.value = 50000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item9;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Lightning Tome");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Lightning Tome");
+			// Tooltip.SetDefault("");
 		}
 
 	}

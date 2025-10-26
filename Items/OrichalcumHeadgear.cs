@@ -11,18 +11,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 26;
+			Item.width = 22;
+			Item.height = 26;
 
-			item.value = 400;
-			item.rare = 4;
-			item.defense = 6;
+			Item.value = 400;
+			Item.rare = 4;
+			Item.defense = 6;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Orichalcum Headgear");
-			Tooltip.SetDefault("20% increased minion damage");
+			// DisplayName.SetDefault("Orichalcum Headgear");
+			// Tooltip.SetDefault("20% increased minion damage");
 		}
 
 		public override void UpdateEquip(Player player)

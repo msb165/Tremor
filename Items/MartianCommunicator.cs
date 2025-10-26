@@ -12,22 +12,22 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 34;
-			item.height = 30;
-			item.maxStack = 20;
+			Item.width = 34;
+			Item.height = 30;
+			Item.maxStack = 20;
 
-			item.value = 100;
-			item.rare = 1;
-			item.useAnimation = 30;
-			item.useTime = 30;
-			item.useStyle = 4;
-			item.consumable = true;
+			Item.value = 100;
+			Item.rare = 1;
+			Item.useAnimation = 30;
+			Item.useTime = 30;
+			Item.useStyle = 4;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Martian Communicator");
-			Tooltip.SetDefault("Starts the Martian Madness");
+			// DisplayName.SetDefault("Martian Communicator");
+			// Tooltip.SetDefault("Starts the Martian Madness");
 		}
 
 		public override bool CanUseItem(Player player)

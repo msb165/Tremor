@@ -7,17 +7,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 18;
-			item.height = 32;
-			item.maxStack = 99;
-			item.value = 3000;
-			item.rare = 4;
+			Item.width = 18;
+			Item.height = 32;
+			Item.maxStack = 99;
+			Item.value = 3000;
+			Item.rare = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ruin Key");
-			Tooltip.SetDefault("Opens Ruin Chest once");
+			// DisplayName.SetDefault("Ruin Key");
+			// Tooltip.SetDefault("Opens Ruin Chest once");
 		}
 
 	}

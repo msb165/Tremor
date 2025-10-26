@@ -10,30 +10,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 190;
-			item.width = 64;
-			item.height = 28;
-			item.DamageType = DamageClass.Ranged;
-			item.useTime = 15;
-			item.shoot = 207;
+			Item.damage = 190;
+			Item.width = 64;
+			Item.height = 28;
+			Item.DamageType = DamageClass.Ranged;
+			Item.useTime = 15;
+			Item.shoot = 207;
 
-			item.shootSpeed = 20f;
-			item.useAnimation = 15;
-			item.useStyle = 5;
-			item.knockBack = 5;
-			item.value = 1000000;
-			item.useAmmo = AmmoID.Bullet;
-			item.rare = 11;
-			item.crit = 7;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = true;
+			Item.shootSpeed = 20f;
+			Item.useAnimation = 15;
+			Item.useStyle = 5;
+			Item.knockBack = 5;
+			Item.value = 1000000;
+			Item.useAmmo = AmmoID.Bullet;
+			Item.rare = 11;
+			Item.crit = 7;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cosmic Assault Rifle");
-			Tooltip.SetDefault("Uses bullets as ammo\n" +
-"Shoots homing bullets");
+			// DisplayName.SetDefault("Cosmic Assault Rifle");
+			/* Tooltip.SetDefault("Uses bullets as ammo\n" +
+"Shoots homing bullets"); */
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

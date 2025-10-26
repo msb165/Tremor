@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class VortexBeeBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vortex Bee");
-			Description.SetDefault("A vortex bee is following you");
+			// DisplayName.SetDefault("Vortex Bee");
+			// Description.SetDefault("A vortex bee is following you");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

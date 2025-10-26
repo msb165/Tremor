@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Tremor.Tiles;
@@ -17,10 +18,10 @@ namespace Tremor.ZombieEvent.Tiles
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
 			TileObjectData.newTile.CoordinateHeights = new[]{ 16, 16 };
 			TileObjectData.addTile(Type);
-		ModTranslation name = CreateMapEntryName();
-		name.SetDefault("Necromaniac Workbench");			
+		LocalizedText name = CreateMapEntryName();
+		// name.SetDefault("Necromaniac Workbench");			
 			AddMapEntry(new Color(0, 77, 255), name);
-                       adjTiles = new[]{ModContent.TileType<FleshWorkstationTile>()};
+                       AdjTiles = new[]{ModContent.TileType<FleshWorkstationTile>()};
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)

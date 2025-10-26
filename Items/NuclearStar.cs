@@ -20,8 +20,8 @@ namespace Tremor.Items
 			for (i = 0; i < 4; i++)
 			{
 				offsetAngle = (startAngle + deltaAngle * (i + i * i) / 2f) + 32f * i;
-				Projectile.NewProjectile(null, position.X, position.Y, (float)(Math.Sin(offsetAngle) * 5f), (float)(Math.Cos(offsetAngle) * 5f), item.shoot, damage, knockBack, item.playerIndexTheItemIsReservedFor);
-				Projectile.NewProjectile(null, position.X, position.Y, (float)(-Math.Sin(offsetAngle) * 5f), (float)(-Math.Cos(offsetAngle) * 5f), item.shoot, damage, knockBack, item.playerIndexTheItemIsReservedFor);
+				Projectile.NewProjectile(null, position.X, position.Y, (float)(Math.Sin(offsetAngle) * 5f), (float)(Math.Cos(offsetAngle) * 5f), Item.shoot, damage, knockBack, Item.playerIndexTheItemIsReservedFor);
+				Projectile.NewProjectile(null, position.X, position.Y, (float)(-Math.Sin(offsetAngle) * 5f), (float)(-Math.Cos(offsetAngle) * 5f), Item.shoot, damage, knockBack, Item.playerIndexTheItemIsReservedFor);
 			}
 			return false;
 		}
@@ -29,29 +29,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 500;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 50;
-			item.useTime = 60;
-			item.useAnimation = 60;
-			item.knockBack = 5;
-			item.value = 2500000;
-			item.rare = 9;
-			item.UseSound = SoundID.Item84;
-			item.autoReuse = true;
-			item.width = 28;
-			item.height = 30;
-			item.useStyle = 5;
+			Item.damage = 500;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 50;
+			Item.useTime = 60;
+			Item.useAnimation = 60;
+			Item.knockBack = 5;
+			Item.value = 2500000;
+			Item.rare = 9;
+			Item.UseSound = SoundID.Item84;
+			Item.autoReuse = true;
+			Item.width = 28;
+			Item.height = 30;
+			Item.useStyle = 5;
 
-			item.noMelee = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.NuclearStarPro>();
-			item.shootSpeed = 20f;
+			Item.noMelee = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.NuclearStarPro>();
+			Item.shootSpeed = 20f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nuclear Star");
-			Tooltip.SetDefault("Creates nuclear beams.");
+			// DisplayName.SetDefault("Nuclear Star");
+			// Tooltip.SetDefault("Creates nuclear beams.");
 		}
 
 		public override void AddRecipes()

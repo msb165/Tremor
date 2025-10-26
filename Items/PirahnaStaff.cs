@@ -9,31 +9,31 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.Starfury);
+			Item.CloneDefaults(ItemID.Starfury);
 
-			item.damage = 18;
-			//item.melee = false;
-			item.DamageType = DamageClass.Magic;
-			item.width = 50;
-			item.height = 55;
-			item.useTime = 20;
-			item.mana = 8;
+			Item.damage = 18;
+			//Item.melee = false;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 50;
+			Item.height = 55;
+			Item.useTime = 20;
+			Item.mana = 8;
 
-			item.useAnimation = 50;
-			item.useStyle = 5;
-			item.shootSpeed = 10f;
-			Item.staff[item.type] = true;
-			item.knockBack = 3;
-			item.value = 15000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item9;
-			item.autoReuse = true;
+			Item.useAnimation = 50;
+			Item.useStyle = 5;
+			Item.shootSpeed = 10f;
+			Item.staff[Item.type] = true;
+			Item.knockBack = 3;
+			Item.value = 15000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item9;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Piranha Staff");
-			Tooltip.SetDefault("Causes pirahnas to fall from the sky");
+			// DisplayName.SetDefault("Piranha Staff");
+			// Tooltip.SetDefault("Causes pirahnas to fall from the sky");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

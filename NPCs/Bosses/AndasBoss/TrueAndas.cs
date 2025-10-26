@@ -14,7 +14,7 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("True Andas");
+			// DisplayName.SetDefault("True Andas");
 		}
 		public override void SetDefaults()
 		{

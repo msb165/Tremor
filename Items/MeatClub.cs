@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 52;
-			item.DamageType = DamageClass.Melee;
-			item.width = 44;
-			item.height = 44;
-			item.useTime = 26;
-			item.useAnimation = 26;
-			item.useStyle = 1;
-			item.knockBack = 9;
-			item.value = 60000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 52;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 44;
+			Item.height = 44;
+			Item.useTime = 26;
+			Item.useAnimation = 26;
+			Item.useStyle = 1;
+			Item.knockBack = 9;
+			Item.value = 60000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Meat Club");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Meat Club");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

@@ -34,7 +34,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Steampunk Probe");
+			// DisplayName.SetDefault("Steampunk Probe");
 
 		}
 

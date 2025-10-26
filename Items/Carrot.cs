@@ -7,24 +7,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 15;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 22;
-			item.height = 22;
-			item.maxStack = 999;
+			Item.damage = 15;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 22;
+			Item.height = 22;
+			Item.maxStack = 999;
 
-			item.consumable = true;
-			item.knockBack = 1.5f;
-			item.rare = 0;
-			item.shoot = ModContent.ProjectileType<Projectiles.Carrot>();
-			item.ammo = item.type;
-			item.value = 15;
+			Item.consumable = true;
+			Item.knockBack = 1.5f;
+			Item.rare = 0;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Carrot>();
+			Item.ammo = Item.type;
+			Item.value = 15;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Carrot");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Carrot");
+			// Tooltip.SetDefault("");
 		}
 
 	}

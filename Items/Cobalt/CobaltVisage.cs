@@ -11,18 +11,18 @@ namespace Tremor.Items.Cobalt
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 22;
+			Item.width = 26;
+			Item.height = 22;
 
-			item.value = 400;
-			item.rare = 4;
-			item.defense = 4;
+			Item.value = 400;
+			Item.rare = 4;
+			Item.defense = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cobalt Visage");
-			Tooltip.SetDefault("18% increased alchemical damage");
+			// DisplayName.SetDefault("Cobalt Visage");
+			// Tooltip.SetDefault("18% increased alchemical damage");
 		}
 
 		public override void UpdateEquip(Player player)

@@ -16,7 +16,7 @@ namespace Tremor.Tiles
 			Main.tileLighted[Type] = true;
 			DustType = DustID.Wraith;
 			AddMapEntry(new Color(0, 0, 0));
-			ItemDrop = ModContent.ItemType<Charcoal>();
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<Charcoal>();
 		}
 		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
 		{

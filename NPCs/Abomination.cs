@@ -9,7 +9,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Abomination");
+			// DisplayName.SetDefault("Abomination");
 			Main.npcFrameCount[npc.type] = 9;
 		}
 
@@ -32,7 +32,7 @@ namespace Tremor.NPCs
 			BannerItem = ModContent.ItemType<AbominationBanner>();
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (Main.netMode != 1 && npc.life <= 0)
 				NPC.NewNPC(null, (int)npc.position.X - 22, (int)npc.position.Y + 55, NPCID.Skeleton);

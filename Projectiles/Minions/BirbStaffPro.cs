@@ -27,7 +27,7 @@ namespace Tremor.Projectiles.Minions
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Birb Staff");
+      // DisplayName.SetDefault("Birb Staff");
        
     }
 

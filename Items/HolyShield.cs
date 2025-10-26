@@ -10,19 +10,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 26;
-			item.value = 12000;
+			Item.width = 26;
+			Item.height = 26;
+			Item.value = 12000;
 
-			item.rare = 7;
-			item.accessory = true;
-			item.defense = 6;
+			Item.rare = 7;
+			Item.accessory = true;
+			Item.defense = 6;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Holy Shield");
-			Tooltip.SetDefault("Prolonged after hit invincibility");
+			// DisplayName.SetDefault("Holy Shield");
+			// Tooltip.SetDefault("Prolonged after hit invincibility");
 		}
 
 		public override void UpdateEquip(Player player)

@@ -10,26 +10,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 310;
-			item.DamageType = DamageClass.Melee;
-			item.width = 72;
-			item.height = 84;
-			item.useTime = 35;
-			item.useAnimation = 35;
-			item.useStyle = 1;
-			item.knockBack = 7;
-			item.shoot = 524;
-			item.shootSpeed = 17f;
-			item.value = 12500;
-			item.rare = 11;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 310;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 72;
+			Item.height = 84;
+			Item.useTime = 35;
+			Item.useAnimation = 35;
+			Item.useStyle = 1;
+			Item.knockBack = 7;
+			Item.shoot = 524;
+			Item.shootSpeed = 17f;
+			Item.value = 12500;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Divine Gift");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Divine Gift");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

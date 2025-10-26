@@ -20,7 +20,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Sun Pro");
+			// DisplayName.SetDefault("Ancient Sun Pro");
 
 		}
 
@@ -67,12 +67,12 @@ namespace Tremor.Projectiles
 			return false;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.AncientSunExplosionPro>(), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(BuffID.OnFire, 750);
 		}

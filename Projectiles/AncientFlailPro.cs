@@ -22,11 +22,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Flail");
+			// DisplayName.SetDefault("Ancient Flail");
 
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Texture2D texture = Mod.GetTexture("Tremor/Projectiles/AncientFlail_Chain");
 
@@ -63,7 +63,7 @@ namespace Tremor.Projectiles
 			return true;
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.rand.NextBool(5))
 			{

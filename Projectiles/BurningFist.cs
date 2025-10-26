@@ -20,11 +20,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Burning Fist");
+			// DisplayName.SetDefault("Burning Fist");
 
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Player player = Main.player[projectile.owner];
 			if (projectile.owner == Main.myPlayer)

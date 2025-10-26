@@ -9,27 +9,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 72;
-			item.DamageType = DamageClass.Melee;
-			item.width = 46;
-			item.height = 48;
-			item.useTime = 44;
-			item.useAnimation = 44;
-			item.useStyle = 1;
-			item.knockBack = 3;
-			item.shoot = ModContent.ProjectileType<Projectiles.VoidBladePro>();
-			item.shootSpeed = 12f;
-			item.value = 12400;
-			item.rare = 11;
-			item.UseSound = SoundID.Item15;
-			item.autoReuse = false;
-			item.useTurn = false;
+			Item.damage = 72;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 46;
+			Item.height = 48;
+			Item.useTime = 44;
+			Item.useAnimation = 44;
+			Item.useStyle = 1;
+			Item.knockBack = 3;
+			Item.shoot = ModContent.ProjectileType<Projectiles.VoidBladePro>();
+			Item.shootSpeed = 12f;
+			Item.value = 12400;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item15;
+			Item.autoReuse = false;
+			Item.useTurn = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Void Blade");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Void Blade");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

@@ -11,18 +11,18 @@ namespace Tremor.Items.Fungus
 		public override void SetDefaults()
 		{
 
-			item.width = 18;
-			item.height = 18;
-			item.value = 40000;
+			Item.width = 18;
+			Item.height = 18;
+			Item.value = 40000;
 
-			item.rare = 3;
-			item.defense = 7;
+			Item.rare = 3;
+			Item.defense = 7;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Fungus Greaves");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Fungus Greaves");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void UpdateEquip(Player player)

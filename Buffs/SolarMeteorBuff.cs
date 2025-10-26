@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class SolarMeteorBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Solar Meteor");
-			Description.SetDefault("A  solar meteor is following you");
+			// DisplayName.SetDefault("Solar Meteor");
+			// Description.SetDefault("A  solar meteor is following you");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

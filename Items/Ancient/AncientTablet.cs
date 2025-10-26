@@ -9,18 +9,18 @@ namespace Tremor.Items.Ancient
 		public override void SetDefaults()
 		{
 
-			item.width = 34;
-			item.height = 40;
-			item.maxStack = 99;
-			item.value = 10000;
-			item.rare = 10;
+			Item.width = 34;
+			Item.height = 40;
+			Item.maxStack = 99;
+			Item.value = 10000;
+			Item.rare = 10;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Tablet");
-			Tooltip.SetDefault("");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(8, 4));
+			// DisplayName.SetDefault("Ancient Tablet");
+			// Tooltip.SetDefault("");
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(8, 4));
 		}
 	}
 }

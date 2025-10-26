@@ -12,31 +12,31 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 100;
-			item.DamageType = DamageClass.Melee;
-			item.width = 20;
-			item.height = 12;
-			item.useTime = 5;
-			item.useAnimation = 25;
-			item.channel = true;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.pick = 250;
-			item.tileBoost += 8;
-			item.useStyle = 5;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(0, 12, 50, 0);
-			item.rare = 0;
-			item.UseSound = SoundID.Item23;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.StarDrillPro>();
-			item.shootSpeed = 40f;
+			Item.damage = 100;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 20;
+			Item.height = 12;
+			Item.useTime = 5;
+			Item.useAnimation = 25;
+			Item.channel = true;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.pick = 250;
+			Item.tileBoost += 8;
+			Item.useStyle = 5;
+			Item.knockBack = 6;
+			Item.value = Item.buyPrice(0, 12, 50, 0);
+			Item.rare = 0;
+			Item.UseSound = SoundID.Item23;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.StarDrillPro>();
+			Item.shootSpeed = 40f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Star Drill");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Star Drill");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

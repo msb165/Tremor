@@ -4,14 +4,15 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.Enums;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
 namespace Tremor.Ice.Items.Furniture
 {
-	public class IceDresserTile:TremorModTile
+	public class IceDresserTile : ModTile
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.tileSolidTop[Type] = true;
 			Main.tileFrameImportant[Type] = true;
@@ -19,22 +20,29 @@ namespace Tremor.Ice.Items.Furniture
 			Main.tileTable[Type] = true;
 			Main.tileContainer[Type] = true;
 			Main.tileLavaDeath[Type] = true;
+			TileID.Sets.HasOutlines[Type] = true;
+			TileID.Sets.DisableSmartCursor[Type] = true;
+			TileID.Sets.BasicDresser[Type] = true;
+			TileID.Sets.AvoidedByNPCs[Type] = true;
+			TileID.Sets.InteractibleByNPCs[Type] = true;
+			TileID.Sets.IsAContainer[Type] = true;
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
-			TileObjectData.newTile.Origin = new Point16(1, 1);
-			TileObjectData.newTile.CoordinateHeights = new[] { 16, 16 };
 			TileObjectData.newTile.HookCheckIfCanPlace = new PlacementHook(Chest.FindEmptyChest, -1, 0, true);
 			TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(Chest.AfterPlacement_Hook, -1, 0, false);
-			TileObjectData.newTile.AnchorInvalidTiles = new[] { 127 };
-			TileObjectData.newTile.StyleHorizontal = true;
+			TileObjectData.newTile.AnchorInvalidTiles = [
+				TileID.MagicalIceBlock,
+				TileID.Boulder,
+				TileID.BouncyBoulder,
+				TileID.LifeCrystalBoulder,
+				TileID.RollingCactus
+			];
 			TileObjectData.newTile.LavaDeath = false;
-			TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
 			TileObjectData.addTile(Type);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
 			AddMapEntry(new Color(87, 144, 165));
-			disableSmartCursor = true;
-			adjTiles = new int[] { TileID.Dressers };
-			dresser = "Glacier Wood Dresser";
-			dresserDrop = ModContent.ItemType<IceDresser>();
+			AdjTiles = new int[] { TileID.Dressers };
+			//dresser = "Glacier Wood Dresser";
+			//dresserDrop = ModContent.ItemType<IceDresser>();
 		}
 
 		public override bool RightClick(int i, int j)
@@ -82,7 +90,8 @@ namespace Tremor.Ice.Items.Furniture
 				{
 					//TODO: [Skipped for 1.4] player.flyingPigChest
 					//Could this be player.piggyBankProjTracker?
-					//player.flyingPigChest = -1;
+					player.piggyBankProjTracker.Clear();
+					player.voidLensChest.Clear();
 					int num213 = Chest.FindChest(left, top);
 					if (num213 != -1)
 					{
@@ -142,19 +151,20 @@ namespace Tremor.Ice.Items.Furniture
 			player.cursorItemIconID = -1;
 			if (chestIndex < 0)
 			{
-				player.cursorItemIconText = "Glacier Wood Dresser";
+				player.cursorItemIconText = Language.GetTextValue("LegacyDresserType.0");
 			}
 			else
 			{
+				string defaultName = TileLoader.DefaultContainerName(tile.TileType, tile.TileFrameX, tile.TileFrameY);
 				if (Main.chest[chestIndex].name != "")
 				{
 					player.cursorItemIconText = Main.chest[chestIndex].name;
 				}
 				else
 				{
-					player.cursorItemIconText = ContainerName.GetDefault();
+					player.cursorItemIconText = defaultName;
 				}
-				if (player.cursorItemIconText == ContainerName.GetDefault())
+				if (player.cursorItemIconText == defaultName)
 				{
 					player.cursorItemIconID = ModContent.ItemType<IceDresser>();
 					player.cursorItemIconText = "";
@@ -165,7 +175,7 @@ namespace Tremor.Ice.Items.Furniture
 			if (player.cursorItemIconText == "")
 			{
 				player.cursorItemIconEnabled = false;
-				player.cursorItemIconID = 0;
+				player.cursorItemIconID = ItemID.None;
 			}
 		}
 
@@ -180,23 +190,24 @@ namespace Tremor.Ice.Items.Furniture
 			{
 				top--;
 			}
-			int num138 = Chest.FindChest(left, top);
+			int chestIndex = Chest.FindChest(left, top);
 			player.cursorItemIconID = -1;
-			if (num138 < 0)
+			if (chestIndex < 0)
 			{
-				player.cursorItemIconText = "Glacier Wood Dresser";
+				player.cursorItemIconText = Language.GetTextValue("LegacyDresserType.0");
 			}
 			else
 			{
-				if (Main.chest[num138].name != "")
+				string defaultName = TileLoader.DefaultContainerName(tile.TileType, tile.TileFrameX, tile.TileFrameY);
+				if (Main.chest[chestIndex].name != "")
 				{
-					player.cursorItemIconText = Main.chest[num138].name;
+					player.cursorItemIconText = Main.chest[chestIndex].name;
 				}
 				else
 				{
-					player.cursorItemIconText = chest;
+					player.cursorItemIconText = defaultName;
 				}
-				if (player.cursorItemIconText == chest)
+				if (player.cursorItemIconText == defaultName)
 				{
 					player.cursorItemIconID = ModContent.ItemType<IceDresser>();
 					player.cursorItemIconText = "";
@@ -204,15 +215,16 @@ namespace Tremor.Ice.Items.Furniture
 			}
 			player.noThrow = 2;
 			player.cursorItemIconEnabled = true;
-			if (Main.tile[Player.tileTargetX, Player.tileTargetY].TileFrameY > 0)
+			if (player.cursorItemIconText == "")
 			{
-				player.cursorItemIconID = ItemID.FamiliarShirt;
+				player.cursorItemIconEnabled = false;
+				player.cursorItemIconID = ItemID.None;
 			}
 		}
 
-		public override void KillMultiTile(int i, int j, int frameX, int frameY)
+/*		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(null, i * 16, j * 16, 32, 16, dresserDrop);
-		}
+			Item.NewItem(null, i * 16, j * 16, 32, 16, //dresserDrop);
+		}*/
 	}
 }

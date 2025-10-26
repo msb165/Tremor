@@ -10,30 +10,30 @@ namespace Tremor.Items.Diamond
 		public override void SetDefaults()
 		{
 
-			item.damage = 9;
-			item.DamageType = DamageClass.Melee;
-			item.width = 20;
-			item.height = 12;
-			item.useTime = 8;
-			item.useAnimation = 25;
-			item.channel = true;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.pick = 85;
-			item.useStyle = 5;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(0, 0, 50, 0);
-			item.rare = 2;
-			item.UseSound = SoundID.Item23;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.DiamondDrillPro>();
-			item.shootSpeed = 40f;
+			Item.damage = 9;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 20;
+			Item.height = 12;
+			Item.useTime = 8;
+			Item.useAnimation = 25;
+			Item.channel = true;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.pick = 85;
+			Item.useStyle = 5;
+			Item.knockBack = 6;
+			Item.value = Item.buyPrice(0, 0, 50, 0);
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item23;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.DiamondDrillPro>();
+			Item.shootSpeed = 40f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Diamond Drill");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Diamond Drill");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

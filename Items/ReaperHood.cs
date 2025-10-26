@@ -8,18 +8,18 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 10000;
-			item.rare = 5;
-			item.defense = 8;
+			Item.value = 10000;
+			Item.rare = 5;
+			Item.defense = 8;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Reaper Hood");
-			Tooltip.SetDefault("15% increased alchemical damage");
+			// DisplayName.SetDefault("Reaper Hood");
+			// Tooltip.SetDefault("15% increased alchemical damage");
 		}
 
 		public override void UpdateEquip(Player player)

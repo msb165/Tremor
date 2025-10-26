@@ -9,30 +9,30 @@ namespace Tremor.Ice.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 23;
-			item.width = 76;
-			item.height = 76;
-			item.noUseGraphic = true;
-			item.DamageType = DamageClass.Melee;
-			item.useTime = 35;
-			item.shoot = ModContent.ProjectileType<FrostLancePro>();
-			item.shootSpeed = 3f;
-			item.useAnimation = 35;
-			item.useStyle = 5;
-			item.knockBack = 9;
-			item.value = 1000;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 23;
+			Item.width = 76;
+			Item.height = 76;
+			Item.noUseGraphic = true;
+			Item.DamageType = DamageClass.Melee;
+			Item.useTime = 35;
+			Item.shoot = ModContent.ProjectileType<FrostLancePro>();
+			Item.shootSpeed = 3f;
+			Item.useAnimation = 35;
+			Item.useStyle = 5;
+			Item.knockBack = 9;
+			Item.value = 1000;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frost Lance");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Frost Lance");
+			// Tooltip.SetDefault("");
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(44, 60);
 		}

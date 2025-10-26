@@ -11,32 +11,32 @@ namespace Tremor.Items.Crystal
 		public override void SetDefaults()
 		{
 
-			item.damage = 18;
-			item.DamageType = DamageClass.Melee;
-			item.width = 20;
-			item.height = 12;
-			item.useTime = 12;
-			item.useAnimation = 25;
-			item.channel = true;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.hammer = 100;
-			item.axe = 22;
-			item.tileBoost++;
-			item.useStyle = 5;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(0, 1, 50, 0);
-			item.rare = 5;
-			item.UseSound = SoundID.Item23;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.CrystalChainmer>();
-			item.shootSpeed = 40f;
+			Item.damage = 18;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 20;
+			Item.height = 12;
+			Item.useTime = 12;
+			Item.useAnimation = 25;
+			Item.channel = true;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.hammer = 100;
+			Item.axe = 22;
+			Item.tileBoost++;
+			Item.useStyle = 5;
+			Item.knockBack = 6;
+			Item.value = Item.buyPrice(0, 1, 50, 0);
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item23;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.CrystalChainmer>();
+			Item.shootSpeed = 40f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crystal Chainmer");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Crystal Chainmer");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

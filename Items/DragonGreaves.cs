@@ -10,18 +10,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.defense = 26;
-			item.width = 22;
-			item.height = 18;
+			Item.defense = 26;
+			Item.width = 22;
+			Item.height = 18;
 
-			item.value = 33000;
-			item.rare = 11;
+			Item.value = 33000;
+			Item.rare = 11;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dragon Greaves");
-			Tooltip.SetDefault("95% increased movement speed");
+			// DisplayName.SetDefault("Dragon Greaves");
+			// Tooltip.SetDefault("95% increased movement speed");
 		}
 
 		public override void UpdateEquip(Player player)

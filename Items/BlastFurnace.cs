@@ -8,23 +8,23 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 14;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.value = 150;
-			item.createTile = ModContent.TileType<Tiles.BlastFurnace>();
+			Item.width = 28;
+			Item.height = 14;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.value = 150;
+			Item.createTile = ModContent.TileType<Tiles.BlastFurnace>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Blast Furnace");
-			Tooltip.SetDefault("Used to craft alloys");
+			// DisplayName.SetDefault("Blast Furnace");
+			// Tooltip.SetDefault("Used to craft alloys");
 		}
 
 		public override void AddRecipes()

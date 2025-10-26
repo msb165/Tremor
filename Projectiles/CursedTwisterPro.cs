@@ -7,7 +7,7 @@ namespace Tremor.Projectiles
 	public class CursedTwisterPro:TremorModProjectile
 	{
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			for (int k = 0; k < 5; k++)
 			{
@@ -28,7 +28,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("CursedTwisterPro");
+			// DisplayName.SetDefault("CursedTwisterPro");
 
 		}
 
@@ -77,7 +77,7 @@ namespace Tremor.Projectiles
 			projectile.rotation += 0.3f * projectile.direction;
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.rand.Next(10) == 0)
 			{

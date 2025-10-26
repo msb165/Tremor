@@ -11,18 +11,18 @@ namespace Tremor.Items.Afterlife
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 10000;
-			item.rare = 6;
-			item.defense = 7;
+			Item.value = 10000;
+			Item.rare = 6;
+			Item.defense = 7;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Afterlife Hood");
-			Tooltip.SetDefault("Increases life regeneration");
+			// DisplayName.SetDefault("Afterlife Hood");
+			// Tooltip.SetDefault("Increases life regeneration");
 		}
 
 		public override void UpdateEquip(Player player)
@@ -41,7 +41,7 @@ namespace Tremor.Items.Afterlife
 			if (player.statLife < 25)
 			{
 				player.lifeRegen += 40;
-				player.statDefense = 0;
+				player.statDefense *= 0;
 			}
 		}
 

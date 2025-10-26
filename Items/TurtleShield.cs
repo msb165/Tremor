@@ -11,18 +11,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 36;
-			item.height = 42;
-			item.value = 123450;
-			item.rare = 8;
+			Item.width = 36;
+			Item.height = 42;
+			Item.value = 123450;
+			Item.rare = 8;
 
-			item.accessory = true;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Turtle Shield");
-			Tooltip.SetDefault("The less health, the more defense...");
+			// DisplayName.SetDefault("Turtle Shield");
+			// Tooltip.SetDefault("The less health, the more defense...");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

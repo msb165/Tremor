@@ -9,25 +9,25 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 65;
-			item.DamageType = DamageClass.Melee;
-			item.width = 60;
-			item.height = 52;
-			item.useTime = 32;
-			item.useAnimation = 32;
-			item.axe = 40;
-			item.useStyle = 1;
-			item.knockBack = 6;
-			item.value = 600;
-			item.rare = 8;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 65;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 60;
+			Item.height = 52;
+			Item.useTime = 32;
+			Item.useAnimation = 32;
+			Item.axe = 40;
+			Item.useStyle = 1;
+			Item.knockBack = 6;
+			Item.value = 600;
+			Item.rare = 8;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Magmaxe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Magmaxe");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

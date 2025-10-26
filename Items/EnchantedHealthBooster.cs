@@ -10,28 +10,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.useAnimation = 15;
-			item.useTime = 15;
-			item.useStyle = 4;
-			item.width = 22;
-			item.UseSound = SoundID.Item43;
-			item.height = 18;
-			item.buffType = ModContent.BuffType<Buffs.ExtendedHealthBooster>();
-			item.value = 5160000;
-			item.rare = 11;
+			Item.useAnimation = 15;
+			Item.useTime = 15;
+			Item.useStyle = 4;
+			Item.width = 22;
+			Item.UseSound = SoundID.Item43;
+			Item.height = 18;
+			Item.buffType = ModContent.BuffType<Buffs.ExtendedHealthBooster>();
+			Item.value = 5160000;
+			Item.rare = 11;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Enchanted Health Booster");
-			Tooltip.SetDefault("Regenerates heatlh every 45 seconds");
+			// DisplayName.SetDefault("Enchanted Health Booster");
+			// Tooltip.SetDefault("Regenerates heatlh every 45 seconds");
 		}
 
 		public override void UseStyle(Player player, Rectangle heldItemFrame)
 		{
 			if (player.whoAmI == Main.myPlayer && player.itemTime == 0)
 			{
-				player.AddBuff(item.buffType, 2700, true);
+				player.AddBuff(Item.buffType, 2700, true);
 			}
 		}
 

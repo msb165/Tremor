@@ -8,25 +8,25 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 20;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 8;
-			item.height = 8;
-			item.maxStack = 999;
+			Item.damage = 20;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 8;
+			Item.height = 8;
+			Item.maxStack = 999;
 
-			item.consumable = true;
-			item.knockBack = 1.5f;
-			item.value = 10;
-			item.rare = 11;
-			item.shoot = ModContent.ProjectileType<Projectiles.NightmareBulletPro>();
-			item.shootSpeed = 10f;
-			item.ammo = AmmoID.Bullet;
+			Item.consumable = true;
+			Item.knockBack = 1.5f;
+			Item.value = 10;
+			Item.rare = 11;
+			Item.shoot = ModContent.ProjectileType<Projectiles.NightmareBulletPro>();
+			Item.shootSpeed = 10f;
+			Item.ammo = AmmoID.Bullet;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nightmare Bullet");
-			Tooltip.SetDefault("'Can bounce off blocks.'");
+			// DisplayName.SetDefault("Nightmare Bullet");
+			// Tooltip.SetDefault("'Can bounce off blocks.'");
 		}
 
 		public override void AddRecipes()

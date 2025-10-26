@@ -11,29 +11,29 @@ namespace Tremor.Invasion
 		public override void SetDefaults()
 		{
 
-			item.damage = 95;
-			item.DamageType = DamageClass.Melee;
-			item.width = 50;
-			item.height = 50;
-			item.useTime = 15;
-			item.useAnimation = 15;
-			item.useStyle = 1;
-			item.shoot = ModContent.ProjectileType<RelayxProj>();
-			item.shootSpeed = 6f;
-			item.knockBack = 6;
-			item.value = 1000000;
-			item.rare = 11;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.useTurn = true;
-			item.expert = true;
+			Item.damage = 95;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 50;
+			Item.height = 50;
+			Item.useTime = 15;
+			Item.useAnimation = 15;
+			Item.useStyle = 1;
+			Item.shoot = ModContent.ProjectileType<RelayxProj>();
+			Item.shootSpeed = 6f;
+			Item.knockBack = 6;
+			Item.value = 1000000;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
+			Item.useTurn = true;
+			Item.expert = true;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Relayx");
-			Tooltip.SetDefault("Feel the power of the Titan");
+			// DisplayName.SetDefault("Relayx");
+			// Tooltip.SetDefault("Feel the power of the Titan");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)
@@ -50,17 +50,17 @@ namespace Tremor.Invasion
 			{
 				if (Main.rand.NextBool(3))
 				{
-					Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, ModContent.ProjectileType<RelayxDragonBig>(), item.damage + 200, 10, Main.myPlayer);
+					Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, ModContent.ProjectileType<RelayxDragonBig>(), Item.damage + 200, 10, Main.myPlayer);
 				}
 				else
 				{
-					Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, ModContent.ProjectileType<RelayxDragon>(), item.damage + 100, 10, Main.myPlayer);
+					Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, ModContent.ProjectileType<RelayxDragon>(), Item.damage + 100, 10, Main.myPlayer);
 				}
 			}
 			else
 			{
-				Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 1, type, item.damage - 20, knockBack, Main.myPlayer);
-				Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, item.damage - 20, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX + 1, speedY + 1, type, Item.damage - 20, knockBack, Main.myPlayer);
+				Projectile.NewProjectile(null, position.X, position.Y, speedX, speedY, type, Item.damage - 20, knockBack, Main.myPlayer);
 			}
 			return false;
 		}

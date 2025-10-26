@@ -9,18 +9,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 28;
-			item.value = 50000;
-			item.rare = 1;
-			item.accessory = true;
+			Item.width = 24;
+			Item.height = 28;
+			Item.value = 50000;
+			Item.rare = 1;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nightly Combination");
-			Tooltip.SetDefault("Increases life regeneration, melee damage\n" +
-"Makes you glow during night");
+			// DisplayName.SetDefault("Nightly Combination");
+			/* Tooltip.SetDefault("Increases life regeneration, melee damage\n" +
+"Makes you glow during night"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

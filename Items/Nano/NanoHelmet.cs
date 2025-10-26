@@ -12,19 +12,19 @@ namespace Tremor.Items.Nano
 		public override void SetDefaults()
 		{
 
-			item.width = 32;
-			item.height = 26;
+			Item.width = 32;
+			Item.height = 26;
 
-			item.value = 60000;
-			item.rare = 6;
-			item.defense = 12;
+			Item.value = 60000;
+			Item.rare = 6;
+			Item.defense = 12;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nano Helmet");
-			Tooltip.SetDefault("Maximum mana increased by 60\n" +
-"8% increased critical strike chance");
+			// DisplayName.SetDefault("Nano Helmet");
+			/* Tooltip.SetDefault("Maximum mana increased by 60\n" +
+"8% increased critical strike chance"); */
 		}
 
 		public override void UpdateEquip(Player player)

@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class MeteorBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Metor Head");
-			Description.SetDefault("The meteor head will fight for you");
+			// DisplayName.SetDefault("Metor Head");
+			// Description.SetDefault("The meteor head will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

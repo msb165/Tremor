@@ -8,25 +8,25 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 29;
-			item.DamageType = DamageClass.Melee;
-			item.width = 28;
-			item.height = 18;
-			item.useTime = 9;
-			item.useAnimation = 9;
-			item.useStyle = 1;
-			item.knockBack = 3;
-			item.value = 6400;
-			item.rare = 4;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.useTurn = true;
+			Item.damage = 29;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 28;
+			Item.height = 18;
+			Item.useTime = 9;
+			Item.useAnimation = 9;
+			Item.useStyle = 1;
+			Item.knockBack = 3;
+			Item.value = 6400;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
+			Item.useTurn = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Raven Clutches");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Raven Clutches");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

@@ -10,7 +10,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ice Mother Slime");
+			// DisplayName.SetDefault("Ice Mother Slime");
 			Main.npcFrameCount[npc.type] = 2;
 		}
 
@@ -39,18 +39,18 @@ namespace Tremor.NPCs
 				Main.dust[Dust.NewDust(npc.position, npc.width, npc.height, 80, 0f, 0f, 200, npc.color)].velocity *= 0.3f;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
-				Dust.NewDust(npc.position, npc.width, npc.height, 80, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
-				Dust.NewDust(npc.position, npc.width, npc.height, 80, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
-				Dust.NewDust(npc.position, npc.width, npc.height, 80, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 80, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 1.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 80, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 2.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 80, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for (int k = 0; k < 20; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 80, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 80, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.6f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 80, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 1.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 80, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.6f);
 				}
 
 				if (Main.netMode == 1) return;

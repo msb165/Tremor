@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 56;
-			item.DamageType = DamageClass.Magic;
-			item.width = 28;
-			item.height = 30;
-			item.useTime = 10;
-			item.useAnimation = 30;
-			item.shoot = ModContent.ProjectileType<Projectiles.HallowedSprayPro>();
-			item.shootSpeed = 7.5f;
-			item.mana = 6;
-			item.noMelee = true;
-			item.useStyle = 5;
-			item.knockBack = 3;
-			item.value = 99999;
-			item.rare = 5;
-			item.UseSound = SoundID.Item21;
-			item.autoReuse = true;
+			Item.damage = 56;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 28;
+			Item.height = 30;
+			Item.useTime = 10;
+			Item.useAnimation = 30;
+			Item.shoot = ModContent.ProjectileType<Projectiles.HallowedSprayPro>();
+			Item.shootSpeed = 7.5f;
+			Item.mana = 6;
+			Item.noMelee = true;
+			Item.useStyle = 5;
+			Item.knockBack = 3;
+			Item.value = 99999;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item21;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hallowed Spray");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Hallowed Spray");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

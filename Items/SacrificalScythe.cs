@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 16;
-			item.DamageType = DamageClass.Melee;
-			item.width = 42;
-			item.height = 42;
-			item.useTime = 31;
-			item.useAnimation = 21;
-			item.useStyle = 1;
-			item.knockBack = 10;
-			item.value = 26660;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 16;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 42;
+			Item.height = 42;
+			Item.useTime = 31;
+			Item.useAnimation = 21;
+			Item.useStyle = 1;
+			Item.knockBack = 10;
+			Item.value = 26660;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sacrifical Scythe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Sacrifical Scythe");
+			// Tooltip.SetDefault("");
 		}
 
 	}

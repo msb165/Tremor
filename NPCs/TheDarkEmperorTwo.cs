@@ -13,19 +13,19 @@ namespace Tremor.NPCs
 	public class TheDarkEmperorTwo:TremorModNPC
 	{
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DEGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DETGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DETGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("DEGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("DETGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("DETGore2"), 1f);
 			}
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Dark Emperor");
+			// DisplayName.SetDefault("The Dark Emperor");
 			Main.npcFrameCount[npc.type] = 6;
 		}
 
@@ -54,9 +54,9 @@ namespace Tremor.NPCs
 			npc.npcSlots = 10f;
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
-			npc.lifeMax = (int)(npc.lifeMax * 0.625f * bossLifeScale);
+			npc.lifeMax = (int)(npc.lifeMax * 0.625f * balance);
 			npc.damage = (int)(npc.damage * 0.6f);
 		}
 

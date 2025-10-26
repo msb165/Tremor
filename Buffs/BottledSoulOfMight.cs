@@ -5,11 +5,11 @@ namespace Tremor.Buffs
 {
 	public class BottledSoulOfMight:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Bottled Soul of Might");
-			Description.SetDefault("5% increased damage");
+			// DisplayName.SetDefault("Bottled Soul of Might");
+			// Description.SetDefault("5% increased damage");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

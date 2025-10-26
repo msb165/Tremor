@@ -10,29 +10,29 @@ namespace Tremor.Items.Candy
 		public override void SetDefaults()
 		{
 
-			item.damage = 226;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 42;
-			item.height = 30;
+			Item.damage = 226;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 42;
+			Item.height = 30;
 
-			item.useTime = 4;
-			item.useAnimation = 12;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 4f;
-			item.value = Item.sellPrice(0, 20, 0, 0);
-			item.rare = 10;
-			item.UseSound = SoundID.Item40;
-			item.autoReuse = false;
-			item.shoot = 10;
-			item.shootSpeed = 15f;
-			item.useAmmo = AmmoID.Bullet;
+			Item.useTime = 4;
+			Item.useAnimation = 12;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 4f;
+			Item.value = Item.sellPrice(0, 20, 0, 0);
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item40;
+			Item.autoReuse = false;
+			Item.shoot = 10;
+			Item.shootSpeed = 15f;
+			Item.useAmmo = AmmoID.Bullet;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Candy Blaster");
-			Tooltip.SetDefault("Spends bullets and fires candies");
+			// DisplayName.SetDefault("Candy Blaster");
+			// Tooltip.SetDefault("Spends bullets and fires candies");
 		}
 
 		public override bool CanConsumeAmmo(Item ammo, Player p)

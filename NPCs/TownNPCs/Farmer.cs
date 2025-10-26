@@ -27,7 +27,7 @@ namespace Tremor.NPCs.TownNPCs
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Farmer");
+			// DisplayName.SetDefault("Farmer");
 			Main.npcFrameCount[npc.type] = 23;
 			NPCID.Sets.ExtraFramesCount[npc.type] = 5;
 			NPCID.Sets.AttackFrameCount[npc.type] = 4;
@@ -53,7 +53,7 @@ namespace Tremor.NPCs.TownNPCs
 			AnimationType = NPCID.Nurse;
 		}
 
-		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+		public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
 			=> Main.player.Any(player => !player.dead && player.inventory.Any(item => item != null && item.type == ModContent.ItemType<FarmerShovel>()));
 
 		private readonly List<string> _names = new List<string>
@@ -87,40 +87,44 @@ namespace Tremor.NPCs.TownNPCs
 			button = Lang.inter[28].Value;
 		}
 
-		public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+		public override void OnChatButtonClicked(bool firstButton, ref string shopName)
 		{
-			shop = firstButton;
+			if (firstButton)
+			{
+				shopName = "Shop";
+			}
 		}
 
-		public override void SetupShop(Chest shop, ref int nextSlot)
+		public override void ModifyActiveShop(string shopName, Item[] items)
 		{
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<CornSeed>());
+			NPCShop shop = new(Type);
+			shop.Add(ModContent.ItemType<CornSeed>());
 
 			if (!NPC.downedBoss1)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<Pitchfork>());
+				shop.Add(ModContent.ItemType<Pitchfork>());
 
 			if (Main.dayTime)
-				shop.AddUniqueItem(ref nextSlot, ItemID.DaybloomSeeds);
+				shop.Add(ItemID.DaybloomSeeds);
 			else
-				shop.AddUniqueItem(ref nextSlot, ItemID.MoonglowSeeds);
+				shop.Add(ItemID.MoonglowSeeds);
 
 			if (NPC.downedSlimeKing)
-				shop.AddUniqueItem(ref nextSlot, ItemID.WaterleafSeeds);
+				shop.Add(ItemID.WaterleafSeeds);
 			if (NPC.downedBoss2)
 			{
-				shop.AddUniqueItem(ref nextSlot, ItemID.BlinkrootSeeds);
+				shop.Add(ItemID.BlinkrootSeeds);
 				// Eggplant doesn't exist in Tremor namespace.
-				//shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<EggPlant>());
+				//shop.Add(ModContent.ItemType<EggPlant>());
 			}
 
 			if (Main.hardMode)
-				shop.AddUniqueItem(ref nextSlot, ItemID.FireblossomSeeds);
+				shop.Add(ItemID.FireblossomSeeds);
 
 			if (Main.LocalPlayer.HasItem(ModContent.ItemType<Carrow>()))
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<Items.Carrot>());
+				shop.Add(ModContent.ItemType<Items.Carrot>());
 
 			if (Main.bloodMoon)
-				shop.AddUniqueItem(ref nextSlot, ItemID.DeathweedSeeds);
+				shop.Add(ItemID.DeathweedSeeds);
 		}
 
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -147,15 +151,15 @@ namespace Tremor.NPCs.TownNPCs
 			randomOffset = 2f;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/FarmerGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"FarmerGore{i+1}"), 1f);
 			}
 		}
 	}

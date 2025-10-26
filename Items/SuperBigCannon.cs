@@ -9,29 +9,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 340;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 70;
-			item.height = 34;
+			Item.damage = 340;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 70;
+			Item.height = 34;
 
-			item.useTime = 35;
-			item.useAnimation = 35;
-			item.shoot = ModContent.ProjectileType<Projectiles.SuperBigCannonPro>();
-			item.shootSpeed = 15f;
-			item.useStyle = 5;
-			item.knockBack = 6;
-			item.value = 100000;
-			item.rare = 11;
-			item.UseSound = SoundID.Item11;
-			item.expert = true;
-			item.autoReuse = true;
-			item.useAmmo = ModContent.ItemType<SBCCannonballAmmo>();
+			Item.useTime = 35;
+			Item.useAnimation = 35;
+			Item.shoot = ModContent.ProjectileType<Projectiles.SuperBigCannonPro>();
+			Item.shootSpeed = 15f;
+			Item.useStyle = 5;
+			Item.knockBack = 6;
+			Item.value = 100000;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item11;
+			Item.expert = true;
+			Item.autoReuse = true;
+			Item.useAmmo = ModContent.ItemType<SBCCannonballAmmo>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("SBC");
-			Tooltip.SetDefault("'Seriously big cannon!'");
+			// DisplayName.SetDefault("SBC");
+			// Tooltip.SetDefault("'Seriously big cannon!'");
 		}
 
 		public override Vector2? HoldoutOffset()

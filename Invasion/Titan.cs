@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -27,7 +27,7 @@ namespace Tremor.Invasion
 		*/
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paradox Titan");
+			// DisplayName.SetDefault("Paradox Titan");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 

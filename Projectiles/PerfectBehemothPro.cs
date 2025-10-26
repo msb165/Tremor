@@ -21,7 +21,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Perfect Behemoth");
+			// DisplayName.SetDefault("Perfect Behemoth");
 
 		}
 
@@ -49,7 +49,7 @@ namespace Tremor.Projectiles
 			return false;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			for (int k = 0; k < 30; k++)
 			{

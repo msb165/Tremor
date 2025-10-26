@@ -21,11 +21,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("SparkingFlaskEvil");
+			// DisplayName.SetDefault("SparkingFlaskEvil");
 
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item107, projectile.position);
 			Gore.NewGore(null, projectile.position, -projectile.oldVelocity * 0.2f, 704, 1f);

@@ -12,7 +12,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hallow Slimer");
+			// DisplayName.SetDefault("Hallow Slimer");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 
@@ -36,12 +36,12 @@ namespace Tremor.NPCs
 			NPCID.Sets.TrailCacheLength[npc.type] = 5;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				if(Main.netMode != 1)
 					NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y - 48, NPCID.IlluminantSlime);
@@ -57,13 +57,13 @@ namespace Tremor.NPCs
 			npc.oldPos[0] = npc.position;
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
 			Vector2 drawOrigin = new Vector2(Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Width, Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Height * 0.8f);
 			for (int k = 0; k < npc.oldPos.Length; k++)
 			{
 				SpriteEffects effect = npc.direction == 1 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
-				Color color = npc.GetAlpha(lightColor) * ((npc.oldPos.Length - k) / (float)npc.oldPos.Length);
+				Color color = npc.GetAlpha(drawColor) * ((npc.oldPos.Length - k) / (float)npc.oldPos.Length);
 				Rectangle frame = new Rectangle(0, 0, 90, 42);
 				frame.Y += 164 * (k / 60);
 

@@ -10,30 +10,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 20;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 26;
-			item.noUseGraphic = true;
-			item.maxStack = 1;
+			Item.damage = 20;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 26;
+			Item.noUseGraphic = true;
+			Item.maxStack = 1;
 
-			item.height = 30;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.shoot = ModContent.ProjectileType<Projectiles.Carrot>();
-			item.shootSpeed = 19f;
-			item.useAmmo = ModContent.ItemType<Carrot>();
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 70000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.height = 30;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Carrot>();
+			Item.shootSpeed = 19f;
+			Item.useAmmo = ModContent.ItemType<Carrot>();
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 70000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Carrow");
-			Tooltip.SetDefault("Uses carrots as ammo");
+			// DisplayName.SetDefault("Carrow");
+			// Tooltip.SetDefault("Uses carrots as ammo");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

@@ -18,7 +18,7 @@ namespace Tremor.ZombieEvent.Items
 			TileObjectData.newTile.LavaDeath = false;
 			TileObjectData.newTile.DrawYOffset = 2;
 			TileObjectData.addTile(Type);
-			disableSmartCursor = true;
+			//TileID.Sets.DisableSmartCursor[Type] = true;
 			AddMapEntry(new Color(200, 200, 200));
 		}
 

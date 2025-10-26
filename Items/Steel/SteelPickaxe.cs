@@ -8,25 +8,25 @@ namespace Tremor.Items.Steel
 		public override void SetDefaults()
 		{
 
-			item.damage = 6;
-			item.DamageType = DamageClass.Melee;
-			item.width = 32;
-			item.height = 32;
-			item.useTime = 16;
-			item.useAnimation = 20;
-			item.pick = 55;
-			item.useStyle = 1;
-			item.knockBack = 2;
-			item.value = 1000;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 6;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 32;
+			Item.height = 32;
+			Item.useTime = 16;
+			Item.useAnimation = 20;
+			Item.pick = 55;
+			Item.useStyle = 1;
+			Item.knockBack = 2;
+			Item.value = 1000;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Steel Pickaxe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Steel Pickaxe");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

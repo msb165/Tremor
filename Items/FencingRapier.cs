@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 19;
-			item.DamageType = DamageClass.Melee;
-			item.width = 42;
-			item.height = 42;
-			item.useTime = 21;
-			item.useAnimation = 21;
-			item.useStyle = 3;
-			item.knockBack = 6;
-			item.value = 660;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 19;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 42;
+			Item.height = 42;
+			Item.useTime = 21;
+			Item.useAnimation = 21;
+			Item.useStyle = 3;
+			Item.knockBack = 6;
+			Item.value = 660;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Fencing Rapier");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Fencing Rapier");
+			// Tooltip.SetDefault("");
 		}
 
 	}

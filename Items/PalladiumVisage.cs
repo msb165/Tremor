@@ -9,17 +9,17 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 26;
-			item.height = 20;
-			item.value = 400;
-			item.rare = 4;
-			item.defense = 4;
+			Item.width = 26;
+			Item.height = 20;
+			Item.value = 400;
+			Item.rare = 4;
+			Item.defense = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Palladium Visage");
-			Tooltip.SetDefault("18% increased alchemical damage");
+			// DisplayName.SetDefault("Palladium Visage");
+			// Tooltip.SetDefault("18% increased alchemical damage");
 		}
 
 		public override void UpdateEquip(Player player)

@@ -9,31 +9,31 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.Starfury);
+			Item.CloneDefaults(ItemID.Starfury);
 
-			item.damage = 68;
-			//item.melee = false;
-			item.DamageType = DamageClass.Magic;
-			item.width = 42;
-			item.height = 46;
-			item.useTime = 20;
-			item.mana = 10;
+			Item.damage = 68;
+			//Item.melee = false;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 42;
+			Item.height = 46;
+			Item.useTime = 20;
+			Item.mana = 10;
 
-			item.useAnimation = 20;
-			item.useStyle = 1;
-			item.shootSpeed = 10f;
-			Item.staff[item.type] = true;
-			item.knockBack = 3;
-			item.value = 15000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item43;
-			item.autoReuse = true;
+			Item.useAnimation = 20;
+			Item.useStyle = 1;
+			Item.shootSpeed = 10f;
+			Item.staff[Item.type] = true;
+			Item.knockBack = 3;
+			Item.value = 15000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item43;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paraxyde Stave");
-			Tooltip.SetDefault("Summons paraxyde crystals to fall from the sky\n");
+			// DisplayName.SetDefault("Paraxyde Stave");
+			// Tooltip.SetDefault("Summons paraxyde crystals to fall from the sky\n");
 		}
 
 		public override void AddRecipes()

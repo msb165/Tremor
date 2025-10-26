@@ -9,16 +9,16 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 30;
-			item.rare = 1;
-			item.vanity = true;
+			Item.width = 28;
+			Item.height = 30;
+			Item.rare = 1;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pumpking Mask");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Pumpking Mask");
+			// Tooltip.SetDefault("");
 		}
 
 	}

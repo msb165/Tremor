@@ -119,7 +119,7 @@ namespace Tremor.Projectiles.Alchemic
 			return false;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			if (Main.LocalPlayer.HasBuffSafe(ModContent.BuffType<Buffs.DesertEmperorSetBuff>()))
 			{

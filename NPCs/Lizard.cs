@@ -8,7 +8,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Lizard");
+			// DisplayName.SetDefault("Lizard");
 			Main.npcFrameCount[npc.type] = 6;
 		}
 
@@ -28,12 +28,12 @@ namespace Tremor.NPCs
 			npc.value = Item.buyPrice(0, 0, 0, 0);
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/LizardGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/LizardGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("LizardGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("LizardGore2"), 1f);
 			}
 		}
 	}

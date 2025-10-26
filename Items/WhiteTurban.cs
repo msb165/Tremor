@@ -9,18 +9,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 28;
+			Item.width = 30;
+			Item.height = 28;
 
-			item.value = 10000;
-			item.rare = 2;
-			item.vanity = true;
+			Item.value = 10000;
+			Item.rare = 2;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("White Turban");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("White Turban");
+			// Tooltip.SetDefault("");
 		}
 
 	}

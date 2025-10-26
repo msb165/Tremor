@@ -36,9 +36,9 @@ namespace Tremor.Tiles
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
 			AddMapEntry(new Color(200, 200, 200));
 			DustType = DustID.JungleSpore;
-			ItemDrop = ModContent.ItemType<Items.BulbTorch>();
-			disableSmartCursor = true;
-			adjTiles = new int[]{ TileID.Torches };
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<Items.BulbTorch>();
+			TileID.Sets.DisableSmartCursor[Type] = true;
+			AdjTiles = new int[]{ TileID.Torches };
 			TileID.Sets.Torch[Type] = true;
 		}
 

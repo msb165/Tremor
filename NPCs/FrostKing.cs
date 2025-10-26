@@ -13,7 +13,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frost King");
+			// DisplayName.SetDefault("Frost King");
 			Main.npcFrameCount[npc.type] = 8;
 		}
 
@@ -40,15 +40,15 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath44;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FrostKingGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FrostKingGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FrostKingGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FrostKingGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/FrostKingGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("FrostKingGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("FrostKingGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("FrostKingGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("FrostKingGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("FrostKingGore4"), 1f);
 			}
 		}
 
@@ -69,9 +69,9 @@ namespace Tremor.NPCs
 			set { npc.position = value - new Vector2(npc.width / 2, npc.height / 2); }
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
-			npc.lifeMax = (int)(npc.lifeMax * 0.625f * bossLifeScale);
+			npc.lifeMax = (int)(npc.lifeMax * 0.625f * balance);
 			npc.damage = (int)(npc.damage * 0.6f);
 		}
 

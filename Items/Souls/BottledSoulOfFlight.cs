@@ -9,27 +9,27 @@ namespace Tremor.Items.Souls
 		public override void SetDefaults()
 		{
 
-			item.width = 20;
-			item.height = 36;
-			item.maxStack = 1;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
+			Item.width = 20;
+			Item.height = 36;
+			Item.maxStack = 1;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
 
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.value = 150;
-			item.rare = 5;
-			item.createTile = ModContent.TileType<Tiles.BottledSoulOfFlight>();
-			item.accessory = true;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.value = 150;
+			Item.rare = 5;
+			Item.createTile = ModContent.TileType<Tiles.BottledSoulOfFlight>();
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bottled Soul of Flight");
-			Tooltip.SetDefault("Grants Shiny Red Baloon effect if worn\n" +
-"20% increased jump height if placed");
+			// DisplayName.SetDefault("Bottled Soul of Flight");
+			/* Tooltip.SetDefault("Grants Shiny Red Baloon effect if worn\n" +
+"20% increased jump height if placed"); */
 		}
 
 		public override void AddRecipes()

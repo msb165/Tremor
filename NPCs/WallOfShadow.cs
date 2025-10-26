@@ -15,7 +15,7 @@ namespace Tremor.NPCs
 {
 	// todo: REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 	[AutoloadBossHead]
-	public class WallOfShadow:TremorModNPC
+	public class WallOfShadow : TremorModNPC
 	{
 		//private const int AnimationRate = 8;
 		//private const int FrameCount = 4;
@@ -66,7 +66,7 @@ namespace Tremor.NPCs
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Wall of Shadows");
+			// DisplayName.SetDefault("Wall of Shadows");
 			Main.npcFrameCount[npc.type] = 2;
 		}
 
@@ -92,13 +92,13 @@ namespace Tremor.NPCs
 			bossBag = ModContent.ItemType<WallofShadowBag>();
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
-			npc.lifeMax = (int)(npc.lifeMax * 0.625f * bossLifeScale);
+			npc.lifeMax = (int)(npc.lifeMax * 0.625f * balance);
 			npc.damage = (int)(npc.damage * 0.6f);
 		}
 
-		public override void ModifyHitPlayer(Player target, ref int damage, ref bool crit)
+		public override void ModifyHitPlayer(Player target, ref Player.HurtModifiers modifiers)
 		{
 			if (Main.expertMode)
 			{
@@ -127,17 +127,17 @@ namespace Tremor.NPCs
 
 		private void Shoot()
 		{
-			if (--_timeToShoot > 0) //если таймер меньше нуля, то вырубаем автоматом
+			if (--_timeToShoot > 0) //???? ?????? ?????? ????, ?? ???????? ?????????
 				return;
-			_timeToShoot = (int)Helper.DistortFloat(ShootRate, DistortPercent); //устанавливаем частоту выстрела
-			for (int i = 0; i < ((Main.expertMode) ? 3 : 1); i++) //в цикле указываем кол-во перьев при выстреле
+			_timeToShoot = (int)Helper.DistortFloat(ShootRate, DistortPercent); //????????????? ??????? ????????
+			for (int i = 0; i < ((Main.expertMode) ? 3 : 1); i++) //? ????? ????????? ???-?? ?????? ??? ????????
 			{
 				if (Main.expertMode)
 				{
 					_shootSpeed = 25;
 				}
-				Vector2 velocity = Helper.VelocityToPoint(npc.Center, Helper.RandomPointInArea(new Vector2(Main.player[npc.target].Center.X - 10, Main.player[npc.target].Center.Y - 10), new Vector2(Main.player[npc.target].Center.X + 20, Main.player[npc.target].Center.Y + 20)), _shootSpeed); //здесь устанавливаем позиции (здесь от перса в плеера)
-				int proj = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, 83, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent)); //подтверждаем все выше действие: от перса к мобу, от моба к персу (второе выстрел)
+				Vector2 velocity = Helper.VelocityToPoint(npc.Center, Helper.RandomPointInArea(new Vector2(Main.player[npc.target].Center.X - 10, Main.player[npc.target].Center.Y - 10), new Vector2(Main.player[npc.target].Center.X + 20, Main.player[npc.target].Center.Y + 20)), _shootSpeed); //????? ????????????? ??????? (????? ?? ????? ? ??????)
+				int proj = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, 83, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent)); //???????????? ??? ???? ????????: ?? ????? ? ????, ?? ???? ? ????? (?????? ???????)
 				Main.projectile[proj].Center = npc.Center;
 			}
 		}
@@ -147,8 +147,8 @@ namespace Tremor.NPCs
 			LaserCooldown--;
 			if (LaserCooldown <= 60 && LaserCooldown % ((Main.expertMode) ? 4 : 7) == 0 && Main.netMode != 1)
 			{
-				Vector2 velocity = Helper.VelocityToPoint(npc.Center, Helper.RandomPointInArea(new Vector2(Main.player[npc.target].Center.X - 100, Main.player[npc.target].Center.Y - 100), new Vector2(Main.player[npc.target].Center.X + 20, Main.player[npc.target].Center.Y + 20)), ((Main.expertMode) ? 20 : 15)); //здесь устанавливаем позиции (здесь от перса в плеера)
-				int proj = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, 83, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent)); //подтверждаем все выше действие: от перса к мобу, от моба к персу (второе выстрел)
+				Vector2 velocity = Helper.VelocityToPoint(npc.Center, Helper.RandomPointInArea(new Vector2(Main.player[npc.target].Center.X - 100, Main.player[npc.target].Center.Y - 100), new Vector2(Main.player[npc.target].Center.X + 20, Main.player[npc.target].Center.Y + 20)), ((Main.expertMode) ? 20 : 15)); //????? ????????????? ??????? (????? ?? ????? ? ??????)
+				int proj = Projectile.NewProjectile(null, npc.Center.X, npc.Center.Y, velocity.X, velocity.Y, 83, (int)Helper.DistortFloat(ShootDamage, DistortPercent), Helper.DistortFloat(ShootKnockback, DistortPercent)); //???????????? ??? ???? ????????: ?? ????? ? ????, ?? ???? ? ????? (?????? ???????)
 				Main.projectile[proj].Center = npc.Center;
 			}
 			if (LaserCooldown <= 0)
@@ -419,7 +419,7 @@ namespace Tremor.NPCs
 			if (npc.life > npc.lifeMax * 0.5f)
 			{
 				//TODO: Fix this trash assignment
-				TextureAssets.NpcHeadBoss[NPCID.Sets.BossHeadTextures[npc.type]] =  Mod.Assets.Request<Texture2D>("NPCs/WallOfShadow_Head_Boss", ReLogic.Content.AssetRequestMode.ImmediateLoad);
+				TextureAssets.NpcHeadBoss[NPCID.Sets.BossHeadTextures[npc.type]] = Mod.Assets.Request<Texture2D>("NPCs/WallOfShadow_Head_Boss", ReLogic.Content.AssetRequestMode.ImmediateLoad);
 				Shoot();
 				if (npc.position.X < 160 || npc.position.X > (Main.maxTilesX - 10) * 16)
 					npc.active = false;
@@ -736,7 +736,7 @@ namespace Tremor.NPCs
 			npc.frame.Width = frameWidth;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
@@ -754,7 +754,7 @@ namespace Tremor.NPCs
 				for (int i = 1; i <= 13; i++)
 				{
 					int x = i <= 2 ? 1 : 2;
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WallOfShadowGore" + x));
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("WallOfShadowGore" + x));
 				}
 			}
 		}
@@ -811,10 +811,11 @@ namespace Tremor.NPCs
 			}
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
+
+		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
-			Texture2D shadowChain = Mod.GetTexture("NPCs/WallOfShadowChain");
-			Texture2D shadowWall = Mod.GetTexture("NPCs/WallOfShadow_Wall");
+			Texture2D shadowChain = (Texture2D)ModContent.Request<Texture2D>("NPCs/WallOfShadowChain");
+			Texture2D shadowWall = (Texture2D)ModContent.Request<Texture2D>("NPCs/WallOfShadow_Wall");
 			for (int i = 0; i < 255; i++)
 			{
 				if (Main.player[i].active && Main.player[i].tongued && !Main.player[i].dead)
@@ -968,7 +969,7 @@ namespace Tremor.NPCs
 			npc.position.Y - Main.screenPosition.Y + npc.height - Terraria.GameContent.TextureAssets.Npc[npc.type].Value.Height * npc.scale / Main.npcFrameCount[npc.type] + 4f + origin.Y * npc.scale + npc.gfxOffY);
 
 			SpriteEffects effects = npc.spriteDirection == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
-			spriteBatch.Draw(drawTexture, drawPos, npc.frame, drawColor, npc.rotation, origin, npc.scale, effects, 0);
+			spriteBatch.Draw(drawTexture, drawPos, npc.frame, npc.GetAlpha(lightColor), npc.rotation, origin, npc.scale, effects, 0);
 
 			return false;
 		}

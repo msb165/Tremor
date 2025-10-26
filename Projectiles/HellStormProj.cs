@@ -21,7 +21,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hell Storm");
+			// DisplayName.SetDefault("Hell Storm");
 
 		}
 

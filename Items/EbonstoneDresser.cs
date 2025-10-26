@@ -7,24 +7,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 48;
-			item.height = 32;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 15;
-			item.useStyle = 1;
-			item.rare = 1;
-			item.consumable = true;
-			item.value = 2000;
-			item.createTile = ModContent.TileType<Tiles.EbonstoneDresser>();
+			Item.width = 48;
+			Item.height = 32;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 15;
+			Item.useStyle = 1;
+			Item.rare = 1;
+			Item.consumable = true;
+			Item.value = 2000;
+			Item.createTile = ModContent.TileType<Tiles.EbonstoneDresser>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ebonstone Dresser");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Ebonstone Dresser");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

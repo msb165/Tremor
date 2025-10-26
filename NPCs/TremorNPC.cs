@@ -886,13 +886,12 @@ namespace Tremor.NPCs
 			}
 		}
 
-		public override void SetupShop(int type, Chest shop, ref int nextSlot)
+
+
+		public override void SetupTravelShop(int[] shop, ref int nextSlot)
 		{
-			if (type == NPCID.Merchant && Main.bloodMoon)
-			{
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<RedPuzzleFragment>());
-				nextSlot++;
-			}
+			shop[nextSlot] = ModContent.ItemType<RedPuzzleFragment>();
+			nextSlot++;
 		}
 
 		public override void SetDefaults(NPC npc)

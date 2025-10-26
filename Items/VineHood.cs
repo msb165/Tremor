@@ -11,18 +11,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 26;
+			Item.width = 26;
+			Item.height = 26;
 
-			item.value = 100;
-			item.rare = 1;
-			item.defense = 1;
+			Item.value = 100;
+			Item.rare = 1;
+			Item.defense = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vine Hood");
-			Tooltip.SetDefault("5% increased ranged damage");
+			// DisplayName.SetDefault("Vine Hood");
+			// Tooltip.SetDefault("5% increased ranged damage");
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

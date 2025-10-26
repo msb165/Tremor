@@ -30,7 +30,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Emeraldy");
+			// DisplayName.SetDefault("Emeraldy");
 
 		}
 

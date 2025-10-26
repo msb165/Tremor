@@ -20,7 +20,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Electric Bolt");
+			// DisplayName.SetDefault("Electric Bolt");
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 2;
 		}
@@ -43,7 +43,7 @@ namespace Tremor.Projectiles
 			projectile.frameCounter++;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
 		}

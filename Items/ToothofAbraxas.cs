@@ -7,17 +7,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 24;
-			item.maxStack = 99;
-			item.value = 19000;
-			item.rare = 11;
+			Item.width = 30;
+			Item.height = 24;
+			Item.maxStack = 99;
+			Item.value = 19000;
+			Item.rare = 11;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Tooth of Abraxas");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Tooth of Abraxas");
+			// Tooltip.SetDefault("");
 		}
 
 	}

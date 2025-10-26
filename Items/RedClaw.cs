@@ -8,25 +8,25 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.useStyle = 3;
-			item.useTurn = false;
-			item.useAnimation = 12;
-			item.useTime = 12;
-			item.width = 24;
-			item.height = 28;
-			item.damage = 19;
-			item.knockBack = 4f;
-			item.scale = 0.9f;
-			item.UseSound = SoundID.Item1;
-			item.useTurn = true;
-			item.value = 8400;
-			item.DamageType = DamageClass.Melee;
+			Item.useStyle = 3;
+			Item.useTurn = false;
+			Item.useAnimation = 12;
+			Item.useTime = 12;
+			Item.width = 24;
+			Item.height = 28;
+			Item.damage = 19;
+			Item.knockBack = 4f;
+			Item.scale = 0.9f;
+			Item.UseSound = SoundID.Item1;
+			Item.useTurn = true;
+			Item.value = 8400;
+			Item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Red Claw");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Red Claw");
+			// Tooltip.SetDefault("");
 		}
 
 	}

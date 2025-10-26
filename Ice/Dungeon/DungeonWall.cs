@@ -9,7 +9,7 @@ namespace Tremor.Ice.Dungeon
 		public override void SetStaticDefaults()
 		{
 			Main.wallHouse[Type] = true;
-			ItemDrop = ModContent.ItemType<DungeonWallItem>();
+			////ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<DungeonWallItem>();
 			AddMapEntry(new Color(35, 87, 122));
 		}
 

@@ -7,19 +7,19 @@ namespace Tremor.Items.Brass
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Brass Chip");
-			Tooltip.SetDefault("Shoots rockets from the sky when a flask is destroyed\n" +
-"If alchemical critical strike chance is more than 30 - alchemical damage is increased by 10%");
+			// DisplayName.SetDefault("Brass Chip");
+			/* Tooltip.SetDefault("Shoots rockets from the sky when a flask is destroyed\n" +
+"If alchemical critical strike chance is more than 30 - alchemical damage is increased by 10%"); */
 		}
 
 		public override void SetDefaults()
 		{
-			item.width = 22;
-			item.height = 22;
-			item.value = 150000;
-			item.rare = 5;
-			item.defense = 4;
-			item.accessory = true;
+			Item.width = 22;
+			Item.height = 22;
+			Item.value = 150000;
+			Item.rare = 5;
+			Item.defense = 4;
+			Item.accessory = true;
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

@@ -23,7 +23,7 @@ namespace Tremor.Tiles
 			AddMapEntry(new Color(255, 215, 0));
 			Main.tileShine[Type] = 1100;
 			Main.tileSolid[Type] = true;
-			ItemDrop = ModContent.ItemType<StarBar>();
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<StarBar>();
 		}
 	}
 }

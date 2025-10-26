@@ -10,18 +10,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 32;
-			item.height = 26;
+			Item.width = 32;
+			Item.height = 26;
 
-			item.value = 400;
-			item.rare = 10;
-			item.defense = 22;
+			Item.value = 400;
+			Item.rare = 10;
+			Item.defense = 22;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paladin Helmet");
-			Tooltip.SetDefault("30% increased melee speed");
+			// DisplayName.SetDefault("Paladin Helmet");
+			// Tooltip.SetDefault("30% increased melee speed");
 		}
 
 		public override void UpdateEquip(Player player)

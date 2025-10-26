@@ -9,17 +9,17 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 26;
-			item.height = 18;
-			item.value = Item.sellPrice(silver: 1);
-			item.rare = 1;
-			item.defense = 2;
+			Item.width = 26;
+			Item.height = 18;
+			Item.value = Item.sellPrice(silver: 1);
+			Item.rare = 1;
+			Item.defense = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Stone Leggings");
-			Tooltip.SetDefault("10% reduced movement speed\nThe stone protects you, but makes you slower");
+			// DisplayName.SetDefault("Stone Leggings");
+			// Tooltip.SetDefault("10% reduced movement speed\nThe stone protects you, but makes you slower");
 		}
 
 		public override void UpdateEquip(Player player)

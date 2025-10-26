@@ -10,29 +10,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 12;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 4;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 5;
-			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
-			item.noMelee = true; //so the item's animation doesn't do damage
-			item.knockBack = 5;
-			item.value = 700;
-			item.rare = 2;
-			item.UseSound = SoundID.Item20;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.DeadFlowerPro>();
-			item.shootSpeed = 15f;
+			Item.damage = 12;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 4;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 5;
+			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			Item.noMelee = true; //so the item's animation doesn't do damage
+			Item.knockBack = 5;
+			Item.value = 700;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item20;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.DeadFlowerPro>();
+			Item.shootSpeed = 15f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dead Flower");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Dead Flower");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

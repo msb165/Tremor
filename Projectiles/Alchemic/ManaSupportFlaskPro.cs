@@ -23,7 +23,7 @@ namespace Tremor.Projectiles.Alchemic
 			projectile.timeLeft = 1200;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			if (Main.LocalPlayer.HasBuffSafe(ModContent.BuffType<Buffs.DesertEmperorSetBuff>()))
 			{

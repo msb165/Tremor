@@ -11,17 +11,17 @@ namespace Tremor.Items.Granite
 		public override void SetDefaults()
 		{
 
-			item.width = 18;
-			item.height = 18;
-			item.value = 2500;
-			item.rare = 1;
-			item.defense = 2;
+			Item.width = 18;
+			Item.height = 18;
+			Item.value = 2500;
+			Item.rare = 1;
+			Item.defense = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Granite Helmet");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Granite Helmet");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

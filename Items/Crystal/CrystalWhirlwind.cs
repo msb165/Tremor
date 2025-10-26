@@ -9,31 +9,31 @@ namespace Tremor.Items.Crystal
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.Starfury);
+			Item.CloneDefaults(ItemID.Starfury);
 
-			item.damage = 85;
-			//item.melee = false;
-			item.DamageType = DamageClass.Magic;
-			item.width = 50;
-			item.height = 55;
-			item.useTime = 7;
-			item.mana = 20;
+			Item.damage = 85;
+			//Item.melee = false;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 50;
+			Item.height = 55;
+			Item.useTime = 7;
+			Item.mana = 20;
 
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.shootSpeed = 30f;
-			item.knockBack = 3;
-			item.value = 30000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item4;
-			item.autoReuse = true;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.shootSpeed = 30f;
+			Item.knockBack = 3;
+			Item.value = 30000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item4;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crystal Hail");
-			Tooltip.SetDefault("Causes crystals to fall from the sky\n" +
-"'Made of pure friendship''");
+			// DisplayName.SetDefault("Crystal Hail");
+			/* Tooltip.SetDefault("Causes crystals to fall from the sky\n" +
+"'Made of pure friendship''"); */
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

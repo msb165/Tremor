@@ -8,19 +8,19 @@ namespace Tremor.Items.Chaos
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chaos Element");
-			Tooltip.SetDefault("Flasks spawn crystal splinters when destroyed\n" +
-"Splinters heal you when hit enemy");
+			// DisplayName.SetDefault("Chaos Element");
+			/* Tooltip.SetDefault("Flasks spawn crystal splinters when destroyed\n" +
+"Splinters heal you when hit enemy"); */
 		}
 
 		public override void SetDefaults()
 		{
-			item.width = 22;
-			item.height = 22;
-			item.value = 100000;
-			item.rare = 5;
-			item.defense = 3;
-			item.accessory = true;
+			Item.width = 22;
+			Item.height = 22;
+			Item.value = 100000;
+			Item.rare = 5;
+			Item.defense = 3;
+			Item.accessory = true;
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

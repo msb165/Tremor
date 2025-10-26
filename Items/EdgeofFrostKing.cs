@@ -9,28 +9,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 94;
-			item.DamageType = DamageClass.Melee;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 25;
-			item.useAnimation = 20;
-			item.useStyle = 1;
-			item.knockBack = 6;
-			item.value = 10000;
-			item.rare = 9;
-			item.expert = true;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 94;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 25;
+			Item.useAnimation = 20;
+			Item.useStyle = 1;
+			Item.knockBack = 6;
+			Item.value = 10000;
+			Item.rare = 9;
+			Item.expert = true;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Edge of Frost King");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Edge of Frost King");
+			// Tooltip.SetDefault("");
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(44, 60);
 		}

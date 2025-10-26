@@ -8,26 +8,26 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.damage = 240;
-			item.width = 58;
-			item.height = 30;
-			item.DamageType = DamageClass.Ranged;
-			item.useTime = 35;
-			item.shoot = ModContent.ProjectileType<Projectiles.Gurumaster>();
-			item.shootSpeed = 15f;
-			item.useAnimation = 35;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 1000000;
-			item.rare = 11;
-			item.UseSound = SoundID.Item36;
-			item.autoReuse = false;
+			Item.damage = 240;
+			Item.width = 58;
+			Item.height = 30;
+			Item.DamageType = DamageClass.Ranged;
+			Item.useTime = 35;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Gurumaster>();
+			Item.shootSpeed = 15f;
+			Item.useAnimation = 35;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 1000000;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item36;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Gurumaster");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Gurumaster");
+			// Tooltip.SetDefault("");
 		}
 
 		public override Vector2? HoldoutOffset()

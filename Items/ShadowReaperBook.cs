@@ -7,30 +7,30 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(165);
+			Item.CloneDefaults(165);
 
-			item.damage = 39;
-			item.DamageType = DamageClass.Magic;
-			item.width = 26;
-			item.maxStack = 1;
-			item.height = 30;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.shoot = ModContent.ProjectileType<Projectiles.ShadowR>();
-			item.shootSpeed = 11.5f;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
-			item.mana = 9;
+			Item.damage = 39;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 26;
+			Item.maxStack = 1;
+			Item.height = 30;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.shoot = ModContent.ProjectileType<Projectiles.ShadowR>();
+			Item.shootSpeed = 11.5f;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
+			Item.mana = 9;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Shadow Reaper");
-			Tooltip.SetDefault("Summons homing shadow creature");
+			// DisplayName.SetDefault("Shadow Reaper");
+			// Tooltip.SetDefault("Summons homing shadow creature");
 		}
 
 	}

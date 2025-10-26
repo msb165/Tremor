@@ -7,27 +7,27 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items.Weapons
 	{
 		public override void SetDefaults()
 		{
-			item.damage = 80;
-			item.DamageType = DamageClass.Melee;
-			item.width = 38;
-			item.height = 38;
-			item.useTime = 7;
-			item.useAnimation = 11;
-			item.pick = 225;
-			item.useStyle = 1;
-			item.knockBack = 5;
-			item.value = 50000;
-			item.rare = 10;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.tileBoost += 4;
-			item.useTurn = true;
+			Item.damage = 80;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 38;
+			Item.height = 38;
+			Item.useTime = 7;
+			Item.useAnimation = 11;
+			Item.pick = 225;
+			Item.useStyle = 1;
+			Item.knockBack = 5;
+			Item.value = 50000;
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
+			Item.tileBoost += 4;
+			Item.useTurn = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Pickaxe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Nova Pickaxe");
+			// Tooltip.SetDefault("");
 			TremorGlowMask.AddGlowMask(this);
 		}
 

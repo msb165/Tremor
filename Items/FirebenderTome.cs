@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 18;
-			item.DamageType = DamageClass.Magic;
-			item.width = 28;
-			item.height = 30;
-			item.useTime = 36;
-			item.useAnimation = 36;
-			item.shoot = 706;
-			item.shootSpeed = 7f;
-			item.mana = 10;
-			item.useStyle = 5;
-			item.knockBack = 3;
-			item.value = 10000;
-			item.rare = 2;
-			item.UseSound = SoundID.Item20;
-			item.autoReuse = true;
+			Item.damage = 18;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 28;
+			Item.height = 30;
+			Item.useTime = 36;
+			Item.useAnimation = 36;
+			Item.shoot = 706;
+			Item.shootSpeed = 7f;
+			Item.mana = 10;
+			Item.useStyle = 5;
+			Item.knockBack = 3;
+			Item.value = 10000;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item20;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Firebender Tome");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Firebender Tome");
+			// Tooltip.SetDefault("");
 		}
 
 	}

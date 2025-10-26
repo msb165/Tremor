@@ -9,16 +9,16 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 34;
-			item.value = 600;
-			item.rare = 1;
+			Item.width = 30;
+			Item.height = 34;
+			Item.value = 600;
+			Item.rare = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Fur Coat");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Fur Coat");
+			// Tooltip.SetDefault("");
 		}
 
 	}

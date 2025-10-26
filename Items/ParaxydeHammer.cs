@@ -10,27 +10,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 54;
-			item.DamageType = DamageClass.Melee;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 16;
-			item.useAnimation = 16;
-			item.hammer = 90;
-			item.useStyle = 1;
-			item.knockBack = 5;
-			item.value = 216000;
-			item.rare = 5;
-			item.tileBoost++;
-			item.scale = 1.25f;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 54;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 16;
+			Item.useAnimation = 16;
+			Item.hammer = 90;
+			Item.useStyle = 1;
+			Item.knockBack = 5;
+			Item.value = 216000;
+			Item.rare = 5;
+			Item.tileBoost++;
+			Item.scale = 1.25f;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paraxyde Hammer");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Paraxyde Hammer");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

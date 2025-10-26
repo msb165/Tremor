@@ -10,17 +10,17 @@ namespace Tremor.Items.Chain
 	{
 		public override void SetDefaults()
 		{
-			item.width = 18;
-			item.height = 24;
-			item.value = Item.sellPrice(silver: 10);
-			item.rare = 1;
-			item.defense = 2;
+			Item.width = 18;
+			Item.height = 24;
+			Item.value = Item.sellPrice(silver: 10);
+			Item.rare = 1;
+			Item.defense = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chain Coif");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Chain Coif");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

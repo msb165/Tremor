@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 19;
-			item.width = 14;
-			item.height = 84;
-			item.noUseGraphic = true;
-			item.DamageType = DamageClass.Melee;
-			item.useTime = 30;
-			item.shoot = ModContent.ProjectileType<Projectiles.GrassGlaviePro>();
-			item.shootSpeed = 3f;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 900;
-			item.rare = 2;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 19;
+			Item.width = 14;
+			Item.height = 84;
+			Item.noUseGraphic = true;
+			Item.DamageType = DamageClass.Melee;
+			Item.useTime = 30;
+			Item.shoot = ModContent.ProjectileType<Projectiles.GrassGlaviePro>();
+			Item.shootSpeed = 3f;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 900;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Grass Glaive");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Grass Glaive");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

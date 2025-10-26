@@ -17,7 +17,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Tiki Totem");
+			// DisplayName.SetDefault("Tiki Totem");
 			Main.npcFrameCount[npc.type] = 10;
 			NPCID.Sets.TrailCacheLength[npc.type] = 5;
 		}
@@ -45,9 +45,9 @@ namespace Tremor.NPCs
 			npc.value = Item.buyPrice(0, 0, 60, 0);
 		}
 		
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
-			npc.lifeMax = (int)(npc.lifeMax * 0.625f * bossLifeScale);
+			npc.lifeMax = (int)(npc.lifeMax * 0.625f * balance);
 			npc.damage = (int)(npc.damage * 0.6f);
 		}
 
@@ -410,24 +410,24 @@ namespace Tremor.NPCs
 			}
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				_timer = 0;
 				for (int i = 0; i < 3; i++)
 				{
-					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot($"Gores/TikiTotemGore{i + 1}"), 1f);
+					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot($"TikiTotemGore{i + 1}"), 1f);
 				}
 			}
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
 			for (int k = 0; k < npc.oldPos.Length; k++)
 			{
 				Vector2 drawPos = npc.oldPos[k] - Main.screenPosition;
-				Color color = npc.GetAlpha(lightColor) * ((npc.oldPos.Length - k) / (float)npc.oldPos.Length);
+				Color color = npc.GetAlpha(drawColor) * ((npc.oldPos.Length - k) / (float)npc.oldPos.Length);
 				Rectangle frame = new Rectangle(0, 0, 86, 162);
 				frame.Y += 164 * (k / 60);
 

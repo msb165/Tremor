@@ -22,11 +22,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("SlimeFlail");
+			// DisplayName.SetDefault("SlimeFlail");
 
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Texture2D texture = Mod.GetTexture("Tremor/Projectiles/SlimeFlail_Chain");
 

@@ -12,7 +12,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ruin Ghost");
+			// DisplayName.SetDefault("Ruin Ghost");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 
@@ -43,7 +43,7 @@ namespace Tremor.NPCs
 				this.NewItem(ModContent.ItemType<RuinKey>());
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{

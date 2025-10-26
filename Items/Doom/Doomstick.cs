@@ -11,28 +11,28 @@ namespace Tremor.Items.Doom
 		public override void SetDefaults()
 		{
 
-			item.damage = 65;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 40;
-			item.height = 20;
-			item.useTime = 29;
-			item.useAnimation = 29;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 6;
-			item.value = 75000;
-			item.rare = 7;
-			item.UseSound = SoundID.Item36;
-			item.autoReuse = false;
-			item.shoot = 10;
-			item.shootSpeed = 8f;
-			item.useAmmo = AmmoID.Bullet;
+			Item.damage = 65;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 40;
+			Item.height = 20;
+			Item.useTime = 29;
+			Item.useAnimation = 29;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 6;
+			Item.value = 75000;
+			Item.rare = 7;
+			Item.UseSound = SoundID.Item36;
+			Item.autoReuse = false;
+			Item.shoot = 10;
+			Item.shootSpeed = 8f;
+			Item.useAmmo = AmmoID.Bullet;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Doomstick");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Doomstick");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

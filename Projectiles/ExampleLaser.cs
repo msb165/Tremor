@@ -38,11 +38,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Example Laser");
+			// DisplayName.SetDefault("Example Laser");
 
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			if (Charge == MAX_CHARGE)
 			{
@@ -106,7 +106,7 @@ namespace Tremor.Projectiles
 		/// <summary>
 		/// Change the behavior after hit a NPC
 		/// </summary>
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.immune[projectile.owner] = 5;
 		}

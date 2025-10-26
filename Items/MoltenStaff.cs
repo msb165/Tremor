@@ -9,30 +9,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 26;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 8;
-			item.width = 48;
-			item.height = 48;
+			Item.damage = 26;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 8;
+			Item.width = 48;
+			Item.height = 48;
 
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 5;
-			Item.staff[item.type] = true;
-			item.noMelee = true;
-			item.knockBack = 5;
-			item.value = 17500;
-			item.rare = 2;
-			item.UseSound = SoundID.Item20;
-			item.autoReuse = true;
-			item.shoot = 85;
-			item.shootSpeed = 6f;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 5;
+			Item.staff[Item.type] = true;
+			Item.noMelee = true;
+			Item.knockBack = 5;
+			Item.value = 17500;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item20;
+			Item.autoReuse = true;
+			Item.shoot = 85;
+			Item.shootSpeed = 6f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Molten Staff");
-			Tooltip.SetDefault("Casts flames to burn your enemies!");
+			// DisplayName.SetDefault("Molten Staff");
+			// Tooltip.SetDefault("Casts flames to burn your enemies!");
 		}
 
 		public override void AddRecipes()

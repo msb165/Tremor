@@ -10,18 +10,18 @@ namespace Tremor.Items.Wolf
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 22;
-			item.rare = 1;
+			Item.width = 28;
+			Item.height = 22;
+			Item.rare = 1;
 
-			item.value = 100;
-			item.defense = 2;
+			Item.value = 100;
+			Item.defense = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Wolf Hood");
-			Tooltip.SetDefault("6% increased minion damage");
+			// DisplayName.SetDefault("Wolf Hood");
+			// Tooltip.SetDefault("6% increased minion damage");
 		}
 
 		public override void UpdateEquip(Player player)

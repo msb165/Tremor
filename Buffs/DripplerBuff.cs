@@ -5,11 +5,11 @@ namespace Tremor.Buffs
 {
 	public class DripplerBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Drippler");
-			Description.SetDefault("It flies. And flows.");
+			// DisplayName.SetDefault("Drippler");
+			// Description.SetDefault("It flies. And flows.");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

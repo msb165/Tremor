@@ -9,34 +9,34 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 44;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 48;
-			item.height = 48;
-			item.useTime = 20;
-			item.shootSpeed = 12f;
-			item.useAnimation = 20;
-			item.useStyle = 1;
-			item.knockBack = 3f;
-			item.shoot = ModContent.ProjectileType<Projectiles.TitaniumDiscPro>();
-			item.value = 27600;
-			item.rare = 4;
-			item.noUseGraphic = true;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 44;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 48;
+			Item.height = 48;
+			Item.useTime = 20;
+			Item.shootSpeed = 12f;
+			Item.useAnimation = 20;
+			Item.useStyle = 1;
+			Item.knockBack = 3f;
+			Item.shoot = ModContent.ProjectileType<Projectiles.TitaniumDiscPro>();
+			Item.value = 27600;
+			Item.rare = 4;
+			Item.noUseGraphic = true;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Titanium Disc");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Titanium Disc");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool CanUseItem(Player player)
 		{
 			for (int i = 0; i < 1000; ++i)
 			{
-				if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == item.shoot)
+				if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == Item.shoot)
 				{
 					return false;
 				}

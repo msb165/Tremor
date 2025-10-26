@@ -124,13 +124,13 @@ namespace Tremor.Items
 		public override void SetDefaults(Item item)
 		{
 			/* WRONG -- TODO: Remove this buff or actually code it correctly
-			if (item.ranged && Main.LocalPlayer.active && Main.LocalPlayer.FindBuffIndex(ModContent.BuffType<Buffs.ShotSpeedBuff>()) != -1)
+			if (Item.ranged && Main.LocalPlayer.active && Main.LocalPlayer.FindBuffIndex(ModContent.BuffType<Buffs.ShotSpeedBuff>()) != -1)
 			{
-				item.shootSpeed *= 2f;
+				Item.shootSpeed *= 2f;
 			}
-			if (item.ranged && Main.LocalPlayer.active && Main.LocalPlayer.FindBuffIndex(ModContent.BuffType<Buffs.ShotSpeedBuff>()) != -1)
+			if (Item.ranged && Main.LocalPlayer.active && Main.LocalPlayer.FindBuffIndex(ModContent.BuffType<Buffs.ShotSpeedBuff>()) != -1)
 			{
-				item.shootSpeed *= 2f;
+				Item.shootSpeed *= 2f;
 			}
 			*/
 			if (item.type == 2196)
@@ -148,11 +148,11 @@ namespace Tremor.Items
 			/* WRONG -- TODO: Remove this buff or actually code it correctly
 			if (item.type == ItemID.EnchantedSword && Main.LocalPlayer.active && Main.LocalPlayer.FindBuffIndex(ModContent.BuffType<Buffs.EnchantedBuff>()) != -1)
 			{
-				item.damage += 5;
+				Item.damage += 5;
 			}
 			if (item.type == ItemID.EnchantedBoomerang && Main.LocalPlayer.active && Main.LocalPlayer.FindBuffIndex(ModContent.BuffType<Buffs.EnchantedBuff>()) != -1)
 			{
-				item.damage += 5;
+				Item.damage += 5;
 			}
 			*/
 			if (item.type == ItemID.SlimeStaff)

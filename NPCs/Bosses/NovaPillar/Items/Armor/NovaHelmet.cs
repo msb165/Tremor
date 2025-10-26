@@ -10,17 +10,17 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items.Armor
 	{
 		public override void SetDefaults()
 		{
-			item.width = 28;
-			item.height = 30;
-			item.rare = 10;
-			item.defense = 14;
+			Item.width = 28;
+			Item.height = 30;
+			Item.rare = 10;
+			Item.defense = 14;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Helmet");
-			Tooltip.SetDefault("12% increased alchemical damage and critical strike chance\n" +
-"Enemies are more likely to target you");
+			// DisplayName.SetDefault("Nova Helmet");
+			/* Tooltip.SetDefault("12% increased alchemical damage and critical strike chance\n" +
+"Enemies are more likely to target you"); */
 		}
 
 		public override void UpdateEquip(Player player)

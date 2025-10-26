@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class RoundBlastBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Round Blast");
-			Description.SetDefault("Alchemical projectiles leave explosions in the shape of round");
+			// DisplayName.SetDefault("Round Blast");
+			// Description.SetDefault("Alchemical projectiles leave explosions in the shape of round");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

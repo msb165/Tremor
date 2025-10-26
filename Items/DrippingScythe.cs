@@ -7,26 +7,26 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.autoReuse = true;
+			Item.autoReuse = true;
 
-			item.useStyle = 1;
-			item.useAnimation = 20;
-			item.useTime = 20;
-			item.knockBack = 7f;
-			item.width = 24;
-			item.height = 28;
-			item.damage = 297;
-			item.UseSound = SoundID.Item71;
-			item.rare = 11;
-			item.shootSpeed = 15f;
-			item.value = 450000;
-			item.DamageType = DamageClass.Melee;
+			Item.useStyle = 1;
+			Item.useAnimation = 20;
+			Item.useTime = 20;
+			Item.knockBack = 7f;
+			Item.width = 24;
+			Item.height = 28;
+			Item.damage = 297;
+			Item.UseSound = SoundID.Item71;
+			Item.rare = 11;
+			Item.shootSpeed = 15f;
+			Item.value = 450000;
+			Item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dripping Sickle");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Dripping Sickle");
+			// Tooltip.SetDefault("");
 		}
 
 	}

@@ -9,21 +9,21 @@ namespace Tremor.ZombieEvent.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 20;
-			item.alpha = 100;
-			item.value = 1100;
-			item.rare = 3;
-			item.defense = 3;
+			Item.width = 26;
+			Item.height = 20;
+			Item.alpha = 100;
+			Item.value = 1100;
+			Item.rare = 3;
+			Item.defense = 3;
 
-			item.accessory = true;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Scary Cloak");
-			Tooltip.SetDefault("Makes the player invisible\n" +
-	  "Increases magic and summon damage and critical strike chanse by 8");
+			// DisplayName.SetDefault("Scary Cloak");
+			/* Tooltip.SetDefault("Makes the player invisible\n" +
+	  "Increases magic and summon damage and critical strike chanse by 8"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

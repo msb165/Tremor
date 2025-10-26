@@ -10,29 +10,29 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.autoReuse = true;
-			item.useStyle = 5;
-			item.useAnimation = 12;
-			item.useTime = 12;
+			Item.autoReuse = true;
+			Item.useStyle = 5;
+			Item.useAnimation = 12;
+			Item.useTime = 12;
 
-			item.width = 50;
-			item.height = 18;
-			item.shoot = 12;
-			item.useAmmo = AmmoID.FallenStar;
-			item.UseSound = SoundID.Item9;
-			item.damage = 228;
-			item.shootSpeed = 14f;
-			item.noMelee = true;
-			item.value = 1000000;
-			item.rare = 2;
+			Item.width = 50;
+			Item.height = 18;
+			Item.shoot = 12;
+			Item.useAmmo = AmmoID.FallenStar;
+			Item.UseSound = SoundID.Item9;
+			Item.damage = 228;
+			Item.shootSpeed = 14f;
+			Item.noMelee = true;
+			Item.value = 1000000;
+			Item.rare = 2;
 
-			item.DamageType = DamageClass.Ranged;
+			Item.DamageType = DamageClass.Ranged;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Starlight Glimmer");
-			Tooltip.SetDefault("Shoots fallen stars");
+			// DisplayName.SetDefault("Starlight Glimmer");
+			// Tooltip.SetDefault("Shoots fallen stars");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

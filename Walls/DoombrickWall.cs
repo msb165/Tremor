@@ -9,7 +9,7 @@ namespace Tremor.Walls
 		public override void SetStaticDefaults()
 		{
 			Main.wallHouse[Type] = true;
-			ItemDrop = ModContent.ItemType<Items.Doom.DoombrickWall>();
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<Items.Doom.DoombrickWall>();
 			AddMapEntry(new Color(233, 255, 0));
 		}
 	}

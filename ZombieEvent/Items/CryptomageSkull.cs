@@ -8,16 +8,16 @@ namespace Tremor.ZombieEvent.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 24;
-			item.rare = 4;
-			item.vanity = true;
+			Item.width = 26;
+			Item.height = 24;
+			Item.rare = 4;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cryptomage Skull");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Cryptomage Skull");
+			// Tooltip.SetDefault("");
 		}
 	}
 }

@@ -11,29 +11,29 @@ namespace Tremor.Invasion
 		public override void SetDefaults()
 		{
 
-			item.damage = 120;
-			item.DamageType = DamageClass.Summon;
-			item.mana = 12;
-			item.width = 26;
-			item.height = 28;
+			Item.damage = 120;
+			Item.DamageType = DamageClass.Summon;
+			Item.mana = 12;
+			Item.width = 26;
+			Item.height = 28;
 
-			item.useTime = 15;
-			item.useAnimation = 15;
-			item.useStyle = 1;
-			item.noMelee = true;
-			item.value = Item.buyPrice(0, 2, 0, 0);
-			item.rare = 11;
-			item.UseSound = SoundID.Item44;
-			item.shoot = ModContent.ProjectileType<Mini_Cyber>();
-			item.shootSpeed = 1f;
-			item.buffType = ModContent.BuffType<CyberBuff>();
-			item.buffTime = 3600;
+			Item.useTime = 15;
+			Item.useAnimation = 15;
+			Item.useStyle = 1;
+			Item.noMelee = true;
+			Item.value = Item.buyPrice(0, 2, 0, 0);
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item44;
+			Item.shoot = ModContent.ProjectileType<Mini_Cyber>();
+			Item.shootSpeed = 1f;
+			Item.buffType = ModContent.BuffType<CyberBuff>();
+			Item.buffTime = 3600;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Stray Staff");
-			Tooltip.SetDefault("Summons a cyber stray to fight for you");
+			// DisplayName.SetDefault("Stray Staff");
+			// Tooltip.SetDefault("Summons a cyber stray to fight for you");
 		}
 
 		public override bool AltFunctionUse(Player player)

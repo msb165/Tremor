@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 26;
-			item.DamageType = DamageClass.Magic;
-			item.width = 28;
-			item.height = 30;
-			item.useTime = 14;
-			item.useAnimation = 14;
-			item.shoot = ModContent.ProjectileType<Projectiles.PumpkinPro>();
-			item.shootSpeed = 10f;
-			item.noUseGraphic = true;
-			item.mana = 16;
-			item.useStyle = 5;
-			item.knockBack = 3;
-			item.value = 66666;
-			item.rare = 4;
-			item.UseSound = SoundID.Item21;
-			item.autoReuse = true;
+			Item.damage = 26;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 28;
+			Item.height = 30;
+			Item.useTime = 14;
+			Item.useAnimation = 14;
+			Item.shoot = ModContent.ProjectileType<Projectiles.PumpkinPro>();
+			Item.shootSpeed = 10f;
+			Item.noUseGraphic = true;
+			Item.mana = 16;
+			Item.useStyle = 5;
+			Item.knockBack = 3;
+			Item.value = 66666;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item21;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pumpspell");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Pumpspell");
+			// Tooltip.SetDefault("");
 		}
 
 	}

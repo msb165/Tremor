@@ -10,25 +10,25 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 13;
-			item.DamageType = DamageClass.Melee;
-			item.width = 46;
-			item.height = 48;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.knockBack = 3;
-			item.value = 6400;
-			item.rare = 2;
-			item.UseSound = SoundID.Item15;
-			item.autoReuse = true;
-			item.useTurn = true;
+			Item.damage = 13;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 46;
+			Item.height = 48;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.knockBack = 3;
+			Item.value = 6400;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item15;
+			Item.autoReuse = true;
+			Item.useTurn = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Amethyst Blade");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Amethyst Blade");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

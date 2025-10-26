@@ -10,21 +10,21 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 26;
-			item.value = 34600;
-			item.rare = 9;
-			item.accessory = true;
-			item.defense = 15;
+			Item.width = 26;
+			Item.height = 26;
+			Item.value = 34600;
+			Item.rare = 9;
+			Item.accessory = true;
+			Item.defense = 15;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Power Shield");
-			Tooltip.SetDefault("Grants immunity to most debuffs\n" +
+			// DisplayName.SetDefault("Power Shield");
+			/* Tooltip.SetDefault("Grants immunity to most debuffs\n" +
 "Grants immunity to knockback and fire blocks\n" +
 "Prolonged after hit invicibility\n" +
-"Gives health when in Corruption or Crimson");
+"Gives health when in Corruption or Crimson"); */
 		}
 
 		public override void UpdateEquip(Player p)

@@ -8,23 +8,23 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 46;
-			item.height = 46;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.value = 150;
-			item.createTile = ModContent.TileType<Tiles.StarvilTile>();
+			Item.width = 46;
+			Item.height = 46;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.value = 150;
+			Item.createTile = ModContent.TileType<Tiles.StarvilTile>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Starvil");
-			Tooltip.SetDefault("Allows you to treat space materials");
+			// DisplayName.SetDefault("Starvil");
+			// Tooltip.SetDefault("Allows you to treat space materials");
 		}
 
 		public override void AddRecipes()

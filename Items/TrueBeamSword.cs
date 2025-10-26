@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 92;
-			item.DamageType = DamageClass.Melee;
-			item.width = 50;
-			item.height = 52;
-			item.useTime = 45;
-			item.useAnimation = 15;
-			item.useStyle = 1;
-			item.shoot = 116;
-			item.shootSpeed = 15f;
-			item.knockBack = 8;
+			Item.damage = 92;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 50;
+			Item.height = 52;
+			Item.useTime = 45;
+			Item.useAnimation = 15;
+			Item.useStyle = 1;
+			Item.shoot = 116;
+			Item.shootSpeed = 15f;
+			Item.knockBack = 8;
 
-			item.value = 750000;
-			item.rare = 6;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.value = 750000;
+			Item.rare = 6;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("True Beam Sword");
-			Tooltip.SetDefault("Shoots a beam of light");
+			// DisplayName.SetDefault("True Beam Sword");
+			// Tooltip.SetDefault("Shoots a beam of light");
 		}
 
 		public override void AddRecipes()

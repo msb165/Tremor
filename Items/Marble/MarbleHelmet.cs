@@ -11,17 +11,17 @@ namespace Tremor.Items.Marble
 		public override void SetDefaults()
 		{
 
-			item.defense = 2;
-			item.width = 26;
-			item.height = 32;
-			item.value = 2500;
-			item.rare = 1;
+			Item.defense = 2;
+			Item.width = 26;
+			Item.height = 32;
+			Item.value = 2500;
+			Item.rare = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Marble Helmet");
-			Tooltip.SetDefault("10% increased throwing velocity");
+			// DisplayName.SetDefault("Marble Helmet");
+			// Tooltip.SetDefault("10% increased throwing velocity");
 		}
 
 		public override void UpdateEquip(Player p)

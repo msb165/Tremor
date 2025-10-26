@@ -7,18 +7,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 30;
+			Item.width = 28;
+			Item.height = 30;
 
-			item.maxStack = 99;
-			item.value = 8000;
-			item.rare = 6;
+			Item.maxStack = 99;
+			Item.value = 8000;
+			Item.rare = 6;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Skull Teeth");
-			Tooltip.SetDefault("'Hell yeah!'");
+			// DisplayName.SetDefault("Skull Teeth");
+			// Tooltip.SetDefault("'Hell yeah!'");
 		}
 
 	}

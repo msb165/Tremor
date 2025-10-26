@@ -10,7 +10,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cog Lord Probe");
+			// DisplayName.SetDefault("Cog Lord Probe");
 		}
 
 		public override void SetDefaults()

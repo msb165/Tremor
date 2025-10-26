@@ -10,20 +10,20 @@ namespace Tremor.Items.Souls
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 22;
+			Item.width = 22;
+			Item.height = 22;
 
-			item.rare = 3;
-			item.accessory = true;
-			item.value = 50000;
+			Item.rare = 3;
+			Item.accessory = true;
+			Item.value = 50000;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Thrower Soul");
-			Tooltip.SetDefault("10% increased thrown damage\n" +
-"Increases thrown critical strike chance by 15");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 6));
+			// DisplayName.SetDefault("Thrower Soul");
+			/* Tooltip.SetDefault("10% increased thrown damage\n" +
+"Increases thrown critical strike chance by 15"); */
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(6, 6));
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

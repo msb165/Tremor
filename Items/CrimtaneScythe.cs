@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 19;
-			item.DamageType = DamageClass.Melee;
-			item.width = 50;
-			item.height = 40;
-			item.useTime = 18;
-			item.useAnimation = 18;
-			item.useStyle = 1;
-			item.knockBack = 7;
-			item.value = 2700;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 19;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 50;
+			Item.height = 40;
+			Item.useTime = 18;
+			Item.useAnimation = 18;
+			Item.useStyle = 1;
+			Item.knockBack = 7;
+			Item.value = 2700;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crimtane Scythe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Crimtane Scythe");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

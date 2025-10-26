@@ -8,18 +8,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 14;
-			item.height = 22;
-			item.maxStack = 99;
-			item.rare = 8;
-			item.value = Item.buyPrice(0, 5, 0, 0);
+			Item.width = 14;
+			Item.height = 22;
+			Item.maxStack = 99;
+			Item.rare = 8;
+			Item.value = Item.buyPrice(0, 5, 0, 0);
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Essence of Jungle");
-			Tooltip.SetDefault("'Plants fill you with determination.'");
+			// DisplayName.SetDefault("Essence of Jungle");
+			// Tooltip.SetDefault("'Plants fill you with determination.'");
 		}
 
 	}

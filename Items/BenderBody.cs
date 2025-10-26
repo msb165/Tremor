@@ -8,17 +8,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 18;
-			item.value = 10000;
-			item.rare = 5;
-			item.vanity = true;
+			Item.width = 26;
+			Item.height = 18;
+			Item.value = 10000;
+			Item.rare = 5;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bender Body");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Bender Body");
+			// Tooltip.SetDefault("");
 		}
 
 	}

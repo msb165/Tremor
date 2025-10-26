@@ -7,16 +7,16 @@ namespace Tremor.NPCs.Bosses.Motherboard.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 32;
-			item.height = 28;
-			item.rare = 1;
-			item.vanity = true;
+			Item.width = 32;
+			Item.height = 28;
+			Item.rare = 1;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Motherboard Mask");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Motherboard Mask");
+			// Tooltip.SetDefault("");
 		}
 	}
 }

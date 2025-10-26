@@ -403,7 +403,7 @@ namespace Tremor
 		//	Vector2 origin=new Vector2();
 		//	if(item.useStyle==5)
 		//	{
-		//		if(Item.staff[item.type])
+		//		if(item.staff[item.type])
 		//		{
 		//			rotOffset=0.785f*info.drawPlayer.direction;
 		//			if(info.drawPlayer.gravDir==-1f){rotOffset-=1.57f*info.drawPlayer.direction;}

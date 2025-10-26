@@ -16,7 +16,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cog Lord Hand");
+			// DisplayName.SetDefault("Cog Lord Hand");
 			Main.npcFrameCount[npc.type] = 2;
 		}
 
@@ -84,11 +84,11 @@ namespace Tremor.NPCs.Bosses.CogLord
 			return new Rectangle(0, npc.frame.Height * (number - 1), npc.frame.Width, npc.frame.Height);
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CogLordHand"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("CogLordHand"), 1f);
 			}
 		}
 
@@ -106,7 +106,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 			return false;
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
 			Texture2D drawTexture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2((drawTexture.Width / 2) * 0.5F, (drawTexture.Height / Main.npcFrameCount[npc.type]) * 0.5F);

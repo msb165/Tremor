@@ -26,12 +26,12 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pandemonium Bullet");
+			// DisplayName.SetDefault("Pandemonium Bullet");
 
 		}
 
 		const int ShootDirection = 7;
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			int a = Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, -ShootDirection, 0, 711, 50, 1f, Main.myPlayer, 0f, 0f);
 			int b = Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, ShootDirection, 0, 711, 50, 1f, Main.myPlayer, 0f, 0f);
@@ -69,13 +69,13 @@ namespace Tremor.Projectiles
 			Main.projectile[g].timeLeft = 120;
 			Main.projectile[h].timeLeft = 120;
 		}
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Vector2 drawOrigin = new Vector2(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value.Width * 0.5f, projectile.height * 0.5f);
 			for (int k = 0; k < projectile.oldPos.Length; k++)
 			{
 				Vector2 drawPos = projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, projectile.gfxOffY);
-				Color color = projectile.GetAlpha(lightColor) * ((projectile.oldPos.Length - k) / (float)projectile.oldPos.Length);
+				Color color = projectile.GetAlpha(drawColor) * ((projectile.oldPos.Length - k) / (float)projectile.oldPos.Length);
 				Main.spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
 			}
 			return true;

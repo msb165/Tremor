@@ -11,31 +11,31 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 34;
-			item.DamageType = DamageClass.Summon;
-			item.mana = 15;
-			item.width = 26;
-			item.height = 28;
+			Item.damage = 34;
+			Item.DamageType = DamageClass.Summon;
+			Item.mana = 15;
+			Item.width = 26;
+			Item.height = 28;
 
-			item.useTime = 36;
-			item.channel = true;
-			item.useAnimation = 36;
-			item.useStyle = 1;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = Item.buyPrice(0, 9, 0, 0);
-			item.rare = 7;
-			item.UseSound = SoundID.Item44;
-			item.shoot = ModContent.ProjectileType<Projectiles.Minions.ShadowStaffPro>();
-			item.shootSpeed = 2f;
-			item.buffType = ModContent.BuffType<Buffs.ShadowArmBuff>();
-			item.buffTime = 3600;
+			Item.useTime = 36;
+			Item.channel = true;
+			Item.useAnimation = 36;
+			Item.useStyle = 1;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = Item.buyPrice(0, 9, 0, 0);
+			Item.rare = 7;
+			Item.UseSound = SoundID.Item44;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Minions.ShadowStaffPro>();
+			Item.shootSpeed = 2f;
+			Item.buffType = ModContent.BuffType<Buffs.ShadowArmBuff>();
+			Item.buffTime = 3600;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Shadow Staff");
-			Tooltip.SetDefault("Summons a shadow arm to fight for you.");
+			// DisplayName.SetDefault("Shadow Staff");
+			// Tooltip.SetDefault("Summons a shadow arm to fight for you.");
 		}
 
 		public override bool AltFunctionUse(Player player)

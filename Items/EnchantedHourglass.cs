@@ -8,39 +8,39 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			//item.melee = false;
-			item.DamageType = DamageClass.Magic;
-			item.width = 50;
-			item.height = 55;
-			item.useTime = 30;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.knockBack = 3;
-			item.value = 30000;
-			item.rare = 9;
-			item.expert = true;
-			item.UseSound = SoundID.Item4;
-			item.autoReuse = false;
+			//Item.melee = false;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 50;
+			Item.height = 55;
+			Item.useTime = 30;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.knockBack = 3;
+			Item.value = 30000;
+			Item.rare = 9;
+			Item.expert = true;
+			Item.UseSound = SoundID.Item4;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Enchanted Hourglass");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Enchanted Hourglass");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool? UseItem(Player player)
 		{
 			if (Main.LocalPlayer.active && Main.LocalPlayer.FindBuffIndex(ModContent.BuffType<Buffs.HealthRecharging>()) != -1)
 			{
-				item.mana = 0;
-				item.healLife = 0;
+				Item.mana = 0;
+				Item.healLife = 0;
 			}
 			else
 			{
 				player.AddBuff(ModContent.BuffType<Buffs.HealthRecharging>(), 1200, true);
-				//item.mana = 50;
-				item.healLife = 30;
+				//Item.mana = 50;
+				Item.healLife = 30;
 			}
 			return false;
 		}

@@ -21,19 +21,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 36;
-			item.height = 36;
+			Item.width = 36;
+			Item.height = 36;
 
-			item.value = 45000;
-			item.rare = 9;
-			item.expert = true;
-			item.accessory = true;
+			Item.value = 45000;
+			Item.rare = 9;
+			Item.expert = true;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Infernal Shield");
-			Tooltip.SetDefault("Casts fireballs at nearby enemies");
+			// DisplayName.SetDefault("Infernal Shield");
+			// Tooltip.SetDefault("Casts fireballs at nearby enemies");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
@@ -52,7 +52,7 @@ namespace Tremor.Items
 			int Target = -1;
 			for (int k = 0; k < Main.npc.Length; k++)
 			{
-				if (Main.npc[k].active && Main.npc[k].lifeMax > 5 && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].Distance(Main.player[item.playerIndexTheItemIsReservedFor].Center) <= ShootRange && Collision.CanHitLine(Main.player[item.playerIndexTheItemIsReservedFor].Center, 4, 4, Main.npc[k].Center, 4, 4))
+				if (Main.npc[k].active && Main.npc[k].lifeMax > 5 && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].Distance(Main.player[Item.playerIndexTheItemIsReservedFor].Center) <= ShootRange && Collision.CanHitLine(Main.player[Item.playerIndexTheItemIsReservedFor].Center, 4, 4, Main.npc[k].Center, 4, 4))
 				{
 					Target = k;
 					break;
@@ -63,17 +63,17 @@ namespace Tremor.Items
 
 		int GetDamage()
 		{
-			return Main.player[item.playerIndexTheItemIsReservedFor].GetSpecialProjectileDamage(10, 15);
+			return Main.player[Item.playerIndexTheItemIsReservedFor].GetSpecialProjectileDamage(10, 15);
 		}
 
 		void Shoot(int Target, int Damage)
 		{
-			Vector2 velocity = Helper.VelocityToPoint(Main.player[item.playerIndexTheItemIsReservedFor].Center, Main.npc[Target].Center, ShootSpeed);
+			Vector2 velocity = Helper.VelocityToPoint(Main.player[Item.playerIndexTheItemIsReservedFor].Center, Main.npc[Target].Center, ShootSpeed);
 			for (int l = 0; l < ShootCount; l++)
 			{
 				velocity.X = velocity.X + Main.rand.Next(-spread, spread + 1) * spreadMult;
 				velocity.Y = velocity.Y + Main.rand.Next(-spread, spread + 1) * spreadMult;
-				int i = Projectile.NewProjectile(null, Main.player[item.playerIndexTheItemIsReservedFor].Center.X, Main.player[item.playerIndexTheItemIsReservedFor].Center.Y, velocity.X, velocity.Y, ShootType, Damage, ShootKN, item.playerIndexTheItemIsReservedFor);
+				int i = Projectile.NewProjectile(null, Main.player[Item.playerIndexTheItemIsReservedFor].Center.X, Main.player[Item.playerIndexTheItemIsReservedFor].Center.Y, velocity.X, velocity.Y, ShootType, Damage, ShootKN, Item.playerIndexTheItemIsReservedFor);
 			}
 		}
 	}

@@ -9,19 +9,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 250000;
-			item.rare = 7;
-			item.accessory = true;
-			item.defense = 4;
+			Item.value = 250000;
+			Item.rare = 7;
+			Item.accessory = true;
+			Item.defense = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Brain Smasher");
-			Tooltip.SetDefault("Grants a spinning ball around the player");
+			// DisplayName.SetDefault("Brain Smasher");
+			// Tooltip.SetDefault("Grants a spinning ball around the player");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

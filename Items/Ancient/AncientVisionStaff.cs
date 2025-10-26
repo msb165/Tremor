@@ -11,30 +11,30 @@ namespace Tremor.Items.Ancient
 		public override void SetDefaults()
 		{
 
-			item.damage = 80;
-			item.DamageType = DamageClass.Summon;
-			item.mana = 12;
-			item.width = 26;
-			item.height = 28;
+			Item.damage = 80;
+			Item.DamageType = DamageClass.Summon;
+			Item.mana = 12;
+			Item.width = 26;
+			Item.height = 28;
 
-			item.useTime = 36;
-			item.useAnimation = 36;
-			item.useStyle = 1;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = Item.buyPrice(0, 2, 0, 0);
-			item.rare = 10;
-			item.UseSound = SoundID.Item44;
-			item.shoot = ModContent.ProjectileType<AncientVisionPro>();
-			item.shootSpeed = 1f;
-			item.buffType = ModContent.BuffType<Buffs.AncientVisionBuff>();
-			item.buffTime = 3600;
+			Item.useTime = 36;
+			Item.useAnimation = 36;
+			Item.useStyle = 1;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = Item.buyPrice(0, 2, 0, 0);
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item44;
+			Item.shoot = ModContent.ProjectileType<AncientVisionPro>();
+			Item.shootSpeed = 1f;
+			Item.buffType = ModContent.BuffType<Buffs.AncientVisionBuff>();
+			Item.buffTime = 3600;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Vision Staff");
-			Tooltip.SetDefault("Summons an ancient vision to fight for you.");
+			// DisplayName.SetDefault("Ancient Vision Staff");
+			// Tooltip.SetDefault("Summons an ancient vision to fight for you.");
 		}
 
 		public override bool AltFunctionUse(Player player)

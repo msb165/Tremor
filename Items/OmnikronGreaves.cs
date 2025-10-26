@@ -12,19 +12,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 0;
-			item.rare = 0;
-			item.defense = 24;
+			Item.value = 0;
+			Item.rare = 0;
+			Item.defense = 24;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Omnikron Greaves");
-			Tooltip.SetDefault("50% increased movement speed\n" +
-"Increases all critical strike chances by 15");
+			// DisplayName.SetDefault("Omnikron Greaves");
+			/* Tooltip.SetDefault("50% increased movement speed\n" +
+"Increases all critical strike chances by 15"); */
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

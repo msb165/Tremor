@@ -10,16 +10,16 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 24;
+			Item.width = 26;
+			Item.height = 24;
 
-			item.rare = 1;
+			Item.rare = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Doge Mask");
-			Tooltip.SetDefault("'Let it wow'");
+			// DisplayName.SetDefault("Doge Mask");
+			// Tooltip.SetDefault("'Let it wow'");
 		}
 
 		public override void AddRecipes()

@@ -11,18 +11,18 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Dripping Saddle";
-			item.width = 14;
-			item.height = 36;
-			item.toolTip = "Summons Drippler mount";
-			item.useTime = 30;
-			item.useAnimation = 30;
-			item.useStyle = 1;
-			item.value = 8000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item44;
-			item.noMelee = true;
-			item.mountType = mod.MountType("DripplerMount");
+			Item.name = "Dripping Saddle";
+			Item.width = 14;
+			Item.height = 36;
+			Item.toolTip = "Summons Drippler mount";
+			Item.useTime = 30;
+			Item.useAnimation = 30;
+			Item.useStyle = 1;
+			Item.value = 8000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item44;
+			Item.noMelee = true;
+			Item.mountType = mod.MountType("DripplerMount");
 		}
 
     public override void AddRecipes()

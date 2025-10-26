@@ -10,20 +10,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 22;
-			item.maxStack = 999;
-			item.value = 100;
-			item.rare = 0;
-			ItemID.Sets.ItemNoGravity[item.type] = true;
-			//ItemID.Sets.AnimatesAsSoul[item.type] = true;
-			ItemID.Sets.ItemIconPulse[item.type] = true;
+			Item.width = 22;
+			Item.height = 22;
+			Item.maxStack = 999;
+			Item.value = 100;
+			Item.rare = 0;
+			ItemID.Sets.ItemNoGravity[Item.type] = true;
+			//ItemID.Sets.AnimatesAsSoul[Item.type] = true;
+			ItemID.Sets.ItemIconPulse[Item.type] = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("True Essence");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("True Essence");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

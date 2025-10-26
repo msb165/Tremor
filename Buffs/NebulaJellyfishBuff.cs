@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class NebulaJellyfishBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nebula Jellyfish");
-			Description.SetDefault("A nebula jellyfish is following you");
+			// DisplayName.SetDefault("Nebula Jellyfish");
+			// Description.SetDefault("A nebula jellyfish is following you");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

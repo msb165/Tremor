@@ -11,7 +11,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Alchemist");
+			// DisplayName.SetDefault("Nova Alchemist");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 
@@ -37,7 +37,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			npc.alpha = 150;
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
 			npc.damage = 350;
 		}

@@ -9,29 +9,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 60;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 11;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 18;
-			item.useAnimation = 18;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = 13800;
-			item.rare = 4;
-			item.UseSound = SoundID.Item43;
-			item.autoReuse = false;
-			Item.staff[item.type] = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.FlowerofAntimony>();
-			item.shootSpeed = 15f;
+			Item.damage = 60;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 11;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 18;
+			Item.useAnimation = 18;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = 13800;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item43;
+			Item.autoReuse = false;
+			Item.staff[Item.type] = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.FlowerofAntimony>();
+			Item.shootSpeed = 15f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Flower of Antimony");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Flower of Antimony");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

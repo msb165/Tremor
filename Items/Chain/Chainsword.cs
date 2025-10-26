@@ -8,26 +8,26 @@ namespace Tremor.Items.Chain
 		public override void SetDefaults()
 		{
 
-			item.damage = 55;
-			item.DamageType = DamageClass.Melee;
-			item.width = 56;
-			item.height = 64;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.axe = 22;
+			Item.damage = 55;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 56;
+			Item.height = 64;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.axe = 22;
 
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 60000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item22;
-			item.autoReuse = true;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 60000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item22;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chainsword");
-			Tooltip.SetDefault("'It looks like a sword, but its actually a saw! Buy yours today!'");
+			// DisplayName.SetDefault("Chainsword");
+			// Tooltip.SetDefault("'It looks like a sword, but its actually a saw! Buy yours today!'");
 		}
 
 	}

@@ -11,18 +11,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 20;
+			Item.width = 26;
+			Item.height = 20;
 
-			item.value = 50000;
-			item.rare = 5;
-			item.defense = 10;
+			Item.value = 50000;
+			Item.rare = 5;
+			Item.defense = 10;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hallowed Visage");
-			Tooltip.SetDefault("27% increased alchemical damage");
+			// DisplayName.SetDefault("Hallowed Visage");
+			// Tooltip.SetDefault("27% increased alchemical damage");
 		}
 
 		public override void UpdateEquip(Player player)

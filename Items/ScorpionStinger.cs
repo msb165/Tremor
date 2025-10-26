@@ -9,28 +9,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 41;
-			item.DamageType = DamageClass.Melee;
-			item.width = 46;
-			item.height = 54;
+			Item.damage = 41;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 46;
+			Item.height = 54;
 
-			item.useTime = 22;
-			item.useAnimation = 22;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 12000;
-			item.rare = 4;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.useTime = 22;
+			Item.useAnimation = 22;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 12000;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Scorpion Stinger");
-			Tooltip.SetDefault("Poisons enemies");
+			// DisplayName.SetDefault("Scorpion Stinger");
+			// Tooltip.SetDefault("Poisons enemies");
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(70, 100);
 		}

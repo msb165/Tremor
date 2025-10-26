@@ -8,23 +8,23 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 30;
-			item.height = 34;
-			item.maxStack = 20;
+			Item.width = 30;
+			Item.height = 34;
+			Item.maxStack = 20;
 
-			item.rare = 11;
-			item.value = 150000;
-			item.useAnimation = 45;
-			item.useTime = 45;
-			item.useStyle = 4;
-			item.consumable = true;
+			Item.rare = 11;
+			Item.value = 150000;
+			Item.useAnimation = 45;
+			Item.useTime = 45;
+			Item.useStyle = 4;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Royal Egg");
-			Tooltip.SetDefault("Summons the Brutallisk\n" +
-"Requires the desert biome and Tremode");
+			// DisplayName.SetDefault("Royal Egg");
+			/* Tooltip.SetDefault("Summons the Brutallisk\n" +
+"Requires the desert biome and Tremode"); */
 		}
 
 		public override bool CanUseItem(Player player)

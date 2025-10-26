@@ -26,11 +26,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("VoidBladePro");
+			// DisplayName.SetDefault("VoidBladePro");
 
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			for (int num158 = 0; num158 < 20; num158++)
 			{

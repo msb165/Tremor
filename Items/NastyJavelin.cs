@@ -8,29 +8,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 162;
-			item.width = 14;
-			item.DamageType = DamageClass.Throwing;
-			item.height = 84;
-			item.noUseGraphic = true;
-			item.consumable = true;
-			item.maxStack = 999;
-			item.useTime = 22;
-			item.shoot = ModContent.ProjectileType<Projectiles.NastyJavelinPro>();
-			item.shootSpeed = 20f;
-			item.useAnimation = 22;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 10000;
-			item.rare = 11;
-			item.UseSound = SoundID.Item5;
-			item.autoReuse = true;
+			Item.damage = 162;
+			Item.width = 14;
+			Item.DamageType = DamageClass.Throwing;
+			Item.height = 84;
+			Item.noUseGraphic = true;
+			Item.consumable = true;
+			Item.maxStack = 999;
+			Item.useTime = 22;
+			Item.shoot = ModContent.ProjectileType<Projectiles.NastyJavelinPro>();
+			Item.shootSpeed = 20f;
+			Item.useAnimation = 22;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 10000;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item5;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nasty Javelin");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Nasty Javelin");
+			// Tooltip.SetDefault("");
 		}
 
 	}

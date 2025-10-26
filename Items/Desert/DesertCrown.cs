@@ -10,23 +10,23 @@ namespace Tremor.Items.Desert
 	{
 		public override void SetDefaults()
 		{
-			item.width = 24;
-			item.height = 16;
-			item.maxStack = 20;
+			Item.width = 24;
+			Item.height = 16;
+			Item.maxStack = 20;
 
-			item.rare = 2;
-			item.useAnimation = 45;
-			item.useTime = 45;
-			item.useStyle = 4;
-			item.value = 50000;
-			item.consumable = true;
+			Item.rare = 2;
+			Item.useAnimation = 45;
+			Item.useTime = 45;
+			Item.useStyle = 4;
+			Item.value = 50000;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Desert Crown");
-			Tooltip.SetDefault("Summons the Rukh\n" +
-"Requires the desert biome");
+			// DisplayName.SetDefault("Desert Crown");
+			/* Tooltip.SetDefault("Summons the Rukh\n" +
+"Requires the desert biome"); */
 		}
 
 		public override bool CanUseItem(Player player)

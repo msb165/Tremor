@@ -9,16 +9,16 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 30;
-			item.rare = 1;
-			item.vanity = true;
+			Item.width = 30;
+			Item.height = 30;
+			Item.rare = 1;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hope Mask");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Hope Mask");
+			// Tooltip.SetDefault("");
 		}
 
 	}

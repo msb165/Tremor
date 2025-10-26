@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 32;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 40;
-			item.useAnimation = 40;
-			item.shoot = 14;
-			item.shootSpeed = 8f;
-			item.useAmmo = AmmoID.Bullet;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 60000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = true;
+			Item.damage = 32;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 40;
+			Item.useAnimation = 40;
+			Item.shoot = 14;
+			Item.shootSpeed = 8f;
+			Item.useAmmo = AmmoID.Bullet;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 60000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Blunderbuss");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Blunderbuss");
+			// Tooltip.SetDefault("");
 		}
 
 	}

@@ -8,16 +8,16 @@ namespace Tremor.Items.Alchemist
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 24;
-			item.rare = 1;
-			item.vanity = true;
+			Item.width = 26;
+			Item.height = 24;
+			Item.rare = 1;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Alchemaster Mask");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Alchemaster Mask");
+			// Tooltip.SetDefault("");
 		}
 
 	}

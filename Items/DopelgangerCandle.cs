@@ -9,19 +9,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 36;
-			item.value = 1250;
-			item.rare = 5;
-			item.accessory = true;
+			Item.width = 22;
+			Item.height = 36;
+			Item.value = 1250;
+			Item.rare = 5;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dopelganger Candle");
-			Tooltip.SetDefault("'Takes a piece of your soul in return for additional minion'\n" +
-"6% increased minion damage");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(10, 4));
+			// DisplayName.SetDefault("Dopelganger Candle");
+			/* Tooltip.SetDefault("'Takes a piece of your soul in return for additional minion'\n" +
+"6% increased minion damage"); */
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(10, 4));
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

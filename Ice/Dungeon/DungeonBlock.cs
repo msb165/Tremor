@@ -14,7 +14,7 @@ namespace Tremor.Ice.Dungeon
 			Main.tileMerge[Type][ModContent.TileType<Ice.Tree.VeryVeryIce>()] = true;
 			Main.tileMerge[Type][147] = true;
 			DustType = ModContent.DustType<IceDust>();
-			ItemDrop = ModContent.ItemType<DungeonBlockItem>();
+			////ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<DungeonBlockItem>();
 			AddMapEntry(new Color(70, 156, 213));
 		}
 

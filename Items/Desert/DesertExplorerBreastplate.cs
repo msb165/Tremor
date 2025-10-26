@@ -10,19 +10,19 @@ namespace Tremor.Items.Desert
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 16500;
-			item.rare = 8;
-			item.defense = 17;
+			Item.value = 16500;
+			Item.rare = 8;
+			Item.defense = 17;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Desert Explorer Breastplate");
-			Tooltip.SetDefault("19% increased alchemical damage\n" +
-"35% increased throwing damage");
+			// DisplayName.SetDefault("Desert Explorer Breastplate");
+			/* Tooltip.SetDefault("19% increased alchemical damage\n" +
+"35% increased throwing damage"); */
 		}
 
 		public override void UpdateEquip(Player player)

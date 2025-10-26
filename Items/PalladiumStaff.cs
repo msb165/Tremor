@@ -9,29 +9,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 35;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 8;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 28;
-			item.useAnimation = 28;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = 18440;
-			item.rare = 4;
-			item.UseSound = SoundID.Item101;
-			item.autoReuse = true;
-			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
-			item.shoot = ModContent.ProjectileType<Projectiles.PalladiumBolt>();
-			item.shootSpeed = 13f;
+			Item.damage = 35;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 8;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 28;
+			Item.useAnimation = 28;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = 18440;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item101;
+			Item.autoReuse = true;
+			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			Item.shoot = ModContent.ProjectileType<Projectiles.PalladiumBolt>();
+			Item.shootSpeed = 13f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Palladium Staff");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Palladium Staff");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

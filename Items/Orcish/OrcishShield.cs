@@ -8,18 +8,18 @@ namespace Tremor.Items.Orcish
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 30;
-			item.value = 110;
-			item.rare = 1;
-			item.accessory = true;
-			item.defense = 2;
+			Item.width = 24;
+			Item.height = 30;
+			Item.value = 110;
+			Item.rare = 1;
+			Item.accessory = true;
+			Item.defense = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Orcish Shield");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Orcish Shield");
+			// Tooltip.SetDefault("");
 		}
 
 	}

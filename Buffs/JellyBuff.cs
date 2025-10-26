@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class JellyBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Jellyfish Buff");
-			Description.SetDefault("The jellyfish will fight for you");
+			// DisplayName.SetDefault("Jellyfish Buff");
+			// Description.SetDefault("The jellyfish will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

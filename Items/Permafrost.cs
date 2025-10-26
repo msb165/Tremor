@@ -11,26 +11,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 123;
-			item.DamageType = DamageClass.Melee;
-			item.width = 38;
-			item.height = 20;
-			item.useTime = 20;
-			item.useAnimation = 34;
-			item.useStyle = 1;
-			item.knockBack = 10;
-			item.value = 160000;
-			item.rare = 10;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.shoot = 263;
-			item.shootSpeed = 10f;
+			Item.damage = 123;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 38;
+			Item.height = 20;
+			Item.useTime = 20;
+			Item.useAnimation = 34;
+			Item.useStyle = 1;
+			Item.knockBack = 10;
+			Item.value = 160000;
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
+			Item.shoot = 263;
+			Item.shootSpeed = 10f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Permafrost");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Permafrost");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

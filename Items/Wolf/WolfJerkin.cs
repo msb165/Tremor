@@ -10,19 +10,19 @@ namespace Tremor.Items.Wolf
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 26;
-			item.rare = 1;
+			Item.width = 22;
+			Item.height = 26;
+			Item.rare = 1;
 
-			item.value = 100;
-			item.defense = 4;
+			Item.value = 100;
+			Item.defense = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Wolf Jerkin");
-			Tooltip.SetDefault("6% increased minion damage\n" +
-"Increases your max number of minions");
+			// DisplayName.SetDefault("Wolf Jerkin");
+			/* Tooltip.SetDefault("6% increased minion damage\n" +
+"Increases your max number of minions"); */
 		}
 
 		public override void UpdateEquip(Player player)

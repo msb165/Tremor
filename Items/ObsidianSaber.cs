@@ -9,17 +9,17 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.Arkhalis);
+			Item.CloneDefaults(ItemID.Arkhalis);
 
-			item.shootSpeed *= 0.75f;
-			item.damage = 41;
+			Item.shootSpeed *= 0.75f;
+			Item.damage = 41;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Obsidian Saber");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Obsidian Saber");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

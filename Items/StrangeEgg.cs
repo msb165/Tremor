@@ -9,27 +9,27 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.Carrot);
+			Item.CloneDefaults(ItemID.Carrot);
 
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.rare = 11;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.rare = 11;
 
-			item.shoot = ModContent.ProjectileType<Projectiles.Brutty>();
-			item.buffType = ModContent.BuffType<Buffs.BruttyBuff>();
+			Item.shoot = ModContent.ProjectileType<Projectiles.Brutty>();
+			Item.buffType = ModContent.BuffType<Buffs.BruttyBuff>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Strange Egg");
-			Tooltip.SetDefault("Summons an brutty");
+			// DisplayName.SetDefault("Strange Egg");
+			// Tooltip.SetDefault("Summons an brutty");
 		}
 
 		public override void UseStyle(Player player, Rectangle heldItemFrame)
 		{
 			if (player.whoAmI == Main.myPlayer && player.itemTime == 0)
 			{
-				player.AddBuff(item.buffType, 3600, true);
+				player.AddBuff(Item.buffType, 3600, true);
 			}
 		}
 	}

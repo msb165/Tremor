@@ -11,22 +11,22 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 26;
-			item.height = 28;
-			item.maxStack = 20;
-			item.value = 100;
-			item.rare = 11;
-			item.useAnimation = 15;
-			item.useTime = 15;
-			item.useStyle = 4;
-			item.consumable = true;
+			Item.width = 26;
+			Item.height = 28;
+			Item.maxStack = 20;
+			Item.value = 100;
+			Item.rare = 11;
+			Item.useAnimation = 15;
+			Item.useTime = 15;
+			Item.useStyle = 4;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Emperor Crown");
-			Tooltip.SetDefault("Summons the Dark Emperor\n" +
-"Requires Tremode");
+			// DisplayName.SetDefault("Emperor Crown");
+			/* Tooltip.SetDefault("Summons the Dark Emperor\n" +
+"Requires Tremode"); */
 		}
 
 		public override bool CanUseItem(Player player)

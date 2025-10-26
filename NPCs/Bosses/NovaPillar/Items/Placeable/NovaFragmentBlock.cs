@@ -9,22 +9,22 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items.Placeable
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 22;
-			item.maxStack = 999;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.rare = 0;
-			item.consumable = true;
-			item.createTile = ModContent.TileType<NovaBlock>();
+			Item.width = 26;
+			Item.height = 22;
+			Item.maxStack = 999;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.rare = 0;
+			Item.consumable = true;
+			Item.createTile = ModContent.TileType<NovaBlock>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Fragment Block");
+			// DisplayName.SetDefault("Nova Fragment Block");
 		}
 
 		public override void AddRecipes()

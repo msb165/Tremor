@@ -10,31 +10,31 @@ namespace Tremor.Items.Cyber
 		public override void SetDefaults()
 		{
 
-			item.damage = 62;
-			item.DamageType = DamageClass.Summon;
-			item.mana = 15;
-			item.width = 26;
-			item.height = 28;
-			item.expert = true;
+			Item.damage = 62;
+			Item.DamageType = DamageClass.Summon;
+			Item.mana = 15;
+			Item.width = 26;
+			Item.height = 28;
+			Item.expert = true;
 
-			item.useTime = 36;
-			item.useAnimation = 36;
-			item.useStyle = 1;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = Item.buyPrice(0, 3, 0, 0);
-			item.rare = 7;
-			item.UseSound = SoundID.Item44;
-			item.shoot = ModContent.ProjectileType<Projectiles.Minions.CyberStaffPro>();
-			item.shootSpeed = 2f;
-			item.buffType = ModContent.BuffType<Buffs.CyberSawBuff>();
-			item.buffTime = 3600;
+			Item.useTime = 36;
+			Item.useAnimation = 36;
+			Item.useStyle = 1;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = Item.buyPrice(0, 3, 0, 0);
+			Item.rare = 7;
+			Item.UseSound = SoundID.Item44;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Minions.CyberStaffPro>();
+			Item.shootSpeed = 2f;
+			Item.buffType = ModContent.BuffType<Buffs.CyberSawBuff>();
+			Item.buffTime = 3600;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cyber Staff");
-			Tooltip.SetDefault("Summons a cyber saw to fight for you.");
+			// DisplayName.SetDefault("Cyber Staff");
+			// Tooltip.SetDefault("Summons a cyber saw to fight for you.");
 		}
 
 		public override bool AltFunctionUse(Player player)

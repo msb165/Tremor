@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class Sad:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sad");
-			Description.SetDefault("10% decreased damage");
+			// DisplayName.SetDefault("Sad");
+			// Description.SetDefault("10% decreased damage");
 			Main.debuff[Type] = true;
 		}
 

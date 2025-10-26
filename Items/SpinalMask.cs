@@ -9,16 +9,16 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
+			Item.width = 22;
 
-			item.height = 26;
-			item.rare = 9;
+			Item.height = 26;
+			Item.rare = 9;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Spinal111 Mask");
-			Tooltip.SetDefault("'Great for impersonating YouTubers!'");
+			// DisplayName.SetDefault("Spinal111 Mask");
+			// Tooltip.SetDefault("'Great for impersonating YouTubers!'");
 		}
 
 	}

@@ -9,20 +9,20 @@ namespace Tremor.Items.Cursed
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
-			item.value = 100000;
-			item.rare = 5;
-			item.accessory = true;
+			Item.width = 22;
+			Item.height = 44;
+			Item.value = 100000;
+			Item.rare = 5;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cursed Cauldron");
-			Tooltip.SetDefault("15% increased alchemical damage\n" +
+			// DisplayName.SetDefault("Cursed Cauldron");
+			/* Tooltip.SetDefault("15% increased alchemical damage\n" +
 "20% increased alchemical critical strike chance\n" +
-"Alchemic damage confuses enemies");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(8, 4));
+"Alchemic damage confuses enemies"); */
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(8, 4));
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

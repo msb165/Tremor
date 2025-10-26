@@ -10,26 +10,26 @@ namespace Tremor.Items.Crystal
 		public override void SetDefaults()
 		{
 
-			item.width = 44;
-			item.height = 48;
+			Item.width = 44;
+			Item.height = 48;
 
-			item.useTime = 30;
-			item.useAnimation = 30;
-			item.useStyle = 4;
-			item.knockBack = 0;
-			item.shoot = 1;
-			item.value = 10000;
-			item.rare = 1;
-			item.consumable = true;
-			item.maxStack = 999;
-			item.UseSound = SoundID.Item6;
+			Item.useTime = 30;
+			Item.useAnimation = 30;
+			Item.useStyle = 4;
+			Item.knockBack = 0;
+			Item.shoot = 1;
+			Item.value = 10000;
+			Item.rare = 1;
+			Item.consumable = true;
+			Item.maxStack = 999;
+			Item.UseSound = SoundID.Item6;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Unstable Crystal");
-			Tooltip.SetDefault("Teleports you to a random location\n" +
-"'Be careful! It can take you to a very dangerous place!'");
+			// DisplayName.SetDefault("Unstable Crystal");
+			/* Tooltip.SetDefault("Teleports you to a random location\n" +
+"'Be careful! It can take you to a very dangerous place!'"); */
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

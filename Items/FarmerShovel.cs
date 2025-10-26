@@ -8,27 +8,27 @@ namespace Tremor.Items
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Farmer's Shovel");
-			Tooltip.SetDefault("''She wants to get it back..''\n" +
-"Allows the Farmer to move in");
+			// DisplayName.SetDefault("Farmer's Shovel");
+			/* Tooltip.SetDefault("''She wants to get it back..''\n" +
+"Allows the Farmer to move in"); */
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 8;
-			item.DamageType = DamageClass.Melee;
-			item.width = 42;
-			item.height = 42;
-			item.useTime = 17;
-			item.useAnimation = 17;
-			item.pick = 45;
-			item.useStyle = 1;
-			item.knockBack = 2;
-			item.value = 1000;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.useTurn = true;
-			item.autoReuse = true;
+			Item.damage = 8;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 42;
+			Item.height = 42;
+			Item.useTime = 17;
+			Item.useAnimation = 17;
+			Item.pick = 45;
+			Item.useStyle = 1;
+			Item.knockBack = 2;
+			Item.value = 1000;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.useTurn = true;
+			Item.autoReuse = true;
 		}
 	}
 }

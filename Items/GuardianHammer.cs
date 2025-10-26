@@ -9,28 +9,28 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.noMelee = true;
-			item.useStyle = 1;
+			Item.noMelee = true;
+			Item.useStyle = 1;
 
-			item.shootSpeed = 14f;
-			item.shoot = ModContent.ProjectileType<Projectiles.GuardianHammerPro>();
-			item.damage = 125;
-			item.knockBack = 9f;
-			item.width = 14;
-			item.height = 28;
-			item.UseSound = SoundID.Item1;
-			item.useAnimation = 15;
-			item.useTime = 15;
-			item.noUseGraphic = true;
-			item.rare = 11;
-			item.value = Item.sellPrice(0, 20, 0, 0);
-			item.DamageType = DamageClass.Melee;
+			Item.shootSpeed = 14f;
+			Item.shoot = ModContent.ProjectileType<Projectiles.GuardianHammerPro>();
+			Item.damage = 125;
+			Item.knockBack = 9f;
+			Item.width = 14;
+			Item.height = 28;
+			Item.UseSound = SoundID.Item1;
+			Item.useAnimation = 15;
+			Item.useTime = 15;
+			Item.noUseGraphic = true;
+			Item.rare = 11;
+			Item.value = Item.sellPrice(0, 20, 0, 0);
+			Item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Guardian Hammer");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Guardian Hammer");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

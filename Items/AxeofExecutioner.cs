@@ -7,29 +7,29 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.autoReuse = true;
-			item.useStyle = 1;
+			Item.autoReuse = true;
+			Item.useStyle = 1;
 
-			item.shootSpeed = 8f;
-			item.shoot = ModContent.ProjectileType<Projectiles.AxeofExecutionerPro>();
-			item.damage = 175;
-			item.width = 18;
-			item.height = 20;
-			item.UseSound = SoundID.Item1;
-			item.useAnimation = 14;
-			item.useTime = 17;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.value = 500000;
-			item.knockBack = 5f;
-			item.DamageType = DamageClass.Melee;
-			item.rare = 10;
+			Item.shootSpeed = 8f;
+			Item.shoot = ModContent.ProjectileType<Projectiles.AxeofExecutionerPro>();
+			Item.damage = 175;
+			Item.width = 18;
+			Item.height = 20;
+			Item.UseSound = SoundID.Item1;
+			Item.useAnimation = 14;
+			Item.useTime = 17;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.value = 500000;
+			Item.knockBack = 5f;
+			Item.DamageType = DamageClass.Melee;
+			Item.rare = 10;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Axe of Executioner");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Axe of Executioner");
+			// Tooltip.SetDefault("");
 		}
 
 	}

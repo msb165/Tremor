@@ -10,7 +10,7 @@ namespace Tremor.ZombieEvent.Mobs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dapperblook");
+			// DisplayName.SetDefault("Dapperblook");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 
@@ -63,13 +63,13 @@ namespace Tremor.ZombieEvent.Mobs
 			}
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
 			npc.lifeMax = npc.lifeMax * 1;
 			npc.damage = npc.damage * 1;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{

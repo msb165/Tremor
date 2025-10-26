@@ -7,17 +7,17 @@ namespace Tremor.Items.Flesh
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 22;
-			item.maxStack = 99;
-			item.value = 80;
-			item.rare = 1;
+			Item.width = 22;
+			Item.height = 22;
+			Item.maxStack = 99;
+			Item.value = 80;
+			Item.rare = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Untreated Flesh");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Untreated Flesh");
+			// Tooltip.SetDefault("");
 		}
 
 	}

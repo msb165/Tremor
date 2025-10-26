@@ -1,29 +1,32 @@
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.Items.Souls;
 using Tremor.NPCs.Bosses.AndasBoss;
 
 namespace Tremor.Items
 {
-	public class AndasBag:TremorModItem
+	public class AndasBag : TremorModItem
 	{
 		public override void SetDefaults()
 		{
-			item.maxStack = 999;
-			item.consumable = true;
-			item.width = 24;
-			item.height = 24;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.width = 24;
+			Item.height = 24;
 
-			item.rare = 9;
-			item.expert = true;
-			
+			Item.rare = 9;
+			Item.expert = true;
+
 		}
-		public override int BossBagNPC => ModContent.NPCType<TrueAndas>();
-		
+		//public override int BossBagNPC => ModContent.NPCType<TrueAndas>();
+
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
+			ItemID.Sets.BossBag[Type] = true;
+			// DisplayName.SetDefault("Treasure Bag");
+			// Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
 
 		public override bool CanRightClick()
@@ -31,39 +34,17 @@ namespace Tremor.Items
 			return true;
 		}
 
-		public override void OpenBossBag(Player player)
+		public override void ModifyItemLoot(ItemLoot itemLoot)
 		{
-			switch (Main.rand.Next(4))
-			{
-				case 0:
-					player.QuickSpawnItem(ModContent.ItemType<GehennaStaff>());
-					break;
-				case 1:
-					player.QuickSpawnItem(ModContent.ItemType<VulcanBlade>());
-					break;
-				case 2:
-					player.QuickSpawnItem(ModContent.ItemType<Pandemonium>());
-					break;
-				case 3:
-					player.QuickSpawnItem(ModContent.ItemType<HellStorm>());
-					break;
-				case 4:
-					player.QuickSpawnItem(ModContent.ItemType<Inferno>());
-					break;
-			}
-
-			if (Main.rand.NextBool(7))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<AndasMask>());
-			}
-
-			if (Main.hardMode)
-			{
-				player.TryGettingDevArmor();
-			}
-			player.QuickSpawnItem(ModContent.ItemType<AndasCore>());
-			player.QuickSpawnItem(3544, Main.rand.Next(10, 25));
-			player.QuickSpawnItem(ModContent.ItemType<InfernoSoul>(), Main.rand.Next(8, 15));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<GehennaStaff>(), 5));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<VulcanBlade>(), 5));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Pandemonium>(), 5));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<HellStorm>(), 5));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Inferno>(), 5));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<AndasMask>(), 7));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<AndasCore>()));
+			itemLoot.Add(ItemDropRule.Common(ItemID.SuperHealingPotion, 1, 10, 25));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<InfernoSoul>(), 1, 8, 15));
 		}
 	}
 }

@@ -17,7 +17,7 @@ namespace Tremor.Ice
 			Main.tileNoFail[Type] = true;
 			//Main.tileLavaDeath[Type] = true;
 			//dustType = -1;
-			//disableSmartCursor = true;
+			//TileID.Sets.DisableSmartCursor[Type] = true;
 			//AddMapEntry(new Color(13, 88, 130), "Banner");
 			//TileObjectData.newTile.Width = 1;
 			//TileObjectData.newTile.Height = 2;

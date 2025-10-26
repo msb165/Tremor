@@ -11,18 +11,18 @@ namespace Tremor.Items.Fungus
 		public override void SetDefaults()
 		{
 
-			item.width = 18;
-			item.height = 18;
-			item.value = 50000;
+			Item.width = 18;
+			Item.height = 18;
+			Item.value = 50000;
 
-			item.rare = 3;
-			item.defense = 8;
+			Item.rare = 3;
+			Item.defense = 8;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Fungus Breastplate");
-			Tooltip.SetDefault("13% increased damage");
+			// DisplayName.SetDefault("Fungus Breastplate");
+			// Tooltip.SetDefault("13% increased damage");
 		}
 
 		public override void UpdateEquip(Player player)

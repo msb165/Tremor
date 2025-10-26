@@ -7,14 +7,14 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.rare = 3;
-			item.maxStack = 30;
+			Item.rare = 3;
+			Item.maxStack = 30;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Meat Chunk");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Meat Chunk");
+			// Tooltip.SetDefault("");
 		}
 
 	}

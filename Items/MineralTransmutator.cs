@@ -8,23 +8,23 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 46;
-			item.height = 46;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.value = 150;
-			item.createTile = ModContent.TileType<Tiles.MineralTransmutator>();
+			Item.width = 46;
+			Item.height = 46;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.value = 150;
+			Item.createTile = ModContent.TileType<Tiles.MineralTransmutator>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Mineral Transmutator");
-			Tooltip.SetDefault("Allows to transform pre-hardmode metals to their alternatives");
+			// DisplayName.SetDefault("Mineral Transmutator");
+			// Tooltip.SetDefault("Allows to transform pre-hardmode metals to their alternatives");
 		}
 
 		public override void AddRecipes()

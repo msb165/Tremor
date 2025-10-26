@@ -8,17 +8,17 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 30;
-			item.height = 18;
-			item.value = 200;
-			item.rare = 1;
-			item.defense = 1;
+			Item.width = 30;
+			Item.height = 18;
+			Item.value = 200;
+			Item.rare = 1;
+			Item.defense = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Leather Shirt");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Leather Shirt");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

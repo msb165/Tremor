@@ -10,7 +10,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Jungle Mimic");
+			// DisplayName.SetDefault("Jungle Mimic");
 			Main.npcFrameCount[npc.type] = 14;
 		}
 

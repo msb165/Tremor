@@ -10,28 +10,28 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.useStyle = 5;
-			item.useAnimation = 24;
-			item.useTime = 9;
+			Item.useStyle = 5;
+			Item.useAnimation = 24;
+			Item.useTime = 9;
 
-			item.width = 24;
-			item.height = 14;
-			item.shoot = 587;
-			item.damage = 122;
-			item.shootSpeed = 10f;
-			item.noMelee = true;
-			item.value = Item.sellPrice(0, 0, 50, 0);
-			item.knockBack = 1.25f;
-			item.scale = 0.85f;
-			item.rare = 2;
-			item.DamageType = DamageClass.Ranged;
-			item.crit = 7;
+			Item.width = 24;
+			Item.height = 14;
+			Item.shoot = 587;
+			Item.damage = 122;
+			Item.shootSpeed = 10f;
+			Item.noMelee = true;
+			Item.value = Item.sellPrice(0, 0, 50, 0);
+			Item.knockBack = 1.25f;
+			Item.scale = 0.85f;
+			Item.rare = 2;
+			Item.DamageType = DamageClass.Ranged;
+			Item.crit = 7;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Party Over");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Party Over");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

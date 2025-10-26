@@ -26,7 +26,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("True Death Sickle");
+			// DisplayName.SetDefault("True Death Sickle");
 
 		}
 

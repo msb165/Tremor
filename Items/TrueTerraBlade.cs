@@ -8,28 +8,28 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.rare = 10;
-			item.UseSound = SoundID.Item1;
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item1;
 
-			item.useStyle = 1;
-			item.damage = 196;
-			item.useAnimation = 16;
-			item.useTime = 14;
-			item.width = 84;
-			item.height = 84;
-			item.shoot = 132;
-			item.scale = 1.1f;
-			item.shootSpeed = 15f;
-			item.knockBack = 6.5f;
-			item.DamageType = DamageClass.Melee;
-			item.value = Item.sellPrice(0, 20, 0, 0);
-			item.autoReuse = true;
+			Item.useStyle = 1;
+			Item.damage = 196;
+			Item.useAnimation = 16;
+			Item.useTime = 14;
+			Item.width = 84;
+			Item.height = 84;
+			Item.shoot = 132;
+			Item.scale = 1.1f;
+			Item.shootSpeed = 15f;
+			Item.knockBack = 6.5f;
+			Item.DamageType = DamageClass.Melee;
+			Item.value = Item.sellPrice(0, 20, 0, 0);
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("True Terra Blade");
-			Tooltip.SetDefault("'Shining, shimmering, splendid!'");
+			// DisplayName.SetDefault("True Terra Blade");
+			// Tooltip.SetDefault("'Shining, shimmering, splendid!'");
 		}
 
 		public override void AddRecipes()

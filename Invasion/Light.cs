@@ -5,10 +5,10 @@ namespace Tremor.Invasion
 {
 	public class Light:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Light Spell");
-			Description.SetDefault("");
+			// DisplayName.SetDefault("Light Spell");
+			// Description.SetDefault("");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = false;
 		}

@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class BirbStaffBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Birb");
-			Description.SetDefault("A birb will fight for you");
+			// DisplayName.SetDefault("Birb");
+			// Description.SetDefault("A birb will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

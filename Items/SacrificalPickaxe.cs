@@ -10,26 +10,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 9;
-			item.DamageType = DamageClass.Melee;
-			item.width = 46;
-			item.height = 46;
-			item.useTime = 12;
-			item.useAnimation = 22;
-			item.pick = 100;
-			item.useStyle = 1;
-			item.knockBack = 5;
-			item.value = 600;
-			item.rare = 3;
-			item.useTurn = true;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 9;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 46;
+			Item.height = 46;
+			Item.useTime = 12;
+			Item.useAnimation = 22;
+			Item.pick = 100;
+			Item.useStyle = 1;
+			Item.knockBack = 5;
+			Item.value = 600;
+			Item.rare = 3;
+			Item.useTurn = true;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sacrifical Pickaxe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Sacrifical Pickaxe");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

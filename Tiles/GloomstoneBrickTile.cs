@@ -14,7 +14,7 @@ namespace Tremor.Tiles
 			Main.tileMergeDirt[Type] = true;
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
-			ItemDrop = ModContent.ItemType<GloomstoneBrick>();
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<GloomstoneBrick>();
 			HitSound = SoundID.Tink;
 			soundStyle = 2;
 			AddMapEntry(new Color(36, 118, 174));

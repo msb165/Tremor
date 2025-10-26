@@ -10,7 +10,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pyramid Rider");
+			// DisplayName.SetDefault("Pyramid Rider");
 			Main.npcFrameCount[npc.type] = 6;
 		}
 
@@ -29,12 +29,12 @@ namespace Tremor.NPCs
 			npc.value = Item.buyPrice(0, 0, 5, 0);
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 18, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 18, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				if (Main.netMode == 1) return;
 

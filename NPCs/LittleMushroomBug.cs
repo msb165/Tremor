@@ -11,7 +11,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Little Mushroom Bug");
+			// DisplayName.SetDefault("Little Mushroom Bug");
 			Main.npcFrameCount[npc.type] = 2;
 		}
 
@@ -33,19 +33,19 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath57;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 60; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 67, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 67, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 67, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 67, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 			}
 			else
 			{
-				for (int k = 0; k < damage / npc.lifeMax * 50; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 67, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+				for (int k = 0; k < npc.damage / npc.lifeMax * 50; k++)
+					Dust.NewDust(npc.position, npc.width, npc.height, 67, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 			}
 		}
 	}

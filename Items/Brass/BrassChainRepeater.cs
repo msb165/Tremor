@@ -10,40 +10,40 @@ namespace Tremor.Items.Brass
 		public override void SetDefaults()
 		{
 
-			item.DamageType = DamageClass.Ranged;
-			item.width = 36;
-			item.height = 24;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 36;
+			Item.height = 24;
 
-			item.useTime = 11;
-			item.useAnimation = 11;
-			item.shoot = 1;
-			item.useAmmo = AmmoID.Arrow;
-			item.shootSpeed = 30f;
-			item.useStyle = 5;
-			item.damage = 30;
-			item.knockBack = 4;
-			item.value = 30000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item5;
-			item.autoReuse = true;
+			Item.useTime = 11;
+			Item.useAnimation = 11;
+			Item.shoot = 1;
+			Item.useAmmo = AmmoID.Arrow;
+			Item.shootSpeed = 30f;
+			Item.useStyle = 5;
+			Item.damage = 30;
+			Item.knockBack = 4;
+			Item.value = 30000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item5;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Brass Chain Repeater");
-			Tooltip.SetDefault("Quickly launches arrows\n" +
-"25% to shoot a heat ray");
+			// DisplayName.SetDefault("Brass Chain Repeater");
+			/* Tooltip.SetDefault("Quickly launches arrows\n" +
+"25% to shoot a heat ray"); */
 		}
 
 		public override void UpdateInventory(Player player)
 		{
 			if (player.HasBuffSafe(ModContent.BuffType<Buffs.SteamRangerBuff>()))
 			{
-				item.damage = 45;
+				Item.damage = 45;
 			}
 			else
 			{
-				item.damage = 30;
+				Item.damage = 30;
 			}
 		}
 

@@ -10,18 +10,18 @@ namespace Tremor.Items.Alchemist.Flasks
 
 		public override void SetDefaults()
 		{
-			item.width = 22;
-			item.height = 24;
+			Item.width = 22;
+			Item.height = 24;
 
-			item.value = 50000;
-			item.rare = 6;
-			item.accessory = true;
+			Item.value = 50000;
+			Item.rare = 6;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Flask Core");
-			Tooltip.SetDefault("Flasks now have autoreuse");
+			// DisplayName.SetDefault("Flask Core");
+			// Tooltip.SetDefault("Flasks now have autoreuse");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

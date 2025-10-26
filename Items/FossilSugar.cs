@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 30;
+			Item.width = 28;
+			Item.height = 30;
 
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.useStyle = 1;
-			item.knockBack = 6;
-			item.value = 30000;
-			item.rare = 2;
-			item.UseSound = SoundID.Item79;
-			item.noMelee = true;
-			item.mountType = ModContent.MountType<Mounts.Antlion>();
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.useStyle = 1;
+			Item.knockBack = 6;
+			Item.value = 30000;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item79;
+			Item.noMelee = true;
+			Item.mountType = ModContent.MountType<Mounts.Antlion>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Fossil Sugar");
-			Tooltip.SetDefault("Summons a rideable Antlion mount");
+			// DisplayName.SetDefault("Fossil Sugar");
+			// Tooltip.SetDefault("Summons a rideable Antlion mount");
 		}
 
 	}

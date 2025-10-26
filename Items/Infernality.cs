@@ -11,25 +11,25 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 20;
-			item.DamageType = DamageClass.Melee;
-			item.width = 40;
-			item.height = 40;
+			Item.damage = 20;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 40;
+			Item.height = 40;
 
-			item.useTime = 25;
-			item.useAnimation = 10;
-			item.useStyle = 1;
-			item.knockBack = 2;
-			item.value = 25025;
-			item.rare = 4;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.useTime = 25;
+			Item.useAnimation = 10;
+			Item.useStyle = 1;
+			Item.knockBack = 2;
+			Item.value = 25025;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Infernality");
-			Tooltip.SetDefault("'For the glory of Satan of course!'");
+			// DisplayName.SetDefault("Infernality");
+			// Tooltip.SetDefault("'For the glory of Satan of course!'");
 		}
 
 		public override void AddRecipes()
@@ -51,7 +51,7 @@ namespace Tremor.Items
 			}
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(24, 1000);
 		}

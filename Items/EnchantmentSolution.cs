@@ -23,18 +23,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 30;
+			Item.width = 26;
+			Item.height = 30;
 
-			item.value = 250000;
-			item.rare = 5;
-			item.accessory = true;
+			Item.value = 250000;
+			Item.rare = 5;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Enchantment Solution");
-			Tooltip.SetDefault("25% chance not to consume flask");
+			// DisplayName.SetDefault("Enchantment Solution");
+			// Tooltip.SetDefault("25% chance not to consume flask");
 		}
 
 		public override void AddRecipes()

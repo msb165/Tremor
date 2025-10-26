@@ -5,11 +5,11 @@ namespace Tremor.Buffs
 {
 	public class FatSpider:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Fat Spider");
-			Description.SetDefault("Cute human-eater");
+			// DisplayName.SetDefault("Fat Spider");
+			// Description.SetDefault("Cute human-eater");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

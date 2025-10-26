@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 8;
-			item.DamageType = DamageClass.Melee;
-			item.width = 56;
-			item.height = 56;
-			item.useTime = 22;
-			item.useAnimation = 30;
-			item.useStyle = 1;
-			item.knockBack = 3;
-			item.value = 35400;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 8;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 56;
+			Item.height = 56;
+			Item.useTime = 22;
+			Item.useAnimation = 30;
+			Item.useStyle = 1;
+			Item.knockBack = 3;
+			Item.value = 35400;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Royal Claymore");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Royal Claymore");
+			// Tooltip.SetDefault("");
 		}
 
 	}

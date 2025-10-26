@@ -11,18 +11,18 @@ namespace Tremor.Items.Berserker
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.value = 500;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 500;
 
-			item.rare = 2;
-			item.defense = 5;
+			Item.rare = 2;
+			Item.defense = 5;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Berserker Greaves");
-			Tooltip.SetDefault("4% increased melee damage");
+			// DisplayName.SetDefault("Berserker Greaves");
+			// Tooltip.SetDefault("4% increased melee damage");
 		}
 
 		public override void UpdateEquip(Player player)

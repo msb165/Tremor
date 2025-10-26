@@ -7,24 +7,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 15;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 22;
-			item.height = 22;
-			item.maxStack = 999;
+			Item.damage = 15;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 22;
+			Item.height = 22;
+			Item.maxStack = 999;
 
-			item.consumable = true;
-			item.knockBack = 1.5f;
-			item.value = 10;
-			item.rare = 2;
-			item.shoot = ModContent.ProjectileType<Projectiles.PopcornAmmo>();
-			item.ammo = item.type;
+			Item.consumable = true;
+			Item.knockBack = 1.5f;
+			Item.value = 10;
+			Item.rare = 2;
+			Item.shoot = ModContent.ProjectileType<Projectiles.PopcornAmmo>();
+			Item.ammo = Item.type;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Popcorn");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Popcorn");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

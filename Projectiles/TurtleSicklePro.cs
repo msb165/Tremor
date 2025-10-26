@@ -6,7 +6,7 @@ namespace Tremor.Projectiles
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Turtle Sickle Pro");
+			// DisplayName.SetDefault("Turtle Sickle Pro");
 		}
 
 		public override void SetDefaults()

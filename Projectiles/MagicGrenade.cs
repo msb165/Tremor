@@ -14,7 +14,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Magic Grenade");
+			// DisplayName.SetDefault("Magic Grenade");
 
 		}
 

@@ -11,18 +11,18 @@ namespace Tremor.Items.LivingWood
 		public override void SetDefaults()
 		{
 
-			item.width = 34;
-			item.height = 26;
+			Item.width = 34;
+			Item.height = 26;
 
-			item.value = 200;
-			item.rare = 1;
-			item.defense = 1;
+			Item.value = 200;
+			Item.rare = 1;
+			Item.defense = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Living Wood Mask");
-			Tooltip.SetDefault("4% increased minion damage");
+			// DisplayName.SetDefault("Living Wood Mask");
+			// Tooltip.SetDefault("4% increased minion damage");
 		}
 
 		public override void UpdateEquip(Player player)

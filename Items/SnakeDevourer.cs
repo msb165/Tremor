@@ -10,29 +10,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 295;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 58;
-			item.height = 26;
-			item.useTime = 9;
-			item.useAnimation = 9;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 3;
+			Item.damage = 295;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 58;
+			Item.height = 26;
+			Item.useTime = 9;
+			Item.useAnimation = 9;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 3;
 
-			item.useAmmo = AmmoID.Bullet;
-			item.value = 1000000;
-			item.rare = 11;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = true;
-			item.shoot = 440;
-			item.shootSpeed = 6f;
+			Item.useAmmo = AmmoID.Bullet;
+			Item.value = 1000000;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = true;
+			Item.shoot = 440;
+			Item.shootSpeed = 6f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Snake Devourer");
-			Tooltip.SetDefault("Uses bullets as ammo");
+			// DisplayName.SetDefault("Snake Devourer");
+			// Tooltip.SetDefault("Uses bullets as ammo");
 		}
 
 		public override Vector2? HoldoutOffset()

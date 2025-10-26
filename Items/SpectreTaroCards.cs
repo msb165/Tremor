@@ -10,29 +10,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 67;
-			item.DamageType = DamageClass.Magic;
-			item.width = 36;
-			item.mana = 8;
-			item.height = 34;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.noUseGraphic = true;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 6;
-			item.value = 30000;
-			item.rare = 6;
-			item.UseSound = SoundID.Item8;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.SpectreTaroCard>();
-			item.shootSpeed = 8f;
+			Item.damage = 67;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 36;
+			Item.mana = 8;
+			Item.height = 34;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.noUseGraphic = true;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 6;
+			Item.value = 30000;
+			Item.rare = 6;
+			Item.UseSound = SoundID.Item8;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.SpectreTaroCard>();
+			Item.shootSpeed = 8f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Spectre Taro Cards");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Spectre Taro Cards");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

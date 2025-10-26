@@ -10,36 +10,36 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 50;
-			item.DamageType = DamageClass.Magic;
-			item.width = 10;
-			item.height = 10;
+			Item.damage = 50;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 10;
+			Item.height = 10;
 
-			item.useTime = 60;
-			item.useAnimation = 60;
-			item.useStyle = 5;
-			item.UseSound = SoundID.Item81;
-			item.noMelee = true;
-			item.knockBack = 1;
-			item.value = 10000;
-			item.rare = 5;
-			item.autoReuse = false;
-			item.shoot = 580;
-			item.shootSpeed = 7f;
-			item.mana = 30;
+			Item.useTime = 60;
+			Item.useAnimation = 60;
+			Item.useStyle = 5;
+			Item.UseSound = SoundID.Item81;
+			Item.noMelee = true;
+			Item.knockBack = 1;
+			Item.value = 10000;
+			Item.rare = 5;
+			Item.autoReuse = false;
+			Item.shoot = 580;
+			Item.shootSpeed = 7f;
+			Item.mana = 30;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Lightning Orb");
-			Tooltip.SetDefault("Creates a divine lightning");
+			// DisplayName.SetDefault("Lightning Orb");
+			// Tooltip.SetDefault("Creates a divine lightning");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			Vector2 vector82 = -Main.LocalPlayer.Center + Main.MouseWorld;
 			float ai = Main.rand.Next(100);
-			Vector2 vector83 = Vector2.Normalize(vector82) * item.shootSpeed;
+			Vector2 vector83 = Vector2.Normalize(vector82) * Item.shootSpeed;
 			Projectile.NewProjectile(null, player.Center.X, player.Center.Y, vector83.X, vector83.Y, type, damage, .5f, player.whoAmI, vector82.ToRotation(), ai);
 			return false;
 		}

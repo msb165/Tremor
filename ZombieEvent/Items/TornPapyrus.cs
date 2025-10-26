@@ -7,17 +7,17 @@ namespace Tremor.ZombieEvent.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 16;
-			item.height = 16;
-			item.maxStack = 999;
-			item.rare = 2;
-			item.value = 6000;
+			Item.width = 16;
+			Item.height = 16;
+			Item.maxStack = 999;
+			Item.rare = 2;
+			Item.value = 6000;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Torn Papyrus");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Torn Papyrus");
+			// Tooltip.SetDefault("");
 		}
 	}
 }

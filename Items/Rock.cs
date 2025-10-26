@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 9;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 18;
-			item.height = 18;
-			item.useTime = 14;
-			item.useAnimation = 14;
-			item.useStyle = 1;
-			item.knockBack = 5;
-			item.rare = 0;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
-			item.shoot = ModContent.ProjectileType<Projectiles.Rock>();
-			item.shootSpeed = 10f;
-			item.maxStack = 999;
-			item.consumable = true;
+			Item.damage = 9;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 18;
+			Item.height = 18;
+			Item.useTime = 14;
+			Item.useAnimation = 14;
+			Item.useStyle = 1;
+			Item.knockBack = 5;
+			Item.rare = 0;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Rock>();
+			Item.shootSpeed = 10f;
+			Item.maxStack = 999;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Rock");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Rock");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

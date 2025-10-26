@@ -21,7 +21,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Magium Rod Pro");
+			// DisplayName.SetDefault("Magium Rod Pro");
 
 		}
 
@@ -30,7 +30,7 @@ namespace Tremor.Projectiles
 			return Color.White;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			for (int k = 0; k < 5; k++)
 			{
@@ -39,7 +39,7 @@ namespace Tremor.Projectiles
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Dig, projectile.position);//Variant 0
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			projectile.ai[0] += 0.1f;
 			projectile.velocity *= 0.75f;

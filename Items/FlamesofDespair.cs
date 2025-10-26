@@ -11,32 +11,32 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 22;
-			item.damage = 152;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 15;
-			item.value = 100000;
-			item.useTime = 38;
-			item.useAnimation = 38;
-			item.shoot = ModContent.ProjectileType<Projectiles.FlamesofDespairPro>();
-			item.shootSpeed = 30f;
-			item.useStyle = 5;
-			item.rare = 11;
-			item.UseSound = SoundID.Item117;
-			item.noMelee = true;
-			item.noUseGraphic = true;
-			item.knockBack = 3;
-			item.autoReuse = false;
+			Item.width = 22;
+			Item.height = 22;
+			Item.damage = 152;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 15;
+			Item.value = 100000;
+			Item.useTime = 38;
+			Item.useAnimation = 38;
+			Item.shoot = ModContent.ProjectileType<Projectiles.FlamesofDespairPro>();
+			Item.shootSpeed = 30f;
+			Item.useStyle = 5;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item117;
+			Item.noMelee = true;
+			Item.noUseGraphic = true;
+			Item.knockBack = 3;
+			Item.autoReuse = false;
 
-			ItemID.Sets.ItemNoGravity[item.type] = true;
+			ItemID.Sets.ItemNoGravity[Item.type] = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Flames of Despair");
-			Tooltip.SetDefault("'Summons homing flames of oblivion'");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 4));
+			// DisplayName.SetDefault("Flames of Despair");
+			// Tooltip.SetDefault("'Summons homing flames of oblivion'");
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 4));
 		}
 
 		public override Color? GetAlpha(Color lightColor)

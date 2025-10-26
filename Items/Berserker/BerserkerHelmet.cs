@@ -11,18 +11,18 @@ namespace Tremor.Items.Berserker
 		public override void SetDefaults()
 		{
 
-			item.width = 32;
-			item.height = 26;
+			Item.width = 32;
+			Item.height = 26;
 
-			item.value = 400;
-			item.rare = 2;
-			item.defense = 5;
+			Item.value = 400;
+			Item.rare = 2;
+			Item.defense = 5;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Berserker Helmet");
-			Tooltip.SetDefault("15% increased melee speed");
+			// DisplayName.SetDefault("Berserker Helmet");
+			// Tooltip.SetDefault("15% increased melee speed");
 		}
 
 		public override void UpdateEquip(Player player)

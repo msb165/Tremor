@@ -10,22 +10,22 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.UseSound = SoundID.Item6;
-			item.useStyle = 4;
-			item.useAnimation = 30;
-			item.useTime = 30;
-			item.width = 32;
-			item.height = 32;
+			Item.UseSound = SoundID.Item6;
+			Item.useStyle = 4;
+			Item.useAnimation = 30;
+			Item.useTime = 30;
+			Item.width = 32;
+			Item.height = 32;
 
-			item.value = 60000;
-			item.rare = 8;
-			item.mana = 10;
+			Item.value = 60000;
+			Item.rare = 8;
+			Item.mana = 10;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Warp Pad");
-			Tooltip.SetDefault("Teleports you to your last death point upon use");
+			// DisplayName.SetDefault("Warp Pad");
+			// Tooltip.SetDefault("Teleports you to your last death point upon use");
 		}
 
 		public override bool? UseItem(Player player)

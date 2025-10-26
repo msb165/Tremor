@@ -13,19 +13,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 10000;
-			item.rare = 11;
-			item.defense = 20;
+			Item.value = 10000;
+			Item.rare = 11;
+			Item.defense = 20;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Shadow Master Pants");
-			Tooltip.SetDefault("25% increased alchemical damage\n" +
-"15% increased throwing damage");
+			// DisplayName.SetDefault("Shadow Master Pants");
+			/* Tooltip.SetDefault("25% increased alchemical damage\n" +
+"15% increased throwing damage"); */
 		}
 
 		public override void UpdateEquip(Player player)

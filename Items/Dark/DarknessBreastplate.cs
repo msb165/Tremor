@@ -10,18 +10,18 @@ namespace Tremor.Items.Dark
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 18;
+			Item.width = 26;
+			Item.height = 18;
 
-			item.value = 600000;
-			item.rare = 11;
-			item.defense = 30;
+			Item.value = 600000;
+			Item.rare = 11;
+			Item.defense = 30;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Breastplate of Darkness");
-			Tooltip.SetDefault("Increases life regeneration");
+			// DisplayName.SetDefault("Breastplate of Darkness");
+			// Tooltip.SetDefault("Increases life regeneration");
 		}
 
 		public override void UpdateEquip(Player player)

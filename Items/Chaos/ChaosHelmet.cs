@@ -10,19 +10,19 @@ namespace Tremor.Items.Chaos
 		public override void SetDefaults()
 		{
 
-			item.width = 32;
-			item.height = 26;
+			Item.width = 32;
+			Item.height = 26;
 
-			item.value = 6000;
-			item.rare = 5;
-			item.defense = 8;
+			Item.value = 6000;
+			Item.rare = 5;
+			Item.defense = 8;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chaos Helmet");
-			Tooltip.SetDefault("Increases maximum life by 25\n" +
-"Immune to most debuffs!");
+			// DisplayName.SetDefault("Chaos Helmet");
+			/* Tooltip.SetDefault("Increases maximum life by 25\n" +
+"Immune to most debuffs!"); */
 		}
 
 		public override void UpdateEquip(Player p)

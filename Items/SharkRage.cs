@@ -9,29 +9,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 46;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 10;
-			item.width = 54;
-			item.height = 54;
-			item.useTime = 26;
-			item.useAnimation = 26;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = 40000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item43;
-			item.autoReuse = true;
-			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
-			item.shoot = 408;
-			item.shootSpeed = 15f;
+			Item.damage = 46;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 10;
+			Item.width = 54;
+			Item.height = 54;
+			Item.useTime = 26;
+			Item.useAnimation = 26;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = 40000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item43;
+			Item.autoReuse = true;
+			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			Item.shoot = 408;
+			Item.shootSpeed = 15f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Shark Rage");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Shark Rage");
+			// Tooltip.SetDefault("");
 		}
 
 	}

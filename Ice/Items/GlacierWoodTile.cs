@@ -15,7 +15,7 @@ namespace Tremor.Ice.Items
 			Main.tileLighted[Type] = true;
 			DustType = 80;
 			AddMapEntry(new Color(0, 191, 255));
-			ItemDrop = ModContent.ItemType<GlacierWood>();
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<GlacierWood>();
 			Main.tileMerge[Type][ModContent.TileType<IceBlock>()] = true;
 			Main.tileMerge[Type][TileID.IceBlock] = true; // normal ice
 			Main.tileMerge[Type][TileID.BreakableIce] = true; // thin ice

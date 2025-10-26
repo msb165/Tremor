@@ -10,28 +10,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.mana = 6;
-			item.noMelee = true;
-			item.useStyle = 5;
-			item.damage = 362;
-			item.autoReuse = true;
-			item.useAnimation = 12;
-			item.useTime = 12;
-			item.width = 40;
-			item.height = 40;
-			item.shoot = 76;
-			item.shootSpeed = 6f;
-			item.knockBack = 6f;
-			item.value = Item.sellPrice(0, 40, 0, 0);
-			item.DamageType = DamageClass.Magic;
-			item.noMelee = true;
-			item.rare = 0;
+			Item.mana = 6;
+			Item.noMelee = true;
+			Item.useStyle = 5;
+			Item.damage = 362;
+			Item.autoReuse = true;
+			Item.useAnimation = 12;
+			Item.useTime = 12;
+			Item.width = 40;
+			Item.height = 40;
+			Item.shoot = 76;
+			Item.shootSpeed = 6f;
+			Item.knockBack = 6f;
+			Item.value = Item.sellPrice(0, 40, 0, 0);
+			Item.DamageType = DamageClass.Magic;
+			Item.noMelee = true;
+			Item.rare = 0;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Treble Clef");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Treble Clef");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

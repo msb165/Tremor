@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class HealthBooster:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Health Booster");
-			Description.SetDefault("Regenerates 100 health every minute");
+			// DisplayName.SetDefault("Health Booster");
+			// Description.SetDefault("Regenerates 100 health every minute");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

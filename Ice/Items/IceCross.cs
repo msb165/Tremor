@@ -8,27 +8,27 @@ namespace Tremor.Ice.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 21;
-			item.width = 26;
-			item.height = 24;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 40;
-			item.useTime = 35;
-			item.shoot = ModContent.ProjectileType<Icoj>();
-			item.shootSpeed = 0f;
-			item.useAnimation = 35;
-			item.useStyle = 1;
-			item.value = 1000;
-			item.rare = 1;
-			item.UseSound = SoundID.Item43;
+			Item.damage = 21;
+			Item.width = 26;
+			Item.height = 24;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 40;
+			Item.useTime = 35;
+			Item.shoot = ModContent.ProjectileType<Icoj>();
+			Item.shootSpeed = 0f;
+			Item.useAnimation = 35;
+			Item.useStyle = 1;
+			Item.value = 1000;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item43;
 
-			item.autoReuse = false;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ice Cross");
-			Tooltip.SetDefault("Summons an giant stationary frozen boulder that damages enemies and explodes into icicles after some time");
+			// DisplayName.SetDefault("Ice Cross");
+			// Tooltip.SetDefault("Summons an giant stationary frozen boulder that damages enemies and explodes into icicles after some time");
 		}
 
 	}

@@ -4,10 +4,10 @@ namespace Tremor.Buffs
 {
 	public class FlaskExpansionBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Flask Expansion");
-			Description.SetDefault("Increased size of alchemical clouds");
+			// DisplayName.SetDefault("Flask Expansion");
+			// Description.SetDefault("Increased size of alchemical clouds");
 		}
 	}
 }

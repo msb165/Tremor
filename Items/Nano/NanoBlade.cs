@@ -10,29 +10,29 @@ namespace Tremor.Items.Nano
 		public override void SetDefaults()
 		{
 
-			item.damage = 72;
-			item.DamageType = DamageClass.Melee;
-			item.width = 50;
-			item.height = 55;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.shootSpeed = 10f;
-			item.knockBack = 8;
-			item.value = 10000;
-			item.rare = 8;
-			item.UseSound = SoundID.Item1;
-			item.useTurn = false;
-			item.autoReuse = true;
+			Item.damage = 72;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 50;
+			Item.height = 55;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.shootSpeed = 10f;
+			Item.knockBack = 8;
+			Item.value = 10000;
+			Item.rare = 8;
+			Item.UseSound = SoundID.Item1;
+			Item.useTurn = false;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nano Blade");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Nano Blade");
+			// Tooltip.SetDefault("");
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(144, 1200);
 		}

@@ -10,18 +10,18 @@ namespace Tremor.Items.Bronze
 		public override void SetDefaults()
 		{
 
-			item.width = 32;
-			item.height = 26;
+			Item.width = 32;
+			Item.height = 26;
 
-			item.value = 400;
-			item.rare = 1;
-			item.defense = 4;
+			Item.value = 400;
+			Item.rare = 1;
+			Item.defense = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bronze Helmet");
-			Tooltip.SetDefault("6% increased melee critical strike chance");
+			// DisplayName.SetDefault("Bronze Helmet");
+			// Tooltip.SetDefault("6% increased melee critical strike chance");
 		}
 
 		public override void UpdateEquip(Player player)

@@ -20,11 +20,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("SpiK-3 Ball");
+			// DisplayName.SetDefault("SpiK-3 Ball");
 
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			for (int k = 0; k < 40; k++)
 			{

@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 86;
-			item.width = 80;
-			item.height = 80;
-			item.noUseGraphic = true;
-			item.DamageType = DamageClass.Melee;
-			item.useTime = 30;
-			item.shoot = ModContent.ProjectileType<Projectiles.TurtlePitchfork>();
-			item.shootSpeed = 3f;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 30000;
-			item.rare = 8;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 86;
+			Item.width = 80;
+			Item.height = 80;
+			Item.noUseGraphic = true;
+			Item.DamageType = DamageClass.Melee;
+			Item.useTime = 30;
+			Item.shoot = ModContent.ProjectileType<Projectiles.TurtlePitchfork>();
+			Item.shootSpeed = 3f;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 30000;
+			Item.rare = 8;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Turtle Pitchfork");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Turtle Pitchfork");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

@@ -9,17 +9,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.value = 1000;
-			item.rare = 2;
-			item.vanity = true;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 1000;
+			Item.rare = 2;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Warrior Greaves");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Warrior Greaves");
+			// Tooltip.SetDefault("");
 		}
 
 	}

@@ -12,10 +12,10 @@ namespace Tremor.Buffs
 		const int Damage = 30;
 		const float KB = 1;
 
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Ball n' Chain");
+			// DisplayName.SetDefault("Ball n' Chain");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

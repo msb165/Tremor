@@ -9,18 +9,18 @@ namespace Tremor.Items.Desert
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 34;
+			Item.width = 38;
+			Item.height = 34;
 
-			item.rare = 5;
-			item.accessory = true;
-			item.value = 50000;
+			Item.rare = 5;
+			Item.accessory = true;
+			Item.value = 50000;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Desert Sigil");
-			Tooltip.SetDefault("Summons a sigil to shoot your enemies");
+			// DisplayName.SetDefault("Desert Sigil");
+			// Tooltip.SetDefault("Summons a sigil to shoot your enemies");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

@@ -8,18 +8,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 20;
-			item.height = 20;
+			Item.width = 20;
+			Item.height = 20;
 
-			item.value = 10000000;
-			item.rare = 11;
-			ItemID.Sets.ItemNoGravity[item.type] = true;
+			Item.value = 10000000;
+			Item.rare = 11;
+			ItemID.Sets.ItemNoGravity[Item.type] = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cosmic Fuel");
-			Tooltip.SetDefault("'Infinity energy!'");
+			// DisplayName.SetDefault("Cosmic Fuel");
+			// Tooltip.SetDefault("'Infinity energy!'");
 		}
 
 	}

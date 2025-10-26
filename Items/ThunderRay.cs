@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 24;
-			item.width = 14;
-			item.height = 84;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 9;
-			item.useTime = 26;
-			item.shoot = 255;
-			item.shootSpeed = 8f;
-			item.useAnimation = 26;
-			item.useStyle = 5;
-			item.knockBack = 0;
-			item.value = 2100;
-			item.rare = 2;
-			item.UseSound = SoundID.Item114;
-			item.autoReuse = true;
+			Item.damage = 24;
+			Item.width = 14;
+			Item.height = 84;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 9;
+			Item.useTime = 26;
+			Item.shoot = 255;
+			Item.shootSpeed = 8f;
+			Item.useAnimation = 26;
+			Item.useStyle = 5;
+			Item.knockBack = 0;
+			Item.value = 2100;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item114;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Thunder Ray");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Thunder Ray");
+			// Tooltip.SetDefault("");
 		}
 
 	}

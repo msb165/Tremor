@@ -10,16 +10,16 @@ namespace Tremor.Items.Dark
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.Arkhalis);
+			Item.CloneDefaults(ItemID.Arkhalis);
 
-			item.damage = 90;
+			Item.damage = 90;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Darkhalis");
-			Tooltip.SetDefault("'It came from the deep abyss...'");
+			// DisplayName.SetDefault("Darkhalis");
+			// Tooltip.SetDefault("'It came from the deep abyss...'");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

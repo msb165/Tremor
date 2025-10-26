@@ -10,17 +10,17 @@ namespace Tremor.Items.Magmonium
 		public override void SetDefaults()
 		{
 
-			item.defense = 25;
-			item.width = 22;
-			item.height = 30;
-			item.value = 60000;
-			item.rare = 8;
+			Item.defense = 25;
+			Item.width = 22;
+			Item.height = 30;
+			Item.value = 60000;
+			Item.rare = 8;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Magmonium Breastplate");
-			Tooltip.SetDefault("12% increased damage");
+			// DisplayName.SetDefault("Magmonium Breastplate");
+			// Tooltip.SetDefault("12% increased damage");
 		}
 
 		public override void UpdateEquip(Player player)

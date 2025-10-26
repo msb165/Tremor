@@ -14,7 +14,7 @@ namespace Tremor.Ice.Mobs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frostbyte");
+			// DisplayName.SetDefault("Frostbyte");
 			Main.npcFrameCount[npc.type] = 3;
 		}
 
@@ -32,7 +32,7 @@ namespace Tremor.Ice.Mobs
 			npc.value = Item.buyPrice(silver: 10, copper : 5);
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
 			npc.lifeMax += 5 * numPlayers;
 			npc.damage += 2 * numPlayers;
@@ -93,7 +93,7 @@ namespace Tremor.Ice.Mobs
 			if (npc.velocity.X != 0) npc.spriteDirection = npc.velocity.X > 0 ? 1 : -1;
 		}
 
-		public override void ModifyHitPlayer(Player target, ref int damage, ref bool crit)
+		public override void ModifyHitPlayer(Player target, ref Player.HurtModifiers modifiers)
 		{
 			if (Main.hardMode || Main.expertMode)
 			{

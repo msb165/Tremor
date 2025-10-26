@@ -9,27 +9,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 69;
-			item.width = 14;
-			item.height = 84;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 4;
-			item.useTime = 30;
-			item.shoot = ModContent.ProjectileType<Projectiles.StarNestPro>();
-			item.shootSpeed = 8f;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 210000;
-			item.rare = 10;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = true;
+			Item.damage = 69;
+			Item.width = 14;
+			Item.height = 84;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 4;
+			Item.useTime = 30;
+			Item.shoot = ModContent.ProjectileType<Projectiles.StarNestPro>();
+			Item.shootSpeed = 8f;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 210000;
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Star Nest");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Star Nest");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

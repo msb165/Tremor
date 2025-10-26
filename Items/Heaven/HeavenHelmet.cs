@@ -10,18 +10,18 @@ namespace Tremor.Items.Heaven
 		public override void SetDefaults()
 		{
 
-			item.width = 32;
-			item.height = 26;
+			Item.width = 32;
+			Item.height = 26;
 
-			item.value = 6000;
-			item.rare = 3;
-			item.defense = 6;
+			Item.value = 6000;
+			Item.rare = 3;
+			Item.defense = 6;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Heaven Helmet");
-			Tooltip.SetDefault("Increases ranged critical strike chance by 12");
+			// DisplayName.SetDefault("Heaven Helmet");
+			// Tooltip.SetDefault("Increases ranged critical strike chance by 12");
 		}
 
 		public override void UpdateEquip(Player player)

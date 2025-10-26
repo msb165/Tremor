@@ -8,19 +8,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
-			item.value = 250000;
-			item.rare = 11;
-			item.accessory = true;
+			Item.width = 22;
+			Item.height = 44;
+			Item.value = 250000;
+			Item.rare = 11;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Conglomeration");
-			Tooltip.SetDefault("Prolonged after hit invincibility\n" +
+			// DisplayName.SetDefault("Conglomeration");
+			/* Tooltip.SetDefault("Prolonged after hit invincibility\n" +
 "Greatly increased life regeneration\n" +
-"Increases maximum life by 140");
+"Increases maximum life by 140"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

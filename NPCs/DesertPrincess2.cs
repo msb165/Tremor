@@ -10,7 +10,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Desert Wasp");
+			// DisplayName.SetDefault("Desert Wasp");
 			Main.npcFrameCount[npc.type] = 2;
 		}
 
@@ -500,9 +500,9 @@ namespace Tremor.NPCs
 			}
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
-			npc.lifeMax = (int)(npc.lifeMax * 0.6f * bossLifeScale);
+			npc.lifeMax = (int)(npc.lifeMax * 0.6f * balance);
 			npc.damage = (int)(npc.damage * 0.6f);
 		}
 

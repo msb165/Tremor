@@ -1,5 +1,8 @@
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Souls;
 using Tremor.NPCs;
 
 namespace Tremor.Items.Ancient
@@ -8,21 +11,22 @@ namespace Tremor.Items.Ancient
 	{
 		public override void SetDefaults()
 		{
-			item.maxStack = 999;
-			item.consumable = true;
-			item.width = 24;
-			item.height = 24;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.width = 24;
+			Item.height = 24;
 
-			item.rare = 9;
-			item.expert = true;
+			Item.rare = 9;
+			Item.expert = true;
 			
 		}
-		public override int BossBagNPC => ModContent.NPCType<Dragon_HeadB>();
+		//public override int BossBagNPC => ModContent.NPCType<Dragon_HeadB>();
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
+			ItemID.Sets.BossBag[Type] = true;
+			// DisplayName.SetDefault("Treasure Bag");
+			// Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
 
 		public override bool CanRightClick()
@@ -30,33 +34,14 @@ namespace Tremor.Items.Ancient
 			return true;
 		}
 
-		public override void OpenBossBag(Player player)
+		public override void ModifyItemLoot(ItemLoot itemLoot)
 		{
-			switch (Main.rand.Next(4))
-			{
-				case 0:
-					player.QuickSpawnItem(ModContent.ItemType<DragonHead>());
-					break;
-				case 1:
-					player.QuickSpawnItem(ModContent.ItemType<Swordstorm>());
-					break;
-				case 2:
-					player.QuickSpawnItem(ModContent.ItemType<AncientTimesEdge>());
-					break;
-			}
-
-			if (Main.rand.NextBool(7))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<AncientDragonMask>());
-			}
-
-			if (Main.hardMode)
-			{
-				player.TryGettingDevArmor();
-			}
-			player.QuickSpawnItem(ModContent.ItemType<AncientSoul>());
-			player.QuickSpawnItem(188, Main.rand.Next(5, 15));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DragonHead>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Swordstorm>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<AncientTimesEdge>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<AncientDragonMask>(), 7));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<AncientSoul>()));
+			itemLoot.Add(ItemDropRule.Common(ItemID.HealingPotion, 1, 5, 15));
 		}
-
 	}
 }

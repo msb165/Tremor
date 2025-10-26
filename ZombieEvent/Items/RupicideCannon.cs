@@ -11,29 +11,29 @@ namespace Tremor.ZombieEvent.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 45;
-			item.width = 40;
-			item.height = 20;
-			item.useTime = 15;
-			item.useAnimation = 15;
-			item.useStyle = 5;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 7;
-			item.noMelee = true;
+			Item.damage = 45;
+			Item.width = 40;
+			Item.height = 20;
+			Item.useTime = 15;
+			Item.useAnimation = 15;
+			Item.useStyle = 5;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 7;
+			Item.noMelee = true;
 
-			item.knockBack = 6;
-			item.value = 10000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = true;
-			item.shoot = 10;
-			item.shootSpeed = 12f;
+			Item.knockBack = 6;
+			Item.value = 10000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = true;
+			Item.shoot = 10;
+			Item.shootSpeed = 12f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Rupicide Cannon");
-			Tooltip.SetDefault("Shoots magical blasts");
+			// DisplayName.SetDefault("Rupicide Cannon");
+			// Tooltip.SetDefault("Shoots magical blasts");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

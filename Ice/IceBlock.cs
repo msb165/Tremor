@@ -16,7 +16,7 @@ namespace Tremor.Ice
 			Main.tileBlockLight[Type] = false;
 			Main.tileLighted[Type] = false;
 			DustType = 80;
-			ItemDrop = ItemID.IceBlock;
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ItemID.IceBlock;
 			HitSound = SoundID.Tink;
 			soundStyle = 2;
 			AddMapEntry(new Color(84, 166, 229));

@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 24;
-			//item.melee = false;
-			item.DamageType = DamageClass.Magic;
-			item.width = 50;
-			item.height = 55;
-			item.useTime = 15;
-			item.mana = 7;
-			item.useAnimation = 15;
-			item.useStyle = 5;
-			item.shoot = 131;
-			item.shootSpeed = 20f;
-			item.knockBack = 4;
-			item.value = 50000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 24;
+			//Item.melee = false;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 50;
+			Item.height = 55;
+			Item.useTime = 15;
+			Item.mana = 7;
+			Item.useAnimation = 15;
+			Item.useStyle = 5;
+			Item.shoot = 131;
+			Item.shootSpeed = 20f;
+			Item.knockBack = 4;
+			Item.value = 50000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Fungal Tome");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Fungal Tome");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

@@ -8,17 +8,17 @@ namespace Tremor.Items.Souls
 		public override void SetDefaults()
 		{
 
-			item.width = 40;
-			item.height = 28;
-			item.maxStack = 99;
-			item.value = 1000;
-			item.rare = 4;
+			Item.width = 40;
+			Item.height = 28;
+			Item.maxStack = 99;
+			Item.value = 1000;
+			Item.rare = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cursed Soul");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Cursed Soul");
+			// Tooltip.SetDefault("");
 		}
 
 	}

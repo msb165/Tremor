@@ -11,19 +11,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 30000;
-			item.rare = 3;
-			item.maxStack = 1;
-			item.accessory = true;
+			Item.value = 30000;
+			Item.rare = 3;
+			Item.maxStack = 1;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Death Formula");
-			Tooltip.SetDefault("20% increased alchemical critical strike chance");
+			// DisplayName.SetDefault("Death Formula");
+			// Tooltip.SetDefault("20% increased alchemical critical strike chance");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

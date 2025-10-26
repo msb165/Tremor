@@ -9,18 +9,18 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.Arkhalis);
+			Item.CloneDefaults(ItemID.Arkhalis);
 
-			item.damage = 350;
-			item.knockBack = 4;
-			item.rare = 11;
+			Item.damage = 350;
+			Item.knockBack = 4;
+			Item.rare = 11;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Horned War Hammer");
-			Tooltip.SetDefault("Forged from lightning");
+			// DisplayName.SetDefault("Horned War Hammer");
+			// Tooltip.SetDefault("Forged from lightning");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

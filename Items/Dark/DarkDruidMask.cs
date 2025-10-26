@@ -9,16 +9,16 @@ namespace Tremor.Items.Dark
 		public override void SetDefaults()
 		{
 
-			item.width = 36;
-			item.height = 26;
-			item.value = 2500;
-			item.rare = 1;
+			Item.width = 36;
+			Item.height = 26;
+			Item.value = 2500;
+			Item.rare = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dark Druid Mask");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Dark Druid Mask");
+			// Tooltip.SetDefault("");
 		}
 
 	}

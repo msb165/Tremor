@@ -11,22 +11,22 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 20;
-			item.height = 22;
-			item.useTime = 19;
-			item.useAnimation = 20;
-			item.useStyle = 4;
-			item.value = 50000;
-			item.rare = 3;
-			item.maxStack = 1;
-			item.UseSound = SoundID.Item8;
-			item.autoReuse = false;
+			Item.width = 20;
+			Item.height = 22;
+			Item.useTime = 19;
+			Item.useAnimation = 20;
+			Item.useStyle = 4;
+			Item.value = 50000;
+			Item.rare = 3;
+			Item.maxStack = 1;
+			Item.UseSound = SoundID.Item8;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Emerald Stone");
-			Tooltip.SetDefault("Summons Emeraldy which lights the area");
+			// DisplayName.SetDefault("Emerald Stone");
+			// Tooltip.SetDefault("Summons Emeraldy which lights the area");
 		}
 
 		public override bool? UseItem(Player player)

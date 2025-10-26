@@ -11,17 +11,17 @@ namespace Tremor.Items.Crystal
 		public override void SetDefaults()
 		{
 
-			item.defense = 5;
-			item.width = 22;
-			item.height = 18;
-			item.value = 2500;
-			item.rare = 4;
+			Item.defense = 5;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 2500;
+			Item.rare = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crystal Greaves");
-			Tooltip.SetDefault("20% increased throwing critical strike chance");
+			// DisplayName.SetDefault("Crystal Greaves");
+			// Tooltip.SetDefault("20% increased throwing critical strike chance");
 		}
 
 		public override void UpdateEquip(Player p)

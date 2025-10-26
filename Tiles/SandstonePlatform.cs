@@ -28,8 +28,8 @@ namespace Tremor.Tiles
 			TileObjectData.addTile(19);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
 			AddMapEntry(new Color(233, 211, 123));
-			ItemDrop = ModContent.ItemType<Items.Sandstone.SandstonePlatform>();
-			adjTiles = new int[]{ TileID.Platforms };
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<Items.Sandstone.SandstonePlatform>();
+			AdjTiles = new int[]{ TileID.Platforms };
 			TileID.Sets.Platforms[Type] = true;
 		}
 

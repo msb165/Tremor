@@ -13,23 +13,23 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 40;
-			item.height = 28;
-			item.maxStack = 20;
-			item.value = 100;
-			item.rare = 5;
-			item.useAnimation = 15;
-			item.useTime = 15;
-			item.useStyle = 4;
-			item.consumable = true;
+			Item.width = 40;
+			Item.height = 28;
+			Item.maxStack = 20;
+			Item.value = 100;
+			Item.rare = 5;
+			Item.useAnimation = 15;
+			Item.useTime = 15;
+			Item.useStyle = 4;
+			Item.consumable = true;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Artifact Engine");
-			Tooltip.SetDefault("Summons Cog Lord\n" +
-"Requires any mech. boss to have been slain, hardmode and night time");
+			// DisplayName.SetDefault("Artifact Engine");
+			/* Tooltip.SetDefault("Summons Cog Lord\n" +
+"Requires any mech. boss to have been slain, hardmode and night time"); */
 		}
 
 		public override bool CanUseItem(Player player)

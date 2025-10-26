@@ -26,19 +26,19 @@ namespace Tremor.Items.Abyss
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 18000;
-			item.rare = 7;
-			item.defense = 11;
+			Item.value = 18000;
+			Item.rare = 7;
+			Item.defense = 11;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Abyss Headgear");
-			Tooltip.SetDefault("14% increased minion damage\n" +
-"Increases maximum health by 40");
+			// DisplayName.SetDefault("Abyss Headgear");
+			/* Tooltip.SetDefault("14% increased minion damage\n" +
+"Increases maximum health by 40"); */
 		}
 
 		public override void UpdateEquip(Player player)
@@ -93,7 +93,7 @@ namespace Tremor.Items.Abyss
 			int Target = -1;
 			for (int k = 0; k < Main.npc.Length; k++)
 			{
-				if (Main.npc[k].active && Main.npc[k].lifeMax > 5 && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].Distance(Main.player[item.playerIndexTheItemIsReservedFor].Center) <= ShootRange && Collision.CanHitLine(Main.player[item.playerIndexTheItemIsReservedFor].Center, 4, 4, Main.npc[k].Center, 4, 4))
+				if (Main.npc[k].active && Main.npc[k].lifeMax > 5 && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].Distance(Main.player[Item.playerIndexTheItemIsReservedFor].Center) <= ShootRange && Collision.CanHitLine(Main.player[Item.playerIndexTheItemIsReservedFor].Center, 4, 4, Main.npc[k].Center, 4, 4))
 				{
 					Target = k;
 					break;
@@ -104,17 +104,17 @@ namespace Tremor.Items.Abyss
 
 		int GetDamage()
 		{
-			return Main.player[item.playerIndexTheItemIsReservedFor].GetSpecialProjectileDamage(10, 15);
+			return Main.player[Item.playerIndexTheItemIsReservedFor].GetSpecialProjectileDamage(10, 15);
 		}
 
 		void Shoot(int Target, int Damage)
 		{
-			Vector2 velocity = Helper.VelocityToPoint(Main.player[item.playerIndexTheItemIsReservedFor].Center, Main.npc[Target].Center, ShootSpeed);
+			Vector2 velocity = Helper.VelocityToPoint(Main.player[Item.playerIndexTheItemIsReservedFor].Center, Main.npc[Target].Center, ShootSpeed);
 			for (int l = 0; l < ShootCount; l++)
 			{
 				velocity.X += Main.rand.Next(-spread, spread + 1) * spreadMult;
 				velocity.Y += Main.rand.Next(-spread, spread + 1) * spreadMult;
-				int i = Projectile.NewProjectile(null, Main.player[item.playerIndexTheItemIsReservedFor].Center.X, Main.player[item.playerIndexTheItemIsReservedFor].Center.Y, velocity.X, velocity.Y, ShootType, Damage, ShootKN, item.playerIndexTheItemIsReservedFor);
+				int i = Projectile.NewProjectile(null, Main.player[Item.playerIndexTheItemIsReservedFor].Center.X, Main.player[Item.playerIndexTheItemIsReservedFor].Center.Y, velocity.X, velocity.Y, ShootType, Damage, ShootKN, Item.playerIndexTheItemIsReservedFor);
 			}
 		}
 

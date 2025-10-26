@@ -8,29 +8,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 26;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 40;
-			item.height = 20;
-			item.noUseGraphic = true;
-			item.useTime = 30;
+			Item.damage = 26;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 40;
+			Item.height = 20;
+			Item.noUseGraphic = true;
+			Item.useTime = 30;
 
-			item.useAnimation = 20;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 6;
-			item.value = 10000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item45;
-			item.autoReuse = false;
-			item.shoot = ModContent.ProjectileType<Projectiles.GarnetGlovePro>();
-			item.shootSpeed = 9f;
+			Item.useAnimation = 20;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 6;
+			Item.value = 10000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item45;
+			Item.autoReuse = false;
+			Item.shoot = ModContent.ProjectileType<Projectiles.GarnetGlovePro>();
+			Item.shootSpeed = 9f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Garnet Glove");
-			Tooltip.SetDefault("'Made of love'");
+			// DisplayName.SetDefault("Garnet Glove");
+			// Tooltip.SetDefault("'Made of love'");
 		}
 
 		public override void AddRecipes()

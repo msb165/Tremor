@@ -10,19 +10,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
+			Item.width = 22;
+			Item.height = 18;
 
-			item.value = 10000;
-			item.rare = 2;
-			item.defense = 5;
+			Item.value = 10000;
+			Item.rare = 2;
+			Item.defense = 5;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Enchanted Greaves");
-			Tooltip.SetDefault("Increases maximum mana by 20\n" +
-"Increases maximum health by 15");
+			// DisplayName.SetDefault("Enchanted Greaves");
+			/* Tooltip.SetDefault("Increases maximum mana by 20\n" +
+"Increases maximum health by 15"); */
 		}
 
 		public override void UpdateEquip(Player player)

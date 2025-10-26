@@ -5,11 +5,11 @@ namespace Tremor.Buffs
 {
 	public class BottledSoulOfNight:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Bottled Soul of Night");
-			Description.SetDefault("8% increased melee speed");
+			// DisplayName.SetDefault("Bottled Soul of Night");
+			// Description.SetDefault("8% increased melee speed");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

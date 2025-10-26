@@ -9,19 +9,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 28;
+			Item.width = 24;
+			Item.height = 28;
 
-			item.value = 120000;
-			item.rare = 5;
-			item.accessory = true;
-			item.defense = 1;
+			Item.value = 120000;
+			Item.rare = 5;
+			Item.accessory = true;
+			Item.defense = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chaotic Amplifier");
-			Tooltip.SetDefault("The less health, the more crit chance...");
+			// DisplayName.SetDefault("Chaotic Amplifier");
+			// Tooltip.SetDefault("The less health, the more crit chance...");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

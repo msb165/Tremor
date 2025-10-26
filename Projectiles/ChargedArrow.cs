@@ -20,11 +20,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Charged Arrow");
+			// DisplayName.SetDefault("Charged Arrow");
 
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item93, projectile.position);
 			Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.ChargedArrowBoom>(), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);

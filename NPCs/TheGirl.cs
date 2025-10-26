@@ -12,7 +12,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Girl");
+			// DisplayName.SetDefault("The Girl");
 			Main.npcFrameCount[npc.type] = 9;
 		}
 
@@ -41,19 +41,19 @@ namespace Tremor.NPCs
 				this.NewItem(ModContent.ItemType<BrokenHeroArmorplate>());
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 60; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
 
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 			}
 		}
 

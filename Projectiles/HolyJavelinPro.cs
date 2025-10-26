@@ -21,11 +21,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("HolyJavelinPro");
+			// DisplayName.SetDefault("HolyJavelinPro");
 
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.rand.NextBool(2))
 			{
@@ -39,7 +39,7 @@ namespace Tremor.Projectiles
 			return Color.White;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item1, projectile.position);
 			for (int num158 = 0; num158 < 20; num158++)

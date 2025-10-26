@@ -10,25 +10,25 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 185;
-			item.DamageType = DamageClass.Melee;
-			item.width = 50;
-			item.height = 50;
-			item.scale = 1.3f;
-			item.useTime = 18;
-			item.useAnimation = 18;
-			item.useStyle = 1;
-			item.knockBack = 2;
-			item.value = 10000;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 185;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 50;
+			Item.height = 50;
+			Item.scale = 1.3f;
+			Item.useTime = 18;
+			Item.useAnimation = 18;
+			Item.useStyle = 1;
+			Item.knockBack = 2;
+			Item.value = 10000;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Retribution of Abraxas");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Retribution of Abraxas");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class ExtendedManaBooster:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Extended Mana Booster");
-			Description.SetDefault("Regenerates 200 mana every 45 seconds");
+			// DisplayName.SetDefault("Extended Mana Booster");
+			// Description.SetDefault("Regenerates 200 mana every 45 seconds");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

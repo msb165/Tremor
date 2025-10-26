@@ -12,20 +12,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 22;
+			Item.width = 22;
+			Item.height = 22;
 
-			item.rare = 2;
-			item.accessory = true;
-			item.value = 50000;
+			Item.rare = 2;
+			Item.accessory = true;
+			Item.value = 50000;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Summoner Focus");
-			Tooltip.SetDefault("8% increased minion damage\n" +
-"Increases your max number of minions");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 4));
+			// DisplayName.SetDefault("Summoner Focus");
+			/* Tooltip.SetDefault("8% increased minion damage\n" +
+"Increases your max number of minions"); */
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(6, 4));
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

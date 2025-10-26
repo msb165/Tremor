@@ -12,28 +12,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 162;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 26;
-			item.noUseGraphic = true;
-			item.maxStack = 1;
-			item.height = 30;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.shoot = ModContent.ProjectileType<Projectiles.DevastatorPro>();
-			item.shootSpeed = 19f;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 70000;
-			item.rare = 11;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 162;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 26;
+			Item.noUseGraphic = true;
+			Item.maxStack = 1;
+			Item.height = 30;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.shoot = ModContent.ProjectileType<Projectiles.DevastatorPro>();
+			Item.shootSpeed = 19f;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 70000;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Devastator");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Devastator");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

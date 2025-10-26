@@ -19,11 +19,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Fiery Kunai");
+			// DisplayName.SetDefault("Fiery Kunai");
 
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			for (int k = 0; k < 5; k++)
 			{
@@ -38,7 +38,7 @@ namespace Tremor.Projectiles
 			Main.dust[dust].noGravity = true;
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.rand.NextBool(2))
 			{
@@ -49,7 +49,7 @@ namespace Tremor.Projectiles
 			projectile.velocity *= 0.75f;
 		}
 
-		public override void OnHitPvp(Player target, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
 		{
 			if (Main.rand.NextBool(2))
 			{

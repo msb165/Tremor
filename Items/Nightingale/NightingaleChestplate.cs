@@ -11,17 +11,17 @@ namespace Tremor.Items.Nightingale
 		public override void SetDefaults()
 		{
 
-			item.defense = 7;
-			item.width = 22;
-			item.height = 30;
-			item.value = 3025;
-			item.rare = 2;
+			Item.defense = 7;
+			Item.width = 22;
+			Item.height = 30;
+			Item.value = 3025;
+			Item.rare = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nightingale Chestplate");
-			Tooltip.SetDefault("5% increased damage");
+			// DisplayName.SetDefault("Nightingale Chestplate");
+			// Tooltip.SetDefault("5% increased damage");
 		}
 
 		public override void UpdateEquip(Player player)

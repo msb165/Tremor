@@ -23,7 +23,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("FallingDarkSlime");
+			// DisplayName.SetDefault("FallingDarkSlime");
 
 		}
 
@@ -41,7 +41,7 @@ namespace Tremor.Projectiles
 				projectile.frameCounter = 0;
 			projectile.frameCounter++;
 		}
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			NPC.NewNPC(null, (int)projectile.Center.X, (int)projectile.Center.Y, ModContent.NPCType<DarkServant>());
 		}

@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 41;
-			item.DamageType = DamageClass.Magic;
-			item.width = 28;
-			item.height = 30;
-			item.useTime = 12;
-			item.useAnimation = 12;
-			item.shootSpeed = 15f;
-			item.mana = 8;
-			item.useStyle = 5;
-			item.shoot = ModContent.ProjectileType<Projectiles.EarthquakePro>();
-			item.knockBack = 3;
-			item.value = 10000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item20;
-			item.autoReuse = true;
+			Item.damage = 41;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 28;
+			Item.height = 30;
+			Item.useTime = 12;
+			Item.useAnimation = 12;
+			Item.shootSpeed = 15f;
+			Item.mana = 8;
+			Item.useStyle = 5;
+			Item.shoot = ModContent.ProjectileType<Projectiles.EarthquakePro>();
+			Item.knockBack = 3;
+			Item.value = 10000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item20;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Earthquake");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Earthquake");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

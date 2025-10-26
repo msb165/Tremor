@@ -10,28 +10,28 @@ namespace Tremor.Items.Ancient
 		public override void SetDefaults()
 		{
 
-			item.damage = 100;
-			item.DamageType = DamageClass.Melee;
-			item.width = 88;
-			item.height = 88;
-			item.useTime = 30;
-			item.useAnimation = 30;
-			item.useStyle = 1;
-			item.knockBack = 10;
-			item.value = 10000;
-			item.rare = 10;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.useTurn = false;
-			item.axe = 25;
-			item.hammer = 100;
-			item.tileBoost += 5;
+			Item.damage = 100;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 88;
+			Item.height = 88;
+			Item.useTime = 30;
+			Item.useAnimation = 30;
+			Item.useStyle = 1;
+			Item.knockBack = 10;
+			Item.value = 10000;
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
+			Item.useTurn = false;
+			Item.axe = 25;
+			Item.hammer = 100;
+			Item.tileBoost += 5;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Smasher");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Ancient Smasher");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

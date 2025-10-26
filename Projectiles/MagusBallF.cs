@@ -20,7 +20,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Rune Ball");
+			// DisplayName.SetDefault("Rune Ball");
 
 		}
 
@@ -64,7 +64,7 @@ namespace Tremor.Projectiles
 			return false;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item14, projectile.position);
 			Helper.Explode(projectile.whoAmI, 120, 120, delegate
@@ -85,9 +85,9 @@ namespace Tremor.Projectiles
 			});
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
-			Helper.DrawAroundOrigin(projectile.whoAmI, lightColor);
+			Helper.DrawAroundOrigin(projectile.whoAmI, drawColor);
 			return false;
 		}
 	}

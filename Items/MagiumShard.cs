@@ -7,17 +7,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 24;
-			item.maxStack = 99;
-			item.value = 120;
-			item.rare = 5;
+			Item.width = 30;
+			Item.height = 24;
+			Item.maxStack = 99;
+			Item.value = 120;
+			Item.rare = 5;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Magium Shard");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Magium Shard");
+			// Tooltip.SetDefault("");
 		}
 
 	}

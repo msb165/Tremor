@@ -11,39 +11,39 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 42;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 6;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 16;
-			item.useAnimation = 16;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = 13800;
-			item.rare = 5;
-			item.UseSound = SoundID.Item43;
-			item.autoReuse = false;
-			Item.staff[item.type] = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.MagiumRodPro>();
-			item.shootSpeed = 15f;
+			Item.damage = 42;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 6;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 16;
+			Item.useAnimation = 16;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = 13800;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item43;
+			Item.autoReuse = false;
+			Item.staff[Item.type] = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.MagiumRodPro>();
+			Item.shootSpeed = 15f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Magium Rod");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Magium Rod");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			int i = Main.myPlayer;
-			float num72 = item.shootSpeed;
-			int num73 = item.damage;
-			float num74 = item.knockBack;
-			num74 = player.GetWeaponKnockback(item, num74);
-			player.itemTime = item.useTime;
+			float num72 = Item.shootSpeed;
+			int num73 = Item.damage;
+			float num74 = Item.knockBack;
+			num74 = player.GetWeaponKnockback(Item, num74);
+			player.itemTime = Item.useTime;
 			Vector2 vector2 = player.RotatedRelativePoint(player.MountedCenter, true);
 			Vector2 value = Vector2.UnitX.RotatedBy(player.fullRotation, default(Vector2));
 			Vector2 vector3 = Main.MouseWorld - vector2;

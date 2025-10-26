@@ -9,30 +9,30 @@ namespace Tremor.Items.Alchemist.Flasks
 	{
 		public override void SetDefaults()
 		{
-			item.damage = 46;
-			item.width = 28;
-			item.noUseGraphic = true;
-			item.maxStack = 1;
-			item.consumable = false;
-			item.height = 28;
-			item.useTime = 28;
-			item.useAnimation = 28;
-			item.shoot = ModContent.ProjectileType<ToxicFlaskPro>();
-			item.shootSpeed = 9f;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.noMelee = true;
-			item.UseSound = SoundID.Item106;
-			item.value = Item.sellPrice(0, 2, 0, 0);
-			item.rare = 8;
-			item.autoReuse = false;
-			item.crit = 4;
+			Item.damage = 46;
+			Item.width = 28;
+			Item.noUseGraphic = true;
+			Item.maxStack = 1;
+			Item.consumable = false;
+			Item.height = 28;
+			Item.useTime = 28;
+			Item.useAnimation = 28;
+			Item.shoot = ModContent.ProjectileType<ToxicFlaskPro>();
+			Item.shootSpeed = 9f;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.noMelee = true;
+			Item.UseSound = SoundID.Item106;
+			Item.value = Item.sellPrice(0, 2, 0, 0);
+			Item.rare = 8;
+			Item.autoReuse = false;
+			Item.crit = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Toxic Flask");
-			Tooltip.SetDefault("Throws a flask that explodes into toxic clouds");
+			// DisplayName.SetDefault("Toxic Flask");
+			// Tooltip.SetDefault("Throws a flask that explodes into toxic clouds");
 		}
 
 		public override void UpdateInventory(Player player)
@@ -40,19 +40,19 @@ namespace Tremor.Items.Alchemist.Flasks
 			MPlayer modPlayer = MPlayer.GetModPlayer(player);
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) != -1)
 			{
-				item.shootSpeed = 11f;
+				Item.shootSpeed = 11f;
 			}
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) < 1)
 			{
-				item.shootSpeed = 9f;
+				Item.shootSpeed = 9f;
 			}
 			if (modPlayer.core)
 			{
-				item.autoReuse = true;
+				Item.autoReuse = true;
 			}
 			if (!modPlayer.core)
 			{
-				item.autoReuse = false;
+				Item.autoReuse = false;
 			}
 		}
 

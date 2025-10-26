@@ -1,4 +1,6 @@
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.Items.Alchemist.Flasks;
 using Tremor.Items.Dark;
@@ -6,23 +8,23 @@ using Tremor.NPCs;
 
 namespace Tremor.Items
 {
-	public class WallofShadowBag:TremorModItem
+	public class WallofShadowBag : TremorModItem
 	{
 		public override void SetDefaults()
 		{
-			item.maxStack = 999;
-			item.consumable = true;
-			item.width = 24;
-			item.height = 24;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.width = 24;
+			Item.height = 24;
 
-			item.rare = 9;
-			item.expert = true;
+			Item.rare = 9;
+			Item.expert = true;
 		}
-		public override int BossBagNPC => ModContent.NPCType<WallOfShadow>();
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
+			ItemID.Sets.BossBag[Type] = true;
+			// DisplayName.SetDefault("Treasure Bag");
+			// Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
 
 		public override bool CanRightClick()
@@ -30,34 +32,14 @@ namespace Tremor.Items
 			return true;
 		}
 
-		public override void OpenBossBag(Player player)
+		public override void ModifyItemLoot(ItemLoot itemLoot)
 		{
-			switch (Main.rand.Next(4))
-			{
-				case 0:
-					player.QuickSpawnItem(ModContent.ItemType<HeavyBeamCannon>());
-					break;
-				case 1:
-					player.QuickSpawnItem(ModContent.ItemType<Bolter>());
-					break;
-				case 2:
-					player.QuickSpawnItem(ModContent.ItemType<StrikerBlade>());
-					break;
-			}
-
-			if (Main.rand.NextBool(7))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<WallofShadowMask>());
-			}
-
-			if (Main.hardMode)
-			{
-				player.TryGettingDevArmor();
-			}
-			player.QuickSpawnItem(ModContent.ItemType<WallOfShadowsFlask>());
-			player.QuickSpawnItem(ModContent.ItemType<DarknessCloth>(), Main.rand.Next(8, 15));
-			player.QuickSpawnItem(499, Main.rand.Next(5, 15));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<HeavyBeamCannon>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Bolter>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<StrikerBlade>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<WallofShadowMask>()));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DarknessCloth>(), 1, 8, 15));
+			itemLoot.Add(ItemDropRule.Common(ItemID.GreaterHealingPotion, 1, 5, 15));
 		}
-
 	}
 }

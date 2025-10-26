@@ -9,20 +9,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 100000;
-			item.rare = 4;
-			item.accessory = true;
+			Item.value = 100000;
+			Item.rare = 4;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Black Cauldron");
-			Tooltip.SetDefault("Increased alchemical damage by 12%\n" +
-"Alchemical weapons confuse your enemies");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(8, 4));
+			// DisplayName.SetDefault("Black Cauldron");
+			/* Tooltip.SetDefault("Increased alchemical damage by 12%\n" +
+"Alchemical weapons confuse your enemies"); */
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(8, 4));
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

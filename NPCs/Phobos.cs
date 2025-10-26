@@ -12,7 +12,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Phobos");
+			// DisplayName.SetDefault("Phobos");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 
@@ -56,32 +56,32 @@ namespace Tremor.NPCs
 				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ToothofAbraxas>(), Main.rand.Next(2, 16));
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 60; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 70, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 1.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 70, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 1.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 1.7f);
 				}
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 2.7f);
 
-				Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 3.7f);
-				Dust.NewDust(npc.position, npc.width, npc.height, 70, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
-				Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 3.7f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PhobosGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PhobosGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PhobosGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PhobosGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/PhobosGore3"), 1f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 3.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 70, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 2.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 3.7f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("PhobosGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("PhobosGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("PhobosGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("PhobosGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("PhobosGore3"), 1f);
 			}
 			else
 			{
-				for (int k = 0; k < damage / npc.lifeMax * 50; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
+				for (int k = 0; k < npc.damage / npc.lifeMax * 50; k++)
+					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 1.7f);
 			}
 		}
 

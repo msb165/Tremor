@@ -10,24 +10,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 32;
-			item.DamageType = DamageClass.Melee;
-			item.width = 60;
-			item.height = 60;
-			item.useTime = 40;
-			item.useAnimation = 38;
-			item.useStyle = 1;
-			item.knockBack = 12;
-			item.value = 26025;
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 32;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 60;
+			Item.height = 60;
+			Item.useTime = 40;
+			Item.useAnimation = 38;
+			Item.useStyle = 1;
+			Item.knockBack = 12;
+			Item.value = 26025;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Crusher");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("The Crusher");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

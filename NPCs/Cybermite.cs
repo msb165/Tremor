@@ -16,7 +16,7 @@ namespace Tremor.NPCs
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cybermite");
+			// DisplayName.SetDefault("Cybermite");
 		}
 
 		public override void SetDefaults()
@@ -35,9 +35,9 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath6;
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
-			npc.lifeMax = (int)(npc.lifeMax * 0.625f * bossLifeScale);
+			npc.lifeMax = (int)(npc.lifeMax * 0.625f * balance);
 			npc.damage = (int)(npc.damage * 0.6f);
 		}
 
@@ -46,10 +46,10 @@ namespace Tremor.NPCs
 			Lighting.AddLight(bossCenter, 1f, 0.3f, 0.3f);
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CybermiteGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("CybermiteGore"), 1f);
 		}
 	}
 }

@@ -11,20 +11,20 @@ namespace Tremor.Items.Souls
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 22;
+			Item.width = 22;
+			Item.height = 22;
 
-			item.rare = 2;
-			item.accessory = true;
-			item.value = 100000;
+			Item.rare = 2;
+			Item.accessory = true;
+			Item.value = 100000;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Summoner Soul");
-			Tooltip.SetDefault("12% increased minion damage\n" +
-"Increases your max number of minions");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 6));
+			// DisplayName.SetDefault("Summoner Soul");
+			/* Tooltip.SetDefault("12% increased minion damage\n" +
+"Increases your max number of minions"); */
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(6, 6));
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

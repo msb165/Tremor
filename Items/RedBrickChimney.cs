@@ -8,23 +8,23 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 20;
-			item.height = 20;
-			item.maxStack = 99;
-			item.rare = 1;
-			item.createTile = ModContent.TileType<Tiles.RedBrickChimney>();
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
+			Item.width = 20;
+			Item.height = 20;
+			Item.maxStack = 99;
+			Item.rare = 1;
+			Item.createTile = ModContent.TileType<Tiles.RedBrickChimney>();
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Red Brick Chimney");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Red Brick Chimney");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

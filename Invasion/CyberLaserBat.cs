@@ -10,7 +10,7 @@ namespace Tremor.Invasion
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cyber Laser");
+			// DisplayName.SetDefault("Cyber Laser");
 		}
 
 		public override void SetDefaults()

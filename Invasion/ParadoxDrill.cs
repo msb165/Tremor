@@ -10,31 +10,31 @@ namespace Tremor.Invasion
 		public override void SetDefaults()
 		{
 
-			item.damage = 9;
-			item.DamageType = DamageClass.Melee;
-			item.width = 40;
-			item.height = 22;
-			item.useTime = 4;
-			item.useAnimation = 12;
-			item.channel = true;
+			Item.damage = 9;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 40;
+			Item.height = 22;
+			Item.useTime = 4;
+			Item.useAnimation = 12;
+			Item.channel = true;
 
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.useStyle = 5;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(0, 10, 0, 0);
-			item.rare = 11;
-			item.UseSound = SoundID.Item23;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<ParadoxDrillPro>();
-			item.shootSpeed = 20f;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.useStyle = 5;
+			Item.knockBack = 6;
+			Item.value = Item.buyPrice(0, 10, 0, 0);
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item23;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<ParadoxDrillPro>();
+			Item.shootSpeed = 20f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paradox Drill");
-			Tooltip.SetDefault("Press LMB to use drill\n" +
-"Press RMB to use axe and hammer");
+			// DisplayName.SetDefault("Paradox Drill");
+			/* Tooltip.SetDefault("Press LMB to use drill\n" +
+"Press RMB to use axe and hammer"); */
 		}
 
 		public override bool AltFunctionUse(Player player)
@@ -46,23 +46,23 @@ namespace Tremor.Invasion
 		{
 			if (player.altFunctionUse == 2)
 			{
-				item.useStyle = 5;
-				item.useTime = 15;
-				item.useAnimation = 15;
-				item.axe = 40;
-				item.hammer = 200;
-				item.pick = 0;
-				item.shoot = ModContent.ProjectileType<ParadoxDrillPro>();
+				Item.useStyle = 5;
+				Item.useTime = 15;
+				Item.useAnimation = 15;
+				Item.axe = 40;
+				Item.hammer = 200;
+				Item.pick = 0;
+				Item.shoot = ModContent.ProjectileType<ParadoxDrillPro>();
 			}
 			else
 			{
-				item.useStyle = 5;
-				item.useTime = 4;
-				item.useAnimation = 12;
-				item.axe = 0;
-				item.hammer = 0;
-				item.pick = 265;
-				item.shoot = ModContent.ProjectileType<ParadoxDrillPro>();
+				Item.useStyle = 5;
+				Item.useTime = 4;
+				Item.useAnimation = 12;
+				Item.axe = 0;
+				Item.hammer = 0;
+				Item.pick = 265;
+				Item.shoot = ModContent.ProjectileType<ParadoxDrillPro>();
 			}
 			return base.CanUseItem(player);
 		}

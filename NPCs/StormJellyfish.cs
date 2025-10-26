@@ -12,29 +12,29 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Storm Jellyfish");
+			// DisplayName.SetDefault("Storm Jellyfish");
 			Main.npcFrameCount[npc.type] = 6;
 		}
 
-		const int ShootRate = 100; // Частота выстрела
-		const int ShootDamage = 18; // Урон от лазера.
-		const float ShootKN = 1.0f; // Отбрасывание
-		const int ShootType = 435; // Тип проджектайла которым будет произведён выстрел.
-		const float ShootSpeed = 8; // Это, я так понимаю, влияет на дальность выстрела
+		const int ShootRate = 100; // ??????? ????????
+		const int ShootDamage = 18; // ???? ?? ??????.
+		const float ShootKN = 1.0f; // ????????????
+		const int ShootType = 435; // ??? ???????????? ??????? ????? ?????????? ???????.
+		const float ShootSpeed = 8; // ???, ? ??? ???????, ?????? ?? ????????? ????????
 		const int ProjID = 437;
 		const int UpSpeed = 6;
 
-		const int ShootRate2 = 660; // Частота выстрела
-		const int ShootDamage2 = 15; // Урон от лазера.
-		const float ShootKN2 = 1.0f; // Отбрасывание
-		const int ShootType2 = 465; // Тип проджектайла которым будет произведён выстрел.
-		const float ShootSpeed2 = 5; // Это, я так понимаю, влияет на дальность выстрела
+		const int ShootRate2 = 660; // ??????? ????????
+		const int ShootDamage2 = 15; // ???? ?? ??????.
+		const float ShootKN2 = 1.0f; // ????????????
+		const int ShootType2 = 465; // ??? ???????????? ??????? ????? ?????????? ???????.
+		const float ShootSpeed2 = 5; // ???, ? ??? ???????, ?????? ?? ????????? ????????
 		const int ProjID2 = 437;
 		const int UpSpeed2 = 6;
 
-		int TimeToShoot = ShootRate; // Время до выстрела.
+		int TimeToShoot = ShootRate; // ????? ?? ????????.
 
-		int TimeToShoot2 = ShootRate2; // Время до выстрела.
+		int TimeToShoot2 = ShootRate2; // ????? ?? ????????.
 
 		public override void SetDefaults()
 		{
@@ -60,8 +60,8 @@ namespace Tremor.NPCs
 		{
 			npc.position += npc.velocity * 0.5f;
 
-			if (--TimeToShoot <= 0 && npc.target != -1) Shoot(); // В этой строке из переменной TimeToShot отнимается 1, и если TimeToShot < или = 0, то вызывается метод Shoot()
-			if (--TimeToShoot2 <= 0 && npc.target != -1) Shoot2(); // В этой строке из переменной TimeToShot отнимается 1, и если TimeToShot < или = 0, то вызывается метод Shoot()
+			if (--TimeToShoot <= 0 && npc.target != -1) Shoot(); // ? ???? ?????? ?? ?????????? TimeToShot ?????????? 1, ? ???? TimeToShot < ??? = 0, ?? ?????????? ????? Shoot()
+			if (--TimeToShoot2 <= 0 && npc.target != -1) Shoot2(); // ? ???? ?????? ?? ?????????? TimeToShot ?????????? 1, ? ???? TimeToShot < ??? = 0, ?? ?????????? ????? Shoot()
 
 			if (Main.rand.Next(400) == 0)
 			{
@@ -69,36 +69,36 @@ namespace Tremor.NPCs
 			}
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 60; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 226, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 226, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 226, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 226, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 226, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 226, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/StormGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/StormGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/StormGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/StormGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/StormGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/StormGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/StormGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("StormGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("StormGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("StormGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("StormGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("StormGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("StormGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("StormGore4"), 1f);
 			}
 			else
 			{
 
-				for (int k = 0; k < damage / npc.lifeMax * 50.0; k++)
+				for (int k = 0; k < npc.damage / npc.lifeMax * 50.0; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 226, hitDirection, -2f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 27, hitDirection, -1f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 226, hit.HitDirection, -2f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 27, hit.HitDirection, -1f, 0, default(Color), 0.7f);
 				}
 			}
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
 			npc.lifeMax = npc.lifeMax * 1;
 			npc.damage = npc.damage * 1;

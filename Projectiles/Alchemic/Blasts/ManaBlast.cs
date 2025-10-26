@@ -38,9 +38,9 @@ namespace Tremor.Projectiles.Alchemic.Blasts
 			{ projectile.Kill(); }
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
-			int newLife = Main.rand.Next(damage / 2) + 3;
+			int newLife = Main.rand.Next(damageDone / 2) + 3;
 			Main.player[projectile.owner].statMana += newLife;
 			Main.player[projectile.owner].ManaEffect(newLife);
 		}

@@ -11,19 +11,19 @@ namespace Tremor.Items.Afterlife
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 10000;
-			item.rare = 6;
-			item.defense = 9;
+			Item.value = 10000;
+			Item.rare = 6;
+			Item.defense = 9;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Afterlife Leggings");
-			Tooltip.SetDefault("Higher jump height\n" +
-"Increases movement speed");
+			// DisplayName.SetDefault("Afterlife Leggings");
+			/* Tooltip.SetDefault("Higher jump height\n" +
+"Increases movement speed"); */
 		}
 
 		public override void UpdateEquip(Player player)

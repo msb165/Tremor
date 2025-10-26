@@ -36,8 +36,8 @@ namespace Tremor.Ice.Items.Furniture
 			TileObjectData.addTile(Type);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
 			AddMapEntry(new Color(87, 144, 165));
-			adjTiles = new int[] { TileID.ClosedDoor };
-			OpenDoorID = ModContent.TileType<IceDoorOpen>();
+			AdjTiles = new int[] { TileID.ClosedDoor };
+			//OpenDoorID/* tModPorter Note: Removed. Use TileID.Sets.//OpenDoorID instead */ = ModContent.TileType<IceDoorOpen>();
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)

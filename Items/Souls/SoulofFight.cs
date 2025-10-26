@@ -11,22 +11,22 @@ namespace Tremor.Items.Souls
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 22;
-			item.maxStack = 999;
-			item.value = 100;
-			item.rare = 11;
+			Item.width = 22;
+			Item.height = 22;
+			Item.maxStack = 999;
+			Item.value = 100;
+			Item.rare = 11;
 
-			ItemID.Sets.ItemNoGravity[item.type] = true;
-			ItemID.Sets.AnimatesAsSoul[item.type] = true;
-			ItemID.Sets.ItemIconPulse[item.type] = true;
+			ItemID.Sets.ItemNoGravity[Item.type] = true;
+			ItemID.Sets.AnimatesAsSoul[Item.type] = true;
+			ItemID.Sets.ItemIconPulse[Item.type] = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Soul of Fight");
-			Tooltip.SetDefault("'The essence of endless battle'");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 4));
+			// DisplayName.SetDefault("Soul of Fight");
+			// Tooltip.SetDefault("'The essence of endless battle'");
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 4));
 		}
 
 		public override Color? GetAlpha(Color lightColor)

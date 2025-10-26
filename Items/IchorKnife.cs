@@ -10,27 +10,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 23;
-			item.DamageType = DamageClass.Melee;
-			item.width = 32;
-			item.height = 32;
-			item.useTime = 11;
-			item.useAnimation = 9;
-			item.useStyle = 3;
-			item.knockBack = 2;
-			item.value = 2800;
-			item.rare = 4;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 23;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 32;
+			Item.height = 32;
+			Item.useTime = 11;
+			Item.useAnimation = 9;
+			Item.useStyle = 3;
+			Item.knockBack = 2;
+			Item.value = 2800;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ichor Knife");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Ichor Knife");
+			// Tooltip.SetDefault("");
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(69, 60);
 		}

@@ -10,7 +10,7 @@ namespace Tremor.ZombieEvent.Mobs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Corpse");
+			// DisplayName.SetDefault("Corpse");
 			Main.npcFrameCount[npc.type] = 9;
 		}
 
@@ -33,19 +33,19 @@ namespace Tremor.ZombieEvent.Mobs
 			// Todo: BannerItem = ModContent.ItemType<LittleCorpseBanner>();
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CorpseGore1"), 0.8f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CorpseGore2"), 0.8f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CorpseGore2"), 0.8f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CorpseGore3"), 0.8f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CorpseGore3"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("CorpseGore1"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("CorpseGore2"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("CorpseGore2"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("CorpseGore3"), 0.8f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("CorpseGore3"), 0.8f);
 			}
 		}
 

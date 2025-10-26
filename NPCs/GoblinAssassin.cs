@@ -12,7 +12,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Goblin Assassin");
+			// DisplayName.SetDefault("Goblin Assassin");
 			Main.npcFrameCount[npc.type] = 3;
 		}
 

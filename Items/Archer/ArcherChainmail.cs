@@ -9,17 +9,17 @@ namespace Tremor.Items.Archer
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 18;
-			item.value = 1000;
-			item.rare = 2;
-			item.vanity = true;
+			Item.width = 26;
+			Item.height = 18;
+			Item.value = 1000;
+			Item.rare = 2;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Archer Chainmail");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Archer Chainmail");
+			// Tooltip.SetDefault("");
 		}
 
 	}

@@ -9,7 +9,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cog");
+			// DisplayName.SetDefault("Cog");
 		}
 
 		public override void SetDefaults()

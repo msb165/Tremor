@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 26;
-			//item.melee = false;
-			item.DamageType = DamageClass.Magic;
-			item.width = 50;
-			item.height = 55;
-			item.useTime = 30;
-			item.mana = 7;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.shoot = 645;
-			item.shootSpeed = 20f;
-			item.knockBack = 3;
-			item.value = 30000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item4;
-			item.autoReuse = false;
+			Item.damage = 26;
+			//Item.melee = false;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 50;
+			Item.height = 55;
+			Item.useTime = 30;
+			Item.mana = 7;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.shoot = 645;
+			Item.shootSpeed = 20f;
+			Item.knockBack = 3;
+			Item.value = 30000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item4;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bolt Tome");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Bolt Tome");
+			// Tooltip.SetDefault("");
 		}
 
 	}

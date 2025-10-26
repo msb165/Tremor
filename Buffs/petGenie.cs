@@ -8,10 +8,10 @@ namespace Tremor.Buffs
 	{
 		public int MyDzhin = -1;
 
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Genie");
-			Description.SetDefault("A Genie follows you and shows location of enemies");
+			// DisplayName.SetDefault("Genie");
+			// Description.SetDefault("A Genie follows you and shows location of enemies");
 			Main.buffNoTimeDisplay[Type] = true;
 		}
 

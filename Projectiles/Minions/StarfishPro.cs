@@ -27,7 +27,7 @@ namespace Tremor.Projectiles.Minions
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("StarfishPro");
+      // DisplayName.SetDefault("StarfishPro");
        
     }
 

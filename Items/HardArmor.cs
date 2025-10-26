@@ -9,18 +9,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 34;
-			item.height = 34;
-			item.value = 150000;
-			item.rare = 3;
-			item.defense = 8;
-			item.accessory = true;
+			Item.width = 34;
+			Item.height = 34;
+			Item.value = 150000;
+			Item.rare = 3;
+			Item.defense = 8;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hard Armor");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Hard Armor");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

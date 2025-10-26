@@ -7,24 +7,24 @@ namespace Tremor.Ice.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 12;
-			item.value = 1;
-			item.height = 12;
-			item.maxStack = 999;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.rare = 1;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.createTile = ModContent.TileType<GlacierWoodTile>();
+			Item.width = 12;
+			Item.value = 1;
+			Item.height = 12;
+			Item.maxStack = 999;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.rare = 1;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.createTile = ModContent.TileType<GlacierWoodTile>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Glacier Wood");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Glacier Wood");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

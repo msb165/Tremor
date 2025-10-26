@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 43;
-			item.width = 50;
-			item.height = 50;
-			item.noUseGraphic = true;
-			item.DamageType = DamageClass.Melee;
-			item.useTime = 30;
-			item.shoot = ModContent.ProjectileType<Projectiles.TrueTridentProjectile>();
-			item.shootSpeed = 3f;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.knockBack = 15;
-			item.value = 40000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 43;
+			Item.width = 50;
+			Item.height = 50;
+			Item.noUseGraphic = true;
+			Item.DamageType = DamageClass.Melee;
+			Item.useTime = 30;
+			Item.shoot = ModContent.ProjectileType<Projectiles.TrueTridentProjectile>();
+			Item.shootSpeed = 3f;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.knockBack = 15;
+			Item.value = 40000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("True Trident");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("True Trident");
+			// Tooltip.SetDefault("");
 		}
 
 	}

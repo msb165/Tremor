@@ -8,11 +8,11 @@ namespace Tremor.Buffs
 		int MinionType = -1;
 		int MinionID = -1;
 
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Desert Sigil");
-			Description.SetDefault("An ancient sigil that shoots your enemies");
+			// DisplayName.SetDefault("Desert Sigil");
+			// Description.SetDefault("An ancient sigil that shoots your enemies");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

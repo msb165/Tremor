@@ -7,16 +7,16 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.height = 16;
-			item.maxStack = 99;
-			item.value = 10;
-			item.rare = 1;
+			Item.height = 16;
+			Item.maxStack = 99;
+			Item.value = 10;
+			Item.rare = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Petrified Spike");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Petrified Spike");
+			// Tooltip.SetDefault("");
 		}
 
 	}

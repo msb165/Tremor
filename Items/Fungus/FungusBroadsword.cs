@@ -8,26 +8,26 @@ namespace Tremor.Items.Fungus
 	{
 		public override void SetDefaults()
 		{
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
 
-			item.useStyle = 1;
-			item.damage = 26;
-			item.useAnimation = 19;
-			item.useTime = 19;
-			item.width = 84;
-			item.height = 84;
-			item.shoot = 131;
-			item.shootSpeed = 15f;
-			item.knockBack = 3f;
-			item.DamageType = DamageClass.Melee;
-			item.value = Item.sellPrice(0, 0, 5, 0);
-			item.autoReuse = true;
+			Item.useStyle = 1;
+			Item.damage = 26;
+			Item.useAnimation = 19;
+			Item.useTime = 19;
+			Item.width = 84;
+			Item.height = 84;
+			Item.shoot = 131;
+			Item.shootSpeed = 15f;
+			Item.knockBack = 3f;
+			Item.DamageType = DamageClass.Melee;
+			Item.value = Item.sellPrice(0, 0, 5, 0);
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Fungus Broadsword");
+			// DisplayName.SetDefault("Fungus Broadsword");
 		}
 
 		public override void AddRecipes()

@@ -15,7 +15,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("ScarredReaperPro");
+			// DisplayName.SetDefault("ScarredReaperPro");
 
 		}
 

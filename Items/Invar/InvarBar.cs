@@ -7,17 +7,17 @@ namespace Tremor.Items.Invar
 	{
 		public override void SetDefaults()
 		{
-			item.width = 30;
-			item.height = 24;
-			item.maxStack = 999;
-			item.value = Item.sellPrice(silver: 1, copper: 25);
-			item.rare = 1;
+			Item.width = 30;
+			Item.height = 24;
+			Item.maxStack = 999;
+			Item.value = Item.sellPrice(silver: 1, copper: 25);
+			Item.rare = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Invar Bar");
-			Tooltip.SetDefault("Can be used to make Invar equipment at an anvil");
+			// DisplayName.SetDefault("Invar Bar");
+			// Tooltip.SetDefault("Can be used to make Invar equipment at an anvil");
 		}
 
 		public override void AddRecipes()

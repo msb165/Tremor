@@ -5,11 +5,11 @@ namespace Tremor.Buffs
 {
 	public class ZephyrhornBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Zephyrhorn");
+			// DisplayName.SetDefault("Zephyrhorn");
 			//TODO: Doesn't mention damage?
-			Description.SetDefault("Increased minion size");
+			// Description.SetDefault("Increased minion size");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

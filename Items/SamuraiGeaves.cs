@@ -10,18 +10,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
+			Item.width = 22;
+			Item.height = 18;
 
-			item.value = 100000;
-			item.rare = 5;
-			item.defense = 11;
+			Item.value = 100000;
+			Item.rare = 5;
+			Item.defense = 11;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Samurai Legguards");
-			Tooltip.SetDefault("50% increased movement speed");
+			// DisplayName.SetDefault("Samurai Legguards");
+			// Tooltip.SetDefault("50% increased movement speed");
 		}
 
 		public override void UpdateEquip(Player player)

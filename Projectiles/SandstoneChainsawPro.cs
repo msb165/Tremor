@@ -21,7 +21,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sandstone Chainsaw Pro");
+			// DisplayName.SetDefault("Sandstone Chainsaw Pro");
 
 		}
 

@@ -19,7 +19,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Solar Meteor");
+			// DisplayName.SetDefault("Solar Meteor");
 
 		}
 

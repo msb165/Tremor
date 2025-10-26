@@ -11,18 +11,18 @@ namespace Tremor.Items.Berserker
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 18;
+			Item.width = 26;
+			Item.height = 18;
 
-			item.value = 600;
-			item.rare = 2;
-			item.defense = 6;
+			Item.value = 600;
+			Item.rare = 2;
+			Item.defense = 6;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Berserker Chestplate");
-			Tooltip.SetDefault("7% increased melee critical strike chance");
+			// DisplayName.SetDefault("Berserker Chestplate");
+			// Tooltip.SetDefault("7% increased melee critical strike chance");
 		}
 
 		public override void UpdateEquip(Player player)

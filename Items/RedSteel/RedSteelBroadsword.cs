@@ -8,28 +8,28 @@ namespace Tremor.Items.RedSteel
 	{
 		public override void SetDefaults()
 		{
-			item.damage = 16;
-			item.DamageType = DamageClass.Melee;
-			item.width = 34;
-			item.height = 36;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.useStyle = 1;
-			item.knockBack = 5;
+			Item.damage = 16;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 34;
+			Item.height = 36;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.useStyle = 1;
+			Item.knockBack = 5;
 
-			item.value = 600;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.value = 600;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Red Steel Broadsword");
-			Tooltip.SetDefault("25% chance to confuse enemy");
+			// DisplayName.SetDefault("Red Steel Broadsword");
+			// Tooltip.SetDefault("25% chance to confuse enemy");
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.rand.NextBool(4))
 			{

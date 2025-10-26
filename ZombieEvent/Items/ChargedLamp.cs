@@ -19,8 +19,8 @@ namespace Tremor.ZombieEvent.Items
 			for (i = 0; i < 4; i++)
 			{
 				offsetAngle = (startAngle + deltaAngle * (i + i * i) / 2f) + 32f * i;
-				Projectile.NewProjectile(null, position.X, position.Y, (float)(Math.Sin(offsetAngle) * 5f), (float)(Math.Cos(offsetAngle) * 5f), item.shoot, damage, knockBack, item.playerIndexTheItemIsReservedFor);
-				Projectile.NewProjectile(null, position.X, position.Y, (float)(-Math.Sin(offsetAngle) * 5f), (float)(-Math.Cos(offsetAngle) * 5f), item.shoot, damage, knockBack, item.playerIndexTheItemIsReservedFor);
+				Projectile.NewProjectile(null, position.X, position.Y, (float)(Math.Sin(offsetAngle) * 5f), (float)(Math.Cos(offsetAngle) * 5f), Item.shoot, damage, knockBack, Item.playerIndexTheItemIsReservedFor);
+				Projectile.NewProjectile(null, position.X, position.Y, (float)(-Math.Sin(offsetAngle) * 5f), (float)(-Math.Cos(offsetAngle) * 5f), Item.shoot, damage, knockBack, Item.playerIndexTheItemIsReservedFor);
 			}
 			return false;
 		}
@@ -28,30 +28,30 @@ namespace Tremor.ZombieEvent.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 60;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 26;
-			item.useTime = 60;
-			item.useAnimation = 60;
-			item.knockBack = 5;
-			item.value = 2500;
-			item.noUseGraphic = true;
-			item.rare = 5;
-			item.UseSound = SoundID.Item21;
-			item.autoReuse = true;
-			item.width = 28;
-			item.height = 30;
-			item.useStyle = 5;
+			Item.damage = 60;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 26;
+			Item.useTime = 60;
+			Item.useAnimation = 60;
+			Item.knockBack = 5;
+			Item.value = 2500;
+			Item.noUseGraphic = true;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item21;
+			Item.autoReuse = true;
+			Item.width = 28;
+			Item.height = 30;
+			Item.useStyle = 5;
 
-			item.noMelee = true;
-			item.shoot = 709;
-			item.shootSpeed = 20f;
+			Item.noMelee = true;
+			Item.shoot = 709;
+			Item.shootSpeed = 20f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Charged Lamp");
-			Tooltip.SetDefault("Releases electric blasts in all directions");
+			// DisplayName.SetDefault("Charged Lamp");
+			// Tooltip.SetDefault("Releases electric blasts in all directions");
 		}
 	}
 }

@@ -10,19 +10,19 @@ namespace Tremor.Items.Chaos
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.value = 6000;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 6000;
 
-			item.rare = 5;
-			item.defense = 11;
+			Item.rare = 5;
+			Item.defense = 11;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chaos Greaves");
-			Tooltip.SetDefault("Increased life max by 25\n" +
-"Increased wing time");
+			// DisplayName.SetDefault("Chaos Greaves");
+			/* Tooltip.SetDefault("Increased life max by 25\n" +
+"Increased wing time"); */
 		}
 
 		public override void UpdateEquip(Player p)

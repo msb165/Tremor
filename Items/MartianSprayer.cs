@@ -12,30 +12,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 45;
-			item.width = 80;
-			item.height = 36;
-			item.useTime = 15;
-			item.useAnimation = 15;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 4;
-			item.value = 10000;
-			item.rare = 10;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = false;
-			item.shoot = 10;
-			item.shootSpeed = 6f;
-			item.crit = 4;
-			item.useAmmo = ModContent.ItemType<BoomFlask>();
+			Item.damage = 45;
+			Item.width = 80;
+			Item.height = 36;
+			Item.useTime = 15;
+			Item.useAnimation = 15;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 4;
+			Item.value = 10000;
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = false;
+			Item.shoot = 10;
+			Item.shootSpeed = 6f;
+			Item.crit = 4;
+			Item.useAmmo = ModContent.ItemType<BoomFlask>();
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Martian Sprayer");
-			Tooltip.SetDefault("Uses flasks as ammo\n" +
-"Sprays alchemical clouds");
+			// DisplayName.SetDefault("Martian Sprayer");
+			/* Tooltip.SetDefault("Uses flasks as ammo\n" +
+"Sprays alchemical clouds"); */
 		}
 
 		public override bool CanConsumeAmmo(Item ammo, Player player)
@@ -63,19 +63,19 @@ namespace Tremor.Items
 			MPlayer modPlayer = MPlayer.GetModPlayer(player);
 			if (modPlayer.core)
 			{
-				item.autoReuse = true;
+				Item.autoReuse = true;
 			}
 			if (!modPlayer.core)
 			{
-				item.autoReuse = false;
+				Item.autoReuse = false;
 			}
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) != -1)
 			{
-				item.shootSpeed = 14f;
+				Item.shootSpeed = 14f;
 			}
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) < 1)
 			{
-				item.shootSpeed = 6f;
+				Item.shootSpeed = 6f;
 			}
 		}
 

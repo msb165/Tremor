@@ -11,29 +11,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 139;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 40;
-			item.height = 20;
-			item.noUseGraphic = true;
-			item.useTime = 30;
-			item.useAnimation = 20;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 6;
-			item.DamageType = DamageClass.Melee;
-			item.value = 50000;
-			item.rare = 9;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = true;
-			item.shoot = 306;
-			item.shootSpeed = 9f;
+			Item.damage = 139;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 40;
+			Item.height = 20;
+			Item.noUseGraphic = true;
+			Item.useTime = 30;
+			Item.useAnimation = 20;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 6;
+			Item.DamageType = DamageClass.Melee;
+			Item.value = 50000;
+			Item.rare = 9;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = true;
+			Item.shoot = 306;
+			Item.shootSpeed = 9f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Eater of World");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Eater of World");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

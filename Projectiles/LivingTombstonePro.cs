@@ -18,7 +18,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Living Tombstone");
+			// DisplayName.SetDefault("Living Tombstone");
 
 		}
 

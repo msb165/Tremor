@@ -10,7 +10,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Flask");
+			// DisplayName.SetDefault("Nova Flask");
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 2;
 		}
@@ -28,7 +28,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 			return Color.White;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item107, projectile.position);
 			Gore.NewGore(null, projectile.position, -projectile.oldVelocity * 0.2f, 704, 1f);
@@ -48,7 +48,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 			}
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			projectile.Kill();
 		}

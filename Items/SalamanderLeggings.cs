@@ -10,18 +10,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.rare = 1;
+			Item.width = 22;
+			Item.height = 18;
+			Item.rare = 1;
 
-			item.value = 100;
-			item.defense = 3;
+			Item.value = 100;
+			Item.defense = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Salamander Leggings");
-			Tooltip.SetDefault("Increases movement speed");
+			// DisplayName.SetDefault("Salamander Leggings");
+			// Tooltip.SetDefault("Increases movement speed");
 		}
 
 		public override void UpdateEquip(Player player)

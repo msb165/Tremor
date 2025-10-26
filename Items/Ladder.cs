@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 16;
-			item.height = 16;
-			item.maxStack = 999;
-			item.value = 100;
-			item.rare = 1;
-			item.createTile = ModContent.TileType<Tiles.Ladder>();
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
+			Item.width = 16;
+			Item.height = 16;
+			Item.maxStack = 999;
+			Item.value = 100;
+			Item.rare = 1;
+			Item.createTile = ModContent.TileType<Tiles.Ladder>();
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ladder");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Ladder");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

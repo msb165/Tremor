@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class FlaskCoreBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Flask Core");
-			Description.SetDefault("Flasks now have autoreuse");
+			// DisplayName.SetDefault("Flask Core");
+			// Description.SetDefault("Flasks now have autoreuse");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

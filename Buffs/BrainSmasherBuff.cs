@@ -11,10 +11,10 @@ namespace Tremor.Buffs
 		const int Damage = 90;
 		const float KB = 1;
 
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Brain Smasher");
+			// DisplayName.SetDefault("Brain Smasher");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

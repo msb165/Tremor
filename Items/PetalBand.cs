@@ -9,22 +9,22 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 20;
-			item.height = 20;
-			item.maxStack = 20;
+			Item.width = 20;
+			Item.height = 20;
+			Item.maxStack = 20;
 
-			item.value = 10000;
-			item.rare = 5;
-			item.useAnimation = 30;
-			item.useTime = 30;
-			item.useStyle = 4;
-			item.consumable = true;
+			Item.value = 10000;
+			Item.rare = 5;
+			Item.useAnimation = 30;
+			Item.useTime = 30;
+			Item.useStyle = 4;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Petal Band");
-			Tooltip.SetDefault("Summons the Plantera");
+			// DisplayName.SetDefault("Petal Band");
+			// Tooltip.SetDefault("Summons the Plantera");
 		}
 
 		public override bool CanUseItem(Player player)

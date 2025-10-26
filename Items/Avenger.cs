@@ -7,20 +7,20 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(3279);
-			item.damage = 17;
-			item.width = 30;
-			item.height = 26;
-			item.shoot = ModContent.ProjectileType<Projectiles.AvengerPro>();
-			item.knockBack = 4;
-			item.value = 10000;
-			item.rare = 2;
+			Item.CloneDefaults(3279);
+			Item.damage = 17;
+			Item.width = 30;
+			Item.height = 26;
+			Item.shoot = ModContent.ProjectileType<Projectiles.AvengerPro>();
+			Item.knockBack = 4;
+			Item.value = 10000;
+			Item.rare = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Avenger");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Avenger");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

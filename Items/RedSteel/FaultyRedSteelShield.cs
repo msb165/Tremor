@@ -6,17 +6,17 @@ namespace Tremor.Items.RedSteel
 	{
 		public override void SetDefaults()
 		{
-			item.width = 30;
-			item.height = 28;
-			item.maxStack = 99;
-			item.value = 50;
-			item.rare = 1;
+			Item.width = 30;
+			Item.height = 28;
+			Item.maxStack = 99;
+			Item.value = 50;
+			Item.rare = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Faulty Red Steel Shield");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Faulty Red Steel Shield");
+			// Tooltip.SetDefault("");
 		}
 	}
 }

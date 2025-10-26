@@ -10,26 +10,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 20;
-			item.DamageType = DamageClass.Melee;
-			item.width = 50;
-			item.height = 55;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.shoot = ModContent.ProjectileType<Projectiles.BoneSpike>();
-			item.shootSpeed = 6f;
-			item.knockBack = 4;
-			item.value = 66600;
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 20;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 50;
+			Item.height = 55;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.shoot = ModContent.ProjectileType<Projectiles.BoneSpike>();
+			Item.shootSpeed = 6f;
+			Item.knockBack = 4;
+			Item.value = 66600;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Necromancer Claymore");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Necromancer Claymore");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

@@ -10,17 +10,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.defense = 24;
-			item.width = 26;
-			item.height = 32;
-			item.value = 25000;
-			item.rare = 10;
+			Item.defense = 24;
+			Item.width = 26;
+			Item.height = 32;
+			Item.value = 25000;
+			Item.rare = 10;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nightmare Helmet");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Nightmare Helmet");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

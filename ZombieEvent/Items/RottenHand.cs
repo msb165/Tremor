@@ -8,24 +8,24 @@ namespace Tremor.ZombieEvent.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 10;
-			item.DamageType = DamageClass.Melee;
-			item.width = 26;
-			item.height = 26;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.knockBack = 2;
-			item.value = 3000;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 10;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 26;
+			Item.height = 26;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.knockBack = 2;
+			Item.value = 3000;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Rotten Hand");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Rotten Hand");
+			// Tooltip.SetDefault("");
 		}
 	}
 }

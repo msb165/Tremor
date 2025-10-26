@@ -8,28 +8,28 @@ namespace Tremor.ZombieEvent.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 56;
+			Item.damage = 56;
 
-			item.width = 54;
-			item.height = 54;
-			item.noUseGraphic = true;
-			item.DamageType = DamageClass.Melee;
-			item.useTime = 30;
-			item.shoot = ModContent.ProjectileType<DreadLancePro>();
-			item.shootSpeed = 4f;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 1000;
-			item.rare = 4;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.width = 54;
+			Item.height = 54;
+			Item.noUseGraphic = true;
+			Item.DamageType = DamageClass.Melee;
+			Item.useTime = 30;
+			Item.shoot = ModContent.ProjectileType<DreadLancePro>();
+			Item.shootSpeed = 4f;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 1000;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dread Lance");
-			Tooltip.SetDefault("Inflicts cursed flames on enemies");
+			// DisplayName.SetDefault("Dread Lance");
+			// Tooltip.SetDefault("Inflicts cursed flames on enemies");
 		}
 	}
 }

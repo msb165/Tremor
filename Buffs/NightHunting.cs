@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class NightHunting:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Night Hunting");
-			Description.SetDefault("Increases all stats during night");
+			// DisplayName.SetDefault("Night Hunting");
+			// Description.SetDefault("Increases all stats during night");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

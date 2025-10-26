@@ -16,7 +16,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Spike");
+			// DisplayName.SetDefault("The Spike");
 
 		}
 

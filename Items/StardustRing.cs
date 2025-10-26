@@ -9,18 +9,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 24;
-			item.value = 250000;
-			item.rare = 8;
-			item.accessory = true;
+			Item.width = 30;
+			Item.height = 24;
+			Item.value = 250000;
+			Item.rare = 8;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Stardust Ring ");
-			Tooltip.SetDefault("20% increased minion damage\n" +
-"Increases your maximum number of minions");
+			// DisplayName.SetDefault("Stardust Ring ");
+			/* Tooltip.SetDefault("20% increased minion damage\n" +
+"Increases your maximum number of minions"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

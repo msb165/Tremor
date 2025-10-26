@@ -8,18 +8,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 14;
-			item.height = 22;
-			item.maxStack = 999;
-			item.rare = 11;
+			Item.width = 14;
+			Item.height = 22;
+			Item.maxStack = 999;
+			Item.rare = 11;
 
-			item.value = Item.buyPrice(0, 1, 0, 0);
+			Item.value = Item.buyPrice(0, 1, 0, 0);
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Lunar Root");
-			Tooltip.SetDefault("'Moon root power, make up!'");
+			// DisplayName.SetDefault("Lunar Root");
+			// Tooltip.SetDefault("'Moon root power, make up!'");
 		}
 
 	}

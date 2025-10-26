@@ -11,29 +11,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 20;
-			item.DamageType = DamageClass.Summon;
-			item.mana = 10;
-			item.width = 34;
-			item.height = 28;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.noMelee = true;
-			item.knockBack = 4;
-			item.value = 10000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item44;
-			item.shoot = ModContent.ProjectileType<Projectiles.Minions.ZombatStaffPro>();
-			item.shootSpeed = 1f;
-			item.buffType = ModContent.BuffType<Buffs.ZombatBuff>();
-			item.buffTime = 3600;
+			Item.damage = 20;
+			Item.DamageType = DamageClass.Summon;
+			Item.mana = 10;
+			Item.width = 34;
+			Item.height = 28;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.noMelee = true;
+			Item.knockBack = 4;
+			Item.value = 10000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item44;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Minions.ZombatStaffPro>();
+			Item.shootSpeed = 1f;
+			Item.buffType = ModContent.BuffType<Buffs.ZombatBuff>();
+			Item.buffTime = 3600;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Zombat Staff");
-			Tooltip.SetDefault("Summons a zombat to fight for you.");
+			// DisplayName.SetDefault("Zombat Staff");
+			// Tooltip.SetDefault("Summons a zombat to fight for you.");
 		}
 
 		public override bool AltFunctionUse(Player player)

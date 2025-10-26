@@ -8,18 +8,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 24;
-			item.value = 10000;
-			item.rare = 2;
+			Item.width = 30;
+			Item.height = 24;
+			Item.value = 10000;
+			Item.rare = 2;
 
-			item.vanity = true;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Gray Knight Breastplate");
-			Tooltip.SetDefault("Can be colored with gems");
+			// DisplayName.SetDefault("Gray Knight Breastplate");
+			// Tooltip.SetDefault("Can be colored with gems");
 		}
 
 	}

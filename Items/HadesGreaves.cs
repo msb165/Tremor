@@ -15,21 +15,21 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.value = 500;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 500;
 
-			item.rare = 250000;
-			item.defense = 42;
+			Item.rare = 250000;
+			Item.defense = 42;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hades Greaves");
-			Tooltip.SetDefault("Increases movement speed\n" +
+			// DisplayName.SetDefault("Hades Greaves");
+			/* Tooltip.SetDefault("Increases movement speed\n" +
 "Allows to dash\n" +
 "Double tap a direction\n" +
-"Allows you to walk on liquids");
+"Allows you to walk on liquids"); */
 		}
 
 		public override void AddRecipes()

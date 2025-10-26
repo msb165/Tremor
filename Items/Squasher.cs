@@ -10,26 +10,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 88;
-			item.DamageType = DamageClass.Melee;
-			item.width = 56;
-			item.height = 56;
-			item.useTime = 36;
-			item.useAnimation = 36;
-			item.useStyle = 1;
-			item.knockBack = 6;
-			item.value = 122000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
+			Item.damage = 88;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 56;
+			Item.height = 56;
+			Item.useTime = 36;
+			Item.useAnimation = 36;
+			Item.useStyle = 1;
+			Item.knockBack = 6;
+			Item.value = 122000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
 
-			item.hammer = 100;
-			item.autoReuse = false;
+			Item.hammer = 100;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Squasher");
-			Tooltip.SetDefault("Strong enough to destroy Demon Altars");
+			// DisplayName.SetDefault("Squasher");
+			// Tooltip.SetDefault("Strong enough to destroy Demon Altars");
 		}
 
 		public override void AddRecipes()

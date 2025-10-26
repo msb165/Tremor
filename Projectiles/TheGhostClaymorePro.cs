@@ -22,7 +22,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("TheGhostClaymorePro");
+			// DisplayName.SetDefault("TheGhostClaymorePro");
 
 		}
 
@@ -31,7 +31,7 @@ namespace Tremor.Projectiles
 			return Color.White;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item64, projectile.position);
 			for (int num158 = 0; num158 < 20; num158++)

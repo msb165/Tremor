@@ -27,11 +27,11 @@ namespace Tremor.Projectiles.Minions
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Zombat Staff");
+      // DisplayName.SetDefault("Zombat Staff");
        
     }
 
-    public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
         if(Main.rand.NextBool(4))
         {

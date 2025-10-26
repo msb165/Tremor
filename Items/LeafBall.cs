@@ -9,30 +9,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 10;
+			Item.width = 30;
+			Item.height = 10;
 
-			item.value = Item.sellPrice(0, 0, 25, 0);
-			item.rare = 2;
-			item.noMelee = true;
-			item.useStyle = 5;
-			item.useAnimation = 40;
-			item.useTime = 40;
-			item.knockBack = 7.5F;
-			item.damage = 16;
-			item.scale = 1.1F;
-			item.noUseGraphic = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.LeafBallPro>();
-			item.shootSpeed = 15.9F;
-			item.UseSound = SoundID.Item1;
-			item.DamageType = DamageClass.Melee;
-			item.channel = true;
+			Item.value = Item.sellPrice(0, 0, 25, 0);
+			Item.rare = 2;
+			Item.noMelee = true;
+			Item.useStyle = 5;
+			Item.useAnimation = 40;
+			Item.useTime = 40;
+			Item.knockBack = 7.5F;
+			Item.damage = 16;
+			Item.scale = 1.1F;
+			Item.noUseGraphic = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.LeafBallPro>();
+			Item.shootSpeed = 15.9F;
+			Item.UseSound = SoundID.Item1;
+			Item.DamageType = DamageClass.Melee;
+			Item.channel = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Leaf Ball");
-			Tooltip.SetDefault("'Flail from grass and leaves'");
+			// DisplayName.SetDefault("Leaf Ball");
+			// Tooltip.SetDefault("'Flail from grass and leaves'");
 		}
 
 		public override void AddRecipes()

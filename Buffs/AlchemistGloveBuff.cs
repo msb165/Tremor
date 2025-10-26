@@ -7,8 +7,8 @@ namespace Tremor.Buffs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Master Alchemist Glove");
-			Description.SetDefault("Alchemic weapons throw two flasks");
+			// DisplayName.SetDefault("Master Alchemist Glove");
+			// Description.SetDefault("Alchemic weapons throw two flasks");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

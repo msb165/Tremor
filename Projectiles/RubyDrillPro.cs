@@ -23,7 +23,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ruby Drill");
+			// DisplayName.SetDefault("Ruby Drill");
 
 		}
 

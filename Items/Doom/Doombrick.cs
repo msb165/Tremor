@@ -8,24 +8,24 @@ namespace Tremor.Items.Doom
 		public override void SetDefaults()
 		{
 
-			item.width = 12;
-			item.height = 12;
-			item.maxStack = 999;
-			item.useTurn = true;
-			item.value = 2000;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.rare = 7;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.createTile = ModContent.TileType<Tiles.DoombrickTile>();
+			Item.width = 12;
+			Item.height = 12;
+			Item.maxStack = 999;
+			Item.useTurn = true;
+			Item.value = 2000;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.rare = 7;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.createTile = ModContent.TileType<Tiles.DoombrickTile>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Doombrick");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Doombrick");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

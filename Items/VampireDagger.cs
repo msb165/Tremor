@@ -8,29 +8,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 48;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 26;
-			item.noUseGraphic = true;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.height = 30;
-			item.useTime = 15;
-			item.useAnimation = 20;
-			item.shoot = 304;
-			item.shootSpeed = 15f;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 7;
-			item.rare = 5;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 48;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 26;
+			Item.noUseGraphic = true;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.height = 30;
+			Item.useTime = 15;
+			Item.useAnimation = 20;
+			Item.shoot = 304;
+			Item.shootSpeed = 15f;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 7;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vampire Dagger");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Vampire Dagger");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

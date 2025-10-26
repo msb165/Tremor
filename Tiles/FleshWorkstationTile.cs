@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Tremor.Items.Flesh;
@@ -16,8 +17,8 @@ namespace Tremor.Tiles
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
 			TileObjectData.newTile.CoordinateHeights = new[]{ 16, 16 };
 			TileObjectData.addTile(Type);
-		ModTranslation name = CreateMapEntryName();
-		name.SetDefault("Flesh Workstation");				
+		LocalizedText name = CreateMapEntryName();
+		// name.SetDefault("Flesh Workstation");				
 			AddMapEntry(new Color(200, 200, 200), name);
 		}
 

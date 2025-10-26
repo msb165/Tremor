@@ -9,16 +9,16 @@ namespace Tremor.ZombieEvent.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.Arkhalis);
+			Item.CloneDefaults(ItemID.Arkhalis);
 
-			item.damage = 36;
+			Item.damage = 36;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ichor Cleaver");
-			Tooltip.SetDefault("Inflicts Ichor on enemies");
+			// DisplayName.SetDefault("Ichor Cleaver");
+			// Tooltip.SetDefault("Inflicts Ichor on enemies");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -27,7 +27,7 @@ namespace Tremor.ZombieEvent.Items
 			return base.Shoot(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(69, 120);
 		}

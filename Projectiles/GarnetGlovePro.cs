@@ -17,7 +17,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("GarnetGlovePro");
+			// DisplayName.SetDefault("GarnetGlovePro");
 
 		}
 

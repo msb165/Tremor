@@ -8,7 +8,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class StoneDresser:TremorModTile
+	public class StoneDresser : TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -29,11 +29,11 @@ namespace Tremor.Tiles
 			TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
 			TileObjectData.addTile(Type);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
-			AddMapEntry(new Color(162,162,162));
-			disableSmartCursor = true;
-			adjTiles = new int[] { TileID.Dressers };
-			dresser = "Stone Dresser";
-			dresserDrop = ModContent.ItemType<Items.StoneDresser>();
+			AddMapEntry(new Color(162, 162, 162));
+			TileID.Sets.DisableSmartCursor[Type] = true;
+			AdjTiles = new int[] { TileID.Dressers };
+			//dresser = "Stone Dresser";
+			//dresserDrop = ModContent.ItemType<Items.StoneDresser>();
 		}
 
 		public override bool RightClick(int i, int j)
@@ -82,7 +82,7 @@ namespace Tremor.Tiles
 				else
 				{
 					//TODO: [Skipped for 1.4] player.flyingPigChest
-					//player.flyingPigChest = -1;
+					player.piggyBankProjTracker.Clear();
 					int num213 = Chest.FindChest(left, top);
 					if (num213 != -1)
 					{
@@ -146,15 +146,16 @@ namespace Tremor.Tiles
 			}
 			else
 			{
+				string defaultName = TileLoader.DefaultContainerName(tile.TileType, tile.TileFrameX, tile.TileFrameY);
 				if (Main.chest[chestIndex].name != "")
 				{
 					player.cursorItemIconText = Main.chest[chestIndex].name;
 				}
 				else
 				{
-					player.cursorItemIconText = chest;
+					player.cursorItemIconText = defaultName;
 				}
-				if (player.cursorItemIconText == chest)
+				if (player.cursorItemIconText == defaultName)
 				{
 					player.cursorItemIconID = ModContent.ItemType<Items.StoneDresser>();
 					player.cursorItemIconText = "";
@@ -188,15 +189,16 @@ namespace Tremor.Tiles
 			}
 			else
 			{
+				string defaultName = TileLoader.DefaultContainerName(tile.TileType, tile.TileFrameX, tile.TileFrameY);
 				if (Main.chest[num138].name != "")
 				{
 					player.cursorItemIconText = Main.chest[num138].name;
 				}
 				else
 				{
-					player.cursorItemIconText = chest;
+					player.cursorItemIconText = defaultName;
 				}
-				if (player.cursorItemIconText == chest)
+				if (player.cursorItemIconText == defaultName)
 				{
 					player.cursorItemIconID = ModContent.ItemType<Items.StoneDresser>();
 					player.cursorItemIconText = "";
@@ -215,10 +217,10 @@ namespace Tremor.Tiles
 			num = fail ? 1 : 3;
 		}
 
-		public override void KillMultiTile(int i, int j, int frameX, int frameY)
-		{
-			Item.NewItem(null, i * 16, j * 16, 48, 32, dresserDrop);
-			Chest.DestroyChest(i, j);
-		}
+		/*		public override void KillMultiTile(int i, int j, int frameX, int frameY)
+				{
+					Item.NewItem(null, i * 16, j * 16, 48, 32, //dresserDrop);
+					Chest.DestroyChest(i, j);
+				}*/
 	}
 }

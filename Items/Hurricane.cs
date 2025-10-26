@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 38;
+			Item.damage = 38;
 
-			item.DamageType = DamageClass.Magic;
-			item.width = 28;
-			item.height = 30;
-			item.useTime = 36;
-			item.useAnimation = 36;
-			item.shoot = 704;
-			item.shootSpeed = 11f;
-			item.mana = 14;
-			item.useStyle = 5;
-			item.knockBack = 3;
-			item.value = 40000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item20;
-			item.autoReuse = true;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 28;
+			Item.height = 30;
+			Item.useTime = 36;
+			Item.useAnimation = 36;
+			Item.shoot = 704;
+			Item.shootSpeed = 11f;
+			Item.mana = 14;
+			Item.useStyle = 5;
+			Item.knockBack = 3;
+			Item.value = 40000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item20;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Hurricane");
-			Tooltip.SetDefault("Summons a sand whirlwing which moves only on ground");
+			// DisplayName.SetDefault("The Hurricane");
+			// Tooltip.SetDefault("Summons a sand whirlwing which moves only on ground");
 		}
 
 	}

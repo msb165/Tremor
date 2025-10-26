@@ -12,18 +12,18 @@ namespace Tremor.Items.Dark
 		public override void SetDefaults()
 		{
 
-			item.defense = 22;
-			item.width = 26;
-			item.height = 32;
-			item.value = 600000;
-			item.rare = 11;
+			Item.defense = 22;
+			Item.width = 26;
+			Item.height = 32;
+			Item.value = 600000;
+			Item.rare = 11;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Mask of Darkness");
-			Tooltip.SetDefault("Increases life regeneration\n" +
-"Increases maximum amount of minions");
+			// DisplayName.SetDefault("Mask of Darkness");
+			/* Tooltip.SetDefault("Increases life regeneration\n" +
+"Increases maximum amount of minions"); */
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

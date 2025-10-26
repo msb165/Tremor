@@ -12,18 +12,18 @@ namespace Tremor.Items.Plague
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 25000;
-			item.rare = 2;
-			item.defense = 4;
+			Item.value = 25000;
+			Item.rare = 2;
+			Item.defense = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Plague Greaves");
-			Tooltip.SetDefault("10% increased alchemical damage");
+			// DisplayName.SetDefault("Plague Greaves");
+			// Tooltip.SetDefault("10% increased alchemical damage");
 		}
 
 		public override void UpdateEquip(Player player)

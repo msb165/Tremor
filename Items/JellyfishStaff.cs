@@ -10,30 +10,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 20;
-			item.DamageType = DamageClass.Summon;
-			item.mana = 15;
-			item.width = 26;
-			item.height = 28;
+			Item.damage = 20;
+			Item.DamageType = DamageClass.Summon;
+			Item.mana = 15;
+			Item.width = 26;
+			Item.height = 28;
 
-			item.useTime = 36;
-			item.useAnimation = 36;
-			item.useStyle = 1;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = Item.buyPrice(0, 3, 0, 0);
-			item.rare = 3;
-			item.UseSound = SoundID.Item44;
-			item.shoot = ModContent.ProjectileType<Projectiles.Minions.JellyfishStaffPro>();
-			item.shootSpeed = 2f;
-			item.buffType = ModContent.BuffType<Buffs.JellyBuff>();
-			item.buffTime = 3600;
+			Item.useTime = 36;
+			Item.useAnimation = 36;
+			Item.useStyle = 1;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = Item.buyPrice(0, 3, 0, 0);
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item44;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Minions.JellyfishStaffPro>();
+			Item.shootSpeed = 2f;
+			Item.buffType = ModContent.BuffType<Buffs.JellyBuff>();
+			Item.buffTime = 3600;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Jellyfish Staff");
-			Tooltip.SetDefault("Summons a jellyfish to fight for you.");
+			// DisplayName.SetDefault("Jellyfish Staff");
+			// Tooltip.SetDefault("Summons a jellyfish to fight for you.");
 		}
 
 		public override bool AltFunctionUse(Player player)

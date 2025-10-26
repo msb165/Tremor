@@ -20,7 +20,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Genie");
+			// DisplayName.SetDefault("Genie");
 
 		}
 
@@ -30,7 +30,7 @@ namespace Tremor.Projectiles
 			projectile.alpha = 0;
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Main.spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, new Rectangle((int)(projectile.position.X - Main.screenPosition.X), (int)(projectile.position.Y - Main.screenPosition.Y), 38, 60), null, Color.White, 0, new Vector2(2, 2), ((Main.player[projectile.owner].position.X < projectile.position.X) ? SpriteEffects.FlipHorizontally : SpriteEffects.None), 0);
 			return false;

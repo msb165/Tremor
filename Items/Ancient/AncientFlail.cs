@@ -8,28 +8,28 @@ namespace Tremor.Items.Ancient
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 10;
-			item.rare = 10;
-			item.noMelee = true;
-			item.useStyle = 5;
-			item.useAnimation = 40;
-			item.useTime = 40;
-			item.knockBack = 7.5F;
-			item.damage = 106;
-			item.scale = 1.1F;
-			item.noUseGraphic = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.AncientFlailPro>();
-			item.shootSpeed = 13f;
-			item.UseSound = SoundID.Item1;
-			item.DamageType = DamageClass.Melee;
-			item.channel = true;
+			Item.width = 30;
+			Item.height = 10;
+			Item.rare = 10;
+			Item.noMelee = true;
+			Item.useStyle = 5;
+			Item.useAnimation = 40;
+			Item.useTime = 40;
+			Item.knockBack = 7.5F;
+			Item.damage = 106;
+			Item.scale = 1.1F;
+			Item.noUseGraphic = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.AncientFlailPro>();
+			Item.shootSpeed = 13f;
+			Item.UseSound = SoundID.Item1;
+			Item.DamageType = DamageClass.Melee;
+			Item.channel = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Flail");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Ancient Flail");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

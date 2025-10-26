@@ -11,18 +11,18 @@ namespace Tremor.Items.Sandstone
 		public override void SetDefaults()
 		{
 
-			item.width = 32;
-			item.height = 26;
-			item.value = 400;
+			Item.width = 32;
+			Item.height = 26;
+			Item.value = 400;
 
-			item.rare = 2;
-			item.defense = 4;
+			Item.rare = 2;
+			Item.defense = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dune Helmet");
-			Tooltip.SetDefault("10% increased movement speed");
+			// DisplayName.SetDefault("Dune Helmet");
+			// Tooltip.SetDefault("10% increased movement speed");
 		}
 
 		public override void UpdateEquip(Player player)

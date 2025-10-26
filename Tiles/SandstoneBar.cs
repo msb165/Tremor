@@ -22,7 +22,7 @@ namespace Tremor.Tiles
 			AddMapEntry(new Color(13, 88, 130));
 			Main.tileShine[Type] = 1100;
 			Main.tileSolid[Type] = true;
-			ItemDrop = ModContent.ItemType<Items.Sandstone.SandstoneBar>();
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<Items.Sandstone.SandstoneBar>();
 		}
 	}
 }

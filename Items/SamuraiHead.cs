@@ -15,18 +15,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 20;
-			item.height = 20;
-			item.value = 100000;
-			item.rare = 5;
+			Item.width = 20;
+			Item.height = 20;
+			Item.value = 100000;
+			Item.rare = 5;
 
-			item.defense = 10;
+			Item.defense = 10;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Samurai Helmet");
-			Tooltip.SetDefault("9% increased damage");
+			// DisplayName.SetDefault("Samurai Helmet");
+			// Tooltip.SetDefault("9% increased damage");
 		}
 
 		public override void UpdateEquip(Player player)

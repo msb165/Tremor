@@ -9,16 +9,16 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
+			Item.width = 24;
 
-			item.height = 26;
-			item.rare = 9;
+			Item.height = 26;
+			Item.rare = 9;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hummer's Helmet");
-			Tooltip.SetDefault("'Great for impersonating devs!'");
+			// DisplayName.SetDefault("Hummer's Helmet");
+			// Tooltip.SetDefault("'Great for impersonating devs!'");
 		}
 
 	}

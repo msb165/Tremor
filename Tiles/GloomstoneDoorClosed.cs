@@ -39,9 +39,9 @@ namespace Tremor.Tiles
 			TileObjectData.addTile(Type);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
 			AddMapEntry(new Color(8,91,146));
-			disableSmartCursor = true;
-			adjTiles = new int[]{ TileID.ClosedDoor };
-			OpenDoorID = ModContent.TileType<Tiles.GloomstoneDoorOpen>();
+			TileID.Sets.DisableSmartCursor[Type] = true;
+			AdjTiles = new int[]{ TileID.ClosedDoor };
+			//OpenDoorID/* tModPorter Note: Removed. Use TileID.Sets.//OpenDoorID instead */ = ModContent.TileType<Tiles.GloomstoneDoorOpen>();
 		}
 
 		public override void NumDust(int i, int j, bool fail, ref int num)

@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 32;
-			item.height = 48;
-			item.maxStack = 99;
-			item.value = 100;
-			item.rare = 1;
-			item.createTile = ModContent.TileType<Tiles.GoldGlobe>();
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
+			Item.width = 32;
+			Item.height = 48;
+			Item.maxStack = 99;
+			Item.value = 100;
+			Item.rare = 1;
+			Item.createTile = ModContent.TileType<Tiles.GoldGlobe>();
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Gold Globe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Gold Globe");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

@@ -9,30 +9,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.value = 100000;
-			item.useStyle = 1;
-			item.useAnimation = 25;
-			item.useTime = 25;
-			item.autoReuse = true;
-			item.rare = 3;
-			item.width = 42;
-			item.height = 42;
-			item.UseSound = SoundID.Item8;
-			item.damage = 28;
-			item.knockBack = 4;
-			item.mana = 7;
-			item.shoot = ModContent.ProjectileType<Projectiles.PhantomSpear>();
-			item.shootSpeed = 14f;
-			item.noMelee = true; //So that the swing itself doesn't do damage; this weapon is projectile-only
-			item.noUseGraphic = true; //No swing animation
-			item.DamageType = DamageClass.Magic;
-			item.crit = 7;
+			Item.value = 100000;
+			Item.useStyle = 1;
+			Item.useAnimation = 25;
+			Item.useTime = 25;
+			Item.autoReuse = true;
+			Item.rare = 3;
+			Item.width = 42;
+			Item.height = 42;
+			Item.UseSound = SoundID.Item8;
+			Item.damage = 28;
+			Item.knockBack = 4;
+			Item.mana = 7;
+			Item.shoot = ModContent.ProjectileType<Projectiles.PhantomSpear>();
+			Item.shootSpeed = 14f;
+			Item.noMelee = true; //So that the swing itself doesn't do damage; this weapon is projectile-only
+			Item.noUseGraphic = true; //No swing animation
+			Item.DamageType = DamageClass.Magic;
+			Item.crit = 7;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Phantom Javelin");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Phantom Javelin");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

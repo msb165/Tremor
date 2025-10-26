@@ -20,11 +20,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Dagger Pro");
+			// DisplayName.SetDefault("Ancient Dagger Pro");
 
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item62, projectile.position);
 			projectile.position.X = projectile.position.X + projectile.width / 2;

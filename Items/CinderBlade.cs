@@ -9,24 +9,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 70;
-			item.DamageType = DamageClass.Melee;
-			item.width = 52;
-			item.height = 52;
-			item.useTime = 22;
-			item.useAnimation = 22;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 600;
-			item.rare = 8;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 70;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 52;
+			Item.height = 52;
+			Item.useTime = 22;
+			Item.useAnimation = 22;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 600;
+			Item.rare = 8;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cinder Blade");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Cinder Blade");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

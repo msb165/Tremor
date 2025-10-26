@@ -30,7 +30,7 @@ namespace Tremor.Projectiles.Minions
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("ShadowStaffPro");
+      // DisplayName.SetDefault("ShadowStaffPro");
        
     }
 
@@ -47,7 +47,7 @@ namespace Tremor.Projectiles.Minions
       return false;
 		}
 		
-    public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
 			TremorPlayer modPlayer = Main.player[projectile.owner].GetModPlayer<TremorPlayer>();
             if(modPlayer.shadowArmSF && Main.rand.NextBool(3))
@@ -56,7 +56,7 @@ namespace Tremor.Projectiles.Minions
 			}
     }		
 
-        public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+        public override bool PreDraw(ref Color drawColor)
         {
             Texture2D texture = Mod.GetTexture("Tremor/Projectiles/ShadowChain");
 

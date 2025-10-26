@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 295;
-			item.width = 70;
-			item.height = 70;
-			item.noUseGraphic = true;
-			item.DamageType = DamageClass.Melee;
-			item.useTime = 16;
-			item.shoot = ModContent.ProjectileType<Projectiles.ClusterSpearPro>();
-			item.shootSpeed = 5f;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 512500;
-			item.rare = 11;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 295;
+			Item.width = 70;
+			Item.height = 70;
+			Item.noUseGraphic = true;
+			Item.DamageType = DamageClass.Melee;
+			Item.useTime = 16;
+			Item.shoot = ModContent.ProjectileType<Projectiles.ClusterSpearPro>();
+			Item.shootSpeed = 5f;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 512500;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cluster Spear");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Cluster Spear");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

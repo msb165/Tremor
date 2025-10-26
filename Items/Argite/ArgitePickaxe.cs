@@ -10,25 +10,25 @@ namespace Tremor.Items.Argite
 		public override void SetDefaults()
 		{
 
-			item.damage = 9;
-			item.DamageType = DamageClass.Melee;
-			item.width = 54;
-			item.height = 48;
-			item.useTime = 15;
-			item.useAnimation = 15;
-			item.useStyle = 1;
-			item.knockBack = 5;
-			item.value = 20000;
-			item.rare = 3;
-			item.pick = 80;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 9;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 54;
+			Item.height = 48;
+			Item.useTime = 15;
+			Item.useAnimation = 15;
+			Item.useStyle = 1;
+			Item.knockBack = 5;
+			Item.value = 20000;
+			Item.rare = 3;
+			Item.pick = 80;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Argite Pickaxe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Argite Pickaxe");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

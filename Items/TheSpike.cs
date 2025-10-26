@@ -6,21 +6,21 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(3279);
+			Item.CloneDefaults(3279);
 
-			item.damage = 23;
-			item.width = 30;
-			item.height = 26;
-			item.shoot = ModContent.ProjectileType<Projectiles.TheSpikePro>();
-			item.knockBack = 4;
-			item.value = 30000;
-			item.rare = 3;
+			Item.damage = 23;
+			Item.width = 30;
+			Item.height = 26;
+			Item.shoot = ModContent.ProjectileType<Projectiles.TheSpikePro>();
+			Item.knockBack = 4;
+			Item.value = 30000;
+			Item.rare = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Spike");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("The Spike");
+			// Tooltip.SetDefault("");
 		}
 
 	}

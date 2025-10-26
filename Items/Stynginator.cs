@@ -11,31 +11,31 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 49;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 20;
-			item.height = 12;
-			item.useTime = 20;
-			item.useAnimation = 20;
+			Item.damage = 49;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 20;
+			Item.height = 12;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
 
-			item.useStyle = 5;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(0, 6, 0, 0);
-			item.rare = 8;
-			item.crit = 3;
-			item.useStyle = 5;
-			item.UseSound = SoundID.Item36;
-			item.noMelee = true;
-			item.autoReuse = true;
-			item.shoot = 10;
-			item.shootSpeed = 16f;
-			item.useAmmo = AmmoID.StyngerBolt;
+			Item.useStyle = 5;
+			Item.knockBack = 6;
+			Item.value = Item.buyPrice(0, 6, 0, 0);
+			Item.rare = 8;
+			Item.crit = 3;
+			Item.useStyle = 5;
+			Item.UseSound = SoundID.Item36;
+			Item.noMelee = true;
+			Item.autoReuse = true;
+			Item.shoot = 10;
+			Item.shootSpeed = 16f;
+			Item.useAmmo = AmmoID.StyngerBolt;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Stynginator");
-			Tooltip.SetDefault("Uses Styngers Bolts as ammo");
+			// DisplayName.SetDefault("Stynginator");
+			// Tooltip.SetDefault("Uses Styngers Bolts as ammo");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

@@ -25,7 +25,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Berserker Sword");
+			// DisplayName.SetDefault("Berserker Sword");
 		}
 
 		public override void AI()

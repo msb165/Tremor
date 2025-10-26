@@ -10,20 +10,20 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.Starfury);
+			Item.CloneDefaults(ItemID.Starfury);
 
-			item.shootSpeed *= 0.75f;
+			Item.shootSpeed *= 0.75f;
 
-			item.useTime = 6;
-			item.useAnimation = 30;
-			item.autoReuse = true;
-			item.rare = 0;
-			item.damage = 255;
+			Item.useTime = 6;
+			Item.useAnimation = 30;
+			Item.autoReuse = true;
+			Item.rare = 0;
+			Item.damage = 255;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Danger Blade");
+			// DisplayName.SetDefault("Danger Blade");
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

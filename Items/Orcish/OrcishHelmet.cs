@@ -10,18 +10,18 @@ namespace Tremor.Items.Orcish
 		public override void SetDefaults()
 		{
 
-			item.width = 32;
-			item.height = 26;
+			Item.width = 32;
+			Item.height = 26;
 
-			item.value = 400;
-			item.rare = 1;
-			item.defense = 3;
+			Item.value = 400;
+			Item.rare = 1;
+			Item.defense = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Orcish Helmet");
-			Tooltip.SetDefault("7% increased melee damage");
+			// DisplayName.SetDefault("Orcish Helmet");
+			// Tooltip.SetDefault("7% increased melee damage");
 		}
 
 		public override void UpdateEquip(Player player)

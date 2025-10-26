@@ -36,17 +36,17 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Alchemist");
+			// DisplayName.SetDefault("Nova Alchemist");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
 			npc.lifeMax = npc.lifeMax * 1;
 			npc.damage = npc.damage * 1;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
@@ -62,11 +62,11 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				}
 				for (int i = 0; i < 2; i++)
 				{
-					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/NovaAlchemistGore3"));
-					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/NovaAlchemistGore4"));
+					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("NovaAlchemistGore3"));
+					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("NovaAlchemistGore4"));
 				}
-				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, Mod.GetGoreSlot("Gores/NovaAlchemistGore2"));
-				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, Mod.GetGoreSlot("Gores/NovaAlchemistGore1"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hit.HitDirection, Mod.GetGoreSlot("NovaAlchemistGore2"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hit.HitDirection, Mod.GetGoreSlot("NovaAlchemistGore1"));
 			}
 		}
 

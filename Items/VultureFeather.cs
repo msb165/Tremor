@@ -8,17 +8,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
-			item.value = 100;
-			item.rare = 2;
-			item.accessory = true;
+			Item.width = 22;
+			Item.height = 44;
+			Item.value = 100;
+			Item.rare = 2;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vulture Feather");
-			Tooltip.SetDefault("15% increased movement speed");
+			// DisplayName.SetDefault("Vulture Feather");
+			// Tooltip.SetDefault("15% increased movement speed");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

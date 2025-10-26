@@ -15,7 +15,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cog Lord Gun");
+			// DisplayName.SetDefault("Cog Lord Gun");
 		}
 
 		private const int ShootRate = 120;
@@ -46,11 +46,11 @@ namespace Tremor.NPCs.Bosses.CogLord
 			npc.value = Item.buyPrice(0, 0, 5, 0);
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CogLordGun"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("CogLordGun"), 1f);
 
 			}
 		}
@@ -121,7 +121,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 			return false;
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
 			Texture2D drawTexture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2((drawTexture.Width / 2) * 0.5F, (drawTexture.Height / Main.npcFrameCount[npc.type]) * 0.5F);

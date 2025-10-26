@@ -10,19 +10,19 @@ namespace Tremor.Items.Souls
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 38;
-			item.value = 10000;
-			item.rare = 0;
-			item.maxStack = 999;
-			ItemID.Sets.ItemIconPulse[item.type] = true;
-			ItemID.Sets.ItemNoGravity[item.type] = true;
+			Item.width = 26;
+			Item.height = 38;
+			Item.value = 10000;
+			Item.rare = 0;
+			Item.maxStack = 999;
+			ItemID.Sets.ItemIconPulse[Item.type] = true;
+			ItemID.Sets.ItemNoGravity[Item.type] = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Inferno Soul");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Inferno Soul");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

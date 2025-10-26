@@ -19,7 +19,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Evil Corn");
+			// DisplayName.SetDefault("Evil Corn");
 			Main.npcFrameCount[npc.type] = 22;
 		}
 
@@ -79,24 +79,22 @@ namespace Tremor.NPCs
 		const int defense3 = 4; // Броня в 4 состоянии
 
 		#region "Вылёт попкорна при ударе"
-		public override void OnHitByItem(Player player, Item item, int damage, float knockback, bool crit)
+		public override void OnHitByItem(Player player, Item item, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.rand.NextBool(2))
 				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Popcorn>(), 0);
-			base.OnHitByItem(player, item, damage, knockback, crit);
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
-			npc.lifeMax = (int)(npc.lifeMax * 0.625f * bossLifeScale);
+			npc.lifeMax = (int)(npc.lifeMax * 0.625f * balance);
 			npc.damage = (int)(npc.damage * 0.6f);
 		}
 
-		public override void OnHitByProjectile(Projectile projectile, int damage, float knockback, bool crit)
+		public override void OnHitByProjectile(Projectile projectile, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.rand.NextBool(2))
 				Item.NewItem(null, (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Popcorn>(), 0);
-			base.OnHitByProjectile(projectile, damage, knockback, crit);
 		}
 		#endregion
 
@@ -440,34 +438,32 @@ namespace Tremor.NPCs
 		}
 
 		#region "Урон в здоровье во время 2 стадии"
-		public override void ModifyHitByItem(Player player, Item item, ref int damage, ref float knockback, ref bool crit)
+		public override void ModifyHitByItem(Player player, Item item, ref NPC.HitModifiers modifiers)
 		{
 			if (State == 1) // Если вторая стадия (в ней идёт конвертирование урона в хп), то
 			{
 				int hpBeforeHeal = npc.life; // Сохраняем в переменную текущее хп
-				npc.life += damage; // Добавляем в хп моба урон который должны нанести
+				npc.life += item.damage; // Добавляем в хп моба урон который должны нанести
 				if (npc.life > npc.lifeMax) // Если теперь хп больше макс. хп, уменьшаем до макс. хп
 					npc.life = npc.lifeMax;
 				if (npc.lifeMax - hpBeforeHeal > 0) // Если отхил произошол
 					npc.HealEffect(npc.lifeMax - hpBeforeHeal); // Показываем эффект лечения на то хп, которое восстановил моб
-				damage = 0; // Убираем урон
+				modifiers.FinalDamage *= 0f; // Убираем урон
 			}
-			base.ModifyHitByItem(player, item, ref damage, ref knockback, ref crit);
 		}
 
-		public override void ModifyHitByProjectile(Projectile projectile, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+		public override void ModifyHitByProjectile(Projectile projectile, ref NPC.HitModifiers modifiers)
 		{
 			if (State == 1) // Если вторая стадия (в ней идёт конвертирование урона в хп), то
 			{
-				npc.life += damage; // Добавляем в хп моба урон который должны нанести
+				npc.life += projectile.damage; // Добавляем в хп моба урон который должны нанести
 				int hpBeforeHeal = npc.life; // Сохраняем в переменную текущее хп
 				if (npc.life > npc.lifeMax) // Если теперь хп больше макс. хп, уменьшаем до макс. хп
 					npc.life = npc.lifeMax;
 				if (npc.lifeMax - hpBeforeHeal > 0) // Если отхил произошол
 					npc.HealEffect(npc.lifeMax - hpBeforeHeal); // Показываем эффект лечения на то хп, которое восстановил моб
-				damage = 0; // Убираем урон
+				modifiers.FinalDamage *= 0f; // Убираем урон
 			}
-			base.ModifyHitByProjectile(projectile, ref damage, ref knockback, ref crit, ref hitDirection);
 		}
 		#endregion
 
@@ -682,20 +678,20 @@ namespace Tremor.NPCs
 			}
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CornGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CornGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CornGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CornGore3"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CornGore4"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/CornGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("CornGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("CornGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("CornGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("CornGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("CornGore4"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("CornGore4"), 1f);
 			}
 		}
 	}

@@ -10,30 +10,30 @@ namespace Tremor.Items.Sandstone
 		public override void SetDefaults()
 		{
 
-			item.damage = 8;
-			item.DamageType = DamageClass.Melee;
-			item.width = 20;
-			item.height = 12;
-			item.useTime = 21;
-			item.useAnimation = 25;
-			item.channel = true;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.pick = 46;
-			item.useStyle = 5;
-			item.knockBack = 6;
-			item.value = 13500;
-			item.rare = 1;
-			item.UseSound = SoundID.Item23;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.SandstoneDrillPro>();
-			item.shootSpeed = 40f;
+			Item.damage = 8;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 20;
+			Item.height = 12;
+			Item.useTime = 21;
+			Item.useAnimation = 25;
+			Item.channel = true;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.pick = 46;
+			Item.useStyle = 5;
+			Item.knockBack = 6;
+			Item.value = 13500;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item23;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.SandstoneDrillPro>();
+			Item.shootSpeed = 40f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dune Drill");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Dune Drill");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

@@ -9,27 +9,27 @@ namespace Tremor.Items.Souls
 		public override void SetDefaults()
 		{
 
-			item.width = 20;
-			item.height = 28;
-			item.maxStack = 1;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
+			Item.width = 20;
+			Item.height = 28;
+			Item.maxStack = 1;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
 
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.value = 150;
-			item.rare = 5;
-			item.createTile = ModContent.TileType<Tiles.BottledSoulOfFright>();
-			item.accessory = true;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.value = 150;
+			Item.rare = 5;
+			Item.createTile = ModContent.TileType<Tiles.BottledSoulOfFright>();
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bottled Soul of Fright");
-			Tooltip.SetDefault("Increases critical strike chance by 6 if worn\n" +
-"Increased critical strike chance by 2 if placed");
+			// DisplayName.SetDefault("Bottled Soul of Fright");
+			/* Tooltip.SetDefault("Increases critical strike chance by 6 if worn\n" +
+"Increased critical strike chance by 2 if placed"); */
 		}
 
 		public override void AddRecipes()

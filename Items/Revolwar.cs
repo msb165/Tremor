@@ -9,28 +9,28 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.useStyle = 5;
-			item.useAnimation = 16;
-			item.useTime = 16;
+			Item.useStyle = 5;
+			Item.useAnimation = 16;
+			Item.useTime = 16;
 
-			item.width = 24;
-			item.height = 28;
-			item.shoot = 14;
-			item.useAmmo = AmmoID.Bullet;
-			item.UseSound = SoundID.Item11;
-			item.damage = 450;
-			item.shootSpeed = 12f;
-			item.noMelee = true;
-			item.value = 500000;
-			item.scale = 0.9f;
-			item.rare = 0;
-			item.DamageType = DamageClass.Ranged;
+			Item.width = 24;
+			Item.height = 28;
+			Item.shoot = 14;
+			Item.useAmmo = AmmoID.Bullet;
+			Item.UseSound = SoundID.Item11;
+			Item.damage = 450;
+			Item.shootSpeed = 12f;
+			Item.noMelee = true;
+			Item.value = 500000;
+			Item.scale = 0.9f;
+			Item.rare = 0;
+			Item.DamageType = DamageClass.Ranged;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Revolwar");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Revolwar");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

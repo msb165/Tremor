@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class ShadowArmBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("ShadowArm");
-			Description.SetDefault("The shadow arm will fight for you");
+			// DisplayName.SetDefault("ShadowArm");
+			// Description.SetDefault("The shadow arm will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

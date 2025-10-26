@@ -9,7 +9,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Zarprite");
+			// DisplayName.SetDefault("Zarprite");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 
@@ -32,11 +32,11 @@ namespace Tremor.NPCs
 			BannerItem = ModContent.ItemType<ZarpriteBanner>();
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ZarpriteGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("ZarpriteGore"), 1f);
 
 				if (Main.netMode == 1) return;
 

@@ -25,7 +25,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Flask Wasp");
+			// DisplayName.SetDefault("Flask Wasp");
 
 		}
 
@@ -34,7 +34,7 @@ namespace Tremor.Projectiles
 			return Color.White;
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(BuffID.Poisoned, 80, false);
 		}

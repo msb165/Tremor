@@ -10,7 +10,7 @@ namespace Tremor.Invasion
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paradox Crystal");
+			// DisplayName.SetDefault("Paradox Crystal");
 			Main.npcFrameCount[npc.type] = 5;
 		}
 
@@ -51,17 +51,17 @@ namespace Tremor.Invasion
 			return false;
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
-			npc.lifeMax = (int)(npc.lifeMax * 0.55f * bossLifeScale);
+			npc.lifeMax = (int)(npc.lifeMax * 0.55f * balance);
 			npc.damage = (int)(npc.damage * 0.75f);
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			for (int k = 0; k < 5; k++)
 			{
-				Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), hitDirection, -1f, 0, default(Color), 1f);
+				Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), hit.HitDirection, -1f, 0, default(Color), 1f);
 			}
 		}
 

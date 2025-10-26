@@ -10,7 +10,7 @@ namespace Tremor.Invasion
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paradox Soul");
+			// DisplayName.SetDefault("Paradox Soul");
 			Main.npcFrameCount[npc.type] = 3;
 		}
 
@@ -51,13 +51,13 @@ namespace Tremor.Invasion
 			}
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 10; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
 
 				CyberWrathInvasion modPlayer = Main.LocalPlayer.GetModPlayer<CyberWrathInvasion>();
@@ -68,9 +68,9 @@ namespace Tremor.Invasion
 				}
 			}
 
-			for (int k = 0; k < damage / npc.lifeMax * 50.0; k++)
+			for (int k = 0; k < npc.damage / npc.lifeMax * 50.0; k++)
 			{
-				Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), hitDirection, -1f, 0, default(Color), 0.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), hit.HitDirection, -1f, 0, default(Color), 0.7f);
 			}
 		}
 	}

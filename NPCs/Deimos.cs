@@ -13,7 +13,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Deimos");
+			// DisplayName.SetDefault("Deimos");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 
@@ -57,32 +57,32 @@ namespace Tremor.NPCs
 				npc.NewItem(ModContent.ItemType<ToothofAbraxas>(), Main.rand.Next(2, 16));
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 60; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 70, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 1.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 70, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 1.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 1.7f);
 				}
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 2.7f);
 
-				Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 3.7f);
-				Dust.NewDust(npc.position, npc.width, npc.height, 70, 2.5f * hitDirection, -2.5f, 0, default(Color), 2.7f);
-				Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 3.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 3.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 70, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 2.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 3.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeimosGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeimosGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeimosGore2"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeimosGore3"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("DeimosGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("DeimosGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("DeimosGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("DeimosGore3"), 1f);
 			}
 			else
 			{
-				for (int k = 0; k < damage / npc.lifeMax * 50; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hitDirection, -2.5f, 0, default(Color), 1.7f);
+				for (int k = 0; k < npc.damage / npc.lifeMax * 50; k++)
+					Dust.NewDust(npc.position, npc.width, npc.height, 27, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 1.7f);
 			}
 		}
 

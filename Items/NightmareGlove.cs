@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 125;
-			item.DamageType = DamageClass.Melee;
-			item.width = 36;
-			item.height = 36;
-			item.useTime = 11;
-			item.useAnimation = 11;
-			item.useStyle = 1;
-			item.knockBack = 3;
-			item.value = 100000;
-			item.rare = 11;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 125;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 36;
+			Item.height = 36;
+			Item.useTime = 11;
+			Item.useAnimation = 11;
+			Item.useStyle = 1;
+			Item.knockBack = 3;
+			Item.value = 100000;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nightmare Glove");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Nightmare Glove");
+			// Tooltip.SetDefault("");
 		}
 
 	}

@@ -9,26 +9,26 @@ namespace Tremor.Items.Sandstone
 		public override void SetDefaults()
 		{
 
-			item.autoReuse = true;
-			item.useStyle = 1;
-			item.useAnimation = 30;
-			item.knockBack = 6f;
-			item.useTime = 15;
-			item.width = 24;
-			item.height = 28;
-			item.damage = 16;
-			item.axe = 15;
-			item.scale = 1.2f;
-			item.UseSound = SoundID.Item1;
-			item.rare = 1;
-			item.value = 13500;
-			item.DamageType = DamageClass.Melee;
+			Item.autoReuse = true;
+			Item.useStyle = 1;
+			Item.useAnimation = 30;
+			Item.knockBack = 6f;
+			Item.useTime = 15;
+			Item.width = 24;
+			Item.height = 28;
+			Item.damage = 16;
+			Item.axe = 15;
+			Item.scale = 1.2f;
+			Item.UseSound = SoundID.Item1;
+			Item.rare = 1;
+			Item.value = 13500;
+			Item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dune Axe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Dune Axe");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

@@ -10,19 +10,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 22;
-			item.value = 250000;
-			item.rare = ItemRarityID.Yellow;
-			item.accessory = true;
+			Item.width = 28;
+			Item.height = 22;
+			Item.value = 250000;
+			Item.rare = ItemRarityID.Yellow;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nebula Ring ");
-			Tooltip.SetDefault("20% increased magic damage\n" +
+			// DisplayName.SetDefault("Nebula Ring ");
+			/* Tooltip.SetDefault("20% increased magic damage\n" +
 "Increases magic critical strike chance by 15\n" +
-"Increases maximum mana by 80");
+"Increases maximum mana by 80"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

@@ -20,7 +20,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("EaterofDreams Pro");
+			// DisplayName.SetDefault("EaterofDreams Pro");
 
 		}
 
@@ -111,7 +111,7 @@ namespace Tremor.Projectiles
 			return false;
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(153, 500);
 		}

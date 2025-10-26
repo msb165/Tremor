@@ -10,26 +10,26 @@ namespace Tremor.Invasion
 		public override void SetDefaults()
 		{
 
-			item.damage = 266;
-			item.DamageType = DamageClass.Melee;
-			item.width = 50;
-			item.height = 52;
-			item.useTime = 15;
-			item.useAnimation = 15;
-			item.useStyle = 1;
-			item.shoot = 173;
-			item.shootSpeed = 7f;
-			item.knockBack = 4;
-			item.value = 100000;
-			item.rare = 11;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 266;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 50;
+			Item.height = 52;
+			Item.useTime = 15;
+			Item.useAnimation = 15;
+			Item.useStyle = 1;
+			Item.shoot = 173;
+			Item.shootSpeed = 7f;
+			Item.knockBack = 4;
+			Item.value = 100000;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crystyle");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Crystyle");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

@@ -24,7 +24,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Shadow Reaper");
+			// DisplayName.SetDefault("Shadow Reaper");
 
 		}
 
@@ -68,7 +68,7 @@ namespace Tremor.Projectiles
 			CreateDust();
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			for (int k = 0; k < 17; k++)
 			{

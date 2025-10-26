@@ -10,19 +10,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 34;
-			item.height = 34;
-			item.value = 150000;
-			item.rare = 3;
-			item.defense = 10;
-			item.accessory = true;
+			Item.width = 34;
+			Item.height = 34;
+			Item.value = 150000;
+			Item.rare = 3;
+			Item.defense = 10;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Necromancer Armor");
-			Tooltip.SetDefault("18% increased minion damage\n" +
-"20% increased minion knockback");
+			// DisplayName.SetDefault("Necromancer Armor");
+			/* Tooltip.SetDefault("18% increased minion damage\n" +
+"20% increased minion knockback"); */
 		}
 
 		public override void UpdateEquip(Player player)

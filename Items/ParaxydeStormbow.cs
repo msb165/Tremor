@@ -10,29 +10,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 68;
-			item.noMelee = true;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 16;
-			item.height = 32;
-			item.useTime = 15;
-			item.shoot = 1;
-			item.shootSpeed = 11f;
-			item.useAnimation = 15;
-			item.useStyle = 5;
-			item.knockBack = 1;
-			item.useAmmo = AmmoID.Arrow;
-			item.value = 216000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item5;
-			item.autoReuse = true;
+			Item.damage = 68;
+			Item.noMelee = true;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 16;
+			Item.height = 32;
+			Item.useTime = 15;
+			Item.shoot = 1;
+			Item.shootSpeed = 11f;
+			Item.useAnimation = 15;
+			Item.useStyle = 5;
+			Item.knockBack = 1;
+			Item.useAmmo = AmmoID.Arrow;
+			Item.value = 216000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item5;
+			Item.autoReuse = true;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paraxyde Stormbow");
-			Tooltip.SetDefault("Has 33% chance to shoot paraxyde crystal");
+			// DisplayName.SetDefault("Paraxyde Stormbow");
+			// Tooltip.SetDefault("Has 33% chance to shoot paraxyde crystal");
 		}
 
 		public override Vector2? HoldoutOffset()

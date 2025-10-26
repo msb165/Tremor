@@ -1,4 +1,5 @@
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
 using Tremor.NPCs;
 
@@ -8,18 +9,18 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.maxStack = 999;
-			item.consumable = true;
-			item.width = 24;
-			item.height = 24;
-			item.rare = 9;
-			item.expert = true;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.width = 24;
+			Item.height = 24;
+			Item.rare = 9;
+			Item.expert = true;
 		}
-		public override int BossBagNPC => ModContent.NPCType<SpaceWhale>();
+		////public override int BossBagNPC => ModContent.NPCType<SpaceWhale>();
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
+			// DisplayName.SetDefault("Treasure Bag");
+			// Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
 
 		public override bool CanRightClick()
@@ -27,40 +28,16 @@ namespace Tremor.Items
 			return true;
 		}
 
-		public override void OpenBossBag(Player player)
+		public override void ModifyItemLoot(ItemLoot itemLoot)
 		{
-			if (Main.rand.NextBool(7))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<SpaceWhaleMask>());
-			}
-
-			if (Main.rand.NextBool(5))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<StarLantern>());
-			}
-
-			if (Main.rand.NextBool(3))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<SDL>());
-			}
-
-			if (Main.rand.NextBool(3))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<BlackHoleCannon>());
-			}
-
-			if (Main.rand.NextBool(3))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<HornedWarHammer>());
-			}
-
-			if (Main.rand.NextBool(8))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<WhaleFlippers>());
-			}
-			player.QuickSpawnItem(ModContent.ItemType<LasCannon>());
-
-			player.QuickSpawnItem(ModContent.ItemType<CosmicFuel>());
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<SpaceWhaleMask>(), 7));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<StarLantern>(), 5));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<SDL>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BlackHoleCannon>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<HornedWarHammer>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<WhaleFlippers>(), 8));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<LasCannon>()));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<CosmicFuel>()));
 		}
 	}
 }

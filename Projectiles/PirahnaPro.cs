@@ -22,11 +22,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("PirahnaPro");
+			// DisplayName.SetDefault("PirahnaPro");
 
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[4], projectile.position);//Variant 1
 			Gore.NewGore(null, projectile.position, projectile.velocity, 85, 1f);

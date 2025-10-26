@@ -10,7 +10,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Dragon");
+			// DisplayName.SetDefault("Ancient Dragon");
 			Main.npcFrameCount[npc.type] = 2;
 			NPCID.Sets.ShouldBeCountedAsBoss[npc.type] = true;//TechnicallyABoss
 		}
@@ -90,13 +90,13 @@ namespace Tremor.NPCs
 			return false;
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
-			npc.lifeMax = (int)(npc.lifeMax * 0.55f * bossLifeScale);
+			npc.lifeMax = (int)(npc.lifeMax * 0.55f * balance);
 			npc.damage = (int)(npc.damage * 0.75f);
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
 			Texture2D drawTexture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2((drawTexture.Width / 2) * 0.5F, (drawTexture.Height / Main.npcFrameCount[npc.type]) * 0.5F);

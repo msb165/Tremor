@@ -7,8 +7,8 @@ namespace Tremor.Buffs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Ancient Banner");
-			Description.SetDefault("Increased life regeneration");
+			// DisplayName.SetDefault("The Ancient Banner");
+			// Description.SetDefault("Increased life regeneration");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

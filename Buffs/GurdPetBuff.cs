@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class GurdPetBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Gurd Pet");
-			Description.SetDefault("20% increased alchemical damage");
+			// DisplayName.SetDefault("Gurd Pet");
+			// Description.SetDefault("20% increased alchemical damage");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

@@ -9,31 +9,31 @@ namespace Tremor.Items.Alchemist.Flasks
 
 		public override void SetDefaults()
 		{
-			item.crit = 4;
-			item.damage = 18;
-			//item.DamageType = DamageClass.Throwing;
-			item.width = 26;
-			item.noUseGraphic = true;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.height = 30;
-			item.useTime = 40;
-			item.useAnimation = 40;
-			item.shoot = ModContent.ProjectileType<Projectiles.Alchemic.BoomFlaskPro>();
-			item.shootSpeed = 10f;
-			item.useStyle = 1;
-			item.knockBack = 1;
-			item.UseSound = SoundID.Item106;
-			item.value = 145;
-			item.rare = 2;
-			item.autoReuse = false;
+			Item.crit = 4;
+			Item.damage = 18;
+			//Item.DamageType = DamageClass.Throwing;
+			Item.width = 26;
+			Item.noUseGraphic = true;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.height = 30;
+			Item.useTime = 40;
+			Item.useAnimation = 40;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Alchemic.BoomFlaskPro>();
+			Item.shootSpeed = 10f;
+			Item.useStyle = 1;
+			Item.knockBack = 1;
+			Item.UseSound = SoundID.Item106;
+			Item.value = 145;
+			Item.rare = 2;
+			Item.autoReuse = false;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Boom Flask");
-			Tooltip.SetDefault("A vial of exploding chemicals");
+			// DisplayName.SetDefault("Boom Flask");
+			// Tooltip.SetDefault("A vial of exploding chemicals");
 		}
 
 		public override void UpdateInventory(Player player)
@@ -41,19 +41,19 @@ namespace Tremor.Items.Alchemist.Flasks
 			MPlayer modPlayer = MPlayer.GetModPlayer(player);
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) != -1)
 			{
-				item.shootSpeed = 11f;
+				Item.shootSpeed = 11f;
 			}
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) < 1)
 			{
-				item.shootSpeed = 8f;
+				Item.shootSpeed = 8f;
 			}
 			if (modPlayer.core)
 			{
-				item.autoReuse = true;
+				Item.autoReuse = true;
 			}
 			if (!modPlayer.core)
 			{
-				item.autoReuse = false;
+				Item.autoReuse = false;
 			}
 		}
 	}

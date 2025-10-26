@@ -11,29 +11,29 @@ namespace Tremor.Items
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vindicator");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Vindicator");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 200;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 76;
-			item.height = 26;
-			item.useTime = 9;
-			item.useAnimation = 9;
-			item.channel = true;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.useStyle = 5;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(15, 00);
-			item.rare = 11;
-			//item.UseSound = SoundID.Item23;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.VindicatorProj>();
-			item.shootSpeed = 45f;
+			Item.damage = 200;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 76;
+			Item.height = 26;
+			Item.useTime = 9;
+			Item.useAnimation = 9;
+			Item.channel = true;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.useStyle = 5;
+			Item.knockBack = 6;
+			Item.value = Item.buyPrice(15, 00);
+			Item.rare = 11;
+			//Item.UseSound = SoundID.Item23;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.VindicatorProj>();
+			Item.shootSpeed = 45f;
 		}
 
 		public override void AddRecipes()

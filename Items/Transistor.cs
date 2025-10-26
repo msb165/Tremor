@@ -10,28 +10,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 133;
-			item.DamageType = DamageClass.Melee;
-			item.width = 66;
-			item.height = 66;
+			Item.damage = 133;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 66;
+			Item.height = 66;
 
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.knockBack = 3;
-			item.value = 13500;
-			item.rare = 8;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.BrainiacWavePro>();
-			item.shootSpeed = 9f;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.knockBack = 3;
+			Item.value = 13500;
+			Item.rare = 8;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.BrainiacWavePro>();
+			Item.shootSpeed = 9f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Transistor");
-			Tooltip.SetDefault("'Crash() everyone!'\n" +
-"Sends energy waves in different directions on swing");
+			// DisplayName.SetDefault("Transistor");
+			/* Tooltip.SetDefault("'Crash() everyone!'\n" +
+"Sends energy waves in different directions on swing"); */
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

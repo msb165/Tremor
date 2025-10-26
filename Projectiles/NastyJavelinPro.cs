@@ -22,7 +22,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nasty Javelin Pro");
+			// DisplayName.SetDefault("Nasty Javelin Pro");
 
 		}
 
@@ -31,7 +31,7 @@ namespace Tremor.Projectiles
 			int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, ModContent.DustType<Dusts.NightmareFlame>(), projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 100, default(Color), 1.9f);
 			Main.dust[dust].noGravity = true;
 		}
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			for (int k = 0; k < 5; k++)
 			{
@@ -45,7 +45,7 @@ namespace Tremor.Projectiles
 			}
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			projectile.ai[0] += 0.1f;
 			projectile.velocity *= 0.75f;

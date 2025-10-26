@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class AncientVisionBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Vision");
-			Description.SetDefault("The ancient vision will fight for you");
+			// DisplayName.SetDefault("Ancient Vision");
+			// Description.SetDefault("The ancient vision will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

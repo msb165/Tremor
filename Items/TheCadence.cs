@@ -9,17 +9,17 @@ namespace Tremor.Items
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Cadence");
-			Tooltip.SetDefault("Flasks attack your enemies with souls");
+			// DisplayName.SetDefault("The Cadence");
+			// Tooltip.SetDefault("Flasks attack your enemies with souls");
 		}
 		public override void SetDefaults()
 		{
-			item.width = 30;
-			item.height = 26;
-			item.value = 1000000;
-			item.rare = 11;
-			item.accessory = true;
-			item.defense = 7;
+			Item.width = 30;
+			Item.height = 26;
+			Item.value = 1000000;
+			Item.rare = 11;
+			Item.accessory = true;
+			Item.defense = 7;
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

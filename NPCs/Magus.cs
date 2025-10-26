@@ -15,7 +15,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Magus");
+			// DisplayName.SetDefault("Magus");
 			Main.npcFrameCount[npc.type] = 3;
 		}
 

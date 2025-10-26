@@ -19,11 +19,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Kunai");
+			// DisplayName.SetDefault("Kunai");
 
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(SoundID.SoundByIndex[0], projectile.position);//Variant 1
 			for (int num431 = 0; num431 < 10; num431++)
@@ -32,7 +32,7 @@ namespace Tremor.Projectiles
 			}
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			projectile.ai[0] += 0.1f;
 			projectile.velocity *= 0.75f;

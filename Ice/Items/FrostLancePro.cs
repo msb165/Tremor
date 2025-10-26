@@ -12,7 +12,7 @@ namespace Tremor.Ice.Items
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frost Lance");
+			// DisplayName.SetDefault("Frost Lance");
 		}
 
 	}

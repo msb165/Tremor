@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 262;
-			item.width = 14;
-			item.DamageType = DamageClass.Melee;
-			item.height = 84;
-			item.noUseGraphic = true;
-			item.maxStack = 999;
-			item.useTime = 16;
-			item.shoot = ModContent.ProjectileType<Projectiles.DeathHooksPro>();
-			item.shootSpeed = 20f;
-			item.useAnimation = 16;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 10000;
-			item.rare = 11;
-			item.UseSound = SoundID.Item5;
-			item.autoReuse = true;
+			Item.damage = 262;
+			Item.width = 14;
+			Item.DamageType = DamageClass.Melee;
+			Item.height = 84;
+			Item.noUseGraphic = true;
+			Item.maxStack = 999;
+			Item.useTime = 16;
+			Item.shoot = ModContent.ProjectileType<Projectiles.DeathHooksPro>();
+			Item.shootSpeed = 20f;
+			Item.useAnimation = 16;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 10000;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item5;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Death Hooks");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Death Hooks");
+			// Tooltip.SetDefault("");
 		}
 
 	}

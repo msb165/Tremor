@@ -11,7 +11,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sighted");
+			// DisplayName.SetDefault("Sighted");
 			Main.npcFrameCount[npc.type] = 6;
 		}
 
@@ -35,19 +35,19 @@ namespace Tremor.NPCs
 			BannerItem = ModContent.ItemType<SightedBanner>();
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 1f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 1f);
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/SightedGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"SightedGore{i+1}"), 1f);
 
-				Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 3f);
-				Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 2f);
-				Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 3f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 3f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 2f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 3f);
 			}
 		}
 

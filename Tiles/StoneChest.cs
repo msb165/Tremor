@@ -9,7 +9,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class StoneChest:TremorModTile
+	public class StoneChest : TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -30,14 +30,14 @@ namespace Tremor.Tiles
 			TileObjectData.newTile.LavaDeath = false;
 			TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
 			TileObjectData.addTile(Type);
-			AddMapEntry(new Color(162,162,162));
-			disableSmartCursor = true;
+			AddMapEntry(new Color(162, 162, 162));
+			TileID.Sets.DisableSmartCursor[Type] = true;
 			AdjTiles = new int[] { TileID.Containers };
-			chest = "Stone Chest";
-			ChestDrop = ModContent.ItemType<Items.StoneChest>();
+			//chest = "Stone Chest";
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<Items.StoneChest>();
 		}
 
-				public string MapChestName(string name, int i, int j)
+		public string MapChestName(string name, int i, int j)
 		{
 			int left = i;
 			int top = j;
@@ -65,8 +65,8 @@ namespace Tremor.Tiles
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(null, i * 16, j * 16, 32, 32, chestDrop);
-			Chest.DestroyChest(i, j);
+			//Item.NewItem(null, i * 16, j * 16, 32, 32, chestDrop);
+			//Chest.DestroyChest(i, j);
 		}
 
 		public override bool RightClick(int i, int j)

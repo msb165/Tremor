@@ -9,29 +9,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 10;
-			item.value = Item.sellPrice(2, 0, 0, 0);
-			item.rare = 4;
-			item.noMelee = true;
-			item.useStyle = 5;
-			item.useAnimation = 40;
-			item.useTime = 40;
-			item.knockBack = 7.5F;
-			item.damage = 39;
-			item.scale = 1.1F;
-			item.noUseGraphic = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.PainWheelPro>();
-			item.shootSpeed = 15.9F;
-			item.UseSound = SoundID.Item1;
-			item.DamageType = DamageClass.Melee;
-			item.channel = true;
+			Item.width = 30;
+			Item.height = 10;
+			Item.value = Item.sellPrice(2, 0, 0, 0);
+			Item.rare = 4;
+			Item.noMelee = true;
+			Item.useStyle = 5;
+			Item.useAnimation = 40;
+			Item.useTime = 40;
+			Item.knockBack = 7.5F;
+			Item.damage = 39;
+			Item.scale = 1.1F;
+			Item.noUseGraphic = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.PainWheelPro>();
+			Item.shootSpeed = 15.9F;
+			Item.UseSound = SoundID.Item1;
+			Item.DamageType = DamageClass.Melee;
+			Item.channel = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pain Wheel");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Pain Wheel");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

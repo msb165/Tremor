@@ -9,19 +9,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 20;
-			item.value = 10000;
+			Item.width = 30;
+			Item.height = 20;
+			Item.value = 10000;
 
-			item.rare = 2;
-			item.defense = 7;
+			Item.rare = 2;
+			Item.defense = 7;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Enchanted Breastplate");
-			Tooltip.SetDefault("Increases maximum mana by 20\n" +
-"Increases maximum health by 20");
+			// DisplayName.SetDefault("Enchanted Breastplate");
+			/* Tooltip.SetDefault("Increases maximum mana by 20\n" +
+"Increases maximum health by 20"); */
 		}
 
 		public override void UpdateEquip(Player player)

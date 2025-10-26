@@ -10,23 +10,23 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 32;
-			item.maxStack = 20;
-			item.useTurn = true;
-			item.autoReuse = false;
-			item.useAnimation = 18;
-			item.useTime = 18;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.value = 150;
+			Item.width = 28;
+			Item.height = 32;
+			Item.maxStack = 20;
+			Item.useTurn = true;
+			Item.autoReuse = false;
+			Item.useAnimation = 18;
+			Item.useTime = 18;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.value = 150;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Storm Jelly");
-			Tooltip.SetDefault("Summons Storm Jellyfish\n" +
-"Requires EoC to have been slain");
+			// DisplayName.SetDefault("Storm Jelly");
+			/* Tooltip.SetDefault("Summons Storm Jellyfish\n" +
+"Requires EoC to have been slain"); */
 		}
 
 		public override bool CanUseItem(Player player)

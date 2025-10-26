@@ -27,7 +27,7 @@ namespace Tremor.NPCs.TownNPCs
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Lady Moon");
+			// DisplayName.SetDefault("Lady Moon");
 			Main.npcFrameCount[npc.type] = 21;
 			NPCID.Sets.ExtraFramesCount[npc.type] = 5;
 			NPCID.Sets.AttackFrameCount[npc.type] = 2;
@@ -53,7 +53,7 @@ namespace Tremor.NPCs.TownNPCs
 			AnimationType = NPCID.Dryad;
 		}
 
-		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+		public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
 			=> NPC.downedMoonlord && Main.player.Any(player => !player.dead);
 
 		private readonly List<string> _names = new List<string>
@@ -88,24 +88,28 @@ namespace Tremor.NPCs.TownNPCs
 			button = Lang.inter[28].Value;
 		}
 
-		public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+		public override void OnChatButtonClicked(bool firstButton, ref string shopName)
 		{
-			shop = firstButton;
+			if (firstButton)
+			{
+				shopName = "Shop";
+			}
 		}
 
-		public override void SetupShop(Chest shop, ref int nextSlot)
+		public override void ModifyActiveShop(string shopName, Item[] items)
 		{
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<DimensionalTopHat>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ExtraterrestrialRubies>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<UnchargedBand>());
+			NPCShop shop = new(Type);
+			shop.Add(ModContent.ItemType<DimensionalTopHat>());
+			shop.Add(ModContent.ItemType<ExtraterrestrialRubies>());
+			shop.Add(ModContent.ItemType<UnchargedBand>());
 			if (!Main.dayTime)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ManaBooster>());
+				shop.Add(ModContent.ItemType<ManaBooster>());
 			if (Main.dayTime)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<HealthBooster>());
+				shop.Add(ModContent.ItemType<HealthBooster>());
 			if (Main.bloodMoon)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ChainedRocket>());
+				shop.Add(ModContent.ItemType<ChainedRocket>());
 			if (Main.eclipse)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<Infusion>());
+				shop.Add(ModContent.ItemType<Infusion>());
 		}
 
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -132,15 +136,15 @@ namespace Tremor.NPCs.TownNPCs
 			randomOffset = 2f;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/FarmerGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"FarmerGore{i+1}"), 1f);
 			}
 		}
 	}

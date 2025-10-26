@@ -13,17 +13,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 14;
-			item.height = 26;
-			item.rare = 7;
-			item.value = 50000;
+			Item.width = 14;
+			Item.height = 26;
+			Item.rare = 7;
+			Item.value = 50000;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Shadow Relic");
-			Tooltip.SetDefault("Summons Wall of Shadows\n" +
-"'Can be used in ritual of shadows if thrown into lava in underground and the Dryad is alive...'");
+			// DisplayName.SetDefault("Shadow Relic");
+			/* Tooltip.SetDefault("Summons Wall of Shadows\n" +
+"'Can be used in ritual of shadows if thrown into lava in underground and the Dryad is alive...'"); */
 		}
 
 		public override void AddRecipes()
@@ -41,7 +41,7 @@ namespace Tremor.Items
 
 		public override void PostUpdate()
 		{
-			if (item.lavaWet)
+			if (Item.lavaWet)
 			{
 				//if (Main.netMode != 1)
 				//{
@@ -49,12 +49,14 @@ namespace Tremor.Items
 				{
 					if (Main.npc[i].type == NPCID.Dryad && NPC.downedPlantBoss)
 					{
-						SpawnShadowWall(item.position);
-						Main.npc[i].StrikeNPCNoInteraction(9999, 10f, -Main.npc[i].direction, false, false, false);
-						item.active = false;
-						item.type = 0;
-						//item.name = ""; 
-						item.stack = 0;
+						SpawnShadowWall(Item.position);
+						Main.npc[i].StrikeInstantKill();
+						//Main.npc[i].StrikeNPCNoInteraction(9999, 10f, -Main.npc[i].direction, false, false, false);
+						//Item.active = false;
+						Item.TurnToAir();
+						//Item.type = 0;
+						//Item.name = ""; 
+						//Item.stack = 0;
 						Main.NewText("The shadows are gathering around you...", 42, 10, 74);
 					}
 				}

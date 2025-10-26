@@ -7,7 +7,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Cloud");
+			// DisplayName.SetDefault("Nova Cloud");
 		}
 
 		public override void SetDefaults()

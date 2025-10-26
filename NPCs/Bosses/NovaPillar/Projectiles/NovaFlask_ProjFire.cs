@@ -113,7 +113,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 			return false;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item14, projectile.position);
 			Helper.Explode(projectile.whoAmI, 120, 120, delegate

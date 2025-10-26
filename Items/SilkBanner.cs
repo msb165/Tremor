@@ -9,25 +9,25 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 48;
-			item.height = 64;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
+			Item.width = 48;
+			Item.height = 64;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
 
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.value = 50000;
-			item.rare = 11;
-			item.createTile = ModContent.TileType<Tiles.SilkBanner>();
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.value = 50000;
+			Item.rare = 11;
+			Item.createTile = ModContent.TileType<Tiles.SilkBanner>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Silk Banner");
-			Tooltip.SetDefault("Increases defense by 15and grants thorn effect if placed");
+			// DisplayName.SetDefault("Silk Banner");
+			// Tooltip.SetDefault("Increases defense by 15and grants thorn effect if placed");
 		}
 
 		public override void AddRecipes()

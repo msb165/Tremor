@@ -7,8 +7,8 @@ namespace Tremor.Buffs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Amplified Enchantment Solution");
-			Description.SetDefault("45% chance not to consume flask");
+			// DisplayName.SetDefault("Amplified Enchantment Solution");
+			// Description.SetDefault("45% chance not to consume flask");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

@@ -10,29 +10,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 150;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 26;
-			item.noUseGraphic = true;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.height = 30;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.shoot = ModContent.ProjectileType<Projectiles.TwilightKnifePro>();
-			item.shootSpeed = 22f;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 7;
-			item.rare = 11;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 150;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 26;
+			Item.noUseGraphic = true;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.height = 30;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.shoot = ModContent.ProjectileType<Projectiles.TwilightKnifePro>();
+			Item.shootSpeed = 22f;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 7;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Twilight Knife");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Twilight Knife");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

@@ -10,26 +10,26 @@ namespace Tremor.Items.Dark
 		public override void SetDefaults()
 		{
 
-			item.damage = 75;
-			item.DamageType = DamageClass.Melee;
-			item.width = 50;
-			item.height = 52;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.shoot = ModContent.ProjectileType<Projectiles.GloomSphere>();
-			item.shootSpeed = 10f;
-			item.knockBack = 4;
-			item.value = 10000;
-			item.rare = 8;
-			item.UseSound = SoundID.Item71;
-			item.autoReuse = false;
+			Item.damage = 75;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 50;
+			Item.height = 52;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.shoot = ModContent.ProjectileType<Projectiles.GloomSphere>();
+			Item.shootSpeed = 10f;
+			Item.knockBack = 4;
+			Item.value = 10000;
+			Item.rare = 8;
+			Item.UseSound = SoundID.Item71;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Blade of Darkness");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Blade of Darkness");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

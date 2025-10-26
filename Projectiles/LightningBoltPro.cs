@@ -18,7 +18,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("LightningBoltPro");
+			// DisplayName.SetDefault("LightningBoltPro");
 
 		}
 

@@ -12,18 +12,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 18;
+			Item.width = 26;
+			Item.height = 18;
 
-			item.value = 25000;
-			item.rare = 0;
-			item.defense = 25;
+			Item.value = 25000;
+			Item.rare = 0;
+			Item.defense = 25;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("True Hero Shirt");
-			Tooltip.SetDefault("Gives one of three true blades");
+			// DisplayName.SetDefault("True Hero Shirt");
+			// Tooltip.SetDefault("Gives one of three true blades");
 		}
 
 		public override void UpdateEquip(Player player)

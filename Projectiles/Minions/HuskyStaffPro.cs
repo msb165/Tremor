@@ -28,7 +28,7 @@ namespace Tremor.Projectiles.Minions
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Husky Staff");
+			// DisplayName.SetDefault("Husky Staff");
 		}
 
 		public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough, ref Vector2 hitboxCenterFrac)

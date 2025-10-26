@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Tremor.Items.Alchemist;
@@ -19,8 +20,8 @@ namespace Tremor.Tiles
         TileObjectData.newTile.StyleWrapLimit = 36;
         TileObjectData.addTile(Type);
         DustType = DustID.WoodFurniture;
-		ModTranslation name = CreateMapEntryName();
-		name.SetDefault("Alchemator");		
+		LocalizedText name = CreateMapEntryName();
+		// name.SetDefault("Alchemator");		
 	AddMapEntry(new Color(120, 85, 60), name);
     }
 

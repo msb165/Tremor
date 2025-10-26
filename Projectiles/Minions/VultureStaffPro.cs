@@ -13,7 +13,7 @@ namespace Tremor.Projectiles.Minions
 	//	public override void SetDefaults()
 	//	{
 	//		projectile.netImportant = true;
-	//		item.name = "Vulture";
+	//		Item.name = "Vulture";
 	//		projectile.width = 46;
 	//		projectile.height = 36;
 	//		Main.projFrames[projectile.type] = 4;

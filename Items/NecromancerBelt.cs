@@ -11,18 +11,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 24;
-			item.value = 30000;
-			item.rare = 2;
-			item.accessory = true;
+			Item.width = 30;
+			Item.height = 24;
+			Item.value = 30000;
+			Item.rare = 2;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Necromancer Belt");
-			Tooltip.SetDefault("Increases minion knockback by 20%\n" +
-"Increases your maximum number of minions");
+			// DisplayName.SetDefault("Necromancer Belt");
+			/* Tooltip.SetDefault("Increases minion knockback by 20%\n" +
+"Increases your maximum number of minions"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

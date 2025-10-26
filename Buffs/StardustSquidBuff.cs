@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class StardustSquidBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Stardust Squid");
-			Description.SetDefault("A stardust squid is following you");
+			// DisplayName.SetDefault("Stardust Squid");
+			// Description.SetDefault("A stardust squid is following you");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

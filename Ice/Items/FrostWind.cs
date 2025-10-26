@@ -8,26 +8,26 @@ namespace Tremor.Ice.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 20;
-			item.DamageType = DamageClass.Melee;
-			item.width = 46;
-			item.height = 46;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.knockBack = 5;
-			item.value = 15000;
-			item.rare = 2;
-			item.UseSound = SoundID.Item71;
-			item.autoReuse = false;
-			item.shoot = ModContent.ProjectileType<Projectiles.FrostwindPro>();
-			item.shootSpeed = 12f;
+			Item.damage = 20;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 46;
+			Item.height = 46;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.knockBack = 5;
+			Item.value = 15000;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item71;
+			Item.autoReuse = false;
+			Item.shoot = ModContent.ProjectileType<Projectiles.FrostwindPro>();
+			Item.shootSpeed = 12f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frost Wind");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Frost Wind");
+			// Tooltip.SetDefault("");
 		}
 
 	}

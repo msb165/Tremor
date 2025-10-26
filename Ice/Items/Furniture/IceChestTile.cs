@@ -31,10 +31,10 @@ namespace Tremor.Ice.Items.Furniture
 			TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
 			TileObjectData.addTile(Type);
 			AddMapEntry(new Color(87, 144, 165));
-			disableSmartCursor = true;
-			adjTiles = new int[] { TileID.Containers };
-			chest = "Glacier Wood Chest";
-			chestDrop = ModContent.ItemType<IceChest>();
+			TileID.Sets.DisableSmartCursor[Type] = true;
+			AdjTiles = new int[] { TileID.Containers };
+			////chest = "Glacier Wood Chest";
+			//chestDrop = ModContent.ItemType<IceChest>();
 			TileID.Sets.BasicChest[Type] = true;
 		}
 
@@ -66,8 +66,8 @@ namespace Tremor.Ice.Items.Furniture
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(null, i * 16, j * 16, 32, 32, ChestDrop);
-			Chest.DestroyChest(i, j);
+			//Item.NewItem(null, i * 16, j * 16, 32, 32, //ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */);
+			//Chest.DestroyChest(i, j);
 		}
 
 		public override bool RightClick(int i, int j)

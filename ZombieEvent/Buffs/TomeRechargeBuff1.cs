@@ -5,11 +5,11 @@ namespace Tremor.ZombieEvent.Buffs
 {
 	public class TomeRechargeBuff1:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.debuff[Type] = true;
-			DisplayName.SetDefault("Soul Recharging");
-			Description.SetDefault("Wait untill Book of Revelations recharge souls");
+			// DisplayName.SetDefault("Soul Recharging");
+			// Description.SetDefault("Wait untill Book of Revelations recharge souls");
 		}
 
 	}

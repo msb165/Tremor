@@ -11,39 +11,39 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 257;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 26;
-			item.noUseGraphic = true;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.height = 30;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.shoot = ModContent.ProjectileType<Projectiles.WhiteGoldDagger>();
-			item.shootSpeed = 22f;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 50;
-			item.rare = 5;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 257;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 26;
+			Item.noUseGraphic = true;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.height = 30;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.shoot = ModContent.ProjectileType<Projectiles.WhiteGoldDagger>();
+			Item.shootSpeed = 22f;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 50;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Royal Daggers");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Royal Daggers");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			int i = Main.myPlayer;
-			float num72 = item.shootSpeed;
-			int num73 = item.damage;
-			float num74 = item.knockBack;
-			num74 = player.GetWeaponKnockback(item, num74);
-			player.itemTime = item.useTime;
+			float num72 = Item.shootSpeed;
+			int num73 = Item.damage;
+			float num74 = Item.knockBack;
+			num74 = player.GetWeaponKnockback(Item, num74);
+			player.itemTime = Item.useTime;
 			Vector2 vector2 = player.RotatedRelativePoint(player.MountedCenter, true);
 			Vector2 value = Vector2.UnitX.RotatedBy(player.fullRotation, default(Vector2));
 			Vector2 vector3 = Main.MouseWorld - vector2;

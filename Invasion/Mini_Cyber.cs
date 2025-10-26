@@ -17,7 +17,7 @@ namespace Tremor.Invasion
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Mini-Cyber");
+			// DisplayName.SetDefault("Mini-Cyber");
 		}
 
 		public override void SetDefaults()

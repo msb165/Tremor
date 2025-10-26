@@ -8,18 +8,18 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items.Armor
 	{
 		public override void SetDefaults()
 		{
-			item.width = 36;
-			item.height = 24;
-			item.rare = 10;
-			item.defense = 22;
+			Item.width = 36;
+			Item.height = 24;
+			Item.rare = 10;
+			Item.defense = 22;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Breastplate");
-			Tooltip.SetDefault("25% increased alchemical damage\n" + 
+			// DisplayName.SetDefault("Nova Breastplate");
+			/* Tooltip.SetDefault("25% increased alchemical damage\n" + 
 "20% increased alchemical critical strike chance\n" +
-"Grants 40% chance to not consume flasks");
+"Grants 40% chance to not consume flasks"); */
 		}
 
 		public override void UpdateEquip(Player player)
@@ -27,7 +27,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items.Armor
 			player.GetModPlayer<MPlayer>().alchemicalCrit += 20;
 			player.GetModPlayer<MPlayer>().alchemicalDamage += 0.25f;
 			player.GetModPlayer<MPlayer>().novaChestplate = true;
-			Lighting.AddLight((int)((item.position.X + item.width / 2) / 16f), (int)((item.position.Y + item.height / 2) / 16f), 0.0f, 1.27f, 0.64f);
+			Lighting.AddLight((int)((Item.position.X + Item.width / 2) / 16f), (int)((Item.position.Y + Item.height / 2) / 16f), 0.0f, 1.27f, 0.64f);
 		}
 
 		public override void AddRecipes()

@@ -9,7 +9,7 @@ namespace Tremor.ZombieEvent.Mobs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bonecing");
+			// DisplayName.SetDefault("Bonecing");
 			Main.npcFrameCount[npc.type] = 3;
 		}
 

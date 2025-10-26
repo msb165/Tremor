@@ -8,25 +8,25 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 18;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 26;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.height = 30;
+			Item.damage = 18;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 26;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.height = 30;
 
-			item.shoot = ModContent.ProjectileType<Projectiles.NightmareArrowPro>();
-			item.shootSpeed = 22f;
-			item.knockBack = 4;
-			item.value = 10;
-			item.rare = 11;
-			item.ammo = AmmoID.Arrow;
+			Item.shoot = ModContent.ProjectileType<Projectiles.NightmareArrowPro>();
+			Item.shootSpeed = 22f;
+			Item.knockBack = 4;
+			Item.value = 10;
+			Item.rare = 11;
+			Item.ammo = AmmoID.Arrow;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nightmare Arrow");
-			Tooltip.SetDefault("'Enemies die... from fear.'");
+			// DisplayName.SetDefault("Nightmare Arrow");
+			// Tooltip.SetDefault("'Enemies die... from fear.'");
 		}
 
 		public override void AddRecipes()

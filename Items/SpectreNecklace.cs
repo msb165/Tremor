@@ -11,18 +11,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 20;
-			item.value = 110;
-			item.rare = 8;
+			Item.width = 26;
+			Item.height = 20;
+			Item.value = 110;
+			Item.rare = 8;
 
-			item.accessory = true;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Spectre Necklace");
-			Tooltip.SetDefault("The less mana, the more defense...");
+			// DisplayName.SetDefault("Spectre Necklace");
+			// Tooltip.SetDefault("The less mana, the more defense...");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

@@ -10,19 +10,19 @@ namespace Tremor.Items.MagicalArmor
 		public override void SetDefaults()
 		{
 
-			item.width = 250;
+			Item.width = 250;
 
-			item.height = 28;
-			item.value = 600;
-			item.rare = 1;
-			item.defense = 4;
+			Item.height = 28;
+			Item.value = 600;
+			Item.rare = 1;
+			Item.defense = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Theurgic Mantle");
-			Tooltip.SetDefault("4% increased magic damage\n" +
-"Increases maximum mana by 20");
+			// DisplayName.SetDefault("Theurgic Mantle");
+			/* Tooltip.SetDefault("4% increased magic damage\n" +
+"Increases maximum mana by 20"); */
 		}
 
 		public override void UpdateEquip(Player player)

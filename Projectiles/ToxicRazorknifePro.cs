@@ -21,11 +21,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Toxic Razorknife Pro");
+			// DisplayName.SetDefault("Toxic Razorknife Pro");
 
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.rand.NextBool(6))
 			{
@@ -33,7 +33,7 @@ namespace Tremor.Projectiles
 			}
 		}
 
-		public override void OnHitPvp(Player target, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
 		{
 			if (Main.rand.NextBool(6))
 			{

@@ -8,20 +8,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 10000;
-			item.rare = 4;
-			item.defense = 9;
-			item.accessory = true;
+			Item.value = 10000;
+			Item.rare = 4;
+			Item.defense = 9;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Creator");
-			Tooltip.SetDefault("15% increased damage and crit\n" +
-"Increases maximum mana and health by 100");
+			// DisplayName.SetDefault("The Creator");
+			/* Tooltip.SetDefault("15% increased damage and crit\n" +
+"Increases maximum mana and health by 100"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

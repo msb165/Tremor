@@ -8,24 +8,24 @@ namespace Tremor.Items.Steel
 		public override void SetDefaults()
 		{
 
-			item.damage = 12;
-			item.DamageType = DamageClass.Melee;
-			item.width = 42;
-			item.height = 42;
-			item.useTime = 21;
-			item.useAnimation = 21;
-			item.useStyle = 1;
-			item.knockBack = 6;
-			item.value = 660;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 12;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 42;
+			Item.height = 42;
+			Item.useTime = 21;
+			Item.useAnimation = 21;
+			Item.useStyle = 1;
+			Item.knockBack = 6;
+			Item.value = 660;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Steel Broadsword");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Steel Broadsword");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

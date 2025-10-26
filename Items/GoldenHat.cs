@@ -10,19 +10,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 22;
+			Item.width = 26;
+			Item.height = 22;
 
-			item.value = 30000;
-			item.rare = 2;
-			item.defense = 3;
+			Item.value = 30000;
+			Item.rare = 2;
+			Item.defense = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Golden Hat");
-			Tooltip.SetDefault("5% decreased magic damage\n" +
-"6% increased magic critical strike chance");
+			// DisplayName.SetDefault("Golden Hat");
+			/* Tooltip.SetDefault("5% decreased magic damage\n" +
+"6% increased magic critical strike chance"); */
 		}
 
 		public override void UpdateEquip(Player player)

@@ -8,29 +8,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 20;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 58;
-			item.height = 26;
-			item.useTime = 15;
-			item.useAnimation = 15;
-			item.shoot = ModContent.ProjectileType<Projectiles.PopcornAmmo>();
-			item.shootSpeed = 8f;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.useAmmo = ModContent.ItemType<PopcornAmmo>();
-			item.value = 60000;
-			item.rare = 9;
-			item.expert = true;
-			item.UseSound = SoundID.Item11;
+			Item.damage = 20;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 58;
+			Item.height = 26;
+			Item.useTime = 15;
+			Item.useAnimation = 15;
+			Item.shoot = ModContent.ProjectileType<Projectiles.PopcornAmmo>();
+			Item.shootSpeed = 8f;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.useAmmo = ModContent.ItemType<PopcornAmmo>();
+			Item.value = 60000;
+			Item.rare = 9;
+			Item.expert = true;
+			Item.UseSound = SoundID.Item11;
 
-			item.autoReuse = true;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Corn Heater");
-			Tooltip.SetDefault("Uses popcorn as ammo");
+			// DisplayName.SetDefault("Corn Heater");
+			// Tooltip.SetDefault("Uses popcorn as ammo");
 		}
 
 	}

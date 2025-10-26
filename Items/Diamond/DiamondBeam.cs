@@ -8,30 +8,30 @@ namespace Tremor.Items.Diamond
 	{
 		public override void SetDefaults()
 		{
-			item.channel = true;
-			item.damage = 288;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 7;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 16;
-			item.useAnimation = 16;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = 13800;
-			item.rare = 4;
-			item.UseSound = SoundID.Item43;
-			item.autoReuse = false;
-			Item.staff[item.type] = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.DiamondBeamPro>();
-			item.shootSpeed = 15f;
+			Item.channel = true;
+			Item.damage = 288;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 7;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 16;
+			Item.useAnimation = 16;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = 13800;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item43;
+			Item.autoReuse = false;
+			Item.staff[Item.type] = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.DiamondBeamPro>();
+			Item.shootSpeed = 15f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Diamond Beam");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Diamond Beam");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

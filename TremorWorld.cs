@@ -417,7 +417,7 @@ namespace Tremor
 		}
 
 		// todo:
-		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
+		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
 		{
 			int shiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
 			if (shiniesIndex == -1)

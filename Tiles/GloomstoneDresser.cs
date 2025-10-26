@@ -30,10 +30,10 @@ namespace Tremor.Tiles
 			TileObjectData.addTile(Type);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
 			AddMapEntry(new Color(8,91,146));
-			disableSmartCursor = true;
-			adjTiles = new int[] { TileID.Dressers };
-			dresser = "Gloomstone Dresser";
-			dresserDrop = ModContent.ItemType<Items.GloomstoneDresser>();
+			TileID.Sets.DisableSmartCursor[Type] = true;
+			AdjTiles = new int[] { TileID.Dressers };
+			//dresser = "Gloomstone Dresser";
+			//dresserDrop = ModContent.ItemType<Items.GloomstoneDresser>();
 		}
 
 		public override bool RightClick(int i, int j)
@@ -82,7 +82,7 @@ namespace Tremor.Tiles
 				else
 				{
 					//TODO: [Skipped for 1.4] player.flyingPigChest
-					//player.flyingPigChest = -1;
+					player.piggyBankProjTracker.Clear();
 					int num213 = Chest.FindChest(left, top);
 					if (num213 != -1)
 					{
@@ -146,15 +146,16 @@ namespace Tremor.Tiles
 			}
 			else
 			{
+				string defaultName = TileLoader.DefaultContainerName(tile.TileType, tile.TileFrameX, tile.TileFrameY);
 				if (Main.chest[chestIndex].name != "")
 				{
 					player.cursorItemIconText = Main.chest[chestIndex].name;
 				}
 				else
 				{
-					player.cursorItemIconText = chest;
+					player.cursorItemIconText = defaultName;
 				}
-				if (player.cursorItemIconText == chest)
+				if (player.cursorItemIconText == defaultName)
 				{
 					player.cursorItemIconID = ModContent.ItemType<Items.GloomstoneDresser>();
 					player.cursorItemIconText = "";
@@ -188,15 +189,16 @@ namespace Tremor.Tiles
 			}
 			else
 			{
+				string defaultName = TileLoader.DefaultContainerName(tile.TileType, tile.TileFrameX, tile.TileFrameY);
 				if (Main.chest[num138].name != "")
 				{
 					player.cursorItemIconText = Main.chest[num138].name;
 				}
 				else
 				{
-					player.cursorItemIconText = chest;
+					player.cursorItemIconText = defaultName;
 				}
-				if (player.cursorItemIconText == chest)
+				if (player.cursorItemIconText == defaultName)
 				{
 					player.cursorItemIconID = ModContent.ItemType<Items.GloomstoneDresser>();
 					player.cursorItemIconText = "";
@@ -215,10 +217,10 @@ namespace Tremor.Tiles
 			num = fail ? 1 : 3;
 		}
 
-		public override void KillMultiTile(int i, int j, int frameX, int frameY)
+/*		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(null, i * 16, j * 16, 48, 32, dresserDrop);
+			Item.NewItem(null, i * 16, j * 16, 48, 32, //dresserDrop);
 			Chest.DestroyChest(i, j);
-		}
+		}*/
 	}
 }

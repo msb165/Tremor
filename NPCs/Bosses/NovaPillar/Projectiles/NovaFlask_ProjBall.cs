@@ -52,7 +52,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 			}
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Player player = Main.player[projectile.owner];
 			MPlayer modPlayer = player.GetModPlayer<MPlayer>();
@@ -383,14 +383,19 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 				}
 			}
 		}
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			projectile.Kill();
 		}
 
-		public override void OnHitPlayer(Player target, int damage, bool crit)
+		public override bool? CanDamage()
 		{
-			damage = 0;
+			return false;
+		}
+
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
+		{
+			//info.Damage = 1;
 		}
 	}
 }

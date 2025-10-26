@@ -9,28 +9,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 245;
-			item.DamageType = DamageClass.Melee;
-			item.width = 66;
-			item.height = 66;
-			item.useTime = 45;
-			item.useAnimation = 45;
-			item.useStyle = 1;
-			item.knockBack = 25;
-			item.value = 12500;
-			item.rare = 11;
-			item.UseSound = SoundID.Item71;
-			item.autoReuse = false;
-			item.useTurn = false;
+			Item.damage = 245;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 66;
+			Item.height = 66;
+			Item.useTime = 45;
+			Item.useAnimation = 45;
+			Item.useStyle = 1;
+			Item.knockBack = 25;
+			Item.value = 12500;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item71;
+			Item.autoReuse = false;
+			Item.useTurn = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Executioner Axe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Executioner Axe");
+			// Tooltip.SetDefault("");
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(39, 120);
 		}

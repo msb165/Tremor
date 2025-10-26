@@ -8,17 +8,17 @@ namespace Tremor.Items.RedSteel
 	{
 		public override void SetDefaults()
 		{
-			item.width = 22;
-			item.height = 18;
-			item.value = 360;
-			item.rare = 2;
-			item.defense = 5;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 360;
+			Item.rare = 2;
+			Item.defense = 5;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Red Steel Greaves");
-			Tooltip.SetDefault("20% increased movement speed");
+			// DisplayName.SetDefault("Red Steel Greaves");
+			// Tooltip.SetDefault("20% increased movement speed");
 		}
 
 		public override void UpdateEquip(Player player)

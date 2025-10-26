@@ -6,22 +6,22 @@ namespace Tremor.Ice.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 12;
-			item.height = 12;
-			item.maxStack = 999;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 7;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.createWall = ModContent.WallType<GlacierWoodWallWall>();
+			Item.width = 12;
+			Item.height = 12;
+			Item.maxStack = 999;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 7;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.createWall = ModContent.WallType<GlacierWoodWallWall>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Glacier Wood Wall");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Glacier Wood Wall");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

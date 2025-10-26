@@ -6,10 +6,10 @@ namespace Tremor.ZombieEvent.Buffs
 {
 	public class HauntPetBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Haunt Pet Buff");
-			Description.SetDefault("10% increased summon damage");
+			// DisplayName.SetDefault("Haunt Pet Buff");
+			// Description.SetDefault("10% increased summon damage");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

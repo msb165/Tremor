@@ -7,16 +7,16 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.rare = 11;
-			item.value = 380000;
+			Item.rare = 11;
+			Item.value = 380000;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Uncharged Band");
-			Tooltip.SetDefault("Can be charged with fragments\n" +
-"Charged band summons a pet");
+			// DisplayName.SetDefault("Uncharged Band");
+			/* Tooltip.SetDefault("Can be charged with fragments\n" +
+"Charged band summons a pet"); */
 		}
 
 	}

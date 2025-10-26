@@ -9,17 +9,17 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 34;
-			item.height = 22;
-			item.value = Item.sellPrice(silver: 1);
-			item.rare = 1;
-			item.defense = 3;
+			Item.width = 34;
+			Item.height = 22;
+			Item.value = Item.sellPrice(silver: 1);
+			Item.rare = 1;
+			Item.defense = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Stone Chestplate");
-			Tooltip.SetDefault("10% reduced melee speed\nThe stone protects you, but makes you slower");
+			// DisplayName.SetDefault("Stone Chestplate");
+			// Tooltip.SetDefault("10% reduced melee speed\nThe stone protects you, but makes you slower");
 		}
 
 		public override void UpdateEquip(Player player)

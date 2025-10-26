@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 30;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 40;
-			item.useAnimation = 40;
-			item.useStyle = 5;
-			item.knockBack = 3;
-			item.value = 50000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
-			item.noUseGraphic = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.PerfectBehemothPro>();
-			item.shootSpeed = 8f;
+			Item.damage = 30;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 40;
+			Item.useAnimation = 40;
+			Item.useStyle = 5;
+			Item.knockBack = 3;
+			Item.value = 50000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
+			Item.noUseGraphic = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.PerfectBehemothPro>();
+			Item.shootSpeed = 8f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Perfect Behemoth");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Perfect Behemoth");
+			// Tooltip.SetDefault("");
 		}
 
 	}

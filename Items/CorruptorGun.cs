@@ -11,29 +11,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 26;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 42;
-			item.height = 30;
+			Item.damage = 26;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 42;
+			Item.height = 30;
 
-			item.useTime = 35;
-			item.useAnimation = 35;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 4f;
-			item.value = Item.sellPrice(0, 2, 0, 0);
-			item.rare = 3;
-			item.UseSound = SoundID.Item40;
-			item.autoReuse = false;
-			item.shoot = 10;
-			item.shootSpeed = 15f;
-			item.useAmmo = AmmoID.Bullet;
+			Item.useTime = 35;
+			Item.useAnimation = 35;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 4f;
+			Item.value = Item.sellPrice(0, 2, 0, 0);
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item40;
+			Item.autoReuse = false;
+			Item.shoot = 10;
+			Item.shootSpeed = 15f;
+			Item.useAmmo = AmmoID.Bullet;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Corruptor Gun");
-			Tooltip.SetDefault("Spends bullets and fires small corruptors");
+			// DisplayName.SetDefault("Corruptor Gun");
+			// Tooltip.SetDefault("Spends bullets and fires small corruptors");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

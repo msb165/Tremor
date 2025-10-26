@@ -10,19 +10,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 26;
+			Item.width = 26;
+			Item.height = 26;
 
-			item.value = 1000000;
-			item.rare = 1;
-			item.defense = 36;
+			Item.value = 1000000;
+			Item.rare = 1;
+			Item.defense = 36;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sniper Helmet");
-			Tooltip.SetDefault("15% increased ranged damage\n" +
-"20% decreased movement speed");
+			// DisplayName.SetDefault("Sniper Helmet");
+			/* Tooltip.SetDefault("15% increased ranged damage\n" +
+"20% decreased movement speed"); */
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

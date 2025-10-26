@@ -8,27 +8,27 @@ namespace Tremor.Items.Cursed
 		public override void SetDefaults()
 		{
 
-			item.damage = 82;
-			item.DamageType = DamageClass.Magic;
-			item.width = 28;
-			item.height = 30;
-			item.useTime = 14;
-			item.useAnimation = 14;
-			item.shoot = ModContent.ProjectileType<Projectiles.CursedTwisterPro>();
-			item.shootSpeed = 14f;
-			item.mana = 6;
-			item.useStyle = 5;
-			item.knockBack = 3;
-			item.value = 122355;
-			item.rare = 5;
-			item.UseSound = SoundID.Item21;
-			item.autoReuse = true;
+			Item.damage = 82;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 28;
+			Item.height = 30;
+			Item.useTime = 14;
+			Item.useAnimation = 14;
+			Item.shoot = ModContent.ProjectileType<Projectiles.CursedTwisterPro>();
+			Item.shootSpeed = 14f;
+			Item.mana = 6;
+			Item.useStyle = 5;
+			Item.knockBack = 3;
+			Item.value = 122355;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item21;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cursed Twister");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Cursed Twister");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

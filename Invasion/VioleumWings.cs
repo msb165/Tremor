@@ -9,17 +9,17 @@ namespace Tremor.Invasion
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 20;
-			item.value = 500000;
-			item.rare = 11;
-			item.accessory = true;
+			Item.width = 22;
+			Item.height = 20;
+			Item.value = 500000;
+			Item.rare = 11;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paradox Wings");
-			Tooltip.SetDefault("Allows flight and slow fall");
+			// DisplayName.SetDefault("Paradox Wings");
+			// Tooltip.SetDefault("Allows flight and slow fall");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

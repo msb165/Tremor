@@ -9,18 +9,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 10000;
-			item.rare = 5;
-			item.defense = 22;
+			Item.value = 10000;
+			Item.rare = 5;
+			Item.defense = 22;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paraxyde Breastplate");
-			Tooltip.SetDefault("Increases melee and magic criticals strike chance by 15");
+			// DisplayName.SetDefault("Paraxyde Breastplate");
+			// Tooltip.SetDefault("Increases melee and magic criticals strike chance by 15");
 		}
 
 		public override void UpdateEquip(Player player)

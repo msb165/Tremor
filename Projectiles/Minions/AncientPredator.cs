@@ -27,11 +27,11 @@ namespace Tremor.Projectiles.Minions
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("AncientPredator");
+      // DisplayName.SetDefault("AncientPredator");
        
     }
 
-    public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+    public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
     {
             target.AddBuff(20, 80, false);
             target.AddBuff(70, 80, false);

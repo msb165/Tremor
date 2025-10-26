@@ -32,7 +32,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Molten Watcher");
+			// DisplayName.SetDefault("Molten Watcher");
 
 		}
 

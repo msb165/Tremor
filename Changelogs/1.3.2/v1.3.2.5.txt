@@ -84,7 +84,7 @@ Items:
 - Undead Warriors variants are now named. Savage are more common, Cruel and Relentless less common than Savage
 - Undead Warriors stats changed, they are now properly scaling into hardmode and expert mode. They all have slightly increased defense and knockback resist to match vanilla zombies
 - Undead Warriors gain more life and damage into hardmode. They also gain increased life and damage per player in expert mode
-- Undead Warriors will drop Invar items less frequently, all drops were 20% before and now depend on the variant. Relentless can drop all Invar items, other variants may only drop a certain Invar item. Relentless variant has the highest droprates.
+- Undead Warriors will drop Invar items less frequently, all drops were 20% before and now depend on the variant. Relentless can drop all Invar items, other variants may only drop a certain Invar Item. Relentless variant has the highest droprates.
 - The Invar drops now craft into 1 less Invar Bar
 - The Invar drops are now worth however many Invar Bars they craft into
 - Invar Bar is now valued at 1 silver each

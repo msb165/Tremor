@@ -10,28 +10,28 @@ namespace Tremor.Invasion
 		public override void SetDefaults()
 		{
 
-			item.damage = 100;
-			item.width = 18;
-			item.height = 56;
-			item.DamageType = DamageClass.Ranged;
-			item.useTime = 17;
-			item.shoot = 1;
-			item.shootSpeed = 52f;
-			item.noMelee = true;
-			item.useAnimation = 17;
-			item.useStyle = 5;
-			item.knockBack = 5;
-			item.value = 250000;
-			item.useAmmo = AmmoID.Arrow;
-			item.rare = 11;
-			item.UseSound = SoundID.Item5;
-			item.autoReuse = true;
+			Item.damage = 100;
+			Item.width = 18;
+			Item.height = 56;
+			Item.DamageType = DamageClass.Ranged;
+			Item.useTime = 17;
+			Item.shoot = 1;
+			Item.shootSpeed = 52f;
+			Item.noMelee = true;
+			Item.useAnimation = 17;
+			Item.useStyle = 5;
+			Item.knockBack = 5;
+			Item.value = 250000;
+			Item.useAmmo = AmmoID.Arrow;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item5;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Etherealm");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("The Etherealm");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

@@ -12,21 +12,21 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 22;
+			Item.width = 22;
+			Item.height = 22;
 
-			item.accessory = true;
-			item.defense = 3;
-			item.rare = 2;
-			item.value = 50000;
+			Item.accessory = true;
+			Item.defense = 3;
+			Item.rare = 2;
+			Item.value = 50000;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Warrior Focus");
-			Tooltip.SetDefault("6% increased melee damage\n" +
-"Increases melee critical strike chance by 11");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 4));
+			// DisplayName.SetDefault("Warrior Focus");
+			/* Tooltip.SetDefault("6% increased melee damage\n" +
+"Increases melee critical strike chance by 11"); */
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(6, 4));
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

@@ -8,20 +8,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 10000;
-			item.rare = 11;
-			item.expert = true;
-			item.accessory = true;
+			Item.value = 10000;
+			Item.rare = 11;
+			Item.expert = true;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Golden Glowing Ring");
-			Tooltip.SetDefault("Summons two blades to protect you\n" +
-"Blue has a chance to inflict confusion on enemy, yellow can inflict midas.");
+			// DisplayName.SetDefault("Golden Glowing Ring");
+			/* Tooltip.SetDefault("Summons two blades to protect you\n" +
+"Blue has a chance to inflict confusion on enemy, yellow can inflict midas."); */
 		}
 
 		public override void UpdateEquip(Player player)

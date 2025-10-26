@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class NorthwindBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("North wind");
-			Description.SetDefault("The frost ghost will fight for you");
+			// DisplayName.SetDefault("North wind");
+			// Description.SetDefault("The frost ghost will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

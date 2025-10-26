@@ -11,28 +11,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 356;
-			//item.melee = false;
-			item.DamageType = DamageClass.Magic;
-			item.width = 50;
-			item.height = 55;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.mana = 9;
-			item.useStyle = 5;
-			item.shoot = 376;
-			item.shootSpeed = 26f;
-			item.knockBack = 4;
-			item.value = 12000;
-			item.rare = 0;
-			item.UseSound = SoundID.Item100;
-			item.autoReuse = true;
+			Item.damage = 356;
+			//Item.melee = false;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 50;
+			Item.height = 55;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.mana = 9;
+			Item.useStyle = 5;
+			Item.shoot = 376;
+			Item.shootSpeed = 26f;
+			Item.knockBack = 4;
+			Item.value = 12000;
+			Item.rare = 0;
+			Item.UseSound = SoundID.Item100;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Volcannon");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Volcannon");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -33,9 +33,9 @@ namespace Tremor.Tiles
 			TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
 			TileObjectData.addTile(Type);
 			AddMapEntry(new Color(91, 78, 67));
-			disableSmartCursor = true;
-			adjTiles = new int[] { TileID.Containers };
-			chest = "Ruin Chest";
+			TileID.Sets.DisableSmartCursor[Type] = true;
+			AdjTiles = new int[] { TileID.Containers };
+			//chest = "Ruin Chest";
 			TileID.Sets.BasicChest[Type] = true;
 		}
 

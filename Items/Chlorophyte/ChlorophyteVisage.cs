@@ -11,18 +11,18 @@ namespace Tremor.Items.Chlorophyte
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 22;
+			Item.width = 24;
+			Item.height = 22;
 
-			item.value = 60000;
-			item.rare = 7;
-			item.defense = 13;
+			Item.value = 60000;
+			Item.rare = 7;
+			Item.defense = 13;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chlorophyte Visage");
-			Tooltip.SetDefault("29% increased alchemical damage");
+			// DisplayName.SetDefault("Chlorophyte Visage");
+			// Tooltip.SetDefault("29% increased alchemical damage");
 		}
 
 		public override void UpdateEquip(Player player)

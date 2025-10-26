@@ -11,19 +11,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 22;
-			item.rare = 11;
-			item.maxStack = 999;
-			ItemID.Sets.ItemNoGravity[item.type] = true;
-			ItemID.Sets.ItemIconPulse[item.type] = true;
+			Item.width = 22;
+			Item.height = 22;
+			Item.rare = 11;
+			Item.maxStack = 999;
+			ItemID.Sets.ItemNoGravity[Item.type] = true;
+			ItemID.Sets.ItemIconPulse[Item.type] = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Multidimensional Fragment");
-			Tooltip.SetDefault("");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 12));
+			// DisplayName.SetDefault("Multidimensional Fragment");
+			// Tooltip.SetDefault("");
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(6, 12));
 		}
 
 	}

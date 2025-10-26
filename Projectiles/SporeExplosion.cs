@@ -22,7 +22,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Spore Explosion");
+			// DisplayName.SetDefault("Spore Explosion");
 
 		}
 

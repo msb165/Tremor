@@ -9,20 +9,20 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 26;
-			item.height = 20;
-			item.value = 110;
-			item.rare = 4;
-			item.defense = 5;
+			Item.width = 26;
+			Item.height = 20;
+			Item.value = 110;
+			Item.rare = 4;
+			Item.defense = 5;
 
-			item.accessory = true;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dead Head");
-			Tooltip.SetDefault("4% increased damage and critical strike chance\n" +
-"15% increased movement speed");
+			// DisplayName.SetDefault("Dead Head");
+			/* Tooltip.SetDefault("4% increased damage and critical strike chance\n" +
+"15% increased movement speed"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

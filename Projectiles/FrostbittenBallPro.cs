@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Tremor.Projectiles
 {
-	public class FrostbittenBallPro:TremorModProjectile
+	public class FrostbittenBallPro : TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -22,7 +22,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frostbitten Ball");
+			// DisplayName.SetDefault("Frostbitten Ball");
 
 		}
 
@@ -32,7 +32,7 @@ namespace Tremor.Projectiles
 			Main.dust[dust].noGravity = true;
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.rand.NextBool(3))
 			{
@@ -40,7 +40,7 @@ namespace Tremor.Projectiles
 			}
 		}
 
-		public override void OnHitPvp(Player target, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
 		{
 			if (Main.rand.NextBool(3))
 			{
@@ -48,9 +48,9 @@ namespace Tremor.Projectiles
 			}
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
-			Texture2D texture = Mod.GetTexture("Tremor/Projectiles/FrostbittenBall_Chain");
+			Texture2D texture = (Texture2D)ModContent.Request<Texture2D>("Tremor/Projectiles/FrostbittenBall_Chain");
 
 			Vector2 position = projectile.Center;
 			Vector2 mountedCenter = Main.player[projectile.owner].MountedCenter;

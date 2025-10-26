@@ -9,18 +9,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 22;
-			item.maxStack = 999;
-			item.value = 200;
-			item.rare = 11;
-			ItemID.Sets.ItemIconPulse[item.type] = true;
+			Item.width = 22;
+			Item.height = 22;
+			Item.maxStack = 999;
+			Item.value = 200;
+			Item.rare = 11;
+			ItemID.Sets.ItemIconPulse[Item.type] = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Husk of Dusk");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Husk of Dusk");
+			// Tooltip.SetDefault("");
 		}
 
 		public override Color? GetAlpha(Color lightColor)

@@ -8,25 +8,25 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 10;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 12;
-			item.height = 12;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.knockBack = 3;
-			item.value = 3;
-			item.rare = 1;
-			item.shoot = 14;
-			item.shootSpeed = 4f;
-			item.shoot = 14;
-			item.ammo = AmmoID.Bullet;
+			Item.damage = 10;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 12;
+			Item.height = 12;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.knockBack = 3;
+			Item.value = 3;
+			Item.rare = 1;
+			Item.shoot = 14;
+			Item.shootSpeed = 4f;
+			Item.shoot = 14;
+			Item.ammo = AmmoID.Bullet;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Tungsten Bullet");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Tungsten Bullet");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

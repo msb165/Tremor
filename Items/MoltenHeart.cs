@@ -13,23 +13,23 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 40;
-			item.height = 28;
-			item.maxStack = 20;
-			item.value = 100;
-			item.rare = 3;
-			item.useAnimation = 15;
-			item.useTime = 15;
-			item.useStyle = 4;
-			item.consumable = true;
+			Item.width = 40;
+			Item.height = 28;
+			Item.maxStack = 20;
+			Item.value = 100;
+			Item.rare = 3;
+			Item.useAnimation = 15;
+			Item.useTime = 15;
+			Item.useStyle = 4;
+			Item.consumable = true;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Molten Heart");
-			Tooltip.SetDefault("Summons Heater of Worlds\n" +
-"Requires the hell biome");
+			// DisplayName.SetDefault("Molten Heart");
+			/* Tooltip.SetDefault("Summons Heater of Worlds\n" +
+"Requires the hell biome"); */
 		}
 
 		public override bool CanUseItem(Player player)

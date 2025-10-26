@@ -23,7 +23,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Adamantite Bolt");
+			// DisplayName.SetDefault("Adamantite Bolt");
 
 		}
 
@@ -58,7 +58,7 @@ namespace Tremor.Projectiles
 			}
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			for (int k = 0; k < 5; k++)
 			{
@@ -78,7 +78,7 @@ namespace Tremor.Projectiles
 			}
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			projectile.ai[0] += 0.1f;
 			projectile.velocity *= 0.75f;

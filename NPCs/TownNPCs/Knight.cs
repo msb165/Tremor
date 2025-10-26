@@ -26,7 +26,7 @@ namespace Tremor.NPCs.TownNPCs
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Knight");
+			// DisplayName.SetDefault("Knight");
 			Main.npcFrameCount[npc.type] = 25;
 			NPCID.Sets.ExtraFramesCount[npc.type] = 5;
 			NPCID.Sets.AttackFrameCount[npc.type] = 4;
@@ -52,7 +52,7 @@ namespace Tremor.NPCs.TownNPCs
 			AnimationType = NPCID.GoblinTinkerer;
 		}
 
-		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+		public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
 			=> Main.player.Any(player => !player.dead);
 
 		private readonly List<string> _names = new List<string>
@@ -86,46 +86,50 @@ namespace Tremor.NPCs.TownNPCs
 			button = Lang.inter[28].Value;
 		}
 
-		public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+		public override void OnChatButtonClicked(bool firstButton, ref string shopName)
 		{
-			shop = firstButton;
+			if (firstButton)
+			{
+				shopName = "Shop";
+			}
 		}
 
-		public override void SetupShop(Chest shop, ref int nextSlot)
+		public override void ModifyActiveShop(string shopName, Item[] items)
 		{
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ThrowingAxe>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<RustySword>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<RipperKnife>());
+			NPCShop shop = new(Type);
+			shop.Add(ModContent.ItemType<ThrowingAxe>());
+			shop.Add(ModContent.ItemType<RustySword>());
+			shop.Add(ModContent.ItemType<RipperKnife>());
 
 			if (NPC.downedBoss1)
 			{
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<TombRaider>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<SpikeShield>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ChainCoif>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<Chainmail>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ChainGreaves>());
+				shop.Add(ModContent.ItemType<TombRaider>());
+				shop.Add(ModContent.ItemType<SpikeShield>());
+				shop.Add(ModContent.ItemType<ChainCoif>());
+				shop.Add(ModContent.ItemType<Chainmail>());
+				shop.Add(ModContent.ItemType<ChainGreaves>());
 			}
 			if (NPC.downedBoss2)
 			{
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<TwilightHorns>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ToxicRazorknife>());
+				shop.Add(ModContent.ItemType<TwilightHorns>());
+				shop.Add(ModContent.ItemType<ToxicRazorknife>());
 			}
 			if (NPC.downedBoss3)
 			{
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<NecromancerClaymore>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<Shovel>());
+				shop.Add(ModContent.ItemType<NecromancerClaymore>());
+				shop.Add(ModContent.ItemType<Shovel>());
 			}
 
 			if (Main.hardMode)
 			{
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<GoldenThrowingAxe>());
+				shop.Add(ModContent.ItemType<GoldenThrowingAxe>());
 
 				if (Main.bloodMoon)
-					shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<Oppressor>());
+					shop.Add(ModContent.ItemType<Oppressor>());
 			}
 			if (NPC.downedMechBossAny)
 			{
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<PrizmaticSword>());
+				shop.Add(ModContent.ItemType<PrizmaticSword>());
 			}
 		}
 
@@ -153,15 +157,15 @@ namespace Tremor.NPCs.TownNPCs
 			randomOffset = 2f;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for (int i = 0; i < 3; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/KnightGore{i + 1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"KnightGore{i + 1}"), 1f);
 			}
 		}
 	}

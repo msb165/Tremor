@@ -59,9 +59,9 @@ namespace Tremor.Tiles
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
 			TileID.Sets.HousingWalls[Type] = true; //needed for non-solid blocks to count as walls
 			AddMapEntry(new Color(111,22,22));
-			disableSmartCursor = true;
-			adjTiles = new int[]{ TileID.OpenDoor };
-			CloseDoorID = ModContent.TileType<Tiles.CrimstoneDoorClosed>();
+			TileID.Sets.DisableSmartCursor[Type] = true;
+			AdjTiles = new int[]{ TileID.OpenDoor };
+			//CloseDoorID/* tModPorter Note: Removed. Use TileID.Sets.//CloseDoorID instead */ = ModContent.TileType<Tiles.CrimstoneDoorClosed>();
 		}
 
 		public override void NumDust(int i, int j, bool fail, ref int num)

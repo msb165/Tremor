@@ -11,18 +11,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 20;
+			Item.width = 22;
+			Item.height = 20;
 
-			item.value = 100000;
-			item.rare = 5;
-			item.accessory = true;
+			Item.value = 100000;
+			Item.rare = 5;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Red Feather Wings");
-			Tooltip.SetDefault("The wings made of red feathers.");
+			// DisplayName.SetDefault("Red Feather Wings");
+			// Tooltip.SetDefault("The wings made of red feathers.");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

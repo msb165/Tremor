@@ -8,30 +8,30 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.useStyle = 5;
-			item.autoReuse = true;
-			item.useAnimation = 36;
-			item.useTime = 36;
+			Item.useStyle = 5;
+			Item.autoReuse = true;
+			Item.useAnimation = 36;
+			Item.useTime = 36;
 
-			item.width = 44;
-			item.height = 14;
-			item.shoot = 10;
-			item.useAmmo = AmmoID.Bullet;
-			item.UseSound = SoundID.Item11;
-			item.damage = 344;
-			item.shootSpeed = 9f;
-			item.noMelee = true;
-			item.value = 100000;
-			item.knockBack = 5.25f;
-			item.rare = 11;
-			item.DamageType = DamageClass.Ranged;
-			item.crit = 7;
+			Item.width = 44;
+			Item.height = 14;
+			Item.shoot = 10;
+			Item.useAmmo = AmmoID.Bullet;
+			Item.UseSound = SoundID.Item11;
+			Item.damage = 344;
+			Item.shootSpeed = 9f;
+			Item.noMelee = true;
+			Item.value = 100000;
+			Item.knockBack = 5.25f;
+			Item.rare = 11;
+			Item.DamageType = DamageClass.Ranged;
+			Item.crit = 7;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Evolved Undertaker");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Evolved Undertaker");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

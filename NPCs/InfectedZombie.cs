@@ -8,7 +8,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Infected Zombie");
+			// DisplayName.SetDefault("Infected Zombie");
 			Main.npcFrameCount[npc.type] = 3;
 		}
 

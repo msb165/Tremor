@@ -10,18 +10,18 @@ namespace Tremor.Items.Harpy
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 18;
-			item.value = 100;
+			Item.width = 26;
+			Item.height = 18;
+			Item.value = 100;
 
-			item.rare = 2;
-			item.defense = 5;
+			Item.rare = 2;
+			Item.defense = 5;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Harpy Chestplate");
-			Tooltip.SetDefault("Increases jump height");
+			// DisplayName.SetDefault("Harpy Chestplate");
+			// Tooltip.SetDefault("Increases jump height");
 		}
 
 		public override void UpdateEquip(Player player)

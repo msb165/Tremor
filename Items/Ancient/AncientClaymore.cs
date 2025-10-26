@@ -10,28 +10,28 @@ namespace Tremor.Items.Ancient
 		public override void SetDefaults()
 		{
 
-			item.damage = 110;
-			item.DamageType = DamageClass.Melee;
-			item.width = 88;
-			item.height = 88;
-			item.useTime = 45;
-			item.useAnimation = 45;
-			item.useStyle = 1;
-			item.shoot = ModContent.ProjectileType<Projectiles.AncientClaymorePro>();
-			item.shootSpeed = 10f;
-			item.knockBack = 4;
-			item.value = 250000;
-			item.rare = 10;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.useTurn = false;
+			Item.damage = 110;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 88;
+			Item.height = 88;
+			Item.useTime = 45;
+			Item.useAnimation = 45;
+			Item.useStyle = 1;
+			Item.shoot = ModContent.ProjectileType<Projectiles.AncientClaymorePro>();
+			Item.shootSpeed = 10f;
+			Item.knockBack = 4;
+			Item.value = 250000;
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
+			Item.useTurn = false;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Claymore");
-			Tooltip.SetDefault("Shoots out a ghostly sword that inflicts Ichor on enemies");
+			// DisplayName.SetDefault("Ancient Claymore");
+			// Tooltip.SetDefault("Shoots out a ghostly sword that inflicts Ichor on enemies");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

@@ -22,7 +22,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dragon Breath Pro");
+			// DisplayName.SetDefault("Dragon Breath Pro");
 
 		}
 
@@ -32,7 +32,7 @@ namespace Tremor.Projectiles
 			Main.dust[dust].noGravity = true;
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.rand.NextBool(5))
 			{
@@ -40,7 +40,7 @@ namespace Tremor.Projectiles
 			}
 		}
 
-		public override void OnHitPvp(Player target, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
 		{
 			if (Main.rand.NextBool(5))
 			{

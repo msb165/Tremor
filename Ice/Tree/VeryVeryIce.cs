@@ -31,7 +31,7 @@ namespace Tremor.Ice.Tree
 			//TODO: [Skipped for 1.4] Fix Trees
 			//SetModTree(new TremorTree());
 			
-			ItemDrop = ModContent.ItemType<IceBlockB>();
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<IceBlockB>();
 		}
 
 		public override bool PreDraw(int i, int j, SpriteBatch spriteBatch)

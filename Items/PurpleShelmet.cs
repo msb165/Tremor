@@ -9,17 +9,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 18;
-			item.height = 22;
-			item.value = 5000;
-			item.rare = 2;
-			item.defense = 6;
+			Item.width = 18;
+			Item.height = 22;
+			Item.value = 5000;
+			Item.rare = 2;
+			Item.defense = 6;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Purple Shelmet");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Purple Shelmet");
+			// Tooltip.SetDefault("");
 		}
 
 	}

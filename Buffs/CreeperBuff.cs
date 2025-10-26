@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class CreeperBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Creeper");
-			Description.SetDefault("The creeper will fight for you");
+			// DisplayName.SetDefault("Creeper");
+			// Description.SetDefault("The creeper will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

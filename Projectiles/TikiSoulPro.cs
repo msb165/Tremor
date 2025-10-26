@@ -24,7 +24,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Tiki Soul");
+			// DisplayName.SetDefault("Tiki Soul");
 
 		}
 

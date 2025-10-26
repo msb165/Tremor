@@ -9,27 +9,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 95;
-			item.DamageType = DamageClass.Melee;
-			item.width = 94;
-			item.height = 94;
-			item.useTime = 45;
-			item.useAnimation = 45;
-			item.useStyle = 1;
-			item.knockBack = 8;
-			item.value = 50000;
-			item.rare = 8;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 95;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 94;
+			Item.height = 94;
+			Item.useTime = 45;
+			Item.useAnimation = 45;
+			Item.useStyle = 1;
+			Item.knockBack = 8;
+			Item.value = 50000;
+			Item.rare = 8;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Turtle Greatsword");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Turtle Greatsword");
+			// Tooltip.SetDefault("");
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(36, 300);
 		}

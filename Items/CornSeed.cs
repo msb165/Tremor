@@ -9,25 +9,25 @@ namespace Tremor.Items
 		{
 			Tile tile = new Tile();
 
-			item.maxStack = 999;
-			item.height = 2;
-			item.width = 2;
-			item.createTile = ModContent.TileType<Tiles.Corn>();
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.value = 100;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.rare = 2;
-			item.consumable = true;
+			Item.maxStack = 999;
+			Item.height = 2;
+			Item.width = 2;
+			Item.createTile = ModContent.TileType<Tiles.Corn>();
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.value = 100;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.rare = 2;
+			Item.consumable = true;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Corn Seeds");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Corn Seeds");
+			// Tooltip.SetDefault("");
 		}
 
 	}

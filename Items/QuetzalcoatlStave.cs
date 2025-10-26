@@ -10,30 +10,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 80;
-			item.DamageType = DamageClass.Summon;
-			item.mana = 10;
-			item.width = 26;
-			item.height = 28;
+			Item.damage = 80;
+			Item.DamageType = DamageClass.Summon;
+			Item.mana = 10;
+			Item.width = 26;
+			Item.height = 28;
 
-			item.useTime = 36;
-			item.useAnimation = 36;
-			item.useStyle = 1;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = 1000000;
-			item.rare = 11;
-			item.UseSound = SoundID.Item44;
-			item.shoot = ModContent.ProjectileType<Projectiles.Minions.QuetzalcoatlPro>();
-			item.shootSpeed = 2f;
-			item.buffType = ModContent.BuffType<Buffs.QuetzalcoatlBuff>();
-			item.buffTime = 3600;
+			Item.useTime = 36;
+			Item.useAnimation = 36;
+			Item.useStyle = 1;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = 1000000;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item44;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Minions.QuetzalcoatlPro>();
+			Item.shootSpeed = 2f;
+			Item.buffType = ModContent.BuffType<Buffs.QuetzalcoatlBuff>();
+			Item.buffTime = 3600;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Baby Quetzalcoatl Stave");
-			Tooltip.SetDefault("Summons a baby quetzalcoatl to fight for you.");
+			// DisplayName.SetDefault("Baby Quetzalcoatl Stave");
+			// Tooltip.SetDefault("Summons a baby quetzalcoatl to fight for you.");
 		}
 
 		public override bool AltFunctionUse(Player player)

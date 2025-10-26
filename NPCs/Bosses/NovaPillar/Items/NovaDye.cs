@@ -9,17 +9,17 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 16;
-			item.height = 24;
-			item.maxStack = 99;
-			item.value = Item.sellPrice(0, 2, 50, 0);
-			item.rare = 4;
+			Item.width = 16;
+			Item.height = 24;
+			Item.maxStack = 99;
+			Item.value = Item.sellPrice(0, 2, 50, 0);
+			Item.rare = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Dye");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Nova Dye");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

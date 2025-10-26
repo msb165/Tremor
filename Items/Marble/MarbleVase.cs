@@ -8,24 +8,24 @@ namespace Tremor.Items.Marble
 		public override void SetDefaults()
 		{
 
-			item.width = 20;
-			item.height = 22;
-			item.maxStack = 999;
-			item.value = 100;
-			item.rare = 1;
-			item.createTile = ModContent.TileType<Tiles.MarbleVase>();
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
+			Item.width = 20;
+			Item.height = 22;
+			Item.maxStack = 999;
+			Item.value = 100;
+			Item.rare = 1;
+			Item.createTile = ModContent.TileType<Tiles.MarbleVase>();
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Marble Vase");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Marble Vase");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

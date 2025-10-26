@@ -9,19 +9,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 30000;
-			item.rare = 1;
-			item.defense = 4;
+			Item.value = 30000;
+			Item.rare = 1;
+			Item.defense = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vile Chestplate");
-			Tooltip.SetDefault("8% increased minion damage\n" +
-"Increases your max number of minions");
+			// DisplayName.SetDefault("Vile Chestplate");
+			/* Tooltip.SetDefault("8% increased minion damage\n" +
+"Increases your max number of minions"); */
 		}
 
 		public override void UpdateEquip(Player player)

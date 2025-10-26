@@ -8,18 +8,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.accessory = true;
-			item.width = 22;
-			item.height = 18;
-			item.value = 10000000;
-			item.rare = 11;
+			Item.accessory = true;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 10000000;
+			Item.rare = 11;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Extraterrestrial Rubies");
-			Tooltip.SetDefault("Increases maximum life by 100\n" +
-"Greatly increases life regeneration");
+			// DisplayName.SetDefault("Extraterrestrial Rubies");
+			/* Tooltip.SetDefault("Increases maximum life by 100\n" +
+"Greatly increases life regeneration"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

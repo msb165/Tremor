@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 38;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 18;
-			item.height = 18;
-			item.maxStack = 999;
-			item.useTime = 12;
-			item.useAnimation = 12;
-			item.shoot = ModContent.ProjectileType<Projectiles.SpiK3Ball>();
-			item.shootSpeed = 7f;
-			item.useStyle = 1;
-			item.knockBack = 3;
-			item.value = 155;
-			item.rare = 8;
-			item.consumable = true;
-			item.UseSound = SoundID.Item1;
+			Item.damage = 38;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 18;
+			Item.height = 18;
+			Item.maxStack = 999;
+			Item.useTime = 12;
+			Item.useAnimation = 12;
+			Item.shoot = ModContent.ProjectileType<Projectiles.SpiK3Ball>();
+			Item.shootSpeed = 7f;
+			Item.useStyle = 1;
+			Item.knockBack = 3;
+			Item.value = 155;
+			Item.rare = 8;
+			Item.consumable = true;
+			Item.UseSound = SoundID.Item1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("SpiK-3 Ball");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("SpiK-3 Ball");
+			// Tooltip.SetDefault("");
 		}
 
 	}

@@ -11,17 +11,17 @@ namespace Tremor.Items.Dark
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 36;
-			item.value = 12500;
-			item.rare = 5;
-			item.accessory = true;
+			Item.width = 22;
+			Item.height = 36;
+			Item.value = 12500;
+			Item.rare = 5;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Darkness Dust");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Darkness Dust");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

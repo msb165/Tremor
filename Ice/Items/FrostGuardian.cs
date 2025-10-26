@@ -9,19 +9,19 @@ namespace Tremor.Ice.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 34;
-			item.value = 110;
-			item.rare = 1;
-			item.accessory = true;
-			item.defense = 4;
+			Item.width = 26;
+			Item.height = 34;
+			Item.value = 110;
+			Item.rare = 1;
+			Item.accessory = true;
+			Item.defense = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frost Guardian");
-			Tooltip.SetDefault("Grants immunity to all frost debuffs \n" +
-"5% increased melee damage and speed");
+			// DisplayName.SetDefault("Frost Guardian");
+			/* Tooltip.SetDefault("Grants immunity to all frost debuffs \n" +
+"5% increased melee damage and speed"); */
 		}
 
 		public override void UpdateEquip(Player player)

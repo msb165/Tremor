@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 36;
-			item.DamageType = DamageClass.Melee;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 25;
-			item.useAnimation = 10;
-			item.useStyle = 1;
-			item.knockBack = 2;
-			item.value = 5025;
-			item.rare = 5;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 36;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 25;
+			Item.useAnimation = 10;
+			Item.useStyle = 1;
+			Item.knockBack = 2;
+			Item.value = 5025;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crab Claw");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Crab Claw");
+			// Tooltip.SetDefault("");
 		}
 
 	}

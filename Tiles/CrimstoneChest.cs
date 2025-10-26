@@ -9,7 +9,7 @@ using Terraria.ObjectData;
 
 namespace Tremor.Tiles
 {
-	public class CrimstoneChest:TremorModTile
+	public class CrimstoneChest : TremorModTile
 	{
 		public override void SetDefaults()
 		{
@@ -31,13 +31,13 @@ namespace Tremor.Tiles
 			TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
 			TileObjectData.addTile(Type);
 			AddMapEntry(new Color(111, 22, 22));
-			disableSmartCursor = true;
-			adjTiles = new int[] { TileID.Containers };
-			chest = "Crimstone Chest";
-			chestDrop = ModContent.ItemType<Items.Crimstone.CrimstoneChest>();
+			TileID.Sets.DisableSmartCursor[Type] = true;
+			AdjTiles = new int[] { TileID.Containers };
+			//chest = "Crimstone Chest";
+			//chestDrop = ModContent.ItemType<Items.Crimstone.CrimstoneChest>();
 		}
 
-				public string MapChestName(string name, int i, int j)
+		public string MapChestName(string name, int i, int j)
 		{
 			int left = i;
 			int top = j;
@@ -65,8 +65,8 @@ namespace Tremor.Tiles
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(null, i * 16, j * 16, 32, 32, chestDrop);
-			Chest.DestroyChest(i, j);
+			//Item.NewItem(null, i * 16, j * 16, 32, 32, chestDrop);
+			//Chest.DestroyChest(i, j);
 		}
 
 		public override bool RightClick(int i, int j)

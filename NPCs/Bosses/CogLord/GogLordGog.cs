@@ -9,7 +9,7 @@ namespace Tremor.NPCs.Bosses.CogLord
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Brass Gear");
+			// DisplayName.SetDefault("Brass Gear");
 		}
 
 		public override void SetDefaults()

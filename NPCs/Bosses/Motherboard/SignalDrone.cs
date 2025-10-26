@@ -11,7 +11,7 @@ namespace Tremor.NPCs.Bosses.Motherboard
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Signal Drone");
+			// DisplayName.SetDefault("Signal Drone");
 		}
 
 		public override void SetDefaults()
@@ -47,7 +47,7 @@ namespace Tremor.NPCs.Bosses.Motherboard
 			_immuneTime = Math.Max(0, _immuneTime - 1);
 		}
 
-		public override void OnHitPlayer(Player target, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
 		{
 			UpdateDroneImmunities();
 		}

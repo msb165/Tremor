@@ -16,7 +16,7 @@ namespace Tremor.Tiles
 			TileObjectData.newTile.CoordinateHeights = new[]{ 16, 16 };
 			TileObjectData.addTile(Type);
 			AddMapEntry(new Color(111, 22, 22));
-			adjTiles = new int[]{ TileID.Beds };
+			AdjTiles = new int[]{ TileID.Beds };
 	AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
 			TileID.Sets.CanBeSleptIn[Type] = true;//bed = true;
 		}

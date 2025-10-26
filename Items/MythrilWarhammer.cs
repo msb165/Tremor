@@ -8,25 +8,25 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 44;
-			item.DamageType = DamageClass.Melee;
-			item.width = 38;
-			item.height = 38;
-			item.useTime = 37;
-			item.useAnimation = 37;
-			item.hammer = 83;
-			item.useStyle = 1;
-			item.knockBack = 6;
-			item.value = 27000;
-			item.rare = 4;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 44;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 38;
+			Item.height = 38;
+			Item.useTime = 37;
+			Item.useAnimation = 37;
+			Item.hammer = 83;
+			Item.useStyle = 1;
+			Item.knockBack = 6;
+			Item.value = 27000;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Mythril Warhammer");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Mythril Warhammer");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

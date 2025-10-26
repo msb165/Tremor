@@ -10,25 +10,25 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 48;
-			item.height = 48;
-			item.value = 2000;
-			item.rare = 9;
-			item.maxStack = 999;
+			Item.width = 48;
+			Item.height = 48;
+			Item.value = 2000;
+			Item.rare = 9;
+			Item.maxStack = 999;
 
-			ItemID.Sets.ItemIconPulse[item.type] = true;
-			ItemID.Sets.ItemNoGravity[item.type] = true;
+			ItemID.Sets.ItemIconPulse[Item.type] = true;
+			ItemID.Sets.ItemNoGravity[Item.type] = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Fragment");
-			Tooltip.SetDefault("'The constituents of stars are contained in this fragment'");
+			// DisplayName.SetDefault("Nova Fragment");
+			// Tooltip.SetDefault("'The constituents of stars are contained in this fragment'");
 		}
 
 		public override void PostUpdate()
 		{
-			Lighting.AddLight(item.Center, new Vector3(0.8f, 0.7f, 0.3f) * Main.essScale);
+			Lighting.AddLight(Item.Center, new Vector3(0.8f, 0.7f, 0.3f) * Main.essScale);
 		}
 
 		public override Color? GetAlpha(Color lightColor)

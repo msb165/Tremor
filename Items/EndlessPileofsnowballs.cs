@@ -7,30 +7,30 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.useStyle = 1;
+			Item.useStyle = 1;
 
-			item.shootSpeed = 7f;
-			item.shoot = 166;
-			item.damage = 8;
-			item.width = 18;
-			item.height = 20;
-			item.maxStack = 1;
-			item.ammo = 949;
-			item.rare = 2;
-			item.consumable = false;
-			item.UseSound = SoundID.Item1;
-			item.useAnimation = 19;
-			item.useTime = 19;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.DamageType = DamageClass.Throwing;
-			item.knockBack = 5.75f;
+			Item.shootSpeed = 7f;
+			Item.shoot = 166;
+			Item.damage = 8;
+			Item.width = 18;
+			Item.height = 20;
+			Item.maxStack = 1;
+			Item.ammo = 949;
+			Item.rare = 2;
+			Item.consumable = false;
+			Item.UseSound = SoundID.Item1;
+			Item.useAnimation = 19;
+			Item.useTime = 19;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.DamageType = DamageClass.Throwing;
+			Item.knockBack = 5.75f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Endless Pile of snowballs");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Endless Pile of snowballs");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

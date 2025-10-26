@@ -7,17 +7,17 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 36;
-			item.height = 44;
-			item.value = 1000;
-			item.rare = 4;
-			item.accessory = true;
+			Item.width = 36;
+			Item.height = 44;
+			Item.value = 1000;
+			Item.rare = 4;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Heart Amulet");
-			Tooltip.SetDefault("You respawn with 80% of maximum health after death");
+			// DisplayName.SetDefault("Heart Amulet");
+			// Tooltip.SetDefault("You respawn with 80% of maximum health after death");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

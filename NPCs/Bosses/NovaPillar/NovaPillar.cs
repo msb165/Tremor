@@ -20,7 +20,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Pillar");
+			// DisplayName.SetDefault("Nova Pillar");
 		}
 		public override void SetDefaults()
 		{
@@ -217,7 +217,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar
 			}
 			else
 			{
-				WorldGen.StartImpendingDoom();
+				WorldGen.StartImpendingDoom(30);
 			}
 		}
 

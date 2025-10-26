@@ -11,16 +11,16 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.WormHook);
+			Item.CloneDefaults(ItemID.WormHook);
 
-			item.shootSpeed = 18f; // how quickly the hook is shot.
-			item.shoot = ModContent.ProjectileType<SquidTentacleProjectile>();
+			Item.shootSpeed = 18f; // how quickly the hook is shot.
+			Item.shoot = ModContent.ProjectileType<SquidTentacleProjectile>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Squid Tentacle");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Squid Tentacle");
+			// Tooltip.SetDefault("");
 		}
 
 	}
@@ -29,7 +29,7 @@ namespace Tremor.Items
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Squid Tentacle Projectile");
+			// DisplayName.SetDefault("Squid Tentacle Projectile");
 		}
 
 		public override void SetDefaults()
@@ -110,7 +110,7 @@ namespace Tremor.Items
 			speed = 10;
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Vector2 playerCenter = Main.player[projectile.owner].MountedCenter;
 			Vector2 center = projectile.Center;
@@ -124,7 +124,7 @@ namespace Tremor.Items
 				center += distToProj;                   //update draw position
 				distToProj = playerCenter - center;    //update distance
 				distance = distToProj.Length();
-				Color drawColor = lightColor;
+				Color lightColor = Projectile.GetAlpha(drawColor);
 
 				//Draw chain
 				Main.spriteBatch.Draw(Mod.GetTexture("Items/SquidTentacleChain"), new Vector2(center.X - Main.screenPosition.X, center.Y - Main.screenPosition.Y),

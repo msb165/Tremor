@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 50;
-			item.height = 26;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
+			Item.width = 50;
+			Item.height = 26;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
 
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.value = 150;
-			item.createTile = ModContent.TileType<Tiles.MagicWorkbenchTile>();
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.value = 150;
+			Item.createTile = ModContent.TileType<Tiles.MagicWorkbenchTile>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Magic Workbench");
-			Tooltip.SetDefault("Allows you to create scientific-magical things");
+			// DisplayName.SetDefault("Magic Workbench");
+			// Tooltip.SetDefault("Allows you to create scientific-magical things");
 		}
 
 		public override void AddRecipes()

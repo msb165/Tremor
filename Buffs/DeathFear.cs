@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class DeathFear:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Death Fear");
-			Description.SetDefault("Frightened, the victim loses his life");
+			// DisplayName.SetDefault("Death Fear");
+			// Description.SetDefault("Frightened, the victim loses his life");
 			Main.debuff[Type] = true;
 			Main.pvpBuff[Type] = true;
 			Main.buffNoSave[Type] = true;

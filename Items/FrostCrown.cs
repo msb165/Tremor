@@ -10,23 +10,23 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 38;
-			item.maxStack = 20;
+			Item.width = 38;
+			Item.height = 38;
+			Item.maxStack = 20;
 
-			item.rare = 6;
-			item.value = 25000;
-			item.useAnimation = 45;
-			item.useTime = 45;
-			item.useStyle = 4;
-			item.consumable = true;
+			Item.rare = 6;
+			Item.value = 25000;
+			Item.useAnimation = 45;
+			Item.useTime = 45;
+			Item.useStyle = 4;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frost Crown");
-			Tooltip.SetDefault("Summons the Frost King\n" +
-"Requires any mech. boss to have been slan and the snow or glacier biome");
+			// DisplayName.SetDefault("Frost Crown");
+			/* Tooltip.SetDefault("Summons the Frost King\n" +
+"Requires any mech. boss to have been slan and the snow or glacier biome"); */
 		}
 
 		public override bool CanUseItem(Player player)

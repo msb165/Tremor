@@ -10,31 +10,31 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 38;
-			item.DamageType = DamageClass.Summon;
-			item.mana = 10;
-			item.width = 26;
-			item.height = 28;
+			Item.damage = 38;
+			Item.DamageType = DamageClass.Summon;
+			Item.mana = 10;
+			Item.width = 26;
+			Item.height = 28;
 
-			item.useTime = 36;
-			item.channel = true;
-			item.useAnimation = 36;
-			item.useStyle = 4;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = Item.buyPrice(0, 3, 0, 0);
-			item.rare = 3;
-			item.UseSound = SoundID.Item44;
-			item.shoot = ModContent.ProjectileType<Projectiles.Minions.Hunter>();
-			item.shootSpeed = 2f;
-			item.buffType = ModContent.BuffType<Buffs.HunterBuff>();
-			item.buffTime = 3600;
+			Item.useTime = 36;
+			Item.channel = true;
+			Item.useAnimation = 36;
+			Item.useStyle = 4;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = Item.buyPrice(0, 3, 0, 0);
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item44;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Minions.Hunter>();
+			Item.shootSpeed = 2f;
+			Item.buffType = ModContent.BuffType<Buffs.HunterBuff>();
+			Item.buffTime = 3600;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Rich Mahogany Seed");
-			Tooltip.SetDefault("Summons a lil' snatcher to fight for you.");
+			// DisplayName.SetDefault("Rich Mahogany Seed");
+			// Tooltip.SetDefault("Summons a lil' snatcher to fight for you.");
 		}
 
 		public override bool AltFunctionUse(Player player)

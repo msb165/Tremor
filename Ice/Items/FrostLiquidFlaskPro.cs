@@ -20,10 +20,10 @@ namespace Tremor.Ice.Items
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frost Liquid Flask Pro");
+			// DisplayName.SetDefault("Frost Liquid Flask Pro");
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item107, projectile.position);
 			Gore.NewGore(null, projectile.position, -projectile.oldVelocity * 0.2f, 704, 1f);

@@ -8,26 +8,26 @@ namespace Tremor.Items.Fungus
 		public override void SetDefaults()
 		{
 
-			item.damage = 16;
-			item.DamageType = DamageClass.Melee;
-			item.width = 32;
-			item.height = 32;
-			item.useTime = 22;
-			item.useAnimation = 18;
-			item.axe = 13;
-			item.hammer = 75;
-			item.useStyle = 1;
-			item.knockBack = 2;
-			item.value = 1000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 16;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 32;
+			Item.height = 32;
+			Item.useTime = 22;
+			Item.useAnimation = 18;
+			Item.axe = 13;
+			Item.hammer = 75;
+			Item.useStyle = 1;
+			Item.knockBack = 2;
+			Item.value = 1000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Fungus Hamaxe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Fungus Hamaxe");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

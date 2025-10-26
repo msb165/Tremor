@@ -9,28 +9,28 @@ namespace Tremor.Items.Chain
 		public override void SetDefaults()
 		{
 
-			item.damage = 30;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 40;
-			item.height = 20;
-			item.useTime = 7;
-			item.useAnimation = 7;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 2;
-			item.value = 35000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = true;
-			item.shoot = 166;
-			item.shootSpeed = 8f;
-			item.useAmmo = AmmoID.Snowball;
+			Item.damage = 30;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 40;
+			Item.height = 20;
+			Item.useTime = 7;
+			Item.useAnimation = 7;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 2;
+			Item.value = 35000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = true;
+			Item.shoot = 166;
+			Item.shootSpeed = 8f;
+			Item.useAmmo = AmmoID.Snowball;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Snowball Chaingun");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Snowball Chaingun");
+			// Tooltip.SetDefault("");
 		}
 
 		public override Vector2? HoldoutOffset()

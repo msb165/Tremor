@@ -9,16 +9,16 @@ namespace Tremor.Items.Wood
 		public override void SetDefaults()
 		{
 
-			item.width = 32;
-			item.height = 24;
-			item.rare = 1;
-			item.vanity = true;
+			Item.width = 32;
+			Item.height = 24;
+			Item.rare = 1;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Mourning Wood Mask");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Mourning Wood Mask");
+			// Tooltip.SetDefault("");
 		}
 
 	}

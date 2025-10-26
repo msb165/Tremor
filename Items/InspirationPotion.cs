@@ -10,22 +10,22 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 32;
-			item.maxStack = 20;
+			Item.width = 38;
+			Item.height = 32;
+			Item.maxStack = 20;
 
-			item.rare = 3;
-			item.useAnimation = 15;
-			item.useTime = 15;
-			item.useStyle = 2;
-			item.UseSound = SoundID.Item3;
-			item.consumable = true;
+			Item.rare = 3;
+			Item.useAnimation = 15;
+			Item.useTime = 15;
+			Item.useStyle = 2;
+			Item.UseSound = SoundID.Item3;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Inspiration Potion");
-			Tooltip.SetDefault("Increases maximum mana");
+			// DisplayName.SetDefault("Inspiration Potion");
+			// Tooltip.SetDefault("Increases maximum mana");
 		}
 
 		public override bool? UseItem(Player player)

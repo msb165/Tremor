@@ -13,18 +13,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 0;
-			item.rare = 0;
-			item.defense = 22;
+			Item.value = 0;
+			Item.rare = 0;
+			Item.defense = 22;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Omnikron Helmet");
-			Tooltip.SetDefault("Increased all critical strike chances by 25%");
+			// DisplayName.SetDefault("Omnikron Helmet");
+			// Tooltip.SetDefault("Increased all critical strike chances by 25%");
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

@@ -10,7 +10,7 @@ namespace Tremor.Invasion
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Titan Soul");
+			// DisplayName.SetDefault("Titan Soul");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 
@@ -52,7 +52,7 @@ namespace Tremor.Invasion
 			return new Rectangle(0, npc.frame.Height * (Number - 1), npc.frame.Width, npc.frame.Height);
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 
 		}

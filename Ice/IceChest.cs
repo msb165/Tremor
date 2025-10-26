@@ -31,9 +31,9 @@ namespace Tremor.Ice
 			TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
 			TileObjectData.addTile(Type);
 			AddMapEntry(new Color(70, 156, 213));
-			disableSmartCursor = true;
-			adjTiles = new int[] { TileID.Containers };
-			chest = "Ice Chest";
+			TileID.Sets.DisableSmartCursor[Type] = true;
+			AdjTiles = new int[] { TileID.Containers };
+			//chest = "Ice Chest";
 			TileID.Sets.BasicChest[Type] = true;
 		}
 

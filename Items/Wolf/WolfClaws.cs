@@ -8,24 +8,24 @@ namespace Tremor.Items.Wolf
 		public override void SetDefaults()
 		{
 
-			item.damage = 9;
-			item.DamageType = DamageClass.Melee;
-			item.width = 28;
-			item.height = 30;
-			item.useTime = 10;
-			item.useAnimation = 10;
-			item.useStyle = 1;
-			item.knockBack = 6;
-			item.value = 660;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 9;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 28;
+			Item.height = 30;
+			Item.useTime = 10;
+			Item.useAnimation = 10;
+			Item.useStyle = 1;
+			Item.knockBack = 6;
+			Item.value = 660;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Wolf Claws");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Wolf Claws");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

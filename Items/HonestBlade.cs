@@ -11,24 +11,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 140;
-			item.DamageType = DamageClass.Melee;
-			item.width = 32;
-			item.height = 32;
-			item.useTime = 11;
-			item.useAnimation = 9;
-			item.useStyle = 3;
-			item.knockBack = 2;
-			item.value = 400000;
-			item.rare = 0;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 140;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 32;
+			Item.height = 32;
+			Item.useTime = 11;
+			Item.useAnimation = 9;
+			Item.useStyle = 3;
+			Item.knockBack = 2;
+			Item.value = 400000;
+			Item.rare = 0;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Honest Blade");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Honest Blade");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -36,7 +36,7 @@ namespace Tremor.Items
 			tooltips[0].OverrideColor = new Color(238, 194, 73);
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(24, 60);
 		}

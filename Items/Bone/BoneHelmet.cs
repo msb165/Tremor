@@ -14,17 +14,17 @@ namespace Tremor.Items.Bone
 		public override void SetDefaults()
 		{
 
-			item.defense = 5;
-			item.width = 26;
-			item.height = 22;
-			item.value = 2500;
-			item.rare = 4;
+			Item.defense = 5;
+			Item.width = 26;
+			Item.height = 22;
+			Item.value = 2500;
+			Item.rare = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bone Helmet");
-			Tooltip.SetDefault("25% increased throwing velocity");
+			// DisplayName.SetDefault("Bone Helmet");
+			// Tooltip.SetDefault("25% increased throwing velocity");
 		}
 
 		public override void UpdateEquip(Player p)

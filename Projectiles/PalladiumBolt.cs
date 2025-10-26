@@ -24,7 +24,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Palladium Bolt");
+			// DisplayName.SetDefault("Palladium Bolt");
 
 		}
 
@@ -59,7 +59,7 @@ namespace Tremor.Projectiles
 			}
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item64, projectile.position);
 			for (int num158 = 0; num158 < 20; num158++)
@@ -96,7 +96,7 @@ namespace Tremor.Projectiles
 			}
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			projectile.ai[0] += 0.1f;
 			projectile.velocity *= 0.75f;

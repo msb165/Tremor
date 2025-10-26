@@ -9,17 +9,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.maxStack = 99;
-			item.height = 26;
+			Item.width = 26;
+			Item.maxStack = 99;
+			Item.height = 26;
 
-			item.rare = 0;
+			Item.rare = 0;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Key of Sands");
-			Tooltip.SetDefault("'Charged with the essence of sands'");
+			// DisplayName.SetDefault("Key of Sands");
+			// Tooltip.SetDefault("'Charged with the essence of sands'");
 		}
 
 		public override void AddRecipes()

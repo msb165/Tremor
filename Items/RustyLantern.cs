@@ -13,24 +13,24 @@ namespace Tremor.Items
 
 		public override void SetDefaults()
 		{
-			item.width = 14;
-			item.height = 30;
-			item.maxStack = 1;
+			Item.width = 14;
+			Item.height = 30;
+			Item.maxStack = 1;
 
-			item.value = 3000;
-			item.rare = 2;
-			item.useTime = 40;
-			item.useAnimation = 40;
-			item.consumable = true;
-			item.maxStack = 20;
-			item.useStyle = 1;
+			Item.value = 3000;
+			Item.rare = 2;
+			Item.useTime = 40;
+			Item.useAnimation = 40;
+			Item.consumable = true;
+			Item.maxStack = 20;
+			Item.useStyle = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Rusty Lantern");
-			Tooltip.SetDefault("Summons Ancient Dragon\n" +
-"Requires the Ruin Powers buff and a Ruin Altar nearby");
+			// DisplayName.SetDefault("Rusty Lantern");
+			/* Tooltip.SetDefault("Summons Ancient Dragon\n" +
+"Requires the Ruin Powers buff and a Ruin Altar nearby"); */
 		}
 
 		public override bool CanUseItem(Player player)

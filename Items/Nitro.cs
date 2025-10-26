@@ -21,18 +21,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 250000;
-			item.rare = 6;
-			item.accessory = true;
+			Item.value = 250000;
+			Item.rare = 6;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Nitro");
-			Tooltip.SetDefault("Alchemical flasks leave death flames");
+			// DisplayName.SetDefault("The Nitro");
+			// Tooltip.SetDefault("Alchemical flasks leave death flames");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

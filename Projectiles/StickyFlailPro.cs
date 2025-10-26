@@ -22,11 +22,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sticky Flail Pro");
+			// DisplayName.SetDefault("Sticky Flail Pro");
 
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Texture2D texture = Mod.GetTexture("Tremor/Projectiles/StickyFlail_Chain");
 

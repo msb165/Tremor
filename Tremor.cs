@@ -121,7 +121,7 @@ namespace Tremor
 			SkyManager.Instance["Tremor:CogLord"] = new ZombieSky();
 
 			// Init
-			NPCDrops.Init();
+			//NPCDrops.Init();
 			TremorWorld.Init();
 
 			if (!Main.dedServ)

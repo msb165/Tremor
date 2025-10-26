@@ -10,19 +10,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 250;
+			Item.width = 250;
 
-			item.height = 28;
-			item.value = 35000;
-			item.rare = 2;
-			item.defense = 6;
+			Item.height = 28;
+			Item.value = 35000;
+			Item.rare = 2;
+			Item.defense = 6;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Golden Robe");
-			Tooltip.SetDefault("5% decreased magic damage\n" +
-"Increases maximum mana by 40");
+			// DisplayName.SetDefault("Golden Robe");
+			/* Tooltip.SetDefault("5% decreased magic damage\n" +
+"Increases maximum mana by 40"); */
 		}
 
 		public override void UpdateEquip(Player player)

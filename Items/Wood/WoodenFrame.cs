@@ -8,18 +8,18 @@ namespace Tremor.Items.Wood
 		public override void SetDefaults()
 		{
 
-			item.width = 34;
-			item.height = 34;
-			item.value = 120000;
-			item.rare = 2;
-			item.defense = 3;
-			item.accessory = true;
+			Item.width = 34;
+			Item.height = 34;
+			Item.value = 120000;
+			Item.rare = 2;
+			Item.defense = 3;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Wooden Frame");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Wooden Frame");
+			// Tooltip.SetDefault("");
 		}
 
 	}

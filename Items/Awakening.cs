@@ -10,26 +10,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 300;
-			item.DamageType = DamageClass.Melee;
-			item.width = 70;
-			item.height = 70;
-			item.useTime = 23;
-			item.useAnimation = 23;
-			item.useStyle = 1;
-			item.knockBack = 10;
-			item.value = 1000000;
-			item.rare = 11;
+			Item.damage = 300;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 70;
+			Item.height = 70;
+			Item.useTime = 23;
+			Item.useAnimation = 23;
+			Item.useStyle = 1;
+			Item.knockBack = 10;
+			Item.value = 1000000;
+			Item.rare = 11;
 
-			item.UseSound = SoundID.Item71;
-			item.autoReuse = true;
-			item.useTurn = true;
+			Item.UseSound = SoundID.Item71;
+			Item.autoReuse = true;
+			Item.useTurn = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Awakening");
-			Tooltip.SetDefault("Hitting enemies temporarily increases maximum health");
+			// DisplayName.SetDefault("Awakening");
+			// Tooltip.SetDefault("Hitting enemies temporarily increases maximum health");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)
@@ -40,7 +40,7 @@ namespace Tremor.Items
 			}
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			player.AddBuff(113, 120);
 		}

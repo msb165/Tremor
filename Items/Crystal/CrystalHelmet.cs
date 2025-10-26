@@ -11,17 +11,17 @@ namespace Tremor.Items.Crystal
 		public override void SetDefaults()
 		{
 
-			item.defense = 5;
-			item.width = 26;
-			item.height = 22;
-			item.value = 2500;
-			item.rare = 4;
+			Item.defense = 5;
+			Item.width = 26;
+			Item.height = 22;
+			Item.value = 2500;
+			Item.rare = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crystal Helmet");
-			Tooltip.SetDefault("20% increased throwing damage");
+			// DisplayName.SetDefault("Crystal Helmet");
+			// Tooltip.SetDefault("20% increased throwing damage");
 		}
 
 		public override void UpdateEquip(Player p)

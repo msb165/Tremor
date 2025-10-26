@@ -12,30 +12,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 16;
-			item.width = 68;
-			item.height = 30;
-			item.useTime = 18;
-			item.useAnimation = 18;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 4;
-			item.value = 10000;
-			item.rare = 2;
-			item.UseSound = SoundID.Item20;
-			item.autoReuse = false;
-			item.shoot = 10;
-			item.shootSpeed = 6f;
-			item.crit = 4;
-			item.useAmmo = ModContent.ItemType<BoomFlask>();
+			Item.damage = 16;
+			Item.width = 68;
+			Item.height = 30;
+			Item.useTime = 18;
+			Item.useAnimation = 18;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 4;
+			Item.value = 10000;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item20;
+			Item.autoReuse = false;
+			Item.shoot = 10;
+			Item.shootSpeed = 6f;
+			Item.crit = 4;
+			Item.useAmmo = ModContent.ItemType<BoomFlask>();
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Basic Sprayer");
-			Tooltip.SetDefault("Uses flasks as ammo\n" +
-"Sprays alchemical clouds");
+			// DisplayName.SetDefault("Basic Sprayer");
+			/* Tooltip.SetDefault("Uses flasks as ammo\n" +
+"Sprays alchemical clouds"); */
 		}
 
 		public override void AddRecipes()
@@ -102,19 +102,19 @@ namespace Tremor.Items
 			MPlayer modPlayer = MPlayer.GetModPlayer(player);
 			if (modPlayer.core)
 			{
-				item.autoReuse = true;
+				Item.autoReuse = true;
 			}
 			if (!modPlayer.core)
 			{
-				item.autoReuse = false;
+				Item.autoReuse = false;
 			}
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) != -1)
 			{
-				item.shootSpeed = 14f;
+				Item.shootSpeed = 14f;
 			}
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) < 1)
 			{
-				item.shootSpeed = 6f;
+				Item.shootSpeed = 6f;
 			}
 		}
 

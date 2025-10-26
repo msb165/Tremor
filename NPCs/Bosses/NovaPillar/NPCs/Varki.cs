@@ -11,7 +11,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Warkee");
+			// DisplayName.SetDefault("Warkee");
 			Main.npcFrameCount[npc.type] = 2;
 		}
 
@@ -35,7 +35,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			npc.DeathSound = SoundID.NPCDeath51;
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
 			npc.lifeMax = npc.lifeMax * 1;
 			npc.damage = npc.damage * 1;
@@ -64,7 +64,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, Mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/Varki_GlowMask"));
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
@@ -80,10 +80,10 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 				}
 				for (int i = 0; i < 2; i++)
 				{
-					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/VarkiGore1"));
-					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/VarkiGore2"));
+					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("VarkiGore1"));
+					Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("VarkiGore2"));
 				}
-				Gore.NewGore(null, npc.Top, npc.velocity * hitDirection, Mod.GetGoreSlot("Gores/VarkiGore3"));
+				Gore.NewGore(null, npc.Top, npc.velocity * hit.HitDirection, Mod.GetGoreSlot("VarkiGore3"));
 				for (int k = 0; k < 7; k++)
 				{
 					Vector2 Vector = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));

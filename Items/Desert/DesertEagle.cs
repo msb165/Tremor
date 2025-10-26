@@ -8,27 +8,27 @@ namespace Tremor.Items.Desert
 		public override void SetDefaults()
 		{
 
-			item.damage = 56;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 52;
-			item.height = 34;
-			item.useTime = 30;
-			item.useAnimation = 30;
-			item.shoot = 14;
-			item.shootSpeed = 15f;
-			item.useAmmo = AmmoID.Bullet;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 150000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = false;
+			Item.damage = 56;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 52;
+			Item.height = 34;
+			Item.useTime = 30;
+			Item.useAnimation = 30;
+			Item.shoot = 14;
+			Item.shootSpeed = 15f;
+			Item.useAmmo = AmmoID.Bullet;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 150000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Desert Eagle");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Desert Eagle");
+			// Tooltip.SetDefault("");
 		}
 
 	}

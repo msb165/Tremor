@@ -23,18 +23,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 500000;
-			item.rare = 6;
-			item.accessory = true;
+			Item.value = 500000;
+			Item.rare = 6;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Reinforced Burst");
-			Tooltip.SetDefault("Alchemical flasks leave three death flames");
+			// DisplayName.SetDefault("Reinforced Burst");
+			// Tooltip.SetDefault("Alchemical flasks leave three death flames");
 		}
 
 		public override void AddRecipes()

@@ -7,29 +7,29 @@ using Terraria.ModLoader;
 
 namespace Tremor.Items
 {
-	class CrawlerHook:TremorModItem
+	class CrawlerHook : TremorModItem
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.WormHook);
+			Item.CloneDefaults(ItemID.WormHook);
 
-			item.shootSpeed = 18f; // how quickly the hook is shot.
-			item.shoot = ModContent.ProjectileType<CrawlerHookProjectile>();
+			Item.shootSpeed = 18f; // how quickly the hook is shot.
+			Item.shoot = ModContent.ProjectileType<CrawlerHookProjectile>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crawler Hook");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Crawler Hook");
+			// Tooltip.SetDefault("");
 		}
 
 	}
 
-	class CrawlerHookProjectile:TremorModProjectile
+	class CrawlerHookProjectile : TremorModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crawler Hook Projectile");
+			// DisplayName.SetDefault("Crawler Hook Projectile");
 		}
 
 		public override void SetDefaults()
@@ -110,7 +110,7 @@ namespace Tremor.Items
 			speed = 10;
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Vector2 playerCenter = Main.player[projectile.owner].MountedCenter;
 			Vector2 center = projectile.Center;
@@ -124,7 +124,7 @@ namespace Tremor.Items
 				center += distToProj;                   //update draw position
 				distToProj = playerCenter - center;    //update distance
 				distance = distToProj.Length();
-				Color drawColor = lightColor;
+				Color lightColor = Projectile.GetAlpha(drawColor);
 
 				//Draw chain
 				Main.spriteBatch.Draw(Mod.GetTexture("Items/CrawlerHookChain"), new Vector2(center.X - Main.screenPosition.X, center.Y - Main.screenPosition.Y),

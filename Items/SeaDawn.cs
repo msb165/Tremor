@@ -8,26 +8,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 225;
-			item.DamageType = DamageClass.Melee;
-			item.width = 72;
-			item.height = 72;
-			item.useTime = 38;
-			item.useAnimation = 38;
-			item.useStyle = 1;
-			item.shootSpeed = 12f;
-			item.shoot = ModContent.ProjectileType<Projectiles.TyphoonPro>();
-			item.knockBack = 3;
-			item.value = 33000;
-			item.rare = 10;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 225;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 72;
+			Item.height = 72;
+			Item.useTime = 38;
+			Item.useAnimation = 38;
+			Item.useStyle = 1;
+			Item.shootSpeed = 12f;
+			Item.shoot = ModContent.ProjectileType<Projectiles.TyphoonPro>();
+			Item.knockBack = 3;
+			Item.value = 33000;
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sea Dawn");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Sea Dawn");
+			// Tooltip.SetDefault("");
 		}
 
 	}

@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 	public class ConcentrationofFear:TremorModBuff
 	{
 
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Concentration of Fear");
-			Description.SetDefault("Increased all damage");
+			// DisplayName.SetDefault("Concentration of Fear");
+			// Description.SetDefault("Increased all damage");
 			Main.buffNoTimeDisplay[Type] = true;
 		}
 

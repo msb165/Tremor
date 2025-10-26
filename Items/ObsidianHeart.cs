@@ -9,20 +9,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 1200;
-			item.rare = 2;
-			item.accessory = true;
-			item.defense = 4;
+			Item.value = 1200;
+			Item.rare = 2;
+			Item.accessory = true;
+			Item.defense = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Obsidian Heart");
-			Tooltip.SetDefault("Increases life regeneration\n" +
-"Grants immunity to fire blocks");
+			// DisplayName.SetDefault("Obsidian Heart");
+			/* Tooltip.SetDefault("Increases life regeneration\n" +
+"Grants immunity to fire blocks"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class ZootalooBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Zootaloo Junior");
-			Description.SetDefault("A little Zootaloo is following you");
+			// DisplayName.SetDefault("Zootaloo Junior");
+			// Description.SetDefault("A little Zootaloo is following you");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

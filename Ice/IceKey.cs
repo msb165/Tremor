@@ -7,18 +7,18 @@ namespace Tremor.Ice
 		public override void SetDefaults()
 		{
 
-			item.width = 20;
-			item.height = 20;
-			item.maxStack = 999;
-			item.value = 100000;
-			item.rare = 3;
-			item.consumable = true;
+			Item.width = 20;
+			Item.height = 20;
+			Item.maxStack = 999;
+			Item.value = 100000;
+			Item.rare = 3;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ice Key");
-			Tooltip.SetDefault("Opens the Frozen Chest once");
+			// DisplayName.SetDefault("Ice Key");
+			// Tooltip.SetDefault("Opens the Frozen Chest once");
 		}
 
 	}

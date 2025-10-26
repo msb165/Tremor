@@ -10,18 +10,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 26;
-			item.value = 110;
-			item.rare = 0;
-			item.accessory = true;
-			item.defense = 4;
+			Item.width = 26;
+			Item.height = 26;
+			Item.value = 110;
+			Item.rare = 0;
+			Item.accessory = true;
+			Item.defense = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Gold Shield");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Gold Shield");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void UpdateEquip(Player player)

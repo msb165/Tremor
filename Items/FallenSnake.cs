@@ -7,23 +7,23 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.ValkyrieYoyo);
+			Item.CloneDefaults(ItemID.ValkyrieYoyo);
 
-			item.damage = 180;
-			item.width = 30;
-			item.height = 26;
+			Item.damage = 180;
+			Item.width = 30;
+			Item.height = 26;
 
-			item.shootSpeed = 25f;
-			item.shoot = ModContent.ProjectileType<Projectiles.FallenSnakePro>();
-			item.knockBack = 5;
-			item.value = 1000000;
-			item.rare = 11;
+			Item.shootSpeed = 25f;
+			Item.shoot = ModContent.ProjectileType<Projectiles.FallenSnakePro>();
+			Item.knockBack = 5;
+			Item.value = 1000000;
+			Item.rare = 11;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Fallen Snake");
-			Tooltip.SetDefault("Killed enemies drop more money");
+			// DisplayName.SetDefault("The Fallen Snake");
+			// Tooltip.SetDefault("Killed enemies drop more money");
 		}
 
 	}

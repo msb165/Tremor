@@ -10,19 +10,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.value = 1000000;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 1000000;
 
-			item.rare = 11;
-			item.defense = 32;
+			Item.rare = 11;
+			Item.defense = 32;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sniper Boots");
-			Tooltip.SetDefault("15% increased ranged damage\n" +
-"20% decreased movement speed");
+			// DisplayName.SetDefault("Sniper Boots");
+			/* Tooltip.SetDefault("15% increased ranged damage\n" +
+"20% decreased movement speed"); */
 		}
 
 		public override void UpdateEquip(Player player)

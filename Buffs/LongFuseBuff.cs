@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class LongFuseBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Long fuse");
-			Description.SetDefault("Alchemic weapon throws further");
+			// DisplayName.SetDefault("Long fuse");
+			// Description.SetDefault("Alchemic weapon throws further");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

@@ -10,7 +10,7 @@ namespace Tremor.ZombieEvent.Mobs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dice Zombie");
+			// DisplayName.SetDefault("Dice Zombie");
 			Main.npcFrameCount[npc.type] = 3;
 		}
 
@@ -32,22 +32,22 @@ namespace Tremor.ZombieEvent.Mobs
 			// Todo: BannerItem = ModContent.ItemType<DiceZombieBanner>();
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeadlingHead1"));
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeadlingLeg"));
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeadlingArm"));
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeadlingLeg"));
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DeadlingArm"));
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DiceGore1"));
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DiceGore2"));
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/DiceGore3"));
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("DeadlingHead1"));
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("DeadlingLeg"));
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("DeadlingArm"));
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("DeadlingLeg"));
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("DeadlingArm"));
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("DiceGore1"));
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("DiceGore2"));
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("DiceGore3"));
 			}
 		}
 

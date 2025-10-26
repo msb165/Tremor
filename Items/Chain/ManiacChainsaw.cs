@@ -10,32 +10,32 @@ namespace Tremor.Items.Chain
 		public override void SetDefaults()
 		{
 
-			item.damage = 202;
-			item.DamageType = DamageClass.Melee;
-			item.width = 140;
-			item.height = 34;
-			item.useTime = 8;
-			item.useAnimation = 25;
-			item.channel = true;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.axe = 35;
-			item.tileBoost += 5;
-			item.useStyle = 5;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(0, 1, 50, 0);
-			item.rare = 10;
-			item.UseSound = SoundID.Item23;
-			item.autoReuse = true;
+			Item.damage = 202;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 140;
+			Item.height = 34;
+			Item.useTime = 8;
+			Item.useAnimation = 25;
+			Item.channel = true;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.axe = 35;
+			Item.tileBoost += 5;
+			Item.useStyle = 5;
+			Item.knockBack = 6;
+			Item.value = Item.buyPrice(0, 1, 50, 0);
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item23;
+			Item.autoReuse = true;
 
-			item.shoot = ModContent.ProjectileType<Projectiles.ManiacChainsawPro>();
-			item.shootSpeed = 0.4f;
+			Item.shoot = ModContent.ProjectileType<Projectiles.ManiacChainsawPro>();
+			Item.shootSpeed = 0.4f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Maniacal Chainsaw");
-			Tooltip.SetDefault("'A weapon of a true man killer'");
+			// DisplayName.SetDefault("Maniacal Chainsaw");
+			// Tooltip.SetDefault("'A weapon of a true man killer'");
 		}
 
 	}

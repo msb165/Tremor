@@ -8,26 +8,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 9;
-			item.DamageType = DamageClass.Melee;
-			item.width = 42;
-			item.height = 42;
-			item.useTime = 15;
-			item.useAnimation = 20;
-			item.pick = 68;
-			item.useStyle = 1;
-			item.knockBack = 5;
-			item.value = 600;
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
-			item.useTurn = true;
-			item.autoReuse = true;
+			Item.damage = 9;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 42;
+			Item.height = 42;
+			Item.useTime = 15;
+			Item.useAnimation = 20;
+			Item.pick = 68;
+			Item.useStyle = 1;
+			Item.knockBack = 5;
+			Item.value = 600;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
+			Item.useTurn = true;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pickaxe of Bloom");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Pickaxe of Bloom");
+			// Tooltip.SetDefault("");
 		}
 
 	}

@@ -8,7 +8,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Projectiles
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Portal");
+			// DisplayName.SetDefault("Nova Portal");
 		}
 		public override void SetDefaults()
 		{

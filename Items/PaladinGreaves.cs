@@ -10,18 +10,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.value = 500000;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 500000;
 
-			item.rare = 10;
-			item.defense = 28;
+			Item.rare = 10;
+			Item.defense = 28;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paladin Greaves");
-			Tooltip.SetDefault("22% increased melee damage");
+			// DisplayName.SetDefault("Paladin Greaves");
+			// Tooltip.SetDefault("22% increased melee damage");
 		}
 
 		public override void UpdateEquip(Player player)

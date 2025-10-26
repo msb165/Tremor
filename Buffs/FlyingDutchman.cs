@@ -5,11 +5,11 @@ namespace Tremor.Buffs
 {
 	public class FlyingDutchman:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Flying Dutchman");
-			Description.SetDefault("Flies like a butterfly!");
+			// DisplayName.SetDefault("Flying Dutchman");
+			// Description.SetDefault("Flies like a butterfly!");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

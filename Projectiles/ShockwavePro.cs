@@ -16,7 +16,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("ShockwavePro");
+			// DisplayName.SetDefault("ShockwavePro");
 
 		}
 

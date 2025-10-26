@@ -9,18 +9,18 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items.Armor
 	{
 		public override void SetDefaults()
 		{
-			item.width = 26;
-			item.height = 16;
-			item.rare = 10;
-			item.defense = 16;
+			Item.width = 26;
+			Item.height = 16;
+			Item.rare = 10;
+			Item.defense = 16;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Leggings");
-			Tooltip.SetDefault("18% increased alchemical damage\n" + 
+			// DisplayName.SetDefault("Nova Leggings");
+			/* Tooltip.SetDefault("18% increased alchemical damage\n" + 
 "12% increased alchemical critical strike chance\n" +
-"14% increased movement speed");
+"14% increased movement speed"); */
 		}
 
 		public override Color? GetAlpha(Color lightColor)

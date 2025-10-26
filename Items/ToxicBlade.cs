@@ -7,17 +7,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 36;
-			item.maxStack = 99;
-			item.value = 100;
-			item.rare = 1;
+			Item.width = 28;
+			Item.height = 36;
+			Item.maxStack = 99;
+			Item.value = 100;
+			Item.rare = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Toxic Blade");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Toxic Blade");
+			// Tooltip.SetDefault("");
 		}
 
 	}

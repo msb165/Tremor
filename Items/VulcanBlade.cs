@@ -10,28 +10,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 545;
-			item.DamageType = DamageClass.Melee;
-			item.width = 46;
-			item.height = 48;
-			item.useTime = 45;
-			item.useAnimation = 45;
-			item.useStyle = 1;
-			item.knockBack = 3;
-			item.shoot = ModContent.ProjectileType<Projectiles.VulcanBladePro>();
-			item.shootSpeed = 12f;
-			item.value = 600000;
-			item.rare = 0;
-			item.UseSound = SoundID.Item71;
-			item.autoReuse = false;
-			item.useTurn = false;
+			Item.damage = 545;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 46;
+			Item.height = 48;
+			Item.useTime = 45;
+			Item.useAnimation = 45;
+			Item.useStyle = 1;
+			Item.knockBack = 3;
+			Item.shoot = ModContent.ProjectileType<Projectiles.VulcanBladePro>();
+			Item.shootSpeed = 12f;
+			Item.value = 600000;
+			Item.rare = 0;
+			Item.UseSound = SoundID.Item71;
+			Item.autoReuse = false;
+			Item.useTurn = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vulcan Blade");
-			Tooltip.SetDefault("Shoots a molten bolt that leaves molten spheres behind\n" +
-"Spheres home on enemies, explode on contact and set enemies on fire");
+			// DisplayName.SetDefault("Vulcan Blade");
+			/* Tooltip.SetDefault("Shoots a molten bolt that leaves molten spheres behind\n" +
+"Spheres home on enemies, explode on contact and set enemies on fire"); */
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

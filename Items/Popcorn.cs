@@ -11,16 +11,16 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.maxStack = 0;
-			item.width = 22;
-			item.height = 22;
-			item.rare = -1;
+			Item.maxStack = 0;
+			Item.width = 22;
+			Item.height = 22;
+			Item.rare = -1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Popcorn");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Popcorn");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void GrabRange(Player player, ref int grabRange)
@@ -33,7 +33,7 @@ namespace Tremor.Items
 		{
 			player.HealEffect(Heal);
 			player.statLife += Heal;
-			item.active = false;
+			Item.active = false;
 			return true;
 		}
 	}

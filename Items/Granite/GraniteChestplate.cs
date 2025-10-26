@@ -10,17 +10,17 @@ namespace Tremor.Items.Granite
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 18;
-			item.value = 2500;
-			item.rare = 1;
-			item.defense = 3;
+			Item.width = 26;
+			Item.height = 18;
+			Item.value = 2500;
+			Item.rare = 1;
+			Item.defense = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Granite Chestplate");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Granite Chestplate");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

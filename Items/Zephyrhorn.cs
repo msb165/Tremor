@@ -8,17 +8,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
-			item.value = 100000;
-			item.rare = 7;
-			item.accessory = true;
+			Item.width = 22;
+			Item.height = 44;
+			Item.value = 100000;
+			Item.rare = 7;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Zephyrhorn");
-			Tooltip.SetDefault("Increases minion damage and size");
+			// DisplayName.SetDefault("Zephyrhorn");
+			// Tooltip.SetDefault("Increases minion damage and size");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

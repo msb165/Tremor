@@ -8,18 +8,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 24;
-			item.maxStack = 99;
-			item.value = 60;
-			item.rare = 1;
+			Item.width = 30;
+			Item.height = 24;
+			Item.maxStack = 99;
+			Item.value = 60;
+			Item.rare = 1;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Gel Cube");
-			Tooltip.SetDefault("Alchemically important ingredient");
+			// DisplayName.SetDefault("Gel Cube");
+			// Tooltip.SetDefault("Alchemically important ingredient");
 		}
 
 		public override void AddRecipes()

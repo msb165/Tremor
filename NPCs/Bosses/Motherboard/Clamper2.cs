@@ -9,7 +9,7 @@ namespace Tremor.NPCs.Bosses.Motherboard
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Clamper");
+			// DisplayName.SetDefault("Clamper");
 			Main.npcFrameCount[npc.type] = 3;
 		}
 

@@ -7,17 +7,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 24;
-			item.maxStack = 99;
-			item.value = 12000;
-			item.rare = 10;
+			Item.width = 30;
+			Item.height = 24;
+			Item.maxStack = 99;
+			Item.value = 12000;
+			Item.rare = 10;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dead Tissue");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Dead Tissue");
+			// Tooltip.SetDefault("");
 		}
 
 	}

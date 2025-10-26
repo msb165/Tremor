@@ -118,12 +118,12 @@ namespace Tremor.Projectiles.Alchemic
 			return false;
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			projectile.Kill();
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Player player = Main.player[projectile.owner];
 			MPlayer modPlayer = player.GetModPlayer<MPlayer>();

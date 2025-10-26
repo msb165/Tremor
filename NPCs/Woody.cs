@@ -9,7 +9,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Woody");
+			// DisplayName.SetDefault("Woody");
 			Main.npcFrameCount[npc.type] = 3;
 		}
 
@@ -31,12 +31,12 @@ namespace Tremor.NPCs
 			BannerItem = ModContent.ItemType<WoodyBanner>();
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WoodyGore1"), 1f);
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/WoodyGore2"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("WoodyGore1"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("WoodyGore2"), 1f);
 			}
 		}
 

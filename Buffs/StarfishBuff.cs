@@ -8,10 +8,10 @@ namespace Tremor.Buffs
 		int MinionType = -1;
 		int MinionID = -1;
 
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Starfish");
-			Description.SetDefault("The starfish defends you");
+			// DisplayName.SetDefault("Starfish");
+			// Description.SetDefault("The starfish defends you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

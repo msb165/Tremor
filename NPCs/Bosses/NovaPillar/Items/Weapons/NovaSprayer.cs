@@ -10,29 +10,29 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items.Weapons
 		public override void SetDefaults()
 		{
 
-			item.damage = 84;
-			item.width = 62;
-			item.height = 32;
-			item.useTime = 6;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 5;
-			item.value = 100000;
-			item.rare = 10;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = false;
-			item.shoot = ModContent.ProjectileType<Projectiles.NovaFlask_ProjBall>();
-			item.shootSpeed = 15f;
-			item.crit = 12;
-			item.reuseDelay = 60;
+			Item.damage = 84;
+			Item.width = 62;
+			Item.height = 32;
+			Item.useTime = 6;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 5;
+			Item.value = 100000;
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = false;
+			Item.shoot = ModContent.ProjectileType<Projectiles.NovaFlask_ProjBall>();
+			Item.shootSpeed = 15f;
+			Item.crit = 12;
+			Item.reuseDelay = 60;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Sprayer");
-			Tooltip.SetDefault("Shoots a burst of nova balls which explode into flames when hit enemy or after some time,\n" +
-" flames explode into damaging bursts when hit enemy or after some time.");
+			// DisplayName.SetDefault("Nova Sprayer");
+			/* Tooltip.SetDefault("Shoots a burst of nova balls which explode into flames when hit enemy or after some time,\n" +
+" flames explode into damaging bursts when hit enemy or after some time."); */
 		}
 
 		public override Vector2? HoldoutOffset()
@@ -50,19 +50,19 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items.Weapons
 			MPlayer modPlayer = MPlayer.GetModPlayer(player);
 			if (modPlayer.core)
 			{
-				item.autoReuse = true;
+				Item.autoReuse = true;
 			}
 			if (!modPlayer.core)
 			{
-				item.autoReuse = false;
+				Item.autoReuse = false;
 			}
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) != -1)
 			{
-				item.shootSpeed = 21f;
+				Item.shootSpeed = 21f;
 			}
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) < 1)
 			{
-				item.shootSpeed = 15f;
+				Item.shootSpeed = 15f;
 			}
 		}
 

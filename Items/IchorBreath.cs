@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 55;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 18;
-			item.height = 18;
-			item.useTime = 14;
-			item.maxStack = 999;
-			item.useAnimation = 14;
-			item.shoot = ModContent.ProjectileType<Projectiles.IchorBreathPro>();
-			item.shootSpeed = 8f;
-			item.useStyle = 1;
-			item.knockBack = 3;
-			item.value = 155;
-			item.rare = 5;
-			item.consumable = true;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 55;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 18;
+			Item.height = 18;
+			Item.useTime = 14;
+			Item.maxStack = 999;
+			Item.useAnimation = 14;
+			Item.shoot = ModContent.ProjectileType<Projectiles.IchorBreathPro>();
+			Item.shootSpeed = 8f;
+			Item.useStyle = 1;
+			Item.knockBack = 3;
+			Item.value = 155;
+			Item.rare = 5;
+			Item.consumable = true;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ichor Breath");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Ichor Breath");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

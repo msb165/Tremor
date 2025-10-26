@@ -7,24 +7,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 48;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.rare = 1;
-			item.consumable = true;
-			item.value = 0;
-			item.createTile = ModContent.TileType<Tiles.StoneDoorClosed>();
+			Item.width = 24;
+			Item.height = 48;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.rare = 1;
+			Item.consumable = true;
+			Item.value = 0;
+			Item.createTile = ModContent.TileType<Tiles.StoneDoorClosed>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Stone Door");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Stone Door");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

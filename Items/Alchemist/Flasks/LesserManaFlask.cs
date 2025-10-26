@@ -10,33 +10,33 @@ namespace Tremor.Items.Alchemist.Flasks
 
 		public override void SetDefaults()
 		{
-			item.crit = 4;
-			item.damage = 11;
-			//item.DamageType = DamageClass.Throwing;
-			item.width = 26;
-			item.noUseGraphic = true;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.height = 30;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.shoot = ModContent.ProjectileType<Projectiles.Alchemic.LesserManaFlaskPro>();
-			item.shootSpeed = 8f;
-			item.useStyle = 1;
-			item.knockBack = 1;
-			item.UseSound = SoundID.Item106;
-			item.value = 70;
-			item.rare = 1;
-			item.autoReuse = false;
+			Item.crit = 4;
+			Item.damage = 11;
+			//Item.DamageType = DamageClass.Throwing;
+			Item.width = 26;
+			Item.noUseGraphic = true;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.height = 30;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Alchemic.LesserManaFlaskPro>();
+			Item.shootSpeed = 8f;
+			Item.useStyle = 1;
+			Item.knockBack = 1;
+			Item.UseSound = SoundID.Item106;
+			Item.value = 70;
+			Item.rare = 1;
+			Item.autoReuse = false;
 
-			item.ammo = ModContent.ItemType<BoomFlask>();
+			Item.ammo = ModContent.ItemType<BoomFlask>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Lesser Mana Flask");
-			Tooltip.SetDefault("Throws a flask that explodes into clouds\n" +
-"Clouds deal damage to enemies and restore mana");
+			// DisplayName.SetDefault("Lesser Mana Flask");
+			/* Tooltip.SetDefault("Throws a flask that explodes into clouds\n" +
+"Clouds deal damage to enemies and restore mana"); */
 		}
 
 		public override void PickAmmo(Item weapon, Player player, ref int type, ref float speed, ref StatModifier damage, ref float knockback)
@@ -49,28 +49,28 @@ namespace Tremor.Items.Alchemist.Flasks
 			MPlayer modPlayer = MPlayer.GetModPlayer(player);
 			if (modPlayer.novaHelmet)
 			{
-				item.autoReuse = true;
+				Item.autoReuse = true;
 			}
 			if (!modPlayer.novaHelmet)
 			{
-				item.autoReuse = false;
+				Item.autoReuse = false;
 			}
 
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) != -1)
 			{
-				item.shootSpeed = 11f;
+				Item.shootSpeed = 11f;
 			}
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) < 1)
 			{
-				item.shootSpeed = 8f;
+				Item.shootSpeed = 8f;
 			}
 			if (modPlayer.core)
 			{
-				item.autoReuse = true;
+				Item.autoReuse = true;
 			}
 			if (!modPlayer.core)
 			{
-				item.autoReuse = false;
+				Item.autoReuse = false;
 			}
 		}
 		public override void AddRecipes()

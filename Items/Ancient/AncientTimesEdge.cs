@@ -8,28 +8,28 @@ namespace Tremor.Items.Ancient
 		public override void SetDefaults()
 		{
 
-			item.damage = 18;
-			item.DamageType = DamageClass.Melee;
-			item.width = 36;
-			item.height = 44;
-			item.useTime = 35;
+			Item.damage = 18;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 36;
+			Item.height = 44;
+			Item.useTime = 35;
 
-			item.useAnimation = 35;
-			item.useStyle = 1;
-			item.useTurn = true;
-			item.knockBack = 6f;
-			item.value = 30000;
-			item.rare = 2;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.shootSpeed = 15f;
-			item.shoot = 270;
+			Item.useAnimation = 35;
+			Item.useStyle = 1;
+			Item.useTurn = true;
+			Item.knockBack = 6f;
+			Item.value = 30000;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
+			Item.shootSpeed = 15f;
+			Item.shoot = 270;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Times Edge");
-			Tooltip.SetDefault("Summons ancient skulls on swing");
+			// DisplayName.SetDefault("Ancient Times Edge");
+			// Tooltip.SetDefault("Summons ancient skulls on swing");
 		}
 
 	}

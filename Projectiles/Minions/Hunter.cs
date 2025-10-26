@@ -30,7 +30,7 @@ namespace Tremor.Projectiles.Minions
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Hunter");
+      // DisplayName.SetDefault("Hunter");
        
     }
 
@@ -47,7 +47,7 @@ namespace Tremor.Projectiles.Minions
       return false;
 		}
 
-        public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+        public override bool PreDraw(ref Color drawColor)
         {
             Texture2D texture = Mod.GetTexture("Tremor/Projectiles/Hunter_Chain");
 

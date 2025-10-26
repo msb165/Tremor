@@ -23,7 +23,7 @@ namespace Tremor.Tiles
 			AddMapEntry(new Color(255, 20, 147));
 			Main.tileShine[Type] = 1100;
 			Main.tileSolid[Type] = true;
-			ItemDrop = ModContent.ItemType<CollapsiumBar>();
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<CollapsiumBar>();
 		}
 	}
 }

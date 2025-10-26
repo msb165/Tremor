@@ -10,19 +10,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.value = 456600;
-			item.rare = 11;
-			item.defense = 12;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 456600;
+			Item.rare = 11;
+			Item.defense = 12;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dimensional Top Hat");
-			Tooltip.SetDefault("Grants clairvoyance\n" +
+			// DisplayName.SetDefault("Dimensional Top Hat");
+			/* Tooltip.SetDefault("Grants clairvoyance\n" +
 "25% increased magic and minion damage\n" +
-"Greatly increases mana regeneration");
+"Greatly increases mana regeneration"); */
 		}
 
 		public override void UpdateEquip(Player player)

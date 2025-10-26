@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 27;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 26;
-			item.noUseGraphic = true;
-			item.maxStack = 1;
-			item.height = 30;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.shoot = ModContent.ProjectileType<Projectiles.SandShuriken>();
-			item.shootSpeed = 27f;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 50000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 27;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 26;
+			Item.noUseGraphic = true;
+			Item.maxStack = 1;
+			Item.height = 30;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.shoot = ModContent.ProjectileType<Projectiles.SandShuriken>();
+			Item.shootSpeed = 27f;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 50000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sand Shuriken");
-			Tooltip.SetDefault("Can be used infinitely");
+			// DisplayName.SetDefault("Sand Shuriken");
+			// Tooltip.SetDefault("Can be used infinitely");
 		}
 
 	}

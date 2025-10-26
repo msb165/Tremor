@@ -9,18 +9,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 28;
-			item.value = 30000;
+			Item.width = 24;
+			Item.height = 28;
+			Item.value = 30000;
 
-			item.rare = 1;
-			item.accessory = true;
+			Item.rare = 1;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dragon Gem");
-			Tooltip.SetDefault("Increases regeneration during night");
+			// DisplayName.SetDefault("Dragon Gem");
+			// Tooltip.SetDefault("Increases regeneration during night");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

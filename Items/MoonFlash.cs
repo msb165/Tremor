@@ -10,28 +10,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 90;
-			//item.melee = false;
-			item.DamageType = DamageClass.Magic;
-			item.width = 50;
-			item.height = 55;
-			item.useTime = 25;
-			item.mana = 10;
-			item.useAnimation = 25;
-			item.useStyle = 5;
-			item.shoot = 645;
-			item.shootSpeed = 40f;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(0, 30, 0, 0);
-			item.rare = 11;
-			item.UseSound = SoundID.Item77;
-			item.autoReuse = true;
+			Item.damage = 90;
+			//Item.melee = false;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 50;
+			Item.height = 55;
+			Item.useTime = 25;
+			Item.mana = 10;
+			Item.useAnimation = 25;
+			Item.useStyle = 5;
+			Item.shoot = 645;
+			Item.shootSpeed = 40f;
+			Item.knockBack = 6;
+			Item.value = Item.buyPrice(0, 30, 0, 0);
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item77;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Moon Flash");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Moon Flash");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

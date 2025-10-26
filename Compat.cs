@@ -183,31 +183,6 @@ namespace Tremor
 	}
 	public abstract class TremorModTile:ModTile
 	{
-		public int[] adjTiles
-		{
-			get => AdjTiles;
-			set => AdjTiles = value;
-		}
-		public string chest
-		{
-			get => ContainerName.GetDefault();
-			set => ContainerName.SetDefault(value);
-		}
-		public int chestDrop
-		{
-			get => ChestDrop;
-			set => ChestDrop = value;
-		}
-		public string dresser
-		{
-			get => ContainerName.GetDefault();
-			set => ContainerName.SetDefault(value);
-		}
-		public int dresserDrop
-		{
-			get => DresserDrop;
-			set => DresserDrop = value;
-		}
 		public int soundType//Sound type is actually SoundStyle now
 		{
 			set => HitSound = SoundID.SoundByIndex[(ushort)value];

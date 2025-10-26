@@ -9,29 +9,29 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.damage = 312;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 78;
-			item.height = 22;
-			item.useTime = 45;
-			item.useAnimation = 45;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = 13800;
-			item.rare = 10;
-			item.UseSound = SoundID.Item36;
-			item.autoReuse = false;
-			item.shoot = 10;
-			item.shootSpeed = 5f;
-			item.useAmmo = AmmoID.Bullet;
+			Item.damage = 312;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 78;
+			Item.height = 22;
+			Item.useTime = 45;
+			Item.useAnimation = 45;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = 13800;
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item36;
+			Item.autoReuse = false;
+			Item.shoot = 10;
+			Item.shootSpeed = 5f;
+			Item.useAmmo = AmmoID.Bullet;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Ultimate Boomstick");
-			Tooltip.SetDefault("Has a chance to shoot moon flames\n" +
-"'What can be better than a giant shotgun!?'");
+			// DisplayName.SetDefault("The Ultimate Boomstick");
+			/* Tooltip.SetDefault("Has a chance to shoot moon flames\n" +
+"'What can be better than a giant shotgun!?'"); */
 		}
 
 		public override Vector2? HoldoutOffset()

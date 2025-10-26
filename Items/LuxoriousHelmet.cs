@@ -10,17 +10,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.defense = 15;
-			item.width = 26;
-			item.height = 32;
-			item.value = 2500;
-			item.rare = 8;
+			Item.defense = 15;
+			Item.width = 26;
+			Item.height = 32;
+			Item.value = 2500;
+			Item.rare = 8;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Luxorious Helmet");
-			Tooltip.SetDefault("12% increased mining speed");
+			// DisplayName.SetDefault("Luxorious Helmet");
+			// Tooltip.SetDefault("12% increased mining speed");
 		}
 
 		public override void UpdateEquip(Player player)

@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class HeroBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hero");
-			Description.SetDefault("Almost grants invulnerability");
+			// DisplayName.SetDefault("Hero");
+			// Description.SetDefault("Almost grants invulnerability");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

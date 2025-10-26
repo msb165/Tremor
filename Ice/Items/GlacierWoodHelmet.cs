@@ -9,17 +9,17 @@ namespace Tremor.Ice.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 32;
-			item.height = 26;
-			item.value = 400;
-			item.rare = 1;
-			item.defense = 2;
+			Item.width = 32;
+			Item.height = 26;
+			Item.value = 400;
+			Item.rare = 1;
+			Item.defense = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Glacier Wood Helmet");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Glacier Wood Helmet");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)

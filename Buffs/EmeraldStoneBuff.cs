@@ -7,10 +7,10 @@ namespace Tremor.Buffs
 {
 	public class EmeraldStoneBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Emeraldy");
-			Description.SetDefault("It lights up the area");
+			// DisplayName.SetDefault("Emeraldy");
+			// Description.SetDefault("It lights up the area");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.lightPet[Type] = true;
 		}

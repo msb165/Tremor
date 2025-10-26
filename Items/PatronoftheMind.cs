@@ -10,19 +10,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 28;
+			Item.width = 24;
+			Item.height = 28;
 
-			item.value = 45000;
-			item.rare = 5;
-			item.accessory = true;
-			item.defense = 3;
+			Item.value = 45000;
+			Item.rare = 5;
+			Item.accessory = true;
+			Item.defense = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Patron of the Mind");
-			Tooltip.SetDefault("Gives health when in Crimson");
+			// DisplayName.SetDefault("Patron of the Mind");
+			// Tooltip.SetDefault("Gives health when in Crimson");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

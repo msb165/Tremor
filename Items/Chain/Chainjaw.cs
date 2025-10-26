@@ -10,31 +10,31 @@ namespace Tremor.Items.Chain
 		public override void SetDefaults()
 		{
 
-			item.damage = 8;
-			item.DamageType = DamageClass.Melee;
-			item.width = 20;
-			item.height = 12;
-			item.useTime = 15;
-			item.useAnimation = 25;
-			item.channel = true;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.axe = 15;
-			item.tileBoost++;
-			item.useStyle = 5;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(0, 1, 50, 0);
-			item.rare = 3;
-			item.UseSound = SoundID.Item23;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.ChainjawPro>();
-			item.shootSpeed = 26f;
+			Item.damage = 8;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 20;
+			Item.height = 12;
+			Item.useTime = 15;
+			Item.useAnimation = 25;
+			Item.channel = true;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.axe = 15;
+			Item.tileBoost++;
+			Item.useStyle = 5;
+			Item.knockBack = 6;
+			Item.value = Item.buyPrice(0, 1, 50, 0);
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item23;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.ChainjawPro>();
+			Item.shootSpeed = 26f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chainjaw");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Chainjaw");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

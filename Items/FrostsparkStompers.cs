@@ -9,19 +9,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 20;
-			item.value = 110000;
-			item.rare = 3;
+			Item.width = 26;
+			Item.height = 20;
+			Item.value = 110000;
+			Item.rare = 3;
 
-			item.accessory = true;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frostspark Stompers");
-			Tooltip.SetDefault("10% increased movement speed and increases knockback effect\n" +
-"Allows flight, super fast running, and extra mobility on ice");
+			// DisplayName.SetDefault("Frostspark Stompers");
+			/* Tooltip.SetDefault("10% increased movement speed and increases knockback effect\n" +
+"Allows flight, super fast running, and extra mobility on ice"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

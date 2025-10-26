@@ -12,27 +12,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 232;
-			item.DamageType = DamageClass.Melee;
-			item.width = 46;
-			item.height = 48;
-			item.useTime = 30;
-			item.useAnimation = 30;
-			item.useStyle = 1;
-			item.knockBack = 3;
-			item.shoot = ModContent.ProjectileType<Projectiles.DivineClaymorePro>();
-			item.shootSpeed = 12f;
-			item.value = 12400;
-			item.rare = 0;
-			item.UseSound = SoundID.Item15;
-			item.autoReuse = true;
-			item.useTurn = true;
+			Item.damage = 232;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 46;
+			Item.height = 48;
+			Item.useTime = 30;
+			Item.useAnimation = 30;
+			Item.useStyle = 1;
+			Item.knockBack = 3;
+			Item.shoot = ModContent.ProjectileType<Projectiles.DivineClaymorePro>();
+			Item.shootSpeed = 12f;
+			Item.value = 12400;
+			Item.rare = 0;
+			Item.UseSound = SoundID.Item15;
+			Item.autoReuse = true;
+			Item.useTurn = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Divine Claymore");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Divine Claymore");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

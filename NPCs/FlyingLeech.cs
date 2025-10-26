@@ -8,7 +8,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Flying Leech");
+			// DisplayName.SetDefault("Flying Leech");
 			Main.npcFrameCount[npc.type] = 2;
 		}
 

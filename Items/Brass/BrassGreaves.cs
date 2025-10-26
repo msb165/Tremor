@@ -11,18 +11,18 @@ namespace Tremor.Items.Brass
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.value = 500;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 500;
 
-			item.rare = 5;
-			item.defense = 4;
+			Item.rare = 5;
+			Item.defense = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Brass Greaves");
-			Tooltip.SetDefault("15% increased movement speed");
+			// DisplayName.SetDefault("Brass Greaves");
+			// Tooltip.SetDefault("15% increased movement speed");
 		}
 
 		public override void UpdateEquip(Player player)

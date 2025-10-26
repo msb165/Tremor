@@ -21,9 +21,9 @@ namespace Tremor.Projectiles.Alchemic
 			projectile.rotation = 0f;
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
-			int newLife = Main.rand.Next(damage / 3) + 5;
+			int newLife = Main.rand.Next(damageDone / 3) + 5;
 			Main.player[projectile.owner].statLife += newLife;
 			Main.player[projectile.owner].HealEffect(newLife);
 		}

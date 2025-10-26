@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class ExtendedHealthBooster:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Extended Health Booster");
-			Description.SetDefault("Regenerates 150 health every 45 seconds");
+			// DisplayName.SetDefault("Extended Health Booster");
+			// Description.SetDefault("Regenerates 150 health every 45 seconds");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

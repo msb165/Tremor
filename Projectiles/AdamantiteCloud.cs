@@ -18,7 +18,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("PurpleCloudPro");
+			// DisplayName.SetDefault("PurpleCloudPro");
 
 		}
 

@@ -8,26 +8,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 73;
-			item.DamageType = DamageClass.Melee;
-			item.width = 38;
-			item.height = 20;
-			item.useTime = 26;
-			item.useAnimation = 26;
-			item.useStyle = 1;
-			item.knockBack = 10;
-			item.value = 150000;
-			item.rare = 6;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.shoot = 270;
-			item.shootSpeed = 12f;
+			Item.damage = 73;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 38;
+			Item.height = 20;
+			Item.useTime = 26;
+			Item.useAnimation = 26;
+			Item.useStyle = 1;
+			Item.knockBack = 10;
+			Item.value = 150000;
+			Item.rare = 6;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
+			Item.shoot = 270;
+			Item.shootSpeed = 12f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Necro War Hammer");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Necro War Hammer");
+			// Tooltip.SetDefault("");
 		}
 
 	}

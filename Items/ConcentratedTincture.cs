@@ -8,19 +8,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 450000;
-			item.rare = 5;
-			item.accessory = true;
-			item.defense = 1;
+			Item.value = 450000;
+			Item.rare = 5;
+			Item.accessory = true;
+			Item.defense = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Concentrated Tincture");
-			Tooltip.SetDefault("Increases life regeneration from healing flasks");
+			// DisplayName.SetDefault("Concentrated Tincture");
+			// Tooltip.SetDefault("Increases life regeneration from healing flasks");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

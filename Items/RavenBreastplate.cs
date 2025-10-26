@@ -11,19 +11,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 18;
-			item.height = 18;
-			item.value = 10000;
+			Item.width = 18;
+			Item.height = 18;
+			Item.value = 10000;
 
-			item.rare = 4;
-			item.defense = 10;
+			Item.rare = 4;
+			Item.defense = 10;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Raven Breastplate");
-			Tooltip.SetDefault("8% increased melee damage\n" +
-"Increases melee critical strike chance by 5");
+			// DisplayName.SetDefault("Raven Breastplate");
+			/* Tooltip.SetDefault("8% increased melee damage\n" +
+"Increases melee critical strike chance by 5"); */
 		}
 
 		public override void UpdateEquip(Player player)

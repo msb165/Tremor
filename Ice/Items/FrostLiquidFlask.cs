@@ -7,30 +7,30 @@ namespace Tremor.Ice.Items
 	{
 		public override void SetDefaults()
 		{
-			item.damage = 10;
-			//item.DamageType = DamageClass.Throwing;
-			item.width = 26;
-			item.noUseGraphic = true;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.height = 30;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.shoot = ModContent.ProjectileType<FrostLiquidFlaskPro>();
-			item.shootSpeed = 8f;
-			item.useStyle = 1;
-			item.knockBack = 1;
-			item.UseSound = SoundID.Item106;
-			item.value = 30;
-			item.rare = 1;
-			item.autoReuse = false;
-			item.crit = 4;
+			Item.damage = 10;
+			//Item.DamageType = DamageClass.Throwing;
+			Item.width = 26;
+			Item.noUseGraphic = true;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.height = 30;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.shoot = ModContent.ProjectileType<FrostLiquidFlaskPro>();
+			Item.shootSpeed = 8f;
+			Item.useStyle = 1;
+			Item.knockBack = 1;
+			Item.UseSound = SoundID.Item106;
+			Item.value = 30;
+			Item.rare = 1;
+			Item.autoReuse = false;
+			Item.crit = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frost Liquid Flask");
-			Tooltip.SetDefault("Throws a flask that explodes into frost bolts");
+			// DisplayName.SetDefault("Frost Liquid Flask");
+			// Tooltip.SetDefault("Throws a flask that explodes into frost bolts");
 		}
 	}
 }

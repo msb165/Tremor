@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 250;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 15;
-			item.width = 68;
-			item.height = 28;
-			item.useTime = 60;
-			item.useAnimation = 60;
-			item.shoot = 617;
-			item.shootSpeed = 15f;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 20000;
+			Item.damage = 250;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 15;
+			Item.width = 68;
+			Item.height = 28;
+			Item.useTime = 60;
+			Item.useAnimation = 60;
+			Item.shoot = 617;
+			Item.shootSpeed = 15f;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 20000;
 
-			item.rare = 11;
-			item.UseSound = SoundID.Item12;
-			item.autoReuse = true;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item12;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Blackhole Cannon");
-			Tooltip.SetDefault("Shoots deadly black holes");
+			// DisplayName.SetDefault("Blackhole Cannon");
+			// Tooltip.SetDefault("Shoots deadly black holes");
 		}
 
 	}

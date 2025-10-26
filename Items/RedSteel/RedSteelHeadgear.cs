@@ -8,17 +8,17 @@ namespace Tremor.Items.RedSteel
 	{
 		public override void SetDefaults()
 		{
-			item.width = 26;
-			item.height = 20;
-			item.value = 200;
-			item.rare = 1;
-			item.defense = 8;
+			Item.width = 26;
+			Item.height = 20;
+			Item.value = 200;
+			Item.rare = 1;
+			Item.defense = 8;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Red Steel Headgear");
-			Tooltip.SetDefault("10% increased melee damage");
+			// DisplayName.SetDefault("Red Steel Headgear");
+			// Tooltip.SetDefault("10% increased melee damage");
 		}
 
 		public override void UpdateEquip(Player player)

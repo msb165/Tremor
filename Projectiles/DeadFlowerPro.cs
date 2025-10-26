@@ -17,7 +17,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dead Flower");
+			// DisplayName.SetDefault("Dead Flower");
 
 		}
 
@@ -52,7 +52,7 @@ namespace Tremor.Projectiles
 			}
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item110, projectile.position);
 			for (int num158 = 0; num158 < 20; num158++)

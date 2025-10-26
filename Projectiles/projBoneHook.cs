@@ -24,7 +24,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bone Hook");
+			// DisplayName.SetDefault("Bone Hook");
 		}
 
 		public override void AI()
@@ -45,9 +45,9 @@ namespace Tremor.Projectiles
 			}
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
-			Main.spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, new Rectangle((int)(projectile.position - Main.screenPosition).X, (int)(projectile.position - Main.screenPosition).Y, projectile.width, projectile.height), null, lightColor, projectile.rotation, new Vector2(projectile.width / 2, projectile.height / 2), SpriteEffects.None, 0);
+			Main.spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, new Rectangle((int)(projectile.position - Main.screenPosition).X, (int)(projectile.position - Main.screenPosition).Y, projectile.width, projectile.height), null, drawColor, projectile.rotation, new Vector2(projectile.width / 2, projectile.height / 2), SpriteEffects.None, 0);
 			return false;
 		}
 
@@ -56,12 +56,11 @@ namespace Tremor.Projectiles
 			return true;
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (NPC == -1 && !target.boss && !target.friendly && target.lifeMax > 5 && target.aiStyle != 6)
 				NPC = target.whoAmI;
 			TimeToHook = 1;
-			base.OnHitNPC(target, damage, knockback, crit);
 		}
 
 		public override bool OnTileCollide(Vector2 oldVelocity)
@@ -70,16 +69,9 @@ namespace Tremor.Projectiles
 			return base.OnTileCollide(oldVelocity);
 		}
 
-		public override void OnHitPlayer(Player target, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
 		{
 			TimeToHook = 1;
-			base.OnHitPlayer(target, damage, crit);
-		}
-
-		public override void OnHitPvp(Player target, int damage, bool crit)
-		{
-			TimeToHook = 1;
-			base.OnHitPvp(target, damage, crit);
 		}
 	}
 }

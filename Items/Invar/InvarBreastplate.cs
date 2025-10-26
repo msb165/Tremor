@@ -10,16 +10,16 @@ namespace Tremor.Items.Invar
 
 		protected sealed override void Defaults()
 		{
-			item.width = 26;
-			item.height = 18;
-			item.value = Item.sellPrice(silver: 19);
-			item.rare = 1;
-			item.defense = 3;
+			Item.width = 26;
+			Item.height = 18;
+			Item.value = Item.sellPrice(silver: 19);
+			Item.rare = 1;
+			Item.defense = 3;
 		}
 
 		protected sealed override void StaticDefaults()
 		{
-			DisplayName.SetDefault("Invar Breastplate");
+			// DisplayName.SetDefault("Invar Breastplate");
 		}
 	}
 
@@ -42,13 +42,13 @@ namespace Tremor.Items.Invar
 	{
 		public sealed override void SafeDefaults()
 		{
-			item.defense += 1;
+			Item.defense += 1;
 		}
 
 		public sealed override void SafeStaticDefaults()
 		{
-			DisplayName.SetDefault("Reinforced Invar Breastplate");
-			Tooltip.SetDefault("Reinforced to grant +1 defense");
+			// DisplayName.SetDefault("Reinforced Invar Breastplate");
+			// Tooltip.SetDefault("Reinforced to grant +1 defense");
 		}
 
 		public override void AddRecipes()

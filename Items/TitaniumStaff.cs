@@ -9,30 +9,30 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.Starfury);
+			Item.CloneDefaults(ItemID.Starfury);
 
-			item.damage = 43;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 9;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 14;
-			item.useAnimation = 14;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = 13800;
-			item.rare = 4;
-			item.UseSound = SoundID.Item24;
-			item.autoReuse = true;
-			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
-			item.shootSpeed = 15f;
+			Item.damage = 43;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 9;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 14;
+			Item.useAnimation = 14;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = 13800;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item24;
+			Item.autoReuse = true;
+			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			Item.shootSpeed = 15f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Titanium Staff");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Titanium Staff");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

@@ -12,23 +12,23 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 20;
-			item.height = 30;
-			item.maxStack = 20;
+			Item.width = 20;
+			Item.height = 30;
+			Item.maxStack = 20;
 
-			item.rare = 5;
-			item.useAnimation = 45;
-			item.useTime = 45;
-			item.useStyle = 4;
-			item.consumable = true;
+			Item.rare = 5;
+			Item.useAnimation = 45;
+			Item.useTime = 45;
+			Item.useStyle = 4;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pixie in a Jar");
-			Tooltip.SetDefault("Summons the Pixie Queen\n" +
+			// DisplayName.SetDefault("Pixie in a Jar");
+			/* Tooltip.SetDefault("Summons the Pixie Queen\n" +
 "Requires any mech. boss to have been slain, the the hallow biome and night time\n" +
-"'I think something wants to get out of the jar...'");
+"'I think something wants to get out of the jar...'"); */
 		}
 
 		public override bool CanUseItem(Player player)

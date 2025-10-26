@@ -10,7 +10,7 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Undead Wyrm");
+			// DisplayName.SetDefault("Undead Wyrm");
 		}
 
 		public override void SetDefaults()
@@ -53,7 +53,7 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 			return false;
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
 			Texture2D drawTexture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2((drawTexture.Width / 2) * 0.5F, (drawTexture.Height / Main.npcFrameCount[npc.type]) * 0.5F);

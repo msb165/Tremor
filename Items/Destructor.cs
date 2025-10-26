@@ -10,28 +10,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 40;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 40;
-			item.height = 40;
+			Item.damage = 40;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 40;
+			Item.height = 40;
 
-			item.useTime = 10;
-			item.useAnimation = 10;
-			item.shoot = 14;
-			item.shootSpeed = 8f;
-			item.useAmmo = AmmoID.Bullet;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 60000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = true;
+			Item.useTime = 10;
+			Item.useAnimation = 10;
+			Item.shoot = 14;
+			Item.shootSpeed = 8f;
+			Item.useAmmo = AmmoID.Bullet;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 60000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Destructor");
-			Tooltip.SetDefault("'Exterminate!'");
+			// DisplayName.SetDefault("The Destructor");
+			// Tooltip.SetDefault("'Exterminate!'");
 		}
 
 		public override bool CanConsumeAmmo(Item ammo, Player p)

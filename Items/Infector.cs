@@ -9,30 +9,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 12;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 9;
-			item.width = 40;
-			item.height = 40;
+			Item.damage = 12;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 9;
+			Item.width = 40;
+			Item.height = 40;
 
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 5;
-			Item.staff[item.type] = true;
-			item.noMelee = true;
-			item.knockBack = 5;
-			item.value = 1500;
-			item.rare = 3;
-			item.UseSound = SoundID.Item20;
-			item.autoReuse = true;
-			item.shoot = 568;
-			item.shootSpeed = 9f;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 5;
+			Item.staff[Item.type] = true;
+			Item.noMelee = true;
+			Item.knockBack = 5;
+			Item.value = 1500;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item20;
+			Item.autoReuse = true;
+			Item.shoot = 568;
+			Item.shootSpeed = 9f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Infector");
-			Tooltip.SetDefault("Casts spores to infect your enemies!");
+			// DisplayName.SetDefault("Infector");
+			// Tooltip.SetDefault("Casts spores to infect your enemies!");
 		}
 
 		public override void AddRecipes()

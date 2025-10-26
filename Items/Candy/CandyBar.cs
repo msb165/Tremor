@@ -7,24 +7,24 @@ namespace Tremor.Items.Candy
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 24;
-			item.maxStack = 99;
-			item.value = 6000;
-			item.rare = 10;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.createTile = ModContent.TileType<Tiles.CandyBarTile>();
-			item.useStyle = 1;
-			item.consumable = true;
+			Item.width = 30;
+			Item.height = 24;
+			Item.maxStack = 99;
+			Item.value = 6000;
+			Item.rare = 10;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.createTile = ModContent.TileType<Tiles.CandyBarTile>();
+			Item.useStyle = 1;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Candy Bar");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Candy Bar");
+			// Tooltip.SetDefault("");
 		}
 
 	}

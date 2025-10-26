@@ -12,7 +12,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Night Terror");
+			// DisplayName.SetDefault("Night Terror");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 
@@ -43,19 +43,19 @@ namespace Tremor.NPCs
 				this.NewItem(ModContent.ItemType<AxeofExecutioner>());
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 60; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
 
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 54, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
 				Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
@@ -66,7 +66,7 @@ namespace Tremor.NPCs
 			}
 			else
 			{
-				for (int k = 0; k < damage / npc.lifeMax * 50; k++)
+				for (int k = 0; k < npc.damage / npc.lifeMax * 50; k++)
 					Gore.NewGore(null, npc.position, npc.velocity, 99, 1f);
 			}
 		}

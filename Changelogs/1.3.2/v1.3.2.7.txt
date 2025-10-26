@@ -16,7 +16,7 @@ Goblin Army:
 - Buffed Goblin Bomber life to 90 from 45
 
 NPCs:
-- I found in patch 1.3.1.13: "Desert Princess now drops only 1 of 3 Desert Explorer set items", however, this wasn't the case. So now Desert Queen can drop one piece at a time, and they all have 50% drop chance. I added smart code to ensure you don't always end up getting the same item.
+- I found in patch 1.3.1.13: "Desert Princess now drops only 1 of 3 Desert Explorer set items", however, this wasn't the case. So now Desert Queen can drop one piece at a time, and they all have 50% drop chance. I added smart code to ensure you don't always end up getting the same Item.
 - Desert Princess now spawns in the Desert Biome after Plantera is defeated
 - Lowered Desert Princess life to 8000 down from 22000
 - Lowered Desert Princess defense to 40 down from 45

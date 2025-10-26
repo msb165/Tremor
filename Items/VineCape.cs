@@ -11,18 +11,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 22;
+			Item.width = 30;
+			Item.height = 22;
 
-			item.value = 100;
-			item.rare = 1;
-			item.defense = 3;
+			Item.value = 100;
+			Item.rare = 1;
+			Item.defense = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vine Cape");
-			Tooltip.SetDefault("5% increased ranged damage");
+			// DisplayName.SetDefault("Vine Cape");
+			// Tooltip.SetDefault("5% increased ranged damage");
 		}
 
 		public override void UpdateEquip(Player player)

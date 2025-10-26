@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class HuskyBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Husky");
-			Description.SetDefault("A husky will fight for you");
+			// DisplayName.SetDefault("Husky");
+			// Description.SetDefault("A husky will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

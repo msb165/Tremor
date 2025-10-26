@@ -8,18 +8,18 @@ namespace Tremor.Items.RedSteel
 	{
 		public override void SetDefaults()
 		{
-			item.width = 22;
-			item.height = 18;
-			item.value = 200;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 200;
 
-			item.rare = 2;
-			item.defense = 8;
+			Item.rare = 2;
+			Item.defense = 8;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Red Steel Chestplate");
-			Tooltip.SetDefault("10% increased melee speed");
+			// DisplayName.SetDefault("Red Steel Chestplate");
+			// Tooltip.SetDefault("10% increased melee speed");
 		}
 
 		public override void UpdateEquip(Player player)

@@ -11,18 +11,18 @@ namespace Tremor.Items.Chaos
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 30;
+			Item.width = 28;
+			Item.height = 30;
 
-			item.value = 80000;
-			item.rare = 5;
-			item.accessory = true;
+			Item.value = 80000;
+			Item.rare = 5;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chaos Wings");
-			Tooltip.SetDefault("Allows flight and slow fall");
+			// DisplayName.SetDefault("Chaos Wings");
+			// Tooltip.SetDefault("Allows flight and slow fall");
 		}
 
 		//these wings use the same values as the solar wings

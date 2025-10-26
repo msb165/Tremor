@@ -10,26 +10,26 @@ namespace Tremor.Ice.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 22;
-			item.DamageType = DamageClass.Melee;
-			item.width = 48;
-			item.height = 40;
-			item.useTime = 13;
-			item.useAnimation = 22;
-			item.useStyle = 1;
-			item.knockBack = 5;
-			item.value = 20000;
-			item.rare = 3;
-			item.axe = 10;
-			item.pick = 60;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 22;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 48;
+			Item.height = 40;
+			Item.useTime = 13;
+			Item.useAnimation = 22;
+			Item.useStyle = 1;
+			Item.knockBack = 5;
+			Item.value = 20000;
+			Item.rare = 3;
+			Item.axe = 10;
+			Item.pick = 60;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frozen Paxe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Frozen Paxe");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

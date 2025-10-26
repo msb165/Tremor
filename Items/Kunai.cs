@@ -8,29 +8,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 14;
-			item.height = 32;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 18;
-			item.noUseGraphic = true;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.useTime = 19;
-			item.useAnimation = 19;
-			item.shoot = ModContent.ProjectileType<Projectiles.Kunai>();
-			item.shootSpeed = 15f;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 60;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 14;
+			Item.height = 32;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 18;
+			Item.noUseGraphic = true;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.useTime = 19;
+			Item.useAnimation = 19;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Kunai>();
+			Item.shootSpeed = 15f;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 60;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Kunai");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Kunai");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

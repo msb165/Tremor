@@ -9,27 +9,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 84;
-			item.width = 14;
-			item.height = 84;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 16;
-			item.useTime = 12;
-			item.useAnimation = 12;
-			item.shoot = ModContent.ProjectileType<Projectiles.CyclonePro>();
-			item.shootSpeed = 4f;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 230000;
-			item.rare = 10;
-			item.UseSound = SoundID.Item20;
-			item.autoReuse = true;
+			Item.damage = 84;
+			Item.width = 14;
+			Item.height = 84;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 16;
+			Item.useTime = 12;
+			Item.useAnimation = 12;
+			Item.shoot = ModContent.ProjectileType<Projectiles.CyclonePro>();
+			Item.shootSpeed = 4f;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 230000;
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item20;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cyclone");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Cyclone");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

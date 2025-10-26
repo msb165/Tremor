@@ -9,25 +9,25 @@ namespace Tremor.Invasion
 		public override void SetDefaults()
 		{
 
-			item.width = 16;
-			item.height = 16;
+			Item.width = 16;
+			Item.height = 16;
 
-			item.value = 00001000;
-			item.rare = 5;
-			item.useTurn = true;
-			item.autoReuse = false;
-			item.useStyle = 4;
-			item.useAnimation = 15;
-			item.useTime = 15;
-			item.maxStack = 1;
-			item.mana = 100;
-			item.UseSound = SoundID.Item8;
+			Item.value = 00001000;
+			Item.rare = 5;
+			Item.useTurn = true;
+			Item.autoReuse = false;
+			Item.useStyle = 4;
+			Item.useAnimation = 15;
+			Item.useTime = 15;
+			Item.maxStack = 1;
+			Item.mana = 100;
+			Item.UseSound = SoundID.Item8;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paradox Clock");
-			Tooltip.SetDefault("Allows you to control the time");
+			// DisplayName.SetDefault("Paradox Clock");
+			// Tooltip.SetDefault("Allows you to control the time");
 		}
 
 		public override bool? UseItem(Player player)

@@ -8,24 +8,24 @@ namespace Tremor.Items.Alchemist
 		public override void SetDefaults()
 		{
 
-			item.width = 50;
-			item.height = 26;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
+			Item.width = 50;
+			Item.height = 26;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
 
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.value = 150;
-			item.createTile = ModContent.TileType<Tiles.AlchemyStationTile>();
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.value = 150;
+			Item.createTile = ModContent.TileType<Tiles.AlchemyStationTile>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Alchemy Station");
-			Tooltip.SetDefault("Allows you to create unusual potions and transformation of different materials");
+			// DisplayName.SetDefault("Alchemy Station");
+			// Tooltip.SetDefault("Allows you to create unusual potions and transformation of different materials");
 		}
 
 		public override void AddRecipes()

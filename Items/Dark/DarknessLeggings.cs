@@ -10,18 +10,18 @@ namespace Tremor.Items.Dark
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.value = 600000;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 600000;
 
-			item.rare = 11;
-			item.defense = 25;
+			Item.rare = 11;
+			Item.defense = 25;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Leggings of Darkness");
-			Tooltip.SetDefault("Increases life regeneration");
+			// DisplayName.SetDefault("Leggings of Darkness");
+			// Tooltip.SetDefault("Increases life regeneration");
 		}
 
 		public override void UpdateEquip(Player player)

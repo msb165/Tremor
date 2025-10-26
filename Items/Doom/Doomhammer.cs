@@ -8,14 +8,14 @@ namespace Tremor.Items.Doom
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(367);
+			Item.CloneDefaults(367);
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Doomhammer");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Doomhammer");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

@@ -11,26 +11,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 50;
-			item.height = 26;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.rare = 11;
-			item.autoReuse = true;
-			item.useAnimation = 15;
+			Item.width = 50;
+			Item.height = 26;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.rare = 11;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
 
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.value = 150;
-			item.createTile = ModContent.TileType<Tiles.DivineForgeTile>();
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.value = 150;
+			Item.createTile = ModContent.TileType<Tiles.DivineForgeTile>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Divine Forge");
-			Tooltip.SetDefault("Combines the function of the anvil, furnace and the ancient manipulator\n" +
-"Allows you to work with heavenly materials");
+			// DisplayName.SetDefault("Divine Forge");
+			/* Tooltip.SetDefault("Combines the function of the anvil, furnace and the ancient manipulator\n" +
+"Allows you to work with heavenly materials"); */
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

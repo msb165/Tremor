@@ -9,21 +9,21 @@ namespace Tremor.NPCs.Bosses.Motherboard.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 38;
-			item.height = 38;
-			item.maxStack = 20;
+			Item.width = 38;
+			Item.height = 38;
+			Item.maxStack = 20;
 
-			item.rare = 9;
-			item.useAnimation = 45;
-			item.useTime = 45;
-			item.useStyle = 4;
-			item.UseSound = SoundID.Item44;
+			Item.rare = 9;
+			Item.useAnimation = 45;
+			Item.useTime = 45;
+			Item.useStyle = 4;
+			Item.UseSound = SoundID.Item44;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Motherboard");
-			Tooltip.SetDefault("You shouldn't have this");
+			// DisplayName.SetDefault("Motherboard");
+			// Tooltip.SetDefault("You shouldn't have this");
 		}
 
 		public override bool? UseItem(Player player)

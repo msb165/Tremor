@@ -23,7 +23,7 @@ namespace Tremor.Projectiles.Alchemic.Bursts
 			return Color.White;
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.LocalPlayer.HasBuffSafe(ModContent.BuffType<Buffs.ConcentratedTinctureBuff>()))
 			{

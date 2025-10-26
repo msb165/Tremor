@@ -11,18 +11,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 24;
-			item.maxStack = 99;
-			item.value = 10000;
-			item.rare = 0;
+			Item.width = 30;
+			Item.height = 24;
+			Item.maxStack = 99;
+			Item.value = 10000;
+			Item.rare = 0;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Omnikron Bar");
-			Tooltip.SetDefault("");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(8, 4));
+			// DisplayName.SetDefault("Omnikron Bar");
+			// Tooltip.SetDefault("");
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(8, 4));
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

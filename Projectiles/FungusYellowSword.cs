@@ -29,7 +29,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Fungus Yellow Sword");
+			// DisplayName.SetDefault("Fungus Yellow Sword");
 		}
 
 		public override void AI()
@@ -39,7 +39,7 @@ namespace Tremor.Projectiles
 			projectile.rotation = Helper.rotateBetween2Points(Main.LocalPlayer.Center, projectile.Center) - MathHelper.ToRadians(90);
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.rand.NextBool(4))
 			{

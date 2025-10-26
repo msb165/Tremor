@@ -8,29 +8,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 25;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 28;
-			item.noUseGraphic = true;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.height = 30;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.shoot = 582;
-			item.shootSpeed = 14f;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 60;
-			item.rare = 4;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 25;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 28;
+			Item.noUseGraphic = true;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.height = 30;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.shoot = 582;
+			Item.shootSpeed = 14f;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 60;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Throwing Wrench");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Throwing Wrench");
+			// Tooltip.SetDefault("");
 		}
 
 	}

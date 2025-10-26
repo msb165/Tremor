@@ -10,19 +10,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 26;
+			Item.width = 26;
+			Item.height = 26;
 
-			item.value = 12600;
-			item.rare = 8;
-			item.accessory = true;
-			item.defense = 12;
+			Item.value = 12600;
+			Item.rare = 8;
+			Item.accessory = true;
+			Item.defense = 12;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Organic Shield");
-			Tooltip.SetDefault("Gives health when in Corruption and Crimson");
+			// DisplayName.SetDefault("Organic Shield");
+			// Tooltip.SetDefault("Gives health when in Corruption and Crimson");
 		}
 
 		public override void UpdateEquip(Player player)

@@ -9,27 +9,27 @@ namespace Tremor.Items.Souls
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 24;
-			item.maxStack = 1;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
+			Item.width = 24;
+			Item.height = 24;
+			Item.maxStack = 1;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
 
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.value = 150;
-			item.rare = 5;
-			item.createTile = ModContent.TileType<Tiles.BottledSoulOfMight>();
-			item.accessory = true;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.value = 150;
+			Item.rare = 5;
+			Item.createTile = ModContent.TileType<Tiles.BottledSoulOfMight>();
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bottled Soul of Might");
-			Tooltip.SetDefault("12% increased damage if worn\n" +
-"5% increased damage if placed");
+			// DisplayName.SetDefault("Bottled Soul of Might");
+			/* Tooltip.SetDefault("12% increased damage if worn\n" +
+"5% increased damage if placed"); */
 		}
 
 		public override void AddRecipes()

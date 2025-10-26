@@ -5,11 +5,11 @@ namespace Tremor.Buffs
 {
 	public class BottledSoulOfFlight:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Bottled Soul of Flight");
-			Description.SetDefault("20% increased jump height");
+			// DisplayName.SetDefault("Bottled Soul of Flight");
+			// Description.SetDefault("20% increased jump height");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

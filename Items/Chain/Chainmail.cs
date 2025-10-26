@@ -10,17 +10,17 @@ namespace Tremor.Items.Chain
 	{
 		public override void SetDefaults()
 		{
-			item.width = 30;
-			item.height = 18;
-			item.value = Item.sellPrice(silver: 8);
-			item.rare = 1;
-			item.defense = 2;
+			Item.width = 30;
+			Item.height = 18;
+			Item.value = Item.sellPrice(silver: 8);
+			Item.rare = 1;
+			Item.defense = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chain Mail");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Chain Mail");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

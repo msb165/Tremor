@@ -8,8 +8,8 @@ namespace Tremor.Buffs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Annoying Dog");
-			Description.SetDefault("It wants to absorb your artifact");
+			// DisplayName.SetDefault("Annoying Dog");
+			// Description.SetDefault("It wants to absorb your artifact");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

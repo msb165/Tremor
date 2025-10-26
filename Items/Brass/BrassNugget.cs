@@ -7,17 +7,17 @@ namespace Tremor.Items.Brass
 		public override void SetDefaults()
 		{
 
-			item.width = 16;
-			item.height = 16;
-			item.maxStack = 99;
-			item.value = 300;
-			item.rare = 5;
+			Item.width = 16;
+			Item.height = 16;
+			Item.maxStack = 99;
+			Item.value = 300;
+			Item.rare = 5;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Brass Nugget");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Brass Nugget");
+			// Tooltip.SetDefault("");
 		}
 
 	}

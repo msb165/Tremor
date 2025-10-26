@@ -20,7 +20,7 @@ namespace Tremor.Tiles
 			MineResist = 15f;
 			MinPick = 250;
 			AddMapEntry(new Color(0, 191, 255));
-			ItemDrop = ModContent.ItemType<AngeliteOre>();
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<AngeliteOre>();
 		}
 		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
 		{

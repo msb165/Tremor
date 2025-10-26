@@ -9,20 +9,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 36;
-			item.height = 38;
-			item.value = 12500;
+			Item.width = 36;
+			Item.height = 38;
+			Item.value = 12500;
 
-			item.rare = 9;
-			item.expert = true;
-			item.accessory = true;
+			Item.rare = 9;
+			Item.expert = true;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Golden Star");
-			Tooltip.SetDefault("The less health, the more alchemical damage\n" +
-"'Rare alchemical artifact'");
+			// DisplayName.SetDefault("Golden Star");
+			/* Tooltip.SetDefault("The less health, the more alchemical damage\n" +
+"'Rare alchemical artifact'"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

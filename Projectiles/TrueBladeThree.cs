@@ -30,7 +30,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("True Blade");
+			// DisplayName.SetDefault("True Blade");
 		}
 
 		public override void AI()

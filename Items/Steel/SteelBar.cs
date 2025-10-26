@@ -8,24 +8,24 @@ namespace Tremor.Items.Steel
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 24;
-			item.maxStack = 99;
-			item.value = 300;
-			item.rare = 1;
-			item.createTile = ModContent.TileType<Tiles.SteelBar>();
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
+			Item.width = 30;
+			Item.height = 24;
+			Item.maxStack = 99;
+			Item.value = 300;
+			Item.rare = 1;
+			Item.createTile = ModContent.TileType<Tiles.SteelBar>();
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Steel Bar");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Steel Bar");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

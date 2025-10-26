@@ -19,7 +19,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nebula Jellyfish");
+			// DisplayName.SetDefault("Nebula Jellyfish");
 
 		}
 

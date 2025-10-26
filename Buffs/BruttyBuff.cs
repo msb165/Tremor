@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class BruttyBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Brutty");
-			Description.SetDefault("This cute snake will follow you");
+			// DisplayName.SetDefault("Brutty");
+			// Description.SetDefault("This cute snake will follow you");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

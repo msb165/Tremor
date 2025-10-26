@@ -8,23 +8,23 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 48;
-			item.height = 32;
-			item.maxStack = 99;
-			item.rare = 1;
-			item.createTile = ModContent.TileType<Tiles.ChristmasFireplace>();
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
+			Item.width = 48;
+			Item.height = 32;
+			Item.maxStack = 99;
+			Item.rare = 1;
+			Item.createTile = ModContent.TileType<Tiles.ChristmasFireplace>();
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Christmas Fireplace");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Christmas Fireplace");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

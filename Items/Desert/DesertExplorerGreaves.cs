@@ -10,18 +10,18 @@ namespace Tremor.Items.Desert
 	{
 		public override void SetDefaults()
 		{
-			item.width = 18;
-			item.height = 22;
-			item.value = 13500;
-			item.rare = 8;
-			item.defense = 13;
+			Item.width = 18;
+			Item.height = 22;
+			Item.value = 13500;
+			Item.rare = 8;
+			Item.defense = 13;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Desert Explorer Greaves");
-			Tooltip.SetDefault("16% increased alchemical damage\n" +
-			                   "30% increased movement speed");
+			// DisplayName.SetDefault("Desert Explorer Greaves");
+			/* Tooltip.SetDefault("16% increased alchemical damage\n" +
+			                   "30% increased movement speed"); */
 			TremorGlowMask.AddGlowMask(this, EquipType.Legs);
 		}
 

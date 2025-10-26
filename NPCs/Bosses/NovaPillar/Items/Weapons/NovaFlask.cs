@@ -10,31 +10,31 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 46;
-			item.width = 18;
-			item.noUseGraphic = true;
-			item.maxStack = 999;
-			item.height = 28;
-			item.useTime = 11;
-			item.useAnimation = 11;
-			item.shoot = ModContent.ProjectileType<Projectiles.NovaFlask_Proj>();
-			item.shootSpeed = 13f;
-			item.useStyle = 1;
-			item.knockBack = 1;
-			item.UseSound = SoundID.Item106;
-			item.value = 30;
-			item.rare = 10;
-			item.crit = 12;
-			item.autoReuse = false;
-			item.consumable = true;
+			Item.damage = 46;
+			Item.width = 18;
+			Item.noUseGraphic = true;
+			Item.maxStack = 999;
+			Item.height = 28;
+			Item.useTime = 11;
+			Item.useAnimation = 11;
+			Item.shoot = ModContent.ProjectileType<Projectiles.NovaFlask_Proj>();
+			Item.shootSpeed = 13f;
+			Item.useStyle = 1;
+			Item.knockBack = 1;
+			Item.UseSound = SoundID.Item106;
+			Item.value = 30;
+			Item.rare = 10;
+			Item.crit = 12;
+			Item.autoReuse = false;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Flask");
-			Tooltip.SetDefault("Shoots out a nova flask that explodes into two balls\n" +
+			// DisplayName.SetDefault("Nova Flask");
+			/* Tooltip.SetDefault("Shoots out a nova flask that explodes into two balls\n" +
 "Balls explode into flames after some time or when they hit enemy\n" +
-"Flames explode into damagin bursts after some time or when they hit enemy");
+"Flames explode into damagin bursts after some time or when they hit enemy"); */
 		}
 
 		public override void UpdateInventory(Player player)
@@ -42,28 +42,28 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items.Weapons
 			MPlayer modPlayer = MPlayer.GetModPlayer(player);
 			if (modPlayer.novaHelmet)
 			{
-				item.autoReuse = true;
+				Item.autoReuse = true;
 			}
 			if (!modPlayer.novaHelmet)
 			{
-				item.autoReuse = false;
+				Item.autoReuse = false;
 			}
 
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) != -1)
 			{
-				item.shootSpeed = 15f;
+				Item.shootSpeed = 15f;
 			}
 			if (player.FindBuffIndex(ModContent.BuffType<Buffs.LongFuseBuff>()) < 1)
 			{
-				item.shootSpeed = 13f;
+				Item.shootSpeed = 13f;
 			}
 			if (modPlayer.core)
 			{
-				item.autoReuse = true;
+				Item.autoReuse = true;
 			}
 			if (!modPlayer.core)
 			{
-				item.autoReuse = false;
+				Item.autoReuse = false;
 			}
 		}
 

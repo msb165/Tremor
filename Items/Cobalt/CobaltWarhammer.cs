@@ -8,25 +8,25 @@ namespace Tremor.Items.Cobalt
 		public override void SetDefaults()
 		{
 
-			item.damage = 38;
-			item.DamageType = DamageClass.Melee;
-			item.width = 44;
-			item.height = 40;
-			item.useTime = 39;
-			item.useAnimation = 39;
-			item.hammer = 80;
-			item.useStyle = 1;
-			item.knockBack = 5;
-			item.value = 13800;
-			item.rare = 4;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 38;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 44;
+			Item.height = 40;
+			Item.useTime = 39;
+			Item.useAnimation = 39;
+			Item.hammer = 80;
+			Item.useStyle = 1;
+			Item.knockBack = 5;
+			Item.value = 13800;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cobalt Warhammer");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Cobalt Warhammer");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

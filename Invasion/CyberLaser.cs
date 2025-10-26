@@ -22,11 +22,11 @@ namespace Tremor.Invasion
 			AIType = 598;
 		}
 
-		public override void OnHitNPC(NPC target1, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
-			Player target = Main.LocalPlayer;
+			Player player = Main.LocalPlayer;
 			if (Main.rand.NextBool(2))
-				target.AddBuff(ModContent.BuffType<Light>(), 300);
+				player.AddBuff(ModContent.BuffType<Light>(), 300);
 		}
 
 		public override void AI()

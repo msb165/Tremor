@@ -21,7 +21,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dark Bubble");
+			// DisplayName.SetDefault("Dark Bubble");
 
 		}
 
@@ -40,7 +40,7 @@ namespace Tremor.Projectiles
 			projectile.frameCounter++;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			for (int num158 = 0; num158 < 20; num158++)
 			{

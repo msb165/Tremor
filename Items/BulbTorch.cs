@@ -10,26 +10,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 10;
-			item.height = 12;
-			item.maxStack = 99;
-			item.holdStyle = 1;
-			item.noWet = true;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.createTile = ModContent.TileType<Tiles.BulbTorch>();
-			item.flame = true;
-			item.value = 50;
+			Item.width = 10;
+			Item.height = 12;
+			Item.maxStack = 99;
+			Item.holdStyle = 1;
+			Item.noWet = true;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.createTile = ModContent.TileType<Tiles.BulbTorch>();
+			Item.flame = true;
+			Item.value = 50;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bulb Torch");
-			Tooltip.SetDefault("");
+			ItemID.Sets.Torches[Type] = true;
+			// DisplayName.SetDefault("Bulb Torch");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void HoldItem(Player player)
@@ -44,16 +45,12 @@ namespace Tremor.Items
 
 		public override void PostUpdate()
 		{
-			if (!item.wet)
+			if (!Item.wet)
 			{
-				Lighting.AddLight((int)((item.position.X + item.width / 2) / 16f), (int)((item.position.Y + item.height / 2) / 16f), 1f, 1f, 1f);
+				Lighting.AddLight((int)((Item.position.X + Item.width / 2) / 16f), (int)((Item.position.Y + Item.height / 2) / 16f), 1f, 1f, 1f);
 			}
 		}
 
-		public override void AutoLightSelect(ref bool dryTorch, ref bool wetTorch, ref bool glowstick)
-		{
-			dryTorch = true;
-		}
 
 		public override void AddRecipes()
 		{

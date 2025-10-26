@@ -9,17 +9,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.maxStack = 99;
-			item.height = 26;
+			Item.width = 26;
+			Item.maxStack = 99;
+			Item.height = 26;
 
-			item.rare = 0;
+			Item.rare = 0;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Key of Jungles");
-			Tooltip.SetDefault("'Charged with the essence of jungle grass'");
+			// DisplayName.SetDefault("Key of Jungles");
+			// Tooltip.SetDefault("'Charged with the essence of jungle grass'");
 		}
 
 		public override void AddRecipes()

@@ -9,16 +9,16 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 20;
-			item.rare = 1;
-			item.vanity = true;
+			Item.width = 22;
+			Item.height = 20;
+			Item.rare = 1;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Space Whale Mask");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Space Whale Mask");
+			// Tooltip.SetDefault("");
 		}
 
 	}

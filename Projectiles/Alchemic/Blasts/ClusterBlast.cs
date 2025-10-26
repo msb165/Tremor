@@ -26,7 +26,7 @@ namespace Tremor.Projectiles.Alchemic.Blasts
 			return Color.White;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			if (projectile.scale > 0.85f)
 			{

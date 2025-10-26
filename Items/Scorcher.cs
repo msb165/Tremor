@@ -9,27 +9,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 178;
-			item.width = 14;
-			item.height = 84;
-			item.noUseGraphic = true;
-			item.DamageType = DamageClass.Melee;
-			item.useTime = 30;
-			item.shoot = ModContent.ProjectileType<Projectiles.ScorcherPro>();
-			item.shootSpeed = 4f;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 210000;
-			item.rare = 10;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 178;
+			Item.width = 14;
+			Item.height = 84;
+			Item.noUseGraphic = true;
+			Item.DamageType = DamageClass.Melee;
+			Item.useTime = 30;
+			Item.shoot = ModContent.ProjectileType<Projectiles.ScorcherPro>();
+			Item.shootSpeed = 4f;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 210000;
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Scorcher");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Scorcher");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

@@ -5,11 +5,11 @@ namespace Tremor.Buffs
 {
 	public class ManaGeneration:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Mana Generation");
-			Description.SetDefault("Lowered mana cost for magic weapons");
+			// DisplayName.SetDefault("Mana Generation");
+			// Description.SetDefault("Lowered mana cost for magic weapons");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

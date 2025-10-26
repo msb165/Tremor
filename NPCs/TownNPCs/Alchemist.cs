@@ -14,17 +14,17 @@ using System.Collections.Generic;
 namespace Tremor.NPCs.TownNPCs
 {
 	[AutoloadHead]
-	public class Alchemist:TremorModNPC
+	public class Alchemist : TremorModNPC
 	{
 		public override string Texture => $"{typeof(Alchemist).NamespaceToPath()}/Alchemist";
 
 		//public override string[] AltTextures => new[] { $"{typeof(Alchemist).NamespaceToPath()}/Alchemist" };
 
 		//public override string Name => "Alchemist";
-		
+
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Alchemist");
+			// DisplayName.SetDefault("Alchemist");
 			Main.npcFrameCount[npc.type] = 25;
 			NPCID.Sets.ExtraFramesCount[npc.type] = 5;
 			NPCID.Sets.AttackFrameCount[npc.type] = 4;
@@ -50,7 +50,7 @@ namespace Tremor.NPCs.TownNPCs
 			AnimationType = NPCID.GoblinTinkerer;
 		}
 
-		public override bool CanTownNPCSpawn(int numTownNPCs, int money) 
+		public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
 			=> NPC.downedBoss1 && Main.player.Any(player => !player.dead);
 
 		private readonly List<string> _names = new List<string>
@@ -84,63 +84,52 @@ namespace Tremor.NPCs.TownNPCs
 			button = Lang.inter[28].Value;
 		}
 
-		public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+		public override void OnChatButtonClicked(bool firstButton, ref string shopName)
 		{
-			shop = firstButton;
+			if (firstButton)
+			{
+				shopName = "Shop";
+			}
 		}
 
-		public override void SetupShop(Chest shop, ref int nextSlot)
+		public override void AddShops()
 		{
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<BasicFlask>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<HazardousChemicals>());
-			shop.AddUniqueItem(ref nextSlot, ItemID.StinkPotion);
-			shop.AddUniqueItem(ref nextSlot, ItemID.LovePotion);
+			NPCShop shop = new(Type);
+			shop.Add(ModContent.ItemType<BasicFlask>());
+			shop.Add(ModContent.ItemType<HazardousChemicals>());
+			shop.Add(ItemID.StinkPotion);
+			shop.Add(ItemID.LovePotion);
 
-			if (TremorWorld.Boss.Alchemaster.IsDowned())
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<Pyro>());
+			shop.Add(ModContent.ItemType<Pyro>(), new Condition("Mods.Tremor.Conditions.Alchemaster.IsDowned", () => TremorWorld.Boss.Alchemaster.IsDowned()));
 
-			if (Main.hardMode)
-			{
-				if(Main.dayTime)
-					shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<BigHealingFlack>());
-				else
-					shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<BigManaFlask>());
+			shop.Add(ModContent.ItemType<BigHealingFlack>(), Condition.TimeDay, Condition.Hardmode);
+			shop.Add(ModContent.ItemType<BigManaFlask>(), Condition.TimeNight, Condition.Hardmode);
+			shop.Add(ModContent.ItemType<BlackCauldron>(), Condition.Hardmode);
+			shop.Add(ModContent.ItemType<LesserVenomFlask>(), Condition.Hardmode);
+			shop.Add(ModContent.ItemType<ConcentratedTincture>(), Condition.Hardmode);
+			shop.Add(ModContent.ItemType<LesserHealingFlack>(), Condition.TimeDay);
+			shop.Add(ModContent.ItemType<LesserManaFlask>(), Condition.TimeNight);
 
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<BlackCauldron>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<LesserVenomFlask>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ConcentratedTincture>());
-			}
-			else
-			{
-				if (Main.dayTime)
-						shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<LesserHealingFlack>());
-				else
-					shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<LesserManaFlask>());
-			}
-			
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<HealthSupportFlask>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ManaSupportFlask>());
+			shop.Add(ModContent.ItemType<HealthSupportFlask>());
+			shop.Add(ModContent.ItemType<ManaSupportFlask>());
 
-			if (Main.LocalPlayer.ZoneSnow)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<FreezeFlask>());
-			if (Main.LocalPlayer.ZoneJungle)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<LesserPoisonFlask>());
+			shop.Add(ModContent.ItemType<FreezeFlask>(), Condition.InSnow);
+			shop.Add(ModContent.ItemType<LesserPoisonFlask>(), Condition.InJungle);
 
-			if (NPC.downedBoss1)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<BoomFlask>());
+			shop.Add(ModContent.ItemType<BoomFlask>(), Condition.DownedEyeOfCthulhu);
 			if (NPC.downedBoss2)
 			{
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<Nitro>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<BurningFlask>());
+				shop.Add(ModContent.ItemType<Nitro>());
+				shop.Add(ModContent.ItemType<BurningFlask>());
 			}
 			if (NPC.downedBoss3)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<GoldFlask>());
+				shop.Add(ModContent.ItemType<GoldFlask>());
 
 			if (NPC.downedGolemBoss)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<CthulhuBlood>());
+				shop.Add(ModContent.ItemType<CthulhuBlood>());
 
 			if (NPC.downedPlantBoss && Main.bloodMoon)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<AlchemistGlove>());
+				shop.Add(ModContent.ItemType<AlchemistGlove>());
 		}
 
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -167,15 +156,15 @@ namespace Tremor.NPCs.TownNPCs
 			randomOffset = 2f;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/AlchemistGore{i+1}"), 1f);
+				for (int i = 0; i < 3; ++i)
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"AlchemistGore{i + 1}"), 1f);
 			}
 		}
 	}

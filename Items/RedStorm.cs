@@ -10,31 +10,31 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.Starfury);
+			Item.CloneDefaults(ItemID.Starfury);
 
-			item.damage = 64;
-			item.DamageType = DamageClass.Ranged;
-			//item.melee = false;
-			item.width = 22;
-			item.height = 46;
+			Item.damage = 64;
+			Item.DamageType = DamageClass.Ranged;
+			//Item.melee = false;
+			Item.width = 22;
+			Item.height = 46;
 
-			item.useTime = 7;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.shootSpeed = 30f;
-			item.shoot = 1;
-			item.knockBack = 3;
-			item.useAmmo = AmmoID.Arrow;
-			item.value = 85000;
-			item.rare = 11;
-			item.UseSound = SoundID.Item5;
-			item.autoReuse = true;
+			Item.useTime = 7;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.shootSpeed = 30f;
+			Item.shoot = 1;
+			Item.knockBack = 3;
+			Item.useAmmo = AmmoID.Arrow;
+			Item.value = 85000;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item5;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Red Storm");
-			Tooltip.SetDefault("Causes red lasers to fall from sky\n");
+			// DisplayName.SetDefault("Red Storm");
+			// Tooltip.SetDefault("Causes red lasers to fall from sky\n");
 		}
 
 		public override bool CanConsumeAmmo(Item ammo, Player p)
@@ -45,11 +45,11 @@ namespace Tremor.Items
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			int i = Main.myPlayer;
-			float num72 = item.shootSpeed;
-			int num73 = item.damage;
-			float num74 = item.knockBack;
-			num74 = player.GetWeaponKnockback(item, num74);
-			player.itemTime = item.useTime;
+			float num72 = Item.shootSpeed;
+			int num73 = Item.damage;
+			float num74 = Item.knockBack;
+			num74 = player.GetWeaponKnockback(Item, num74);
+			player.itemTime = Item.useTime;
 			Vector2 vector2 = player.RotatedRelativePoint(player.MountedCenter, true);
 			Vector2 value = Vector2.UnitX.RotatedBy(player.fullRotation, default(Vector2));
 			Vector2 vector3 = Main.MouseWorld - vector2;

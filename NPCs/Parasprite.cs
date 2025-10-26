@@ -11,7 +11,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Parasprite");
+			// DisplayName.SetDefault("Parasprite");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 
@@ -33,19 +33,19 @@ namespace Tremor.NPCs
 			BannerItem = ModContent.ItemType<ParaspriteBanner>();
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
-				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/ParaspriteGore"), 1f);
+				Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("ParaspriteGore"), 1f);
 			}
 			else
 			{
-				for (int k = 0; k < damage / npc.lifeMax * 50; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 59, hitDirection, -1f, 0, default(Color), 0.7f);
+				for (int k = 0; k < npc.damage / npc.lifeMax * 50; k++)
+					Dust.NewDust(npc.position, npc.width, npc.height, 59, hit.HitDirection, -1f, 0, default(Color), 0.7f);
 			}
 		}
 

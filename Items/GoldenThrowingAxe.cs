@@ -8,29 +8,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 30;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 26;
-			item.noUseGraphic = true;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.height = 30;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.shoot = ModContent.ProjectileType<Projectiles.GoldenThrowingAxePro>();
-			item.shootSpeed = 15f;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 100;
-			item.rare = 0;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 30;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 26;
+			Item.noUseGraphic = true;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.height = 30;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.shoot = ModContent.ProjectileType<Projectiles.GoldenThrowingAxePro>();
+			Item.shootSpeed = 15f;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 100;
+			Item.rare = 0;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Golden Throwing Axe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Golden Throwing Axe");
+			// Tooltip.SetDefault("");
 		}
 
 	}

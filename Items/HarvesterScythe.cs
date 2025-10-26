@@ -9,31 +9,31 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 30;
-			item.DamageType = DamageClass.Melee;
-			item.width = 66;
-			item.height = 50;
-			item.useTime = 24;
-			item.useAnimation = 24;
-			item.useStyle = 1;
-			item.knockBack = 3;
-			item.value = 35400;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 30;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 66;
+			Item.height = 50;
+			Item.useTime = 24;
+			Item.useAnimation = 24;
+			Item.useStyle = 1;
+			Item.knockBack = 3;
+			Item.value = 35400;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Harvester Scythe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Harvester Scythe");
+			// Tooltip.SetDefault("");
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
-			int newLife = Main.rand.Next(damage / 4) + 3;
-			Main.player[item.playerIndexTheItemIsReservedFor].statLife += newLife;
-			Main.player[item.playerIndexTheItemIsReservedFor].HealEffect(newLife);
+			int newLife = Main.rand.Next(damageDone / 4) + 3;
+			Main.player[Item.playerIndexTheItemIsReservedFor].statLife += newLife;
+			Main.player[Item.playerIndexTheItemIsReservedFor].HealEffect(newLife);
 		}
 
 	}

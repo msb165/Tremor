@@ -1,4 +1,5 @@
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
 using Tremor.NPCs;
 
@@ -9,19 +10,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.maxStack = 999;
-			item.consumable = true;
-			item.width = 24;
-			item.height = 24;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.width = 24;
+			Item.height = 24;
 
-			item.rare = 9;
-			item.expert = true;
+			Item.rare = 9;
+			Item.expert = true;
 		}
-		public override int BossBagNPC => ModContent.NPCType<EvilCorn>();
+		//public override int BossBagNPC => ModContent.NPCType<EvilCorn>();
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
+			// DisplayName.SetDefault("Treasure Bag");
+			// Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
 
 		public override bool CanRightClick()
@@ -29,43 +30,21 @@ namespace Tremor.Items
 			return true;
 		}
 
-		public override void OpenBossBag(Player player)
+		public override void ModifyItemLoot(ItemLoot itemLoot)
 		{
-			if (Main.rand.NextBool(7))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<EvilCornMask>());
-			}
-			if (Main.rand.Next(10) == 0)
-			{
-				player.QuickSpawnItem(ModContent.ItemType<EvilCornTrophy>());
-			}
-			if (Main.rand.NextBool())
-			{
-				player.QuickSpawnItem(ModContent.ItemType<CornHeater>());
-			}
-			if (Main.rand.NextBool(2))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<GrayKnightHelmet>());
-			}
-			if (Main.rand.NextBool(2))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<GrayKnightBreastplate>());
-			}
-			if (Main.rand.NextBool(2))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<KnightGreaves>());
-			}
-			if (Main.rand.NextBool(3))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<CornSword>());
-			}
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<EvilCornMask>(), 7));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<EvilCornTrophy>(), 10));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<CornHeater>(), 2));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<GrayKnightHelmet>(), 2));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<GrayKnightBreastplate>(), 2));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<KnightGreaves>(), 2));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<CornSword>(), 3));
 			if (!Main.LocalPlayer.HasItem(ModContent.ItemType<FarmerShovel>()))
 			{
-				player.QuickSpawnItem(ModContent.ItemType<FarmerShovel>());
+				itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<FarmerShovel>()));
 			}
-			player.QuickSpawnItem(ModContent.ItemType<Corn>(), Main.rand.Next(25, 48));
-			player.QuickSpawnItem(ModContent.ItemType<CornJavelin>(), Main.rand.Next(15, 45));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Corn>(), 1, 25, 48));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<CornJavelin>(), 1, 15, 45));
 		}
-
 	}
 }

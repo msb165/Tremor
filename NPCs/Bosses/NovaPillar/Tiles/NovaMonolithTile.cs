@@ -24,8 +24,8 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Tiles
 			AddMapEntry(new Color(75, 139, 166));
 			DustType = DustID.Stone;
 			AnimationFrameHeight = 56;
-			disableSmartCursor = true;
-			adjTiles = new int[] { TileID.LunarMonolith };
+			TileID.Sets.DisableSmartCursor[Type] = true;
+			AdjTiles = new int[] { TileID.LunarMonolith };
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)

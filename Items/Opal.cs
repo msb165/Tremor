@@ -11,18 +11,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.maxStack = 99;
-			item.height = 26;
+			Item.width = 26;
+			Item.maxStack = 99;
+			Item.height = 26;
 
-			item.rare = 3;
+			Item.rare = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Opal");
-			Tooltip.SetDefault("'The king of all gems'");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 6));
+			// DisplayName.SetDefault("Opal");
+			// Tooltip.SetDefault("'The king of all gems'");
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(6, 6));
 		}
 
 		public override void AddRecipes()

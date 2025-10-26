@@ -10,18 +10,18 @@ namespace Tremor.Items.Ancient
 		public override void SetDefaults()
 		{
 
-			item.width = 20;
-			item.height = 26;
+			Item.width = 20;
+			Item.height = 26;
 
-			item.value = 9000;
-			item.rare = 1;
-			item.defense = 5;
+			Item.value = 9000;
+			Item.rare = 1;
+			Item.defense = 5;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Meteor Helmet");
-			Tooltip.SetDefault("7% increased magic damage");
+			// DisplayName.SetDefault("Ancient Meteor Helmet");
+			// Tooltip.SetDefault("7% increased magic damage");
 		}
 
 		public override void UpdateEquip(Player player)

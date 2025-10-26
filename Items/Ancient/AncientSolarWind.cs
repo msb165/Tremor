@@ -10,27 +10,27 @@ namespace Tremor.Items.Ancient
 		public override void SetDefaults()
 		{
 
-			item.damage = 120;
-			item.width = 72;
-			item.height = 72;
-			item.noUseGraphic = true;
-			item.DamageType = DamageClass.Melee;
-			item.useTime = 30;
-			item.shoot = ModContent.ProjectileType<Projectiles.AncientSolarWindPro>();
-			item.shootSpeed = 3f;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 210000;
-			item.rare = 10;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 120;
+			Item.width = 72;
+			Item.height = 72;
+			Item.noUseGraphic = true;
+			Item.DamageType = DamageClass.Melee;
+			Item.useTime = 30;
+			Item.shoot = ModContent.ProjectileType<Projectiles.AncientSolarWindPro>();
+			Item.shootSpeed = 3f;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 210000;
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Solar Wind");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Ancient Solar Wind");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

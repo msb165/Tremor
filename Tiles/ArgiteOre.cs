@@ -18,7 +18,7 @@ namespace Tremor.Tiles
 			soundStyle = 2;
 			MinPick = 65;
 			AddMapEntry(new Color(95, 201, 64));
-			ItemDrop = ModContent.ItemType<Items.Argite.ArgiteOre>();
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<Items.Argite.ArgiteOre>();
 		}
 
 		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

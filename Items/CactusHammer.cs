@@ -8,26 +8,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.autoReuse = true;
-			item.useStyle = 1;
-			item.useTurn = true;
-			item.useAnimation = 30;
-			item.useTime = 20;
-			item.hammer = 38;
-			item.width = 24;
-			item.height = 28;
-			item.damage = 9;
-			item.knockBack = 5.5f;
-			item.scale = 1.2f;
-			item.UseSound = SoundID.Item1;
-			item.value = 1600;
-			item.DamageType = DamageClass.Melee;
+			Item.autoReuse = true;
+			Item.useStyle = 1;
+			Item.useTurn = true;
+			Item.useAnimation = 30;
+			Item.useTime = 20;
+			Item.hammer = 38;
+			Item.width = 24;
+			Item.height = 28;
+			Item.damage = 9;
+			Item.knockBack = 5.5f;
+			Item.scale = 1.2f;
+			Item.UseSound = SoundID.Item1;
+			Item.value = 1600;
+			Item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cactus Hammer");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Cactus Hammer");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

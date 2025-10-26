@@ -1,6 +1,8 @@
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Desert;
 using Tremor.NPCs;
 
 namespace Tremor.Items
@@ -10,19 +12,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.maxStack = 999;
-			item.consumable = true;
-			item.width = 24;
-			item.height = 24;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.width = 24;
+			Item.height = 24;
 
-			item.rare = 9;
-			item.expert = true;
+			Item.rare = 9;
+			Item.expert = true;
 		}
-		public override int BossBagNPC => ModContent.NPCType<TikiTotem>();
+		////public override int BossBagNPC => ModContent.NPCType<TikiTotem>();
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Tiki Totem Treasure Bag");
-			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
+			// DisplayName.SetDefault("Tiki Totem Treasure Bag");
+			// Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
 
 		public override bool CanRightClick()
@@ -30,30 +32,18 @@ namespace Tremor.Items
 			return true;
 		}
 
-		public override void OpenBossBag(Player player)
+		public override void ModifyItemLoot(ItemLoot itemLoot)
 		{
-			(int type,int chance,int quantity)[] drops = new[]
-			{
-				// item, chance, stack
-				(ModContent.ItemType<ToxicBlade>(), 3, 1),
-				(ModContent.ItemType<JungleAlloy>(), 1, 1),
-				(ModContent.ItemType<TikiSkull>(), 1, 1), // only specific one
-				(ModContent.ItemType<PickaxeofBloom>(), 3, 1),
-				(ModContent.ItemType<ToxicHilt>(), 4, 1),
-				(ModContent.ItemType<AngryTotemMask>(), 7, 1),
-				(ModContent.ItemType<HappyTotemMask>(), 7, 1),
-				(ModContent.ItemType<IndifferentTotemMask>(), 7, 1),
-				(ItemID.HealingPotion, 1, Main.rand.Next(5, 16)),
-				(ItemID.ManaPotion, 1, Main.rand.Next(5, 16)),
-			};
-
-			for (int i = 0; i < drops.GetUpperBound(0); i++)
-			{
-				if (Main.rand.NextBool(drops[i].chance))
-				{
-					player.QuickSpawnItem(drops[i].type, drops[i].quantity);
-				}
-			}
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ToxicBlade>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<JungleAlloy>()));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<JungleAlloy>()));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<PickaxeofBloom>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ToxicHilt>(), 4));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<AngryTotemMask>(), 7));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<HappyTotemMask>(), 7));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<IndifferentTotemMask>(), 7));
+			itemLoot.Add(ItemDropRule.Common(ItemID.HealingPotion, 1, 5, 16));
+			itemLoot.Add(ItemDropRule.Common(ItemID.ManaPotion, 1, 5, 16));
 		}
 	}
 }

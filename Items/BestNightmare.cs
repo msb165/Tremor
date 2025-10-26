@@ -10,27 +10,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 260;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 48;
-			item.height = 48;
-			item.useTime = 50;
-			item.shootSpeed = 30f;
-			item.useAnimation = 50;
-			item.useStyle = 1;
-			item.knockBack = 9f;
-			item.shoot = ModContent.ProjectileType<Projectiles.BestNightmarePro>();
-			item.value = 27600;
-			item.rare = 0;
-			item.noUseGraphic = true;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 260;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 48;
+			Item.height = 48;
+			Item.useTime = 50;
+			Item.shootSpeed = 30f;
+			Item.useAnimation = 50;
+			Item.useStyle = 1;
+			Item.knockBack = 9f;
+			Item.shoot = ModContent.ProjectileType<Projectiles.BestNightmarePro>();
+			Item.value = 27600;
+			Item.rare = 0;
+			Item.noUseGraphic = true;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Best Nightmare");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Best Nightmare");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

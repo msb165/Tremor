@@ -21,7 +21,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sandstone Drill Pro");
+			// DisplayName.SetDefault("Sandstone Drill Pro");
 
 		}
 

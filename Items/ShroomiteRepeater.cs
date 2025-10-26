@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 36;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 62;
-			item.height = 30;
-			item.useTime = 10;
-			item.useAnimation = 10;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 6;
-			item.value = 50000;
-			item.rare = 6;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = true;
-			item.shoot = 8;
-			item.shootSpeed = 30f;
-			item.useAmmo = AmmoID.Arrow;
+			Item.damage = 36;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 62;
+			Item.height = 30;
+			Item.useTime = 10;
+			Item.useAnimation = 10;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 6;
+			Item.value = 50000;
+			Item.rare = 6;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = true;
+			Item.shoot = 8;
+			Item.shootSpeed = 30f;
+			Item.useAmmo = AmmoID.Arrow;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Shroomite Repeater");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Shroomite Repeater");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

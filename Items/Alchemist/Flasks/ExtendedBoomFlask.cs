@@ -8,44 +8,44 @@ namespace Tremor.Items.Alchemist.Flasks
 	{
 		public override void SetDefaults()
 		{
-			item.crit = 4;
-			item.damage = 54;
-			//item.DamageType = DamageClass.Throwing;
-			item.width = 26;
-			item.noUseGraphic = true;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.height = 30;
-			item.useTime = 40;
-			item.useAnimation = 40;
-			item.shoot = ModContent.ProjectileType<Projectiles.Alchemic.BoomFlaskPro>();
-			item.shootSpeed = 10f;
-			item.useStyle = 1;
-			item.knockBack = 1;
-			item.UseSound = SoundID.Item106;
-			item.value = 145;
-			item.rare = 2;
-			item.autoReuse = false;
+			Item.crit = 4;
+			Item.damage = 54;
+			//Item.DamageType = DamageClass.Throwing;
+			Item.width = 26;
+			Item.noUseGraphic = true;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.height = 30;
+			Item.useTime = 40;
+			Item.useAnimation = 40;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Alchemic.BoomFlaskPro>();
+			Item.shootSpeed = 10f;
+			Item.useStyle = 1;
+			Item.knockBack = 1;
+			Item.UseSound = SoundID.Item106;
+			Item.value = 145;
+			Item.rare = 2;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Extended Boom Flask");
-			Tooltip.SetDefault("A vial of exploding chemicals");
+			// DisplayName.SetDefault("Extended Boom Flask");
+			// Tooltip.SetDefault("A vial of exploding chemicals");
 		}
 
 		public override void UpdateInventory(Player player)
 		{
 			if (player.HasBuffSafe(ModContent.BuffType<Buffs.LongFuseBuff>()))
 			{
-				item.shootSpeed = 11f;
+				Item.shootSpeed = 11f;
 			}
 			else
 			{
-				item.shootSpeed = 8f;
+				Item.shootSpeed = 8f;
 			}
 
-			item.autoReuse = MPlayer.GetModPlayer(player).core;
+			Item.autoReuse = MPlayer.GetModPlayer(player).core;
 		}
 
 		public override void AddRecipes()

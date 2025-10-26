@@ -11,7 +11,7 @@ namespace Tremor
 	public abstract class AlchemistProjectile:TremorModProjectile
 	{
 		// todo: this can PROBABLY be removed when tmodloader updates
-		public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+/*		public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
 		{
 			Player owner = null;
 			if (projectile.owner != -1)
@@ -31,7 +31,7 @@ namespace Tremor
 				(mItem as AlchemistItem)?.ModifyWeaponCrit(owner, ref cc);
 				crit = crit || Main.rand.Next(1, 101) <= cc;
 			}
-		}
+		}*/
 	}
 
 	public abstract class AlchemistItem:TremorModItem
@@ -40,12 +40,12 @@ namespace Tremor
 		public override void SetDefaults()
 		{
 			Item.DamageType = DamageClass.Generic;
-			//item.melee = false;
-			//item.ranged = false;
-			//item.magic = false;
-			//item.thrown = false;
-			//item.summon = false;
-			item.crit = 4;
+			//Item.melee = false;
+			//Item.ranged = false;
+			//Item.magic = false;
+			//Item.thrown = false;
+			//Item.summon = false;
+			Item.crit = 4;
 		}
 
 		public override void ModifyWeaponKnockback(Player player, ref StatModifier knockback)
@@ -71,12 +71,12 @@ namespace Tremor
 		}
 
 		// todo: this can be removed when tmodloader updates
-		public override void ModifyHitNPC(Player player, NPC target, ref int damage, ref float knockBack, ref bool crit)
+/*		public override void ModifyHitNPC(Player player, NPC target, ref NPC.HitModifiers modifiers)
 		{
-			float cc = item.crit;
+			float cc = Item.crit;
 			ModifyWeaponCrit(player, ref cc);
 			crit = crit || Main.rand.Next(1, 101) <= cc;
-		}
+		}*/
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
@@ -90,9 +90,9 @@ namespace Tremor
 			}
 			
 			// todo: this can be removed when tmodloader updates
-			if (item.crit > 0)
+			if (Item.crit > 0)
 			{
-				float crit = item.crit;
+				float crit = Item.crit;
 				ModifyWeaponCrit(Main.LocalPlayer, ref crit);
 				tt = tooltips.FirstOrDefault(x => x.Name == "CritChance" && x.Mod == "Terraria");
 				if (tt != null)

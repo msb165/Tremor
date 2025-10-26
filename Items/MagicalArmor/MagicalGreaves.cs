@@ -11,18 +11,18 @@ namespace Tremor.Items.MagicalArmor
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.value = 250;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 250;
 
-			item.rare = 1;
-			item.defense = 2;
+			Item.rare = 1;
+			Item.defense = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Theurgic Greaves");
-			Tooltip.SetDefault("3% increased magic damage");
+			// DisplayName.SetDefault("Theurgic Greaves");
+			// Tooltip.SetDefault("3% increased magic damage");
 		}
 
 		public override void UpdateEquip(Player player)

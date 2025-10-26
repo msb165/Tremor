@@ -7,12 +7,11 @@ using Tremor.Projectiles.Alchemic;
 
 namespace Tremor.Projectiles
 {
-	public class VulcanBladeRing:TremorModProjectile
+	public class VulcanBladeRing : TremorModProjectile
 	{
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(405);
-
 			AIType = 405;
 			projectile.friendly = true;
 			projectile.timeLeft = 150;
@@ -24,23 +23,23 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vulcan Blade Ring");
+			// DisplayName.SetDefault("Vulcan Blade Ring");
 
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Vector2 drawOrigin = new Vector2(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value.Width * 0.5f, projectile.height * 0.5f);
 			for (int k = 0; k < projectile.oldPos.Length; k++)
 			{
 				Vector2 drawPos = projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, projectile.gfxOffY);
-				Color color = projectile.GetAlpha(lightColor) * ((projectile.oldPos.Length - k) / (float)projectile.oldPos.Length);
+				Color color = projectile.GetAlpha(drawColor) * ((projectile.oldPos.Length - k) / (float)projectile.oldPos.Length);
 				Main.spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
 			}
 			return true;
 		}
 
-		public override void OnHitPvp(Player target, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
 		{
 			if (Main.rand.NextBool())
 			{
@@ -54,7 +53,7 @@ namespace Tremor.Projectiles
 			Main.dust[dust].noGravity = true;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			projectile.position.X = projectile.position.X + projectile.width / 2;
 			projectile.position.Y = projectile.position.Y + projectile.height / 2;

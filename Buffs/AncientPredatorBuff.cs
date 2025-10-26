@@ -10,8 +10,8 @@ namespace Tremor.Buffs
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Ancient Predator");
-			Description.SetDefault("The ancient predator defends you");
+			// DisplayName.SetDefault("The Ancient Predator");
+			// Description.SetDefault("The ancient predator defends you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

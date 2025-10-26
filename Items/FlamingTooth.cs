@@ -10,29 +10,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 18;
-			item.DamageType = DamageClass.Melee;
-			item.width = 42;
-			item.height = 46;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.shoot = 376;
-			item.shootSpeed = 6f;
-			item.useStyle = 1;
-			item.knockBack = 2;
-			item.value = 46000;
-			item.rare = 8;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 18;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 42;
+			Item.height = 46;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.shoot = 376;
+			Item.shootSpeed = 6f;
+			Item.useStyle = 1;
+			Item.knockBack = 2;
+			Item.value = 46000;
+			Item.rare = 8;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Flaming Tooth");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Flaming Tooth");
+			// Tooltip.SetDefault("");
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(24, 60);
 		}

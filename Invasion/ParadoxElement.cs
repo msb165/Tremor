@@ -7,18 +7,18 @@ namespace Tremor.Invasion
 		public override void SetDefaults()
 		{
 
-			item.width = 46;
-			item.height = 46;
-			item.value = 600;
-			item.rare = 11;
+			Item.width = 46;
+			Item.height = 46;
+			Item.value = 600;
+			Item.rare = 11;
 
-			item.maxStack = 999;
+			Item.maxStack = 999;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paradox Element");
-			Tooltip.SetDefault("'Element of paradox warriors'");
+			// DisplayName.SetDefault("Paradox Element");
+			// Tooltip.SetDefault("'Element of paradox warriors'");
 		}
 
 	}

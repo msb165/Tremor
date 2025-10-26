@@ -11,29 +11,29 @@ namespace Tremor.ZombieEvent.Items
 		public override void SetDefaults()
 		{
 
-			item.DamageType = DamageClass.Ranged;
-			item.width = 36;
-			item.height = 24;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 36;
+			Item.height = 24;
 
-			item.useTime = 15;
-			item.useAnimation = 15;
-			item.shoot = 1;
-			item.useAmmo = AmmoID.Arrow;
-			item.shootSpeed = 30f;
-			item.useStyle = 5;
-			item.damage = 26;
-			item.knockBack = 4;
-			item.value = 30000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item5;
-			item.autoReuse = true;
+			Item.useTime = 15;
+			Item.useAnimation = 15;
+			Item.shoot = 1;
+			Item.useAmmo = AmmoID.Arrow;
+			Item.shootSpeed = 30f;
+			Item.useStyle = 5;
+			Item.damage = 26;
+			Item.knockBack = 4;
+			Item.value = 30000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item5;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Rupicide Repeater");
-			Tooltip.SetDefault("Quickly launches arrows\n" +
-	  "20% to shoot a fiery burst");
+			// DisplayName.SetDefault("Rupicide Repeater");
+			/* Tooltip.SetDefault("Quickly launches arrows\n" +
+	  "20% to shoot a fiery burst"); */
 		}
 
 		public override void AddRecipes()

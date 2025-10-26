@@ -9,19 +9,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 28;
+			Item.width = 24;
+			Item.height = 28;
 
-			item.value = 100000;
-			item.rare = 6;
-			item.accessory = true;
-			item.defense = 3;
+			Item.value = 100000;
+			Item.rare = 6;
+			Item.accessory = true;
+			Item.defense = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Technology of Dionysus");
-			Tooltip.SetDefault("Enemies are less likely to target you");
+			// DisplayName.SetDefault("Technology of Dionysus");
+			// Tooltip.SetDefault("Enemies are less likely to target you");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

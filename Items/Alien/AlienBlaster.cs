@@ -11,28 +11,28 @@ namespace Tremor.Items.Alien
 		public override void SetDefaults()
 		{
 
-			item.damage = 136;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 4;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 9;
-			item.useAnimation = 9;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = 28440;
-			item.rare = 8;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = true;
-			item.shoot = 440;
-			item.shootSpeed = 5f;
+			Item.damage = 136;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 4;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 9;
+			Item.useAnimation = 9;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = 28440;
+			Item.rare = 8;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = true;
+			Item.shoot = 440;
+			Item.shootSpeed = 5f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Alien Blaster");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Alien Blaster");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

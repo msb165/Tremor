@@ -19,7 +19,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Solar Wind");
+			// DisplayName.SetDefault("Ancient Solar Wind");
 
 		}
 
@@ -74,7 +74,7 @@ namespace Tremor.Projectiles
 			return Color.White;
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.rand.NextBool(2))
 			{

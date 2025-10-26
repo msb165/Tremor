@@ -10,31 +10,31 @@ namespace Tremor.Items.Nano
 		public override void SetDefaults()
 		{
 
-			item.damage = 18;
-			item.DamageType = DamageClass.Melee;
-			item.width = 20;
-			item.height = 12;
-			item.useTime = 8;
-			item.useAnimation = 8;
-			item.channel = true;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.pick = 200;
-			item.tileBoost++;
-			item.useStyle = 5;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(0, 4, 50, 0);
-			item.rare = 6;
-			item.UseSound = SoundID.Item23;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.NanoDrillPro>();
-			item.shootSpeed = 26f;
+			Item.damage = 18;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 20;
+			Item.height = 12;
+			Item.useTime = 8;
+			Item.useAnimation = 8;
+			Item.channel = true;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.pick = 200;
+			Item.tileBoost++;
+			Item.useStyle = 5;
+			Item.knockBack = 6;
+			Item.value = Item.buyPrice(0, 4, 50, 0);
+			Item.rare = 6;
+			Item.UseSound = SoundID.Item23;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.NanoDrillPro>();
+			Item.shootSpeed = 26f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nano Drill");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Nano Drill");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

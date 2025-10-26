@@ -8,7 +8,7 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Spirit Fire");
+			// DisplayName.SetDefault("Spirit Fire");
 		}
 
 		public override void SetDefaults()

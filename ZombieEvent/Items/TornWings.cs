@@ -10,17 +10,17 @@ namespace Tremor.ZombieEvent.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 20;
-			item.value = 10000;
-			item.rare = 3;
-			item.accessory = true;
+			Item.width = 22;
+			Item.height = 20;
+			Item.value = 10000;
+			Item.rare = 3;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Torn Wings");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Torn Wings");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

@@ -11,31 +11,31 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 220;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 32;
-			item.height = 78;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.noUseGraphic = true;
-			item.channel = true;
-			item.knockBack = 5f;
-			item.value = 10000000;
-			item.rare = 0;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.HellStormProj>();
-			item.shootSpeed = 20f;
+			Item.damage = 220;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 32;
+			Item.height = 78;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.noUseGraphic = true;
+			Item.channel = true;
+			Item.knockBack = 5f;
+			Item.value = 10000000;
+			Item.rare = 0;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.HellStormProj>();
+			Item.shootSpeed = 20f;
 
-			item.useAmmo = AmmoID.Arrow;
+			Item.useAmmo = AmmoID.Arrow;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hell Storm");
-			Tooltip.SetDefault("Shoots out homing hell arrows\n" +
-"The amount of arrows shot increases when used for longer time");
+			// DisplayName.SetDefault("Hell Storm");
+			/* Tooltip.SetDefault("Shoots out homing hell arrows\n" +
+"The amount of arrows shot increases when used for longer time"); */
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

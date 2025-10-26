@@ -7,17 +7,17 @@ namespace Tremor.Items.Dark
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 30;
-			item.maxStack = 99;
-			item.value = 1000;
-			item.rare = 11;
+			Item.width = 28;
+			Item.height = 30;
+			Item.maxStack = 99;
+			Item.value = 1000;
+			Item.rare = 11;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dark Gel");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Dark Gel");
+			// Tooltip.SetDefault("");
 		}
 
 	}

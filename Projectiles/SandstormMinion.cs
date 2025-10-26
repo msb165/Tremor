@@ -46,7 +46,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("SandstormMinion");
+			// DisplayName.SetDefault("SandstormMinion");
 
 		}
 
@@ -122,9 +122,9 @@ namespace Tremor.Projectiles
 			base.AI();
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
-			Main.spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, new Rectangle((int)(projectile.position.X - Main.screenPosition.X), (int)(projectile.position.Y - Main.screenPosition.Y), projectile.width, projectile.height), FrameRect, lightColor, projectile.rotation, new Vector2(), (projectile.spriteDirection < 0) ? SpriteEffects.None : SpriteEffects.FlipHorizontally, 0);
+			Main.spriteBatch.Draw(Terraria.GameContent.TextureAssets.Projectile[projectile.type].Value, new Rectangle((int)(projectile.position.X - Main.screenPosition.X), (int)(projectile.position.Y - Main.screenPosition.Y), projectile.width, projectile.height), FrameRect, drawColor, projectile.rotation, new Vector2(), (projectile.spriteDirection < 0) ? SpriteEffects.None : SpriteEffects.FlipHorizontally, 0);
 			return false;
 		}
 	}

@@ -9,18 +9,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 20;
-			item.value = 125000;
-			item.rare = 10;
+			Item.width = 26;
+			Item.height = 20;
+			Item.value = 125000;
+			Item.rare = 10;
 
-			item.accessory = true;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Underrated Trinkets");
-			Tooltip.SetDefault("The less health, the more stats bonuses you gain");
+			// DisplayName.SetDefault("Underrated Trinkets");
+			// Tooltip.SetDefault("The less health, the more stats bonuses you gain");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

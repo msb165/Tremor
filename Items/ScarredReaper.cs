@@ -9,34 +9,34 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 60;
-			item.DamageType = DamageClass.Melee;
-			item.width = 48;
-			item.height = 48;
-			item.useTime = 25;
-			item.shootSpeed = 10f;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.knockBack = 3f;
-			item.shoot = ModContent.ProjectileType<Projectiles.ScarredReaperPro>();
-			item.value = 200600;
-			item.rare = 5;
-			item.noUseGraphic = true;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 60;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 48;
+			Item.height = 48;
+			Item.useTime = 25;
+			Item.shootSpeed = 10f;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.knockBack = 3f;
+			Item.shoot = ModContent.ProjectileType<Projectiles.ScarredReaperPro>();
+			Item.value = 200600;
+			Item.rare = 5;
+			Item.noUseGraphic = true;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Scarred Reaper");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Scarred Reaper");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool CanUseItem(Player player)
 		{
 			for (int i = 0; i < 1000; ++i)
 			{
-				if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == item.shoot)
+				if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == Item.shoot)
 				{
 					return false;
 				}

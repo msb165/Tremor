@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class HungryBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hungry");
-			Description.SetDefault("The hungry will fight for you");
+			// DisplayName.SetDefault("Hungry");
+			// Description.SetDefault("The hungry will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

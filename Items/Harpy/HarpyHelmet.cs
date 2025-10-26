@@ -10,18 +10,18 @@ namespace Tremor.Items.Harpy
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 26;
+			Item.width = 24;
+			Item.height = 26;
 
-			item.value = 100;
-			item.rare = 2;
-			item.defense = 3;
+			Item.value = 100;
+			Item.rare = 2;
+			Item.defense = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Harpy Helmet");
-			Tooltip.SetDefault("10% increased melee damage");
+			// DisplayName.SetDefault("Harpy Helmet");
+			// Tooltip.SetDefault("10% increased melee damage");
 		}
 
 		public override void UpdateEquip(Player player)

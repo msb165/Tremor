@@ -9,18 +9,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 28;
-			item.value = 50000;
+			Item.width = 24;
+			Item.height = 28;
+			Item.value = 50000;
 
-			item.rare = 1;
-			item.accessory = true;
+			Item.rare = 1;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bloomstone");
-			Tooltip.SetDefault("You are glowing during night");
+			// DisplayName.SetDefault("Bloomstone");
+			// Tooltip.SetDefault("You are glowing during night");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

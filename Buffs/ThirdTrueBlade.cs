@@ -11,11 +11,11 @@ namespace Tremor.Buffs
 		const int Damage = 150;
 		const float KB = 1;
 
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			Description.SetDefault("One out of three blades is protecting you");
+			// Description.SetDefault("One out of three blades is protecting you");
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Third True Blade");
+			// DisplayName.SetDefault("Third True Blade");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

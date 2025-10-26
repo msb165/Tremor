@@ -20,7 +20,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("PlaguePro");
+			// DisplayName.SetDefault("PlaguePro");
 
 		}
 
@@ -29,7 +29,7 @@ namespace Tremor.Projectiles
 			return Color.White;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			int ses = Projectile.NewProjectile(null, projectile.position.X, projectile.position.Y, 0, 0, ModContent.ProjectileType<PlagueBlast>(), projectile.damage * 2, 0.7f, projectile.owner);
 			Main.projectile[ses].scale = projectile.scale;

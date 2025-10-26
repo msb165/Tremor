@@ -13,7 +13,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("LeadSpearPro");
+			// DisplayName.SetDefault("LeadSpearPro");
 
 		}
 

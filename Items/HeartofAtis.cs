@@ -8,19 +8,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 1200;
-			item.rare = 2;
-			item.accessory = true;
-			item.defense = 3;
+			Item.value = 1200;
+			Item.rare = 2;
+			Item.accessory = true;
+			Item.defense = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Heart of Atis");
-			Tooltip.SetDefault("Increases life regeneration");
+			// DisplayName.SetDefault("Heart of Atis");
+			// Tooltip.SetDefault("Increases life regeneration");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

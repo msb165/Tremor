@@ -7,24 +7,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 50;
-			item.height = 26;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
+			Item.width = 50;
+			Item.height = 26;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
 
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.value = 250000;
-			item.createTile = ModContent.TileType<Tiles.LifeMachineTile>();
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.value = 250000;
+			Item.createTile = ModContent.TileType<Tiles.LifeMachineTile>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Life Machine");
-			Tooltip.SetDefault("Increases maximum health of the player standing near");
+			// DisplayName.SetDefault("Life Machine");
+			// Tooltip.SetDefault("Increases maximum health of the player standing near");
 		}
 
 	}

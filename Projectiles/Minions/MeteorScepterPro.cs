@@ -27,7 +27,7 @@ namespace Tremor.Projectiles.Minions
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Meteor Scepter");
+      // DisplayName.SetDefault("Meteor Scepter");
        
     }
 

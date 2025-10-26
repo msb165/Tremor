@@ -12,32 +12,32 @@ namespace Tremor.Invasion
 		public override void SetDefaults()
 		{
 
-			item.damage = 215;
-			item.width = 18;
-			item.height = 56;
-			item.useTime = 18;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 25;
-			item.shoot = ModContent.ProjectileType<EndlessPainPro>();
-			item.shootSpeed = 4f;
-			item.useAnimation = 18;
-			item.noMelee = true;
-			item.useStyle = 5;
-			item.noUseGraphic = true;
-			item.knockBack = 5;
-			item.value = 250000;
-			item.rare = 11;
-			item.UseSound = SoundID.Item44;
-			item.autoReuse = false;
-			ItemID.Sets.ItemNoGravity[item.type] = true;
+			Item.damage = 215;
+			Item.width = 18;
+			Item.height = 56;
+			Item.useTime = 18;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 25;
+			Item.shoot = ModContent.ProjectileType<EndlessPainPro>();
+			Item.shootSpeed = 4f;
+			Item.useAnimation = 18;
+			Item.noMelee = true;
+			Item.useStyle = 5;
+			Item.noUseGraphic = true;
+			Item.knockBack = 5;
+			Item.value = 250000;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item44;
+			Item.autoReuse = false;
+			ItemID.Sets.ItemNoGravity[Item.type] = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Endless Pain");
-			Tooltip.SetDefault("Shoots a shadowflame orb\n" +
-"Orb shoots shadowflames at nearby enemies");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 4));
+			// DisplayName.SetDefault("The Endless Pain");
+			/* Tooltip.SetDefault("Shoots a shadowflame orb\n" +
+"Orb shoots shadowflames at nearby enemies"); */
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 4));
 		}
 
 		public override void AddRecipes()

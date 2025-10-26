@@ -29,7 +29,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Desert Claymore");
+			// DisplayName.SetDefault("Desert Claymore");
 
 		}
 

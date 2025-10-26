@@ -1,29 +1,33 @@
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Tremor.Items;
 using Tremor.Items.Brass;
+using Tremor.Items.Cyber;
 
 namespace Tremor.NPCs.Bosses.CogLord.Items
 {
-	public class CogLordBag:TremorModItem
+	public class CogLordBag : TremorModItem
 	{
 		public override void SetDefaults()
 		{
-			item.maxStack = 999;
-			item.consumable = true;
-			item.width = 24;
-			item.height = 24;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.width = 24;
+			Item.height = 24;
 
-			item.rare = 9;
-			item.expert = true;
+			Item.rare = 9;
+			Item.expert = true;
 		}
 
-		public override int BossBagNPC => ModContent.NPCType<CogLord>();
+		//public override int BossBagNPC => ModContent.NPCType<CogLord>();
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
+			ItemID.Sets.BossBag[Type] = true;
+			// DisplayName.SetDefault("Treasure Bag");
+			// Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
 
 		public override bool CanRightClick()
@@ -31,35 +35,15 @@ namespace Tremor.NPCs.Bosses.CogLord.Items
 			return true;
 		}
 
-		public override void OpenBossBag(Player player)
+		public override void ModifyItemLoot(ItemLoot itemLoot)
 		{
-			if (Main.rand.NextBool(7))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<CogLordMask>());
-			}
-			if (Main.rand.NextBool(3))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<BrassRapier>());
-			}
-			if (Main.rand.NextBool(3))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<BrassChainRepeater>());
-			}
-			if (Main.rand.NextBool(3))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<BrassStave>());
-			}
-			if (Main.rand.Next(10) == 0)
-			{
-				player.QuickSpawnItem(ModContent.ItemType<BrassChip>());
-			}
-			if (Main.hardMode)
-			{
-				player.TryGettingDevArmor();
-			}
-			player.QuickSpawnItem(ModContent.ItemType<HeatCore>());
-			player.QuickSpawnItem(ModContent.ItemType<BrassNugget>(), Main.rand.Next(18, 32));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<CogLordMask>(), 7));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BrassRapier>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BrassChainRepeater>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BrassStave>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BrassChip>(), 10));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<HeatCore>()));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BrassNugget>(), 1, 18, 32));
 		}
-
 	}
 }

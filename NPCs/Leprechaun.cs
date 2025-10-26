@@ -10,7 +10,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Leprechaun");
+			// DisplayName.SetDefault("Leprechaun");
 			Main.npcFrameCount[npc.type] = 14;
 		}
 
@@ -30,12 +30,12 @@ namespace Tremor.NPCs
 			AnimationType = NPCID.BigMimicHallow;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 31, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 31, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				Gore.NewGore(null, npc.position, npc.velocity, 220, 1f);
 				Gore.NewGore(null, npc.position, npc.velocity, 221, 1f);

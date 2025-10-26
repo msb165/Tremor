@@ -1,4 +1,5 @@
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
 using Tremor.NPCs;
 
@@ -8,18 +9,18 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.maxStack = 999;
-			item.consumable = true;
-			item.width = 24;
-			item.height = 24;
-			item.rare = 9;
-			item.expert = true;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.width = 24;
+			Item.height = 24;
+			Item.rare = 9;
+			Item.expert = true;
 		}
-		public override int BossBagNPC => ModContent.NPCType<SoulofTruth>();
+
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
+			// DisplayName.SetDefault("Treasure Bag");
+			// Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
 
 		public override bool CanRightClick()
@@ -27,48 +28,19 @@ namespace Tremor.Items
 			return true;
 		}
 
-		public override void OpenBossBag(Player player)
+		public override void ModifyItemLoot(ItemLoot itemLoot)
 		{
-			//TODO: Sources
-			if (Main.rand.NextBool(7))
-			{
-				player.QuickSpawnItem(null, ModContent.ItemType<HopeMask>());
-			}
-			if (Main.rand.NextBool(7))
-			{
-				player.QuickSpawnItem(null, ModContent.ItemType<TrustMask>());
-			}
-			if (Main.rand.NextBool(7))
-			{
-				player.QuickSpawnItem(null, ModContent.ItemType<TruthMask>());
-			}
-			if (Main.rand.NextBool(3))
-			{
-				player.QuickSpawnItem(null, ModContent.ItemType<Banhammer>());
-			}
-			if (Main.rand.NextBool(3))
-			{
-				player.QuickSpawnItem(null, ModContent.ItemType<BestNightmare>());
-			}
-			if (Main.rand.NextBool(3))
-			{
-				player.QuickSpawnItem(null, ModContent.ItemType<HonestBlade>());
-			}
-			if (Main.rand.NextBool(3))
-			{
-				player.QuickSpawnItem(null, ModContent.ItemType<Volcannon>());
-			}
-			if (Main.rand.NextBool(3))
-			{
-				player.QuickSpawnItem(null, ModContent.ItemType<TrebleClef>());
-			}
-			if (Main.rand.NextBool(3))
-			{
-				player.QuickSpawnItem(null, ModContent.ItemType<Revolwar>());
-			}
-			player.QuickSpawnItem(null, ModContent.ItemType<UnpredictableСompass>());
-			player.QuickSpawnItem(null, ModContent.ItemType<OmnikronBar>(), Main.rand.Next(20, 36));
-			player.QuickSpawnItem(null, ModContent.ItemType<TrueEssense>(), Main.rand.Next(10, 25));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<HopeMask>(), 7));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<TrustMask>(), 7));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<TruthMask>(), 7));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Banhammer>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BestNightmare>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<HonestBlade>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Volcannon>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<TrebleClef>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Revolwar>(), 3));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<OmnikronBar>(), 1, 20, 36));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<TrueEssense>(), 1, 10, 25));
 		}
 	}
 }

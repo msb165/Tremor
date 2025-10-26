@@ -9,29 +9,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 37;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 8;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 10;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = 18440;
-			item.rare = 4;
-			item.UseSound = SoundID.Item82;
-			item.autoReuse = false;
-			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
-			item.shoot = ModContent.ProjectileType<Projectiles.MythrilBolt>();
-			item.shootSpeed = 14f;
+			Item.damage = 37;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 8;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 10;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = 18440;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item82;
+			Item.autoReuse = false;
+			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			Item.shoot = ModContent.ProjectileType<Projectiles.MythrilBolt>();
+			Item.shootSpeed = 14f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Mythril Staff");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Mythril Staff");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

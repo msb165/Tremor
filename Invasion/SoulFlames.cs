@@ -10,27 +10,27 @@ namespace Tremor.Invasion
 		public override void SetDefaults()
 		{
 
-			item.damage = 200;
-			item.DamageType = DamageClass.Magic;
-			item.width = 28;
-			item.height = 30;
-			item.useTime = 5;
-			item.useAnimation = 5;
-			item.shoot = 400;
-			item.shootSpeed = 31f;
-			item.mana = 6;
-			item.useStyle = 5;
-			item.knockBack = 3;
-			item.value = 150000;
-			item.rare = 11;
-			item.UseSound = SoundID.Item20;
-			item.autoReuse = true;
+			Item.damage = 200;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 28;
+			Item.height = 30;
+			Item.useTime = 5;
+			Item.useAnimation = 5;
+			Item.shoot = 400;
+			Item.shootSpeed = 31f;
+			Item.mana = 6;
+			Item.useStyle = 5;
+			Item.knockBack = 3;
+			Item.value = 150000;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item20;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Soul Flames");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Soul Flames");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

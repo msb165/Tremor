@@ -9,28 +9,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 46;
-			item.DamageType = DamageClass.Magic;
-			item.width = 46;
-			item.height = 26;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 7;
-			item.value = 10000;
-			item.rare = 1;
-			item.UseSound = SoundID.Item12;
-			item.autoReuse = true;
-			item.shoot = 88;
-			item.shootSpeed = 5f;
-			item.mana = 10;
+			Item.damage = 46;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 46;
+			Item.height = 26;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 7;
+			Item.value = 10000;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item12;
+			Item.autoReuse = true;
+			Item.shoot = 88;
+			Item.shootSpeed = 5f;
+			Item.mana = 10;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pixie Pulse");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Pixie Pulse");
+			// Tooltip.SetDefault("");
 		}
 
 		public override Vector2? HoldoutOffset()

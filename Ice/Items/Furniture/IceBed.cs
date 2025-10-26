@@ -7,23 +7,23 @@ namespace Tremor.Ice.Items.Furniture
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Glacier Wood Bed");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Glacier Wood Bed");
+			// Tooltip.SetDefault("");
 		}
 		public override void SetDefaults()
 		{
-			item.width = 64;
-			item.height = 26;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 15;
-			item.useStyle = 1;
-			item.rare = 1;
-			item.consumable = true;
-			item.value = 2000;
-			item.createTile = ModContent.TileType<IceBedTile>();
+			Item.width = 64;
+			Item.height = 26;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 15;
+			Item.useStyle = 1;
+			Item.rare = 1;
+			Item.consumable = true;
+			Item.value = 2000;
+			Item.createTile = ModContent.TileType<IceBedTile>();
 		}
 
 		public override void AddRecipes()

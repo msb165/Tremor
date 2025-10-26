@@ -20,7 +20,7 @@ namespace Tremor.Projectiles.Alchemic
 			projectile.rotation = 0f;
 		}
 
-		public override void OnHitPlayer(Player target, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
 		{
 			int newLife = Main.rand.Next(5) + 5;
 			target.statMana += newLife;

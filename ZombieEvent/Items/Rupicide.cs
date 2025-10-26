@@ -7,17 +7,17 @@ namespace Tremor.ZombieEvent.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 24;
-			item.maxStack = 999;
-			item.value = 100;
-			item.rare = 3;
+			Item.width = 30;
+			Item.height = 24;
+			Item.maxStack = 999;
+			Item.value = 100;
+			Item.rare = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Rupicide");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Rupicide");
+			// Tooltip.SetDefault("");
 		}
 	}
 }

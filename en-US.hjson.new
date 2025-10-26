@@ -1,0 +1,1790 @@
+
+Mods: {
+	Tremor: {
+		Buffs: {
+			Antlion: {
+				DisplayName: Antlion
+				Description: It likes your sugar
+			}
+
+			BottledSoulOfFlight: {
+				DisplayName: Bottled Soul of Flight
+				Description: 20% increased jump height
+			}
+
+			BottledSoulOfFright: {
+				DisplayName: Bottled Soul of Fright
+				Description: Increases critical strike chance by 2
+			}
+
+			BottledSoulOfLight: {
+				DisplayName: Bottled Soul of Light
+				Description: 20% increased movement speed
+			}
+
+			BottledSoulOfMight: {
+				DisplayName: Bottled Soul of Might
+				Description: 5% increased damage
+			}
+
+			BottledSoulOfMind: {
+				DisplayName: Bottled Soul of Mind
+				Description: Shows the location of treasure and ore
+			}
+
+			BottledSoulOfNight: {
+				DisplayName: Bottled Soul of Night
+				Description: 8% increased melee speed
+			}
+
+			BottledSoulOfSight: {
+				DisplayName: Bottled Soul of Sight
+				Description: Shows the location of enemies
+			}
+
+			BuffSteampunkProbe: {
+				DisplayName: Steampunk Probe
+				Description: This probe protects you.
+			}
+
+			FlyingDutchman: {
+				DisplayName: Flying Dutchman
+				Description: Flies like a butterfly!
+			}
+
+			petGenie: {
+				DisplayName: Genie
+				Description: A Genie follows you and shows location of enemies
+			}
+
+			SandstormMinionBuff: {
+				DisplayName: Sandstorm Minion
+				Description: Mods.Tremor.BuffDescription.SandstormMinionBuff
+			}
+		}
+
+		Items: {
+			AbominationBanner.DisplayName: Abomination Banner
+
+			AdamantiteHat: {
+				DisplayName: Adamantite Hat
+				Tooltip: Increases minion damage by 24%
+			}
+
+			AdamantiteRifle.DisplayName: Adamantite Rifle
+			AdamantiteStaff.DisplayName: Adamantite Staff
+			AdamantiteWarhammer.DisplayName: Adamantite Warhammer
+
+			AfterlifeBreastplate: {
+				DisplayName: Afterlife Breastplate
+				Tooltip:
+					'''
+					9% increased all damage
+					Increases your max number of minions
+					'''
+			}
+
+			AfterlifeHood: {
+				DisplayName: Afterlife Hood
+				Tooltip: Increases life regeneration
+			}
+
+			AfterlifeLeggings: {
+				DisplayName: Afterlife Leggings
+				Tooltip:
+					'''
+					Higher jump height
+					Increases movement speed
+					'''
+			}
+
+			AlphaClaw: {
+				DisplayName: Alpha Claw
+				Tooltip: A claw of a powerful wolf
+			}
+
+			AlphaKnife.DisplayName: Alpha Knife
+			AlphaWolfBanner.DisplayName: Alpha Wolf Banner
+			AmethystDrill.DisplayName: Amethyst Drill
+
+			AncientMeteorHelmet: {
+				DisplayName: Ancient Meteor Helmet
+				Tooltip: 7% increased magic damage
+			}
+
+			AngryTotemMask.DisplayName: Angry Totem Mask
+			Arachnophobia.DisplayName: Arachnophobia
+			ArchDemonBanner.DisplayName: Arch Demon Banner
+
+			ArcherGlove: {
+				DisplayName: Archer Glove
+				Tooltip: 5% increased ranged damage
+			}
+
+			Armchair.DisplayName: Armchair
+			ArmoredJellyfishBanner.DisplayName: Armored Jellyfish Banner
+
+			ArtifactEngine: {
+				DisplayName: Artifact Engine
+				Tooltip: Summons Cog Lord
+			}
+
+			AtisBanner.DisplayName: Atis Banner
+			Band.DisplayName: Band
+			Basilisk.DisplayName: Basilisk
+
+			BeetleShield: {
+				DisplayName: Beetle Shield
+				Tooltip:
+					'''
+					The less health, the more defense
+					Maximum life increased by 50
+					'''
+			}
+
+			BenderBody.DisplayName: Bender Body
+			BenderHead.DisplayName: Bender Head
+			BenderLegs.DisplayName: Bender Legs
+			BetaWolfBanner.DisplayName: Beta Wolf Banner
+			BicholmereBanner.DisplayName: Bicholmere Banner
+			BicholmereSpear.DisplayName: Bicholmere Spear
+			BlackPearl.DisplayName: Black Pearl
+			BlackRose.DisplayName: Black Rose
+
+			BlastFurnace: {
+				DisplayName: Blast Furnace
+				Tooltip: Used to craft alloys
+			}
+
+			BlazerBanner.DisplayName: Blazer Banner
+			Blizzard.DisplayName: Blizzard
+			BloodCarnage.DisplayName: Blood Carnage
+
+			BloodmoonPotion: {
+				DisplayName: Bloodmoon Potion
+				Tooltip: Summons Blood Moon
+			}
+
+			BloodmoonWarriorBanner.DisplayName: Bloodmoon Warrior Banner
+
+			BloodyBow: {
+				DisplayName: Bloody Bow
+				Tooltip: Launches arrows at lightning speed!
+			}
+
+			Bloomstone: {
+				DisplayName: Bloomstone
+				Tooltip: You are glowing during night
+			}
+
+			BlueChristmasStocking.DisplayName: Blue Christmas Stocking
+			BlueCrossguardPhasesaber.DisplayName: Blue Crossguard Phasesaber
+			BlueKnightBreastplate.DisplayName: Blue Knight Breastplate
+			BlueKnightHelmet.DisplayName: Blue Knight Helmet
+			Blunderbuss.DisplayName: Blunderbuss
+			BoneFlyerBanner.DisplayName: Bone Flyer Banner
+			BoneKnife.DisplayName: Bone Throne
+			BoneThrone.DisplayName: Bone Throne
+			BoomSpear.DisplayName: Boom Javelin
+			BorealwoodShield.DisplayName: Boreal Wood Shield
+
+			BottledSoulOfFlight: {
+				DisplayName: Bottled Soul of Flight
+				Tooltip:
+					'''
+					Grants Shiny Red Baloon effect if worn
+					20% increased jump height if placed
+					'''
+			}
+
+			BottledSoulOfFright: {
+				DisplayName: Bottled Soul of Fright
+				Tooltip:
+					'''
+					Increases critical strike chance by 6 if worn
+					Increased critical strike chance by 2 if placed
+					'''
+			}
+
+			BottledSoulOfLight: {
+				DisplayName: Bottled Soul of Light
+				Tooltip:
+					'''
+					50% increased movement speed if worn
+					20% increased movement speed if placed
+					'''
+			}
+
+			BottledSoulOfMight: {
+				DisplayName: Bottled Soul of Might
+				Tooltip:
+					'''
+					12% increased damage if worn
+					5% increased damage if placed
+					'''
+			}
+
+			BottledSoulOfMind: {
+				DisplayName: Bottled Soul of Mind
+				Tooltip:
+					'''
+					Shows the location of enemies if worn
+					Shows the location of treasure and ore if placed
+					'''
+			}
+
+			BottledSoulOfNight: {
+				DisplayName: Bottled Soul of Night
+				Tooltip:
+					'''
+					15% increased melee speed if worn
+					8% increased melee speed if placed
+					'''
+			}
+
+			BottledSoulOfSight: {
+				DisplayName: Bottled Soul of Sight
+				Tooltip:
+					'''
+					Makes you shine if worn
+					Shows the location of enemies if placed
+					'''
+			}
+
+			BrassBow.DisplayName: Brass Bow
+			BrassSaber.DisplayName: Brass Saber
+
+			BrokenInvarShield: {
+				DisplayName: Broken Invar Shield
+				Tooltip: It's broken.
+			}
+
+			BronzeBar.DisplayName: Bronze Bar
+			BronzeBow.DisplayName: Bronze Bow
+
+			BronzeChestplate: {
+				DisplayName: Bronze Chestplate
+				Tooltip: 6% increased ranged critical strike chance
+			}
+
+			BronzeGreatsword.DisplayName: Bronze Greatsword
+
+			BronzeGreaves: {
+				DisplayName: Bronze Greaves
+				Tooltip: 6% increased magic critical strike chance
+			}
+
+			BronzeHamaxe.DisplayName: Bronze Hamaxe
+
+			BronzeHelmet: {
+				DisplayName: Bronze Helmet
+				Tooltip: 6% increased melee critical strike chance
+			}
+
+			BronzePickaxe.DisplayName: Bronze Pickaxe
+
+			BurningFist: {
+				DisplayName: Burning Fist
+				Tooltip: Turns enemies to ash.
+			}
+
+			BurningTome.DisplayName: Burning Tome
+			ButcherAxe.DisplayName: Butcher Axe
+			ButcherMask.DisplayName: Butcher Mask
+			CactusBow.DisplayName: Cactus Bow
+			CandyBow.DisplayName: Candy Bow
+			CandyCane.DisplayName: Candy Cane
+
+			CandyPropeller: {
+				DisplayName: Candy Propeller
+				Tooltip: Allows flight and slow fall
+			}
+
+			Carrow.DisplayName: Carrow
+			CaveGolemBanner.DisplayName: Cave Golem Banner
+			Chainjaw.DisplayName: Chainjaw
+
+			Chainsword: {
+				DisplayName: Chainsword
+				Tooltip: "'It looks like a sword, but its actually a saw! Buy yours today!'"
+			}
+
+			ChaosBar.DisplayName: Chaos Bar
+
+			ChaosBreastplate: {
+				DisplayName: Chaos Breastplate
+				Tooltip: Increases movement speed
+			}
+
+			ChaosGreaves: {
+				DisplayName: Chaos Greaves
+				Tooltip:
+					'''
+					Increased life max by 25
+					Increased wing time
+					'''
+			}
+
+			ChaosHelmet: {
+				DisplayName: Chaos Helmet
+				Tooltip:
+					'''
+					Increased life max by 25
+					Immune to most debuffs!
+					'''
+			}
+
+			ChaosWings: {
+				DisplayName: Chaos Wings
+				Tooltip: Allows flight and slow fall
+			}
+
+			Charcoal.DisplayName: Charcoal
+			ChatteringTeethBanner.DisplayName: Chattering Teeth Banner
+			ChefHat.DisplayName: Chef Hat
+			ChlorophyteDeadshooter.DisplayName: Chlorophyte Deadshooter
+
+			ChlorophyteHat: {
+				DisplayName: Chlorophyte Hat
+				Tooltip: Increases minion damage by 25%
+			}
+
+			ChristmasFireplace.DisplayName: Christmas Fireplace
+			CinderBlade.DisplayName: Cinder Blade
+
+			CobaltHeadgear: {
+				DisplayName: Cobalt Headgear
+				Tooltip: Increases minion damage by 18%
+			}
+
+			CobaltRifle.DisplayName: Cobalt Rifle
+			CobaltStaff.DisplayName: Cobalt Staff
+			CobaltWarhammer.DisplayName: Cobalt Warhammer
+
+			CogLordBag: {
+				DisplayName: Treasure Bag
+				Tooltip: Right click to open
+			}
+
+			CogLordMask.DisplayName: Cog Lord Mask
+			CogLordTrophy.DisplayName: Cog Lord Trophy
+			ColossusSword.DisplayName: Colossus Sword
+			CopperShield.DisplayName: Copper Shield
+			CoralChestplate.DisplayName: Coral Chestplate
+			CoralGreaves.DisplayName: Coral Greaves
+			CoralHamaxe.DisplayName: Coral Hamaxe
+
+			CoralHelmet: {
+				DisplayName: Coral Helmet
+				Tooltip: Allows you to swim
+			}
+
+			CoralPickaxe.DisplayName: Coral Pickaxe
+			CoralSlasher.DisplayName: Coral Slasher
+			Corn.DisplayName: Corn
+			CornHeater.DisplayName: Corn Heater
+			CornSword.DisplayName: Corn Sword
+			CorruptedBiholmerBanner.DisplayName: Corrupted Biholmer Banner
+			CrabClaw.DisplayName: Crab Claw
+			CrimerBanner.DisplayName: Crimer Banner
+			CrimsonBiholmerBanner.DisplayName: Crimson Biholmer Banner
+			CrimtaneScythe.DisplayName: Crimtane Scythe
+			Crossbow.DisplayName: Crossbow
+			CrystalChainmer.DisplayName: Crystal Chainmer
+
+			CrystalChestplate: {
+				DisplayName: Crystal Chestplate
+				Tooltip: 30% increased throwing velocity
+			}
+
+			CrystalDagger.DisplayName: Crystal Dagger
+			CrystalDrill.DisplayName: Crystal Drill
+
+			CrystalGreaves: {
+				DisplayName: Crystal Greaves
+				Tooltip: 20% increased throwing critical strike chance
+			}
+
+			CrystalHelmet: {
+				DisplayName: Crystal Helmet
+				Tooltip: 20% increased throwing damage
+			}
+
+			CrystalPickaxe.DisplayName: Crystal Pickaxe
+			CrystalWarhamaxe.DisplayName: Crystal Warhamaxe
+			CursedBreath.DisplayName: Cursed Breath
+			CursedKnife.DisplayName: Cursed Knife
+
+			CursedPopcorn: {
+				DisplayName: Cursed Popcorn
+				Tooltip: Summons the Evil Corn
+			}
+
+			DarkAbsorber: {
+				DisplayName: Dark Absorber
+				Tooltip: Gives health when in Corruption
+			}
+
+			DarkDruidBanner.DisplayName: Dark Druid Banner
+			DarkDruidMask.DisplayName: Dark Druid Mask
+			DarkPlanksWall.DisplayName: Dark Planks Wall
+			DeathBlaze.DisplayName: Death Blaze
+			DeepwaterVilefishBanner.DisplayName: Deepwater Vilefish Banner
+			DemonBlood.DisplayName: Demon Blood
+			DemoniteScythe.DisplayName: Demonite Scythe
+			DesertClaymore.DisplayName: Desert Claymore
+
+			DesertCrown: {
+				DisplayName: Desert Crown
+				Tooltip: Summons the Rukh
+			}
+
+			DesertEagle.DisplayName: Desert Eagle
+
+			Destructor: {
+				DisplayName: The Destructor
+				Tooltip: "'Exterminate!'"
+			}
+
+			DevilForge.DisplayName: Devil Forge
+			DevilishTortoiseBanner.DisplayName: Devilish Tortoise Banner
+			DiamondDrill.DisplayName: Diamond Drill
+
+			DimanHackJeans: {
+				DisplayName: Diman Hack Jeans
+				Tooltip: "'Great for impersonating devs!'"
+			}
+
+			DimanHackMask: {
+				DisplayName: Diman Hack Mask
+				Tooltip: "'Great for impersonating devs!'"
+			}
+
+			DimanHackShirt: {
+				DisplayName: Diman Hack Shirt
+				Tooltip: "'Great for impersonating devs!'"
+			}
+
+			DimanHackWings: {
+				DisplayName: Diman Hack Wings
+				Tooltip: "'Great for impersonating devs!'"
+			}
+
+			DinictisBanner.DisplayName: Dinictis Banner
+
+			DogeMask: {
+				DisplayName: Doge Mask
+				Tooltip: "'Let it wow'"
+			}
+
+			DopelgangerCandle: {
+				DisplayName: Dopelganger Candle
+				Tooltip:
+					'''
+					Takes a piece of your soul in return for the additional minion
+					6% increased minion damage
+					'''
+			}
+
+			DragonBreath.DisplayName: Dragon Breath
+
+			DragonGem: {
+				DisplayName: Dragon Gem
+				Tooltip: Increases regeneration during night
+			}
+
+			DragonSkullBanner.DisplayName: Dragon Skull Banner
+			DungeonKeeperBanner.DisplayName: Dungeon Keeper Banner
+			Durian.DisplayName: Durian
+			EbonwoodShield.DisplayName: Ebonwood Shield
+			EmeraldDrill.DisplayName: Emerald Drill
+
+			EnchantedShield: {
+				DisplayName: Enchanted Shield
+				Tooltip:
+					'''
+					Increased maximum mana
+					10% decreased magic damage
+					'''
+			}
+
+			EtherealFeather: {
+				DisplayName: Ethereal Feather
+				Tooltip: Allows you to fall slowly
+			}
+
+			EverscreamMask.DisplayName: Everscream Mask
+			EvershinyBar.DisplayName: Evershining Bar
+
+			EvilCornBag: {
+				DisplayName: Treasure Bag
+				Tooltip: Right click to open
+			}
+
+			EvilCornMask.DisplayName: Evil Corn Mask
+			EvilCornTrophy.DisplayName: Evil Corn Trophy
+
+			EvilCup: {
+				DisplayName: Evil Cup
+				Tooltip: Increases monsters spawn rate
+			}
+
+			EyeofInfinity.DisplayName: Eye of Infinity
+			Eyezor.DisplayName: Eyezor
+			FencingRapier.DisplayName: Fencing Rapier
+			FiercePaw.DisplayName: Fierce Paw
+			FlayerBanner.DisplayName: Flayer Banner
+
+			FleshBreastplate: {
+				DisplayName: Flesh Breastplate
+				Tooltip:
+					'''
+					5% increased minion damage
+					Increases your max number of minions
+					'''
+			}
+
+			FleshGreaves: {
+				DisplayName: Flesh Greaves
+				Tooltip:
+					'''
+					5% increased minion damage
+					Increases your max number of minions
+					'''
+			}
+
+			FleshHelmet: {
+				DisplayName: Flesh Helmet
+				Tooltip:
+					'''
+					5% increased minion damage
+					Increases your max number of minions
+					'''
+			}
+
+			FleshWings: {
+				DisplayName: Flesh Wings
+				Tooltip: The wings of skin and teeth.
+			}
+
+			FossilSugar: {
+				DisplayName: Fossil Sugar
+				Tooltip: Summons a rideable Antlion mount
+			}
+
+			FrostbiteChestplate.DisplayName: Frostbite Chestplate
+			FrostbiteGreaves.DisplayName: Frostbite Greaves
+			FrostbiteHelmet.DisplayName: Frostbite Helmet
+
+			FrozenTurtleShield: {
+				DisplayName: Frozen Turtle Shield
+				Tooltip:
+					'''
+					The less health, the more defense
+					Grants 25% damage reduction
+					'''
+			}
+
+			FurCoat.DisplayName: Fur Coat
+			FurHat.DisplayName: Fur Hat
+			Gastropuls.DisplayName: Gastropuls
+
+			GenieLamp: {
+				DisplayName: Geniee Lamp
+				Tooltip: Summons a Genie
+			}
+
+			GiantCrabBanner.DisplayName: Giant Crab Banner
+			GlassDoor.DisplayName: Glass Door
+			Globe.DisplayName: Globe
+			GloomTome.DisplayName: Gloom Tome
+
+			GlorianaWrath: {
+				DisplayName: Gloriana Wrath
+				Tooltip: Cleanses infected areas.
+			}
+
+			GoldenHat: {
+				DisplayName: Golden Hat
+				Tooltip:
+					'''
+					5% decreased magic damage
+					Increases magic critical strike chance by 6%
+					'''
+			}
+
+			GoldenRobe: {
+				DisplayName: Golden Robe
+				Tooltip:
+					'''
+					1% decreased magic damage
+					Increases maximum mana by 40
+					'''
+			}
+
+			GoldShield.DisplayName: Gold Shield
+
+			GolemCore: {
+				DisplayName: Golem Core
+				Tooltip: The ancient and mysterious mechanism
+			}
+
+			GraniteChestplate.DisplayName: Granite Chestplate
+			GraniteGreaves.DisplayName: Granite Greaves
+			GraniteHelmet.DisplayName: Granite Helmet
+
+			GrayKnightBreastplate: {
+				DisplayName: Gray Knight Breastplate
+				Tooltip: Can be colored with gems
+			}
+
+			GrayKnightHelmet: {
+				DisplayName: Gray Knight Helmet
+				Tooltip: Can be colored with gems
+			}
+
+			GreenChristmasStocking.DisplayName: Green Christmas Stocking
+			GreenCrossguardPhasesaber.DisplayName: Green Crossguard Phasesaber
+			GreenKnightBreastplate.DisplayName: Green Knight Breastplate
+			GreenKnightHelmet.DisplayName: Green Knight Helmet
+
+			HallowedHat: {
+				DisplayName: Hallowed Hat
+				Tooltip: Increases minion damage by 25%
+			}
+
+			HallowSlimerBanner.DisplayName: Hallow Slimer Banner
+			HandCannon.DisplayName: Hand Cannon
+			HappyTotemMask.DisplayName: Happy Totem Mask
+
+			HarpyChestplate: {
+				DisplayName: Harpy Chestplate
+				Tooltip: Increases jump height
+			}
+
+			HarpyHelmet: {
+				DisplayName: Harpy Helmet
+				Tooltip: 10% increased melee damage
+			}
+
+			HarpyHood: {
+				DisplayName: Harpy Hood
+				Tooltip: 10% increased magic damage
+			}
+
+			HarpyLeggings: {
+				DisplayName: Harpy Leggings
+				Tooltip: 10% increased movement speed
+			}
+
+			HarpyMask: {
+				DisplayName: Harpy Mask
+				Tooltip: 10% increased ranged damage
+			}
+
+			HeadlessZombieBanner.DisplayName: Headless Zombie Banner
+
+			HeartMagnet: {
+				DisplayName: Heart Magnet
+				Tooltip: Increased heart pickup range
+			}
+
+			HeartofAtis: {
+				DisplayName: Heart of Atis
+				Tooltip: Increases life regeneration
+			}
+
+			HeatCore: {
+				DisplayName: Heat Core
+				Tooltip: Shoots rays at nearby enemies
+			}
+
+			HeavyZombieBanner.DisplayName: Heavy Zombie Banner
+			HiveHeadZombieBanner.DisplayName: Hivehead Zombie Banner
+			HuntingBow.DisplayName: Hunting Bow
+			IceQueenMask.DisplayName: Ice Queen Mask
+			IchorBreath.DisplayName: Ichor Breath
+			IchorKnife.DisplayName: Ichor Knife
+			Incinerator.DisplayName: Incinerator
+			IndifferentTotemMask.DisplayName: Indifferent Totem Mask
+
+			Infernality: {
+				DisplayName: Infernality
+				Tooltip: For the glory of Satan of course!
+			}
+
+			InvarAxe.DisplayName: Invar Axe
+			InvarBar.DisplayName: Invar Bar
+			InvarBow.DisplayName: Invar Bow
+			InvarBreastplate.DisplayName: Invar Breastplate
+			InvarBroadsword.DisplayName: Invar Broadsword
+			InvarGreaves.DisplayName: Invar Greaves
+			InvarHammer.DisplayName: Invar Hammer
+
+			InvarHat: {
+				DisplayName: Invar Hat
+				Tooltip: 10% increased melee speed
+			}
+
+			InvarHeadgear: {
+				DisplayName: Invar Headgear
+				Tooltip: 6% increased melee damage
+			}
+
+			InvarHelmet.DisplayName: Invar Helmet
+			InvarPickaxe.DisplayName: Invar Pickaxe
+			IonBlaster.DisplayName: Ion Blaster
+			IronShield.DisplayName: Iron Shield
+
+			itemBoneHook: {
+				DisplayName: Bone Hook
+				Tooltip: "'Fresh meat!'"
+			}
+
+			JavaHood.DisplayName: Java Hood
+			JavaRobe.DisplayName: Java Robe
+			Knife.DisplayName: Knife
+			KnightGreaves.DisplayName: Knight Greaves
+			KnightHelmet.DisplayName: Knight Helmet
+			Ladder.DisplayName: Ladder
+			LeadShield.DisplayName: Lead Shield
+
+			LeechingSeed: {
+				DisplayName: Leeching Seed
+				Tooltip: Maximum life increased by 50
+			}
+
+			LightningTome.DisplayName: Lightning Tome
+			LightPlanksWall.DisplayName: Light Planks Wall
+
+			LivingWoodBreastplate: {
+				DisplayName: Living Wood Breastplate
+				Tooltip:
+					'''
+					Increases minion damage by 4%
+					Increases your max number of minions
+					'''
+			}
+
+			LivingWoodGreaves: {
+				DisplayName: Living Wood Greaves
+				Tooltip: Increases minion damage by 4%
+			}
+
+			LivingWoodMask: {
+				DisplayName: Living Wood Mask
+				Tooltip: Increases minion damage by 4%
+			}
+
+			LivingWoodThreepeater.DisplayName: Living Wood Threepeater
+			LongBow.DisplayName: Long Bow
+
+			LuxoriousBreastplate: {
+				DisplayName: Luxorious Breastplate
+				Tooltip: Increased mining speed by 12%
+			}
+
+			LuxoriousHelmet: {
+				DisplayName: Luxorious Helmet
+				Tooltip: Increased mining speed by 12%
+			}
+
+			LuxoriousLeggings: {
+				DisplayName: Luxorious Leggings
+				Tooltip: Increased mining speed by 12%
+			}
+
+			MagicalGreaves: {
+				DisplayName: Magical Greaves
+				Tooltip: 3% increased magic damage
+			}
+
+			MagicalHat: {
+				DisplayName: Magical Hat
+				Tooltip: 3% increased magic damage
+			}
+
+			MagicalRobe: {
+				DisplayName: Magical Robe
+				Tooltip:
+					'''
+					4% increased magic damage
+					Increases maximum mana by 20
+					'''
+			}
+
+			MagmaCrusher.DisplayName: Magma Crusher
+			Magmaxe.DisplayName: Magmaxe
+			Magminer.DisplayName: Magminer
+			MagmoniumBar.DisplayName: Magmonium Bar
+
+			MagmoniumBreastplate: {
+				DisplayName: Magmonium Breastplate
+				Tooltip: 12% increased all damage
+			}
+
+			MagmoniumGreaves: {
+				DisplayName: Magmonium Greaves
+				Tooltip:
+					'''
+					10% increased melee speed
+					10% reduced mana usage
+					'''
+			}
+
+			MagmoniumHelmet: {
+				DisplayName: Magmonium Helmet
+				Tooltip: Inflicts fire damage on attack
+			}
+
+			MagmoniumWings: {
+				DisplayName: Magmonium Wings
+				Tooltip: Allows flight and slow fall
+			}
+
+			ManaDagger: {
+				DisplayName: Mana Dagger
+				Tooltip:
+					'''
+					A magical returning dagger
+					Gives mana after hitting an enemy and returning
+					'''
+			}
+
+			MarbleBreastplate: {
+				DisplayName: Marble Breastplate
+				Tooltip: 10% increased throwing damage
+			}
+
+			MarbleHelmet: {
+				DisplayName: Marble Helmet
+				Tooltip: 10% increased throwing velocity
+			}
+
+			MarbleLeggings: {
+				DisplayName: Marble Leggings
+				Tooltip: 10% increased throwing critical strike chance
+			}
+
+			MarbleVase.DisplayName: Marble Vase
+
+			MartianCommunicator: {
+				DisplayName: Martian Communicator
+				Tooltip: Summons Martian Probe
+			}
+
+			MechanicalBrain: {
+				DisplayName: Mechanical Brain
+				Tooltip: Summons the Motherboard
+			}
+
+			MeltedInvarSword: {
+				DisplayName: Melted Invar Sword
+				Tooltip: It's melted.
+			}
+
+			MeteorBlade.DisplayName: Meteor Blade
+
+			MeteorMask: {
+				DisplayName: Meteor Mask
+				Tooltip: Increases magic critical strike chance by 9
+			}
+
+			MineralTransmutator.DisplayName: Mineral Transmutator
+			MoltenLance.DisplayName: Molten Lance
+
+			MoltenStaff: {
+				DisplayName: Molten Staff
+				Tooltip: Casts flames to burn your enemies!
+			}
+
+			MotherboardBag: {
+				DisplayName: Treasure Bag
+				Tooltip: Right click to open
+			}
+
+			MotherboardMask.DisplayName: Motherboard Mask
+			MotherboardTrophy.DisplayName: Motherboard Trophy
+			MourningWoodMask.DisplayName: Mourning Wood Mask
+			MushroomCreatureBanner.DisplayName: Mushroom Creature Banner
+			MusketeerHat.DisplayName: Muskeeter Hat
+
+			MysteriousDrum: {
+				DisplayName: Mysterious Drum
+				Tooltip: Summons Tiki Totem
+			}
+
+			MythrilMask: {
+				DisplayName: Mythril Mask
+				Tooltip: Increases minion damage by 20%
+			}
+
+			MythrilRifle.DisplayName: Mythril Rifle
+			MythrilStaff.DisplayName: Mythril Staff
+			MythrilWarhammer.DisplayName: Mythril Warhammer
+
+			NanoBar: {
+				DisplayName: Nano Bar
+				Tooltip: Pulsing with pure energy
+			}
+
+			NanoBlade.DisplayName: Nano Blade
+
+			NanoBreastplate: {
+				DisplayName: Nano Breastplate
+				Tooltip:
+					'''
+					8% increased all damage
+					10% increases melee speed
+					'''
+			}
+
+			NanoDrill.DisplayName: Nano Drill
+
+			NanoGreaves: {
+				DisplayName: Nano Greaves
+				Tooltip: 20% increased movement speed
+			}
+
+			NanoHelmet: {
+				DisplayName: Nano Helmet
+				Tooltip:
+					'''
+					Maximum mana increased by 60
+					Increases critical strike chance by 8%
+					'''
+			}
+
+			NanoJackhammer.DisplayName: Nano Jackhammer
+			NanoSaw.DisplayName: Nano Saw
+
+			NebulaRing: {
+				DisplayName: "Nebula Ring "
+				Tooltip:
+					'''
+					20% increased magic damage
+					Increases magic critical strike chance by 15
+					Increases maximum mana by 80
+					'''
+			}
+
+			NecroBow.DisplayName: Necro Bow
+			NecromancerClaymore.DisplayName: Necromancer Claymore
+
+			NightCombination: {
+				DisplayName: Nightly Combination
+				Tooltip: Increases life regeneration, damage and makes you glowind during night
+			}
+
+			NightDusk.DisplayName: Night Dusk
+
+			NightingaleChestplate: {
+				DisplayName: Nightingale Chestplate
+				Tooltip: 5% increased all damage
+			}
+
+			NightingaleGreaves: {
+				DisplayName: Nightingale Greaves
+				Tooltip: Increased movement speed by 10%
+			}
+
+			NightingaleHood: {
+				DisplayName: Nightingale Hood
+				Tooltip: Increases life regeneration
+			}
+
+			ObserverBanner.DisplayName: Observer Banner
+
+			OldInvarPlate: {
+				DisplayName: Old Invar Plate
+				Tooltip: It's old.
+			}
+
+			OmegaWolfBanner.DisplayName: Omega Wolf Banner
+			OrangeKnightBreastplate.DisplayName: Orange Knight Breastplate
+			OrangeKnightHelmet.DisplayName: Orange Knight Helmet
+			OrcBanner.DisplayName: Orc Banner
+
+			OrcishBreastplate: {
+				DisplayName: Orcish Breastplate
+				Tooltip: 15% increased melee speed
+			}
+
+			OrcishBroadsword.DisplayName: Orcish Broadsword
+
+			OrcishGreaves: {
+				DisplayName: Orcish Greaves
+				Tooltip: 7% increased melee damage
+			}
+
+			OrcishHelmet: {
+				DisplayName: Orcish Helmet
+				Tooltip: 7% increased melee damage
+			}
+
+			OrcishKnife.DisplayName: Orcish Knife
+			OrcishShield.DisplayName: Orcish Shield
+			OrcSkeletonBanner.DisplayName: Orc Skeleton Banner
+			OrcWarriorBanner.DisplayName: Orc Warrior Banner
+
+			OrichalcumHeadgear: {
+				DisplayName: Orichalcum Headgear
+				Tooltip: Increases minion damage by 20%
+			}
+
+			OrichalcumRifle.DisplayName: Orichalcum Rifle
+			OrichalcumStaff.DisplayName: Orichalcum Staff
+			OrichalcumWarhammer.DisplayName: Orichalcum Warhammer
+
+			PalladiumHat: {
+				DisplayName: Palladium Hat
+				Tooltip: Increases minion damage by 18%
+			}
+
+			PalladiumRifle.DisplayName: Palladium Rifle
+			PalladiumStaff.DisplayName: Palladium Staff
+			PalladiumWarhammer.DisplayName: Palladium Warhammer
+			PalmwoodShield.DisplayName: Palm Wood Shield
+			ParaspriteBanner.DisplayName: Parasprite Banner
+
+			PatronoftheMind: {
+				DisplayName: Patron of the Mind
+				Tooltip: Gives health when in Crimson
+			}
+
+			PearlwoodShield.DisplayName: Pearlwood Shield
+			PeepersBanner.DisplayName: Peepers Banner
+			PetrifiedSpike.DisplayName: Petrified Spike
+			PhantomBanner.DisplayName: Phantom Banner
+			PhantomSoul.DisplayName: Phantom Soul
+
+			PharaohBlade: {
+				DisplayName: Pharaoh Blade
+				Tooltip:
+					'''
+					Allows you to get more coins for killing enemies
+					'More gold for God of gold!'
+					'''
+			}
+
+			PhilosophersFlower: {
+				DisplayName: Philosophers Flower
+				Tooltip:
+					'''
+					Reduces the cooldown of healing potions
+					Automatically uses mana potions when needed
+					'''
+			}
+
+			PickaxeofBloom.DisplayName: Pickaxe of Bloom
+			PieceofFlesh.DisplayName: Piece of Flesh
+
+			PiercingQuartz: {
+				DisplayName: Piercing Quartz
+				Tooltip: 5% increased critical strike chance
+			}
+
+			PirateChest: {
+				DisplayName: Pirate Chest
+				Tooltip:
+					'''
+					Right click to open
+					'Contains precious things'
+					'''
+			}
+
+			PirateFlag: {
+				DisplayName: Pirate Flag
+				Tooltip: Summons a rideable Flying Dutchman
+			}
+
+			PixieCrown: {
+				DisplayName: Pixie Crown
+				Tooltip: Summons the Pixie Queen
+			}
+
+			PixieQueenBag: {
+				DisplayName: Treasure Bag
+				Tooltip: Right click to open
+			}
+
+			PixieQueenMask.DisplayName: Pixie Queen Mask
+			PixieQueenTrophy.DisplayName: Pixie Queen Trophy
+
+			PlagueMask: {
+				DisplayName: Plague Mask
+				Tooltip: "'HEE HEE HEE'"
+			}
+
+			PlagueRobe: {
+				DisplayName: Plague Robe
+				Tooltip: "'HEE HEE HEE'"
+			}
+
+			PlatinumShield.DisplayName: Platinum Shield
+			Popcorn.DisplayName: Popcorn
+			PopcornAmmo.DisplayName: Popcorn
+			PossessedChestplate.DisplayName: Possessed Chestplate
+			PossessedGreaves.DisplayName: Possessed Greaves
+			PossessedHelmet.DisplayName: Possessed Helmet
+
+			PrimeBlade: {
+				DisplayName: Prime Blade
+				Tooltip: "'Mechanical rage!'"
+			}
+
+			PumpkingMask.DisplayName: Pumpking Mask
+			Pumpspell.DisplayName: Pumpspell
+
+			PurpleCrossguardPhasesaber: {
+				DisplayName: Purple Crossguard Phasesaber
+				Tooltip: Purple Crossguard Phasesaber
+			}
+
+			PurpleKnightBreastplate.DisplayName: Purple Knight Breastplate
+			PurpleKnightHelmet.DisplayName: Purple Knight Helmet
+			PyramidHat.DisplayName: Pyramid Hat
+			PyramidHeadBanner.DisplayName: Pyramid Head Banner
+			Quadratron.DisplayName: Quadratron
+
+			Quiver: {
+				DisplayName: Quiver
+				Tooltip: 20% chance not to consume ammo
+			}
+
+			RailStaff: {
+				DisplayName: Rail Staff
+				Tooltip: Casts flames to burn your enemies!
+			}
+
+			RazorleavesTome.DisplayName: Razorleaves Tome
+			RedBrickChimney.DisplayName: Red Brick Chimney
+			RedChristmasStocking.DisplayName: Red Christmas Stocking
+			RedCrossguardPhasesaber.DisplayName: Red Crossguard Phasesaber
+			RedKnightBreastplate.DisplayName: Red Knight Breastplate
+			RedKnightHelmet.DisplayName: Red Knight Helmet
+			RichMahoganyShield.DisplayName: Rich Mahogany Shield
+			RipperKnife.DisplayName: Ripper Knife
+			RubyDrill.DisplayName: Ruby Drill
+			RustySword.DisplayName: Rusty Sword
+			SacrificalPickaxe.DisplayName: Sacrifical Pickaxe
+			SacrificalScythe.DisplayName: Sacrifical Scythe
+			SandKnife.DisplayName: Sand Knife
+			SandstoneBar.DisplayName: Sandstone Bar
+			SandstoneBathtub.DisplayName: Sandstone Bathtub
+			SandstoneBed.DisplayName: Sandstone Bed
+			SandstoneBench.DisplayName: Sandstone Bench
+			SandstoneBookcase.DisplayName: Sandstone Bookcase
+
+			SandStoneBreastplate: {
+				DisplayName: Sandstone Breastplate
+				Tooltip: 10% increased movement speed
+			}
+
+			SandstoneChair.DisplayName: Sandstone Chair
+			SandstoneChest.DisplayName: Sandstone Chest
+			SandstoneDoor.DisplayName: Sandstone Door
+			SandstoneDresser.DisplayName: Sandstone Dresser
+			SandstoneGrandfatherClock.DisplayName: Sandstone Grandfather Clock
+
+			SandStoneGreaves: {
+				DisplayName: Sandstone Greaves
+				Tooltip: 10% increased movement speed
+			}
+
+			SandStoneHelmet: {
+				DisplayName: Sandstone Helmet
+				Tooltip: 10% increased movement speed
+			}
+
+			SandstonePiano.DisplayName: Sandstone Piano
+			SandstonePlatform.DisplayName: Sandstone Platform
+
+			SandstoneRing: {
+				DisplayName: "Sandstone Ring "
+				Tooltip:
+					'''
+					5% increased melee damage
+					Increases melee critical strike chance by 5
+					'''
+			}
+
+			SandstoneSink.DisplayName: Sandstone Sink
+			SandstoneTable.DisplayName: Sandstone Table
+			SandstoneWorkbench.DisplayName: Sandstone Workbench
+			SantaNK1Mask.DisplayName: Santa-NK1 Mask
+			SapphireDrill.DisplayName: Sapphire Drill
+			Scarecrow.DisplayName: Scarecrow
+
+			ScorpionStinger: {
+				DisplayName: Scorpion Stinger
+				Tooltip: Poisons enemies
+			}
+
+			ShadewoodShield.DisplayName: Shadewood Shield
+			ShadowBow.DisplayName: Shadow Bow
+			ShadowCutter.DisplayName: Shadow Cutter
+			Sharanga.DisplayName: Sharanga
+			Sharking.DisplayName: Sharking
+			SharkToothSword.DisplayName: Shark Tooth Sword
+			SharpenedTooth.DisplayName: Sharpened Tooth
+			Shovel.DisplayName: Shovel
+
+			ShroomiteMechanicalBoots: {
+				DisplayName: Shroomite Mechanical Boots
+				Tooltip: The less health, the more speed...
+			}
+
+			ShroomiteMinigun.DisplayName: Shroomite Minigun
+			ShroomiteRepeater.DisplayName: Shroomite Repeater
+			ShroomiteRocketLauncher.DisplayName: Shroomite Rocket Launcher
+			SilverShield.DisplayName: Silver Shield
+
+			SkullTeeth: {
+				DisplayName: Skull Teeth
+				Tooltip: Hell yeah!
+			}
+
+			SnowballChaingun.DisplayName: Snowball Chaingun
+			SnowShotgun.DisplayName: Snow Shotgun
+
+			SolarRing: {
+				DisplayName: "Solar Ring "
+				Tooltip:
+					'''
+					20% increased melee damage
+					Increases meele critical strike chance by 15
+					Casts a ring of fire
+					'''
+			}
+
+			SoulofMind: {
+				DisplayName: Soul of Mind
+				Tooltip: "'The essence of perfect intellect'"
+			}
+
+			SpectralBlade.DisplayName: Spectral Blade
+			SpectreFlower.DisplayName: Spectre Flower
+
+			SpectreNecklace: {
+				DisplayName: Spectre Necklace
+				Tooltip: The less mana, the more defense...
+			}
+
+			SpectreTaroCards.DisplayName: Spectre Taro Cards
+			SpiderManBanner.DisplayName: Spider Man Banner
+
+			SpikeShield: {
+				DisplayName: Spiky Shield
+				Tooltip: Allows you to prick foes
+			}
+
+			SporeBlade.DisplayName: Spore Blade
+			SquidHat.DisplayName: Squid Hat
+			SquidZombieBanner.DisplayName: Squid Zombie Banner
+
+			StardustRing: {
+				DisplayName: "Stardust Ring "
+				Tooltip:
+					'''
+					20% increased minion damage
+					Increases your max number of minions
+					'''
+			}
+
+			StarfallTome.DisplayName: Starfall Tome
+
+			SteampunkChestplate: {
+				DisplayName: Steampunk Chestplate
+				Tooltip: Maximum life increased by 50
+			}
+
+			SteampunkGreaves: {
+				DisplayName: Steampunk Greaves
+				Tooltip: 15% increased movement speed
+			}
+
+			SteampunkHeadgear: {
+				DisplayName: Steampunk Helmet
+				Tooltip:
+					'''
+					10% increased magical damage
+					Increases magical critical strike chance by 8
+					'''
+			}
+
+			SteampunkHelmet: {
+				DisplayName: Steampunk Helmet
+				Tooltip:
+					'''
+					10% increased melee damage
+					Increases melee critical strike chance by 8
+					'''
+			}
+
+			SteampunkMask: {
+				DisplayName: Steampunk Helmet
+				Tooltip:
+					'''
+					10% increased ranged damage
+					Increases ranged critical strike chance by 8
+					'''
+			}
+
+			SteelAxe.DisplayName: Steel Axe
+			SteelBar.DisplayName: Steel Bar
+			SteelBow.DisplayName: Steel Bow
+			SteelBroadsword.DisplayName: Steel Broadsword
+
+			SteelChestplate: {
+				DisplayName: Steel Chestplate
+				Tooltip: 3% increased ranged critical strike chance
+			}
+
+			SteelGreaves: {
+				DisplayName: Steel Greaves
+				Tooltip: 3% increased magic critical strike chance
+			}
+
+			SteelHammer.DisplayName: Steel Hammer
+
+			SteelHelmet: {
+				DisplayName: Steel Helmet
+				Tooltip: 3% increased melee critical strike chance
+			}
+
+			SteelPickaxe.DisplayName: Steel Pickaxe
+
+			Stigmata: {
+				DisplayName: Stigmata
+				Tooltip: The less health, the more damage...
+			}
+
+			StoneChestplate: {
+				DisplayName: Stone Chestplate
+				Tooltip: 4% increased melee damage
+			}
+
+			StoneHelmet: {
+				DisplayName: Stone Helmet
+				Tooltip: 4% increased melee damage
+			}
+
+			StoneLeggings: {
+				DisplayName: Stone Leggings
+				Tooltip: 4% increased melee damage
+			}
+
+			StoneofLife.DisplayName: Stone of Life
+
+			Stynginator: {
+				DisplayName: Stynginator
+				Tooltip: Uses Styngers Bolts as ammo
+			}
+
+			SupremePossessedArmorBanner.DisplayName: Supreme Possessed Armor Banner
+
+			SuspiciousLookingPresent: {
+				DisplayName: Suspicious Looking Present
+				Tooltip: Allows the Elf to move in
+			}
+
+			SwampClump: {
+				DisplayName: Swamp Clump
+				Tooltip:
+					'''
+					Greatly reduces the movement speed
+					Prolonged after hit invincibility'
+					Greatly increased life regen
+					'''
+			}
+
+			TechnologyofDionysus: {
+				DisplayName: Technology of Dionysus
+				Tooltip: The less health, the more critical strike chance...
+			}
+
+			TheSnowBall.DisplayName: The Snow Ball
+			ThornBall.DisplayName: Thorn Ball
+			ThrowingAxe.DisplayName: Throwing Axe
+			ThrowingCog.DisplayName: Throwing Cog
+			ThrowingWrench.DisplayName: Throwing Wrench
+
+			TikiSkull: {
+				DisplayName: Tiki Skull
+				Tooltip: 10% increased minion damage
+			}
+
+			TikiTotemBag: {
+				DisplayName: Treasure Bag
+				Tooltip: Right click to open
+			}
+
+			TikiTotemTrophy.DisplayName: Tiki Totem Trophy
+			TinShield.DisplayName: Tin Shield
+
+			TitaniumHood: {
+				DisplayName: Titanium Hood
+				Tooltip: Increases minion damage by 24%
+			}
+
+			TitaniumRifle.DisplayName: Titanium Rifle
+			TitaniumStaff.DisplayName: Titanium Staff
+			TitaniumWarhammer.DisplayName: Titanium Warhammer
+			TombRaider.DisplayName: Tomb Raider
+			Toothpick.DisplayName: Toothpick
+			TopazDrill.DisplayName: Topaz Drill
+			ToxicBlade.DisplayName: Toxic Blade
+			ToxicClaymore.DisplayName: Toxic Claymore
+			ToxicHilt.DisplayName: Toxic Hilt
+			ToxicRazorknife.DisplayName: Toxic Razorknife
+
+			Transistor: {
+				DisplayName: Transistor
+				Tooltip: "'Crash() everyone!'"
+			}
+
+			TrueBloodCarnage.DisplayName: True Blood Carnage
+			TungstenBullet.DisplayName: Tungsten Bullet
+			TungstenShield.DisplayName: Tungsten Shield
+			TurtleGreatsword.DisplayName: Turtle Greatsword
+			TurtlePitchfork.DisplayName: Turtle Pitchfork
+
+			TurtleShield: {
+				DisplayName: Turtle Shield
+				Tooltip: The less health, the more defense...
+			}
+
+			TurtleSickle.DisplayName: Turtle Sickle
+
+			TwilightHorns: {
+				DisplayName: Twilight Horns
+				Tooltip: You gain more power during night
+			}
+
+			UndeadWarriorBanner.DisplayName: Undead Warrior Banner
+			UnfathomableFlower.DisplayName: Unfathomable Flower
+			UntreatedFlesh.DisplayName: Untreated Flesh
+			VampireDagger.DisplayName: Vampire Dagger
+			Vertebrow.DisplayName: Vertebrow
+
+			VineCape: {
+				DisplayName: Vine Cape
+				Tooltip: 5% increased ranged damage
+			}
+
+			VineHood: {
+				DisplayName: Vine Hood
+				Tooltip: 5% increased ranged damage
+			}
+
+			VinePants: {
+				DisplayName: Vine Pants
+				Tooltip: 5% increased ranged damage
+			}
+
+			VortexRing: {
+				DisplayName: "Vortex Ring "
+				Tooltip:
+					'''
+					20% increased ranged damage
+					Increases ranged critical strike chance by 15
+					25% chance not to consume ammo
+					'''
+			}
+
+			VultureFeather: {
+				DisplayName: Vulture Feather
+				Tooltip: Increased movement speed by 15%
+			}
+
+			VultureKingBag: {
+				DisplayName: Treasure Bag
+				Tooltip: Right click to open
+			}
+
+			VultureKingMask.DisplayName: Rukh Mask
+			VultureKingTrophy.DisplayName: Rukh Trophy
+			VultureWings.DisplayName: Vulture Wings
+			WaterSpear.DisplayName: Water Spear
+			WhiteCrossguardPhasesaber.DisplayName: White Crossguard Phasesaber
+			WhiteTurban.DisplayName: White Turban
+			WolfClaws.DisplayName: Wolf Claws
+
+			WolfHood: {
+				DisplayName: Wolf Hood
+				Tooltip: 6% increased minion damage
+			}
+
+			WolfJerkin: {
+				DisplayName: Wolf Jerkin
+				Tooltip:
+					'''
+					6% increased minion damage
+					Increases your max number of minions
+					'''
+			}
+
+			WolfLeggings: {
+				DisplayName: Wolf Leggings
+				Tooltip:
+					'''
+					6% increased minion damage
+					Increases movement speed
+					'''
+			}
+
+			WolfPelt.DisplayName: Wolf Pelt
+
+			WolfToothNecklace: {
+				DisplayName: Wolf Tooth Necklace
+				Tooltip: This is a modded mount.
+			}
+
+			WoodenShield.DisplayName: Wooden Shield
+			WoodenTV.DisplayName: Wooden TV
+			WoodyBanner.DisplayName: Woody Wolf Banner
+			YellowCrossguardPhasesaber.DisplayName: Yellow Crossguard Phasesaber
+			YinYangLance.DisplayName: Yin Yang Lance
+
+			Zadum4iviiCuirass: {
+				DisplayName: Zadum4ivii Cuirass
+				Tooltip: "'Great for impersonating devs!'"
+			}
+
+			Zadum4iviiHelmet: {
+				DisplayName: Zadum4ivii Helmet
+				Tooltip: "'Great for impersonating devs!'"
+			}
+
+			Zadum4iviiLeggings: {
+				DisplayName: Zadum4ivii Leggings
+				Tooltip: "'Great for impersonating devs!'"
+			}
+
+			ZarpriteBanner.DisplayName: Zarprite Banner
+			ZarpruteBanner.DisplayName: Zarprute Banner
+		}
+
+		NPCs: {
+			Abomination.DisplayName: Abomination
+			AlphaWolf.DisplayName: Alpha Wolf
+			AngerSoul.DisplayName: Anger Soul
+			ArabianMerchant.DisplayName: Arabian Merchant
+			ArchDemon.DisplayName: Arch Demon
+			Archer.DisplayName: Archer
+			ArmoredJellyfish.DisplayName: Armored Jellyfish
+			Atis.DisplayName: Atis
+			BetaWolf.DisplayName: Beta Wolf
+			Bicholmere.DisplayName: Bicholmere
+			Blazer.DisplayName: Blazer
+			BloodmoonWarrior1.DisplayName: Bloodmoon Warrior
+			BloodmoonWarrior2.DisplayName: Bloodmoon Warrior
+			BloodmoonWarrior3.DisplayName: Bloodmoon Warrior
+			BoneFlyer.DisplayName: Bone Flyer
+			BucketheadZombie.DisplayName: Buckethead Zombie
+			CaveGolem.DisplayName: Cave Golem
+			Chef.DisplayName: Chef
+			Clamper.DisplayName: Clamper
+			Clamper2.DisplayName: Clamper
+			CogLord.DisplayName: Cog Lord
+			CogLordGun.DisplayName: Cog Lord Gun
+			CogLordHand.DisplayName: Cog Lord Hand
+			CogLordProbe.DisplayName: Cog Lord Probe
+			CorruptedBicholmere.DisplayName: Corrupted Bicholmere
+			Crimer.DisplayName: Crimer
+			CrimsonBicholmere.DisplayName: Crimson Bicholmere
+			DarkDruid.DisplayName: Dark Druid
+			DarkDruidMinion.DisplayName: Dark Druid Minion
+			DeepwaterVilefish.DisplayName: Deepwater Vilefish
+			DevilishTortoise.DisplayName: Devilish Tortoise
+			Dinictis.DisplayName: Dinictis
+			DragonSkull.DisplayName: Dragon Skull
+			DungeonKeeper.DisplayName: Dungeon Keeper
+			Elf.DisplayName: Elf
+			EliteBloodmoonWarrior.DisplayName: Elite Bloodmoon Warrior
+			EvilCorn.DisplayName: Evil Corn
+			FlamingReaper.DisplayName: Flaming Reaper
+			Flayer.DisplayName: Flayer
+			GiantCrab.DisplayName: Giant Crab
+			HallowSlimer.DisplayName: Hallow Slimer
+			HappySoul.DisplayName: Happy Soul
+			HeadlessZombie.DisplayName: Headless Zombie
+			HeavyZombie.DisplayName: Heavy Zombie
+			HiveHeadZombie.DisplayName: Hivehead Zombie
+			IndifferenceSoul.DisplayName: Indifference Soul
+			JungleMimic.DisplayName: False Jungle Mimic
+			Knight.DisplayName: Knight
+			KnightZombie.DisplayName: Knight Zombie
+			Lizard.DisplayName: Lizard
+			Motherboard.DisplayName: Motherboard
+			MushroomCreature.DisplayName: Mushroom Creature
+			npcVultureKing.DisplayName: The Rukh
+			Observer.DisplayName: Observer
+			OmegaWolf.DisplayName: Omega Wolf
+			Orc.DisplayName: Orc
+			OrcSkeleton.DisplayName: Orc Skeleton
+			OrcWarrior.DisplayName: Orc Warrior
+			Parasprite.DisplayName: Parasprite
+			Peepers.DisplayName: Peepers
+			Phantom.DisplayName: Phantom
+			PixieQueen.DisplayName: Pixie Queen
+			PixieQueen2.DisplayName: Pixie Queen
+			PixieQueenGuardian.DisplayName: Pixie Queen Guardian
+			PyramidHead.DisplayName: Pyramid Head
+			PyramidRider.DisplayName: Pyramid Rider
+			SignalDron.DisplayName: Signal Dron
+			Sorcerer.DisplayName: Sorcerer
+			SpiderMan.DisplayName: Spider Man
+			SquidZombie.DisplayName: Squid Zombie
+			SupremePossessedArmor.DisplayName: Supreme Possessed Armor
+			TikiSorcerer.DisplayName: Tiki Sorcerer
+			TikiTotem.DisplayName: Tiki Totem
+			TikiWarrior.DisplayName: Tiki Warrior
+			UndeadMusketeer.DisplayName: Undead Musketeer
+			UndeadWarrior1.DisplayName: Undead Warrior
+			UndeadWarrior2.DisplayName: Undead Warrior
+			UndeadWarrior3.DisplayName: Undead Warrior
+			UndeadWarrior4.DisplayName: Undead Warrior
+			Witch.DisplayName: Witch
+			Woody.DisplayName: Woody
+			Zarprite.DisplayName: Zarprite
+			Zarprute.DisplayName: Zarprute
+		}
+
+		Projectiles: {
+			AdamantiteBolt.DisplayName: Adamantite Bolt
+			AlphaKnifePro.DisplayName: Alpha Knife
+			AmethystDrillPro.DisplayName: Amethyst Drill
+			BicholmereSpearPro.DisplayName: Bicholmere Spear
+			BlackRosePro.DisplayName: Black Rose Pro
+			BoneKnifePro.DisplayName: Bone Knife
+			BoneSpike.DisplayName: Bone Spike
+			CarrowPro.DisplayName: Carrow
+			ChainjawPro.DisplayName: Chainjaw
+			CobaltBolt.DisplayName: Cobalt Bolt
+			CrystalChainmer.DisplayName: Crystal Chainmer
+			CrystalDagger.DisplayName: Crystal Dagger
+			CrystalDrill.DisplayName: Crystal Drill
+			CursedBreathPro.DisplayName: Cursed Breath Pro
+			DesertClaymorePro.DisplayName: Desert Claymore
+			DiamondDrillPro.DisplayName: Diamond Drill
+			DragonBreathPro.DisplayName: Dragon Breath Pro
+			DreadGun.DisplayName: Dread Gun
+			EmeraldDrillPro.DisplayName: Emerald Drill
+			GloomSphere.DisplayName: Gloom Sphere
+			IchorBreathPro.DisplayName: Ichor Breath Pro
+			LightningTome.DisplayName: LightningTome
+			MythrilBolt.DisplayName: Mythril Bolt
+			NanoDrillPro.DisplayName: Nano Drill
+			NanoJackhammerPro.DisplayName: Nano Jackhammer
+			NanoSawPro.DisplayName: Nano Saw
+			NebulaChainsaw.DisplayName: Nebula Chainsaw
+			NebulaDrill.DisplayName: Nebula Drill
+			OrichalcumBolt.DisplayName: Orichalcum Bolt
+			PalladiumBolt.DisplayName: Palladium Bolt
+			Pixinator.DisplayName: Pixinator
+			PopcornAmmo.DisplayName: True Blood Carnage
+			projBoneHook.DisplayName: Bone Hook
+			projClamperLaser.DisplayName: Clamper Laser
+			projDesertClaymore.DisplayName: Desert Claymore
+			projEyeofInfinity.DisplayName: Eye of Infinity
+			projGenie.DisplayName: Genie
+			projManaDagger.DisplayName: Mana Dagger
+			projMotherboardLaser.DisplayName: Motherboard Laser
+			projMotherboardSuperLaser.DisplayName: Motherboard Super Laser
+			projSteampunkProbe.DisplayName: Steampunk Probe
+			projVultureFeather.DisplayName: Vulture Feather
+			PumpkinPro.DisplayName: Pumpkin Pro
+			RubyDrillPro.DisplayName: Ruby Drill
+			Sand.DisplayName: Sand
+			SandstormMinion.DisplayName: SandstormMinion
+			SapphireDrillPro.DisplayName: Sapphire Drill
+			ShadowCutterPro.DisplayName: Shadow Cutter Pro
+			SolarFlareChainsaw.DisplayName: Solar Flare Chainsaw
+			SolarFlareDrill.DisplayName: Solar Flare Drill
+			SpectreFlower.DisplayName: Spectre Flower
+			SpectreTaroCard.DisplayName: Spectre Taro Card
+			StardustChainsaw.DisplayName: Stardust Chainsaw
+			StardustDrill.DisplayName: Stardust Drill
+			TheSnowBall.DisplayName: The Snow Ball
+			ThornBall.DisplayName: Thorn Ball
+			ThrowingAxe.DisplayName: ThrowingAxe
+			ThrowingCog.DisplayName: Throwing Cog
+			TitaniumBolt.DisplayName: Titanium Bolt
+			ToothpickPro.DisplayName: Toothpick
+			TopazDrillPro.DisplayName: Topaz Drill
+			ToxicRazorknifePro.DisplayName: Toxic Razorknife Pro
+			TrueBloodCarnage.DisplayName: True Blood Carnage
+			TurtlePitchfork.DisplayName: Turtle Pitchfork
+			VortexChainsaw.DisplayName: Vortex Chainsaw
+			VortexDrill.DisplayName: Vortex Drill
+			VultureFeatherPro.DisplayName: Vulture Feather
+		}
+
+		Tiles: {
+			Armchair.MapEntry: Mods.Tremor.MapObject.Armchair
+			BlastFurnace.MapEntry: Mods.Tremor.MapObject.BlastFurnace
+			BlueChristmasStocking.MapEntry: Mods.Tremor.MapObject.BlueChristmasStocking
+			BoneThrone.MapEntry: Mods.Tremor.MapObject.BoneThrone
+			BottledSoulOfFlight.MapEntry: Mods.Tremor.MapObject.BottledSoulOfFlight
+			BottledSoulOfFright.MapEntry: Mods.Tremor.MapObject.BottledSoulOfFright
+			BottledSoulOfLight.MapEntry: Mods.Tremor.MapObject.BottledSoulOfLight
+			BottledSoulOfMight.MapEntry: Mods.Tremor.MapObject.BottledSoulOfMight
+			BottledSoulOfMind.MapEntry: Mods.Tremor.MapObject.BottledSoulOfMind
+			BottledSoulOfNight.MapEntry: Mods.Tremor.MapObject.BottledSoulOfNight
+			BottledSoulOfSight.MapEntry: Mods.Tremor.MapObject.BottledSoulOfSight
+			BronzeBar.MapEntry: Mods.Tremor.MapObject.BronzeBar
+			Bucket.MapEntry: Mods.Tremor.MapObject.Bucket
+			ChaosBar.MapEntry: Mods.Tremor.MapObject.ChaosBar
+			ChristmasFireplace.MapEntry: Mods.Tremor.MapObject.ChristmasFireplace
+			CoalBlock.MapEntry: Mods.Tremor.MapObject.CoalBlock
+			CogLordTrophy.MapEntry: Mods.Tremor.MapObject.CogLordTrophy
+			DevilForge.MapEntry: Mods.Tremor.MapObject.DevilForge
+			EvershinyBar.MapEntry: Mods.Tremor.MapObject.EvershinyBar
+			EvilCornTrophy.MapEntry: Mods.Tremor.MapObject.EvilCornTrophy
+			GlassDoorClosed.MapEntry: Mods.Tremor.MapObject.GlassDoorClosed
+			GlassDoorOpen.MapEntry: Mods.Tremor.MapObject.GlassDoorOpen
+			Globe.MapEntry: Mods.Tremor.MapObject.Globe
+			GreenChristmasStocking.MapEntry: Mods.Tremor.MapObject.GreenChristmasStocking
+			Ladder.MapEntry: Mods.Tremor.MapObject.Ladder
+			LifeformAnalyzer.MapEntry: Mods.Tremor.MapObject.LifeformAnalyzer
+			LuckyHorseshoe.MapEntry: Mods.Tremor.MapObject.LuckyHorseshoe
+			MagmoniumBar.MapEntry: Mods.Tremor.MapObject.MagmoniumBar
+			ManaFlower.MapEntry: Mods.Tremor.MapObject.ManaFlower
+			MarbleVase.MapEntry: Mods.Tremor.MapObject.MarbleVase
+			MineralTransmutator.MapEntry: Mods.Tremor.MapObject.MineralTransmutator
+			MotherboardTrophy.MapEntry: Mods.Tremor.MapObject.MotherboardTrophy
+			NanoBar.MapEntry: Mods.Tremor.MapObject.NanoBar
+			PixieQueenTrophy.MapEntry: Mods.Tremor.MapObject.PixieQueenTrophy
+			RedBrickChimney.MapEntry: Mods.Tremor.MapObject.RedBrickChimney
+			RedChristmasStocking.MapEntry: Mods.Tremor.MapObject.RedChristmasStocking
+			SandstoneBar.MapEntry: Mods.Tremor.MapObject.SandstoneBar
+			SandstoneBathtub.MapEntry: Mods.Tremor.MapObject.SandstoneBathtub
+			SandstoneBench.MapEntry: Mods.Tremor.MapObject.SandstoneBench
+			SandstoneBookcase.MapEntry: Mods.Tremor.MapObject.SandstoneBookcase
+			SandstoneCandelabra.MapEntry: Mods.Tremor.MapObject.SandstoneCandelabra
+			SandstoneCandle.MapEntry: Mods.Tremor.MapObject.SandstoneCandle
+			SandstoneChair.MapEntry: Mods.Tremor.MapObject.SandstoneChair
+			SandstoneChandelier.MapEntry: Mods.Tremor.MapObject.SandstoneChandelier
+			SandstoneChest.MapEntry: Mods.Tremor.MapObject.SandstoneChest
+			SandstoneDoorClosed.MapEntry: Mods.Tremor.MapObject.SandstoneDoorClosed
+			SandstoneDoorOpen.MapEntry: Mods.Tremor.MapObject.SandstoneDoorOpen
+			SandstoneDresser.MapEntry: Mods.Tremor.MapObject.SandstoneDresser
+			SandstoneGrandfatherClock.MapEntry: Mods.Tremor.MapObject.SandstoneGrandfatherClock
+			SandstoneLamp.MapEntry: Mods.Tremor.MapObject.SandstoneLamp
+			SandstoneLantern.MapEntry: Mods.Tremor.MapObject.SandstoneLantern
+			SandstonePiano.MapEntry: Mods.Tremor.MapObject.SandstonePiano
+			SandstoneSink.MapEntry: Mods.Tremor.MapObject.SandstoneSink
+			SandstoneTable.MapEntry: Mods.Tremor.MapObject.SandstoneTable
+			SandstoneWorkbench.MapEntry: Mods.Tremor.MapObject.SandstoneWorkbench
+			Scarecrow.MapEntry: Mods.Tremor.MapObject.Scarecrow
+			SteelBar.MapEntry: Mods.Tremor.MapObject.SteelBar
+			TikiTotemTrophy.MapEntry: Mods.Tremor.MapObject.TikiTotemTrophy
+			VultureKingTrophyTile.MapEntry: Mods.Tremor.MapObject.VultureKingTrophyTile
+			WolfPelt.MapEntry: Mods.Tremor.MapObject.WolfPelt
+			WoodenTV.MapEntry: Mods.Tremor.MapObject.WoodenTV
+			LightPlanksWall.MapEntry: Mods.Tremor.MapObject.LightPlanksWall
+		}
+	}
+}

@@ -10,26 +10,26 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.autoReuse = true;
+			Item.autoReuse = true;
 
-			item.useStyle = 1;
-			item.useAnimation = 25;
-			item.useTime = 25;
-			item.knockBack = 5.5f;
-			item.width = 40;
-			item.height = 40;
-			item.damage = 260;
-			item.scale = 1.15f;
-			item.UseSound = SoundID.Item1;
-			item.rare = 11;
-			item.value = 430000;
-			item.DamageType = DamageClass.Melee;
+			Item.useStyle = 1;
+			Item.useAnimation = 25;
+			Item.useTime = 25;
+			Item.knockBack = 5.5f;
+			Item.width = 40;
+			Item.height = 40;
+			Item.damage = 260;
+			Item.scale = 1.15f;
+			Item.UseSound = SoundID.Item1;
+			Item.rare = 11;
+			Item.value = 430000;
+			Item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Obscuritron");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Obscuritron");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

@@ -9,26 +9,26 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.Carrot);
+			Item.CloneDefaults(ItemID.Carrot);
 
-			item.useTime = 25;
-			item.useAnimation = 25;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
 
-			item.shoot = ModContent.ProjectileType<Projectiles.AnnoyingDog>();
-			item.buffType = ModContent.BuffType<Buffs.AnnoyingDogBuff>();
+			Item.shoot = ModContent.ProjectileType<Projectiles.AnnoyingDog>();
+			Item.buffType = ModContent.BuffType<Buffs.AnnoyingDogBuff>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Artifact");
-			Tooltip.SetDefault("Summons annoying dog");
+			// DisplayName.SetDefault("The Artifact");
+			// Tooltip.SetDefault("Summons annoying dog");
 		}
 
 		public override void UseStyle(Player player, Rectangle heldItemFrame)
 		{
 			if (player.whoAmI == Main.myPlayer && player.itemTime == 0)
 			{
-				player.AddBuff(item.buffType, 3600, true);
+				player.AddBuff(Item.buffType, 3600, true);
 			}
 		}
 	}

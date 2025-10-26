@@ -7,18 +7,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 44;
-			item.height = 44;
+			Item.width = 44;
+			Item.height = 44;
 
-			item.value = 1500;
-			item.maxStack = 999;
-			item.rare = 11;
+			Item.value = 1500;
+			Item.maxStack = 999;
+			Item.rare = 11;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dragon Capsule");
-			Tooltip.SetDefault("A capsule of great creature");
+			// DisplayName.SetDefault("Dragon Capsule");
+			// Tooltip.SetDefault("A capsule of great creature");
 		}
 
 	}

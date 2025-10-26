@@ -10,7 +10,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Desert Mimic");
+			// DisplayName.SetDefault("Desert Mimic");
 			Main.npcFrameCount[npc.type] = 14;
 		}
 

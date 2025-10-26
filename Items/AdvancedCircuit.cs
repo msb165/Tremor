@@ -11,23 +11,23 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 38;
-			item.maxStack = 20;
+			Item.width = 38;
+			Item.height = 38;
+			Item.maxStack = 20;
 
-			item.rare = 7;
-			item.value = 30000;
-			item.useAnimation = 45;
-			item.useTime = 45;
-			item.useStyle = 4;
-			item.consumable = true;
+			Item.rare = 7;
+			Item.value = 30000;
+			Item.useAnimation = 45;
+			Item.useTime = 45;
+			Item.useStyle = 4;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Advanced Circuit");
-			Tooltip.SetDefault("Summons the Mothership\n" +
-"Requires Plantera to have been slain and night time");
+			// DisplayName.SetDefault("Advanced Circuit");
+			/* Tooltip.SetDefault("Summons the Mothership\n" +
+"Requires Plantera to have been slain and night time"); */
 		}
 
 		public override bool CanUseItem(Player player)

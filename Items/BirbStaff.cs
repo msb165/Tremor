@@ -10,30 +10,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 7;
-			item.DamageType = DamageClass.Summon;
-			item.mana = 10;
-			item.width = 46;
-			item.height = 46;
+			Item.damage = 7;
+			Item.DamageType = DamageClass.Summon;
+			Item.mana = 10;
+			Item.width = 46;
+			Item.height = 46;
 
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.noMelee = true;
-			item.knockBack = 4;
-			item.value = 8000;
-			item.rare = 2;
-			item.UseSound = SoundID.Item44;
-			item.shoot = ModContent.ProjectileType<Projectiles.Minions.BirbStaffPro>();
-			item.shootSpeed = 1f;
-			item.buffType = ModContent.BuffType<Buffs.BirbStaffBuff>();
-			item.buffTime = 3600;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.noMelee = true;
+			Item.knockBack = 4;
+			Item.value = 8000;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item44;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Minions.BirbStaffPro>();
+			Item.shootSpeed = 1f;
+			Item.buffType = ModContent.BuffType<Buffs.BirbStaffBuff>();
+			Item.buffTime = 3600;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Birb Staff");
-			Tooltip.SetDefault("Summons a birb to fight for you.");
+			// DisplayName.SetDefault("Birb Staff");
+			// Tooltip.SetDefault("Summons a birb to fight for you.");
 		}
 
 		public override bool AltFunctionUse(Player player)

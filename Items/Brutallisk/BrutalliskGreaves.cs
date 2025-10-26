@@ -11,20 +11,20 @@ namespace Tremor.Items.Brutallisk
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 22;
-			item.value = 150000;
-			item.rare = 11;
-			item.defense = 20;
+			Item.width = 38;
+			Item.height = 22;
+			Item.value = 150000;
+			Item.rare = 11;
+			Item.defense = 20;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Brutallisk Greaves");
-			Tooltip.SetDefault("Increases maximum life by 40\n" +
+			// DisplayName.SetDefault("Brutallisk Greaves");
+			/* Tooltip.SetDefault("Increases maximum life by 40\n" +
 "15% increased melee speed\n" +
 "90% increased movement speed\n" +
-"Greatly increases jump height");
+"Greatly increases jump height"); */
 		}
 
 		public override void UpdateEquip(Player player)

@@ -21,7 +21,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Angel Tears");
+			// DisplayName.SetDefault("Angel Tears");
 
 		}
 
@@ -86,7 +86,7 @@ namespace Tremor.Projectiles
 			return false;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item10, projectile.position);
 			for (int k = 0; k < 5; k++)

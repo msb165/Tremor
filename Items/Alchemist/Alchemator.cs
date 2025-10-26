@@ -9,25 +9,25 @@ namespace Tremor.Items.Alchemist
 		public override void SetDefaults()
 		{
 
-			item.width = 50;
-			item.height = 26;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
+			Item.width = 50;
+			Item.height = 26;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
 
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.rare = 7;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.value = 300000;
-			item.createTile = ModContent.TileType<Tiles.AlchematorTile>();
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.rare = 7;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.value = 300000;
+			Item.createTile = ModContent.TileType<Tiles.AlchematorTile>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Alchemator");
-			Tooltip.SetDefault("Allows you to create and use Jellyxir");
+			// DisplayName.SetDefault("Alchemator");
+			// Tooltip.SetDefault("Allows you to create and use Jellyxir");
 		}
 
 		public override void AddRecipes()

@@ -15,20 +15,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 18;
+			Item.width = 30;
+			Item.height = 18;
 
-			item.value = 600;
-			item.rare = 250000;
-			item.defense = 56;
+			Item.value = 600;
+			Item.rare = 250000;
+			Item.defense = 56;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hades Breastplate");
-			Tooltip.SetDefault("Increases maximum life by 50\n" +
+			// DisplayName.SetDefault("Hades Breastplate");
+			/* Tooltip.SetDefault("Increases maximum life by 50\n" +
 "Increases defense when under 100 health\n" +
-"45% increased damage");
+"45% increased damage"); */
 		}
 
 		public override void AddRecipes()

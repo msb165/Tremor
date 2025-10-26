@@ -11,18 +11,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 18;
-			item.height = 18;
-			item.value = 0;
+			Item.width = 18;
+			Item.height = 18;
+			Item.value = 0;
 
-			item.rare = 0;
-			item.defense = 40;
+			Item.rare = 0;
+			Item.defense = 40;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Omnikron Breastplate");
-			Tooltip.SetDefault("20% increased damage");
+			// DisplayName.SetDefault("Omnikron Breastplate");
+			// Tooltip.SetDefault("20% increased damage");
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)

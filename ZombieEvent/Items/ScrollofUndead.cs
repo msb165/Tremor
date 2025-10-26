@@ -13,22 +13,22 @@ namespace Tremor.ZombieEvent.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 40;
-			item.height = 28;
-			item.maxStack = 20;
-			item.value = 100;
-			item.rare = 3;
-			item.useAnimation = 30;
-			item.useTime = 30;
-			item.useStyle = 4;
-			item.consumable = true;
+			Item.width = 40;
+			Item.height = 28;
+			Item.maxStack = 20;
+			Item.value = 100;
+			Item.rare = 3;
+			Item.useAnimation = 30;
+			Item.useTime = 30;
+			Item.useStyle = 4;
+			Item.consumable = true;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Scroll of Undead");
-			Tooltip.SetDefault("Begins the Night of the Undead");
+			// DisplayName.SetDefault("Scroll of Undead");
+			// Tooltip.SetDefault("Begins the Night of the Undead");
 		}
 
 		public override bool CanUseItem(Player player)

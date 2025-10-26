@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 29;
-			item.DamageType = DamageClass.Magic;
-			item.width = 28;
-			item.height = 30;
-			item.useTime = 42;
-			item.useAnimation = 42;
-			item.shoot = ModContent.ProjectileType<Projectiles.BurningFist>();
-			item.shootSpeed = 15f;
-			item.mana = 16;
-			item.useStyle = 5;
-			item.knockBack = 3;
-			item.value = 30000;
-			item.noUseGraphic = true;
-			item.rare = 3;
-			item.UseSound = SoundID.Item116;
-			item.autoReuse = true;
+			Item.damage = 29;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 28;
+			Item.height = 30;
+			Item.useTime = 42;
+			Item.useAnimation = 42;
+			Item.shoot = ModContent.ProjectileType<Projectiles.BurningFist>();
+			Item.shootSpeed = 15f;
+			Item.mana = 16;
+			Item.useStyle = 5;
+			Item.knockBack = 3;
+			Item.value = 30000;
+			Item.noUseGraphic = true;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item116;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Burning Fist");
-			Tooltip.SetDefault("Shoots a burning fist that explodes on contact and erupts burning bolts");
+			// DisplayName.SetDefault("Burning Fist");
+			// Tooltip.SetDefault("Shoots a burning fist that explodes on contact and erupts burning bolts");
 		}
 
 		public override void AddRecipes()

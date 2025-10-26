@@ -10,28 +10,28 @@ namespace Tremor.Items.Chlorophyte
 		public override void SetDefaults()
 		{
 
-			item.damage = 39;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 40;
-			item.height = 20;
-			item.useTime = 29;
-			item.useAnimation = 29;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 6;
-			item.value = 30000;
-			item.rare = 6;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = true;
-			item.shoot = 10;
-			item.shootSpeed = 10f;
-			item.useAmmo = AmmoID.Bullet;
+			Item.damage = 39;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 40;
+			Item.height = 20;
+			Item.useTime = 29;
+			Item.useAnimation = 29;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 6;
+			Item.value = 30000;
+			Item.rare = 6;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = true;
+			Item.shoot = 10;
+			Item.shootSpeed = 10f;
+			Item.useAmmo = AmmoID.Bullet;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chlorophyte Deadshooter");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Chlorophyte Deadshooter");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

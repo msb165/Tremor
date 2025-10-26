@@ -9,21 +9,21 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 20;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.useStyle = 4;
-			item.value = 40000;
-			item.rare = 2;
-			item.UseSound = SoundID.Item8;
-			item.autoReuse = false;
+			Item.width = 38;
+			Item.height = 20;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.useStyle = 4;
+			Item.value = 40000;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item8;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Genie Lamp");
-			Tooltip.SetDefault("Summons a Genie");
+			// DisplayName.SetDefault("Genie Lamp");
+			// Tooltip.SetDefault("Summons a Genie");
 		}
 
 		public override bool? UseItem(Player player)

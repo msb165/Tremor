@@ -8,23 +8,23 @@ namespace Tremor.Ice
 		public override void SetDefaults()
 		{
 
-			item.width = 12;
-			item.height = 12;
-			item.maxStack = 999;
-			item.useTurn = true;
-			item.autoReuse = false;
-			item.useAnimation = 15;
-			item.useTime = 7;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.createWall = ModContent.WallType<IceWall>();
+			Item.width = 12;
+			Item.height = 12;
+			Item.maxStack = 999;
+			Item.useTurn = true;
+			Item.autoReuse = false;
+			Item.useAnimation = 15;
+			Item.useTime = 7;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.createWall = ModContent.WallType<IceWall>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Everfrost Wall");
-			Tooltip.SetDefault("");
-			ItemID.Sets.ExtractinatorMode[item.type] = item.type;
+			// DisplayName.SetDefault("Everfrost Wall");
+			// Tooltip.SetDefault("");
+			ItemID.Sets.ExtractinatorMode[Item.type] = Item.type;
 		}
 
 	}

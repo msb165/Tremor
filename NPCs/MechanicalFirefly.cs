@@ -10,7 +10,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Mechanical Firefly");
+			// DisplayName.SetDefault("Mechanical Firefly");
 			Main.npcFrameCount[npc.type] = 9;
 		}
 
@@ -34,12 +34,12 @@ namespace Tremor.NPCs
 			// Todo: BannerItem = ModContent.ItemType<MechanicalFireflyBanner>();
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 6, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				Gore.NewGore(null, npc.position, npc.velocity, 61, 1f);
 				Gore.NewGore(null, npc.position, npc.velocity, 61, 1f);

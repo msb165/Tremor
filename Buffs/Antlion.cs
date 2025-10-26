@@ -5,11 +5,11 @@ namespace Tremor.Buffs
 {
 	public class Antlion:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Antlion");
-			Description.SetDefault("It likes your sugar");
+			// DisplayName.SetDefault("Antlion");
+			// Description.SetDefault("It likes your sugar");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

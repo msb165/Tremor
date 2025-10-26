@@ -13,25 +13,25 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 44;
-			item.height = 48;
+			Item.width = 44;
+			Item.height = 48;
 
-			item.useTime = 30;
-			item.useAnimation = 30;
-			item.useStyle = 1;
-			item.knockBack = 0;
-			item.shoot = 1;
-			item.value = 12000;
-			item.rare = 8;
-			item.UseSound = SoundID.Item8;
-			item.shoot = 1;
-			item.shootSpeed = 0;
+			Item.useTime = 30;
+			Item.useAnimation = 30;
+			Item.useStyle = 1;
+			Item.knockBack = 0;
+			Item.shoot = 1;
+			Item.value = 12000;
+			Item.rare = 8;
+			Item.UseSound = SoundID.Item8;
+			Item.shoot = 1;
+			Item.shootSpeed = 0;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Rain Staff");
-			Tooltip.SetDefault("Allows you to call and revoke precipitation");
+			// DisplayName.SetDefault("Rain Staff");
+			// Tooltip.SetDefault("Allows you to call and revoke precipitation");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

@@ -73,13 +73,13 @@ namespace Tremor.NPCs.Bosses.CogLord
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cog Lord");
+			// DisplayName.SetDefault("Cog Lord");
 			Main.npcFrameCount[npc.type] = 5;
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
-			npc.lifeMax = (int)(npc.lifeMax * 0.625f * bossLifeScale);
+			npc.lifeMax = (int)(npc.lifeMax * 0.625f * balance);
 			npc.damage = (int)(npc.damage * 0.6f);
 		}
 

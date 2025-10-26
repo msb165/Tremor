@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 30;
-			item.DamageType = DamageClass.Melee;
-			item.width = 48;
-			item.height = 48;
-			item.useTime = 50;
-			item.useAnimation = 50;
-			item.useStyle = 1;
-			item.knockBack = 2;
-			item.value = 9500;
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 30;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 48;
+			Item.height = 48;
+			Item.useTime = 50;
+			Item.useAnimation = 50;
+			Item.useStyle = 1;
+			Item.knockBack = 2;
+			Item.value = 9500;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Eggplant");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Eggplant");
+			// Tooltip.SetDefault("");
 		}
 
 	}

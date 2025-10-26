@@ -10,18 +10,18 @@ namespace Tremor.Items.Nano
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.value = 6000;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 6000;
 
-			item.rare = 6;
-			item.defense = 12;
+			Item.rare = 6;
+			Item.defense = 12;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nano Greaves");
-			Tooltip.SetDefault("20% increased movement speed");
+			// DisplayName.SetDefault("Nano Greaves");
+			// Tooltip.SetDefault("20% increased movement speed");
 		}
 
 		public override void UpdateEquip(Player player)

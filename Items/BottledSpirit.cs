@@ -22,20 +22,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 60000;
-			item.rare = 7;
-			item.accessory = true;
-			item.defense = 3;
+			Item.value = 60000;
+			Item.rare = 7;
+			Item.accessory = true;
+			Item.defense = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bottled Spirit");
-			Tooltip.SetDefault("Using flask also spawns two homing souls\n" +
-"Damage of the souls scales on flask damage");
+			// DisplayName.SetDefault("Bottled Spirit");
+			/* Tooltip.SetDefault("Using flask also spawns two homing souls\n" +
+"Damage of the souls scales on flask damage"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

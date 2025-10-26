@@ -5,10 +5,10 @@ namespace Tremor.Invasion
 {
 	public class CyberBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cyber Stray");
-			Description.SetDefault("Cyber stray fights for you");
+			// DisplayName.SetDefault("Cyber Stray");
+			// Description.SetDefault("Cyber stray fights for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

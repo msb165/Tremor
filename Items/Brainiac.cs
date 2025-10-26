@@ -9,28 +9,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 17;
-			item.DamageType = DamageClass.Magic;
-			item.width = 68;
-			item.height = 28;
-			item.useTime = 30;
-			item.useAnimation = 30;
-			item.mana = 8;
-			item.shoot = ModContent.ProjectileType<Projectiles.BrainiacWavePro>();
-			item.shootSpeed = 5f;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 325000;
+			Item.damage = 17;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 68;
+			Item.height = 28;
+			Item.useTime = 30;
+			Item.useAnimation = 30;
+			Item.mana = 8;
+			Item.shoot = ModContent.ProjectileType<Projectiles.BrainiacWavePro>();
+			Item.shootSpeed = 5f;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 325000;
 
-			item.rare = 4;
-			item.UseSound = SoundID.Item114;
-			item.autoReuse = false;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item114;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Brainiac");
-			Tooltip.SetDefault("'Shoots mind waves'");
+			// DisplayName.SetDefault("Brainiac");
+			// Tooltip.SetDefault("'Shoots mind waves'");
 		}
 
 		public override Vector2? HoldoutOffset()

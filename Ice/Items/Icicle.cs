@@ -7,17 +7,17 @@ namespace Tremor.Ice.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 24;
-			item.maxStack = 999;
-			item.value = 60;
-			item.rare = 1;
+			Item.width = 30;
+			Item.height = 24;
+			Item.maxStack = 999;
+			Item.value = 60;
+			Item.rare = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Icicle");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Icicle");
+			// Tooltip.SetDefault("");
 		}
 
 	}

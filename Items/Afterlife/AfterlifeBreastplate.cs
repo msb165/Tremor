@@ -11,19 +11,19 @@ namespace Tremor.Items.Afterlife
 		public override void SetDefaults()
 		{
 
-			item.width = 18;
-			item.height = 18;
-			item.value = 10000;
+			Item.width = 18;
+			Item.height = 18;
+			Item.value = 10000;
 
-			item.rare = 6;
-			item.defense = 11;
+			Item.rare = 6;
+			Item.defense = 11;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Afterlife Breastplate");
-			Tooltip.SetDefault("9% increased damage\n" +
-"Increases your max number of minions");
+			// DisplayName.SetDefault("Afterlife Breastplate");
+			/* Tooltip.SetDefault("9% increased damage\n" +
+"Increases your max number of minions"); */
 		}
 
 		public override void UpdateEquip(Player player)

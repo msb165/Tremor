@@ -8,11 +8,11 @@ namespace Tremor.Buffs
 		int MinionType = -1;
 		int MinionID = -1;
 
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Molten Watcher");
-			Description.SetDefault("Summons an eye to burn your foes");
+			// DisplayName.SetDefault("Molten Watcher");
+			// Description.SetDefault("Summons an eye to burn your foes");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

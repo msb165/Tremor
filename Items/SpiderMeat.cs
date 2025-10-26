@@ -10,22 +10,22 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 20;
-			item.height = 30;
-			item.maxStack = 20;
+			Item.width = 20;
+			Item.height = 30;
+			Item.maxStack = 20;
 
-			item.rare = 1;
-			item.useAnimation = 15;
-			item.useTime = 15;
-			item.useStyle = 2;
-			item.UseSound = SoundID.Item2;
-			item.consumable = true;
+			Item.rare = 1;
+			Item.useAnimation = 15;
+			Item.useTime = 15;
+			Item.useStyle = 2;
+			Item.UseSound = SoundID.Item2;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Spider Meat");
-			Tooltip.SetDefault("'I don't see anything wrong with it, eat it!'");
+			// DisplayName.SetDefault("Spider Meat");
+			// Tooltip.SetDefault("'I don't see anything wrong with it, eat it!'");
 		}
 
 		public override bool? UseItem(Player player)

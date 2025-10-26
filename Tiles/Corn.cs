@@ -19,7 +19,7 @@ namespace Tremor.Tiles
 				2 
 			};
 			TileObjectData.addTile(Type);
-			ItemDrop = ModContent.ItemType<CornSeed>();
+			////ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<CornSeed>();
 		}
 		public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
 		{
@@ -29,7 +29,7 @@ namespace Tremor.Tiles
 			}
 		}
 
-		public override bool Drop(int i, int j)
+		public override bool CanDrop(int i, int j)
 		{
 			int stage = Main.tile[i, j].TileFrameX / 18;
 			return stage == 2;

@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class NecronomiconBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Necronomicon");
-			Description.SetDefault("The skeleton will fight for you");
+			// DisplayName.SetDefault("Necronomicon");
+			// Description.SetDefault("The skeleton will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

@@ -59,8 +59,8 @@ namespace Tremor.Tiles
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
 			TileID.Sets.HousingWalls[Type] = true; //needed for non-solid blocks to count as walls
 			AddMapEntry(new Color(200, 200, 200));
-			adjTiles = new int[]{ TileID.OpenDoor };
-			CloseDoorID = ModContent.TileType<Tiles.GlassDoorClosed>();
+			AdjTiles = new int[]{ TileID.OpenDoor };
+			//CloseDoorID/* tModPorter Note: Removed. Use TileID.Sets.//CloseDoorID instead */ = ModContent.TileType<Tiles.GlassDoorClosed>();
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)

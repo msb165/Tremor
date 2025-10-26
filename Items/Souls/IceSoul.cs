@@ -12,19 +12,19 @@ namespace Tremor.Items.Souls
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 22;
+			Item.width = 22;
+			Item.height = 22;
 
-			item.rare = 11;
-			item.maxStack = 999;
-			ItemID.Sets.ItemNoGravity[item.type] = true;
+			Item.rare = 11;
+			Item.maxStack = 999;
+			ItemID.Sets.ItemNoGravity[Item.type] = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frost Essence");
-			Tooltip.SetDefault("Essence of ice creatures");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 4));
+			// DisplayName.SetDefault("Frost Essence");
+			// Tooltip.SetDefault("Essence of ice creatures");
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 4));
 		}
 
 		public override Color? GetAlpha(Color lightColor)

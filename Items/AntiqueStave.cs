@@ -12,28 +12,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 21;
-			item.mana = 10;
-			item.width = 44;
-			item.height = 44;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.noMelee = true;
-			item.knockBack = 2.5f;
-			item.value = Item.buyPrice(0, 1, 0, 0);
-			item.rare = 2;
-			item.UseSound = SoundID.Item44;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<AntiqueStavePro>();
-			item.DamageType = DamageClass.Summon;
-			item.sentry = true;
+			Item.damage = 21;
+			Item.mana = 10;
+			Item.width = 44;
+			Item.height = 44;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.noMelee = true;
+			Item.knockBack = 2.5f;
+			Item.value = Item.buyPrice(0, 1, 0, 0);
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item44;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<AntiqueStavePro>();
+			Item.DamageType = DamageClass.Summon;
+			Item.sentry = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Antique Stave");
-			Tooltip.SetDefault("Summons a antique spirit to shoot bolts at your enemies");
+			// DisplayName.SetDefault("Antique Stave");
+			// Tooltip.SetDefault("Summons a antique spirit to shoot bolts at your enemies");
 		}
 
 		public override bool AltFunctionUse(Player player)
@@ -57,7 +57,7 @@ namespace Tremor.Items
 			for (int l = 0; l < Main.projectile.Length; l++)
 			{
 				Projectile proj = Main.projectile[l];
-				if (proj.active && proj.type == item.shoot && proj.owner == player.whoAmI)
+				if (proj.active && proj.type == Item.shoot && proj.owner == player.whoAmI)
 				{
 					proj.active = false;
 				}

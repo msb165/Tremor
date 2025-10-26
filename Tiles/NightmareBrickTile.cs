@@ -15,7 +15,7 @@ namespace Tremor.Tiles
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
 			DustType = ModContent.DustType<Dusts.NightmareFlame>();
-			ItemDrop = ModContent.ItemType<NightmareBrick>();
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<NightmareBrick>();
 			HitSound = SoundID.Tink;
 			soundStyle = 2;
 			AddMapEntry(new Color(90, 0, 157));

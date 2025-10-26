@@ -22,7 +22,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("LizardPro");
+			// DisplayName.SetDefault("LizardPro");
 
 		}
 
@@ -47,7 +47,7 @@ namespace Tremor.Projectiles
 			return false;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			NPC.NewNPC(null, (int)projectile.Center.X, (int)projectile.Center.Y, ModContent.NPCType<Lizard>());
 		}

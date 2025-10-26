@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 54;
-			item.DamageType = DamageClass.Melee;
-			item.width = 40;
-			item.height = 40;
+			Item.damage = 54;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 40;
+			Item.height = 40;
 
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.useStyle = 1;
-			item.knockBack = 6;
-			item.value = 20000;
-			item.rare = 9;
-			item.expert = true;
-			item.shoot = 10;
-			item.shootSpeed = 16f;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.useStyle = 1;
+			Item.knockBack = 6;
+			Item.value = 20000;
+			Item.rare = 9;
+			Item.expert = true;
+			Item.shoot = 10;
+			Item.shootSpeed = 16f;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Gloriana Wrath");
-			Tooltip.SetDefault("Cleanses infected areas.");
+			// DisplayName.SetDefault("Gloriana Wrath");
+			// Tooltip.SetDefault("Cleanses infected areas.");
 		}
 
 	}

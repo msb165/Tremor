@@ -9,19 +9,19 @@ namespace Tremor.ZombieEvent.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 10000;
-			item.rare = 11;
-			item.defense = 15;
+			Item.value = 10000;
+			Item.rare = 11;
+			Item.defense = 15;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Specter Pants");
-			Tooltip.SetDefault("10% increased melee damage\n" +
-			                   "10% increased minion damage");
+			// DisplayName.SetDefault("Specter Pants");
+			/* Tooltip.SetDefault("10% increased melee damage\n" +
+			                   "10% increased minion damage"); */
 		}
 
 		public override void UpdateEquip(Player player)

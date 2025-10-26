@@ -9,19 +9,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 20;
-			item.value = 11000;
-			item.rare = 9;
+			Item.width = 26;
+			Item.height = 20;
+			Item.value = 11000;
+			Item.rare = 9;
 
-			item.accessory = true;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Shroomite Magical Boots");
-			Tooltip.SetDefault("The less mana, the more defense...\n" +
-"The less health, the more speed...");
+			// DisplayName.SetDefault("Shroomite Magical Boots");
+			/* Tooltip.SetDefault("The less mana, the more defense...\n" +
+"The less health, the more speed..."); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

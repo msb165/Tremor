@@ -9,29 +9,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 19;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 5;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 21;
-			item.useAnimation = 21;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 6;
-			item.value = 3000;
-			item.rare = 2;
-			item.UseSound = SoundID.Item43;
-			item.autoReuse = true;
-			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
-			item.shoot = ModContent.ProjectileType<Projectiles.SwordstormPro>();
-			item.shootSpeed = 18f;
+			Item.damage = 19;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 5;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 21;
+			Item.useAnimation = 21;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 6;
+			Item.value = 3000;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item43;
+			Item.autoReuse = true;
+			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			Item.shoot = ModContent.ProjectileType<Projectiles.SwordstormPro>();
+			Item.shootSpeed = 18f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Swordstorm");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Swordstorm");
+			// Tooltip.SetDefault("");
 		}
 
 	}

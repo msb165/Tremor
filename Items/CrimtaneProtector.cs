@@ -9,19 +9,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 12500;
-			item.rare = 2;
-			item.defense = 2;
-			item.accessory = true;
+			Item.value = 12500;
+			Item.rare = 2;
+			Item.defense = 2;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crimtane Protector");
-			Tooltip.SetDefault("Increases max health by 50");
+			// DisplayName.SetDefault("Crimtane Protector");
+			// Tooltip.SetDefault("Increases max health by 50");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

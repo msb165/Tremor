@@ -15,19 +15,19 @@ namespace Tremor.Items
 
 		public override void SetDefaults()
 		{
-			item.width = 20;
-			item.height = 20;
-			item.value = 400;
-			item.rare = 250000;
-			item.defense = 35;
+			Item.width = 20;
+			Item.height = 20;
+			Item.value = 400;
+			Item.rare = 250000;
+			Item.defense = 35;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hades Helmet");
-			Tooltip.SetDefault("Melee attacks inflict fire damage\n" +
+			// DisplayName.SetDefault("Hades Helmet");
+			/* Tooltip.SetDefault("Melee attacks inflict fire damage\n" +
 "30% decreased mana cost\n" +
-"Increases maximum life by 150");
+"Increases maximum life by 150"); */
 		}
 
 		public override void AddRecipes()

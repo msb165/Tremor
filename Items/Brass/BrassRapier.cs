@@ -9,42 +9,42 @@ namespace Tremor.Items.Brass
 		public override void SetDefaults()
 		{
 
-			item.damage = 69;
-			item.DamageType = DamageClass.Melee;
-			item.width = 52;
-			item.height = 54;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 12500;
-			item.rare = 5;
-			item.UseSound = SoundID.Item71;
-			item.shoot = ModContent.ProjectileType<Projectiles.BrassCog>();
-			item.shootSpeed = 10f;
+			Item.damage = 69;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 52;
+			Item.height = 54;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 12500;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item71;
+			Item.shoot = ModContent.ProjectileType<Projectiles.BrassCog>();
+			Item.shootSpeed = 10f;
 
-			item.autoReuse = true;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Brass Rapier");
-			Tooltip.SetDefault("Shoots spiky brass cogs on use");
+			// DisplayName.SetDefault("Brass Rapier");
+			// Tooltip.SetDefault("Shoots spiky brass cogs on use");
 		}
 
 		public override void UpdateInventory(Player player)
 		{
 			if (player.HasBuffSafe(ModContent.BuffType<Buffs.SteamSwordBuff>()))
 			{
-				item.damage = 80;
-				item.useTime = 15;
-				item.useAnimation = 15;
+				Item.damage = 80;
+				Item.useTime = 15;
+				Item.useAnimation = 15;
 			}
 			else
 			{
-				item.damage = 65;
-				item.useTime = 25;
-				item.useAnimation = 25;
+				Item.damage = 65;
+				Item.useTime = 25;
+				Item.useAnimation = 25;
 			}
 		}
 	}

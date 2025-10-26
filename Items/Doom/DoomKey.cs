@@ -10,23 +10,23 @@ namespace Tremor.Items.Doom
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 30;
-			item.maxStack = 1;
+			Item.width = 30;
+			Item.height = 30;
+			Item.maxStack = 1;
 
-			item.rare = 4;
-			item.maxStack = 20;
-			item.useAnimation = 45;
-			item.useTime = 45;
-			item.useStyle = 4;
-			item.UseSound = SoundID.Item44;
-			item.consumable = true;
+			Item.rare = 4;
+			Item.maxStack = 20;
+			Item.useAnimation = 45;
+			Item.useTime = 45;
+			Item.useStyle = 4;
+			Item.UseSound = SoundID.Item44;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Doom Key");
-			Tooltip.SetDefault("Summons the Skeletron");
+			// DisplayName.SetDefault("Doom Key");
+			// Tooltip.SetDefault("Summons the Skeletron");
 		}
 
 		public override bool CanUseItem(Player player)

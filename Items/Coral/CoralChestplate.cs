@@ -9,17 +9,17 @@ namespace Tremor.Items.Coral
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 18;
-			item.value = 100;
-			item.rare = 1;
-			item.defense = 3;
+			Item.width = 26;
+			Item.height = 18;
+			Item.value = 100;
+			Item.rare = 1;
+			Item.defense = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Coral Chestplate");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Coral Chestplate");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

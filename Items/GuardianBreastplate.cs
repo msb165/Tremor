@@ -10,17 +10,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.defense = 60;
-			item.width = 22;
-			item.height = 30;
-			item.value = 25000;
-			item.rare = 10;
+			Item.defense = 60;
+			Item.width = 22;
+			Item.height = 30;
+			Item.value = 25000;
+			Item.rare = 10;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Guardian Breastplate");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Guardian Breastplate");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

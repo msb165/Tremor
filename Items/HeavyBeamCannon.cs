@@ -10,30 +10,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 52;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 9;
-			item.width = 42;
-			item.height = 30;
-			item.useTime = 40;
-			item.useAnimation = 40;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 4f;
-			item.value = Item.sellPrice(0, 10, 0, 0);
-			item.rare = 7;
-			item.channel = true;
-			item.UseSound = SoundID.Item12;
+			Item.damage = 52;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 9;
+			Item.width = 42;
+			Item.height = 30;
+			Item.useTime = 40;
+			Item.useAnimation = 40;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 4f;
+			Item.value = Item.sellPrice(0, 10, 0, 0);
+			Item.rare = 7;
+			Item.channel = true;
+			Item.UseSound = SoundID.Item12;
 
-			item.autoReuse = false;
-			item.shootSpeed = 25f;
-			item.shoot = ModContent.ProjectileType<Projectiles.ExampleLaser>();
+			Item.autoReuse = false;
+			Item.shootSpeed = 25f;
+			Item.shoot = ModContent.ProjectileType<Projectiles.ExampleLaser>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Heavy Beam Cannon");
-			Tooltip.SetDefault("Fires a constant powerful beam");
+			// DisplayName.SetDefault("Heavy Beam Cannon");
+			// Tooltip.SetDefault("Fires a constant powerful beam");
 		}
 
 		public override Vector2? HoldoutOffset()

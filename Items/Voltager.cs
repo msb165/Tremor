@@ -9,27 +9,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 212;
-			item.DamageType = DamageClass.Magic;
-			item.width = 28;
-			item.height = 30;
-			item.useTime = 30;
-			item.useAnimation = 14;
-			item.shoot = ModContent.ProjectileType<Projectiles.LightningBoltPro>();
-			item.shootSpeed = 7f;
-			item.mana = 6;
-			item.useStyle = 5;
-			item.knockBack = 3;
-			item.value = 122355;
-			item.rare = 5;
-			item.UseSound = SoundID.Item117;
-			item.autoReuse = false;
+			Item.damage = 212;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 28;
+			Item.height = 30;
+			Item.useTime = 30;
+			Item.useAnimation = 14;
+			Item.shoot = ModContent.ProjectileType<Projectiles.LightningBoltPro>();
+			Item.shootSpeed = 7f;
+			Item.mana = 6;
+			Item.useStyle = 5;
+			Item.knockBack = 3;
+			Item.value = 122355;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item117;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Voltager");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Voltager");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

@@ -22,7 +22,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("PainWheel");
+			// DisplayName.SetDefault("PainWheel");
 
 		}
 
@@ -32,7 +32,7 @@ namespace Tremor.Projectiles
 			Main.dust[dust].noGravity = true;
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Texture2D texture = Mod.GetTexture("Tremor/Projectiles/PainWheel_Chain");
 

@@ -11,7 +11,7 @@ namespace Tremor.ZombieEvent.Mobs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Scourge");
+			// DisplayName.SetDefault("Scourge");
 			Main.npcFrameCount[npc.type] = 10;
 		}
 
@@ -65,26 +65,26 @@ namespace Tremor.ZombieEvent.Mobs
 			}
 		}
 
-		public override void OnHitPlayer(Player player, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
 		{
 			if (Main.rand.NextBool(5))
 			{
-				player.AddBuff(39, 600, true);
+				target.AddBuff(39, 600, true);
 			}
 
 			if (Main.rand.NextBool(5))
 			{
-				player.AddBuff(69, 600, true);
+				target.AddBuff(69, 600, true);
 			}
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
 				Gore.NewGore(null, npc.position, npc.velocity, 99, 0.8f);
 				Gore.NewGore(null, npc.position, npc.velocity, 99, 0.8f);

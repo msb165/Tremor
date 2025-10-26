@@ -28,7 +28,7 @@ namespace Tremor.Projectiles.Minions
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Antique Soul");
+      // DisplayName.SetDefault("Antique Soul");
        
     }
 

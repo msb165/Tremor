@@ -10,19 +10,19 @@ namespace Tremor.Items.Souls
 		public override void SetDefaults()
 		{
 
-			item.width = 32;
-			item.height = 58;
-			item.maxStack = 99;
-			item.value = 100;
-			item.rare = 2;
-			ItemID.Sets.ItemNoGravity[item.type] = true;
+			Item.width = 32;
+			Item.height = 58;
+			Item.maxStack = 99;
+			Item.value = 100;
+			Item.rare = 2;
+			ItemID.Sets.ItemNoGravity[Item.type] = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Phantom Soul");
-			Tooltip.SetDefault("");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(10, 4));
+			// DisplayName.SetDefault("Phantom Soul");
+			// Tooltip.SetDefault("");
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(10, 4));
 		}
 
 	}

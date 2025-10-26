@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class GoblinStaffBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Goblin Staff");
-			Description.SetDefault("The goblin will fight for you");
+			// DisplayName.SetDefault("Goblin Staff");
+			// Description.SetDefault("The goblin will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

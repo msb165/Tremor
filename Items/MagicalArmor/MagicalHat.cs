@@ -11,18 +11,18 @@ namespace Tremor.Items.MagicalArmor
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 22;
+			Item.width = 26;
+			Item.height = 22;
 
-			item.value = 250;
-			item.rare = 1;
-			item.defense = 2;
+			Item.value = 250;
+			Item.rare = 1;
+			Item.defense = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Theurgic Hat");
-			Tooltip.SetDefault("3% increased magic damage");
+			// DisplayName.SetDefault("Theurgic Hat");
+			// Tooltip.SetDefault("3% increased magic damage");
 		}
 
 		public override void UpdateEquip(Player player)

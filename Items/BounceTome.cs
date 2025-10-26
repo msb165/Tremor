@@ -7,30 +7,30 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(165);
+			Item.CloneDefaults(165);
 
-			item.damage = 20;
-			item.DamageType = DamageClass.Magic;
-			item.width = 26;
-			item.maxStack = 1;
+			Item.damage = 20;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 26;
+			Item.maxStack = 1;
 
-			item.height = 30;
-			item.useTime = 15;
-			item.useAnimation = 15;
-			item.shoot = ModContent.ProjectileType<Projectiles.Bounce>();
-			item.shootSpeed = 19f;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.rare = 2;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.mana = 5;
+			Item.height = 30;
+			Item.useTime = 15;
+			Item.useAnimation = 15;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Bounce>();
+			Item.shootSpeed = 19f;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
+			Item.mana = 5;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bounce Tome");
-			Tooltip.SetDefault("Summons bouncy ball of gel");
+			// DisplayName.SetDefault("Bounce Tome");
+			// Tooltip.SetDefault("Summons bouncy ball of gel");
 		}
 
 	}

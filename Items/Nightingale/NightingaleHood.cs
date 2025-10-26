@@ -13,17 +13,17 @@ namespace Tremor.Items.Nightingale
 		public override void SetDefaults()
 		{
 
-			item.defense = 5;
-			item.width = 26;
-			item.height = 32;
-			item.value = 2000;
-			item.rare = 2;
+			Item.defense = 5;
+			Item.width = 26;
+			Item.height = 32;
+			Item.value = 2000;
+			Item.rare = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nightingale Hood");
-			Tooltip.SetDefault("Increases life regeneration");
+			// DisplayName.SetDefault("Nightingale Hood");
+			// Tooltip.SetDefault("Increases life regeneration");
 		}
 
 		public override void UpdateEquip(Player player)

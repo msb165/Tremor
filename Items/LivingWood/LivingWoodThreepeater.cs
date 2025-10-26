@@ -10,28 +10,28 @@ namespace Tremor.Items.LivingWood
 		public override void SetDefaults()
 		{
 
-			item.damage = 45;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 40;
-			item.height = 20;
-			item.useTime = 29;
-			item.useAnimation = 29;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 6;
-			item.value = 30000;
-			item.rare = 6;
-			item.UseSound = SoundID.Item5;
-			item.autoReuse = true;
-			item.shoot = 1;
-			item.shootSpeed = 12f;
-			item.useAmmo = AmmoID.Arrow;
+			Item.damage = 45;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 40;
+			Item.height = 20;
+			Item.useTime = 29;
+			Item.useAnimation = 29;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 6;
+			Item.value = 30000;
+			Item.rare = 6;
+			Item.UseSound = SoundID.Item5;
+			Item.autoReuse = true;
+			Item.shoot = 1;
+			Item.shootSpeed = 12f;
+			Item.useAmmo = AmmoID.Arrow;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Living Wood Threepeater");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Living Wood Threepeater");
+			// Tooltip.SetDefault("");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

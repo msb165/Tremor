@@ -10,7 +10,7 @@ namespace Tremor.NPCs.Bosses.Motherboard
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Clamper");
+			// DisplayName.SetDefault("Clamper");
 			Main.npcFrameCount[npc.type] = 3;
 		}
 
@@ -33,7 +33,7 @@ namespace Tremor.NPCs.Bosses.Motherboard
 			AnimationType = 2;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (Main.netMode != 1 && npc.life <= 0)
 				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<Clamper2>());

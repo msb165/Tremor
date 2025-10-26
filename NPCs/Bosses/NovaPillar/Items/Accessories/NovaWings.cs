@@ -9,16 +9,16 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Items.Accessories
 	{
 		public override void SetDefaults()
 		{
-			item.width = 36;
-			item.height = 54;
-			item.rare = 10;
-			item.accessory = true;
+			Item.width = 36;
+			Item.height = 54;
+			Item.rare = 10;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Wings");
-			Tooltip.SetDefault("Allows flight and slow fall");
+			// DisplayName.SetDefault("Nova Wings");
+			// Tooltip.SetDefault("Allows flight and slow fall");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

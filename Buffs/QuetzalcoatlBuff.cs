@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class QuetzalcoatlBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Quetzalcoatl");
-			Description.SetDefault("The quetzalcoatl will fight for you");
+			// DisplayName.SetDefault("Quetzalcoatl");
+			// Description.SetDefault("The quetzalcoatl will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

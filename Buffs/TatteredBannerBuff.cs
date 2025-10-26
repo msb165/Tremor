@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class TatteredBannerBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Tattered Banner");
-			Description.SetDefault("25% increased damage");
+			// DisplayName.SetDefault("The Tattered Banner");
+			// Description.SetDefault("25% increased damage");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class CyberSawBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cyber Saw");
-			Description.SetDefault("The cyber saw will fight for you");
+			// DisplayName.SetDefault("Cyber Saw");
+			// Description.SetDefault("The cyber saw will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

@@ -8,18 +8,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 36;
-			item.height = 52;
-			item.maxStack = 99;
-			item.value = 15000;
-			item.rare = 10;
-			ItemID.Sets.ItemNoGravity[item.type] = true;
+			Item.width = 36;
+			Item.height = 52;
+			Item.maxStack = 99;
+			Item.value = 15000;
+			Item.rare = 10;
+			ItemID.Sets.ItemNoGravity[Item.type] = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Alphaplasm");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Alphaplasm");
+			// Tooltip.SetDefault("");
 		}
 
 	}

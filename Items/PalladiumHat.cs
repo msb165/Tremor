@@ -11,18 +11,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 20;
-			item.height = 24;
+			Item.width = 20;
+			Item.height = 24;
 
-			item.value = 400;
-			item.rare = 4;
-			item.defense = 4;
+			Item.value = 400;
+			Item.rare = 4;
+			Item.defense = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Palladium Hat");
-			Tooltip.SetDefault("18% increased minion damage");
+			// DisplayName.SetDefault("Palladium Hat");
+			// Tooltip.SetDefault("18% increased minion damage");
 		}
 
 		public override void UpdateEquip(Player player)

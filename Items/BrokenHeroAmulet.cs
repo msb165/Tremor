@@ -7,18 +7,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
-			item.value = 10000;
-			item.rare = 8;
-			item.defense = 3;
-			item.accessory = true;
+			Item.width = 22;
+			Item.height = 44;
+			Item.value = 10000;
+			Item.rare = 8;
+			Item.defense = 3;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Broken Hero Amulet");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Broken Hero Amulet");
+			// Tooltip.SetDefault("");
 		}
 
 	}

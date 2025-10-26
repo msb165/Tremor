@@ -10,29 +10,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 36;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 8;
-			item.width = 34;
-			item.height = 30;
-			item.useTime = 28;
-			item.useAnimation = 28;
-			item.useStyle = 1;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = 13800;
-			item.rare = 4;
-			item.UseSound = SoundID.Item43;
-			item.autoReuse = false;
-			item.shoot = 668;
-			item.shootSpeed = 15f;
+			Item.damage = 36;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 8;
+			Item.width = 34;
+			Item.height = 30;
+			Item.useTime = 28;
+			Item.useAnimation = 28;
+			Item.useStyle = 1;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = 13800;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item43;
+			Item.autoReuse = false;
+			Item.shoot = 668;
+			Item.shootSpeed = 15f;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Scourge of Flames");
-			Tooltip.SetDefault("Erupts three fire bolts");
+			// DisplayName.SetDefault("Scourge of Flames");
+			// Tooltip.SetDefault("Erupts three fire bolts");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

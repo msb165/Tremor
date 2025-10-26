@@ -8,26 +8,26 @@ namespace Tremor.Items.Arach
 		public override void SetDefaults()
 		{
 
-			item.damage = 18;
-			item.DamageType = DamageClass.Melee;
-			item.width = 48;
-			item.height = 48;
-			item.useTime = 35;
-			item.useAnimation = 35;
-			item.useStyle = 1;
-			item.knockBack = 7;
-			item.shoot = 378;
-			item.shootSpeed = 14f;
-			item.value = 12500;
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 18;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 48;
+			Item.height = 48;
+			Item.useTime = 35;
+			Item.useAnimation = 35;
+			Item.useStyle = 1;
+			Item.knockBack = 7;
+			Item.shoot = 378;
+			Item.shootSpeed = 14f;
+			Item.value = 12500;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Arachnophobia");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Arachnophobia");
+			// Tooltip.SetDefault("");
 		}
 
 	}

@@ -11,18 +11,18 @@ namespace Tremor.Items.Magmonium
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 20;
+			Item.width = 22;
+			Item.height = 20;
 
-			item.value = 80000;
-			item.rare = 8;
-			item.accessory = true;
+			Item.value = 80000;
+			Item.rare = 8;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Magmonium Wings");
-			Tooltip.SetDefault("Allows flight and slow fall");
+			// DisplayName.SetDefault("Magmonium Wings");
+			// Tooltip.SetDefault("Allows flight and slow fall");
 		}
 
 		//these wings use the same values as the solar wings

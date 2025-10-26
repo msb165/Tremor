@@ -468,7 +468,7 @@ namespace Tremor.NPCs.Bosses.Motherboard
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Motherboard");
+			// DisplayName.SetDefault("Motherboard");
 			Main.npcFrameCount[npc.type] = 6;
 
 			NPCID.Sets.MustAlwaysDraw[npc.type] = true;
@@ -502,25 +502,25 @@ namespace Tremor.NPCs.Bosses.Motherboard
 			stage = stage0;
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
-			npc.lifeMax = (int)(npc.lifeMax * 0.625f * bossLifeScale);
+			npc.lifeMax = (int)(npc.lifeMax * 0.625f * balance);
 			npc.damage = (int)(npc.damage * 0.6f);
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
 
 				const int goreAmount = 4;
 				for (int i = 0; i < goreAmount; i++)
 				{
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/MotherboardGore{i + 1}"));
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"MotherboardGore{i + 1}"));
 				}
 			}
 		}

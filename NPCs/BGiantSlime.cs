@@ -10,7 +10,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Blue Slime");
+			// DisplayName.SetDefault("Blue Slime");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 
@@ -33,20 +33,20 @@ namespace Tremor.NPCs
 			npc.value = Item.buyPrice(0, 0, 12, 15);
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 4, 2.5f * hitDirection, -2.5f, 0, Color.Blue, 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 4, 2.5f * hitDirection, -2.5f, 0, Color.Blue, 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 4, 2.5f * hit.HitDirection, -2.5f, 0, Color.Blue, 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 4, 2.5f * hit.HitDirection, -2.5f, 0, Color.Blue, 0.7f);
 				}
 
-				Dust.NewDust(npc.position, npc.width, npc.height, 4, 2.5f * hitDirection, -2.5f, 0, Color.Blue, 0.7f);
-				Dust.NewDust(npc.position, npc.width, npc.height, 4, 2.5f * hitDirection, -2.5f, 0, Color.Blue, 0.7f);
-				Dust.NewDust(npc.position, npc.width, npc.height, 4, 2.5f * hitDirection, -2.5f, 0, Color.Blue, 0.7f);
-				Dust.NewDust(npc.position, npc.width, npc.height, 1, 2.5f * hitDirection, -2.5f, 0, Color.Blue, 0.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 4, 2.5f * hit.HitDirection, -2.5f, 0, Color.Blue, 0.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 4, 2.5f * hit.HitDirection, -2.5f, 0, Color.Blue, 0.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 4, 2.5f * hit.HitDirection, -2.5f, 0, Color.Blue, 0.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, 1, 2.5f * hit.HitDirection, -2.5f, 0, Color.Blue, 0.7f);
 			}
 		}
 

@@ -12,18 +12,18 @@ namespace Tremor.Items.Plague
 		public override void SetDefaults()
 		{
 
-			item.width = 18;
-			item.height = 18;
-			item.value = 25000;
+			Item.width = 18;
+			Item.height = 18;
+			Item.value = 25000;
 
-			item.rare = 2;
-			item.defense = 5;
+			Item.rare = 2;
+			Item.defense = 5;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Plague Breastplate");
-			Tooltip.SetDefault("10% increased alchemical damage");
+			// DisplayName.SetDefault("Plague Breastplate");
+			// Tooltip.SetDefault("10% increased alchemical damage");
 		}
 
 		public override void UpdateEquip(Player player)

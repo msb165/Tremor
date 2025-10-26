@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 30;
-			item.height = 24;
-			item.maxStack = 999;
-			item.value = 10000;
-			item.rare = 8;
-			item.createTile = ModContent.TileType<Tiles.EvershinyBar>();
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
+			Item.width = 30;
+			Item.height = 24;
+			Item.maxStack = 999;
+			Item.value = 10000;
+			Item.rare = 8;
+			Item.createTile = ModContent.TileType<Tiles.EvershinyBar>();
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Evershining Bar");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Evershining Bar");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

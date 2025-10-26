@@ -10,19 +10,19 @@ namespace Tremor.Items.Flesh
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 18000;
-			item.rare = 1;
-			item.defense = 7;
+			Item.value = 18000;
+			Item.rare = 1;
+			Item.defense = 7;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Flesh Headgear");
-			Tooltip.SetDefault("9% increased minion damage\n" +
-"Increases your max number of minions");
+			// DisplayName.SetDefault("Flesh Headgear");
+			/* Tooltip.SetDefault("9% increased minion damage\n" +
+"Increases your max number of minions"); */
 		}
 
 		public override void UpdateEquip(Player player)

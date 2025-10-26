@@ -10,19 +10,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 36;
-			item.height = 42;
-			item.value = 3000000;
-			item.defense = 50;
-			item.rare = 11;
-			item.accessory = true;
+			Item.width = 36;
+			Item.height = 42;
+			Item.value = 3000000;
+			Item.defense = 50;
+			Item.rare = 11;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Enforcer's Shield");
-			Tooltip.SetDefault("Increases melee damage and speed as health lowers\n" +
-"Increased invincibility after taking damage");
+			// DisplayName.SetDefault("Enforcer's Shield");
+			/* Tooltip.SetDefault("Increases melee damage and speed as health lowers\n" +
+"Increased invincibility after taking damage"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

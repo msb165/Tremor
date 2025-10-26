@@ -10,17 +10,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.value = 100;
-			item.rare = 1;
-			item.defense = 1;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 100;
+			Item.rare = 1;
+			Item.defense = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frostbite Greaves");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Frostbite Greaves");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

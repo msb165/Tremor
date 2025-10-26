@@ -12,23 +12,23 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.Size = new Vector2(36);
-			item.maxStack = 999;
-			item.rare = 11;
-			item.useAnimation = 15;
-			item.useTime = 15;
-			item.useStyle = 2;
-			item.UseSound = SoundID.Item3;
-			item.consumable = true;
+			Item.Size = new Vector2(36);
+			Item.maxStack = 999;
+			Item.rare = 11;
+			Item.useAnimation = 15;
+			Item.useTime = 15;
+			Item.useStyle = 2;
+			Item.UseSound = SoundID.Item3;
+			Item.consumable = true;
 		}
 
 		public override bool ConsumeItem(Player player) => true;
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Mana Stim Pack");
-			Tooltip.SetDefault("Restores 20 mana\n" +
-"Has no cooldown");
+			// DisplayName.SetDefault("Mana Stim Pack");
+			/* Tooltip.SetDefault("Restores 20 mana\n" +
+"Has no cooldown"); */
 		}
 
 		public override bool? UseItem(Player player)

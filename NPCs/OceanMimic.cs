@@ -9,7 +9,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ocean Mimic");
+			// DisplayName.SetDefault("Ocean Mimic");
 			Main.npcFrameCount[npc.type] = 14;
 		}
 

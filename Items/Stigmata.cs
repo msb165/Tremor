@@ -9,19 +9,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 28;
+			Item.width = 24;
+			Item.height = 28;
 
-			item.value = 20000;
-			item.rare = 2;
-			item.accessory = true;
-			item.defense = 1;
+			Item.value = 20000;
+			Item.rare = 2;
+			Item.accessory = true;
+			Item.defense = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Stigmata");
-			Tooltip.SetDefault("The less health, the more damage...");
+			// DisplayName.SetDefault("Stigmata");
+			// Tooltip.SetDefault("The less health, the more damage...");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

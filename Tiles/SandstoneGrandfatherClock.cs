@@ -19,7 +19,7 @@ namespace Tremor.Tiles
 			TileObjectData.newTile.StyleWrapLimit = 36;
 			TileObjectData.addTile(Type);
 			AddMapEntry(new Color(233, 211, 123));
-			adjTiles = new int[] { TileID.GrandfatherClocks };
+			AdjTiles = new int[] { TileID.GrandfatherClocks };
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)

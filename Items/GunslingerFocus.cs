@@ -12,20 +12,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 22;
+			Item.width = 22;
+			Item.height = 22;
 
-			item.rare = 2;
-			item.accessory = true;
-			item.value = 50000;
+			Item.rare = 2;
+			Item.accessory = true;
+			Item.value = 50000;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Gunslinger Focus");
-			Tooltip.SetDefault("6% increased ranged damage\n" +
-"Increases ranged critical strike chance by 12");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 4));
+			// DisplayName.SetDefault("Gunslinger Focus");
+			/* Tooltip.SetDefault("6% increased ranged damage\n" +
+"Increases ranged critical strike chance by 12"); */
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(6, 4));
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

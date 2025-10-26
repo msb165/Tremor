@@ -10,18 +10,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 20;
-			item.value = 110000;
-			item.rare = 3;
+			Item.width = 26;
+			Item.height = 20;
+			Item.value = 110000;
+			Item.rare = 3;
 
-			item.accessory = true;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Rock Stompers");
-			Tooltip.SetDefault("Increases your knockback effect");
+			// DisplayName.SetDefault("Rock Stompers");
+			// Tooltip.SetDefault("Increases your knockback effect");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

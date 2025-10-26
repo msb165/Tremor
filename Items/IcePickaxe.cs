@@ -8,26 +8,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 32;
-			item.DamageType = DamageClass.Melee;
-			item.width = 36;
-			item.height = 36;
-			item.useTime = 5;
-			item.useAnimation = 16;
-			item.pick = 200;
-			item.axe = 24;
-			item.useStyle = 1;
-			item.knockBack = 5;
-			item.value = 200000;
-			item.rare = 7;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 32;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 36;
+			Item.height = 36;
+			Item.useTime = 5;
+			Item.useAnimation = 16;
+			Item.pick = 200;
+			Item.axe = 24;
+			Item.useStyle = 1;
+			Item.knockBack = 5;
+			Item.value = 200000;
+			Item.rare = 7;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ice Pickaxe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Ice Pickaxe");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

@@ -22,7 +22,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nano Drill");
+			// DisplayName.SetDefault("Nano Drill");
 
 		}
 

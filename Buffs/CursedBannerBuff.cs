@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class CursedBannerBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Cursed Banner");
-			Description.SetDefault("Increases all critical strike chance by 25");
+			// DisplayName.SetDefault("The Cursed Banner");
+			// Description.SetDefault("Increases all critical strike chance by 25");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

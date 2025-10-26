@@ -14,7 +14,7 @@ namespace Tremor.Invasion
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paradox Crystal");
+			// DisplayName.SetDefault("Paradox Crystal");
 		}
 
 		public override void SetDefaults()
@@ -63,7 +63,7 @@ namespace Tremor.Invasion
 			projectile.Center = center.Center + projectile.localAI[0] * new Vector2((float)Math.Cos(projectile.ai[1]), (float)Math.Sin(projectile.ai[1]));
 		}
 
-		public override void OnHitPlayer(Player target, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
 		{
 			for (int k = 0; k < Player.MaxBuffs; k++)
 			{

@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Tremor.Items;
@@ -19,10 +20,10 @@ namespace Tremor.Tiles
         TileObjectData.addTile(Type);
         AnimationFrameHeight = 54;
         AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
-		ModTranslation name = CreateMapEntryName();
-		name.SetDefault("Divine Forge");		
+		LocalizedText name = CreateMapEntryName();
+		// name.SetDefault("Divine Forge");		
 	AddMapEntry(new Color(255, 20, 147), name);	
-        adjTiles = new[]{412,133,16,17,134};
+        AdjTiles = new[]{412,133,16,17,134};
     }
 
     public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

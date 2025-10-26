@@ -29,7 +29,7 @@ namespace Tremor.NPCs
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Heater of Worlds");
+			// DisplayName.SetDefault("Heater of Worlds");
 			NPCID.Sets.ShouldBeCountedAsBoss[npc.type] = true;//TechnicallyABoss
 		}
 
@@ -57,21 +57,21 @@ namespace Tremor.NPCs
 			npc.DeathSound = SoundID.NPCDeath10;
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
-			npc.lifeMax = (int)(npc.lifeMax * 0.625f * bossLifeScale);
+			npc.lifeMax = (int)(npc.lifeMax * 0.625f * balance);
 			npc.damage = (int)(npc.damage * 0.6f);
 		}
 
-		public override void OnHitPlayer(Player player, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
 		{
 			if (Main.expertMode || Main.rand.NextBool())
 			{
-				player.AddBuff(BuffID.OnFire, 180);
+				target.AddBuff(BuffID.OnFire, 180);
 			}
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
 		{
 			Texture2D drawTexture = Terraria.GameContent.TextureAssets.Npc[npc.type].Value;
 			Vector2 origin = new Vector2(drawTexture.Width / 2 * 0.5f, drawTexture.Height / Main.npcFrameCount[npc.type] * 0.5f);
@@ -95,7 +95,7 @@ namespace Tremor.NPCs
 			if (!PrevSegment.active
 				|| !ParentHead.active)
 			{
-				npc.VanillaHitEffect();
+				//npc.VanillaHitEffect();
 				npc.HitEffect();
 				NPCLoot();
 				npc.life = 0;

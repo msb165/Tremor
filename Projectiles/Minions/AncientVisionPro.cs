@@ -36,7 +36,7 @@ namespace Tremor.Projectiles.Minions
 
     public override void SetStaticDefaults()
     {
-      DisplayName.SetDefault("Ancient Vision");
+      // DisplayName.SetDefault("Ancient Vision");
        
     }
 

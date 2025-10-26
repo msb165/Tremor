@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class SilkBannerBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Silk Banner");
-			Description.SetDefault("Increases defense by 15 and gives thorn effect");
+			// DisplayName.SetDefault("The Silk Banner");
+			// Description.SetDefault("Increases defense by 15 and gives thorn effect");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

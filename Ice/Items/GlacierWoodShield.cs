@@ -8,18 +8,18 @@ namespace Tremor.Ice.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 24;
-			item.value = 110;
-			item.rare = 0;
-			item.accessory = true;
-			item.defense = 2;
+			Item.width = 24;
+			Item.height = 24;
+			Item.value = 110;
+			Item.rare = 0;
+			Item.accessory = true;
+			Item.defense = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Glacier Wood Shield");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Glacier Wood Shield");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

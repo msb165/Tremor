@@ -38,7 +38,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Clamper Laser");
+			// DisplayName.SetDefault("Clamper Laser");
 
 		}
 
@@ -64,7 +64,7 @@ namespace Tremor.Projectiles
 			return Collision.CheckAABBvLineCollision(targetHitbox.TopLeft(), targetHitbox.Size(), projectile.Center, endPoint, 4f, ref point);
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Vector2 endPoint = Main.npc[(int)projectile.ai[1]].Center;
 			Vector2 unit = endPoint - projectile.Center;

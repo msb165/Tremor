@@ -9,30 +9,30 @@ namespace Tremor.Items.Brass
 		public override void SetDefaults()
 		{
 
-			item.damage = 80;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 60;
-			item.noMelee = true;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 45;
-			item.useAnimation = 45;
-			item.useStyle = 5;
-			item.value = 12500;
-			item.rare = 5;
-			item.UseSound = SoundID.Item43;
-			item.autoReuse = false;
-			item.shoot = 443;
-			item.shootSpeed = 12f;
+			Item.damage = 80;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 60;
+			Item.noMelee = true;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 45;
+			Item.useAnimation = 45;
+			Item.useStyle = 5;
+			Item.value = 12500;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item43;
+			Item.autoReuse = false;
+			Item.shoot = 443;
+			Item.shootSpeed = 12f;
 
-			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Brass Stave");
-			Tooltip.SetDefault("Shoots fast thin bolts\n" +
-"Press RMB for powerful attack");
+			// DisplayName.SetDefault("Brass Stave");
+			/* Tooltip.SetDefault("Shoots fast thin bolts\n" +
+"Press RMB for powerful attack"); */
 		}
 
 		public override bool AltFunctionUse(Player player)
@@ -44,45 +44,45 @@ namespace Tremor.Items.Brass
 		{
 			if (player.altFunctionUse == 2)
 			{
-				item.damage = 80;
-				item.DamageType = DamageClass.Magic;
-				item.mana = 60;
-				item.noMelee = true;
-				item.width = 40;
-				item.height = 40;
-				item.useTime = 45;
-				item.useAnimation = 45;
-				item.useStyle = 5;
+				Item.damage = 80;
+				Item.DamageType = DamageClass.Magic;
+				Item.mana = 60;
+				Item.noMelee = true;
+				Item.width = 40;
+				Item.height = 40;
+				Item.useTime = 45;
+				Item.useAnimation = 45;
+				Item.useStyle = 5;
 
-				item.rare = 5;
-				item.UseSound = SoundID.Item43;
-				item.autoReuse = false;
-				item.shoot = 443;
-				item.shootSpeed = 12f;
-				//item.toolTip = "Shoots fast thin bolts";
-				//item.toolTip2 = "Press RMB for powerful attack";
-				Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+				Item.rare = 5;
+				Item.UseSound = SoundID.Item43;
+				Item.autoReuse = false;
+				Item.shoot = 443;
+				Item.shootSpeed = 12f;
+				//Item.toolTip = "Shoots fast thin bolts";
+				//Item.toolTip2 = "Press RMB for powerful attack";
+				Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
 			}
 			else
 			{
-				item.damage = 65;
-				item.DamageType = DamageClass.Magic;
-				item.mana = 10;
-				item.noMelee = true;
-				item.width = 40;
-				item.height = 40;
-				item.useTime = 22;
-				item.useAnimation = 22;
-				item.useStyle = 5;
+				Item.damage = 65;
+				Item.DamageType = DamageClass.Magic;
+				Item.mana = 10;
+				Item.noMelee = true;
+				Item.width = 40;
+				Item.height = 40;
+				Item.useTime = 22;
+				Item.useAnimation = 22;
+				Item.useStyle = 5;
 
-				item.rare = 5;
-				item.UseSound = SoundID.Item43;
-				item.autoReuse = true;
-				item.shoot = 459;
-				item.shootSpeed = 15f;
-				//item.toolTip = "Shoots fast thin bolts";
-				//item.toolTip2 = "Press RMB for powerful attack";
-				Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+				Item.rare = 5;
+				Item.UseSound = SoundID.Item43;
+				Item.autoReuse = true;
+				Item.shoot = 459;
+				Item.shootSpeed = 15f;
+				//Item.toolTip = "Shoots fast thin bolts";
+				//Item.toolTip2 = "Press RMB for powerful attack";
+				Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
 			}
 			return base.CanUseItem(player);
 		}
@@ -93,22 +93,22 @@ namespace Tremor.Items.Brass
 			{
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.SteamMageBuff>()))
 				{
-					item.damage = 100;
+					Item.damage = 100;
 				}
 				else
 				{
-					item.damage = 80;
+					Item.damage = 80;
 				}
 			}
 			else
 			{
 				if (player.HasBuffSafe(ModContent.BuffType<Buffs.SteamMageBuff>()))
 				{
-					item.damage = 80;
+					Item.damage = 80;
 				}
 				else
 				{
-					item.damage = 65;
+					Item.damage = 65;
 				}
 			}
 		}

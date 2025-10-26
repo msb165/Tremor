@@ -24,7 +24,7 @@ namespace Tremor.NPCs.TownNPCs
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Elf");
+			// DisplayName.SetDefault("Elf");
 			Main.npcFrameCount[npc.type] = 26;
 			NPCID.Sets.ExtraFramesCount[npc.type] = 5;
 			NPCID.Sets.AttackFrameCount[npc.type] = 6;
@@ -50,7 +50,7 @@ namespace Tremor.NPCs.TownNPCs
 			AnimationType = NPCID.Guide;
 		}
 
-		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+		public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
 			=> Main.player.Any(player => !player.dead && player.inventory.Any(item => item != null && item.type == ModContent.ItemType<SuspiciousLookingPresent>()));
 
 		private readonly List<string> _names = new List<string>
@@ -85,27 +85,31 @@ namespace Tremor.NPCs.TownNPCs
 			button = Lang.inter[28].Value;
 		}
 
-		public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+		public override void OnChatButtonClicked(bool firstButton, ref string shopName)
 		{
-			shop = firstButton;
+			if (firstButton)
+			{
+				shopName = "Shop";
+			}
 		}
 
-		public override void SetupShop(Chest shop, ref int nextSlot)
+		public override void ModifyActiveShop(string shopName, Item[] items)
 		{
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<CandyCane>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<RedChristmasStocking>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<BlueChristmasStocking>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<GreenChristmasStocking>());
+			NPCShop shop = new(Type);
+			shop.Add(ModContent.ItemType<CandyCane>());
+			shop.Add(ModContent.ItemType<RedChristmasStocking>());
+			shop.Add(ModContent.ItemType<BlueChristmasStocking>());
+			shop.Add(ModContent.ItemType<GreenChristmasStocking>());
 
 			if (NPC.downedBoss1)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<SnowShotgun>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<CandyBow>());
+				shop.Add(ModContent.ItemType<SnowShotgun>());
+			shop.Add(ModContent.ItemType<CandyBow>());
 
 			if (NPC.downedBoss3)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<TheSnowBall>());
+				shop.Add(ModContent.ItemType<TheSnowBall>());
 
 			if (Main.hardMode)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<Blizzard>());
+				shop.Add(ModContent.ItemType<Blizzard>());
 		}
 
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)

@@ -9,20 +9,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 34;
-			item.height = 36;
-			item.value = 32000;
-			item.rare = 11;
-			item.accessory = true;
-			item.defense = 24;
+			Item.width = 34;
+			Item.height = 36;
+			Item.value = 32000;
+			Item.rare = 11;
+			Item.accessory = true;
+			Item.defense = 24;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dragon Shield");
-			Tooltip.SetDefault("Allows to dash\n" +
+			// DisplayName.SetDefault("Dragon Shield");
+			/* Tooltip.SetDefault("Allows to dash\n" +
 "Double tap a direction\n" +
-"60% increased movement speed");
+"60% increased movement speed"); */
 		}
 
 		public override void UpdateEquip(Player player)

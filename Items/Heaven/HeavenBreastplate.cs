@@ -10,18 +10,18 @@ namespace Tremor.Items.Heaven
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 18;
+			Item.width = 26;
+			Item.height = 18;
 
-			item.value = 6000;
-			item.rare = 3;
-			item.defense = 7;
+			Item.value = 6000;
+			Item.rare = 3;
+			Item.defense = 7;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Heaven Breastplate");
-			Tooltip.SetDefault("12% increased ranged damage");
+			// DisplayName.SetDefault("Heaven Breastplate");
+			// Tooltip.SetDefault("12% increased ranged damage");
 		}
 
 		public override void UpdateEquip(Player player)

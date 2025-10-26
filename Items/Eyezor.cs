@@ -10,29 +10,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 37;
-			item.DamageType = DamageClass.Magic;
-			item.width = 20;
-			item.height = 12;
-			item.useTime = 6;
-			item.useAnimation = 20;
-			item.useStyle = 5;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(0, 5, 0, 0);
-			item.rare = 5;
-			item.mana = 7;
-			item.useStyle = 5;
-			item.UseSound = SoundID.Item20;
-			item.noMelee = true;
-			item.autoReuse = true;
-			item.shoot = 606;
-			item.shootSpeed = 30f;
+			Item.damage = 37;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 20;
+			Item.height = 12;
+			Item.useTime = 6;
+			Item.useAnimation = 20;
+			Item.useStyle = 5;
+			Item.knockBack = 6;
+			Item.value = Item.buyPrice(0, 5, 0, 0);
+			Item.rare = 5;
+			Item.mana = 7;
+			Item.useStyle = 5;
+			Item.UseSound = SoundID.Item20;
+			Item.noMelee = true;
+			Item.autoReuse = true;
+			Item.shoot = 606;
+			Item.shootSpeed = 30f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Eyezor");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Eyezor");
+			// Tooltip.SetDefault("");
 		}
 
 	}

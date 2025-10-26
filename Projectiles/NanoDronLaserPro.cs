@@ -15,7 +15,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nano Dron Laser");
+			// DisplayName.SetDefault("Nano Dron Laser");
 
 		}
 

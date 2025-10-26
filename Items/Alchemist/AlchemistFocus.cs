@@ -12,20 +12,20 @@ namespace Tremor.Items.Alchemist
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 22;
+			Item.width = 22;
+			Item.height = 22;
 
-			item.rare = 2;
-			item.accessory = true;
-			item.value = 50000;
+			Item.rare = 2;
+			Item.accessory = true;
+			Item.value = 50000;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Alchemist Focus");
-			Tooltip.SetDefault("6% increased alchemical damage\n" +
-"12% increased alchemical critical strike chance");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 4));
+			// DisplayName.SetDefault("Alchemist Focus");
+			/* Tooltip.SetDefault("6% increased alchemical damage\n" +
+"12% increased alchemical critical strike chance"); */
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(6, 4));
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

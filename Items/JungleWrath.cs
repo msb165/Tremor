@@ -8,18 +8,18 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 10000;
-			item.rare = 3;
-			item.accessory = true;
+			Item.value = 10000;
+			Item.rare = 3;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Jungle Wrath");
-			Tooltip.SetDefault("6% increased magic and minion damage");
+			// DisplayName.SetDefault("Jungle Wrath");
+			// Tooltip.SetDefault("6% increased magic and minion damage");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

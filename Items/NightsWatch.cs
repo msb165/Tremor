@@ -9,20 +9,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
-			item.value = 10000;
-			item.rare = ItemRarityID.Orange;
-			item.defense = 6;
-			item.accessory = true;
+			Item.width = 22;
+			Item.height = 44;
+			Item.value = 10000;
+			Item.rare = ItemRarityID.Orange;
+			Item.defense = 6;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Night's Watch");
-			Tooltip.SetDefault("8% increased magic, melee and minion damage\n" +
+			// DisplayName.SetDefault("Night's Watch");
+			/* Tooltip.SetDefault("8% increased magic, melee and minion damage\n" +
 "Increases maximum mana and health by 60\n" +
-"Increases melee and magic critical strike chance by 10");
+"Increases melee and magic critical strike chance by 10"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

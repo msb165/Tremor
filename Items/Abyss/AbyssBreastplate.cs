@@ -7,24 +7,24 @@ using Tremor.Items.Souls;
 namespace Tremor.Items.Abyss
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class AbyssBreastplate:TremorModItem
+	public class AbyssBreastplate : TremorModItem
 	{
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 18000;
-			item.rare = 7;
-			item.defense = 22;
+			Item.value = 18000;
+			Item.rare = 7;
+			Item.defense = 22;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Abyss Breastplate");
-			Tooltip.SetDefault("14% increased minion damage\n" +
-"Increases your max number of minions");
+			// DisplayName.SetDefault("Abyss Breastplate");
+			/* Tooltip.SetDefault("14% increased minion damage\n" +
+"Increases your max number of minions"); */
 		}
 
 		public override void UpdateEquip(Player player)

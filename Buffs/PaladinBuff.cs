@@ -11,10 +11,10 @@ namespace Tremor.Buffs
 		const int Damage = 200;
 		const float KB = 1;
 
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Paladin Hammer");
+			// DisplayName.SetDefault("Paladin Hammer");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

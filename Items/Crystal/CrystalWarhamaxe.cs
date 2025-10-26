@@ -11,27 +11,27 @@ namespace Tremor.Items.Crystal
 		public override void SetDefaults()
 		{
 
-			item.damage = 20;
-			item.DamageType = DamageClass.Melee;
-			item.width = 44;
-			item.height = 44;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.hammer = 100;
-			item.axe = 22;
-			item.tileBoost++;
-			item.useStyle = 1;
-			item.knockBack = 6;
-			item.value = 15000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 20;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 44;
+			Item.height = 44;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.hammer = 100;
+			Item.axe = 22;
+			Item.tileBoost++;
+			Item.useStyle = 1;
+			Item.knockBack = 6;
+			Item.value = 15000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crystal Warhamaxe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Crystal Warhamaxe");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()
@@ -51,7 +51,7 @@ namespace Tremor.Items.Crystal
 				int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 71);
 			}
 		}
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(31, 60);
 		}

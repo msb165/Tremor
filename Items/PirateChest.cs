@@ -8,20 +8,20 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.maxStack = 999;
-			item.consumable = true;
-			item.width = 34;
-			item.height = 34;
-			item.value = 20000;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.width = 34;
+			Item.height = 34;
+			Item.value = 20000;
 
-			item.rare = 5;
+			Item.rare = 5;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pirate Chest");
-			Tooltip.SetDefault("Right click to open\n" +
-"'Contains precious things'");
+			// DisplayName.SetDefault("Pirate Chest");
+			/* Tooltip.SetDefault("Right click to open\n" +
+"'Contains precious things'"); */
 		}
 
 		public override bool CanRightClick()

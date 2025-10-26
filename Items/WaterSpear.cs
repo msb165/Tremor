@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 34;
-			item.DamageType = DamageClass.Magic;
-			item.width = 28;
-			item.height = 30;
-			item.useTime = 14;
-			item.useAnimation = 14;
-			item.shoot = 27;
-			item.shootSpeed = 26f;
-			item.mana = 6;
-			item.useStyle = 5;
-			item.knockBack = 3;
-			item.value = 99999;
-			item.rare = 5;
-			item.UseSound = SoundID.Item21;
-			item.autoReuse = true;
+			Item.damage = 34;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 28;
+			Item.height = 30;
+			Item.useTime = 14;
+			Item.useAnimation = 14;
+			Item.shoot = 27;
+			Item.shootSpeed = 26f;
+			Item.mana = 6;
+			Item.useStyle = 5;
+			Item.knockBack = 3;
+			Item.value = 99999;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item21;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Water Spear");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Water Spear");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

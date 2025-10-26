@@ -7,21 +7,21 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(3279);
+			Item.CloneDefaults(3279);
 
-			item.damage = 58;
-			item.width = 30;
-			item.height = 26;
-			item.shoot = ModContent.ProjectileType<Projectiles.DissolverPro>();
-			item.knockBack = 4;
-			item.value = 10000;
-			item.rare = 4;
+			Item.damage = 58;
+			Item.width = 30;
+			Item.height = 26;
+			Item.shoot = ModContent.ProjectileType<Projectiles.DissolverPro>();
+			Item.knockBack = 4;
+			Item.value = 10000;
+			Item.rare = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dissolver");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Dissolver");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

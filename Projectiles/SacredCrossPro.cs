@@ -20,7 +20,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sacred");
+			// DisplayName.SetDefault("Sacred");
 
 		}
 
@@ -55,7 +55,7 @@ namespace Tremor.Projectiles
 			}
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item101, projectile.position);
 			for (int num158 = 0; num158 < 20; num158++)
@@ -92,9 +92,9 @@ namespace Tremor.Projectiles
 			}
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
-			int newLife = Main.rand.Next(damage / 5) + 3;
+			int newLife = Main.rand.Next(damageDone / 5) + 3;
 			Main.player[projectile.owner].statLife += newLife;
 			Main.player[projectile.owner].HealEffect(newLife);
 		}

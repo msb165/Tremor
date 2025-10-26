@@ -8,29 +8,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 23;
-			item.DamageType = DamageClass.Throwing;
-			item.width = 18;
-			item.noUseGraphic = true;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.height = 38;
-			item.useTime = 32;
-			item.useAnimation = 32;
-			item.shoot = ModContent.ProjectileType<Projectiles.PoisonJavelinPro>();
-			item.shootSpeed = 16f;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 60;
-			item.rare = 3;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 23;
+			Item.DamageType = DamageClass.Throwing;
+			Item.width = 18;
+			Item.noUseGraphic = true;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.height = 38;
+			Item.useTime = 32;
+			Item.useAnimation = 32;
+			Item.shoot = ModContent.ProjectileType<Projectiles.PoisonJavelinPro>();
+			Item.shootSpeed = 16f;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 60;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Poison Javelin");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Poison Javelin");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

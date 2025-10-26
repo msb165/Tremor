@@ -5,11 +5,11 @@ namespace Tremor.Buffs
 {
 	public class BottledSoulOfSight:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Bottled Soul of Sight");
-			Description.SetDefault("Shows the location of enemies");
+			// DisplayName.SetDefault("Bottled Soul of Sight");
+			// Description.SetDefault("Shows the location of enemies");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

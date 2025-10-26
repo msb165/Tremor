@@ -8,22 +8,22 @@ namespace Tremor.NPCs.Bosses.Motherboard.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 20;
-			item.height = 18;
-			item.maxStack = 20;
+			Item.width = 20;
+			Item.height = 18;
+			Item.maxStack = 20;
 
-			item.rare = 5;
-			item.useAnimation = 45;
-			item.useTime = 45;
-			item.useStyle = 4;
-			item.consumable = true;
+			Item.rare = 5;
+			Item.useAnimation = 45;
+			Item.useTime = 45;
+			Item.useStyle = 4;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Mechanical Brain");
-			Tooltip.SetDefault("Summons the Motherboard\n" +
-"Requires hardmode and night time");
+			// DisplayName.SetDefault("Mechanical Brain");
+			/* Tooltip.SetDefault("Summons the Motherboard\n" +
+"Requires hardmode and night time"); */
 		}
 
 		public override bool CanUseItem(Player player)

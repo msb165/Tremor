@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class ZombatBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Zombat");
-			Description.SetDefault("The zombat will fight for you");
+			// DisplayName.SetDefault("Zombat");
+			// Description.SetDefault("The zombat will fight for you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}

@@ -8,18 +8,18 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.width = 30;
-			item.height = 24;
-			item.value = 250000;
-			item.rare = 8;
-			item.accessory = true;
+			Item.width = 30;
+			Item.height = 24;
+			Item.value = 250000;
+			Item.rare = 8;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Ring");
-			Tooltip.SetDefault("20% increased alchemical damage\n" +
-"14 increased alchemical critical strike chance");
+			// DisplayName.SetDefault("Nova Ring");
+			/* Tooltip.SetDefault("20% increased alchemical damage\n" +
+"14 increased alchemical critical strike chance"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

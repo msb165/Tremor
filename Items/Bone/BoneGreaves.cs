@@ -12,18 +12,18 @@ namespace Tremor.Items.Bone
 		public override void SetDefaults()
 		{
 
-			item.defense = 8;
-			item.width = 22;
-			item.height = 18;
-			item.value = 25000;
-			item.rare = 4;
+			Item.defense = 8;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 25000;
+			Item.rare = 4;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bone Greaves");
-			Tooltip.SetDefault("20% increased throwing critical strike chance\n" +
-"6% increased ranged damage");
+			// DisplayName.SetDefault("Bone Greaves");
+			/* Tooltip.SetDefault("20% increased throwing critical strike chance\n" +
+"6% increased ranged damage"); */
 		}
 
 		public override void UpdateEquip(Player p)

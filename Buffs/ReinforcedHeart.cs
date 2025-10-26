@@ -5,11 +5,11 @@ namespace Tremor.Buffs
 {
 	public class ReinforcedHeart:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Reinforced Heart");
-			Description.SetDefault("Increases maximum health");
+			// DisplayName.SetDefault("Reinforced Heart");
+			// Description.SetDefault("Increases maximum health");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

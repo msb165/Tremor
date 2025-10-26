@@ -12,7 +12,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Space Whale");
+			// DisplayName.SetDefault("Space Whale");
 			Main.npcFrameCount[npc.type] = 8;
 		}
 
@@ -36,30 +36,30 @@ namespace Tremor.NPCs
 			bossBag = ModContent.ItemType<SpaceWhaleTreasureBag>();
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 60; k++)
 				{
-					Dust.NewDust(npc.Center, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.Center, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.Center, npc.width, npc.height, 6, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.Center, npc.width, npc.height, 6, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.Center, npc.width, npc.height, 6, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.Center, npc.width, npc.height, 6, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
-				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/SWGore1"), 1f);
-				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/SWGore2"), 1f);
-				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/SWGore2"), 1f);
-				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/SWGore3"), 1f);
-				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/SWGore3"), 1f);
-				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("Gores/SWGore4"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("SWGore1"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("SWGore2"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("SWGore2"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("SWGore3"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("SWGore3"), 1f);
+				Gore.NewGore(null, npc.Center, npc.velocity, Mod.GetGoreSlot("SWGore4"), 1f);
 			}
 			else
 			{
 
-				for (int k = 0; k < damage / npc.lifeMax * 20.0; k++)
+				for (int k = 0; k < npc.damage / npc.lifeMax * 20.0; k++)
 				{
-					Dust.NewDust(npc.Center, npc.width, npc.height, 226, hitDirection, -2f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.Center, npc.width, npc.height, 27, hitDirection, -1f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.Center, npc.width, npc.height, 226, hit.HitDirection, -2f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.Center, npc.width, npc.height, 27, hit.HitDirection, -1f, 0, default(Color), 0.7f);
 				}
 			}
 		}

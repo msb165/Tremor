@@ -9,19 +9,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 20;
-			item.value = 250000;
-			item.rare = 8;
-			item.accessory = true;
+			Item.width = 28;
+			Item.height = 20;
+			Item.value = 250000;
+			Item.rare = 8;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vortex Ring ");
-			Tooltip.SetDefault("20% increased ranged damage\n" +
+			// DisplayName.SetDefault("Vortex Ring ");
+			/* Tooltip.SetDefault("20% increased ranged damage\n" +
 "Increases ranged critical strike chance by 15\n" +
-"25% chance not to consume ammo");
+"25% chance not to consume ammo"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

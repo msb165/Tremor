@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 60;
-			item.DamageType = DamageClass.Magic;
-			item.width = 46;
-			item.height = 48;
-			item.mana = 15;
-			item.useTime = 30;
-			item.useAnimation = 30;
-			item.useStyle = 1;
-			item.noMelee = true;
-			item.knockBack = 6;
-			item.value = 30000;
-			item.rare = 8;
-			item.UseSound = SoundID.Item43;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.SpectreFlower>();
-			item.shootSpeed = 6f;
+			Item.damage = 60;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 46;
+			Item.height = 48;
+			Item.mana = 15;
+			Item.useTime = 30;
+			Item.useAnimation = 30;
+			Item.useStyle = 1;
+			Item.noMelee = true;
+			Item.knockBack = 6;
+			Item.value = 30000;
+			Item.rare = 8;
+			Item.UseSound = SoundID.Item43;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.SpectreFlower>();
+			Item.shootSpeed = 6f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Spectre Flower");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Spectre Flower");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

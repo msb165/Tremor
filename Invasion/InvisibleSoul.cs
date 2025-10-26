@@ -9,7 +9,7 @@ namespace Tremor.Invasion
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paradox Soul Warrior");
+			// DisplayName.SetDefault("Paradox Soul Warrior");
 			Main.npcFrameCount[npc.type] = 3;
 		}
 
@@ -44,21 +44,21 @@ namespace Tremor.Invasion
 			return InvasionWorld.CyberWrath && y > Main.worldSurface ? 1f : 0f;
 		}
 
-		public override void OnHitPlayer(Player player, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
 		{
 			if (Main.rand.NextBool(3))
 			{
-				player.AddBuff(164, 1000, true);
+				target.AddBuff(164, 1000, true);
 			}
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 10; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
 
 				CyberWrathInvasion modPlayer = Main.LocalPlayer.GetModPlayer<CyberWrathInvasion>();
@@ -69,9 +69,9 @@ namespace Tremor.Invasion
 				}
 			}
 
-			for (int k = 0; k < damage / npc.lifeMax * 50.0; k++)
+			for (int k = 0; k < npc.damage / npc.lifeMax * 50.0; k++)
 			{
-				Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), hitDirection, -1f, 0, default(Color), 0.7f);
+				Dust.NewDust(npc.position, npc.width, npc.height, ModContent.DustType<CyberDust>(), hit.HitDirection, -1f, 0, default(Color), 0.7f);
 			}
 		}
 
@@ -89,7 +89,7 @@ namespace Tremor.Invasion
 			}
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
 			npc.lifeMax = npc.lifeMax * 1;
 			npc.damage = npc.damage * 1;

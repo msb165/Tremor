@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 23;
-			item.DamageType = DamageClass.Magic;
-			item.width = 28;
-			item.height = 30;
-			item.useTime = 14;
-			item.useAnimation = 14;
-			item.shoot = ModContent.ProjectileType<Projectiles.GloomSphere>();
-			item.shootSpeed = 16f;
-			item.mana = 12;
-			item.useStyle = 5;
-			item.knockBack = 3;
-			item.value = 5025;
-			item.rare = 3;
-			item.UseSound = SoundID.Item21;
-			item.autoReuse = true;
+			Item.damage = 23;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 28;
+			Item.height = 30;
+			Item.useTime = 14;
+			Item.useAnimation = 14;
+			Item.shoot = ModContent.ProjectileType<Projectiles.GloomSphere>();
+			Item.shootSpeed = 16f;
+			Item.mana = 12;
+			Item.useStyle = 5;
+			Item.knockBack = 3;
+			Item.value = 5025;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item21;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Gloom Tome");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Gloom Tome");
+			// Tooltip.SetDefault("");
 		}
 
 	}

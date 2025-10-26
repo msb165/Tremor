@@ -7,11 +7,11 @@ namespace Tremor.Buffs
 	{
 		int Probe = -1;
 
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("SteampunkProbe");
-			Description.SetDefault("This probe protects you.");
+			// DisplayName.SetDefault("SteampunkProbe");
+			// Description.SetDefault("This probe protects you.");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

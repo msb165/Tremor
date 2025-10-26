@@ -8,26 +8,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 82;
-			item.DamageType = DamageClass.Melee;
-			item.width = 50;
-			item.height = 55;
-			item.useTime = 35;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.shoot = 228;
-			item.shootSpeed = 20f;
-			item.knockBack = 4;
-			item.value = 50000;
-			item.rare = 6;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.damage = 82;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 50;
+			Item.height = 55;
+			Item.useTime = 35;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.shoot = 228;
+			Item.shootSpeed = 20f;
+			Item.knockBack = 4;
+			Item.value = 50000;
+			Item.rare = 6;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Spore Blade");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Spore Blade");
+			// Tooltip.SetDefault("");
 		}
 
 	}

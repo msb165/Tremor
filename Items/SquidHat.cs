@@ -9,15 +9,15 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 24;
-			item.rare = 1;
+			Item.width = 26;
+			Item.height = 24;
+			Item.rare = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Squid Hat");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Squid Hat");
+			// Tooltip.SetDefault("");
 		}
 
 	}

@@ -1,6 +1,10 @@
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.ID;
 using Terraria.ModLoader;
+using Tremor.Items.Brass;
 using Tremor.Items.Crystal;
+using Tremor.NPCs.Bosses.CogLord.Items;
 
 namespace Tremor.Items.Brutallisk
 {
@@ -8,20 +12,21 @@ namespace Tremor.Items.Brutallisk
 	{
 		public override void SetDefaults()
 		{
-			item.maxStack = 999;
-			item.consumable = true;
-			item.width = 24;
-			item.height = 24;
+			Item.maxStack = 999;
+			Item.consumable = true;
+			Item.width = 24;
+			Item.height = 24;
 
-			item.rare = 9;
-			item.expert = true;
+			Item.rare = 9;
+			Item.expert = true;
 		}
 
-		public override int BossBagNPC => ModContent.NPCType<NPCs.Brutallisk>();
+		//public override int BossBagNPC => ModContent.NPCType<NPCs.Brutallisk>();
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Treasure Bag");
-			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
+			ItemID.Sets.BossBag[Type] = true;
+			// DisplayName.SetDefault("Treasure Bag");
+			// Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
 
 		public override bool CanRightClick()
@@ -29,46 +34,18 @@ namespace Tremor.Items.Brutallisk
 			return true;
 		}
 
-		public override void OpenBossBag(Player player)
+		public override void ModifyItemLoot(ItemLoot itemLoot)
 		{
-			if (Main.rand.NextBool(7))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<BrutalliskMask>());
-			}
-			if (Main.rand.NextBool(4))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<Awakening>());
-			}
-			if (Main.rand.NextBool(4))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<SnakeDevourer>());
-			}
-			if (Main.rand.NextBool(4))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<LightningStaff>());
-			}
-			if (Main.rand.NextBool(4))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<QuetzalcoatlStave>());
-			}
-			if (Main.rand.NextBool(4))
-			{
-				player.QuickSpawnItem(ModContent.ItemType<TreasureGlaive>());
-			}
-			if (Main.rand.Next(25) == 0)
-			{
-				player.QuickSpawnItem(ModContent.ItemType<FallenSnake>());
-			}
-			if (Main.rand.Next(100) == 0)
-			{
-				player.QuickSpawnItem(ModContent.ItemType<StrangeEgg>());
-			}
-			player.QuickSpawnItem(ModContent.ItemType<BrutalliskCrystal>());
-			player.QuickSpawnItem(ModContent.ItemType<Aquamarine>(), Main.rand.Next(10, 18));
-			if (Main.hardMode)
-			{
-				player.TryGettingDevArmor();
-			}
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BrutalliskMask>(), 7));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Awakening>(), 4));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<SnakeDevourer>(), 4));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<LightningStaff>(), 4));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<QuetzalcoatlStave>(), 4));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<TreasureGlaive>(), 4));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<FallenSnake>(), 25));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<StrangeEgg>(), 100));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BrutalliskCrystal>()));
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Aquamarine>(), 1, 10, 18));
 		}
 	}
 }

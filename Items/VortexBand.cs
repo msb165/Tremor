@@ -9,28 +9,28 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.Carrot);
+			Item.CloneDefaults(ItemID.Carrot);
 
-			item.rare = 11;
-			item.value = 380000;
-			item.useTime = 25;
-			item.useAnimation = 25;
+			Item.rare = 11;
+			Item.value = 380000;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
 
-			item.shoot = ModContent.ProjectileType<Projectiles.VortexBee>();
-			item.buffType = ModContent.BuffType<Buffs.VortexBeeBuff>();
+			Item.shoot = ModContent.ProjectileType<Projectiles.VortexBee>();
+			Item.buffType = ModContent.BuffType<Buffs.VortexBeeBuff>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vortex Band");
-			Tooltip.SetDefault("Summons a vortex bee");
+			// DisplayName.SetDefault("Vortex Band");
+			// Tooltip.SetDefault("Summons a vortex bee");
 		}
 
 		public override void UseStyle(Player player, Rectangle heldItemFrame)
 		{
 			if (player.whoAmI == Main.myPlayer && player.itemTime == 0)
 			{
-				player.AddBuff(item.buffType, 3600, true);
+				player.AddBuff(Item.buffType, 3600, true);
 			}
 		}
 

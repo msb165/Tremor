@@ -26,7 +26,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Motherboard Laser");
+			// DisplayName.SetDefault("Motherboard Laser");
 		}
 		
 		public override void AI()
@@ -57,7 +57,7 @@ namespace Tremor.Projectiles
 			return base.OnTileCollide(oldVelocity);
 		}
 
-		public override void OnHitPlayer(Player target, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
 		{
 			PlayZapSound();
 		}
@@ -72,7 +72,7 @@ namespace Tremor.Projectiles
 			//Main.PlayTrackedSound(zapSound.WithPitchVariance(Main.rand.NextFloat() * .5f).WithVolume(Main.soundVolume * 0.5f));
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Vector2 endPoint = Main.npc[(int)projectile.ai[1]].Center;
 			Vector2 unit = endPoint - projectile.Center;

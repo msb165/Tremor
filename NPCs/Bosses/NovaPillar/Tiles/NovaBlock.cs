@@ -22,7 +22,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.Tiles
 			Main.tileMerge[TileID.LunarBlockStardust][Type] = true;
 			Main.tileLighted[Type] = true;
 			DustType = DustID.Enchanted_Gold;
-			ItemDrop = ModContent.ItemType<NovaFragmentBlock>();
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<NovaFragmentBlock>();
 			AddMapEntry(Color.Yellow);
 		}
 

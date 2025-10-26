@@ -8,17 +8,17 @@ namespace Tremor.Items.Invar
 	{
 		public override void SetDefaults()
 		{
-			item.width = 28;
-			item.height = 30;
-			item.maxStack = 990;
-			item.value = Item.sellPrice(silver: 2);
-			item.rare = 1;
+			Item.width = 28;
+			Item.height = 30;
+			Item.maxStack = 990;
+			Item.value = Item.sellPrice(silver: 2);
+			Item.rare = 1;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Broken Invar Shield");
-			Tooltip.SetDefault("Broken and useless... But its materials could be reused");
+			// DisplayName.SetDefault("Broken Invar Shield");
+			// Tooltip.SetDefault("Broken and useless... But its materials could be reused");
 		}
 
 		public override void AddRecipes()

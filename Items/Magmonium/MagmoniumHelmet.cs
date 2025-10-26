@@ -11,17 +11,17 @@ namespace Tremor.Items.Magmonium
 		public override void SetDefaults()
 		{
 
-			item.defense = 20;
-			item.width = 26;
-			item.height = 32;
-			item.value = 40000;
-			item.rare = 8;
+			Item.defense = 20;
+			Item.width = 26;
+			Item.height = 32;
+			Item.value = 40000;
+			Item.rare = 8;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Magmonium Helmet");
-			Tooltip.SetDefault("Inflicts fire damage on attack");
+			// DisplayName.SetDefault("Magmonium Helmet");
+			// Tooltip.SetDefault("Inflicts fire damage on attack");
 		}
 
 		public override void UpdateEquip(Player player)

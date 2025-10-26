@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class BarrierBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Barrier");
-			Description.SetDefault("Magic is protecting you from damage");
+			// DisplayName.SetDefault("Barrier");
+			// Description.SetDefault("Magic is protecting you from damage");
 			Main.buffNoTimeDisplay[Type] = true;
 		}
 

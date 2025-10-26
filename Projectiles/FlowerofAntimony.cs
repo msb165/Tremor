@@ -19,7 +19,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Flower of Antimony");
+			// DisplayName.SetDefault("Flower of Antimony");
 
 		}
 
@@ -66,7 +66,7 @@ namespace Tremor.Projectiles
 			return false;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Projectile.NewProjectile(null, projectile.Center.X, projectile.Center.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.GhostlyExplosion>(), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
 		}

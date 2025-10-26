@@ -18,7 +18,7 @@ namespace Tremor.Tiles
 			Main.tileBlockLight[Type] = true;
 			Main.tileLighted[Type] = true;
 			DustType = DustID.Shadowflame;
-			ItemDrop = ModContent.ItemType<CometiteOre>();
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<CometiteOre>();
 			AddMapEntry(new Color(0, 191, 255));
 			MineResist = 8f;
 			MinPick = 225;

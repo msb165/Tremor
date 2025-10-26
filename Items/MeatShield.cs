@@ -11,18 +11,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 26;
-			item.value = 11000;
-			item.rare = 6;
-			item.accessory = true;
-			item.defense = 12;
+			Item.width = 26;
+			Item.height = 26;
+			Item.value = 11000;
+			Item.rare = 6;
+			Item.accessory = true;
+			Item.defense = 12;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Meat Shield");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Meat Shield");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void UpdateEquip(Player player)

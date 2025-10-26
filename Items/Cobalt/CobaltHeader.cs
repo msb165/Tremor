@@ -11,18 +11,18 @@ namespace Tremor.Items.Cobalt
 		public override void SetDefaults()
 		{
 
-			item.width = 20;
-			item.height = 26;
+			Item.width = 20;
+			Item.height = 26;
 
-			item.value = 400;
-			item.rare = 4;
-			item.defense = 3;
+			Item.value = 400;
+			Item.rare = 4;
+			Item.defense = 3;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cobalt Header");
-			Tooltip.SetDefault("18% increased thrown damage");
+			// DisplayName.SetDefault("Cobalt Header");
+			// Tooltip.SetDefault("18% increased thrown damage");
 		}
 
 		public override void UpdateEquip(Player player)

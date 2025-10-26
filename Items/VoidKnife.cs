@@ -9,32 +9,32 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.damage = 666;
-			item.DamageType = DamageClass.Melee;
-			item.width = 56;
-			item.height = 56;
-			item.useTime = 21;
-			item.useAnimation = 21;
-			item.useStyle = 1;
-			item.knockBack = 6;
-			item.value = 120000;
-			item.rare = 10;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.useTurn = true;
-			item.scale = 1.5f;
+			Item.damage = 666;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 56;
+			Item.height = 56;
+			Item.useTime = 21;
+			Item.useAnimation = 21;
+			Item.useStyle = 1;
+			Item.knockBack = 6;
+			Item.value = 120000;
+			Item.rare = 10;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
+			Item.useTurn = true;
+			Item.scale = 1.5f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Void Knife");
-			Tooltip.SetDefault("Hitting enemies will spawn an explosion\n" +
-"If you are below 50% of life your hits have a chance to heal you");
+			// DisplayName.SetDefault("Void Knife");
+			/* Tooltip.SetDefault("Hitting enemies will spawn an explosion\n" +
+"If you are below 50% of life your hits have a chance to heal you"); */
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
-			Projectile.NewProjectile(null, target.Center.X, target.Center.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.VoidKnifeExplosion>(), damage, knockback, Main.myPlayer);
+			Projectile.NewProjectile(null, target.Center.X, target.Center.Y, 0f, 0f, ModContent.ProjectileType<Projectiles.VoidKnifeExplosion>(), Item.damage, Item.knockBack, Main.myPlayer);
 			if (player.statLife < (player.statLifeMax2 * 0.5f) && Main.rand.NextBool(4))
 			{
 				int NewLife = Main.rand.Next(19, 41);

@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ModLoader;
 
 namespace Tremor.Items
@@ -9,21 +9,21 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 20;
+			Item.width = 22;
+			Item.height = 20;
 
-			item.value = 500000;
-			item.rare = 10;
-			item.expert = true;
-			item.accessory = true;
+			Item.value = 500000;
+			Item.rare = 10;
+			Item.expert = true;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Andas Core");
-			Tooltip.SetDefault("Allows flight\n" +
+			// DisplayName.SetDefault("Andas Core");
+			/* Tooltip.SetDefault("Allows flight\n" +
 "Has infinite flight time\n" +
-"Has big flight speed");
+"Has big flight speed"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

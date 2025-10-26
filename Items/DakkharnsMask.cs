@@ -10,19 +10,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 1000000;
-			item.rare = 11;
-			item.defense = 50;
+			Item.value = 1000000;
+			Item.rare = 11;
+			Item.defense = 50;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dakkharn Mask");
-			Tooltip.SetDefault("Summons and ancient predator to defend you from foes\n" +
-"Predator attacks enemies and inflicts curses");
+			// DisplayName.SetDefault("Dakkharn Mask");
+			/* Tooltip.SetDefault("Summons and ancient predator to defend you from foes\n" +
+"Predator attacks enemies and inflicts curses"); */
 		}
 
 		public override void UpdateEquip(Player player)

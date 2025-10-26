@@ -10,18 +10,18 @@ namespace Tremor.Items.Argite
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.value = 15000;
-			item.rare = 3;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 15000;
+			Item.rare = 3;
 
-			item.defense = 6;
+			Item.defense = 6;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Argite Greaves");
-			Tooltip.SetDefault("10% increased movement speed");
+			// DisplayName.SetDefault("Argite Greaves");
+			// Tooltip.SetDefault("10% increased movement speed");
 		}
 
 		public override void UpdateEquip(Player player)

@@ -10,18 +10,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 18;
+			Item.width = 26;
+			Item.height = 18;
 
-			item.value = 600000;
-			item.rare = 10;
-			item.defense = 32;
+			Item.value = 600000;
+			Item.rare = 10;
+			Item.defense = 32;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paladin Breastplate");
-			Tooltip.SetDefault("25% increased melee critical strike chance");
+			// DisplayName.SetDefault("Paladin Breastplate");
+			// Tooltip.SetDefault("25% increased melee critical strike chance");
 		}
 
 		public override void UpdateEquip(Player player)

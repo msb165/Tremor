@@ -11,10 +11,10 @@ namespace Tremor.Buffs
 		const int Damage = 30;
 		const float KB = 1;
 
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.SetDefault("Berserker");
+			// DisplayName.SetDefault("Berserker");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

@@ -9,29 +9,29 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.mana = 9;
-			item.UseSound = SoundID.Item105;
-			item.useStyle = 5;
-			item.damage = 40;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.width = 36;
-			item.height = 40;
-			item.shoot = ModContent.ProjectileType<Projectiles.Igniter>();
-			item.shootSpeed = 13f;
-			item.knockBack = 4.4f;
-			Item.staff[item.type] = true;
-			item.DamageType = DamageClass.Magic;
-			item.autoReuse = true;
-			item.value = Item.sellPrice(0, 4, 0, 0);
-			item.rare = 5;
-			item.noMelee = true;
+			Item.mana = 9;
+			Item.UseSound = SoundID.Item105;
+			Item.useStyle = 5;
+			Item.damage = 40;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.width = 36;
+			Item.height = 40;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Igniter>();
+			Item.shootSpeed = 13f;
+			Item.knockBack = 4.4f;
+			Item.staff[Item.type] = true;
+			Item.DamageType = DamageClass.Magic;
+			Item.autoReuse = true;
+			Item.value = Item.sellPrice(0, 4, 0, 0);
+			Item.rare = 5;
+			Item.noMelee = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Igniter");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Igniter");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

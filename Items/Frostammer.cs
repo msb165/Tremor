@@ -8,25 +8,25 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 100;
-			item.DamageType = DamageClass.Melee;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.hammer = 95;
-			item.useStyle = 1;
-			item.knockBack = 7;
-			item.value = 1040;
-			item.rare = 9;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 100;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.hammer = 95;
+			Item.useStyle = 1;
+			Item.knockBack = 7;
+			Item.value = 1040;
+			Item.rare = 9;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frostammer");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Frostammer");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

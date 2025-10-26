@@ -11,23 +11,23 @@ namespace Tremor.Items.Crystal
 		public override void SetDefaults()
 		{
 
-			item.width = 24;
-			item.height = 24;
-			item.maxStack = 20;
-			item.value = 100;
-			item.rare = 3;
-			item.useAnimation = 15;
-			item.useTime = 15;
-			item.useStyle = 4;
-			item.consumable = true;
+			Item.width = 24;
+			Item.height = 24;
+			Item.maxStack = 20;
+			Item.value = 100;
+			Item.rare = 3;
+			Item.useAnimation = 15;
+			Item.useTime = 15;
+			Item.useStyle = 4;
+			Item.consumable = true;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Mushroom Crystal");
-			Tooltip.SetDefault("Summons Fungus Beetle\n" +
-"Requires EoW or BoC to have been slain");
+			// DisplayName.SetDefault("Mushroom Crystal");
+			/* Tooltip.SetDefault("Summons Fungus Beetle\n" +
+"Requires EoW or BoC to have been slain"); */
 		}
 
 		public override bool CanUseItem(Player player)

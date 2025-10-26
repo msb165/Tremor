@@ -7,18 +7,18 @@ namespace Tremor.Invasion
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 30;
+			Item.width = 28;
+			Item.height = 30;
 
-			item.maxStack = 99;
-			item.value = 10000;
-			item.rare = 11;
+			Item.maxStack = 99;
+			Item.value = 10000;
+			Item.rare = 11;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Time Tissue");
-			Tooltip.SetDefault("'It's about time'.");
+			// DisplayName.SetDefault("Time Tissue");
+			// Tooltip.SetDefault("'It's about time'.");
 		}
 
 	}

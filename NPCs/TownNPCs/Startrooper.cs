@@ -26,7 +26,7 @@ namespace Tremor.NPCs.TownNPCs
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Startrooper");
+			// DisplayName.SetDefault("Startrooper");
 			Main.npcFrameCount[npc.type] = 25;
 			NPCID.Sets.ExtraFramesCount[npc.type] = 5;
 			NPCID.Sets.AttackFrameCount[npc.type] = 4;
@@ -52,7 +52,7 @@ namespace Tremor.NPCs.TownNPCs
 			AnimationType = NPCID.GoblinTinkerer;
 		}
 
-		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+		public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
 			=> TremorWorld.Boss.SpaceWhale.IsDowned() && Main.player.Any(player => !player.dead);
 
 		private readonly List<string> _names = new List<string>
@@ -87,47 +87,51 @@ namespace Tremor.NPCs.TownNPCs
 			button = Lang.inter[28].Value;
 		}
 
-		public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+		public override void OnChatButtonClicked(bool firstButton, ref string shopName)
 		{
-			shop = firstButton;
+			if (firstButton)
+			{
+				shopName = "Shop";
+			}
 		}
 
-		public override void SetupShop(Chest shop, ref int nextSlot)
+		public override void ModifyActiveShop(string shopName, Item[] items)
 		{
+			NPCShop shop = new(Type);
 			// todo: change to data representation with conditionals, loop
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<Starmine>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ChainBow>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<EnforcerShield>());
+			shop.Add(ModContent.ItemType<Starmine>());
+			shop.Add(ModContent.ItemType<ChainBow>());
+			shop.Add(ModContent.ItemType<EnforcerShield>());
 
 			if (!Main.dayTime)
 			{
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<SniperHelmet>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<SniperBreastplate>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<SniperBoots>());
+				shop.Add(ModContent.ItemType<SniperHelmet>());
+				shop.Add(ModContent.ItemType<SniperBreastplate>());
+				shop.Add(ModContent.ItemType<SniperBoots>());
 			}
 			else
 			{
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ParatrooperLens>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<StartrooperFlameburstPistol>());
+				shop.Add(ModContent.ItemType<ParatrooperLens>());
+				shop.Add(ModContent.ItemType<StartrooperFlameburstPistol>());
 			}
 
 			if (TremorWorld.Boss.Trinity.IsDowned())
 			{
 				if (!Main.dayTime)
 				{
-					shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<CosmicAssaultRifle>());
+					shop.Add(ModContent.ItemType<CosmicAssaultRifle>());
 				}
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<WartimeRocketLauncher>());
+				shop.Add(ModContent.ItemType<WartimeRocketLauncher>());
 			}
 
 			if (Main.bloodMoon)
 			{
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ParatrooperShotgun>());
+				shop.Add(ModContent.ItemType<ParatrooperShotgun>());
 			}
 
 			if (Main.LocalPlayer.HasItem(ModContent.ItemType<SuperBigCannon>()))
 			{
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<SBCCannonballAmmo>());
+				shop.Add(ModContent.ItemType<SBCCannonballAmmo>());
 			}
 		}
 
@@ -155,15 +159,15 @@ namespace Tremor.NPCs.TownNPCs
 			randomOffset = 2f;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for (int i = 0; i < 3; i++)
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/StartrooperNGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"StartrooperNGore{i+1}"), 1f);
 			}
 		}
 	}

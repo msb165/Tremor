@@ -10,27 +10,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 16;
-			item.DamageType = DamageClass.Magic;
-			item.width = 20;
-			item.height = 12;
-			item.useTime = 7;
-			item.useAnimation = 28;
-			item.useStyle = 5;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(0, 5, 0, 0);
-			item.rare = 3;
-			item.mana = 5;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.BlackRosePro>();
-			item.shootSpeed = 30f;
+			Item.damage = 16;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 20;
+			Item.height = 12;
+			Item.useTime = 7;
+			Item.useAnimation = 28;
+			Item.useStyle = 5;
+			Item.knockBack = 6;
+			Item.value = Item.buyPrice(0, 5, 0, 0);
+			Item.rare = 3;
+			Item.mana = 5;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.BlackRosePro>();
+			Item.shootSpeed = 30f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Black Rose");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Black Rose");
+			// Tooltip.SetDefault("");
 		}
 
 	}

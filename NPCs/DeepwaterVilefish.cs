@@ -12,7 +12,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Deepwater Vilefish");
+			// DisplayName.SetDefault("Deepwater Vilefish");
 			Main.npcFrameCount[npc.type] = 6;
 		}
 
@@ -34,11 +34,11 @@ namespace Tremor.NPCs
 			BannerItem = ModContent.ItemType<DeepwaterVilefishBanner>();
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 		}
 
 		public override void NPCLoot()

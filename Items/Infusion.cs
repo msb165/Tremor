@@ -8,23 +8,23 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.rare = 11;
-			item.maxStack = 1;
-			item.useAnimation = 20;
-			item.useTime = 20;
-			item.useStyle = 2;
-			item.potion = true;
-			item.healLife = 100;
+			Item.rare = 11;
+			Item.maxStack = 1;
+			Item.useAnimation = 20;
+			Item.useTime = 20;
+			Item.useStyle = 2;
+			Item.potion = true;
+			Item.healLife = 100;
 
-			item.UseSound = SoundID.Item3;
-			item.value = 1000000;
-			item.autoReuse = false;
+			Item.UseSound = SoundID.Item3;
+			Item.value = 1000000;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Infusion");
-			Tooltip.SetDefault("Eternal potion");
+			// DisplayName.SetDefault("Infusion");
+			// Tooltip.SetDefault("Eternal potion");
 		}
 
 	}

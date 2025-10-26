@@ -8,18 +8,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 44;
+			Item.width = 22;
+			Item.height = 44;
 
-			item.value = 12000;
-			item.rare = 3;
-			item.accessory = true;
+			Item.value = 12000;
+			Item.rare = 3;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Heart Magnet");
-			Tooltip.SetDefault("Increased heart pickup range");
+			// DisplayName.SetDefault("Heart Magnet");
+			// Tooltip.SetDefault("Increased heart pickup range");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

@@ -9,18 +9,18 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 34;
-			item.height = 34;
-			item.value = 120000;
-			item.rare = 2;
-			item.defense = 5;
-			item.accessory = true;
+			Item.width = 34;
+			Item.height = 34;
+			Item.value = 120000;
+			Item.rare = 2;
+			Item.defense = 5;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hard Bulwark");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Hard Bulwark");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

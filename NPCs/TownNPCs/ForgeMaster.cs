@@ -27,7 +27,7 @@ namespace Tremor.NPCs.TownNPCs
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Forge Master");
+			// DisplayName.SetDefault("Forge Master");
 			Main.npcFrameCount[npc.type] = 25;
 			NPCID.Sets.ExtraFramesCount[npc.type] = 5;
 			NPCID.Sets.AttackFrameCount[npc.type] = 4;
@@ -53,7 +53,7 @@ namespace Tremor.NPCs.TownNPCs
 			AnimationType = NPCID.Guide;
 		}
 		
-		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+		public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
 		   => Main.player.Any(player => !player.dead && player.inventory.Any(item => item != null && item.type == ModContent.ItemType<JungleAlloy>()));
 
 		private readonly List<string> _names = new List<string>
@@ -87,70 +87,74 @@ namespace Tremor.NPCs.TownNPCs
 			button = Lang.inter[28].Value;
 		}
 
-		public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+		public override void OnChatButtonClicked(bool firstButton, ref string shopName)
 		{
-			shop = firstButton;
+			if (firstButton)
+			{
+				shopName = "Shop";
+			}
 		}
 
-		public override void SetupShop(Chest shop, ref int nextSlot)
+		public override void ModifyActiveShop(string shopName, Item[] items)
 		{
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<GreatAnvil>());
+			NPCShop shop = new(Type);
+			shop.Add(ModContent.ItemType<GreatAnvil>());
 
 			if (Main.dayTime)
 			{
-				shop.AddUniqueItem(ref nextSlot, ItemID.CopperBar);
-				shop.AddUniqueItem(ref nextSlot, ItemID.IronBar);
-				shop.AddUniqueItem(ref nextSlot, ItemID.SilverBar);
+				shop.Add(ItemID.CopperBar);
+				shop.Add(ItemID.IronBar);
+				shop.Add(ItemID.SilverBar);
 
 				if (NPC.downedBoss2)
-					shop.AddUniqueItem(ref nextSlot, ItemID.GoldBar);
+					shop.Add(ItemID.GoldBar);
 				if (NPC.downedBoss3)
-					shop.AddUniqueItem(ref nextSlot, ItemID.DemoniteBar);
+					shop.Add(ItemID.DemoniteBar);
 
 				if (NPC.downedMechBossAny)
 				{
-					shop.AddUniqueItem(ref nextSlot, ItemID.CobaltBar);
-					shop.AddUniqueItem(ref nextSlot, ItemID.MythrilBar);
-					shop.AddUniqueItem(ref nextSlot, ItemID.AdamantiteBar);
+					shop.Add(ItemID.CobaltBar);
+					shop.Add(ItemID.MythrilBar);
+					shop.Add(ItemID.AdamantiteBar);
 				}
 			}
 			else
 			{
-				shop.AddUniqueItem(ref nextSlot, ItemID.TinBar);
-				shop.AddUniqueItem(ref nextSlot, ItemID.LeadBar);
-				shop.AddUniqueItem(ref nextSlot, ItemID.TungstenBar);
+				shop.Add(ItemID.TinBar);
+				shop.Add(ItemID.LeadBar);
+				shop.Add(ItemID.TungstenBar);
 
 				if (NPC.downedBoss2)
-					shop.AddUniqueItem(ref nextSlot, ItemID.PlatinumBar);
+					shop.Add(ItemID.PlatinumBar);
 				if (NPC.downedBoss3)
-					shop.AddUniqueItem(ref nextSlot, ItemID.CrimtaneBar);
+					shop.Add(ItemID.CrimtaneBar);
 
 				if (NPC.downedMechBossAny)
 				{
-					shop.AddUniqueItem(ref nextSlot, ItemID.PalladiumBar);
-					shop.AddUniqueItem(ref nextSlot, ItemID.OrichalcumBar);
-					shop.AddUniqueItem(ref nextSlot, ItemID.TitaniumBar);
+					shop.Add(ItemID.PalladiumBar);
+					shop.Add(ItemID.OrichalcumBar);
+					shop.Add(ItemID.TitaniumBar);
 				}
 			}
 
 			if (NPC.downedBoss2)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<PoisonRod>());
+				shop.Add(ModContent.ItemType<PoisonRod>());
 			if (NPC.downedBoss3)
 			{
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<BurningHammer>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<PerfectBehemoth>());
+				shop.Add(ModContent.ItemType<BurningHammer>());
+				shop.Add(ModContent.ItemType<PerfectBehemoth>());
 			}
 			if (NPC.downedPlantBoss)
-				shop.AddUniqueItem(ref nextSlot, ItemID.HallowedBar);
+				shop.Add(ItemID.HallowedBar);
 			if (NPC.downedGolemBoss)
-				shop.AddUniqueItem(ref nextSlot, ItemID.ChlorophyteBar);
+				shop.Add(ItemID.ChlorophyteBar);
 			if (NPC.downedAncientCultist)
-				shop.AddUniqueItem(ref nextSlot, ItemID.SpectreBar);
+				shop.Add(ItemID.SpectreBar);
 
 			if (Main.hardMode)
 			{
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<GoldenMace>());
-				shop.AddUniqueItem(ref nextSlot, ItemID.HellstoneBar);
+				shop.Add(ModContent.ItemType<GoldenMace>());
+				shop.Add(ItemID.HellstoneBar);
 			}
 		}
 
@@ -178,15 +182,15 @@ namespace Tremor.NPCs.TownNPCs
 			randomOffset = 2f;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for (int i = 0; i < 4; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/BlackSmithGore{i + 1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"BlackSmithGore{i + 1}"), 1f);
 			}
 		}
 	}

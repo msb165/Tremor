@@ -9,17 +9,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 20;
-			item.value = 20000;
-			item.rare = 0;
-			item.vanity = true;
+			Item.width = 22;
+			Item.height = 20;
+			Item.value = 20000;
+			Item.rare = 0;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Butcher Mask");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Butcher Mask");
+			// Tooltip.SetDefault("");
 		}
 
 	}

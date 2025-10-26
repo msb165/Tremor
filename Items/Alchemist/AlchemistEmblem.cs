@@ -9,17 +9,17 @@ namespace Tremor.Items.Alchemist
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 28;
-			item.value = 20000;
-			item.rare = 4;
-			item.accessory = true;
+			Item.width = 28;
+			Item.height = 28;
+			Item.value = 20000;
+			Item.rare = 4;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Alchemist Emblem");
-			Tooltip.SetDefault("15% increased alchemical damage");
+			// DisplayName.SetDefault("Alchemist Emblem");
+			// Tooltip.SetDefault("15% increased alchemical damage");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

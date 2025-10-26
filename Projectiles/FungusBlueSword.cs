@@ -25,7 +25,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Fungus Blue Sword");
+			// DisplayName.SetDefault("Fungus Blue Sword");
 		}
 
 		public override Color? GetAlpha(Color lightColor)
@@ -33,7 +33,7 @@ namespace Tremor.Projectiles
 			return Color.White;
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (Main.rand.NextBool(3))
 			{

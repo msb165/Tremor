@@ -8,26 +8,26 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 325;
-			item.width = 50;
-			item.height = 50;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = 1;
-			item.knockBack = 3;
-			item.value = 750000;
-			item.rare = 11;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
-			item.shoot = ModContent.ProjectileType<Projectiles.TheGhostClaymorePro>();
-			item.shootSpeed = 16f;
-			item.DamageType = DamageClass.Melee;
+			Item.damage = 325;
+			Item.width = 50;
+			Item.height = 50;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = 1;
+			Item.knockBack = 3;
+			Item.value = 750000;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
+			Item.shoot = ModContent.ProjectileType<Projectiles.TheGhostClaymorePro>();
+			Item.shootSpeed = 16f;
+			Item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Ghost Claymore");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("The Ghost Claymore");
+			// Tooltip.SetDefault("");
 		}
 
 	}

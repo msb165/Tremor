@@ -15,7 +15,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("ShadowForkPro");
+			// DisplayName.SetDefault("ShadowForkPro");
 
 		}
 

@@ -11,18 +11,18 @@ namespace Tremor.Items.Chaos
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 18;
+			Item.width = 26;
+			Item.height = 18;
 
-			item.value = 6000;
-			item.rare = 5;
-			item.defense = 13;
+			Item.value = 6000;
+			Item.rare = 5;
+			Item.defense = 13;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chaos Breastplate");
-			Tooltip.SetDefault("Increases movement speed");
+			// DisplayName.SetDefault("Chaos Breastplate");
+			// Tooltip.SetDefault("Increases movement speed");
 		}
 
 		public override void UpdateEquip(Player player)

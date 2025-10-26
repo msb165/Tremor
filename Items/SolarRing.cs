@@ -9,19 +9,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 22;
-			item.value = 250000;
-			item.rare = 8;
-			item.accessory = true;
+			Item.width = 28;
+			Item.height = 22;
+			Item.value = 250000;
+			Item.rare = 8;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Solar Ring ");
-			Tooltip.SetDefault("20% increased melee damage\n" +
+			// DisplayName.SetDefault("Solar Ring ");
+			/* Tooltip.SetDefault("20% increased melee damage\n" +
 "Increases melee critical strike chance by 15\n" +
-"Casts a ring of fire");
+"Casts a ring of fire"); */
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

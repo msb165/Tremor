@@ -10,18 +10,18 @@ namespace Tremor.Items.Heaven
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 18;
-			item.value = 6000;
+			Item.width = 22;
+			Item.height = 18;
+			Item.value = 6000;
 
-			item.rare = 3;
-			item.defense = 5;
+			Item.rare = 3;
+			Item.defense = 5;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Heaven Leggings");
-			Tooltip.SetDefault("15% decreased movement speed");
+			// DisplayName.SetDefault("Heaven Leggings");
+			// Tooltip.SetDefault("15% decreased movement speed");
 		}
 
 		public override void UpdateEquip(Player player)

@@ -12,38 +12,38 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 260;
-			item.width = 18;
-			item.height = 56;
-			item.DamageType = DamageClass.Ranged;
-			item.useTime = 30;
-			item.shoot = 1;
-			item.shootSpeed = 12f;
+			Item.damage = 260;
+			Item.width = 18;
+			Item.height = 56;
+			Item.DamageType = DamageClass.Ranged;
+			Item.useTime = 30;
+			Item.shoot = 1;
+			Item.shootSpeed = 12f;
 
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.knockBack = 5;
-			item.value = 25000;
-			item.useAmmo = AmmoID.Arrow;
-			item.rare = 11;
-			item.UseSound = SoundID.Item5;
-			item.autoReuse = true;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.knockBack = 5;
+			Item.value = 25000;
+			Item.useAmmo = AmmoID.Arrow;
+			Item.rare = 11;
+			Item.UseSound = SoundID.Item5;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ghostly Howl");
-			Tooltip.SetDefault("Shoots the ghostly arrows");
+			// DisplayName.SetDefault("Ghostly Howl");
+			// Tooltip.SetDefault("Shoots the ghostly arrows");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			int i = Main.myPlayer;
-			float num72 = item.shootSpeed;
-			int num73 = item.damage;
-			float num74 = item.knockBack;
-			num74 = player.GetWeaponKnockback(item, num74);
-			player.itemTime = item.useTime;
+			float num72 = Item.shootSpeed;
+			int num73 = Item.damage;
+			float num74 = Item.knockBack;
+			num74 = player.GetWeaponKnockback(Item, num74);
+			player.itemTime = Item.useTime;
 			Vector2 vector2 = player.RotatedRelativePoint(player.MountedCenter, true);
 			Vector2 value = Vector2.UnitX.RotatedBy(player.fullRotation, default(Vector2));
 			Vector2 vector3 = Main.MouseWorld - vector2;

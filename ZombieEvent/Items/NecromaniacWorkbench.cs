@@ -8,24 +8,24 @@ namespace Tremor.ZombieEvent.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 48;
-			item.height = 32;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 15;
-			item.useStyle = 1;
-			item.rare = 1;
-			item.consumable = true;
-			item.value = 200;
-			item.createTile = ModContent.TileType<Tiles.NecromaniacWorkbenchTile>();
+			Item.width = 48;
+			Item.height = 32;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 15;
+			Item.useStyle = 1;
+			Item.rare = 1;
+			Item.consumable = true;
+			Item.value = 200;
+			Item.createTile = ModContent.TileType<Tiles.NecromaniacWorkbenchTile>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Necromaniac Workbench");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Necromaniac Workbench");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

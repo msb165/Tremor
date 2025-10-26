@@ -22,11 +22,11 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("RedPulsePro");
+			// DisplayName.SetDefault("RedPulsePro");
 
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			SoundEngine.PlaySound(SoundID.Item62, projectile.position);
 			//if (projectile.owner == Main.myPlayer)

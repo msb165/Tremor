@@ -10,17 +10,17 @@ namespace Tremor.Items.Invar
 
 		protected sealed override void Defaults()
 		{
-			item.width = 32;
-			item.height = 26;
-			item.value = Item.sellPrice(silver: 9);
-			item.rare = 1;
-			item.defense = 1;
+			Item.width = 32;
+			Item.height = 26;
+			Item.value = Item.sellPrice(silver: 9);
+			Item.rare = 1;
+			Item.defense = 1;
 		}
 
 		protected sealed override void StaticDefaults()
 		{
-			DisplayName.SetDefault("Invar Headgear");
-			Tooltip.SetDefault("6% increased melee damage");
+			// DisplayName.SetDefault("Invar Headgear");
+			// Tooltip.SetDefault("6% increased melee damage");
 		}
 
 		public override void UpdateEquip(Player player)
@@ -45,15 +45,15 @@ namespace Tremor.Items.Invar
 	{
 		public override void SafeDefaults()
 		{
-			item.defense += 1;
-			item.value = Item.sellPrice(silver: 11);
+			Item.defense += 1;
+			Item.value = Item.sellPrice(silver: 11);
 		}
 
 		public override void SafeStaticDefaults()
 		{
-			DisplayName.SetDefault("Reinforced Invar Headgear");
-			Tooltip.SetDefault(Tooltip.GetDefault() + "\n" +
-"Reinforced to grant +1 defense");
+			// DisplayName.SetDefault("Reinforced Invar Headgear");
+			/* Tooltip.SetDefault(Tooltip.GetDefault() + "\n" +
+"Reinforced to grant +1 defense"); */
 		}
 
 		public override void AddRecipes()

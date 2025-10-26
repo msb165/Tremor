@@ -17,7 +17,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nuclear Star Pro");
+			// DisplayName.SetDefault("Nuclear Star Pro");
 
 		}
 

@@ -9,16 +9,16 @@ namespace Tremor.Items.Bone
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 24;
-			item.rare = 2;
-			item.vanity = true;
+			Item.width = 26;
+			Item.height = 24;
+			Item.rare = 2;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bone Mask");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Bone Mask");
+			// Tooltip.SetDefault("");
 		}
 
 	}

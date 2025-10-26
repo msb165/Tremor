@@ -12,23 +12,23 @@ namespace Tremor.Items.Cursed
 		public override void SetDefaults()
 		{
 
-			item.width = 26;
-			item.height = 34;
-			item.maxStack = 20;
+			Item.width = 26;
+			Item.height = 34;
+			Item.maxStack = 20;
 
-			item.rare = 2;
-			item.value = 50000;
-			item.useAnimation = 45;
-			item.useTime = 45;
-			item.useStyle = 4;
-			item.consumable = true;
+			Item.rare = 2;
+			Item.value = 50000;
+			Item.useAnimation = 45;
+			Item.useTime = 45;
+			Item.useStyle = 4;
+			Item.consumable = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cursed Popcorn");
-			Tooltip.SetDefault("Summons the Evil Corn\n" +
-"Requires night time");
+			// DisplayName.SetDefault("Cursed Popcorn");
+			/* Tooltip.SetDefault("Summons the Evil Corn\n" +
+"Requires night time"); */
 		}
 
 		public override bool CanUseItem(Player player)

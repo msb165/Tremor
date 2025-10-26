@@ -10,30 +10,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 7;
-			item.DamageType = DamageClass.Summon;
-			item.mana = 12;
-			item.width = 30;
-			item.height = 28;
+			Item.damage = 7;
+			Item.DamageType = DamageClass.Summon;
+			Item.mana = 12;
+			Item.width = 30;
+			Item.height = 28;
 
-			item.useTime = 36;
-			item.useAnimation = 36;
-			item.useStyle = 1;
-			item.noMelee = true;
-			item.knockBack = 3;
-			item.value = Item.buyPrice(0, 0, 1, 0);
-			item.rare = 1;
-			item.UseSound = SoundID.Item44;
-			item.shoot = ModContent.ProjectileType<Projectiles.Minions.BlueSakuraPro>();
-			item.shootSpeed = 1f;
-			item.buffType = ModContent.BuffType<Buffs.BlueSakuraBuff>();
-			item.buffTime = 3600;
+			Item.useTime = 36;
+			Item.useAnimation = 36;
+			Item.useStyle = 1;
+			Item.noMelee = true;
+			Item.knockBack = 3;
+			Item.value = Item.buyPrice(0, 0, 1, 0);
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item44;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Minions.BlueSakuraPro>();
+			Item.shootSpeed = 1f;
+			Item.buffType = ModContent.BuffType<Buffs.BlueSakuraBuff>();
+			Item.buffTime = 3600;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Blue Sakura");
-			Tooltip.SetDefault("Summons a blue wind to fight for you.");
+			// DisplayName.SetDefault("Blue Sakura");
+			// Tooltip.SetDefault("Summons a blue wind to fight for you.");
 		}
 
 		public override bool AltFunctionUse(Player player)

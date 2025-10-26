@@ -28,8 +28,8 @@ namespace Tremor.Ice.Items.Furniture
 			TileObjectData.addTile(19);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
 			AddMapEntry(new Color(87, 144, 165));
-			ItemDrop = ModContent.ItemType<IcePlatform>();
-			adjTiles = new int[] { TileID.Platforms };
+			//ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<IcePlatform>();
+			AdjTiles = new int[] { TileID.Platforms };
 			TileID.Sets.Platforms[Type] = true;
 		}
 

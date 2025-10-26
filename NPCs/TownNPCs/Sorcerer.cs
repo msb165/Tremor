@@ -26,7 +26,7 @@ namespace Tremor.NPCs.TownNPCs
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sorcerer");
+			// DisplayName.SetDefault("Sorcerer");
 			Main.npcFrameCount[npc.type] = 26;
 			NPCID.Sets.ExtraFramesCount[npc.type] = 5;
 			NPCID.Sets.AttackFrameCount[npc.type] = 5;
@@ -52,7 +52,7 @@ namespace Tremor.NPCs.TownNPCs
 			AnimationType = NPCID.Guide;
 		}
 
-		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+		public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
 			=> Main.player.Any(player => !player.dead);
 
 		private readonly List<string> _names = new List<string>
@@ -85,31 +85,35 @@ namespace Tremor.NPCs.TownNPCs
 			button = Lang.inter[28].Value;
 		}
 
-		public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+		public override void OnChatButtonClicked(bool firstButton, ref string shopName)
 		{
-			shop = firstButton;
+			if (firstButton)
+			{
+				shopName = "Shop";
+			}
 		}
 
-		public override void SetupShop(Chest shop, ref int nextSlot)
+		public override void ModifyActiveShop(string shopName, Item[] items)
 		{
-			shop.AddUniqueItem(ref nextSlot, ItemID.Bunny);
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<BurningTome>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<RazorleavesTome>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<EnchantedShield>());
+			NPCShop shop = new(Type);
+			shop.Add(ItemID.Bunny);
+			shop.Add(ModContent.ItemType<BurningTome>());
+			shop.Add(ModContent.ItemType<RazorleavesTome>());
+			shop.Add(ModContent.ItemType<EnchantedShield>());
 			if (NPC.downedBoss1)
 			{
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<StarfallTome>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<GoldenHat>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<GoldenRobe>());
+				shop.Add(ModContent.ItemType<StarfallTome>());
+				shop.Add(ModContent.ItemType<GoldenHat>());
+				shop.Add(ModContent.ItemType<GoldenRobe>());
 			}
 			if (NPC.downedBoss2)
 			{
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<LightningTome>());
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<Bloomstone>());
+				shop.Add(ModContent.ItemType<LightningTome>());
+				shop.Add(ModContent.ItemType<Bloomstone>());
 			}
 
 			if (Main.hardMode)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ManaDagger>());
+				shop.Add(ModContent.ItemType<ManaDagger>());
 		}
 
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -136,15 +140,15 @@ namespace Tremor.NPCs.TownNPCs
 			randomOffset = 2f;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for (int i = 0; i < 3; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/SorcererGore{i + 1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"SorcererGore{i + 1}"), 1f);
 			}
 		}
 	}

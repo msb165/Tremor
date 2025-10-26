@@ -10,7 +10,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Avenger");
+			// DisplayName.SetDefault("Avenger");
 			Main.npcFrameCount[npc.type] = 4;
 		}
 
@@ -35,7 +35,7 @@ namespace Tremor.NPCs
 			// Todo: BannerItem = ModContent.ItemType<AvengerBanner>();
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life > 0)
 				Main.dust[Dust.NewDust(npc.position, npc.width, npc.height, 71, 0f, 0f, 200)].velocity *= 1.5F;
@@ -43,14 +43,14 @@ namespace Tremor.NPCs
 			{
 				for (int i = 0; i < 50; i++)
 				{
-					Main.dust[Dust.NewDust(npc.position, npc.width, npc.height, 71, hitDirection, 0f, 200)].velocity *= 1.5f;
+					Main.dust[Dust.NewDust(npc.position, npc.width, npc.height, 71, hit.HitDirection, 0f, 200)].velocity *= 1.5f;
 
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AvengerGore1"), 1f);
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AvengerGore1"), 1f);
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AvengerGore2"), 1f);
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AvengerGore2"), 1f);
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AvengerGore3"), 1f);
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("Gores/AvengerGore4"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("AvengerGore1"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("AvengerGore1"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("AvengerGore2"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("AvengerGore2"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("AvengerGore3"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot("AvengerGore4"), 1f);
 				}
 			}
 		}

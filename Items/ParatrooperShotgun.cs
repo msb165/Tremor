@@ -11,30 +11,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 300;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 46;
-			item.height = 28;
-			item.useTime = 40;
-			item.useAnimation = 40;
-			item.useStyle = 5;
-			item.knockBack = 6;
-			item.value = 651000;
-			item.rare = 11;
-			item.useStyle = 5;
-			item.UseSound = SoundID.Item36;
-			item.noMelee = true;
-			item.autoReuse = false;
-			item.shoot = 10;
-			item.shootSpeed = 23f;
-			item.useAmmo = AmmoID.Bullet;
+			Item.damage = 300;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 46;
+			Item.height = 28;
+			Item.useTime = 40;
+			Item.useAnimation = 40;
+			Item.useStyle = 5;
+			Item.knockBack = 6;
+			Item.value = 651000;
+			Item.rare = 11;
+			Item.useStyle = 5;
+			Item.UseSound = SoundID.Item36;
+			Item.noMelee = true;
+			Item.autoReuse = false;
+			Item.shoot = 10;
+			Item.shootSpeed = 23f;
+			Item.useAmmo = AmmoID.Bullet;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Paratrooper Shotgun");
-			Tooltip.SetDefault("Has 33% chance not to consume ammo");
+			// DisplayName.SetDefault("Paratrooper Shotgun");
+			// Tooltip.SetDefault("Has 33% chance not to consume ammo");
 		}
 
 		public override Vector2? HoldoutOffset()

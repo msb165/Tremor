@@ -11,21 +11,21 @@ namespace Tremor.Items.Ancient
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 36;
+			Item.width = 28;
+			Item.height = 36;
 
-			item.rare = 9;
-			item.accessory = true;
-			item.value = 30000;
-			item.expert = true;
+			Item.rare = 9;
+			Item.accessory = true;
+			Item.value = 30000;
+			Item.expert = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Soul");
-			Tooltip.SetDefault("Creates a shield of souls to protect you\n" +
-"More souls appear after some time and each soul disappear after second hit of enemy");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 3));
+			// DisplayName.SetDefault("Ancient Soul");
+			/* Tooltip.SetDefault("Creates a shield of souls to protect you\n" +
+"More souls appear after some time and each soul disappear after second hit of enemy"); */
+			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(6, 3));
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

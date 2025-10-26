@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class GoldenWhale:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Golden Whale");
-			Description.SetDefault("Promote your business!");
+			// DisplayName.SetDefault("Golden Whale");
+			// Description.SetDefault("Promote your business!");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

@@ -23,7 +23,7 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chained Rocket");
+			// DisplayName.SetDefault("Chained Rocket");
 
 		}
 
@@ -97,7 +97,7 @@ namespace Tremor.Projectiles
 			}
 		}
 
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Texture2D texture = Mod.GetTexture("Tremor/Projectiles/ChainedRocket_Chain");
 

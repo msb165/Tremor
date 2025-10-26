@@ -30,7 +30,7 @@ namespace Tremor.NPCs.TownNPCs
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chef");
+			// DisplayName.SetDefault("Chef");
 			Main.npcFrameCount[npc.type] = 25;
 			NPCID.Sets.ExtraFramesCount[npc.type] = 5;
 			NPCID.Sets.AttackFrameCount[npc.type] = 4;
@@ -56,7 +56,7 @@ namespace Tremor.NPCs.TownNPCs
 			AnimationType = NPCID.GoblinTinkerer;
 		}
 
-		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+		public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
 			=> NPC.downedBoss2 && Main.player.Any(player => !player.dead);
 
 		private readonly List<string> _names = new List<string>
@@ -92,25 +92,29 @@ namespace Tremor.NPCs.TownNPCs
 			button = Lang.inter[28].Value;
 		}
 
-		public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+		public override void OnChatButtonClicked(bool firstButton, ref string shopName)
 		{
-			shop = firstButton;
+			if (firstButton)
+			{
+				shopName = "Shop";
+			}
 		}
 
-		public override void SetupShop(Chest shop, ref int nextSlot)
+		public override void ModifyActiveShop(string shopName, Item[] items)
 		{
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<Knife>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<Durian>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ChefHat>());
-			shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ButcherAxe>());
+			NPCShop shop = new(Type);
+			shop.Add(ModContent.ItemType<Knife>());
+			shop.Add(ModContent.ItemType<Durian>());
+			shop.Add(ModContent.ItemType<ChefHat>());
+			shop.Add(ModContent.ItemType<ButcherAxe>());
 
 			if (NPC.AnyNPCs(ModContent.NPCType<Farmer>()))
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<Carrow>());
+				shop.Add(ModContent.ItemType<Carrow>());
 
 			if (Main.bloodMoon)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<CursedPopcorn>());
+				shop.Add(ModContent.ItemType<CursedPopcorn>());
 			if (NPC.downedBoss2)
-				shop.AddUniqueItem(ref nextSlot, ModContent.ItemType<ChickenLegMace>());
+				shop.Add(ModContent.ItemType<ChickenLegMace>());
 		}
 
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -125,7 +129,7 @@ namespace Tremor.NPCs.TownNPCs
 			randExtraCooldown = 10;
 		}
 
-		public override void DrawTownAttackSwing(ref Texture2D item, ref int itemSize, ref float scale, ref Vector2 offset)//Allows you to customize how this town NPC's weapon is drawn when this NPC is swinging it (this NPC must have an attack type of 3). ItemType is the Texture2D instance of the item to be drawn (use Main.itemTexture[id of item]), itemSize is the width and height of the item's hitbox
+		public override void DrawTownAttackSwing(ref Texture2D item, ref Rectangle itemFrame, ref int itemSize, ref float scale, ref Vector2 offset)//Allows you to customize how this town NPC's weapon is drawn when this NPC is swinging it (this NPC must have an attack type of 3). ItemType is the Texture2D instance of the item to be drawn (use Main.itemTexture[id of item]), itemSize is the width and height of the item's hitbox
 		{
 			scale = 1f;
 			item = TextureAssets.Item[ModContent.ItemType<ButcherAxe>()].Value; //this defines the item that this npc will use
@@ -138,15 +142,15 @@ namespace Tremor.NPCs.TownNPCs
 			itemHeight = 50;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 20; k++)
-					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 151, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 
 				for(int i = 0; i < 3; ++i)
-					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"Gores/ChefGore{i+1}"), 1f);
+					Gore.NewGore(null, npc.position, npc.velocity, Mod.GetGoreSlot($"ChefGore{i+1}"), 1f);
 			}
 		}
 	}

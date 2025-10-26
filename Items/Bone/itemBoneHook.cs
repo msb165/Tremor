@@ -8,29 +8,29 @@ namespace Tremor.Items.Bone
 		public override void SetDefaults()
 		{
 
-			item.damage = 32;
-			item.DamageType = DamageClass.Melee;
-			item.width = 42;
-			item.height = 38;
+			Item.damage = 32;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 42;
+			Item.height = 38;
 
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.useStyle = 2;
-			item.knockBack = 0;
-			item.value = 20000;
-			item.rare = 6;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
-			item.shoot = ModContent.ProjectileType<Projectiles.projBoneHook>();
-			item.shootSpeed = 20;
-			item.noMelee = true;
-			item.noUseGraphic = true;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.useStyle = 2;
+			Item.knockBack = 0;
+			Item.value = 20000;
+			Item.rare = 6;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
+			Item.shoot = ModContent.ProjectileType<Projectiles.projBoneHook>();
+			Item.shootSpeed = 20;
+			Item.noMelee = true;
+			Item.noUseGraphic = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bone Hook");
-			Tooltip.SetDefault("'Fresh meat!'");
+			// DisplayName.SetDefault("Bone Hook");
+			// Tooltip.SetDefault("'Fresh meat!'");
 		}
 
 		public override void AddRecipes()

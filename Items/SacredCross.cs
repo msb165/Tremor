@@ -10,30 +10,30 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 56;
-			item.DamageType = DamageClass.Magic;
-			item.mana = 8;
-			item.width = 40;
-			item.height = 40;
-			item.useTime = 35;
-			item.useAnimation = 35;
+			Item.damage = 56;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 8;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 35;
+			Item.useAnimation = 35;
 
-			item.useStyle = 5;
-			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
-			item.noMelee = true; //so the item's animation doesn't do damage
-			item.knockBack = 5;
-			item.value = 700;
-			item.rare = 5;
-			item.UseSound = SoundID.Item75;
-			item.autoReuse = true;
-			item.shoot = ModContent.ProjectileType<Projectiles.SacredCrossPro>();
-			item.shootSpeed = 15f;
+			Item.useStyle = 5;
+			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			Item.noMelee = true; //so the item's animation doesn't do damage
+			Item.knockBack = 5;
+			Item.value = 700;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item75;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<Projectiles.SacredCrossPro>();
+			Item.shootSpeed = 15f;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Sacred Cross");
-			Tooltip.SetDefault("Shoots magical crosses that heal you");
+			// DisplayName.SetDefault("Sacred Cross");
+			// Tooltip.SetDefault("Shoots magical crosses that heal you");
 		}
 
 		public override void AddRecipes()

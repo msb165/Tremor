@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 20;
-			item.width = 14;
-			item.height = 84;
-			item.noUseGraphic = true;
-			item.DamageType = DamageClass.Throwing;
-			item.useTime = 30;
-			item.shoot = ModContent.ProjectileType<Projectiles.BicholmereSpearPro>();
-			item.shootSpeed = 15f;
-			item.useAnimation = 30;
-			item.useStyle = 1;
-			item.knockBack = 4;
-			item.value = 1000;
-			item.rare = 2;
-			item.UseSound = SoundID.Item5;
-			item.autoReuse = true;
+			Item.damage = 20;
+			Item.width = 14;
+			Item.height = 84;
+			Item.noUseGraphic = true;
+			Item.DamageType = DamageClass.Throwing;
+			Item.useTime = 30;
+			Item.shoot = ModContent.ProjectileType<Projectiles.BicholmereSpearPro>();
+			Item.shootSpeed = 15f;
+			Item.useAnimation = 30;
+			Item.useStyle = 1;
+			Item.knockBack = 4;
+			Item.value = 1000;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item5;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bicholmere Spear");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Bicholmere Spear");
+			// Tooltip.SetDefault("");
 		}
 
 	}

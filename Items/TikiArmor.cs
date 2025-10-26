@@ -11,19 +11,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 34;
-			item.height = 34;
-			item.value = 150000;
-			item.rare = 3;
+			Item.width = 34;
+			Item.height = 34;
+			Item.value = 150000;
+			Item.rare = 3;
 
-			item.defense = 4;
-			item.accessory = true;
+			Item.defense = 4;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Tiki Armor");
-			Tooltip.SetDefault("15% increased minion damage");
+			// DisplayName.SetDefault("Tiki Armor");
+			// Tooltip.SetDefault("15% increased minion damage");
 		}
 
 		public override void UpdateEquip(Player player)

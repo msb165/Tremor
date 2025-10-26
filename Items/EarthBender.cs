@@ -8,24 +8,24 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 42;
-			item.DamageType = DamageClass.Melee;
-			item.width = 56;
-			item.height = 56;
-			item.useTime = 25;
-			item.useAnimation = 30;
-			item.useStyle = 1;
-			item.knockBack = 3;
-			item.value = 12000;
-			item.rare = 4;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 42;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 56;
+			Item.height = 56;
+			Item.useTime = 25;
+			Item.useAnimation = 30;
+			Item.useStyle = 1;
+			Item.knockBack = 3;
+			Item.value = 12000;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Earth Bender");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Earth Bender");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

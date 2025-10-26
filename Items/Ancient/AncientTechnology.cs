@@ -7,16 +7,16 @@ namespace Tremor.Items.Ancient
 		public override void SetDefaults()
 		{
 
-			item.height = 16;
-			item.maxStack = 20;
-			item.value = 1000000;
-			item.rare = 8;
+			Item.height = 16;
+			Item.maxStack = 20;
+			Item.value = 1000000;
+			Item.rare = 8;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ancient Technology");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Ancient Technology");
+			// Tooltip.SetDefault("");
 		}
 
 	}

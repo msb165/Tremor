@@ -12,7 +12,7 @@ namespace Tremor.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("The Dark Emperor");
+			// DisplayName.SetDefault("The Dark Emperor");
 			Main.npcFrameCount[npc.type] = 14;
 		}
 
@@ -50,21 +50,21 @@ namespace Tremor.NPCs
 
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
 			npc.lifeMax = npc.lifeMax * 1;
 			npc.damage = npc.damage * 1;
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{
 				for (int k = 0; k < 60; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 191, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 191, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 191, 2.5f * hitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 191, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 191, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 191, 2.5f * hit.HitDirection, -2.5f, 0, default(Color), 0.7f);
 				}
 				SoundEngine.PlaySound(SoundID.Roar);
 				NPC.NewNPC(null, (int)npc.position.X, (int)npc.position.Y, ModContent.NPCType<TheDarkEmperorTwo>());
@@ -87,10 +87,10 @@ namespace Tremor.NPCs
 			else
 			{
 
-				for (int k = 0; k < damage / npc.lifeMax * 50.0; k++)
+				for (int k = 0; k < npc.damage / npc.lifeMax * 50.0; k++)
 				{
-					Dust.NewDust(npc.position, npc.width, npc.height, 191, hitDirection, -2f, 0, default(Color), 0.7f);
-					Dust.NewDust(npc.position, npc.width, npc.height, 191, hitDirection, -1f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 191, hit.HitDirection, -2f, 0, default(Color), 0.7f);
+					Dust.NewDust(npc.position, npc.width, npc.height, 191, hit.HitDirection, -1f, 0, default(Color), 0.7f);
 				}
 			}
 		}

@@ -8,25 +8,25 @@ namespace Tremor.Items.Coral
 		public override void SetDefaults()
 		{
 
-			item.damage = 9;
-			item.DamageType = DamageClass.Melee;
-			item.width = 36;
-			item.height = 36;
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.pick = 43;
-			item.useStyle = 1;
-			item.knockBack = 5;
-			item.value = 100;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 9;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 36;
+			Item.height = 36;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.pick = 43;
+			Item.useStyle = 1;
+			Item.knockBack = 5;
+			Item.value = 100;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Coral Pickaxe");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Coral Pickaxe");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

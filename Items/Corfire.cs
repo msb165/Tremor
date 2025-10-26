@@ -7,21 +7,21 @@ namespace Tremor.Items
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(3279);
+			Item.CloneDefaults(3279);
 
-			item.damage = 56;
-			item.width = 30;
-			item.height = 26;
-			item.shoot = ModContent.ProjectileType<Projectiles.CorfirePro>();
-			item.knockBack = 4;
-			item.value = 10000;
-			item.rare = 2;
+			Item.damage = 56;
+			Item.width = 30;
+			Item.height = 26;
+			Item.shoot = ModContent.ProjectileType<Projectiles.CorfirePro>();
+			Item.knockBack = 4;
+			Item.value = 10000;
+			Item.rare = 2;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Corfire");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Corfire");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

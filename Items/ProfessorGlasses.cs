@@ -9,17 +9,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 10;
-			item.value = 100;
-			item.rare = 2;
-			item.vanity = true;
+			Item.width = 22;
+			Item.height = 10;
+			Item.value = 100;
+			Item.rare = 2;
+			Item.vanity = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Professor Glasses");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Professor Glasses");
+			// Tooltip.SetDefault("");
 		}
 
 		//TODO: [Skipped for 1.4] DrawHair

@@ -7,17 +7,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 40;
-			item.maxStack = 99;
-			item.value = 300000;
-			item.rare = 5;
+			Item.width = 28;
+			Item.height = 40;
+			Item.maxStack = 99;
+			Item.value = 300000;
+			Item.rare = 5;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Key Mold");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Key Mold");
+			// Tooltip.SetDefault("");
 		}
 
 	}

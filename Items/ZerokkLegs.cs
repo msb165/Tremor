@@ -9,17 +9,17 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 18;
-			item.height = 18;
-			item.value = 30000;
+			Item.width = 18;
+			Item.height = 18;
+			Item.value = 30000;
 
-			item.rare = 9;
+			Item.rare = 9;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Zerokk's Leggings");
-			Tooltip.SetDefault("'Great for impersonating devs!'");
+			// DisplayName.SetDefault("Zerokk's Leggings");
+			// Tooltip.SetDefault("'Great for impersonating devs!'");
 		}
 
 	}

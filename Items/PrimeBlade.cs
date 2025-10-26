@@ -8,27 +8,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 52;
-			item.DamageType = DamageClass.Melee;
-			item.width = 40;
-			item.height = 40;
+			Item.damage = 52;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 40;
+			Item.height = 40;
 
-			item.useTime = 20;
-			item.useAnimation = 20;
-			item.shoot = 503;
-			item.shootSpeed = 12f;
-			item.useStyle = 1;
-			item.knockBack = 6;
-			item.value = 60000;
-			item.rare = 5;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			Item.useTime = 20;
+			Item.useAnimation = 20;
+			Item.shoot = 503;
+			Item.shootSpeed = 12f;
+			Item.useStyle = 1;
+			Item.knockBack = 6;
+			Item.value = 60000;
+			Item.rare = 5;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Prime Blade");
-			Tooltip.SetDefault("'Mechanical rage!'");
+			// DisplayName.SetDefault("Prime Blade");
+			// Tooltip.SetDefault("'Mechanical rage!'");
 		}
 
 	}

@@ -10,27 +10,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 24;
-			item.DamageType = DamageClass.Ranged;
-			item.width = 58;
-			item.height = 28;
-			item.useTime = 7;
-			item.useAnimation = 7;
-			item.shoot = 14;
-			item.shootSpeed = 8f;
-			item.useAmmo = AmmoID.Bullet;
-			item.useStyle = 5;
-			item.knockBack = 4;
-			item.value = 60000;
-			item.rare = 8;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = true;
+			Item.damage = 24;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 58;
+			Item.height = 28;
+			Item.useTime = 7;
+			Item.useAnimation = 7;
+			Item.shoot = 14;
+			Item.shootSpeed = 8f;
+			Item.useAmmo = AmmoID.Bullet;
+			Item.useStyle = 5;
+			Item.knockBack = 4;
+			Item.value = 60000;
+			Item.rare = 8;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Shroomite Minigun");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Shroomite Minigun");
+			// Tooltip.SetDefault("");
 		}
 
 		public override Vector2? HoldoutOffset()

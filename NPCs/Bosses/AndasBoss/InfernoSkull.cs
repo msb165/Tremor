@@ -10,7 +10,7 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Inferno Skull");
+			// DisplayName.SetDefault("Inferno Skull");
 		}
 
 		int target;
@@ -31,7 +31,7 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 			Main.projFrames[projectile.type] = 2;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(Terraria.ID.SoundID.Item14, projectile.position);
 			Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, -ShootDirection, 0, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
@@ -40,7 +40,7 @@ namespace Tremor.NPCs.Bosses.AndasBoss
 			Projectile.NewProjectile(null, projectile.position.X + 40, projectile.position.Y + 40, 0, -ShootDirection, ShootType, ShootDamage, ShootKnockback, Main.myPlayer, 0f, 0f);
 		}
 
-		public override void OnHitPlayer(Player target, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo info)
 		{
 			projectile.Kill();
 		}

@@ -8,17 +8,17 @@ namespace Tremor.Items.Dark
 		public override void SetDefaults()
 		{
 
-			item.width = 14;
-			item.height = 22;
-			item.maxStack = 999;
-			item.rare = 3;
-			item.value = Item.buyPrice(0, 0, 10, 0);
+			Item.width = 14;
+			Item.height = 22;
+			Item.maxStack = 999;
+			Item.rare = 3;
+			Item.value = Item.buyPrice(0, 0, 10, 0);
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dark Bulb");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Dark Bulb");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

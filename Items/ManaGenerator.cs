@@ -7,25 +7,25 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 50;
-			item.height = 26;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
+			Item.width = 50;
+			Item.height = 26;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
 
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.rare = 9;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.value = 300000;
-			item.createTile = ModContent.TileType<Tiles.ManaGeneratorTile>();
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.rare = 9;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.value = 300000;
+			Item.createTile = ModContent.TileType<Tiles.ManaGeneratorTile>();
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Mana Generator");
-			Tooltip.SetDefault("Decreases mana cost of the player standing near");
+			// DisplayName.SetDefault("Mana Generator");
+			// Tooltip.SetDefault("Decreases mana cost of the player standing near");
 		}
 
 	}

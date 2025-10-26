@@ -67,7 +67,7 @@ namespace Tremor.Ice.Mobs
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Coldtrap");
+			// DisplayName.SetDefault("Coldtrap");
 		}
 
 		public override void SetDefaults()
@@ -230,7 +230,7 @@ namespace Tremor.Ice.Mobs
 			return Collision.CheckAABBvLineCollision(new Vector2(targetHitbox.X, targetHitbox.Y), new Vector2(targetHitbox.Width, targetHitbox.Height), projectile.position, projectile.position + length * new Vector2((float)Math.Cos(projectile.rotation), (float)Math.Sin(projectile.rotation)), width, ref point);
 		}
 
-		public override void ModifyHitPlayer(Player target, ref int damage, ref bool crit)
+		public override void ModifyHitPlayer(Player target, ref Player.HurtModifiers modifiers)
 		{
 			if (Main.hardMode || Main.expertMode)
 			{
@@ -253,7 +253,7 @@ namespace Tremor.Ice.Mobs
 				projectile.direction = target.Center.X < x ? -1 : 1;
 			}
 		}
-		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Texture2D unit = TextureAssets.Projectile[projectile.type].Value;
 			int unitLength = unit.Width;

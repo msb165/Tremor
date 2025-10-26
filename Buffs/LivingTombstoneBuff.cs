@@ -6,10 +6,10 @@ namespace Tremor.Buffs
 {
 	public class LivingTombstoneBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Living Tombstone");
-			Description.SetDefault("Sadly, but it doesn't sing");
+			// DisplayName.SetDefault("Living Tombstone");
+			// Description.SetDefault("Sadly, but it doesn't sing");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 		}

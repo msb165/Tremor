@@ -22,13 +22,13 @@ namespace Tremor.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("LeafBall");
+			// DisplayName.SetDefault("LeafBall");
 
 		}
 
 		// Now this is where the chain magic happens. You don't have to try to figure this whole thing out.
 		// Just make sure that you edit the first line (which starts with 'Texture2D texture') correctly.
-		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
+		public override bool PreDraw(ref Color drawColor)
 		{
 			Texture2D texture = Mod.GetTexture("Tremor/Projectiles/LeafBall_Chain");
 

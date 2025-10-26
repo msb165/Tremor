@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Tremor.Items;
@@ -18,8 +19,8 @@ namespace Tremor.Tiles
 			TileObjectData.newTile.CoordinateHeights = new[]{ 16, 16 };
 			TileObjectData.addTile(Type);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
-		ModTranslation name = CreateMapEntryName();
-		name.SetDefault("Starvil");			
+		LocalizedText name = CreateMapEntryName();
+		// name.SetDefault("Starvil");			
 			AddMapEntry(new Color(121, 14, 203), name);
 		}
 

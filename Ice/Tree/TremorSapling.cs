@@ -35,7 +35,7 @@ namespace Tremor.Ice.Tree
 	//		sapling = true;
 	//		AddMapEntry(new Color(200, 200, 200));
 	//		// TODO: TreeCrash does not exist dustType = ModContent.DustType<TreeCrash>();
-	//		adjTiles = new int[] { TileID.Saplings };
+	//		AdjTiles = new int[] { TileID.Saplings };
 	//	}
 
 	//	public override void NumDust(int i, int j, bool fail, ref int num)

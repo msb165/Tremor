@@ -10,27 +10,27 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.useStyle = 1;
-			item.useAnimation = 28;
-			item.useTime = 28;
-			item.knockBack = 5.75f;
-			item.width = 40;
-			item.height = 40;
-			item.damage = 165;
-			item.scale = 1.125f;
-			item.shootSpeed = 15f;
-			item.shoot = 524;
-			item.UseSound = SoundID.Item1;
-			item.rare = 9;
-			item.autoReuse = true;
-			item.value = Item.sellPrice(0, 5, 0, 0);
-			item.DamageType = DamageClass.Melee;
+			Item.useStyle = 1;
+			Item.useAnimation = 28;
+			Item.useTime = 28;
+			Item.knockBack = 5.75f;
+			Item.width = 40;
+			Item.height = 40;
+			Item.damage = 165;
+			Item.scale = 1.125f;
+			Item.shootSpeed = 15f;
+			Item.shoot = 524;
+			Item.UseSound = SoundID.Item1;
+			Item.rare = 9;
+			Item.autoReuse = true;
+			Item.value = Item.sellPrice(0, 5, 0, 0);
+			Item.DamageType = DamageClass.Melee;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Spine Blade");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Spine Blade");
+			// Tooltip.SetDefault("");
 		}
 
 		public override void AddRecipes()

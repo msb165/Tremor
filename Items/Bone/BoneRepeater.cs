@@ -10,28 +10,28 @@ namespace Tremor.Items.Bone
 		public override void SetDefaults()
 		{
 
-			item.damage = 28;
+			Item.damage = 28;
 
-			item.width = 18;
-			item.height = 56;
-			item.DamageType = DamageClass.Ranged;
-			item.useTime = 30;
-			item.shoot = 1;
-			item.shootSpeed = 12f;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.knockBack = 1.8f;
-			item.value = 2500;
-			item.useAmmo = 154;
-			item.rare = 3;
-			item.UseSound = SoundID.Item5;
-			item.autoReuse = true;
+			Item.width = 18;
+			Item.height = 56;
+			Item.DamageType = DamageClass.Ranged;
+			Item.useTime = 30;
+			Item.shoot = 1;
+			Item.shootSpeed = 12f;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.knockBack = 1.8f;
+			Item.value = 2500;
+			Item.useAmmo = 154;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item5;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bone Repeater");
-			Tooltip.SetDefault("Uses bones as ammo");
+			// DisplayName.SetDefault("Bone Repeater");
+			// Tooltip.SetDefault("Uses bones as ammo");
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

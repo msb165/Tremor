@@ -8,28 +8,28 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.damage = 25;
-			//item.melee = false;
-			item.DamageType = DamageClass.Magic;
-			item.width = 50;
-			item.height = 55;
-			item.useTime = 30;
-			item.mana = 20;
-			item.useAnimation = 30;
-			item.useStyle = 5;
-			item.shoot = 9;
-			item.shootSpeed = 30f;
-			item.knockBack = 3;
-			item.value = 30000;
-			item.rare = 3;
-			item.UseSound = SoundID.Item4;
-			item.autoReuse = false;
+			Item.damage = 25;
+			//Item.melee = false;
+			Item.DamageType = DamageClass.Magic;
+			Item.width = 50;
+			Item.height = 55;
+			Item.useTime = 30;
+			Item.mana = 20;
+			Item.useAnimation = 30;
+			Item.useStyle = 5;
+			Item.shoot = 9;
+			Item.shootSpeed = 30f;
+			Item.knockBack = 3;
+			Item.value = 30000;
+			Item.rare = 3;
+			Item.UseSound = SoundID.Item4;
+			Item.autoReuse = false;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Starfall Tome");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Starfall Tome");
+			// Tooltip.SetDefault("");
 		}
 
 	}

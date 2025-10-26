@@ -11,7 +11,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nova Kamikaze");
+			// DisplayName.SetDefault("Nova Kamikaze");
 			Main.npcFrameCount[npc.type] = 2;
 		}
 
@@ -31,7 +31,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			npc.DeathSound = SoundID.NPCDeath51;
 		}
 
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
+		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{
 			npc.lifeMax = npc.lifeMax * 1;
 			npc.damage = npc.damage * 1;
@@ -61,7 +61,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			TremorUtils.DrawNPCGlowMask(spriteBatch, npc, Mod.GetTexture("NPCs/Bosses/NovaPillar/NPCs/Deadling_GlowMask"));
 		}
 
-		public override void OnHitPlayer(Player player, int damage, bool crit)
+		public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
 		{
 			npc.life = -1;
 			npc.active = false;
@@ -86,7 +86,7 @@ namespace Tremor.NPCs.Bosses.NovaPillar.NPCs
 			}
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hit)
 		{
 			if (npc.life <= 0)
 			{

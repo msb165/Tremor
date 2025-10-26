@@ -11,23 +11,23 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 28;
-			item.height = 32;
-			item.maxStack = 20;
-			item.useTurn = true;
-			item.autoReuse = false;
-			item.useAnimation = 18;
-			item.useTime = 18;
-			item.useStyle = 4;
-			item.consumable = true;
-			item.value = 150;
+			Item.width = 28;
+			Item.height = 32;
+			Item.maxStack = 20;
+			Item.useTurn = true;
+			Item.autoReuse = false;
+			Item.useAnimation = 18;
+			Item.useTime = 18;
+			Item.useStyle = 4;
+			Item.consumable = true;
+			Item.value = 150;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Mysterious Drum");
-			Tooltip.SetDefault("Summons Tiki Totem\n" +
-"Requires the jungle biome and night time");
+			// DisplayName.SetDefault("Mysterious Drum");
+			/* Tooltip.SetDefault("Summons Tiki Totem\n" +
+"Requires the jungle biome and night time"); */
 		}
 
 		public override bool CanUseItem(Player player)

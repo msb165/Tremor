@@ -12,19 +12,19 @@ namespace Tremor.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 22;
-			item.height = 20;
+			Item.width = 22;
+			Item.height = 20;
 
-			item.value = 125000;
-			item.rare = 11;
-			item.accessory = true;
+			Item.value = 125000;
+			Item.rare = 11;
+			Item.accessory = true;
 
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frosteel Wings");
-			Tooltip.SetDefault("Allows flight and slow fall");
+			// DisplayName.SetDefault("Frosteel Wings");
+			// Tooltip.SetDefault("Allows flight and slow fall");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

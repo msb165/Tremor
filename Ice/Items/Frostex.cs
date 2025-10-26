@@ -9,18 +9,18 @@ namespace Tremor.Ice.Items
 		public override void SetDefaults()
 		{
 
-			item.width = 38;
-			item.height = 22;
+			Item.width = 38;
+			Item.height = 22;
 
-			item.value = 12000;
-			item.rare = 1;
-			item.accessory = true;
+			Item.value = 12000;
+			Item.rare = 1;
+			Item.accessory = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Frostex");
-			Tooltip.SetDefault("10% increased melee and ranged damage");
+			// DisplayName.SetDefault("Frostex");
+			// Tooltip.SetDefault("10% increased melee and ranged damage");
 		}
 
 		public override void UpdateEquip(Player player)

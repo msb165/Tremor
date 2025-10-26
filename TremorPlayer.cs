@@ -147,7 +147,8 @@ namespace Tremor
 								}
 								if (player.whoAmI == Main.myPlayer)
 								{
-									npc.StrikeNPC((int)damage, knockback, hitDirection, crit, false, false);
+									var hitInfo = npc.CalculateHitInfo((int)damage, hitDirection, crit, knockback);
+									npc.StrikeNPC(hitInfo, false, false);
 									if (Main.netMode != 0)
 									{
 									}
@@ -271,14 +272,28 @@ namespace Tremor
 				}
 			}
 		}
-		public override bool PreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource, ref int cooldownCounter)
+/*		public override void ModifyHurt(ref Player.HurtModifiers modifiers)
 		{
 			if (zellariumBody && Main.rand.NextBool(10))
 			{
 				return false;
 			}
-			return base.PreHurt(pvp, quiet, ref damage, ref hitDirection, ref crit, ref customDamage, ref playSound, ref genGore, ref damageSource, ref cooldownCounter);
+			return base.ModifyHurt(pvp, quiet, ref damage, ref hit.HitDirection, ref crit, ref customDamage, ref playSound, ref genGore, ref damageSource, ref cooldownCounter);
+		}*/
+
+		public override void OnHurt(Player.HurtInfo info)
+		{
+			if (zellariumBody && Main.rand.NextBool(10))
+			{
+				info.Damage = 1;
+			}
 		}
+
+		public override bool ImmuneTo(PlayerDeathReason damageSource, int cooldownCounter, bool dodgeable)
+		{
+			return base.ImmuneTo(damageSource, cooldownCounter, dodgeable);
+		}
+
 		public override void ResetEffects()
 		{
 			heartAmulet = false;
@@ -332,7 +347,7 @@ namespace Tremor
 		private float maxDepth;
 		private float minDepth;
 
-		public override void OnRespawn(Player player)
+		public override void OnRespawn()
 		{
 			if (heartAmulet)
 			{
@@ -412,10 +427,7 @@ namespace Tremor
 
 		public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
 		{
-			Item item = new Item();
-			item.SetDefaults(ModContent.ItemType<AdventurerSpark>());
-			item.stack = 1;
-			return new[]{item};
+			return [new Item(ModContent.ItemType<AdventurerSpark>())];
 		}
 
 
@@ -713,6 +725,7 @@ namespace Tremor
 
 	public class IceBiome : ModBiome
 	{
+		public override ModWaterStyle WaterStyle => ModContent.Find<ModWaterStyle>("Tremor/IceWater");
 		public override bool IsBiomeActive(Player player) => (TremorWorld.IceTiles > 100);
 
 		public override void SpecialVisuals(Player player, bool isActive)

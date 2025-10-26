@@ -8,24 +8,24 @@ namespace Tremor.Items.Candy
 		public override void SetDefaults()
 		{
 
-			item.damage = 14;
-			item.DamageType = DamageClass.Melee;
-			item.width = 32;
-			item.height = 28;
-			item.useTime = 32;
-			item.useAnimation = 22;
-			item.useStyle = 1;
-			item.knockBack = 7;
-			item.value = 2000;
-			item.rare = 1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 14;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 32;
+			Item.height = 28;
+			Item.useTime = 32;
+			Item.useAnimation = 22;
+			Item.useStyle = 1;
+			Item.knockBack = 7;
+			Item.value = 2000;
+			Item.rare = 1;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Candy Cane");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Candy Cane");
+			// Tooltip.SetDefault("");
 		}
 
 	}

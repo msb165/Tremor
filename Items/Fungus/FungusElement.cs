@@ -8,17 +8,17 @@ namespace Tremor.Items.Fungus
 		public override void SetDefaults()
 		{
 
-			item.width = 14;
-			item.height = 22;
-			item.rare = 3;
-			item.maxStack = 999;
-			item.value = 100;
+			Item.width = 14;
+			Item.height = 22;
+			Item.rare = 3;
+			Item.maxStack = 999;
+			Item.value = 100;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Fungus Element");
-			Tooltip.SetDefault("");
+			// DisplayName.SetDefault("Fungus Element");
+			// Tooltip.SetDefault("");
 		}
 
 	}

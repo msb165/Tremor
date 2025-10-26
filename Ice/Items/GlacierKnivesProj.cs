@@ -22,7 +22,7 @@ namespace Tremor.Ice.Items
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Glacier Knives");
+			// DisplayName.SetDefault("Glacier Knives");
 		}
 
 		public override void AI()

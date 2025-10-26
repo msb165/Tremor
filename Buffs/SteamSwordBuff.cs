@@ -5,10 +5,10 @@ namespace Tremor.Buffs
 {
 	public class SteamSwordBuff:TremorModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Brass Melee Enchanting");
-			Description.SetDefault("Increases Brass Rapier and Glaive damage");
+			// DisplayName.SetDefault("Brass Melee Enchanting");
+			// Description.SetDefault("Increases Brass Rapier and Glaive damage");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 		}
